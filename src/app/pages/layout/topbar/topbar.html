@@ -1,0 +1,71 @@
+<nav class="fixed top-0 inset-x-0 z-50 bg-bg/80 backdrop-blur border-b border-fg/10">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center gap-3">
+        <img
+          src="logo.png"
+          alt="FUTNERDS" class="w-10 h-10 object-contain transition-transform duration-300 hover:scale-110" />
+
+        <span class="text-fg font-bold text-xl tracking-wider">
+          FUT<span class="text-accent">NERDS</span>
+        </span>
+      </a>
+
+      <!-- Menu -->
+      <div class="hidden md:flex items-center gap-1">
+
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Jogadores
+        </a>
+
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Nasções
+        </a>
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Ligas
+        </a>
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Times
+        </a>
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Meu Time
+        </a>
+        <a routerLink="/jogadores"
+          class="px-4 py-2 rounded-lg text-sm font-medium text-fg-muted hover:text-fg hover:bg-surface-2 transition">
+          Comparar
+        </a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2">
+
+        <button type="button" (click)="temaService.toggleTema()"
+          class="w-9 h-9 flex items-center justify-center rounded-lg text-fg-muted hover:text-fg hover:bg-surface-2 transition cursor-pointer"
+          [attr.aria-label]="temaService.tema() === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'">
+          @if (temaService.tema() === 'dark') {
+            <i class="fa-solid fa-sun"></i>
+          } @else {
+            <i class="fa-solid fa-moon"></i>
+          }
+        </button>
+
+        <button routerLink="/login"
+          class="px-4 py-2 text-sm text-fg-muted hover:text-fg hover:bg-surface-2 rounded-lg transition cursor-pointer">
+          Entrar
+        </button>
+        <button routerLink="/cadastro"
+          class="px-5 py-2 text-sm font-semibold bg-accent text-accent-fg rounded-lg hover:bg-accent-hover transition cursor-pointer">
+          Criar Conta
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,87 @@
+<p-toast position="top-right"></p-toast>
+<p-confirmDialog [style]="{ width: '28rem' }" />
+
+<div class="min-h-screen bg-bg text-fg pt-32 pb-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <header class="pb-6 border-b border-fg/10 mb-8">
+      <h2 class="text-3xl font-black uppercase tracking-tighter">
+        Escolha seu <span class="text-accent">Time</span>
+      </h2>
+      <p class="text-fg-subtle mt-1 text-sm font-medium">
+        Selecione o clube que você vai gerenciar
+      </p>
+    </header>
+
+    <!-- TABELA DE TIMES -->
+    <div class="bg-surface rounded-2xl border border-fg/5 overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-fg/5 border-b border-fg/10">
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Logo</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Nome</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">País</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Liga</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Orçamento</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let time of times" class="border-b border-fg/5 hover:bg-fg/5 transition">
+              <!-- Logo -->
+              <td class="px-6 py-4">
+                <div class="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
+                  <img
+                    [src]="time.logo"
+                    [alt]="time.nome"
+                    (error)="$event.target.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%231e2130%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%236b7280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E?%3C/text%3E%3C/svg%3E'"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </td>
+
+              <!-- Nome -->
+              <td class="px-6 py-4">
+                <span class="text-fg font-bold">{{ time.nome }}</span>
+              </td>
+
+              <!-- País -->
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm">{{ time.pais }}</span>
+              </td>
+
+              <!-- Liga -->
+              <td class="px-6 py-4">
+                <span class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-info/10 text-info">
+                  {{ time.liga }}
+                </span>
+              </td>
+
+              <!-- Orçamento -->
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm font-medium">{{ formatarMoeda(time.orcamento) }}</span>
+              </td>
+
+              <!-- Ações -->
+              <td class="px-6 py-4">
+                <button (click)="selecionarTime(time)"
+                  class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-4 py-2 rounded-xl transition-all">
+                  Selecionar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ESTADO VAZIO -->
+    <div *ngIf="times.length === 0" class="text-center py-12 text-fg-subtle">
+      Nenhum time encontrado.
+    </div>
+
+  </div>
+</div>

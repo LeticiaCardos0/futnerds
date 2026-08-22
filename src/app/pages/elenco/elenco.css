@@ -1,0 +1,130 @@
+.campo-futebol {
+    background: var(--campo-bg);
+}
+
+.listra-campo {
+    background: transparent;
+}
+
+.listra-campo.listra-clara {
+    background: var(--campo-listra-clara);
+}
+
+.nome-jogador {
+    color: var(--campo-nome-text);
+    background: var(--campo-nome-bg);
+}
+
+.posicao-vazia {
+    color: var(--campo-posicao-text);
+    background: var(--campo-posicao-bg);
+}
+
+.foto-jogador {
+    box-shadow: var(--campo-sombra-foto);
+}
+
+/* ============================
+   CONFIRM DIALOG - PADRÃO SITE
+============================= */
+
+:host ::ng-deep .p-confirm-dialog {
+    background: #0a0b0f;
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 22px;
+    color: #fff;
+    width: 520px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,.55);
+}
+
+:host ::ng-deep .p-dialog-header {
+    background: #0a0b0f;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    padding: 1.5rem 2rem;
+}
+
+:host ::ng-deep .p-dialog-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -.5px;
+}
+
+:host ::ng-deep .p-dialog-header-icon {
+    color: #6b7280;
+    transition: .2s;
+}
+
+:host ::ng-deep .p-dialog-header-icon:hover {
+    color: white;
+    background: transparent;
+}
+
+:host ::ng-deep .p-dialog-content {
+    background: #0a0b0f;
+    color: #d1d5db;
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+:host ::ng-deep .p-confirm-dialog-icon {
+    display: none;
+}
+
+:host ::ng-deep .p-dialog-footer {
+    background: #0a0b0f;
+    border-top: 1px solid rgba(255,255,255,.05);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* ============================
+   BOTÃO CANCELAR
+============================= */
+
+:host ::ng-deep .p-confirm-dialog-reject {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    color: #d1d5db;
+    border-radius: 12px;
+    font-weight: 700;
+    padding: .8rem 1.4rem;
+    transition: .2s;
+}
+
+:host ::ng-deep .p-confirm-dialog-reject:hover {
+    background: rgba(255,255,255,.08);
+    color: white;
+}
+
+/* ============================
+   BOTÃO REMOVER
+============================= */
+
+:host ::ng-deep .p-confirm-dialog-accept {
+    background: #ef4444;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    font-weight: 700;
+    padding: .8rem 1.6rem;
+    transition: .2s;
+}
+
+:host ::ng-deep .p-confirm-dialog-accept:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* ============================
+   OVERLAY
+============================= */
+
+:host ::ng-deep .p-dialog-mask {
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,.75);
+}

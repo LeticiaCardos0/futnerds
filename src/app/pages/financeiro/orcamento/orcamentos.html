@@ -1,0 +1,222 @@
+<p-toast />
+<!-- MAIN -->
+<main class="flex-1 bg-bg text-fg pt-32 pb-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- HEADER -->
+    <header class="pb-6 border-b border-fg/10">
+      <div class="flex justify-between items-center flex-wrap gap-4">
+        <div>
+          <h2 class="text-3xl font-black uppercase tracking-tighter">
+            Gerenciamento de <span class="text-accent">Orçamento</span>
+          </h2>
+          <p class="text-fg-subtle mt-1 text-sm font-medium">
+            Visualize e controle o orçamento do seu time por categoria
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- BOTÃO DE CONVERSÃO DE MOEDA -->
+          <button (click)="alternarMoeda()"
+            class="cursor-pointer bg-fg/5 hover:bg-fg/10 border border-fg/10 text-fg font-black uppercase tracking-widest text-xs px-5 py-3 rounded-xl transition-all flex items-center gap-2">
+            <i class="fas fa-exchange-alt text-accent"></i>
+            <span>{{ moedaAtual === 'BRL' ? 'R$ → €' : '€ → R$' }}</span>
+          </button>
+
+          <button (click)="abrirModal()"
+            class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+            <i class="fas fa-plus"></i>
+            <span>Adicionar Categoria</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <div class="py-8 border-b border-fg/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Orçamento Total
+          </p>
+          <p class="text-2xl font-black text-fg mt-2 tracking-tight">{{ formatarMoeda(orcamentoTotal) }}</p>
+          <p class="text-fg-subtle text-xs mt-2">Orçamento anual alocado</p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Orçamento Utilizado
+          </p>
+          <p class="text-2xl font-black text-danger mt-2 tracking-tight">{{ formatarMoeda(orcamentoUtilizado) }}</p>
+          <p class="text-fg-subtle text-xs mt-2">{{ percentualUtilizado | number:'1.0-1' }}% do orçamento total</p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Orçamento Disponível
+          </p>
+          <p class="text-2xl font-black text-accent mt-2 tracking-tight">{{ formatarMoeda(orcamentoDisponivel) }}</p>
+          <p class="text-fg-subtle text-xs mt-2">{{ percentualDisponivel | number:'1.0-1' }}% disponível</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="py-8 border-b border-fg/10">
+      <div class="max-w-md">
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Filtrar por Tipo
+        </label>
+
+        <select [(ngModel)]="filtroTipo" class="cursor-pointer w-full mt-2 bg-surface border border-fg/5 rounded-xl px-4 py-3 text-sm text-fg
+               focus:border-accent/50 outline-none transition">
+          <option>Todas as Categorias</option>
+          <option>Despesas</option>
+          <option>Receitas</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="p-8 space-y-6">
+
+      <div *ngFor="let categoria of categoriasFiltradas"
+        class="bg-surface rounded-2xl p-6 border border-fg/5 hover:border-fg/10 transition">
+
+        <div class="flex justify-between items-start mb-6">
+          <div>
+            <h3 class="text-xl font-black flex items-center gap-2">
+              <i class="fas" [ngClass]="[categoria.icone, categoria.corIcone]"></i>
+              {{ categoria.nome }}
+            </h3>
+
+            <p class="text-fg-subtle text-sm mt-1">
+              {{ categoria.tipo }} - {{ categoria.descricao }}
+            </p>
+          </div>
+
+          <div class="flex gap-3 text-sm">
+            <button (click)="abrirModalEdicao(categoria)" class="cursor-pointer text-fg-subtle hover:text-accent transition">
+              <i class="fas fa-edit"></i>
+            </button>
+
+            <button (click)="excluirCategoria(categoria)" class="cursor-pointer text-fg-subtle hover:text-danger transition">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-4">
+          <div>
+            <p class="text-fg-subtle text-xs uppercase font-bold">Alocado</p>
+            <p class="text-lg font-black text-fg">{{ formatarMoeda(categoria.alocado) }}</p>
+          </div>
+
+          <div>
+            <p class="text-fg-subtle text-xs uppercase font-bold">Gasto</p>
+            <p class="text-lg font-black text-danger">{{ formatarMoeda(categoria.gasto) }}</p>
+          </div>
+
+          <div>
+            <p class="text-fg-subtle text-xs uppercase font-bold">Disponível</p>
+            <p class="text-lg font-black text-accent">{{ formatarMoeda(disponivelCategoria(categoria)) }}</p>
+          </div>
+        </div>
+
+        <div class="w-full h-2 bg-fg/5 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-green-500 to-green-400"
+            [style.width.%]="percentualCategoria(categoria)">
+          </div>
+        </div>
+
+        <p class="text-xs text-fg-subtle mt-2">
+          {{ percentualCategoria(categoria) | number:'1.0-1' }}% utilizado
+        </p>
+
+      </div>
+
+      <div *ngIf="categoriasFiltradas.length === 0" class="text-center py-12 text-fg-subtle">
+        Nenhuma categoria encontrada para este filtro.
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div *ngIf="modalAberto" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
+
+  <div class="bg-surface rounded-3xl p-8 w-full max-w-2xl border border-fg/5">
+
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-black mt-2 tracking-tight">
+        {{ modoEdicao ? 'Editar' : 'Nova' }} <span class="text-accent">Categoria</span>
+      </h3>
+
+      <button (click)="fecharModal()" class="cursor-pointer hover:rotate-90 text-fg-subtle hover:text-fg transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <form class="space-y-4" (ngSubmit)="salvarCategoria()">
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Nome da Categoria
+        </label>
+        <input name="nome" [(ngModel)]="form.nome"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Ex: Marketing">
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Tipo
+        </label>
+        <select name="tipo" [(ngModel)]="form.tipo"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3">
+          <option value="Despesa">Despesa</option>
+          <option value="Receita">Receita</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Valor (em R$)
+        </label>
+        <input name="alocado" type="number" [(ngModel)]="form.alocado"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="0">
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Gasto (em R$)
+        </label>
+        <input name="gasto" type="number" [(ngModel)]="form.gasto"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="0">
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Descrição
+        </label>
+        <textarea name="descricao" [(ngModel)]="form.descricao" rows="3"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Descreva a categoria"></textarea>
+      </div>
+
+      <div class="flex justify-end gap-3">
+
+        <button type="button" (click)="fecharModal()" class="cursor-pointer bg-fg/5 hover:bg-fg/10 text-fg-muted hover:text-fg font-black uppercase tracking-widest text-xs px-6 py-3 rounded-xl transition-al">
+          Cancelar
+        </button>
+
+        <button type="submit" class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-8 py-3 rounded-xl transition-all">
+          Salvar
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>

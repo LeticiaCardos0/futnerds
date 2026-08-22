@@ -1,0 +1,306 @@
+<p-toast />
+
+<main class="flex-1 bg-bg text-fg pt-32 pb-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- HEADER -->
+    <header class="pb-6 border-b border-fg/10">
+      <div class="flex justify-between items-center flex-wrap gap-4">
+        <div>
+          <h2 class="text-3xl font-black uppercase tracking-tighter">
+            Comissão <span class="text-accent">Técnica</span>
+          </h2>
+          <p class="text-fg-subtle mt-1 text-sm font-medium">
+            Gerencie os membros da comissão técnica do seu time
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <!-- BOTÃO DE CONVERSÃO DE MOEDA -->
+          <button (click)="alternarMoeda()"
+            class="cursor-pointer bg-fg/5 hover:bg-fg/10 border border-fg/10 text-fg font-black uppercase tracking-widest text-xs px-5 py-3 rounded-xl transition-all flex items-center gap-2">
+            <i class="fas fa-exchange-alt text-accent"></i>
+            <span>{{ moedaAtual === 'BRL' ? 'R$ → €' : '€ → R$' }}</span>
+          </button>
+
+          <button (click)="abrirModal()"
+            class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+            <i class="fas fa-plus"></i>
+            <span>Adicionar Membro</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <div class="py-8 border-b border-fg/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Total de Membros
+          </p>
+          <p class="text-2xl font-black text-fg mt-2 tracking-tight">{{ totalMembros }}</p>
+          <p class="text-fg-subtle text-xs mt-2">Comissão técnica completa</p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Treinadores
+          </p>
+          <p class="text-2xl font-black text-purple-500 mt-2 tracking-tight">{{ totalTreinadores }}</p>
+          <p class="text-fg-subtle text-xs mt-2">Responsáveis técnicos</p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">
+            Equipe de Suporte
+          </p>
+          <p class="text-2xl font-black text-accent mt-2 tracking-tight">{{ totalSuporte }}</p>
+          <p class="text-fg-subtle text-xs mt-2">Preparadores, fisioterapeutas e mais</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FILTER -->
+    <div class="py-8 border-b border-fg/10">
+      <div class="flex flex-col md:flex-row gap-4">
+
+        <div class="flex-1">
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Pesquisar
+          </label>
+          <input [(ngModel)]="termoPesquisa" name="termoPesquisa" placeholder="Nome, função ou contato..."
+            class="cursor-pointer w-full mt-2 bg-surface border border-fg/5 rounded-xl px-4 py-3 text-sm text-fg
+                   placeholder-gray-600 focus:border-accent/50 outline-none transition">
+        </div>
+
+        <div class="max-w-xs w-full">
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Filtrar por Função
+          </label>
+          <select [(ngModel)]="filtroCategoria" name="filtroCategoria" class="cursor-pointer w-full mt-2 bg-surface border border-fg/5 rounded-xl px-4 py-3 text-sm text-fg
+                 focus:border-accent/50 outline-none transition">
+            <option value="Todas as Funções">Todas as Funções</option>
+            <option *ngFor="let categoria of categoriasDisponiveis" [value]="categoria">{{ categoria }}</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MEMBROS -->
+    <div class="p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div *ngFor="let membro of membrosFiltrados"
+          class="relative bg-surface rounded-2xl p-6 border border-fg/5 hover:border-fg/10 transition text-center">
+
+          <div class="absolute top-4 right-4 flex gap-3 text-sm">
+            <button (click)="abrirModalEdicao(membro)" class="cursor-pointer text-fg-subtle hover:text-accent transition">
+              <i class="fas fa-edit"></i>
+            </button>
+
+            <button (click)="excluirMembro(membro)" class="cursor-pointer text-fg-subtle hover:text-accent transition">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+
+          <div class="w-24 h-24 rounded-full overflow-hidden bg-fg/5 border border-fg/10 mx-auto flex items-center justify-center">
+            <img *ngIf="membro.fotoUrl" [src]="membro.fotoUrl" [alt]="membro.nome"
+              class="w-full h-full object-cover">
+            <i *ngIf="!membro.fotoUrl" class="fas fa-image text-fg-subtle text-xl"></i>
+          </div>
+
+          <h3 class="text-lg font-black mt-4">{{ membro.nome }}</h3>
+          <p class="text-xs font-black uppercase tracking-widest mt-1 text-purple-500">
+            {{ membro.funcao }}
+          </p>
+
+          <div class="flex justify-center gap-1 mt-3">
+            <i *ngFor="let ativa of estrelas(membro.nivel)" class="fas fa-star text-sm"
+              [ngClass]="ativa ? 'text-warning' : 'text-fg/10'"></i>
+          </div>
+
+          <p class="text-fg-muted text-sm mt-3">{{ membro.pais }}</p>
+          <p class="text-fg-subtle text-sm mt-1">{{ membro.especialidades }}</p>
+
+          <div class="mt-4 pt-4 border-t border-fg/10 space-y-2 text-left">
+            <div class="flex justify-between text-sm">
+              <span class="text-fg-subtle text-xs uppercase font-bold tracking-widest">Salário</span>
+              <span class="font-black text-accent">{{ formatarMoeda(membro.salario) }}</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-fg-subtle text-xs uppercase font-bold tracking-widest">Contratação</span>
+              <span class="font-black text-danger">{{ formatarMoeda(membro.valorContratacao) }}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div *ngIf="membrosFiltrados.length === 0" class="col-span-full text-center py-12 text-fg-subtle">
+          Nenhum membro encontrado para este filtro.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- MODAL -->
+<div *ngIf="modalAberto" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
+
+  <div class="bg-surface rounded-3xl p-8 w-full max-w-2xl border border-fg/5 max-h-[90vh] overflow-y-auto">
+
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-black mt-2 tracking-tight">
+        {{ modoEdicao ? 'Editar' : 'Novo' }} <span class="text-accent">Membro</span>
+      </h3>
+
+      <button (click)="fecharModal()" class="cursor-pointer hover:rotate-90 text-fg-subtle hover:text-fg transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <form class="space-y-4" (ngSubmit)="salvarMembro()">
+
+      <!-- UPLOAD DE IMAGEM -->
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Foto do Membro
+        </label>
+
+        <div class="mt-2 flex items-center gap-4">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden bg-surface-2 border border-fg/5 flex items-center justify-center flex-shrink-0">
+            <img *ngIf="previewFoto" [src]="previewFoto" alt="Pré-visualização" class="w-full h-full object-cover">
+            <i *ngIf="!previewFoto" class="fas fa-user text-2xl text-fg-subtle"></i>
+          </div>
+
+          <div class="flex-1 flex flex-col gap-2">
+            <label
+              class="cursor-pointer bg-fg/5 hover:bg-fg/10 border border-fg/10 text-fg text-xs font-bold uppercase tracking-widest px-4 py-3 rounded-xl transition flex items-center justify-center gap-2">
+              <i class="fas fa-upload text-accent"></i>
+              <span>Escolher Imagem</span>
+              <input type="file" accept="image/*" class="hidden" (change)="aoSelecionarImagem($event)">
+            </label>
+
+            <button *ngIf="previewFoto" type="button" (click)="removerImagem()"
+              class="text-danger hover:text-danger text-xs font-bold uppercase tracking-widest transition">
+              Remover imagem
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Nome
+        </label>
+        <input name="nome" [(ngModel)]="form.nome"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Ex: Carlo Ancelotti">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Função
+          </label>
+          <input name="funcao" [(ngModel)]="form.funcao"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Ex: Técnico Principal">
+        </div>
+
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Categoria
+          </label>
+          <select name="categoria" [(ngModel)]="form.categoria"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3">
+            <option *ngFor="let categoria of categoriasDisponiveis" [value]="categoria">{{ categoria }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Contato
+          </label>
+          <input name="contato" [(ngModel)]="form.contato"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="email@futnerds.com">
+        </div>
+
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Data de Contratação
+          </label>
+          <input name="dataContratacao" type="date" [(ngModel)]="form.dataContratacao"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            País
+          </label>
+          <input name="pais" [(ngModel)]="form.pais"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Ex: Espanha">
+        </div>
+
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Nível (1 a 5 estrelas)
+          </label>
+          <select name="nivel" [(ngModel)]="form.nivel"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3">
+            <option [value]="1">1</option>
+            <option [value]="2">2</option>
+            <option [value]="3">3</option>
+            <option [value]="4">4</option>
+            <option [value]="5">5</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Especialidades
+        </label>
+        <input name="especialidades" [(ngModel)]="form.especialidades"
+          class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="Ex: Táticas Ofensivas, Liderança">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Salário
+          </label>
+          <input name="salario" type="number" [(ngModel)]="form.salario"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="0">
+        </div>
+
+        <div>
+          <label class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+            Valor de Contratação
+          </label>
+          <input name="valorContratacao" type="number" [(ngModel)]="form.valorContratacao"
+            class="w-full mt-2 bg-surface-2 border border-fg/5 rounded-xl px-4 py-3" placeholder="0">
+        </div>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-2">
+
+        <button type="button" (click)="fecharModal()" class="cursor-pointer bg-fg/5 hover:bg-fg/10 text-fg-muted hover:text-fg font-black uppercase tracking-widest text-xs px-6 py-3 rounded-xl transition-al">
+          Cancelar
+        </button>
+
+        <button type="submit" class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-8 py-3 rounded-xl transition-all">
+          Salvar
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.hex-dourado .hexagono-fill { fill: #EF9F27; stroke: #BA7517; stroke-width: 1.5; }
+.hex-dourado .hexagono-texto { fill: #412402; }
+
+.hex-verde .hexagono-fill { fill: #97C459; stroke: #3B6D11; stroke-width: 1.5; }
+.hex-verde .hexagono-texto { fill: #173404; }
+
+.hex-azul .hexagono-fill { fill: #85B7EB; stroke: #185FA5; stroke-width: 1.5; }
+.hex-azul .hexagono-texto { fill: #042C53; }
+
+.hex-cinza .hexagono-fill { fill: #B4B2A9; stroke: #5F5E5A; stroke-width: 1.5; }
+.hex-cinza .hexagono-texto { fill: #2C2C2A; }

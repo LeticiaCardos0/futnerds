@@ -1,0 +1,326 @@
+<p-toast position="top-right"></p-toast>
+
+<div class="min-h-screen bg-bg text-fg pt-32 pb-16">
+  <div class="max-w-[1600px] mx-auto px-6">
+
+    <!-- HEADER -->
+    <header class="pb-6 border-b border-fg/10 mb-8">
+      <h2 class="text-3xl font-black uppercase tracking-tighter">
+        Banco de <span class="text-accent">Jogadores</span>
+      </h2>
+      <p class="text-fg-subtle mt-1 text-sm font-medium">
+        Adicione jogadores ao elenco do seu time
+      </p>
+    </header>
+
+    <!-- FILTROS -->
+    <div class="flex flex-col gap-4 mb-6">
+      <div class="relative w-full lg:max-w-xs">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm"></i>
+        <input
+          type="text"
+          [(ngModel)]="termoBusca"
+          (ngModelChange)="aoFiltrar()"
+          placeholder="Buscar jogador..."
+          class="w-full bg-surface border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-sm focus:border-accent/50 outline-none transition"
+        >
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          *ngFor="let posicao of posicoesDisponiveis"
+          (click)="selecionarPosicao(posicao.sigla)"
+          [class.bg-accent]="posicaoSelecionada === posicao.sigla"
+          [class.text-accent-fg]="posicaoSelecionada === posicao.sigla"
+          [class.bg-surface]="posicaoSelecionada !== posicao.sigla"
+          [class.text-fg-muted]="posicaoSelecionada !== posicao.sigla"
+          class="cursor-pointer px-4 py-2 rounded-xl text-[11px] font-bold uppercase tracking-widest hover:bg-fg/10 hover:text-fg transition whitespace-nowrap">
+          {{ posicao.rotulo }}
+        </button>
+      </div>
+    </div>
+
+    <!-- LISTA DE JOGADORES -->
+    <div class="bg-surface rounded-2xl border border-fg/5 overflow-hidden">
+
+      <div class="grid grid-cols-[2fr_1fr_0.6fr_0.7fr_0.7fr_1fr] px-5 py-3 text-[11px] font-bold uppercase tracking-widest text-fg-subtle border-b border-fg/10">
+        <span>Jogador</span>
+        <span>País</span>
+        <span>Idade</span>
+        <span>Overall</span>
+        <span>Potencial</span>
+        <span class="text-right pr-1">Valor</span>
+      </div>
+
+      <div
+        *ngFor="let jogador of jogadores"
+        (click)="abrirModalResumo(jogador)"
+        class="cursor-pointer grid grid-cols-[2fr_1fr_0.6fr_0.7fr_0.7fr_1fr] items-center px-5 py-2.5 border-b border-fg/5 last:border-b-0 hover:bg-fg/5 transition">
+
+        <div class="flex items-center gap-2.5 min-w-0">
+          <img
+            [src]="'http://localhost:8080/api/imagem/jogador/' + jogador.id"
+            [alt]="jogador.nome"
+            (error)="$event.target.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%231e2130%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%236b7280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E?%3C/text%3E%3C/svg%3E'"
+            class="w-9 h-9 rounded-full object-cover border border-fg/10 flex-shrink-0"
+          />
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <p class="text-fg font-bold text-sm truncate">{{ jogador.nome }}</p>
+              <span class="text-[10px] font-bold uppercase bg-green-500/10 text-green-400 px-1.5 py-0.5 rounded whitespace-nowrap">{{ traduzirPosicao(jogador.posicao) }}</span>
+            </div>
+            <p class="text-fg-subtle text-[11px] truncate">{{ jogador.timeAtual }}</p>
+          </div>
+        </div>
+
+        <img
+          *ngIf="jogador.paisCodigo"
+          [src]="'https://flagcdn.com/w20/' + jogador.paisCodigo + '.png'"
+          [alt]="jogador.nacionalidade"
+          (error)="$event.target.style.display='none'"
+          class="w-5 h-3.5 rounded-sm object-cover"
+        />
+
+        <span class="text-fg-subtle text-sm">{{ jogador.idade }}</span>
+
+        <svg width="40" height="34" viewBox="0 0 52 46" [ngClass]="obterClasseOverallSvg(jogador.overall || 0)">
+          <polygon points="26,1 49,13 49,33 26,45 3,33 3,13" class="hexagono-fill" />
+          <text x="26" y="29" text-anchor="middle" font-size="16" font-weight="500" class="hexagono-texto">{{ jogador.overall }}</text>
+        </svg>
+
+        <span class="text-fg-muted text-sm">{{ jogador.potencial || '—' }}</span>
+
+        <span class="text-fg font-bold text-sm text-right pr-1">{{ formatarValorCompacto(jogador.valor) }}</span>
+      </div>
+
+    </div>
+
+    <!-- PAGINAÇÃO -->
+    <div *ngIf="totalItens > 0" class="flex items-center justify-between mt-6 flex-wrap gap-4">
+      <p class="text-fg-subtle text-xs font-medium">
+        Página {{ paginaAtual }} de {{ totalPaginas }} — {{ totalItens }} jogadores
+      </p>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          (click)="paginaAnterior()"
+          [disabled]="paginaAtual === 1"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-left text-xs"></i>
+        </button>
+
+        <button
+          type="button"
+          *ngFor="let pagina of paginasArray"
+          (click)="irParaPagina(pagina)"
+          [class.bg-accent]="pagina === paginaAtual"
+          [class.text-accent-fg]="pagina === paginaAtual"
+          [class.bg-surface-2]="pagina !== paginaAtual"
+          [class.text-fg-muted]="pagina !== paginaAtual"
+          class="cursor-pointer w-9 h-9 flex items-center justify-center rounded-lg font-bold text-xs hover:bg-fg/10 hover:text-fg transition">
+          {{ pagina }}
+        </button>
+
+        <button
+          type="button"
+          (click)="proximaPagina()"
+          [disabled]="paginaAtual === totalPaginas"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ESTADO VAZIO -->
+    <div *ngIf="totalItens === 0" class="text-center py-12 text-fg-subtle">
+      Nenhum jogador encontrado com esses filtros.
+      <button type="button" (click)="limparFiltros()" class="block mx-auto mt-3 text-accent hover:underline text-sm font-bold">
+        Limpar filtros
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL DE ADICIONAR JOGADOR -->
+<div *ngIf="mostrarModalAdicionar" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4">
+  <div class="bg-surface rounded-3xl p-8 w-full max-w-2xl border border-fg/5">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-2xl font-black mt-2 tracking-tight">
+        Adicionar <span class="text-accent">{{ jogadorParaAdicionar?.nome }}</span> ao Elenco
+      </h3>
+      <button (click)="fecharModalAdicionar()" class="cursor-pointer hover:rotate-90 text-fg-subtle hover:text-fg transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <form class="space-y-4" (ngSubmit)="adicionarJogadorAoElenco()">
+      <div>
+        <label for="salario" class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Salário Semanal
+        </label>
+        <div class="relative mt-2">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm font-bold">R$</span>
+          <input
+            type="text"
+            id="salario"
+            name="salario"
+            [value]="obterValorFormatado(jogadorParaAdicionar!.salario)"
+            (input)="formatarSalarioInput($event)"
+            placeholder="0"
+            class="w-full bg-surface-2 border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-right font-mono focus:border-accent/50 outline-none transition"
+            required
+          >
+        </div>
+        <p class="text-xs text-fg-subtle mt-1">{{ formatarMoeda(jogadorParaAdicionar!.salario) }}</p>
+      </div>
+
+      <div>
+        <label for="valor" class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Valor de Mercado
+        </label>
+        <div class="relative mt-2">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm font-bold">€</span>
+          <input
+            type="text"
+            id="valor"
+            name="valor"
+            [value]="obterValorFormatado(jogadorParaAdicionar!.valor)"
+            (input)="formatarSalarioInput($event)"
+            placeholder="0"
+            class="w-full bg-surface-2 border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-right font-mono focus:border-accent/50 outline-none transition"
+            required
+          >
+        </div>
+        <p class="text-xs text-fg-subtle mt-1">{{ formatarMoeda(jogadorParaAdicionar!.valor) }}</p>
+      </div>
+
+      <div>
+        <label for="multa" class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">
+          Multa Rescisória
+        </label>
+        <div class="relative mt-2">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm font-bold">€</span>
+          <input
+            type="text"
+            id="multa"
+            name="multa"
+            [value]="obterValorFormatado(jogadorParaAdicionar!.multa)"
+            (input)="formatarSalarioInput($event)"
+            placeholder="0"
+            class="w-full bg-surface-2 border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-right font-mono focus:border-accent/50 outline-none transition"
+            required
+          >
+        </div>
+        <p class="text-xs text-fg-subtle mt-1">{{ formatarMoeda(jogadorParaAdicionar!.multa) }}</p>
+      </div>
+
+      <div class="flex justify-end gap-3 pt-2">
+        <button
+          type="button"
+          (click)="fecharModalAdicionar()"
+          class="cursor-pointer bg-fg/5 hover:bg-fg/10 text-fg-muted hover:text-fg font-black uppercase tracking-widest text-xs px-6 py-3 rounded-xl transition-al">
+          Cancelar
+        </button>
+        <button
+          type="submit"
+          class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-8 py-3 rounded-xl transition-all">
+          Confirmar Adição
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL DE RESUMO DO JOGADOR -->
+<div *ngIf="mostrarModalResumo" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-4" (click)="fecharModalResumo()">
+  <div class="bg-surface rounded-2xl p-5 w-full max-w-sm border border-fg/5" (click)="$event.stopPropagation()">
+
+    <div class="flex justify-between items-start mb-4">
+      <div class="flex items-center gap-3">
+        <img
+          [src]="'http://localhost:8080/api/imagem/jogador/' + jogadorParaResumo?.id"
+          [alt]="jogadorParaResumo?.nome"
+          (error)="$event.target.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%231e2130%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%236b7280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E?%3C/text%3E%3C/svg%3E'"
+          class="w-13 h-13 rounded-full object-cover border border-fg/10"
+        />
+        <div>
+          <p class="font-bold text-base">{{ jogadorParaResumo?.nome }}</p>
+          <p class="text-fg-subtle text-xs">{{ jogadorParaResumo?.timeAtual }} · {{ jogadorParaResumo?.nacionalidade }}</p>
+        </div>
+      </div>
+      <button (click)="fecharModalResumo()" class="cursor-pointer text-fg-subtle hover:text-fg transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-4 gap-2 mb-3">
+      <div class="bg-surface-2 rounded-xl p-2 text-center">
+        <p class="text-[10px] text-fg-subtle">Overall</p>
+        <p class="text-lg font-bold text-green-400">{{ jogadorParaResumo?.overall }}</p>
+      </div>
+      <div class="bg-surface-2 rounded-xl p-2 text-center">
+        <p class="text-[10px] text-fg-subtle">Potencial</p>
+        <p class="text-lg font-bold">{{ jogadorParaResumo?.potencial || '—' }}</p>
+      </div>
+      <div class="bg-surface-2 rounded-xl p-2 text-center">
+        <p class="text-[10px] text-fg-subtle">Posição</p>
+        <p class="text-xs font-bold mt-1.5">{{ traduzirPosicao(jogadorParaResumo?.posicao) }}</p>
+      </div>
+      <div class="bg-surface-2 rounded-xl p-2 text-center">
+        <p class="text-[10px] text-fg-subtle">Valor</p>
+        <p class="text-xs font-bold mt-1.5">{{ formatarValorCompacto(jogadorParaResumo!.valor) }}</p>
+      </div>
+    </div>
+
+    <p class="text-fg-subtle text-xs mb-3">Salário {{ formatarValorCompacto(jogadorParaResumo?.salario) }}/semana</p>
+
+    <div class="flex flex-col gap-2 mb-4">
+      <div class="flex items-center gap-2">
+        <span class="text-fg-subtle text-xs w-20">Velocidade</span>
+        <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
+          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.velocidade || 0"></div>
+        </div>
+        <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.velocidade || '—' }}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-fg-subtle text-xs w-20">Drible</span>
+        <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
+          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.drible || 0"></div>
+        </div>
+        <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.drible || '—' }}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-fg-subtle text-xs w-20">Passe</span>
+        <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
+          <div class="h-full bg-accent" [style.width.%]="jogadorParaResumo?.passe || 0"></div>
+        </div>
+        <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.passe || '—' }}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-fg-subtle text-xs w-20">Finalização</span>
+        <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
+          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.finalizacao || 0"></div>
+        </div>
+        <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.finalizacao || '—' }}</span>
+      </div>
+    </div>
+
+    <button
+      (click)="irParaDetalhes(jogadorParaResumo!)"
+      class="cursor-pointer w-full bg-accent hover:bg-accent-hover text-accent-fg font-black uppercase tracking-widest text-xs px-4 py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+      Ver perfil completo 
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <button
+      (click)="abrirModalAdicionar(jogadorParaResumo!); fecharModalResumo()"
+      class="w-full mt-2 bg-fg/5 hover:bg-fg/10 text-fg font-black uppercase tracking-widest text-xs px-4 py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+      <i class="fas fa-plus"></i>
+      Adicionar ao time
+    </button>
+
+  </div>
+</div>

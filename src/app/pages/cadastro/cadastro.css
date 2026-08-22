@@ -1,0 +1,24 @@
+/* 
+   ADICIONE ESTE CÓDIGO NO SEU ARQUIVO styles.css (global) 
+   OU NO CSS DO COMPONENTE USANDO ::ng-deep
+*/
+
+/* 1. Esconde completamente a navegação padrão do PrimeNG que causa os fantasmas na lateral */
+::ng-deep .p-stepper-header, 
+::ng-deep .p-stepper-nav,
+::ng-deep ul[role="tablist"].p-stepper-nav {
+    display: none !important;
+}
+
+/* 2. Garante que o container de painéis não tenha margens ou paddings extras que desalinhem o conteúdo */
+::ng-deep .p-stepper-panels {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* 3. Remove qualquer linha vertical ou marcador de conexão padrão do PrimeNG */
+::ng-deep .p-stepper-separator {
+    display: none !important;
+}

@@ -1,0 +1,250 @@
+<p-toast position="top-right"></p-toast>
+<p-confirmDialog [style]="{ width: '28rem' }" />
+
+<div class="min-h-screen bg-bg text-fg pt-32 pb-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- HEADER -->
+    <header class="pb-6 border-b border-fg/10 mb-8">
+      <h2 class="text-3xl font-black uppercase tracking-tighter">
+        Meu <span class="text-accent">Elenco</span>
+      </h2>
+      <p class="text-fg-subtle mt-1 text-sm font-medium">
+        Gerencie seu time e os jogadores selecionados
+      </p>
+    </header>
+
+    <!-- TIME SELECIONADO -->
+    <div *ngIf="timeSelecionado" class="bg-surface rounded-2xl border border-fg/5 p-6 mb-8">
+      <div class="flex justify-between items-start flex-wrap gap-4 mb-6">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-2xl overflow-hidden flex items-center justify-center flex-shrink-0">
+            <img [src]="timeSelecionado.logo" [alt]="timeSelecionado.nome" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Time Selecionado</p>
+            <p class="text-fg text-xl font-black mt-1">{{ timeSelecionado.nome }}</p>
+          </div>
+        </div>
+        <div class="flex justify-between items-start flex-wrap gap-4 mb-6">
+          <button routerLink="/jogadores"
+            class="cursor-pointer bg-accent/10 hover:bg-accent/20 border border-accent/20 text-accent font-black uppercase tracking-widest text-xs px-4 py-3 rounded-xl transition">
+            Adicionar Jogadores
+          </button>
+          <button (click)="limparElenco()"
+            class="cursor-pointer bg-danger/10 hover:bg-danger/20 border border-danger/20 text-danger font-black uppercase tracking-widest text-xs px-4 py-3 rounded-xl transition">
+            Limpar Time e Elenco
+          </button>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">Orçamento do Time</p>
+          <p class="text-2xl font-black text-fg mt-2 tracking-tight">{{ formatarMoeda(timeSelecionado.orcamento) }}</p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">Gastos com Salários</p>
+          <p class="text-2xl font-black mt-2 tracking-tight"
+            [ngClass]="timeSelecionado.orcamento < totalGastos ? 'text-danger' : 'text-fg'">
+            {{ formatarMoeda(totalGastos) }}
+          </p>
+        </div>
+
+        <div class="bg-bg rounded-3xl border border-fg/10 p-5">
+          <p class="text-fg-subtle text-[10px] font-bold uppercase tracking-widest">Disponível</p>
+          <p class="text-2xl font-black mt-2 tracking-tight"
+            [ngClass]="(timeSelecionado.orcamento - totalGastos) < 0 ? 'text-danger' : 'text-accent'">
+            {{ formatarMoeda(timeSelecionado.orcamento - totalGastos) }}
+          </p>
+        </div>
+      </div>
+
+      <p *ngIf="timeSelecionado.orcamento < totalGastos"
+        class="text-danger text-xs font-bold uppercase tracking-widest mt-4 flex items-center gap-2">
+        <i class="fas fa-triangle-exclamation"></i>
+        Atenção: o total de gastos com salários excede o orçamento do seu time!
+      </p>
+    </div>
+
+    <!-- FORMAÇÃO TÁTICA -->
+    <div *ngIf="timeSelecionado" class="bg-surface rounded-2xl border border-fg/5 p-6 mb-8">
+      <div class="flex justify-between items-center flex-wrap gap-4 mb-6">
+        <div>
+          <h3 class="text-sm font-black uppercase tracking-widest text-fg-muted">
+            Formação Tática
+          </h3>
+          <p class="text-fg-subtle text-xs mt-1">
+            {{ titularesEscalados }} de 11 posições preenchidas automaticamente pela posição de cada jogador
+          </p>
+        </div>
+
+        <!-- SELETOR DE FORMAÇÃO -->
+        <div class="flex gap-2 flex-wrap">
+          <button *ngFor="let formacao of formacoesDisponiveis" (click)="selecionarFormacao(formacao)"
+            class="cursor-pointer px-4 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all"
+            [ngClass]="formacaoSelecionada === formacao
+              ? 'bg-accent text-accent-fg scale-[1.03]'
+              : 'bg-fg/5 text-fg-muted hover:bg-fg/10 hover:text-fg'">
+            {{ formacao }}
+          </button>
+        </div>
+      </div>
+
+      <!-- CAMPO -->
+      <div class="campo-futebol relative w-full rounded-2xl overflow-hidden border border-fg/10"
+        style="aspect-ratio:16/9;">
+
+        <!-- Listras do gramado -->
+        <div *ngFor="let listra of [1,2,3,4,5,6,7,8]" class="flex-1 listra-campo"
+          [class.listra-clara]="listra % 2 === 0">
+        </div>
+
+        <!-- Linhas do campo -->
+        <div class="absolute inset-4 border-2 border-[color:var(--campo-linha)] rounded-md"></div>
+        <div class="absolute top-4 bottom-4 left-1/2 border-l-2 border-[color:var(--campo-linha)] -translate-x-1/2">
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-[color:var(--campo-linha)] rounded-full -translate-x-1/2 -translate-y-1/2">
+        </div>
+
+        <!-- Centro -->
+        <div
+          class="absolute top-1/2 left-1/2 w-2 h-2 bg-[color:var(--campo-linha)] rounded-full -translate-x-1/2 -translate-y-1/2">
+        </div>
+        <!-- Grande área esquerda (defesa) -->
+        <div
+          class="absolute top-1/2 left-4 w-[14%] h-[45%] border-2 border-[color:var(--campo-linha)] -translate-y-1/2 border-l-0">
+        </div>
+        <!-- Grande área direita (ataque) -->
+        <div
+          class="absolute top-1/2 right-4 w-[14%] h-[45%] border-2 border-[color:var(--campo-linha)] -translate-y-1/2 border-r-0">
+        </div>
+
+        <!-- JOGADORES -->
+        <div *ngFor="let slot of slotsDaFormacao"
+          class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1" [style.top.%]="slot.top"
+          [style.left.%]="slot.left">
+
+          <div *ngIf="slot.jogador" class="flex flex-col items-center gap-1">
+            <div
+              class="foto-jogador w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-accent bg-surface">
+              <img [src]="slot.jogador.foto" [alt]="slot.jogador.nome" class="w-full h-full object-cover" />
+            </div>
+            <span class="nome-jogador text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+              {{ slot.jogador.nome }}
+            </span>
+          </div>
+
+          <div *ngIf="!slot.jogador" class="flex flex-col items-center gap-1">
+            <div
+              class="w-11 h-11 md:w-12 md:h-12 rounded-full border-2 border-dashed border-[color:var(--campo-posicao-bg)] flex items-center justify-center bg-[color:var(--campo-posicao-bg)]">
+              <i class="fas fa-user text-[color:var(--campo-posicao-text)] text-sm"></i>
+            </div>
+            <span
+              class="posicao-vazia text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full whitespace-nowrap">
+              {{ slot.posicao }}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p *ngIf="titularesEscalados < 11" class="text-fg-subtle text-xs mt-4">
+        Adicione mais jogadores das posições em falta (círculos tracejados) para completar a escalação.
+      </p>
+    </div>
+
+    <!-- ESTADO: SEM TIME -->
+    <div *ngIf="!timeSelecionado" class="text-center py-12 bg-surface rounded-2xl border border-fg/5 text-fg-subtle">
+      Nenhum time selecionado. Vá para a página de
+      <a routerLink="/times" class="text-accent hover:text-accent font-bold transition">Times</a>
+      para escolher um.
+    </div>
+
+    <!-- TABELA DE JOGADORES NO ELENCO -->
+    <div *ngIf="elenco.length > 0" class="bg-surface rounded-2xl border border-fg/5 overflow-hidden">
+      <h3 class="text-sm font-black uppercase tracking-widest text-fg-muted p-6 border-b border-fg/10">
+        Jogadores no Elenco
+      </h3>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-surface-2 border-b border-fg/10">
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Foto</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Nome</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Posição
+              </th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Time
+                Original</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Salário
+              </th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Valor</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Multa</th>
+              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Ações</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let jogador of elenco; let i = index" class="border-b border-fg/10 transition hover:bg-accent/5"
+              [class.bg-surface-2]="i % 2 === 1">
+              <td class="px-6 py-4">
+                <img [src]="jogador.foto" [alt]="jogador.nome"
+                  class="w-10 h-10 rounded-full object-cover border border-fg/10" />
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-fg font-black">{{ jogador.nome }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <span
+                  class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-purple-500/10 text-purple-400">
+                  {{ traduzirPosicao(jogador.posicao) }}
+                </span>
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm">{{ jogador.timeOriginal }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm font-medium">{{ formatarMoeda(jogador.salario) }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm font-medium">{{ formatarMoeda(jogador.valor) }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <span class="text-fg-muted text-sm font-medium">{{ formatarMoeda(jogador.multa) }}</span>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex items-center gap-3">
+
+                  <button (click)="definirTitular(jogador)"
+                    class="cursor-pointer flex items-center justify-center h-11 px-4 bg-accent/10 hover:bg-accent/20 border border-accent/20 text-accent font-black uppercase tracking-widest text-xs rounded-xl transition">
+                    Definir titular
+                  </button>
+
+                  <button (click)="removerJogador(jogador.id)"
+                    class="cursor-pointer flex items-center justify-center h-11 w-11 bg-danger/10 hover:bg-danger/20 border border-danger/20 text-danger rounded-xl transition">
+                    <i class="fas fa-trash text-sm"></i>
+                  </button>
+
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ESTADO: ELENCO VAZIO -->
+    <div *ngIf="elenco.length === 0 && timeSelecionado"
+      class="text-center py-12 bg-surface rounded-2xl border border-fg/5 text-fg-subtle">
+      Seu elenco está vazio. Vá para a página de
+      <a routerLink="/jogadores" class="text-accent hover:text-accent font-bold transition">Jogadores</a>
+      para adicionar.
+    </div>
+
+  </div>
+</div>

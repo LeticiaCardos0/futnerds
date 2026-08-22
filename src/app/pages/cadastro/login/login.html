@@ -1,0 +1,82 @@
+<div class="min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md rounded-3xl border border-fg/5 bg-surface p-8 md:p-12 shadow-2xl">
+    
+        <!-- Header -->
+        <div class="text-center mb-10">
+          <h1 class="text-3xl md:text-4xl font-black uppercase tracking-tighter text-fg mb-2">
+            Login <span class="text-accent">FUTNERDS</span>
+          </h1>
+          <p class="text-fg-subtle text-sm font-medium">Inicie sua jornada com o FutNerds</p>
+        </div>
+    
+        <!-- div -->
+        <div class="flex flex-col gap-5">
+    
+          <!-- E-mail -->
+          <div class="flex flex-col gap-2">
+            <label for="campo-email" class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle ml-1">
+              Digite seu E-mail
+            </label>
+            <div class="relative group">
+              <i class="pi pi-envelope absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm transition-colors group-focus-within:text-accent"></i>
+              <input
+                type="email"
+                id="campo-email"
+                required
+                placeholder="treinador@futnerds.com"
+                class="w-full bg-surface-2 border border-fg/5 text-fg rounded-xl p-4 pl-11 text-sm placeholder:text-fg-subtle outline-none transition focus:border-accent/50"
+              />
+            </div>
+          </div>
+    
+          <!-- Senha -->
+          <div class="flex flex-col gap-2">
+            <label for="campo-senha" class="text-[10px] font-bold uppercase tracking-widest text-fg-subtle ml-1">
+              Digite sua Senha
+            </label>
+            <div class="relative group">
+              <i class="pi pi-lock absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm transition-colors group-focus-within:text-accent"></i>
+              <input
+                type="password"
+                id="campo-senha"
+                required
+                placeholder="••••••••"
+                class="w-full bg-surface-2 border border-fg/5 text-fg rounded-xl p-4 pl-11 text-sm placeholder:text-fg-subtle outline-none transition focus:border-accent/50"
+              />
+            </div>
+          </div>
+    
+          <!-- Links -->
+          <div class="flex flex-col gap-3 mt-1">
+            <div class="flex items-center gap-2">
+              <span class="text-fg-subtle text-xs font-medium">Não tem conta?</span>
+              <a routerLink="/cadastro" class="text-[11px] font-black uppercase tracking-widest text-accent hover:text-accent transition-colors">
+                Crie sua conta
+              </a>
+            </div>
+            <a routerLink="/redefinir-senha" class="text-[10px] font-black uppercase tracking-widest text-fg-subtle hover:text-accent transition-colors">
+              Esqueceu seu usuário ou senha?
+            </a>
+          </div>
+    
+          <!-- Botão -->
+          <div class="flex justify-end mt-2">
+            <button
+              routerLink="/"
+              class="bg-accent hover:bg-accent-hover active:scale-[0.98] hover:scale-[1.02] text-accent-fg font-black uppercase tracking-widest text-xs px-10 py-4 rounded-xl transition-all"
+            >
+              Acessar meu Painel →
+            </button>
+          </div>
+    
+        </div>
+    
+        <!-- Footer -->
+        <div class="mt-10 pt-6 border-t border-fg/5 text-center">
+          <p class="text-[9px] font-bold uppercase tracking-[0.3em] text-fg-subtle">
+            FutNerds &copy; 2026 — O Vestiário te espera
+          </p>
+        </div>
+    
+      </div>
+</div>

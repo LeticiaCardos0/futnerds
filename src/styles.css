@@ -1,3 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+@import "primeicons/primeicons.css";
+@import "@fortawesome/fontawesome-free/css/fontawesome.css";
+@import "@fortawesome/fontawesome-free/css/solid.css";
+
+
+@theme {
+  /* ===== DARK THEME (padrão) ===== */
+  --color-bg: #030609;
+  --color-surface: #0a0b0f;
+  --color-surface-2: #161920;
+  --color-surface-3: #1e2130;
+  --color-border-c: rgba(255, 255, 255, 0.1);
+
+  /* Text colors */
+  --color-fg: #f9fafb;
+  --color-fg-muted: #d1d5db;
+  --color-fg-subtle: #9ca3af;
+
+  /* Accent (verde) */
+  --color-accent: #4ade80;
+  --color-accent-strong: #16a34a;
+  --color-accent-fg: #030609;
+
+  /* Semantic */
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+  --color-info: #60a5fa;
+
+      --campo-bg: radial-gradient(
+      ellipse at center,
+      #123a1e 0%,
+      #0d2b16 70%,
+      #0a220f 100%
+  );
+
+  /* Linhas sempre brancas */
+  --campo-linha: rgba(255,255,255,.85);
+
+  /* Listras do gramado */
+  --campo-listra-clara: rgba(255,255,255,.03);
+
+  /* Nome do jogador */
+  --campo-nome-bg: rgba(0,0,0,.60);
+  --campo-nome-text: #fff;
+
+  /* Posição vazia */
+  --campo-posicao-bg: rgba(0,0,0,.40);
+  --campo-posicao-text: rgba(255,255,255,.55);
+
+  /* Sombra da foto */
+  --campo-sombra-foto: 0 10px 18px rgba(0,0,0,.45);
+}
+
+@layer base {
+  :root {
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-surface-2: #e9ecef;
+    --color-surface-3: #dee2e6;
+    --color-border-c: rgba(0, 0, 0, 0.08);
+
+    --color-fg: #111827;
+    --color-fg-muted: #4b5563;
+    --color-fg-subtle: #6b7280;
+
+    --color-accent: #16a34a;
+    --color-accent-strong: #15803d;
+    --color-accent-fg: #ffffff;
+
+    --color-danger: #dc2626;
+    --color-warning: #d97706;
+    --color-info: #2563eb;
+  }
+
+  .dark {
+    --color-bg: #030609;
+    --color-surface: #0a0b0f;
+    --color-surface-2: #161920;
+    --color-surface-3: #1e2130;
+    --color-border-c: rgba(255, 255, 255, 0.1);
+
+    --color-fg: #f9fafb;
+    --color-fg-muted: #d1d5db;
+    --color-fg-subtle: #9ca3af;
+
+    --color-accent: #4ade80;
+    --color-accent-strong: #16a34a;
+    --color-accent-fg: #030609;
+
+    --color-danger: #f87171;
+    --color-warning: #fbbf24;
+    --color-info: #60a5fa;
+  }
+
+  * {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+}

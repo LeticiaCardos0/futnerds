@@ -1,0 +1,160 @@
+<!-- 
+  AJUSTE REALIZADO:
+  1. Removida a classe 'border border-fg/5' e 'bg-[#0d0f14]' do container interno.
+  2. O conteúdo agora flui diretamente sobre o fundo principal, removendo a borda indicada.
+-->
+
+<div class="min-h-screen bg-bg flex items-center justify-center px-4 py-10 font-sans">
+  <div class="w-full max-w-5xl rounded-3xl border border-fg/5 bg-surface p-6 md:p-10 shadow-2xl">
+    
+    <!-- Título -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter text-fg">
+        Crie sua Conta no <span class="text-accent">FUTNERDS</span>
+      </h2>
+      <p class="text-fg-subtle mt-2 text-sm font-medium">Siga os passos para configurar seu perfil de treinador</p>
+    </div>
+
+    <!-- TIMELINE MANUAL -->
+    <div class="relative mb-16 max-w-4xl mx-auto">
+      <!-- Linha de Fundo -->
+      <div class="absolute top-7 left-[10%] right-[10%] h-[2px] bg-fg/5">
+        <!-- Progresso Verde Dinâmico -->
+        <div 
+          class="h-full bg-accent transition-all duration-700 ease-in-out shadow-[0_0_15px_rgba(34,197,94,0.4)]"
+          [style.width]="activeStep === 1 ? '0%' : activeStep === 2 ? '50%' : '100%'"
+        ></div>
+      </div>
+
+      <div class="relative flex items-center justify-between">
+        <!-- PASSO 1 -->
+        <div class="flex flex-col items-center z-10">
+          <button (click)="activeStep = 1" class="group focus:outline-none">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 border-2"
+              [ngClass]="{
+                'bg-accent border-accent shadow-[0_0_25px_rgba(34,197,94,0.3)]': activeStep >= 1,
+                'bg-surface-2 border-fg/10': activeStep < 1
+              }">
+              <i class="pi pi-user text-xl" [class.text-accent-fg]="activeStep >= 1" [class.text-fg-subtle]="activeStep < 1"></i>
+            </div>
+            <span class="mt-4 text-[10px] font-black uppercase tracking-[0.2em]" 
+              [class.text-accent]="activeStep >= 1" [class.text-fg-subtle]="activeStep < 1">Dados</span>
+          </button>
+        </div>
+
+        <!-- PASSO 2 -->
+        <div class="flex flex-col items-center z-10">
+          <button (click)="activeStep = 2" class="group focus:outline-none">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 border-2"
+              [ngClass]="{
+                'bg-accent border-accent shadow-[0_0_25px_rgba(34,197,94,0.3)]': activeStep >= 2,
+                'bg-surface-2 border-fg/10': activeStep < 2
+              }">
+              <i class="pi pi-star text-xl" [class.text-accent-fg]="activeStep >= 2" [class.text-fg-subtle]="activeStep < 2"></i>
+            </div>
+            <span class="mt-4 text-[10px] font-black uppercase tracking-[0.2em]" 
+              [class.text-accent]="activeStep >= 2" [class.text-fg-subtle]="activeStep < 2">Interesses</span>
+          </button>
+        </div>
+
+        <!-- PASSO 3 -->
+        <div class="flex flex-col items-center z-10">
+          <button (click)="activeStep = 3" class="group focus:outline-none">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 border-2"
+              [ngClass]="{
+                'bg-accent border-accent shadow-[0_0_25px_rgba(34,197,94,0.3)]': activeStep >= 3,
+                'bg-surface-2 border-fg/10': activeStep < 3
+              }">
+              <i class="pi pi-check text-xl" [class.text-accent-fg]="activeStep >= 3" [class.text-fg-subtle]="activeStep < 3"></i>
+            </div>
+            <span class="mt-4 text-[10px] font-black uppercase tracking-[0.2em]" 
+              [class.text-accent]="activeStep >= 3" [class.text-fg-subtle]="activeStep < 3">Finalizado</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- p-stepper (Sem bordas internas agora) -->
+    <p-stepper [(value)]="activeStep" class="bg-transparent">
+      <p-step-panels class="mx-auto max-w-4xl">
+        
+        <!-- PASSO 1 -->
+        <p-step-panel [value]="1">
+          <ng-template #content let-activateCallback="activateCallback">
+            <!-- Removida a borda e fundo cinza daqui -->
+            <div class="max-w-md mx-auto flex flex-col gap-6 py-4">
+              <h3 class="text-center text-xl font-black text-fg uppercase tracking-tight">Seus Dados</h3>
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold uppercase text-fg-subtle ml-1">Nome Completo</label>
+                <input pInputText placeholder="Ex: Pep Guardiola" class="w-full !bg-surface-2 !border-fg/5 !text-fg !rounded-xl !p-4 focus:!border-accent/50 transition-all" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold uppercase text-fg-subtle ml-1">E-mail Profissional</label>
+                <input pInputText type="email" placeholder="treinador@futnerds.com" class="w-full !bg-surface-2 !border-fg/5 !text-fg !rounded-xl !p-4 focus:!border-accent/50 transition-all" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-[10px] font-bold uppercase text-fg-subtle ml-1">Senha</label>
+                <p-password [toggleMask]="true" [feedback]="false" placeholder="••••••••" class="w-full" inputStyleClass="w-full !bg-surface-2 !border-fg/5 !text-fg !rounded-xl !p-4 focus:!border-accent/50 transition-all" />
+              </div>
+              <div class="pt-4 flex justify-end">
+                <button (click)="activateCallback(2)" class="bg-accent px-10 py-4 rounded-xl font-black text-accent-fg text-xs uppercase tracking-widest hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  Próximo Passo →
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </p-step-panel>
+
+        <!-- PASSO 2 -->
+        <p-step-panel [value]="2">
+          <ng-template #content let-activateCallback="activateCallback">
+            <div class="max-w-lg mx-auto flex flex-col gap-8 py-4">
+              <div class="text-center">
+                <h3 class="text-xl font-black text-fg uppercase tracking-tight">Interesses</h3>
+                <p class="text-[10px] text-fg-subtle uppercase font-bold tracking-widest mt-2">Configure sua identidade visual no campo</p>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                  <label class="text-[10px] font-bold uppercase text-fg-subtle ml-1">Apelido (Nick)</label>
+                  <input pInputText placeholder="Ex: Coringa" class="w-full !bg-surface-2 !border-fg/5 !text-fg !rounded-xl !p-4 focus:!border-accent/50 transition-all" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-[10px] font-bold uppercase text-fg-subtle ml-1">Time do Coração</label>
+                  <input pInputText placeholder="Ex: Corinthians" class="w-full !bg-surface-2 !border-fg/5 !text-fg !rounded-xl !p-4 focus:!border-accent/50 transition-all" />
+                </div>
+              </div>
+              <div class="flex justify-between pt-4 items-center">
+                <button (click)="activateCallback(1)" class="text-fg-subtle text-[10px] font-black uppercase tracking-widest hover:text-fg transition-colors">
+                  ← Voltar
+                </button>
+                <button (click)="activateCallback(3)" class="bg-accent px-10 py-4 rounded-xl font-black text-accent-fg text-xs uppercase tracking-widest hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] transition-all">
+                  Finalizar ✓
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </p-step-panel>
+
+        <!-- PASSO 3 -->
+        <p-step-panel [value]="3">
+          <ng-template #content>
+            <div class="flex flex-col items-center gap-10 py-12">
+              <div class="h-28 w-28 rounded-full border-2 border-accent/20 bg-accent/10 flex items-center justify-center shadow-[0_0_40px_rgba(34,197,94,0.15)] animate-pulse">
+                <i class="pi pi-check-circle text-8xl text-accent"></i>
+              </div>
+              <div class="text-center">
+                <h3 class="text-4xl md:text-5xl font-black text-fg uppercase tracking-tighter">CONTRATADO!</h3>
+                <p class="text-fg-subtle mt-4 max-w-sm mx-auto text-sm leading-relaxed">Seu perfil foi criado com sucesso. O vestiário já está à sua espera, treinador.</p>
+              </div>
+              <button routerLink="/" class="bg-accent px-14 py-5 rounded-2xl font-black text-accent-fg uppercase tracking-widest text-sm hover:bg-accent-hover hover:scale-[1.05] active:scale-[0.95] transition-all shadow-xl">
+                Acessar meu Painel
+              </button>
+            </div>
+          </ng-template>
+        </p-step-panel>
+
+      </p-step-panels>
+    </p-stepper>
+
+  </div>
+</div>

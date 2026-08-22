@@ -1,0 +1,140 @@
+<div class="min-h-screen bg-bg flex items-center justify-center px-4">
+
+  <div class="w-full max-w-2xl bg-surface/90 backdrop-blur-md border border-fg/10 rounded-3xl p-12 shadow-2xl">
+
+    <!-- Título -->
+    <div class="text-center mb-10">
+
+<h1 class="text-3xl md:text-4xl font-black uppercase tracking-tighter text-fg mb-2">
+            Redefinição de <span class="text-accent">Senha</span>
+          </h1>
+
+      <p class="text-fg-muted text-base">
+        Crie uma nova senha para acessar sua conta.
+      </p>
+    </div>
+
+    <form class="space-y-8 max-w-xl mx-auto">
+
+      <!-- Nova Senha -->
+      <div>
+
+        <label
+          class="block text-sm font-bold uppercase tracking-widest text-fg-subtle mb-3">
+          Nova Senha
+        </label>
+
+        <div class="relative">
+
+          <input
+            [type]="mostrarSenha ? 'text' : 'password'"
+            placeholder="Digite sua nova senha"
+            class="w-full bg-surface-2
+                   border border-fg/10
+                   rounded-2xl
+                   px-5 py-4
+                   text-fg
+                   placeholder:text-fg-subtle
+                   outline-none
+                   focus:border-accent/50
+                   transition">
+
+          <button
+            type="button"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-fg-subtle hover:text-fg">
+
+            <i class="fas fa-eye"></i>
+
+          </button>
+
+        </div>
+
+        <!-- Regras -->
+        <div class="mt-4 space-y-2">
+
+          <div class="flex items-center gap-2 text-xs text-fg-subtle">
+            <i class="fas fa-circle-info"></i>
+            <span>Pelo menos 1 caractere especial (@#$%)</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-fg-subtle">
+            <i class="fas fa-circle-info"></i>
+            <span>Pelo menos 1 letra maiúscula (A-Z)</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-fg-subtle">
+            <i class="fas fa-circle-info"></i>
+            <span>As senhas devem ser iguais</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-accent">
+            <i class="fas fa-circle-check"></i>
+            <span>No mínimo 8 caracteres</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Confirmar Senha -->
+      <div>
+
+        <label
+          class="block text-sm font-bold uppercase tracking-widest text-fg-subtle mb-3">
+          Confirmar Nova Senha
+        </label>
+
+        <div class="relative">
+
+          <input
+            [type]="mostrarConfirmacao ? 'text' : 'password'"
+            placeholder="Confirme sua nova senha"
+            class="w-full bg-surface-2
+                   border border-fg/10
+                   rounded-2xl
+                   px-5 py-4
+                   text-fg
+                   placeholder:text-fg-subtle
+                   outline-none
+                   focus:border-accent/50
+                   transition">
+
+          <button
+            type="button"
+            class="absolute right-4 top-1/2 -translate-y-1/2 text-fg-subtle hover:text-fg">
+
+            <i class="fas fa-eye"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- Botão -->
+      <button
+      routerLink="\"
+        type="submit"
+        class="w-full
+               bg-accent
+               hover:bg-accent-hover
+               hover:scale-[1.01]
+               active:scale-[0.99]
+               text-accent-fg
+               font-black
+               uppercase
+               tracking-widest
+               text-sm
+               py-4
+               rounded-2xl
+               transition-all">
+
+        Salvar Nova Senha
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
