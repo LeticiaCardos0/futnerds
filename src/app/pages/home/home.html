@@ -1,275 +1,307 @@
-<section
-  class="relative min-h-[75vh] flex items-center overflow-hidden bg-bg">
-
-  <!-- Grid -->
-  <div
-    class="absolute inset-0 opacity-[0.02] pointer-events-none
-           bg-[linear-gradient(rgba(34,197,94,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.35)_1px,transparent_1px)]
-           bg-[size:80px_80px]">
+<section class="fn-home">
+  <div class="fn-marquee" data-marquee-wrap>
+    <div data-marquee class="fn-marquee-track">
+      <span>Wonderkid da semana · L. Yamal · OVR 84 / POT 94</span><span>Base atualizada há 2 h</span><span>+312 jogadores adicionados esta semana</span><span>Nova liga: Eredivisie</span><span>Top valorização · J. Musiala +11 M</span>
+      <span>Wonderkid da semana · L. Yamal · OVR 89 / POT 94</span><span>Base atualizada há 2 h</span><span>+312 jogadores adicionados esta semana</span><span>Nova liga: Eredivisie</span><span>Top valorização · J. Musiala +11 M</span>
+    </div>
   </div>
 
-  <!-- Glow -->
-  <div
-    class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.06),transparent_55%)]">
-  </div>
+  <!-- HERO -->
+  <div data-hero class="fn-hero">
+    <div data-parallax="0.4" class="fn-hero-video-layer">
+      <div class="fn-hero-radial"></div>
+      <video data-hero-video autoplay muted loop playsinline preload="auto" [src]="heroVideoSrc" class="fn-hero-video"></video>
+    </div>
+    <div class="fn-hero-multiply"></div>
+    <div class="fn-hero-vignette"></div>
 
-  <div class="max-w-7xl mx-auto px-5 relative z-10 w-full">
+    <div data-parallax="0.14" class="fn-hero-lines">
+      <div class="fn-hero-line fn-hero-line--left"></div>
+      <div class="fn-hero-line fn-hero-line--right"></div>
+      <div class="fn-hero-vlabel fn-hero-vlabel--left"></div>
+      <div class="fn-hero-vlabel fn-hero-vlabel--right"></div>
+    </div>
 
-    <div class="max-w-5xl mx-auto text-center">
-
-      <div
-        class="flex flex-col md:flex-row items-center justify-center gap-5 mb-8">
-
-        <img
-          src="logo.png"
-          alt="FUTNERDS"
-          class="w-28 h-28 md:w-32 md:h-32 object-contain">
-
-        <h1
-          class="text-6xl md:text-8xl font-black tracking-tight leading-none">
-
-          <span class="text-fg">FUT</span>
-          <span class="text-accent">NERDS</span>
-
-        </h1>
-
+    <div data-parallax="-0.16" data-hero-fade class="fn-hero-content">
+      <div data-reveal class="fn-pill">
+        <span class="fn-pulse-dot"></span>Comunidade ativa de Modo Carreira
       </div>
+      <div data-split class="fn-hero-title">FUTNERDS</div>
+      <div data-reveal data-delay="420" class="fn-hero-rule"></div>
+      <div data-reveal data-delay="470" class="fn-hero-subtitle">O universo do Modo Carreira</div>
+      <p data-reveal data-delay="520" class="fn-hero-desc">Dados de jogadores, times e ligas reunidos, comparados e atualizados por quem joga carreira a sério.</p>
+      <div data-reveal data-delay="580" class="fn-hero-actions">
+        <a routerLink="/jogadores" data-magnet class="fn-btn-primary">
+          <span class="ms">person_search</span>Explorar jogadores
+        </a>
+        <a routerLink="/times" data-magnet class="fn-btn-secondary">
+          <span class="ms">shield</span>Explorar times
+        </a>
+      </div>
+    </div>
 
-      <p class="text-2xl md:text-3xl text-fg-muted">
-        Análises e estratégias para
-      </p>
+    <div data-parallax="-0.06" class="fn-hero-corner fn-hero-corner--left">
+      <div class="fn-hero-corner-row"><span class="fn-pulse-dot fn-pulse-dot--sm"></span>Sync ativo · 18.420 fichas</div>
+      <div class="fn-hero-corner-dim">Latência 42 ms · nó SA-1</div>
+    </div>
+    <div data-parallax="-0.06" class="fn-hero-corner fn-hero-corner--right">
+      <div>Temporada 2026/27</div>
+      <div class="fn-hero-corner-dim">63 ligas · 724 clubes</div>
+    </div>
 
-      <p
-        class="text-3xl md:text-4xl font-bold text-fg mt-3 mb-12">
-        elevar seu jogo ao próximo nível
-      </p>
+    <div class="fn-scroll-cue">
+      Role para explorar
+      <span class="ms fn-scroll-cue-icon">keyboard_arrow_down</span>
+    </div>
+  </div>
 
-      <!-- CTA -->
-      <a
-        routerLink="/jogadores"
-        class="inline-flex items-center gap-3
-               px-10 py-5
-               bg-accent
-               text-accent-fg
-               font-bold
-               rounded-2xl
-               hover:bg-accent-hover
-               hover:scale-105
-               transition-all duration-300
-               shadow-[0_0_30px_rgba(34,197,94,0.25)]">
+  <!-- STATS -->
+  <div class="fn-stats">
+    <div data-reveal data-delay="0" class="fn-stat-card">
+      <div class="fn-stat-label"><span class="ms fn-stat-icon">groups</span>Jogadores analisados</div>
+      <div class="fn-stat-value"><span data-count="18420">0</span></div>
+      <div class="fn-stat-track"><div data-bar="88" class="fn-stat-bar"></div></div>
+    </div>
+    <div data-reveal data-delay="90" class="fn-stat-card">
+      <div class="fn-stat-label"><span class="ms fn-stat-icon">shield</span>Times monitorados</div>
+      <div class="fn-stat-value"><span data-count="724">0</span></div>
+      <div class="fn-stat-track"><div data-bar="64" class="fn-stat-bar"></div></div>
+    </div>
+    <div data-reveal data-delay="180" class="fn-stat-card">
+      <div class="fn-stat-label"><span class="ms fn-stat-icon">sports_esports</span>Ligas cadastradas</div>
+      <div class="fn-stat-value"><span data-count="63">0</span></div>
+      <div class="fn-stat-track"><div data-bar="42" class="fn-stat-bar"></div></div>
+    </div>
+    <div data-reveal data-delay="270" class="fn-stat-card fn-stat-card--last">
+      <div class="fn-stat-label"><span class="ms fn-stat-icon">forum</span>Comunidade</div>
+      <div class="fn-stat-value"><span data-count="12900" data-format="k">0</span></div>
+      <div class="fn-stat-track"><div data-bar="76" class="fn-stat-bar"></div></div>
+    </div>
+  </div>
 
-        Ver Jogadores →
-
+  <!-- BENTO -->
+  <div class="fn-section">
+    <div data-reveal class="fn-section-head">
+      <div>
+       <div class="fn-section-title">Explore o universo</div>
+      </div>
+      <a routerLink="/jogadores" class="fn-link-arrow">Ver tudo <span class="ms">arrow_forward</span></a>
+    </div>
+    <div class="fn-bento-grid">
+      <a routerLink="/jogadores" data-reveal data-delay="0" data-tilt class="fn-bento-card fn-bento-card--lg">
+        <div data-zoom data-parallax-in="0.06" class="fn-media-wrap">
+          <img [src]="imgBentoJogadores" alt="Jogadores em campo" class="fn-media-img" />
+        </div>
+        <div class="fn-bento-scrim"></div>
+        <div class="fn-bento-copy">
+          <div class="fn-bento-icon"><span class="ms">person_search</span></div>
+          <div class="fn-bento-title">Jogadores</div>
+          <p class="fn-bento-desc">Atributos, potencial, valor de mercado e evolução por temporada.</p>
+          <div class="fn-bento-cta">Explorar <span class="ms">arrow_forward</span></div>
+        </div>
+        <div class="fn-corner fn-corner--tl"></div>
+        <div class="fn-corner fn-corner--br"></div>
       </a>
-
-      <!-- Stats -->
-      <div
-        class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-
-        <div
-          class="bg-surface/70 backdrop-blur-sm
-                 border border-surface-3
-                 rounded-xl p-5">
-
-          <div class="text-3xl font-black text-accent">
-            657+
-          </div>
-
-          <div class="text-sm text-fg-muted">
-            Jogadores
-          </div>
-
+      <a routerLink="/times" data-reveal data-delay="90" data-tilt class="fn-bento-card fn-bento-card--md">
+        <div data-zoom data-parallax-in="0.06" class="fn-media-wrap">
+          <img [src]="imgBentoTimes" alt="Arquibancada / torcida" class="fn-media-img" />
         </div>
-
-        <div
-          class="bg-surface/70 backdrop-blur-sm
-                 border border-surface-3
-                 rounded-xl p-5">
-
-          <div class="text-3xl font-black text-accent">
-            100+
-          </div>
-
-          <div class="text-sm text-fg-muted">
-            Clubes
-          </div>
-
+        <div class="fn-bento-scrim"></div>
+        <div class="fn-bento-copy">
+          <div class="fn-bento-icon"><span class="ms">shield</span></div>
+          <div class="fn-bento-title">Times</div>
+          <p class="fn-bento-desc">Elenco, orçamento, folha salarial e prestígio de 724 clubes.</p>
+          <div class="fn-bento-cta">Explorar <span class="ms">arrow_forward</span></div>
         </div>
+      </a>
+      <!-- Troque os 3 blocos .fn-mini-card por estes: -->
 
-        <div
-          class="bg-surface/70 backdrop-blur-sm
-                 border border-surface-3
-                 rounded-xl p-5">
+<!-- Troque os 3 blocos .fn-mini-card por estes: -->
 
-          <div class="text-3xl font-black text-accent">
-            FUT
-          </div>
-
-          <div class="text-sm text-fg-muted">
-            Estratégias
-          </div>
-
-        </div>
-
-        <div
-          class="bg-surface/70 backdrop-blur-sm
-                 border border-surface-3
-                 rounded-xl p-5">
-
-          <div class="text-3xl font-black text-accent">
-            24/7
-          </div>
-
-          <div class="text-sm text-fg-muted">
-            Atualizações
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
+<a routerLink="/jogadores" [queryParams]="{ idadeMax: 21, potencialMin: 85 }" data-reveal data-delay="170" data-tilt class="fn-mini-card">
+  <div data-parallax-in="0.05" class="fn-media-wrap">
+    <img [src]="imgWonderkidsCard" alt="Wonderkids" class="fn-media-img" />
+  </div>
+  <div class="fn-mini-scrim"></div>
+  <div class="fn-mini-body">
+    <div class="fn-mini-icon-badge"><span class="ms">bolt</span></div>
+    <div class="fn-mini-title">Wonderkids</div>
+    <p class="fn-mini-desc">Sub-21 com potencial 85+, filtrados por posição e preço.</p>
+    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
+  </div>
+</a>
+<!-- TODO: sem tela de comparador de jogadores ainda no projeto — card fica sem navegação -->
+<div data-reveal data-delay="230" data-tilt class="fn-mini-card">
+  <div data-parallax-in="0.05" class="fn-media-wrap">
+    <img [src]="imgComparadorCard" alt="Comparador" class="fn-media-img" />
+  </div>
+  <div class="fn-mini-scrim"></div>
+  <div class="fn-mini-body">
+    <div class="fn-mini-icon-badge"><span class="ms">compare_arrows</span></div>
+    <div class="fn-mini-title">Comparador</div>
+    <p class="fn-mini-desc">Até quatro jogadores frente a frente, atributo por atributo.</p>
+    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
+  </div>
+</div>
+<!-- TODO: sem tela de scouting/olheiros ainda no projeto — card fica sem navegação -->
+<div data-reveal data-delay="290" data-tilt class="fn-mini-card">
+  <div data-parallax-in="0.05" class="fn-media-wrap">
+    <img [src]="imgScoutingCard" alt="Scouting" class="fn-media-img" />
+  </div>
+  <div class="fn-mini-scrim"></div>
+  <div class="fn-mini-body">
+    <div class="fn-mini-icon-badge"><span class="ms">travel_explore</span></div>
+    <div class="fn-mini-title">Scouting</div>
+    <p class="fn-mini-desc">Rede de olheiros por região e custo estimado de relatório.</p>
+    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
+  </div>
+</div>
   </div>
 
-</section>
-
-<!-- FEATURES -->
-<section class="py-10 bg-bg">
-
-  <div class="max-w-7xl mx-auto px-5">
-
-    <div class="text-center mb-16">
-
-      <h2
-        class="text-4xl md:text-5xl font-black text-fg mb-4">
-
-        Tudo que você precisa
-
-      </h2>
-
-      <p class="text-fg-muted text-lg">
-        Uma plataforma completa para a comunidade FIFA
-      </p>
-
+  <!-- ATLAS -->
+  <div class="fn-section">
+    <div data-reveal class="fn-section-head fn-section-head--single">
+      <div class="fn-section-title">Futebol do mundo</div>
     </div>
-
-    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-
-      <!-- Card -->
-      <div
-        class="bg-surface
-               border border-surface-3
-               rounded-2xl p-6
-               hover:border-accent/30
-               hover:-translate-y-1
-               transition">
-
-        <div
-          class="w-14 h-14 rounded-xl
-                 bg-accent/10
-                 flex items-center justify-center
-                 text-accent text-2xl mb-4">
-
-          📊
-
+    <div class="fn-atlas-grid">
+      <div data-reveal data-globe-host class="fn-atlas-globe-card">
+        <div data-stars class="fn-stars"></div>
+        <div class="fn-globe-el">
+          <app-atlas-globe (countrySelect)="onCountrySelect($event)"></app-atlas-globe>
         </div>
 
-        <h3 class="text-xl font-bold text-fg mb-3">
-          Análise de Jogadores
-        </h3>
+        <div class="fn-corner fn-corner--tl fn-corner--z"></div>
+        <div class="fn-corner fn-corner--tr fn-corner--z"></div>
+        <div class="fn-corner fn-corner--bl fn-corner--z"></div>
+        <div class="fn-corner fn-corner--br fn-corner--z"></div>
 
-        <p class="text-fg-muted">
-          Estatísticas detalhadas e comparações para montar o time perfeito.
-        </p>
+        <div class="fn-atlas-topbar">
+          <span>Rede global de dados</span>
+          <span>Arraste para girar</span>
+        </div>
 
+        <div class="fn-atlas-footer">
+          <div>
+            <div class="fn-atlas-footer-label">Nação selecionada</div>
+            <div class="fn-atlas-nation">{{ paisSelecionado.nome }}</div>
+            <div class="fn-atlas-league">{{ paisSelecionado.top }}</div>
+          </div>
+          <div class="fn-atlas-metrics">
+            <div class="fn-atlas-metric">
+              <div class="fn-atlas-metric-label">Ligas</div>
+              <div class="fn-atlas-metric-value">{{ paisSelecionado.ligas }}</div>
+            </div>
+            <div class="fn-atlas-metric-divider"></div>
+            <div class="fn-atlas-metric">
+              <div class="fn-atlas-metric-label">Jogadores</div>
+              <div class="fn-atlas-metric-value fn-atlas-metric-value--light">{{ paisSelecionado.jogadores.toLocaleString('pt-BR') }}</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Card -->
-      <div
-        class="bg-surface
-               border border-surface-3
-               rounded-2xl p-6
-               hover:border-orange-500/30
-               hover:-translate-y-1
-               transition">
-
-        <div
-          class="w-14 h-14 rounded-xl
-                 bg-orange-500/10
-                 flex items-center justify-center
-                 text-orange-400 text-2xl mb-4">
-
-          🏆
-
+      <div data-reveal data-delay="120" class="fn-league-panel">
+        <div class="fn-league-panel-title">Ligas por volume de jogadores</div>
+        <div class="fn-league-list">
+          <ng-container *ngFor="let l of ligas">
+            <div data-stagger (click)="irParaTimes(l)" class="fn-league-row">
+              <img class="fn-league-badge" [src]="l.escudo" [alt]="l.nome + ' escudo'" loading="lazy" />
+              <div class="fn-league-info">
+                <div class="fn-league-nome">{{ l.nome }}</div>
+                <div class="fn-league-pais">{{ l.pais }}</div>
+              </div>
+              <div class="fn-league-count">{{ l.jogadores }}</div>
+            </div>
+          </ng-container>
         </div>
-
-        <h3 class="text-xl font-bold text-fg mb-3">
-          Estratégias FUT
-        </h3>
-
-        <p class="text-fg-muted">
-          Guias e dicas para dominar o modo carreira e Ultimate Team.
-        </p>
-
-      </div>
-
-      <!-- Card -->
-      <div
-        class="bg-surface
-               border border-surface-3
-               rounded-2xl p-6
-               hover:border-info/30
-               hover:-translate-y-1
-               transition">
-
-        <div
-          class="w-14 h-14 rounded-xl
-                 bg-info/10
-                 flex items-center justify-center
-                 text-info text-2xl mb-4">
-
-          👥
-
-        </div>
-
-        <h3 class="text-xl font-bold text-fg mb-3">
-          Comunidade Ativa
-        </h3>
-
-        <p class="text-fg-muted">
-          Compartilhe táticas, elencos e conquistas com outros jogadores.
-        </p>
-
-      </div>
-
-      <!-- Card -->
-      <div
-        class="bg-surface
-               border border-surface-3
-               rounded-2xl p-6
-               hover:border-warning/30
-               hover:-translate-y-1
-               transition">
-
-        <div
-          class="w-14 h-14 rounded-xl
-                 bg-warning/10
-                 flex items-center justify-center
-                 text-warning text-2xl mb-4">
-
-          ⚡
-
-        </div>
-
-        <h3 class="text-xl font-bold text-fg mb-3">
-          Atualizações Constantes
-        </h3>
-
-        <p class="text-fg-muted">
-          Dados atualizados para acompanhar cada temporada.
-        </p>
+        <a routerLink="/ligas" class="fn-link-arrow fn-league-panel-cta">Ver todas as ligas <span class="ms">arrow_forward</span></a>
       </div>
     </div>
+  </div>
+
+  <!-- WONDERKID -->
+  <div class="fn-section">
+    <div data-reveal class="fn-section-head--single">
+      <div class="fn-section-title">Wonderkid da semana</div>
+    </div>
+    <div data-reveal data-delay="80" class="fn-spotlight">
+      <div class="fn-spotlight-sweep"><div class="fn-spotlight-sweep-bar"></div></div>
+      <div class="fn-spotlight-media">
+        <div data-zoom data-parallax-in="0.05" class="fn-media-wrap">
+          <img [src]="imgWonderkid" alt="Retrato do jogador" class="fn-media-img" />
+        </div>
+      </div>
+      <div class="fn-spotlight-body">
+        <div class="fn-spotlight-updated">
+          <span class="fn-pulse-dot"></span>Atualizado há 2 h
+        </div>
+        <div class="fn-spotlight-heading">
+          <div class="fn-spotlight-name">Lamine Yamal</div>
+          <div class="fn-spotlight-meta">PD · 18 anos · FC Barcelona</div>
+        </div>
+        <div class="fn-spotlight-stats">
+          <div class="fn-attr-box">
+            <div class="fn-attr-label">Overall</div>
+            <div class="fn-attr-value"><span data-count="89">0</span></div>
+          </div>
+          <div class="fn-attr-box fn-attr-box--highlight">
+            <div class="fn-attr-label">Potencial</div>
+            <div class="fn-attr-value fn-attr-value--accent"><span data-count="94">0</span></div>
+          </div>
+          <div class="fn-attr-box">
+            <div class="fn-attr-label">Valor</div>
+            <div class="fn-attr-value">€138M</div>
+          </div>
+        </div>
+        <div class="fn-attributes-grid">
+          <ng-container *ngFor="let a of atributos">
+            <div>
+              <div class="fn-attribute-row"><span>{{ a.nome }}</span><span class="fn-attribute-value">{{ a.valor }}</span></div>
+              <div class="fn-attribute-track"><div [attr.data-bar]="a.valor" class="fn-attribute-bar"></div></div>
+            </div>
+          </ng-container>
+        </div>
+        <!-- TODO: id real quando os dados pararem de ser mockados — hoje o wonderkid em destaque
+             (Lamine Yamal) não tem um Jogador/id real por trás, então aponta pra listagem geral -->
+        <a routerLink="/jogadores" data-magnet class="fn-btn-outline">Ver ficha completa <span class="ms">arrow_forward</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESAFIOS -->
+  <div class="fn-section">
+    <div data-reveal class="fn-section-head--single">
+      <div class="fn-section-title">Escolha seu desafio</div>
+    </div>
+    <!-- TODO: sem tela de modos/desafios ainda no projeto — cards ficam sem navegação -->
+    <div class="fn-desafios-grid">
+      <ng-container *ngFor="let d of desafios">
+        <div data-reveal [attr.data-delay]="d.delay" class="fn-desafio-card">
+          <div data-zoom data-parallax-in="0.05" class="fn-media-wrap">
+            <img [src]="d.img" [alt]="d.foto" class="fn-media-img" />
+          </div>
+          <div class="fn-desafio-scrim"></div>
+          <div class="fn-desafio-num">{{ d.num }}</div>
+          <div class="fn-desafio-copy">
+            <span class="ms fn-desafio-icon">{{ d.icone }}</span>
+            <div class="fn-desafio-title">{{ d.titulo }}</div>
+            <p class="fn-desafio-desc">{{ d.desc }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- CTA + FOOTER -->
+  <div class="fn-section">
+    <div data-reveal class="fn-cta">
+      <div class="fn-cta-sweep"><div class="fn-cta-sweep-bar"></div></div>
+      <div class="fn-cta-title">Entre para a comunidade</div>
+      <p class="fn-cta-desc">Salve buscas, monte listas de alvos e receba o boletim de wonderkids toda semana.</p>
+      <div class="fn-cta-form">
+        <div class="fn-email-input">seu&#64;email.com</div>
+        <a routerLink="/registro" data-magnet class="fn-btn-primary">Criar conta</a>
+      </div>
+    </div>
+  </div>
   </div>
 </section>

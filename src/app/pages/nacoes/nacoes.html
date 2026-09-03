@@ -1,0 +1,49 @@
+<!--
+  FutNerds · Tela "Nações" — globo 3D interativo.
+  IDs mantidos idênticos aos usados pelo motor (nacoes-engine.ts), que
+  localiza estes elementos via document.getElementById após a view montar.
+-->
+
+<div class="pagina-nacoes">
+
+  <header class="pb-6 pt-11 px-3">
+    <h2 class="text-3xl font-black uppercase tracking-tighter">
+      Explore o <span class="text-accent">futebol mundial</span>
+    </h2>
+    <p class="text-fg-subtle mt-1 text-sm font-medium">
+      Explore ligas e competições de futebol ao redor do mundo
+    </p>
+  </header>
+
+  <div class="palco">
+
+    <!-- Globo 3D -->
+    <section class="area-globo">
+      <div id="globo-canvas"></div>
+
+      <div id="tooltip" class="tooltip"></div>
+
+      <!-- Controles de zoom / reset -->
+      <div class="globo-controles">
+        <button id="zoom-out" class="controle-botao" aria-label="Diminuir zoom">−</button>
+        <button id="zoom-in" class="controle-botao" aria-label="Aumentar zoom">+</button>
+        <button id="zoom-reset" class="controle-botao controle-botao--reset" aria-label="Posição inicial">⟳</button>
+      </div>
+
+      <!-- Dicas de uso -->
+      <div class="globo-dicas">
+        <p>Arraste o globo para explorar</p>
+        <p>Role para zoom</p>
+        <p>Passe sobre um país para visualizar suas ligas</p>
+      </div>
+    </section>
+
+    <!-- Painel do país selecionado (preenchido dinamicamente pelo motor) -->
+    <aside id="painel" class="painel"></aside>
+
+  </div>
+
+</div>
+
+<!-- Overlay para fechar o painel-bottom-sheet no mobile -->
+<div id="bottom-sheet-overlay" class="bottom-sheet-overlay"></div>

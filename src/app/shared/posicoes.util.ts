@@ -1,4 +1,18 @@
 export const MAPA_POSICOES: { [sigla: string]: string } = {
+  GK: 'GOL',
+  CB: 'ZAG',
+  LB: 'LE',
+  RB: 'LD',
+  CDM: 'VOL',
+  CM: 'MC',
+  CAM: 'MEIA',
+  LM: 'ME',
+  RM: 'MD',
+  LW: 'PE',
+  RW: 'PD',
+  ST: 'ATA',
+};
+export const MAPA_POSICOES_NOME: { [nome: string]: string } = {  
   GK: 'Goleiro',
   CB: 'Zagueiro',
   LB: 'Lateral Esquerdo',
@@ -21,6 +35,10 @@ export const MAPA_POSICOES: { [sigla: string]: string } = {
 export function traduzirPosicao(sigla: string | undefined | null): string {
   if (!sigla) return '—';
   return MAPA_POSICOES[sigla.trim()] || sigla;
+}
+export function traduzirPosicaoNome(nome: string | undefined | null): string {
+  if (!nome) return '—';
+  return MAPA_POSICOES_NOME[nome.trim()] || nome;
 }
 
 export function traduzirPeDominante(pe: string | undefined | null): string {

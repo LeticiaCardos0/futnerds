@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { TimeSelecionado, CHAVE_TIME_SELECIONADO } from '../times/times';
+import { TimeSelecionado, CHAVE_TIME_SELECIONADO } from '../selecionar-time/selecionar-time';
 import { MAPA_POSICOES, traduzirPosicao } from '../../shared/posicoes.util';
 
 import { MessageService } from 'primeng/api';
@@ -78,6 +78,14 @@ export interface Jogador {
   marcacao?: number;
   desarmeEmPe?: number;
   desarmeDeslizante?: number;
+  /* ---- campos novos (opcionais) para bater com o layout estilo FUTBIN.
+     Se sua API ainda não envia esses valores, a tela mostra "—" no lugar
+     em vez de quebrar — é só popular quando o backend tiver os dados. ---- */
+  peFraco?: number; // estrelas do pé fraco, 1 a 5 (weak foot)
+  movimentosHabilidade?: number; // estrelas de movimentos de habilidade, 1 a 5 (skill moves)
+  alturaCm?: number;
+  pesoKg?: number;
+  tipoFisico?: string; // ex.: 'Normal', 'Magro', 'Robusto', 'Explosivo'
 }
 
 
@@ -92,6 +100,7 @@ export interface Jogador {
 export class JogadoresComponent implements OnInit {
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private messageService: MessageService,
     private jogadorService: JogadorService,
     private cdr: ChangeDetectorRef
@@ -112,7 +121,15 @@ export class JogadoresComponent implements OnInit {
   totalItens: number = 0;
 
   termoBusca: string = '';
+  termoBuscaAplicado: string | null = null;
+  buscando: boolean = false;
   posicaoSelecionada: string = 'Todas';
+
+  // filtro rápido vindo por query params (ex: card "Wonderkids" da Home) —
+  // a API não suporta idade/potencial como filtro server-side hoje, então
+  // é aplicado no cliente sobre a página carregada (ver carregarJogadores)
+  filtroIdadeMax: number | null = null;
+  filtroPotencialMin: number | null = null;
 
   private termoBuscaSubject = new Subject<string>();
 
@@ -156,6 +173,18 @@ export class JogadoresComponent implements OnInit {
     this.termoBuscaSubject.next(this.termoBusca);
   }
 
+  /** Dispara a busca imediatamente (botão "Buscar" ou Enter), sem esperar o debounce. */
+  buscarAgora(): void {
+    this.paginaAtual = 1;
+    this.carregarJogadores();
+  }
+
+  limparBusca(): void {
+    this.termoBusca = '';
+    this.paginaAtual = 1;
+    this.carregarJogadores();
+  }
+
   selecionarPosicao(posicao: string): void {
     this.posicaoSelecionada = posicao;
     this.paginaAtual = 1;
@@ -166,7 +195,14 @@ export class JogadoresComponent implements OnInit {
     this.termoBusca = '';
     this.posicaoSelecionada = 'Todas';
     this.paginaAtual = 1;
-    this.carregarJogadores();
+    // navega sem query params — isso também limpa o filtro rápido vindo da Home
+    // (idadeMax/potencialMin) via a própria assinatura de queryParams no ngOnInit
+    this.router.navigate(['/jogadores']);
+  }
+
+  /** Limpa só o filtro rápido de origem (ex: veio do card "Wonderkids" da Home). */
+  limparFiltroOrigem(): void {
+    this.router.navigate(['/jogadores']);
   }
 
   ngOnInit() {
@@ -180,14 +216,40 @@ export class JogadoresComponent implements OnInit {
       this.carregarJogadores();
     });
 
-    this.carregarJogadores();
+    this.route.queryParams.subscribe(params => {
+      this.filtroIdadeMax = params['idadeMax'] ? Number(params['idadeMax']) : null;
+      this.filtroPotencialMin = params['potencialMin'] ? Number(params['potencialMin']) : null;
+      this.paginaAtual = 1;
+      this.carregarJogadores();
+    });
   }
 
   carregarJogadores(): void {
-    this.jogadorService.listar(this.paginaAtual - 1, this.itensPorPagina, this.termoBusca, this.posicaoSelecionada).subscribe(resultado => {
-      this.jogadores = resultado.jogadores;
-      this.totalPaginas = resultado.totalPaginas;
-      this.totalItens = resultado.totalItens;
+    const temFiltroRapido = this.filtroIdadeMax != null || this.filtroPotencialMin != null;
+    // com filtro rápido ativo, busca um lote maior (a API só pagina/ordena por
+    // overall) pra ter mais chance de achar os sub-21/alto-potencial nele
+    const tamanho = temFiltroRapido ? 100 : this.itensPorPagina;
+
+    this.buscando = true;
+    this.jogadorService.listar(this.paginaAtual - 1, tamanho, this.termoBusca, this.posicaoSelecionada).subscribe(resultado => {
+      let jogadores = resultado.jogadores;
+      let totalPaginas = resultado.totalPaginas;
+      let totalItens = resultado.totalItens;
+
+      if (temFiltroRapido) {
+        jogadores = jogadores.filter(j =>
+          (this.filtroIdadeMax == null || j.idade < this.filtroIdadeMax) &&
+          (this.filtroPotencialMin == null || (j.potencial ?? 0) >= this.filtroPotencialMin!)
+        );
+        totalItens = jogadores.length;
+        totalPaginas = 1;
+      }
+
+      this.jogadores = jogadores;
+      this.totalPaginas = totalPaginas;
+      this.totalItens = totalItens;
+      this.termoBuscaAplicado = this.termoBusca.trim() || null;
+      this.buscando = false;
       this.preencherSalariosFaltantes();
       this.cdr.markForCheck();
     });
@@ -254,7 +316,7 @@ export class JogadoresComponent implements OnInit {
         summary: 'Nenhum time selecionado',
         detail: 'Selecione um time primeiro para montar seu elenco.'
       });
-      this.router.navigate(['/times']);
+      this.router.navigate(['/selecionar-time']);
       return;
     }
 
@@ -334,11 +396,94 @@ export class JogadoresComponent implements OnInit {
     if (overall >= 75) return 'hex-azul';
     return 'hex-cinza';
   }
+
+  /** Mesma faixa de overall usada no hexágono, aplicada como moldura do
+   *  "card" de foto do jogador (dourado/verde/azul/cinza), pra remeter
+   *  ao card de rating do FUTBIN. */
+  obterClasseCartao(overall: number): string {
+    if (overall >= 90) return 'player-card--dourado';
+    if (overall >= 80) return 'player-card--verde';
+    if (overall >= 75) return 'player-card--azul';
+    return 'player-card--cinza';
+  }
   formatarValorCompacto(valor: number | null | undefined): string {
     if (!valor) return '—';
     if (valor >= 1000000) return `€${(valor / 1000000).toFixed(1)}M`;
     if (valor >= 1000) return `€${(valor / 1000).toFixed(0)}K`;
     return `€${valor}`;
+  }
+
+  /* ==========================================================
+     ESTATÍSTICAS ESTILO FUTBIN (PAC/SHO/PAS/DRI/DEF/PHY) — calculadas
+     a partir dos atributos detalhados que já existem no modelo (sem
+     inventar dados: se os sub-atributos não vierem preenchidos pela
+     API, cai no atributo simples equivalente, ou mostra "—" quando
+     nenhum dos dois existir).
+     ========================================================== */
+  private media(...valores: Array<number | undefined>): number | null {
+    const validos = valores.filter((v): v is number => typeof v === 'number' && !isNaN(v));
+    if (!validos.length) return null;
+    return Math.round(validos.reduce((a, b) => a + b, 0) / validos.length);
+  }
+
+  calcularPAC(j: Jogador): number | null {
+    return this.media(j.aceleracao, j.velocidadeSprint) ?? j.velocidade ?? null;
+  }
+  calcularSHO(j: Jogador): number | null {
+    return this.media(j.finalizacaoDetalhada, j.potenciaChute, j.precisaoFalta, j.penaltis, j.voleio) ?? j.finalizacao ?? null;
+  }
+  calcularPAS(j: Jogador): number | null {
+    return this.media(j.passeCurto, j.passeLongo, j.visao, j.curva) ?? j.passe ?? null;
+  }
+  calcularDRI(j: Jogador): number | null {
+    return this.media(j.dribleDetalhado, j.controleDeBola, j.agilidade, j.equilibrio, j.reacoes) ?? j.drible ?? null;
+  }
+  calcularDEF(j: Jogador): number | null {
+    return this.media(j.marcacao, j.desarmeEmPe, j.desarmeDeslizante, j.interceptacao);
+  }
+  calcularPHY(j: Jogador): number | null {
+    return this.media(j.forca, j.folego, j.impulsao, j.agressao);
+  }
+
+  /** Classe de cor da pílula de estatística, seguindo a mesma faixa de
+   *  cores usada pelo FUTBIN/EA (verde/amarelo/laranja/vermelho). */
+  obterClasseStatPill(valor: number | null): string {
+    if (valor === null) return 'stat-pill--vazio';
+    if (valor >= 80) return 'stat-pill--verde';
+    if (valor >= 70) return 'stat-pill--amarelo';
+    if (valor >= 60) return 'stat-pill--laranja';
+    return 'stat-pill--vermelho';
+  }
+
+  /** Repete um caractere de estrela N vezes (weak foot / skill moves).
+   *  Retorna null quando o valor não existe, para a tela mostrar "—". */
+  obterEstrelas(valor: number | undefined): string | null {
+    if (!valor || valor < 1) return null;
+    return '★'.repeat(Math.min(5, Math.round(valor)));
+  }
+
+  /** Texto "180cm | 75kg" a partir de altura/peso — mostra só o que existir. */
+  obterCorpo(j: Jogador): string {
+    const partes: string[] = [];
+    if (j.alturaCm) partes.push(`${j.alturaCm}cm`);
+    if (j.pesoKg) partes.push(`${j.pesoKg}kg`);
+    return partes.length ? partes.join(' | ') : '—';
+  }
+
+  /** Comparação tolerante do pé dominante — a checagem exata (=== 'Esquerdo')
+   *  quebra silenciosamente se o backend mandar em maiúsculas ('ESQUERDO',
+   *  comum em enum Java), com espaço extra, ou em inglês ('LEFT'/'RIGHT').
+   *  Essas duas funções cobrem essas variações sem precisar mudar a API. */
+  private normalizarPe(valor: string | undefined | null): string {
+    return (valor ?? '').toString().trim().toLowerCase();
+  }
+  ehPeEsquerdo(j: Jogador): boolean {
+    const v = this.normalizarPe(j.peDominante);
+    return v === 'esquerdo' || v === 'left' || v === 'l' || v === 'e';
+  }
+  ehPeDireito(j: Jogador): boolean {
+    const v = this.normalizarPe(j.peDominante);
+    return v === 'direito' || v === 'right' || v === 'r' || v === 'd';
   }
 }
 

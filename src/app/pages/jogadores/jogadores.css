@@ -9,3 +9,90 @@
 
 .hex-cinza .hexagono-fill { fill: #B4B2A9; stroke: #5F5E5A; stroke-width: 1.5; }
 .hex-cinza .hexagono-texto { fill: #2C2C2A; }
+
+/* ==========================================================
+   TABELA ESTILO FUTBIN — linha densa com estatísticas coloridas
+   ========================================================== */
+.futbin-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  min-width: 1060px; /* garante rolagem horizontal em telas estreitas em vez de espremer as colunas */
+}
+.futbin-row--head { min-width: 1060px; }
+
+/* coluna do jogador: largura confortável e fixa (não estica pra preencher
+   o container todo — é isso que causava o vão gigante). */
+.futbin-col-jogador { flex: 0 1 300px; min-width: 200px; }
+
+/* o bloco de estatísticas agora CRESCE pra ocupar o espaço que sobra na
+   linha, e distribui esse espaço de forma uniforme ENTRE cada coluna
+   (OVER, POT, PÉ, RIT...) — em vez de ficar compacto e deixar um vão
+   grande de um lado só. */
+.futbin-stats-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  gap: 14px; /* espaçamento mínimo garantido, mesmo em telas estreitas */
+}
+
+.futbin-col-stat { flex: 0 0 44px; width: 44px; display: flex; align-items: center; justify-content: center; }
+.futbin-col-pe { flex: 0 0 32px; width: 32px; display: flex; align-items: center; justify-content: center; }
+.futbin-col-valor { flex: 0 0 90px; width: 90px; }
+
+.stat-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 30px; padding: 2px 6px; border-radius: 6px;
+  font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+.stat-pill--verde { background: rgba(74, 222, 128, 0.14); color: #4ade80; }
+.stat-pill--amarelo { background: rgba(234, 197, 63, 0.14); color: #eac53f; }
+.stat-pill--laranja { background: rgba(249, 154, 78, 0.14); color: #f99a4e; }
+.stat-pill--vermelho { background: rgba(248, 113, 113, 0.14); color: #f87171; }
+.stat-pill--vazio { color: var(--fg-subtle, #6b7280); }
+
+.pe-icon { height: 18px; width: auto; display: block; }
+
+/* ---- badge de OVERALL (opção "card com brilho") — reaproveita as mesmas
+   cores por faixa (dourado/verde/azul/cinza) já usadas no card de foto,
+   só que num quadrado arredondado com reflexo, no lugar do hexágono. ---- */
+.over-badge {
+  position: relative; display: inline-flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  width: 36px; height: 32px; border-radius: 10px;
+  font-weight: 800; font-size: 15px; font-variant-numeric: tabular-nums;
+}
+.over-badge::after {
+  content: ''; position: absolute; top: -9px; left: -9px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35); filter: blur(6px);
+}
+.over-badge.player-card--dourado { color: #3c2a06; }
+.over-badge.player-card--verde { color: #16290a; }
+.over-badge.player-card--azul { color: #052341; }
+.over-badge.player-card--cinza { color: #232219; }
+
+.futbin-col-corpo { flex: 0 0 96px; width: 96px; line-height: 1.35; }
+.estrelas { font-size: 12px; letter-spacing: 1px; color: #eac53f; }
+
+/* ---- "card" de foto do jogador, remetendo ao card de rating do FUTBIN ---- */
+.player-card {
+  position: relative; flex-shrink: 0;
+  width: 46px; height: 60px; border-radius: 6px; overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.player-card__photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.player-card__rat {
+  position: absolute; top: 4px; left: 5px; z-index: 2;
+  font-size: 12px; font-weight: 800; line-height: 1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
+.player-card--dourado { background: linear-gradient(165deg, #f3cd6d, #a5720f); box-shadow: 0 0 0 1px rgba(243,205,109,0.5) inset; }
+.player-card--dourado .player-card__rat { color: #3c2a06; }
+.player-card--verde { background: linear-gradient(165deg, #b7e28a, #3f7a17); box-shadow: 0 0 0 1px rgba(183,226,138,0.5) inset; }
+.player-card--verde .player-card__rat { color: #16290a; }
+.player-card--azul { background: linear-gradient(165deg, #a9d3f7, #1f6bae); box-shadow: 0 0 0 1px rgba(169,211,247,0.5) inset; }
+.player-card--azul .player-card__rat { color: #052341; }
+.player-card--cinza { background: linear-gradient(165deg, #cdccc4, #6b6a63); box-shadow: 0 0 0 1px rgba(205,204,196,0.5) inset; }
+.player-card--cinza .player-card__rat { color: #232219; }

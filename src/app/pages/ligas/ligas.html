@@ -1,0 +1,113 @@
+<div class="min-h-screen bg-bg text-fg pt-16 pb-16">
+  <div class="max-w-[1600px] mx-auto px-6">
+
+    <!-- HEADER -->
+    <header class="pb-6">
+      <h2 class="text-3xl font-black uppercase tracking-tighter">
+        Ligas e <span class="text-accent">Competições</span>
+      </h2>
+      <p class="text-fg-subtle mt-1 text-sm font-medium">
+        Explore as principais ligas de futebol ao redor do mundo
+      </p>
+    </header>
+
+    <!-- FILTROS -->
+    <div class="mb-6">
+      <div class="relative w-full lg:max-w-xs">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm"></i>
+        <input
+          type="text"
+          [(ngModel)]="termoBusca"
+          (ngModelChange)="aoFiltrar()"
+          placeholder="Buscar liga..."
+          class="w-full bg-surface border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-sm focus:border-accent/50 outline-none transition"
+        >
+      </div>
+    </div>
+
+    <!-- GRID DE LIGAS -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div
+        *ngFor="let liga of ligasPaginadas"
+        (click)="verTimes(liga)"
+        class="bg-surface rounded-2xl border border-fg/5 p-5 text-center hover:border-green-500/30 hover:scale-[1.02] transition-all cursor-pointer group">
+
+        <div class="w-20 h-20 rounded-2xl mx-auto mb-3 flex items-center justify-center overflow-hidden relative bg-white">
+          <img
+            [src]="obterCaminhoLogo(liga)"
+            [alt]="obterNomeExibicao(liga)"
+            class="w-full h-full object-contain p-2"
+            (error)="aoErroImagem($event)"
+          />
+        </div>
+
+        <p class="text-fg font-bold text-sm truncate">{{ obterNomeExibicao(liga) }}</p>
+
+        <div class="flex items-center justify-center gap-1.5 mt-1.5 mb-2">
+          <img
+            [src]="'https://flagcdn.com/w20/' + liga.paisCodigo + '.png'"
+            [alt]="liga.paisNome"
+            (error)="$event.target.style.display='none'"
+            class="w-4 h-3 rounded-sm object-cover"
+          />
+          <span class="text-fg-subtle text-xs">{{ liga.paisNome }}</span>
+        </div>
+
+        <p class="text-fg-muted text-xs">{{ liga.quantidadeClubes }} times</p>
+
+        <button
+          (click)="verTimes(liga); $event.stopPropagation()"
+          class="w-full mt-3 cursor-pointer w-full bg-accent hover:bg-accent-strong text-accent-fg font-black uppercase tracking-widest text-[10px] px-3 py-2.5 rounded-xl transition-all flex items-center justify-center gap-1.5">
+          Ver times
+          <i class="fas fa-arrow-right text-[9px]"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- PAGINAÇÃO -->
+    <div *ngIf="totalItens > 0" class="flex items-center justify-between mt-6 flex-wrap gap-4">
+      <p class="text-fg-subtle text-xs font-medium">
+        Página {{ paginaAtual }} de {{ totalPaginas }} — {{ totalItens }} ligas
+      </p>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          (click)="paginaAnterior()"
+          [disabled]="paginaAtual === 1"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-left text-xs"></i>
+        </button>
+
+        <button
+          type="button"
+          *ngFor="let pagina of paginasArray"
+          (click)="irParaPagina(pagina)"
+          [class.bg-accent]="pagina === paginaAtual"
+          [class.text-accent-fg]="pagina === paginaAtual"
+          [class.bg-surface-2]="pagina !== paginaAtual"
+          [class.text-fg-muted]="pagina !== paginaAtual"
+          class="cursor-pointer w-9 h-9 flex items-center justify-center rounded-lg font-bold text-xs hover:bg-fg/10 hover:text-fg transition">
+          {{ pagina }}
+        </button>
+
+        <button
+          type="button"
+          (click)="proximaPagina()"
+          [disabled]="paginaAtual === totalPaginas"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ESTADO VAZIO -->
+    <div *ngIf="totalItens === 0 && ligas.length > 0" class="text-center py-12 text-fg-subtle">
+      Nenhuma liga encontrada com esse termo.
+      <button type="button" (click)="termoBusca = ''; aoFiltrar()" class="cursor-pointer block mx-auto mt-3 text-accent hover:underline text-sm font-bold">
+        Limpar busca
+      </button>
+    </div>
+
+  </div>
+</div>

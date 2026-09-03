@@ -1,86 +1,154 @@
-<p-toast position="top-right"></p-toast>
-<p-confirmDialog [style]="{ width: '28rem' }" />
-
-<div class="min-h-screen bg-bg text-fg pt-32 pb-16">
-  <div class="max-w-7xl mx-auto px-6">
+<div class="min-h-screen bg-bg text-fg pt-16 pb-16">
+  <div class="max-w-[1600px] mx-auto px-6">
 
     <!-- HEADER -->
-    <header class="pb-6 border-b border-fg/10 mb-8">
+    <header class="pb-6">
       <h2 class="text-3xl font-black uppercase tracking-tighter">
-        Escolha seu <span class="text-accent">Time</span>
+        Explore os <span class="text-accent">Times</span>
       </h2>
       <p class="text-fg-subtle mt-1 text-sm font-medium">
-        Selecione o clube que você vai gerenciar
+        Veja as estatísticas dos clubes de futebol ao redor do mundo
       </p>
     </header>
 
-    <!-- TABELA DE TIMES -->
-    <div class="bg-surface rounded-2xl border border-fg/5 overflow-hidden">
-      <div class="overflow-x-auto">
-        <table class="w-full">
-          <thead>
-            <tr class="bg-fg/5 border-b border-fg/10">
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Logo</th>
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Nome</th>
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">País</th>
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Liga</th>
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Orçamento</th>
-              <th class="px-6 py-4 text-left text-[10px] font-bold uppercase tracking-widest text-fg-subtle">Ações</th>
-            </tr>
-          </thead>
+    <!-- BANNER DE CONTEXTO (origem: liga ou país) -->
+    <div *ngIf="filtroLiga || filtroPais" class="bg-surface rounded-2xl border border-green-500/20 p-4 mb-6 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div *ngIf="filtroLiga" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+          <img
+            [src]="obterCaminhoLogoLiga(filtroLiga, filtroLigaId)"
+            alt=""
+            class="w-full h-full object-contain p-1"
+            (error)="$event.target.style.display='none'; $event.target.parentElement!.innerHTML='<i class=\'fas fa-trophy text-fg-subtle\'></i>'"
+          />
+        </div>
+        <img
+          *ngIf="filtroPaisCodigo && !filtroLiga"
+          [src]="'https://flagcdn.com/w40/' + filtroPaisCodigo + '.png'"
+          alt=""
+          (error)="$event.target.style.display='none'"
+          class="w-8 h-6 rounded object-cover border border-fg/10"
+        />
+        <div>
+          <p class="text-fg-subtle text-xs uppercase tracking-widest font-bold">Filtrando por</p>
+          <p class="text-fg font-bold text-lg mt-1">{{ filtroLigaExibicao || filtroLiga || filtroPais }}</p>
+        </div>
+      </div>
+      <button (click)="limparFiltroOrigem()" class="cursor-pointer text-fg-subtle hover:text-fg text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+        <i class="fas fa-times"></i> Limpar filtro
+      </button>
+    </div>
 
-          <tbody>
-            <tr *ngFor="let time of times" class="border-b border-fg/5 hover:bg-fg/5 transition">
-              <!-- Logo -->
-              <td class="px-6 py-4">
-                <div class="w-10 h-10 rounded-xl overflow-hidden flex items-center justify-center">
-                  <img
-                    [src]="time.logo"
-                    [alt]="time.nome"
-                    (error)="$event.target.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect fill=%22%231e2130%22 width=%22100%22 height=%22100%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%236b7280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E?%3C/text%3E%3C/svg%3E'"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-              </td>
+    <!-- FILTROS -->
+    <div class="mb-6">
+      <div class="relative w-full lg:max-w-xs">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm"></i>
+        <input
+          type="text"
+          [(ngModel)]="termoBusca"
+          (ngModelChange)="aoFiltrar()"
+          placeholder="Buscar time..."
+          class="w-full bg-surface border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-sm focus:border-accent/50 outline-none transition"
+        >
+      </div>
+    </div>
 
-              <!-- Nome -->
-              <td class="px-6 py-4">
-                <span class="text-fg font-bold">{{ time.nome }}</span>
-              </td>
+    <!-- GRID DE TIMES -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div
+        *ngFor="let time of times"
+        class="rounded-2xl overflow-hidden border border-fg/5 hover:border-green-500/30 hover:scale-[1.01] transition-all cursor-pointer">
 
-              <!-- País -->
-              <td class="px-6 py-4">
-                <span class="text-fg-muted text-sm">{{ time.pais }}</span>
-              </td>
+        <div class="p-4 flex items-center gap-3.5 relative" style="background: linear-gradient(135deg, #00E676, #0B8A45)">
+          <span class="absolute top-3 right-3.5 bg-black/25 text-white text-[10px] font-bold px-2 py-1 rounded">
+            {{ time.ligaNome?.toUpperCase() || 'SEM LIGA' }}
+          </span>
+          <div class="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0">
+            <img
+              [src]="time.escudoUrl"
+              [alt]="time.nome"
+              class="w-10 h-10 object-contain"
+              (error)="aoErroEscudo($event)"
+            />
+          </div>
+          <div>
+            <p class="font-bold text-base" style="color:#04150c">{{ time.nome }}</p>
+            <p class="text-xs mt-0.5" style="color:#083b21">{{ time.quantidadeJogadores }} jogadores · {{ time.idadeMedia | number:'1.0-0' }} anos (média)</p>
+          </div>
+        </div>
 
-              <!-- Liga -->
-              <td class="px-6 py-4">
-                <span class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-info/10 text-info">
-                  {{ time.liga }}
-                </span>
-              </td>
+        <div class="bg-surface p-4">
+          <div class="grid grid-cols-2 gap-2.5 mb-3">
+            <div class="bg-surface-2 rounded-xl p-2.5 text-center">
+              <p class="text-xl font-bold" style="color:#00E676">{{ time.overallMedio | number:'1.0-0' }}</p>
+              <p class="text-[10px] text-fg-subtle uppercase tracking-wide mt-0.5">Overall médio</p>
+            </div>
+            <div class="bg-surface-2 rounded-xl p-2.5 text-center">
+              <p class="text-xl font-bold text-fg-subtle">{{ time.quantidadeJogadores }}</p>
+              <p class="text-[10px] text-fg-subtle uppercase tracking-wide mt-0.5">Jogadores</p>
+            </div>
+          </div>
 
-              <!-- Orçamento -->
-              <td class="px-6 py-4">
-                <span class="text-fg-muted text-sm font-medium">{{ formatarMoeda(time.orcamento) }}</span>
-              </td>
+          <div class="flex items-end justify-between border-t border-fg/10 pt-3">
+            <div>
+              <p class="text-[11px] text-fg-subtle">Valor do elenco</p>
+              <p class="text-lg font-bold mt-0.5" style="color:#00E676">{{ formatarValorCompacto(time.valorElenco) }}</p>
+            </div>
+            <div class="flex gap-0.5">
+              <i
+                *ngFor="let estrela of obterArrayEstrelas()"
+                class="fas fa-star text-sm"
+                [style.color]="estrela <= obterEstrelas(time.overallMedio) ? '#EF9F27' : 'var(--color-fg-subtle)'">
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-              <!-- Ações -->
-              <td class="px-6 py-4">
-                <button (click)="selecionarTime(time)"
-                  class="cursor-pointer bg-accent hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98] text-accent-fg font-black uppercase tracking-widest text-xs px-4 py-2 rounded-xl transition-all">
-                  Selecionar
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- PAGINAÇÃO -->
+    <div *ngIf="totalItens > 0" class="flex items-center justify-between mt-6 flex-wrap gap-4">
+      <p class="text-fg-subtle text-xs font-medium">
+        Página {{ paginaAtual }} de {{ totalPaginas }} — {{ totalItens }} times
+      </p>
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          (click)="paginaAnterior()"
+          [disabled]="paginaAtual === 1"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-left text-xs"></i>
+        </button>
+
+        <button
+          type="button"
+          *ngFor="let pagina of paginasArray"
+          (click)="irParaPagina(pagina)"
+          [class.bg-accent]="pagina === paginaAtual"
+          [class.text-accent-fg]="pagina === paginaAtual"
+          [class.bg-surface-2]="pagina !== paginaAtual"
+          [class.text-fg-muted]="pagina !== paginaAtual"
+          class="cursor-pointer w-9 h-9 flex items-center justify-center rounded-lg font-bold text-xs hover:bg-fg/10 hover:text-fg transition">
+          {{ pagina }}
+        </button>
+
+        <button
+          type="button"
+          (click)="proximaPagina()"
+          [disabled]="paginaAtual === totalPaginas"
+          class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
+          <i class="fas fa-chevron-right text-xs"></i>
+        </button>
       </div>
     </div>
 
     <!-- ESTADO VAZIO -->
-    <div *ngIf="times.length === 0" class="text-center py-12 text-fg-subtle">
-      Nenhum time encontrado.
+    <div *ngIf="totalItens === 0" class="text-center py-12 text-fg-subtle">
+      Nenhum time encontrado com esse termo.
+      <button type="button" (click)="termoBusca = ''; aoFiltrar()" class="cursor-pointer block mx-auto mt-3 text-accent hover:underline text-sm font-bold">
+        Limpar busca
+      </button>
     </div>
 
   </div>

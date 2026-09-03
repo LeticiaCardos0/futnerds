@@ -1,104 +1,151 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { obterCaminhoLogoLiga } from '../../shared/ligas.util';
 
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ToastModule } from 'primeng/toast';
-
-// Mesmo valor de CHAVE_ELENCO em jogadores.ts.
-// Repetido aqui (em vez de importado) para evitar import circular entre times.ts <-> jogadores.ts.
-const CHAVE_ELENCO_LOCALSTORAGE = 'futnerds_elenco';
-
-export interface TimeSelecionado {
+export interface Time {
   id: number;
   nome: string;
-  logo: string;
-  orcamento: number;
+  escudoUrl: string;
+  ligaNome: string;
+  overallMedio: number;
+  quantidadeJogadores: number;
+  valorElenco: number;
+  idadeMedia: number;
 }
-
-interface Time {
-  id: number;
-  logo: string;
-  nome: string;
-  pais: string;
-  liga: string;
-  orcamento: number;
-}
-
-export const CHAVE_TIME_SELECIONADO = 'futnerds_time_selecionado';
 
 @Component({
   selector: 'app-times',
   standalone: true,
-  imports: [CommonModule, ConfirmDialogModule, ToastModule],
-  providers: [ConfirmationService, MessageService],
-  templateUrl: './times.html',
-  styleUrl: './times.css'
+  imports: [CommonModule, FormsModule],
+  templateUrl: './times.html'
 })
-export class TimesComponent {
-  times: Time[] = [
-    { id: 1, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/real_madrid_logo_2dc50f68.png', nome: 'Real Madrid', pais: 'Espanha', liga: 'La Liga', orcamento: 620000000 },
-    { id: 2, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/manchester_city_logo_907a8f19.png', nome: 'Manchester City', pais: 'Inglaterra', liga: 'Premier League', orcamento: 580000000 },
-    { id: 3, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/paris_saint-germain_logo_c8518fce.png', nome: 'Paris Saint-Germain', pais: 'França', liga: 'Ligue 1', orcamento: 550000000 },
-    { id: 4, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/fc_bayern_m_nchen_logo_83457712.png', nome: 'FC Bayern München', pais: 'Alemanha', liga: 'Bundesliga', orcamento: 500000000 },
-    { id: 5, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/liverpool_logo_3665bfc1.png', nome: 'Liverpool', pais: 'Inglaterra', liga: 'Premier League', orcamento: 480000000 },
-    { id: 6, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/fc_barcelona_logo_e50504f6.png', nome: 'FC Barcelona', pais: 'Espanha', liga: 'La Liga', orcamento: 380000000 },
-    { id: 7, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/arsenal_logo_0cc2bfb2.png', nome: 'Arsenal', pais: 'Inglaterra', liga: 'Premier League', orcamento: 420000000 },
-    { id: 8, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/athletic_club_logo_ca941d32.png', nome: 'Athletic Club', pais: 'Espanha', liga: 'La Liga', orcamento: 49000000 },
-    { id: 9, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/atl_tico_madrid_logo_0fde6fe6.png', nome: 'Atlético Madrid', pais: 'Espanha', liga: 'La Liga', orcamento: 75000000 },
-    { id: 10, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/real_betis_balompi__logo_e6ab180a.png', nome: 'Real Betis', pais: 'Espanha', liga: 'La Liga', orcamento: 16000000 },
-    { id: 11, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/real_sociedad_logo_eed16fe3.png', nome: 'Real Sociedad', pais: 'Espanha', liga: 'La Liga', orcamento: 16000000 },
-    { id: 12, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/sevilla_fc_logo_33aae96c.png', nome: 'Sevilla FC', pais: 'Espanha', liga: 'La Liga', orcamento: 32000000 },
-    { id: 13, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/valencia_cf_logo_3c5df904.png', nome: 'Valencia CF', pais: 'Espanha', liga: 'La Liga', orcamento: 38000000 },
-    { id: 14, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/villarreal_cf_logo_58a53628.png', nome: 'Villarreal CF', pais: 'Espanha', liga: 'La Liga', orcamento: 35000000 },
-    { id: 15, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/aston_villa_logo_7ec24cee.png', nome: 'Aston Villa', pais: 'Inglaterra', liga: 'Premier League', orcamento: 77000000 },
-    { id: 16, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/brighton_hove_albion_logo_f687fe9b.png', nome: 'Brighton', pais: 'Inglaterra', liga: 'Premier League', orcamento: 76000000 },
-    { id: 17, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/newcastle_united_logo_a41ae5e0.png', nome: 'Newcastle United', pais: 'Inglaterra', liga: 'Premier League', orcamento: 97000000 },
-    { id: 18, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/tottenham_hotspur_logo_cf1b4d28.png', nome: 'Tottenham', pais: 'Inglaterra', liga: 'Premier League', orcamento: 127000000 },
-    { id: 19, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/west_ham_united_logo_5c699304.png', nome: 'West Ham', pais: 'Inglaterra', liga: 'Premier League', orcamento: 70000000 },
-    { id: 20, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/everton_logo_188343e9.png', nome: 'Everton', pais: 'Inglaterra', liga: 'Premier League', orcamento: 40000000 },
-    { id: 21, logo: 'https://upload.wikimedia.org/wikipedia/pt/0/0e/LeicesterCity_logo2014.png', nome: 'Leicester City', pais: 'Inglaterra', liga: 'Premier League', orcamento: 60000000 },
-    { id: 22, logo: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663216916845/hhB4oykfDQM9yCvhQGaX3n/wolverhampton_wanderers_logo_eecd6a5e.png', nome: 'Wolverhampton', pais: 'Inglaterra', liga: 'Premier League', orcamento: 53000000 }
-  ];
+export class TimesComponent implements OnInit {
+  obterCaminhoLogoLiga = obterCaminhoLogoLiga;
 
   constructor(
-    private router: Router,
-    private confirmationService: ConfirmationService,
-    private messageService: MessageService
-  ) {}
+    private http: HttpClient,
+    private cdr: ChangeDetectorRef,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
-  selecionarTime(time: Time) {
-    const timeSelecionado: TimeSelecionado = {
-      id: time.id,
-      nome: time.nome,
-      logo: time.logo,
-      orcamento: time.orcamento
-    };
+  times: Time[] = [];
+  termoBusca: string = '';
+  filtroLiga: string | null = null;
+  filtroPais: string | null = null;
+  filtroLigaExibicao: string | null = null;
+  filtroPaisCodigo: string | null = null;
+  filtroLigaId: number | null = null;
 
-    const dadosTimeAtual = localStorage.getItem(CHAVE_TIME_SELECIONADO);
-    const timeAtual: TimeSelecionado | null = dadosTimeAtual ? JSON.parse(dadosTimeAtual) : null;
+  paginaAtual: number = 1;
+  totalPaginas: number = 1;
+  totalItens: number = 0;
 
-    const dadosElenco = localStorage.getItem(CHAVE_ELENCO_LOCALSTORAGE);
-    const elencoAtual = dadosElenco ? JSON.parse(dadosElenco) : [];
+  private termoBuscaSubject = new Subject<string>();
 
-    this.confirmarSelecaoDoTime(timeSelecionado);
-  }
+  ngOnInit(): void {
+    this.termoBuscaSubject.pipe(
+      debounceTime(400),
+      distinctUntilChanged()
+    ).subscribe(() => {
+      this.paginaAtual = 1;
+      this.carregarTimes();
+    });
 
-  private confirmarSelecaoDoTime(timeSelecionado: TimeSelecionado): void {
-    localStorage.setItem(CHAVE_TIME_SELECIONADO, JSON.stringify(timeSelecionado));
-
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Time selecionado',
-      detail: `${timeSelecionado.nome} foi definido como seu time.`
+    this.route.queryParams.subscribe(params => {
+      this.filtroLiga = params['liga'] || null;
+      this.filtroPais = params['pais'] || null;
+      this.filtroLigaExibicao = params['ligaExibicao'] || null;
+      this.filtroPaisCodigo = params['paisCodigo'] || null;
+      this.filtroLigaId = params['ligaId'] ? Number(params['ligaId']) : null;
+      this.paginaAtual = 1;
+      this.carregarTimes();
     });
   }
 
-  formatarMoeda(valor: number): string {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(valor);
+  carregarTimes(): void {
+    const params: any = { page: this.paginaAtual - 1, size: 30 };
+    if (this.termoBusca) params.nome = this.termoBusca;
+    if (this.filtroLiga) params.liga = this.filtroLiga;
+    if (this.filtroPais) params.pais = this.filtroPais;
+
+    this.http.get<any>('http://localhost:8080/api/times', { params }).subscribe(resultado => {
+      this.times = resultado.times;
+      this.totalPaginas = resultado.totalPaginas;
+      this.totalItens = resultado.totalItens;
+      this.cdr.markForCheck();
+    });
+  }
+
+  aoFiltrar(): void {
+    this.termoBuscaSubject.next(this.termoBusca);
+  }
+
+  limparFiltroOrigem(): void {
+    this.router.navigate(['/times']);
+  }
+
+  get paginasArray(): number[] {
+    const total = this.totalPaginas;
+    const atual = this.paginaAtual;
+    const janela = 5;
+
+    let inicio = Math.max(1, atual - Math.floor(janela / 2));
+    let fim = Math.min(total, inicio + janela - 1);
+
+    if (fim - inicio + 1 < janela) {
+      inicio = Math.max(1, fim - janela + 1);
+    }
+
+    return Array.from({ length: fim - inicio + 1 }, (_, i) => inicio + i);
+  }
+
+  irParaPagina(pagina: number): void {
+    if (pagina < 1 || pagina > this.totalPaginas) return;
+    this.paginaAtual = pagina;
+    this.carregarTimes();
+  }
+
+  paginaAnterior(): void {
+    this.irParaPagina(this.paginaAtual - 1);
+  }
+
+  proximaPagina(): void {
+    this.irParaPagina(this.paginaAtual + 1);
+  }
+
+  obterEstrelas(overallMedio: number): number {
+    if (overallMedio >= 90) return 5;
+    if (overallMedio >= 85) return 4;
+    if (overallMedio >= 78) return 3;
+    if (overallMedio >= 70) return 2;
+    return 1;
+  }
+
+  obterArrayEstrelas(): number[] {
+    return [1, 2, 3, 4, 5];
+  }
+
+  formatarValorCompacto(valor: number): string {
+    if (!valor) return '—';
+    if (valor >= 1000000) return `€${(valor / 1000000).toFixed(1)}M`;
+    if (valor >= 1000) return `€${(valor / 1000).toFixed(0)}K`;
+    return `€${valor}`;
+  }
+
+  aoErroEscudo(evento: Event): void {
+    const img = evento.target as HTMLImageElement;
+    img.style.display = 'none';
+    const pai = img.parentElement;
+    if (pai && !pai.querySelector('.escudo-fallback')) {
+      const icone = document.createElement('i');
+      icone.className = 'escudo-fallback fas fa-shield-alt text-green-700 text-xl';
+      pai.appendChild(icone);
+    }
   }
 }

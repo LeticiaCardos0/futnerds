@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { TimeSelecionado, CHAVE_TIME_SELECIONADO } from '../times/times';
+import { TimeSelecionado, CHAVE_TIME_SELECIONADO } from '../selecionar-time/selecionar-time';
 import { JogadorElenco, CHAVE_ELENCO } from '../jogadores/jogadores';
 import { traduzirPosicao } from '../../shared/posicoes.util';
 

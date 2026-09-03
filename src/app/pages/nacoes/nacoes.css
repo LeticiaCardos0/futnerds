@@ -1,0 +1,324 @@
+/* ============================================================================
+   FUTNERDS · TELA "NAÇÕES" — ESTILOS DO COMPONENTE
+   ----------------------------------------------------------------------------
+   Variáveis prefixadas com --nacoes- e escopadas em .pagina-nacoes (em vez de
+   :root) para não colidir com o tema global do resto do app Angular — o
+   Angular não reescreve seletores :root/body para isolá-los por componente,
+   então usar :root aqui vazaria essas variáveis para o app inteiro.
+
+   Fora do globo elas apontam para os tokens globais de tema (--color-*), que
+   já trocam sozinhos entre claro/escuro via a classe .dark no <html>. Dentro
+   de .area-globo (o "espaço" por trás do planeta) elas são fixadas de volta
+   nos valores escuros originais, porque o fundo do globo deve permanecer
+   sempre com a mesma cor, independente do tema escolhido.
+   ============================================================================ */
+
+.pagina-nacoes{
+  --nacoes-surface: var(--color-surface);
+  --nacoes-surface-2: var(--color-surface-2);
+  --nacoes-border: var(--color-border-c);
+  --nacoes-border-2: color-mix(in srgb, var(--color-fg) 16%, transparent);
+
+  --nacoes-primary: var(--color-accent);
+  --nacoes-primary-light: var(--color-accent);
+
+  --nacoes-text: var(--color-fg);
+  --nacoes-text-secondary: var(--color-fg-muted);
+  --nacoes-text-muted: var(--color-fg-subtle);
+
+  font-family: 'Sora', system-ui, sans-serif;
+  color: var(--nacoes-text);
+}
+
+.pagina-nacoes *{ box-sizing: border-box; }
+
+.pagina-nacoes{
+  display:flex; flex-direction:column;
+  padding: 22px 28px 20px;
+}
+
+/* ---------------------------- Palco (globo + painel) ---------------------------- */
+.palco{
+  height: 74vh;
+  min-height: 540px;
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+}
+
+.area-globo{
+  /* Fundo do globo (a "galáxia") sempre escuro, mesmo no tema claro. */
+  --nacoes-espaco-bg: #04070b;
+  --nacoes-border: rgba(255,255,255,0.08);
+  --nacoes-border-2: rgba(255,255,255,0.16);
+  --nacoes-primary: #00E676;
+  --nacoes-primary-light: #5EFFA2;
+  --nacoes-text: #eef3f1;
+  --nacoes-text-secondary: #8b9aa1;
+  --nacoes-text-muted: #566169;
+
+  position:relative;
+  border-radius: 24px;
+  overflow:hidden;
+  /* Cor sólida fixa por baixo do brilho verde translúcido — o canvas do
+     Three.js é renderizado com alpha:true (para o degradê aparecer atrás
+     do planeta), então sem essa cor sólida aqui o fundo do tema claro
+     (--color-bg) vazaria por trás das estrelas. */
+  background-color: var(--nacoes-espaco-bg);
+  background-image: radial-gradient(circle at 50% 45%, rgba(0,230,118,0.045), transparent 62%);
+  border: 1px solid var(--nacoes-border);
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.4);
+}
+
+#globo-canvas{ position:absolute; inset:0; cursor: grab; }
+#globo-canvas.arrastando{ cursor: grabbing; }
+#globo-canvas canvas{ display:block; width:100%; height:100%; }
+
+/* --- Controles de zoom/reset --- */
+.globo-controles{
+  position:absolute; left:20px; bottom:20px;
+  display:flex; gap:8px;
+  z-index:5;
+}
+.controle-botao{
+  width:38px; height:38px; border-radius:11px;
+  background: rgba(10,15,12,0.7);
+  border: 1px solid var(--nacoes-border-2);
+  color: var(--nacoes-text);
+  font-size:17px; font-weight:600;
+  cursor:pointer;
+  backdrop-filter: blur(8px);
+  display:flex; align-items:center; justify-content:center;
+  transition: all 0.18s ease;
+}
+.controle-botao:hover{ background: rgba(0,230,118,0.12); border-color: rgba(0,230,118,0.4); color: var(--nacoes-primary); }
+.controle-botao--reset{ font-size:15px; }
+
+/* --- Dicas de uso --- */
+.globo-dicas{
+  position:absolute; right:20px; bottom:20px;
+  display:flex; flex-direction:column; gap:3px;
+  align-items:flex-end;
+  z-index:5;
+  pointer-events:none;
+}
+.globo-dicas p{
+  margin:0;
+  font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.03em;
+  color: var(--nacoes-text-muted);
+  background: rgba(3,6,9,0.5);
+  padding: 3px 9px; border-radius:99px;
+}
+
+/* ---------------------------- Tooltip flutuante ---------------------------- */
+.tooltip{
+  position:fixed; top:0; left:0;
+  min-width: 220px; max-width: 260px;
+  background: rgba(11,17,23,0.85);
+  border: 1px solid rgba(0,230,118,0.28);
+  border-radius: 14px;
+  padding: 14px 16px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 55px -14px rgba(0,0,0,0.65), 0 0 24px -6px rgba(0,230,118,0.25);
+  pointer-events:none;
+  opacity:0;
+  transform-origin: top left;
+  transform: translate(-9999px,-9999px) scale(0.9);
+  transition: opacity 0.18s ease, transform 0.18s cubic-bezier(.2,.8,.3,1.2);
+  z-index: 50;
+}
+.tooltip.visivel{ opacity:1; }
+.tooltip-cabecalho{ display:flex; align-items:center; gap:9px; margin-bottom:10px; }
+.tooltip-bandeira{ width:24px; height:18px; border-radius:3px; object-fit:cover; flex-shrink:0; }
+.tooltip-nome{ font-weight:700; font-size:14.5px; }
+.tooltip-rotulo{
+  font-family:'JetBrains Mono', monospace; font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase;
+  color: var(--nacoes-primary); margin:0 0 6px;
+}
+.tooltip-lista{ margin:0 0 10px; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px; }
+.tooltip-lista li{ font-size:12.5px; color: var(--nacoes-text-secondary); padding-left:14px; position:relative; }
+.tooltip-lista li::before{
+  content:''; position:absolute; left:0; top:7px; width:5px; height:5px; border-radius:50%; background:var(--nacoes-primary);
+}
+.tooltip-lista li.tooltip-vazio{ color: var(--nacoes-text-muted); font-style:italic; }
+.tooltip-lista li.tooltip-vazio::before{ background: var(--nacoes-text-muted); }
+.tooltip-rodape{
+  font-size:11px; color: var(--nacoes-text-muted); margin:0;
+  border-top: 1px solid var(--nacoes-border); padding-top:8px;
+}
+
+/* ============================================================================
+   PAINEL LATERAL
+   ============================================================================ */
+.painel{
+  background: linear-gradient(180deg, var(--nacoes-surface) 0%, var(--nacoes-surface-2) 100%);
+  border: 1px solid var(--nacoes-border);
+  border-top: 2px solid var(--nacoes-primary);
+  border-radius: 24px;
+  padding: 26px 22px;
+  overflow-y: auto;
+  position:relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(0,230,118,0.03) inset;
+}
+.painel::-webkit-scrollbar{ width:6px; }
+.painel::-webkit-scrollbar-thumb{ background: var(--nacoes-border-2); border-radius:99px; }
+
+.painel-fechar{
+  position:absolute; top:18px; right:18px;
+  width:30px; height:30px; border-radius:50%;
+  background: color-mix(in srgb, var(--color-fg) 4%, transparent); border:1px solid var(--nacoes-border);
+  color: var(--nacoes-text-secondary); font-size:13px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition: all 0.15s ease;
+}
+.painel-fechar:hover{ background: color-mix(in srgb, var(--color-fg) 8%, transparent); color: var(--nacoes-text); }
+
+.painel-topo{ display:flex; align-items:center; gap:14px; margin: 4px 0 4px; animation: entrarSuave 0.35s ease; }
+.painel-bandeira{ width:52px; height:38px; border-radius:6px; object-fit:cover; flex-shrink:0; border:1px solid var(--nacoes-border-2); }
+.painel-eyebrow{
+  font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase;
+  color: var(--nacoes-primary); margin:0 0 4px;
+}
+.painel-nome{ font-size:25px; font-weight:800; margin:0; letter-spacing:0; line-height:1.1; }
+.painel-subtitulo{ font-size:13px; color: var(--nacoes-text-secondary); margin: 2px 0 18px; }
+
+.painel-stats-row{ display:flex; gap:10px; margin-bottom:18px; }
+.stat-pill{
+  flex:1;
+  background: rgba(0,230,118,0.06);
+  border: 1px solid rgba(0,230,118,0.18);
+  border-radius: 12px;
+  padding: 10px 12px;
+  display:flex; flex-direction:column; gap:1px;
+}
+.stat-numero{ font-size:19px; font-weight:800; color: var(--nacoes-primary); }
+.stat-rotulo{ font-size:11px; color: var(--nacoes-text-secondary); }
+
+.painel-descricao{
+  font-size:12.5px; line-height:1.6; color: var(--nacoes-text-secondary);
+  padding: 13px; background: color-mix(in srgb, var(--color-fg) 3%, transparent); border:1px solid var(--nacoes-border); border-radius:12px;
+  margin: 0 0 20px;
+  animation: entrarSuave 0.4s ease 0.05s backwards;
+}
+
+.painel-ligas{ display:flex; flex-direction:column; gap:9px; margin-bottom:14px; }
+.painel-vazio{ font-size:13px; color: var(--nacoes-text-muted); text-align:center; padding:20px 0; }
+
+.liga-card{
+  display:flex; align-items:center; gap:13px;
+  padding: 13px 13px;
+  background: color-mix(in srgb, var(--color-fg) 3%, transparent);
+  border: 1px solid var(--nacoes-border);
+  border-radius: 14px;
+  cursor:pointer;
+  transition: all 0.25s ease;
+  animation: entrarSuave 0.4s ease backwards;
+}
+.liga-card:nth-child(1){ animation-delay: 0.04s; }
+.liga-card:nth-child(2){ animation-delay: 0.08s; }
+.liga-card:nth-child(3){ animation-delay: 0.12s; }
+.liga-card:nth-child(4){ animation-delay: 0.16s; }
+.liga-card:nth-child(5){ animation-delay: 0.2s; }
+
+.liga-card:hover{
+  background: rgba(0,230,118,0.06);
+  border-color: rgba(0,230,118,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px -10px rgba(0,230,118,0.3);
+}
+.liga-icone{
+  width:36px; height:36px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; flex:none;
+  overflow:hidden;
+}
+.liga-info{ flex:1; min-width:0; }
+.liga-nome{ font-size:13.5px; font-weight:600; margin:0; color: var(--nacoes-text); }
+.liga-clubes{ font-size:11.5px; color: var(--nacoes-text-muted); margin:2px 0 0; }
+.liga-seta{ color: var(--nacoes-text-muted); font-size:18px; transition: transform 0.25s ease, color 0.25s ease; }
+.liga-card:hover .liga-seta{ color: var(--nacoes-primary); transform: translateX(4px); }
+
+/* --- Card especial "Ver todos os times" --- */
+.card-ver-times{
+  display:flex; align-items:center; gap:13px;
+  padding: 15px 15px;
+  margin-top: 6px;
+  border-radius: 16px;
+  cursor:pointer;
+  background: linear-gradient(135deg, rgba(0,230,118,0.14), rgba(94,255,162,0.06));
+  border: 1px solid rgba(0,230,118,0.35);
+  transition: all 0.25s ease;
+}
+.card-ver-times:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px -12px rgba(0,230,118,0.45);
+  border-color: rgba(0,230,118,0.6);
+}
+.card-ver-times-icone{ font-size:22px; flex:none; }
+.card-ver-times-texto{ flex:1; min-width:0; }
+.card-ver-times-titulo{ font-size:13.5px; font-weight:700; margin:0; color: var(--nacoes-text); }
+.card-ver-times-sub{ font-size:11px; color: var(--nacoes-text-secondary); margin:2px 0 0; }
+.card-ver-times:hover .liga-seta{ color: var(--nacoes-primary); transform: translateX(4px); }
+
+@keyframes entrarSuave{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* ---------------------------- Overlay do bottom sheet (mobile) ---------------------------- */
+.bottom-sheet-overlay{
+  display:none;
+  position:fixed; inset:0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(3px);
+  z-index: 40;
+  opacity:0; pointer-events:none;
+  transition: opacity 0.25s ease;
+}
+::selection{ background: rgba(0,230,118,0.3); }
+
+/* ============================================================================
+   RESPONSIVIDADE — Tablet
+   ============================================================================ */
+@media (max-width: 1180px){
+  .palco{ grid-template-columns: 1fr 340px; }
+}
+
+/* ============================================================================
+   RESPONSIVIDADE — Mobile (painel vira Bottom Sheet)
+   ============================================================================ */
+@media (max-width: 820px){
+  body{ overflow:auto; }
+
+  .pagina-nacoes{ padding: 16px 14px 0; }
+
+  .palco{
+    grid-template-columns: 1fr;
+    height: 62vh;
+  }
+
+  .painel{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    max-height: 78vh;
+    border-radius: 22px 22px 0 0;
+    border: 1px solid var(--nacoes-border);
+    border-bottom:none;
+    transform: translateY(100%);
+    transition: transform 0.32s cubic-bezier(.2,.8,.25,1);
+    z-index: 45;
+    padding-top: 34px;
+  }
+  .painel::before{
+    content:'';
+    position:absolute; top:12px; left:50%; transform:translateX(-50%);
+    width:38px; height:4px; border-radius:99px;
+    background: var(--nacoes-border-2);
+  }
+
+  body.sheet-aberto .painel{ transform: translateY(0); }
+  body.sheet-aberto .bottom-sheet-overlay{ display:block; opacity:1; pointer-events:auto; }
+
+  .globo-dicas{ display:none; }
+}
