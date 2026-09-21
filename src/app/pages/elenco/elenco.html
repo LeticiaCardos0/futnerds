@@ -131,7 +131,8 @@
           <div *ngIf="slot.jogador" class="flex flex-col items-center gap-1">
             <div
               class="foto-jogador w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-accent bg-surface">
-              <img [src]="slot.jogador.foto" [alt]="slot.jogador.nome" class="w-full h-full object-cover" />
+              <img [src]="slot.jogador.foto" [alt]="slot.jogador.nome" class="w-full h-full object-cover"
+                (error)="$event.target.style.display='none'" />
             </div>
             <span class="nome-jogador text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
               {{ slot.jogador.nome }}
@@ -194,7 +195,8 @@
               [class.bg-surface-2]="i % 2 === 1">
               <td class="px-6 py-4">
                 <img [src]="jogador.foto" [alt]="jogador.nome"
-                  class="w-10 h-10 rounded-full object-cover border border-fg/10" />
+                  class="w-10 h-10 rounded-full object-cover border border-fg/10"
+                  (error)="$event.target.style.display='none'" />
               </td>
               <td class="px-6 py-4">
                 <span class="text-fg font-black">{{ jogador.nome }}</span>

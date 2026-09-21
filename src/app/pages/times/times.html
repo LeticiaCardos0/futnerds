@@ -12,29 +12,24 @@
     </header>
 
     <!-- BANNER DE CONTEXTO (origem: liga ou país) -->
-    <div *ngIf="filtroLiga || filtroPais" class="bg-surface rounded-2xl border border-green-500/20 p-4 mb-6 flex items-center justify-between">
+    <div *ngIf="filtroLiga || filtroPais"
+      class="bg-surface rounded-2xl border border-green-500/20 p-4 mb-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div *ngIf="filtroLiga" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
-          <img
-            [src]="obterCaminhoLogoLiga(filtroLiga, filtroLigaId)"
-            alt=""
-            class="w-full h-full object-contain p-1"
-            (error)="$event.target.style.display='none'; $event.target.parentElement!.innerHTML='<i class=\'fas fa-trophy text-fg-subtle\'></i>'"
-          />
+        <div *ngIf="filtroLiga"
+          class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+          <img [src]="obterCaminhoLogoLiga(filtroLiga)" alt="" class="w-full h-full object-contain p-1"
+            (error)="$event.target.style.display='none'; $event.target.parentElement!.innerHTML='<i class=\'fas fa-trophy text-fg-subtle\'></i>'" />
         </div>
-        <img
-          *ngIf="filtroPaisCodigo && !filtroLiga"
-          [src]="'https://flagcdn.com/w40/' + filtroPaisCodigo + '.png'"
-          alt=""
-          (error)="$event.target.style.display='none'"
-          class="w-8 h-6 rounded object-cover border border-fg/10"
-        />
+        <img *ngIf="filtroPaisCodigo && !filtroLiga" [src]="'https://flagcdn.com/w40/' + filtroPaisCodigo + '.png'"
+          alt="" (error)="$event.target.style.display='none'"
+          class="w-8 h-6 rounded object-cover border border-fg/10" />
         <div>
           <p class="text-fg-subtle text-xs uppercase tracking-widest font-bold">Filtrando por</p>
           <p class="text-fg font-bold text-lg mt-1">{{ filtroLigaExibicao || filtroLiga || filtroPais }}</p>
         </div>
       </div>
-      <button (click)="limparFiltroOrigem()" class="cursor-pointer text-fg-subtle hover:text-fg text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
+      <button (click)="limparFiltroOrigem()"
+        class="cursor-pointer text-fg-subtle hover:text-fg text-xs font-bold uppercase tracking-widest flex items-center gap-1.5">
         <i class="fas fa-times"></i> Limpar filtro
       </button>
     </div>
@@ -43,37 +38,28 @@
     <div class="mb-6">
       <div class="relative w-full lg:max-w-xs">
         <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-fg-subtle text-sm"></i>
-        <input
-          type="text"
-          [(ngModel)]="termoBusca"
-          (ngModelChange)="aoFiltrar()"
-          placeholder="Buscar time..."
-          class="w-full bg-surface border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-sm focus:border-accent/50 outline-none transition"
-        >
+        <input type="text" [(ngModel)]="termoBusca" (ngModelChange)="aoFiltrar()" placeholder="Buscar time..."
+          class="w-full bg-surface border border-fg/5 rounded-xl pl-11 pr-4 py-3 text-sm focus:border-accent/50 outline-none transition">
       </div>
     </div>
 
     <!-- GRID DE TIMES -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div
-        *ngFor="let time of times"
+      <div *ngFor="let time of times" (click)="abrirTime(time.id)"
         class="rounded-2xl overflow-hidden border border-fg/5 hover:border-green-500/30 hover:scale-[1.01] transition-all cursor-pointer">
-
-        <div class="p-4 flex items-center gap-3.5 relative" style="background: linear-gradient(135deg, #00E676, #0B8A45)">
+        <div class="p-4 flex items-center gap-3.5 relative"
+          style="background: linear-gradient(135deg, #00E676, #0B8A45)">
           <span class="absolute top-3 right-3.5 bg-black/25 text-white text-[10px] font-bold px-2 py-1 rounded">
             {{ time.ligaNome?.toUpperCase() || 'SEM LIGA' }}
           </span>
           <div class="w-14 h-14 rounded-xl bg-white flex items-center justify-center flex-shrink-0">
-            <img
-              [src]="time.escudoUrl"
-              [alt]="time.nome"
-              class="w-10 h-10 object-contain"
-              (error)="aoErroEscudo($event)"
-            />
+            <img [src]="time.escudoUrl" [alt]="time.nome" class="w-10 h-10 object-contain"
+              (error)="aoErroEscudo($event)" />
           </div>
           <div>
             <p class="font-bold text-base" style="color:#04150c">{{ time.nome }}</p>
-            <p class="text-xs mt-0.5" style="color:#083b21">{{ time.quantidadeJogadores }} jogadores · {{ time.idadeMedia | number:'1.0-0' }} anos (média)</p>
+            <p class="text-xs mt-0.5" style="color:#083b21">{{ time.quantidadeJogadores }} jogadores · {{
+              time.idadeMedia | number:'1.0-0' }} anos (média)</p>
           </div>
         </div>
 
@@ -92,12 +78,11 @@
           <div class="flex items-end justify-between border-t border-fg/10 pt-3">
             <div>
               <p class="text-[11px] text-fg-subtle">Valor do elenco</p>
-              <p class="text-lg font-bold mt-0.5" style="color:#00E676">{{ formatarValorCompacto(time.valorElenco) }}</p>
+              <p class="text-lg font-bold mt-0.5" style="color:#00E676">{{ formatarValorCompacto(time.valorElenco) }}
+              </p>
             </div>
             <div class="flex gap-0.5">
-              <i
-                *ngFor="let estrela of obterArrayEstrelas()"
-                class="fas fa-star text-sm"
+              <i *ngFor="let estrela of obterArrayEstrelas()" class="fas fa-star text-sm"
                 [style.color]="estrela <= obterEstrelas(time.overallMedio) ? '#EF9F27' : 'var(--color-fg-subtle)'">
               </i>
             </div>
@@ -113,30 +98,19 @@
       </p>
 
       <div class="flex items-center gap-2">
-        <button
-          type="button"
-          (click)="paginaAnterior()"
-          [disabled]="paginaAtual === 1"
+        <button type="button" (click)="paginaAnterior()" [disabled]="paginaAtual === 1"
           class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
           <i class="fas fa-chevron-left text-xs"></i>
         </button>
 
-        <button
-          type="button"
-          *ngFor="let pagina of paginasArray"
-          (click)="irParaPagina(pagina)"
-          [class.bg-accent]="pagina === paginaAtual"
-          [class.text-accent-fg]="pagina === paginaAtual"
-          [class.bg-surface-2]="pagina !== paginaAtual"
-          [class.text-fg-muted]="pagina !== paginaAtual"
+        <button type="button" *ngFor="let pagina of paginasArray" (click)="irParaPagina(pagina)"
+          [class.bg-accent]="pagina === paginaAtual" [class.text-accent-fg]="pagina === paginaAtual"
+          [class.bg-surface-2]="pagina !== paginaAtual" [class.text-fg-muted]="pagina !== paginaAtual"
           class="cursor-pointer w-9 h-9 flex items-center justify-center rounded-lg font-bold text-xs hover:bg-fg/10 hover:text-fg transition">
           {{ pagina }}
         </button>
 
-        <button
-          type="button"
-          (click)="proximaPagina()"
-          [disabled]="paginaAtual === totalPaginas"
+        <button type="button" (click)="proximaPagina()" [disabled]="paginaAtual === totalPaginas"
           class="cursor-pointer disabled:cursor-not-allowed disabled:opacity-30 w-9 h-9 flex items-center justify-center rounded-lg bg-surface-2 hover:bg-fg/10 hover:text-fg transition">
           <i class="fas fa-chevron-right text-xs"></i>
         </button>
@@ -146,7 +120,8 @@
     <!-- ESTADO VAZIO -->
     <div *ngIf="totalItens === 0" class="text-center py-12 text-fg-subtle">
       Nenhum time encontrado com esse termo.
-      <button type="button" (click)="termoBusca = ''; aoFiltrar()" class="cursor-pointer block mx-auto mt-3 text-accent hover:underline text-sm font-bold">
+      <button type="button" (click)="termoBusca = ''; aoFiltrar()"
+        class="cursor-pointer block mx-auto mt-3 text-accent hover:underline text-sm font-bold">
         Limpar busca
       </button>
     </div>

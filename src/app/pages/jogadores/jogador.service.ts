@@ -15,4 +15,8 @@ export class JogadorService {
     if (posicao && posicao !== 'Todas') params = params.set('posicao', posicao);
     return this.http.get<any>(this.apiUrl, { params });
   }
+
+  buscarPorId(id: number): Observable<Jogador> {
+    return this.http.get<Jogador>(`${this.apiUrl}/${id}`);
+  }
 }

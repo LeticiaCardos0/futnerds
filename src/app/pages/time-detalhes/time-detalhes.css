@@ -1,0 +1,58 @@
+/* Reaproveita as mesmas variáveis --campo-* já definidas em styles.css
+   (usadas também em elenco.css) — não duplicar aqui, só usar. */
+.campo-futebol {
+  background: var(--campo-bg);
+}
+.nome-jogador {
+  color: var(--campo-nome-text);
+  background: var(--campo-nome-bg);
+}
+.posicao-vazia {
+  color: var(--campo-posicao-text);
+  background: var(--campo-posicao-bg);
+}
+.foto-jogador {
+  box-shadow: var(--campo-sombra-foto);
+}
+
+/* Brilho passando no card do hero */
+.td-sweep {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.td-sweep::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: skewX(-20deg);
+  animation: td-sweep-move 5s ease-in-out infinite;
+}
+@keyframes td-sweep-move {
+  0% { left: -70%; }
+  100% { left: 150%; }
+}
+
+/* Troféus entrando com stagger (classe adicionada via JS no component) */
+.td-trofeu {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease;
+}
+.td-trofeu--visivel {
+  opacity: 1;
+  transform: scale(1);
+}
+.td-trofeu:hover {
+  border-color: rgba(250, 204, 21, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .td-sweep::after { animation: none; }
+  .td-trofeu { opacity: 1; transform: none; transition: none; }
+}

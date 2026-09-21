@@ -1,0 +1,334 @@
+<div class="min-h-screen bg-bg text-fg pt-16 pb-16">
+
+  <!-- LOADING -->
+  <div *ngIf="carregando" class="max-w-[1240px] mx-auto px-6 py-24 text-center text-fg-subtle">
+    <i class="fas fa-circle-notch fa-spin text-2xl mb-3"></i>
+    <p class="text-sm font-medium">Carregando time...</p>
+  </div>
+
+  <!-- ERRO -->
+  <div *ngIf="erroCarregamento" class="max-w-[1240px] mx-auto px-6 py-24 text-center">
+    <p class="text-fg-subtle text-sm font-medium mb-4">Não foi possível carregar este time.</p>
+    <button (click)="voltar()" class="text-accent text-sm font-bold hover:underline">Voltar para Times</button>
+  </div>
+
+  <div *ngIf="!carregando && !erroCarregamento && time" class="max-w-[1240px] mx-auto px-6">
+
+    <!-- ============ HERO ============ -->
+    <div class="bg-surface border border-fg/10 rounded-2xl p-6 md:p-7 mb-6">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-white flex items-center justify-center flex-shrink-0 overflow-hidden shadow-md">
+          <img *ngIf="time.escudoUrl; else semEscudo" [src]="time.escudoUrl" [alt]="time.nome" class="w-12 h-12 md:w-14 md:h-14 object-contain" />
+          <ng-template #semEscudo><i class="fas fa-shield-halved text-fg-subtle/40 text-2xl"></i></ng-template>
+        </div>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold leading-tight">{{ time.nome }}</h1>
+          <div class="flex flex-wrap gap-4 mt-1.5 text-sm text-fg-muted">
+            <span class="inline-flex items-center gap-1.5"><i class="fas fa-futbol text-accent"></i> {{ time.ligaNome || 'Liga não informada' }}</span>
+            <span *ngIf="time.estadio" class="inline-flex items-center gap-1.5"><i class="fas fa-building text-fg-subtle"></i> {{ time.estadio }}</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-fg-muted text-sm leading-7 mt-4 max-w-3xl" *ngIf="time.resumoHistorico; else semHistoria">
+        {{ time.resumoHistorico }}
+      </p>
+      <ng-template #semHistoria>
+        <p class="text-fg-subtle text-sm mt-4">História do clube ainda não cadastrada.</p>
+      </ng-template>
+
+      <!-- pills de dados rápidos -->
+      <div class="flex flex-wrap gap-2.5 mt-5">
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-accent/10 text-accent flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-coins"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Orçamento</p>
+            <p class="text-sm font-bold" [ngClass]="time.orcamento ? '' : 'text-fg-subtle font-medium'">
+              {{ time.orcamento ? (time.orcamento | currency:'BRL':'symbol':'1.0-0') : 'não informado' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-yellow-400/10 text-yellow-400 flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-trophy"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Overall médio</p>
+            <p class="text-sm font-bold">{{ time.overallMedio | number:'1.0-0' }}</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-info/10 text-info flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-users"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Jogadores</p>
+            <p class="text-sm font-bold">{{ time.elenco?.length || 0 }}</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-accent/10 text-accent flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-star"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Melhor jogador</p>
+            <p class="text-sm font-bold" *ngIf="time.melhorJogadorNome; else semMelhorJogador">
+              {{ time.melhorJogadorNome }} ({{ time.melhorJogadorOverall }})
+            </p>
+            <ng-template #semMelhorJogador><p class="text-sm font-bold text-fg-subtle">—</p></ng-template>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-danger/10 text-danger flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-swords"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Rival</p>
+            <p class="text-sm font-bold" [ngClass]="time.rivalNome ? '' : 'text-fg-subtle font-medium'">
+              {{ time.rivalNome || 'não cadastrado' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-purple-400/10 text-purple-400 flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-globe"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Prestígio internacional</p>
+            <p class="text-sm font-bold" [ngClass]="time.prestigioInternacional != null ? '' : 'text-fg-subtle font-medium'">
+              {{ time.prestigioInternacional != null ? (time.prestigioInternacional + '/10') : 'não informado' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5 bg-surface-2 border border-fg/5 rounded-xl px-4 py-2.5">
+          <div class="w-7 h-7 rounded-lg bg-orange-400/10 text-orange-400 flex items-center justify-center text-xs flex-shrink-0"><i class="fas fa-location-dot"></i></div>
+          <div>
+            <p class="text-[10px] text-fg-subtle">Prestígio local</p>
+            <p class="text-sm font-bold" [ngClass]="time.prestigioLocal != null ? '' : 'text-fg-subtle font-medium'">
+              {{ time.prestigioLocal != null ? (time.prestigioLocal + '/10') : 'não informado' }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ TABS ============ -->
+    <div class="sticky top-0 z-20 bg-bg border-b border-fg/10 -mx-6 px-6 mb-7">
+      <div class="flex gap-1">
+        <button (click)="selecionarAba('overview')"
+          class="px-5 py-4 text-sm font-bold border-b-2 transition-colors"
+          [ngClass]="abaAtiva === 'overview' ? 'border-accent text-fg' : 'border-transparent text-fg-subtle hover:text-fg'">
+          Visão geral
+        </button>
+        <button (click)="selecionarAba('squad')"
+          class="px-5 py-4 text-sm font-bold border-b-2 transition-colors"
+          [ngClass]="abaAtiva === 'squad' ? 'border-accent text-fg' : 'border-transparent text-fg-subtle hover:text-fg'">
+          Elenco <span class="text-fg-subtle font-mono text-xs ml-1">{{ time.elenco?.length || 0 }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ VISÃO GERAL ============ -->
+    <div *ngIf="abaAtiva === 'overview'" class="flex flex-col gap-4 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-surface border border-fg/10 rounded-2xl p-6">
+        <h3 class="text-lg font-bold mb-4">Informações do clube</h3>
+        <div class="flex justify-between py-2.5 border-b border-fg/5 text-sm">
+          <span class="text-fg-subtle">Estádio</span>
+          <span class="font-semibold" [ngClass]="time.estadio ? '' : 'text-fg-subtle font-normal'">{{ time.estadio || 'não informado' }}</span>
+        </div>
+        <div class="flex justify-between py-2.5 border-b border-fg/5 text-sm">
+          <span class="text-fg-subtle">Capacidade</span>
+          <span class="font-semibold" [ngClass]="time.capacidadeEstadio ? '' : 'text-fg-subtle font-normal'">
+            {{ time.capacidadeEstadio ? (time.capacidadeEstadio | number:'1.0-0') : 'não informada' }}
+          </span>
+        </div>
+        <div class="flex justify-between py-2.5 border-b border-fg/5 text-sm">
+          <span class="text-fg-subtle">Cidade</span>
+          <span class="font-semibold" [ngClass]="time.cidade ? '' : 'text-fg-subtle font-normal'">{{ time.cidade || 'não informada' }}</span>
+        </div>
+        <div class="flex justify-between py-2.5 border-b border-fg/5 text-sm">
+          <span class="text-fg-subtle">País</span>
+          <span class="font-semibold">{{ time.paisNome || '—' }}</span>
+        </div>
+        <div class="flex justify-between py-2.5 text-sm">
+          <span class="text-fg-subtle">Fundação</span>
+          <span class="font-semibold" [ngClass]="time.fundacao ? '' : 'text-fg-subtle font-normal'">{{ time.fundacao || 'não informada' }}</span>
+        </div>
+      </div>
+
+      <div class="bg-surface border border-fg/10 rounded-2xl p-6">
+        <h3 class="text-lg font-bold mb-4">Uniformes</h3>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="text-center" *ngFor="let def of tiposUniforme">
+            <div class="w-full aspect-square rounded-xl bg-surface-2 border border-fg/5 overflow-hidden flex items-center justify-center mb-2">
+              <img *ngIf="uniformePorTipo(def.tipo)?.imagemUrl as url" [src]="url" [alt]="def.label"
+                class="w-full h-full object-contain p-2" (error)="$event.target.style.display='none'" />
+              <i *ngIf="!uniformePorTipo(def.tipo)?.imagemUrl" class="fas fa-shirt text-fg-subtle text-2xl"></i>
+            </div>
+            <p class="text-xs text-fg-subtle font-semibold">{{ def.label }}</p>
+          </div>
+        </div>
+        <p class="text-xs text-fg-subtle mt-4" *ngIf="!time.uniformes?.length">Uniformes ainda não cadastrados para este time.</p>
+      </div>
+    </div>
+
+    <!-- Estatísticas -->
+    <div class="bg-surface border border-fg/10 rounded-2xl p-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="flex gap-8 items-center justify-center flex-wrap">
+          <div class="flex flex-col items-center">
+            <div class="relative w-28 h-28">
+              <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
+                <circle cx="60" cy="60" r="50" fill="none" stroke-width="9" class="stroke-surface-3" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke-width="9" stroke-linecap="round"
+                  class="stroke-accent transition-[stroke-dashoffset] duration-[1200ms] ease-out"
+                  [attr.stroke-dasharray]="314" [style.stroke-dashoffset]="314"
+                  [attr.data-gauge-pct]="time.overallMedio"></circle>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-2xl font-black leading-none">{{ time.overallMedio | number:'1.0-0' }}</span>
+                <span class="text-[10px] text-fg-subtle mt-0.5">/ 100</span>
+              </div>
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-widest text-fg-subtle mt-3">Overall médio</p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <div class="relative w-28 h-28">
+              <svg viewBox="0 0 120 120" class="w-full h-full -rotate-90">
+                <circle cx="60" cy="60" r="50" fill="none" stroke-width="9" class="stroke-surface-3" />
+                <circle cx="60" cy="60" r="50" fill="none" stroke-width="9" stroke-linecap="round"
+                  class="stroke-yellow-400 transition-[stroke-dashoffset] duration-[1200ms] ease-out"
+                  [attr.stroke-dasharray]="314" [style.stroke-dashoffset]="314"
+                  [attr.data-gauge-pct]="(time.idadeMedia / 40) * 100"></circle>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="text-2xl font-black leading-none">{{ time.idadeMedia | number:'1.1-1' }}</span>
+                <span class="text-[10px] text-fg-subtle mt-0.5">anos</span>
+              </div>
+            </div>
+            <p class="font-mono text-[11px] uppercase tracking-widest text-fg-subtle mt-3">Idade média</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-widest text-fg-subtle mb-1">Valor total do elenco</p>
+          <p class="text-3xl font-black text-yellow-400 mb-5">{{ time.valorElenco | currency:'BRL':'symbol':'1.0-0' }}</p>
+
+          <div class="flex flex-col gap-3.5" *ngIf="time.overallAtaque != null || time.overallMeio != null || time.overallDefesa != null">
+            <div *ngIf="time.overallAtaque != null">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-mono uppercase tracking-widest text-fg-subtle">Ataque</span>
+                <span class="font-bold text-accent">{{ time.overallAtaque }}</span>
+              </div>
+              <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+                <div class="h-full bg-accent rounded-full transition-[width] duration-[1100ms] ease-out" style="width:0" [attr.data-barra-largura]="time.overallAtaque"></div>
+              </div>
+            </div>
+            <div *ngIf="time.overallMeio != null">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-mono uppercase tracking-widest text-fg-subtle">Meio-campo</span>
+                <span class="font-bold text-accent">{{ time.overallMeio }}</span>
+              </div>
+              <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+                <div class="h-full bg-accent rounded-full transition-[width] duration-[1100ms] ease-out" style="width:0" [attr.data-barra-largura]="time.overallMeio"></div>
+              </div>
+            </div>
+            <div *ngIf="time.overallDefesa != null">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-mono uppercase tracking-widest text-fg-subtle">Defesa</span>
+                <span class="font-bold text-accent">{{ time.overallDefesa }}</span>
+              </div>
+              <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+                <div class="h-full bg-accent rounded-full transition-[width] duration-[1100ms] ease-out" style="width:0" [attr.data-barra-largura]="time.overallDefesa"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conquistas -->
+    <div class="bg-surface border border-fg/10 rounded-2xl p-6">
+      <div class="flex items-baseline gap-3 flex-wrap border-b border-fg/10 pb-3 mb-5">
+        <h3 class="text-lg font-bold">Conquistas</h3>
+        <span class="text-xl font-black text-yellow-400">{{ totalTitulos }}</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-fg-subtle">títulos no total</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 divide-x divide-fg/5" *ngIf="time.titulos?.length; else semTitulos">
+        <div *ngFor="let titulo of time.titulos" class="td-trofeu flex flex-col items-center px-3 text-center">
+          <div class="w-14 h-14 rounded-full border-2 border-yellow-400/50 flex items-center justify-center mb-2.5">
+            <span class="text-lg font-black text-yellow-400">{{ titulo.quantidade }}</span>
+          </div>
+          <p class="text-xs text-fg-muted">{{ titulo.competicao }}</p>
+        </div>
+      </div>
+      <ng-template #semTitulos>
+        <p class="text-sm text-fg-subtle">Nenhum título cadastrado para este time.</p>
+      </ng-template>
+    </div>
+
+    </div>
+
+    <div *ngIf="abaAtiva === 'squad'" class="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-4 items-start pb-10">
+
+      <!-- CAMPO -->
+      <div class="bg-surface border border-fg/10 rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold">Time titular</h3>
+          <span class="font-mono text-xs text-accent border border-accent/30 bg-accent/10 rounded-full px-3 py-1">4-3-3</span>
+        </div>
+
+        <div class="campo-futebol relative w-full rounded-2xl overflow-hidden border border-fg/10" style="aspect-ratio:16/10;">
+          <div class="absolute inset-4 border-2 border-[color:var(--campo-linha)] rounded-md"></div>
+          <div class="absolute top-4 bottom-4 left-1/2 border-l-2 border-[color:var(--campo-linha)] -translate-x-1/2"></div>
+          <div class="absolute top-1/2 left-1/2 w-24 h-24 border-2 border-[color:var(--campo-linha)] rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+
+          <div *ngFor="let slot of slotsDaFormacao"
+            class="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1"
+            [style.top.%]="slot.top" [style.left.%]="slot.left">
+
+            <ng-container *ngIf="slot.jogador as jogador; else semJogador">
+              <div class="relative">
+                <div class="foto-jogador w-11 h-11 md:w-12 md:h-12 rounded-full overflow-hidden border-2 border-accent bg-surface">
+                  <img [src]="jogador.foto" [alt]="jogador.nome" class="w-full h-full object-cover"
+                    (error)="$event.target.style.display='none'" />
+                </div>
+                <span *ngIf="jogador.capitao"
+                  class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-yellow-400 text-[9px] font-black text-black flex items-center justify-center border-2 border-bg">C</span>
+              </div>
+              <span class="nome-jogador text-[10px] md:text-xs font-bold px-2 py-0.5 rounded-full whitespace-nowrap">{{ jogador.nome }}</span>
+            </ng-container>
+
+            <ng-template #semJogador>
+              <div class="w-11 h-11 md:w-12 md:h-12 rounded-full border-2 border-dashed border-[color:var(--campo-posicao-bg)] flex items-center justify-center bg-[color:var(--campo-posicao-bg)]">
+                <i class="fas fa-user text-[color:var(--campo-posicao-text)] text-sm"></i>
+              </div>
+              <span class="posicao-vazia text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full whitespace-nowrap">
+                {{ traduzirPosicao(slot.posicao) }}
+              </span>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+
+      <!-- BANCO -->
+      <div class="bg-surface border border-fg/10 rounded-2xl p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-bold">Banco de reservas</h3>
+          <span class="font-mono text-xs text-fg-subtle">{{ banco.length }} jogadores</span>
+        </div>
+        <div class="flex flex-col gap-2 max-h-[480px] overflow-y-auto pr-1">
+          <div *ngFor="let jogador of banco" class="flex items-center gap-3 bg-surface-2 border border-fg/5 rounded-xl px-3 py-2.5">
+            <img [src]="jogador.foto" [alt]="jogador.nome" class="w-8 h-8 rounded-full object-cover border border-fg/10"
+              (error)="$event.target.style.display='none'" />
+            <span class="text-[10px] font-mono text-fg-subtle w-9">{{ traduzirPosicao(jogador.posicao) }}</span>
+            <span class="flex-1 text-sm font-semibold truncate">{{ jogador.nome }}</span>
+            <span class="text-base font-black text-yellow-400">{{ jogador.overall }}</span>
+          </div>
+          <p *ngIf="!banco.length" class="text-sm text-fg-subtle py-4 text-center">Sem reservas cadastrados.</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+  </div>

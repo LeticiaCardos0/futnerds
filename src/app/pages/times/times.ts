@@ -104,6 +104,9 @@ export class TimesComponent implements OnInit {
 
     return Array.from({ length: fim - inicio + 1 }, (_, i) => inicio + i);
   }
+  abrirTime(id: number): void {
+  this.router.navigate(['/times', id]);
+  }
 
   irParaPagina(pagina: number): void {
     if (pagina < 1 || pagina > this.totalPaginas) return;

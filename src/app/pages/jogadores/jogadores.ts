@@ -86,6 +86,20 @@ export interface Jogador {
   alturaCm?: number;
   pesoKg?: number;
   tipoFisico?: string; // ex.: 'Normal', 'Magro', 'Robusto', 'Explosivo'
+  estilosDeJogo?: { titulo: string; descricao: string; icone?: string }[];
+  /** Histórico de carreira — uma linha por edição do jogo (FIFA/EA FC),
+   *  vindo do backend via JogadorHistoricoRepository. */
+  historico?: JogadorHistoricoItem[];
+}
+
+/** Uma linha do histórico de carreira numa edição específica do jogo. */
+export interface JogadorHistoricoItem {
+  edicao: number;
+  overall: number;
+  potencial: number;
+  clube: string;
+  liga: string;
+  escudoUrl?: string;
 }
 
 
@@ -350,6 +364,7 @@ export class JogadoresComponent implements OnInit {
   }
 
   irParaDetalhes(jogador: Jogador): void {
+    console.log('[jogadores] irParaDetalhes -> navegando para /jogadores/' + jogador.id, jogador);
     this.fecharModalResumo();
     this.router.navigate(['/jogadores', jogador.id]);
   }

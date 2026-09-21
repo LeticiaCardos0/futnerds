@@ -1,0 +1,608 @@
+/* ==========================================================
+   Deqbalhes do Jogador — tema Holográfico.
+   Usa os tokens Tailwind já configurados no projeto (bg-bg, text-fg
+   etc.) pra estrutura, e estas classes .holo-* pra tudo que Tailwind
+   puro não resolve: cartão de vidro, brilho holográfico, campo em
+   perspectiva 3D, animações.
+   ========================================================== */
+
+.jd-root {
+  padding: 8px 4px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- vídeo de fundo ambiente ---- */
+.jd-bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.16;
+  pointer-events: none;
+  filter: saturate(1.1);
+}
+
+/* ---- partículas de fundo ---- */
+.holo-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.holo-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--fn-accent, #53f59a);
+  opacity: 0.5;
+  animation: holoFloat 8s ease-in-out infinite;
+}
+
+@keyframes holoFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translateY(-40px);
+    opacity: 0.7;
+  }
+}
+
+/* ---- HERO ---- */
+.holo-hero {
+  display: flex;
+  gap: 34px;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+  min-height: 230px;
+  margin-bottom: 8px;
+}
+
+.holo-card {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+  animation: holoIn 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* centraliza a foto e alinha na base do card, funciona com qualquer
+     % de largura/altura que a imagem tiver (100%, 70%, o que for) */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@keyframes holoIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.holo-card img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  object-position: bottom center;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes holoSweep {
+
+  0%,
+  20% {
+    transform: translateX(-150%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+/* fundo colorido por faixa de overall — necessário pq as fotos do
+   jogador costumam vir com fundo transparente (PNG recortado). Reaproveita
+   as mesmas classes já usadas no card de foto da lista de Jogadores. */
+/* fundo do card sempre na mesma cor (verde claro, seguindo a paleta do
+   projeto) — não muda mais conforme a faixa de overall do jogador.
+   Definido direto na regra .holo-card acima. */
+
+.holo-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: conic-gradient(from 0deg,
+      #1f8f5d,
+      #34d399,
+      #53f59a,
+      #7fffb8,
+      #34d399,
+      #1f8f5d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 24px rgba(83, 245, 154, 0.35);
+}
+
+@keyframes holoRot {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.holo-card__badge span {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: #0a1712;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 19px;
+  color: #fff;
+}
+
+.holo-identity {
+  padding-bottom: 10px;
+  animation: holoIn 800ms 150ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.holo-pos {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fn-accent, #53f59a);
+  margin-bottom: 4px;
+}
+
+.holo-pos span {
+  font-weight: 400;
+  opacity: 0.75;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.holo-name {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--fn-fg, #f1f5f2);
+}
+
+.holo-name img {
+  width: 34px;
+  height: 22px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.holo-meta {
+  display: flex;
+  gap: 22px;
+  font-size: 13px;
+  color: var(--fn-fg-subtle, #8b978f);
+}
+
+.holo-meta b {
+  color: var(--fn-fg, #f1f5f2);
+}
+
+.holo-pot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--fn-fg-subtle, #8b978f);
+}
+
+.holo-pot b {
+  font-size: 22px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #53f59a, #85e9c8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- tabs ---- */
+.holo-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 44px 0 28px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.holo-tab {
+  padding: 12px 48px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--fn-fg-subtle, #8b978f);
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.holo-tab:hover {
+  color: var(--fn-fg, #f1f5f2);
+}
+
+.holo-tab.active {
+  background: rgba(83, 245, 154, 0.14);
+  color: var(--fn-accent, #53f59a);
+  box-shadow: inset 0 0 0 1px rgba(83, 245, 154, 0.3);
+}
+
+.panel {
+  animation: holoPanelIn 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes holoPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- grids reaproveitados entre abas ---- */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 60px;
+  max-width: 1400px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.attrs-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 9px;
+}
+
+.holo-card2 {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  backdrop-filter: blur(6px);
+  animation: holoIn 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.holo-k {
+  font-size: 10.5px;
+  color: var(--fn-fg-subtle, #7a9186);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.holo-v {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--fn-fg, #f1f5f2);
+}
+
+.holo-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.holo-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #53f59a, #85e9c8);
+  width: 0%;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2px;
+}
+
+/* ---- Estilos ---- */
+.holo-style-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  animation: holoIn 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: 250ms;
+}
+
+.holo-style-card:hover {
+  background: rgba(83, 245, 154, 0.06);
+  transform: translateY(-2px);
+}
+
+.holo-style-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(160deg, rgba(83, 245, 154, 0.2), rgba(83, 245, 154, 0.02));
+  border: 1px solid rgba(83, 245, 154, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+/* ---- Posições: campo em perspectiva 3D ---- */
+.holo-positions-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.holo-styles-col {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.holo-styles-col-title {
+  font-size: 11px;
+  color: var(--fn-fg-subtle, #7a9186);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.holo-styles-col-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.holo-mini-icon {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(83, 245, 154, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: holoIn 450ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: 220ms;
+}
+
+.holo-mini-icon:hover {
+  border-color: rgba(83, 245, 154, 0.5);
+  transform: translateY(-2px);
+  background: rgba(83, 245, 154, 0.06);
+}
+
+.holo-field-wrap {
+  perspective: 1100px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.holo-field {
+  position: relative;
+  height: 360px;
+  border-radius: 10px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(83, 245, 154, 0.05), transparent 70%), rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(83, 245, 154, 0.14);
+  transform: rotateX(38deg);
+  transform-style: preserve-3d;
+  animation: holoFieldIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes holoFieldIn {
+  from {
+    opacity: 0;
+    transform: rotateX(38deg) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(38deg) translateY(0);
+  }
+}
+
+.holo-field-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(83, 245, 154, 0.16);
+  pointer-events: none;
+}
+
+.holo-orb {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: holoOrbIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes holoOrbIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.holo-orb__circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.holo-orb--vazio .holo-orb__circle {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(83, 245, 154, 0.28);
+}
+
+.holo-orb--ativo .holo-orb__circle {
+  background: radial-gradient(circle at 35% 30%, #baffdc, #53f59a 55%, #1f9e63 100%);
+  box-shadow: 0 0 18px 4px rgba(83, 245, 154, 0.55), 0 0 40px 10px rgba(83, 245, 154, 0.25);
+  animation: holoOrbPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes holoOrbPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 18px 4px rgba(83, 245, 154, 0.55), 0 0 40px 10px rgba(83, 245, 154, 0.25);
+  }
+
+  50% {
+    box-shadow: 0 0 24px 6px rgba(83, 245, 154, 0.75), 0 0 54px 14px rgba(83, 245, 154, 0.35);
+  }
+}
+
+.holo-orb--ativo.holo-orb--principal .holo-orb__circle {
+  width: 42px;
+  height: 42px;
+}
+
+.holo-orb__num {
+  font-size: 11px;
+  font-weight: 900;
+  color: #04150c;
+}
+
+.holo-orb--principal .holo-orb__num {
+  font-size: 13px;
+}
+
+.holo-orb__lbl {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fn-fg-subtle, #7a9186);
+  margin-top: 6px;
+  transform: rotateX(-38deg);
+}
+
+.holo-orb--ativo .holo-orb__lbl {
+  color: #cdece0;
+}
+
+.jd-empty-note {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--fn-fg-subtle, #8b978f);
+  font-size: 13.5px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+/* ---- estados de carregamento / erro ---- */
+.jd-loading,
+.jd-error {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 130px 20px;
+  text-align: center;
+  animation: holoIn 400ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.jd-loading__spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(83, 245, 154, 0.18);
+  border-top-color: var(--fn-accent, #53f59a);
+  animation: jd-spin 800ms linear infinite;
+}
+
+@keyframes jd-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .holo-card,
+  .holo-identity,
+  .holo-card2,
+  .holo-style-card,
+  .holo-orb,
+  .panel,
+  .holo-card::after,
+  .holo-card__badge,
+  .holo-orb--ativo .holo-orb__circle {
+    animation: none !important;
+  }
+}

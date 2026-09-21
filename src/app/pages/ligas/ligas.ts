@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { obterCaminhoLogoLiga } from '../../shared/ligas.util';
+import { obterCaminhoLogoLiga, temLogoLiga } from '../../shared/ligas.util';
 
 export interface Liga {
   id: number;
@@ -13,63 +13,66 @@ export interface Liga {
   quantidadeClubes: number;
 }
 
-const ORDEM_FAMA: { [id: number]: number } = {
-  13: 1,    // Premier League
-  53: 2,    // La Liga
-  31: 3,    // Serie A
-  19: 4,    // Bundesliga
-  16: 5,    // Ligue 1
-  7: 6,     // Série A / Brasileirão
-  308: 7,   // Primeira Liga
-  10: 8,    // Eredivisie
-  68: 9,    // Süper Lig
-  353: 10,  // Liga Profesional de Fútbol (Argentina)
-  2013: 11, // Pro League (Arábia Saudita)
-  39: 12,   // Major League Soccer
-  14: 13,   // Championship
-  4: 14,    // Pro League (Bélgica)
-  63: 15,   // Super League (Suíça)
-  335: 16,  // Primera Division (Uruguai)
-  32: 17,   // Serie B
-  54: 18,   // La Liga 2
-  20: 19,   // 2. Bundesliga
-  17: 20,   // Ligue 2
-  60: 21,   // League One
-  336: 22,  // Categoría Primera A
-  66: 23,   // Ekstraklasa
-  189: 24,  // Super League (Grécia)
-  2012: 25, // Super League (China)
-  83: 26,   // K League 1
-  351: 27,  // A-League Men
-  61: 28,   // League Two
-  41: 29,   // Eliteserien
-  56: 30,   // Allsvenskan
-  1: 31,    // Superliga (Dinamarca)
-  317: 32,  // Hrvatska nogometna liga
-  319: 33,  // První liga
-  64: 34,   // Nemzeti Bajnokság I
-  330: 35,  // Liga I
-  318: 36,  // 1. Division
-  322: 37,  // Veikkausliiga
-  65: 38,   // Premier Division (Irlanda)
-  313: 39,  // Premyer Liqa
-  2017: 40, // División de Fútbol Profesional
-  337: 41,  // División Profesional
-  2020: 42, // Liga 1 (Indonésia)
-  2076: 43, // 3. Liga
-  80: 44,   // Bundesliga (Áustria)
+// ATUALIZADO para FC 27: o backend deixa de fornecer um league_id estável
+// (o dataset novo não tem essa coluna), então a ordem de destaque e os
+// apelidos agora são chaveados pelo NOME da liga, que é o único dado
+// que se mantém igual entre imports.
+const ORDEM_FAMA: { [nomeLiga: string]: number } = {
+  'Premier League': 1,
+  'LALIGA EA SPORTS': 2,
+  'Serie A Enilive': 3,
+  'Bundesliga': 4,
+  'Ligue 1 McDonald\'s': 5,
+  'Liga do Brasil': 6,
+  'Liga Portugal': 7,
+  'Eredivisie': 8,
+  'Trendyol Süper Lig': 9,
+  'LPF': 10,
+  'ROSHN Saudi League': 11,
+  'MLS': 12,
+  'EFL Championship': 13,
+  '1A Pro League': 14,
+  'Brack Super League': 15,
+  'Primera Division': 16,
+  'Serie BKT': 17,
+  'LALIGA HYPERMOTION': 18,
+  'Bundesliga 2': 19,
+  'Ligue 2 BKT': 20,
+  'EFL League One': 21,
+  'Liga Colombia': 22,
+  'Ekstraklasa': 23,
+  'CSL': 24,
+  'K League 1': 25,
+  'Isuzu UTE A League': 26,
+  'EFL League Two': 27,
+  'Eliteserien': 28,
+  'Allsvenskan': 29,
+  'SUPERLIGA': 30,
+  'Liga Hrvatska': 31,
+  'Česká Liga': 32,
+  'Magyar Liga': 33,
+  'Finnliiga': 34,
+  'SSE Airtricity Men\'s Premier Division': 35,
+  'Liga Azerbaijan': 36,
+  '3. Liga': 37,
+  'Ö. Bundesliga': 38,
+  // Continentais aparecem logo no topo por serem competições de destaque
+  'CONMEBOL Libertadores': 0,
+  'CONMEBOL Sudamericana': 0.5,
 };
 
 const DIACRITICOS = new RegExp('[\\u0300-\\u036f]', 'g');
 
-const APELIDOS_LIGA: { [id: number]: string[] } = {
-  7: ['brasileirao', 'brasileirão', 'brasileiro'],
-  13: ['premier', 'inglês', 'ingles'],
-  53: ['espanhol'],
-  31: ['italiano', 'calcio'],
-  19: ['alemao', 'alemão'],
-  16: ['frances', 'francês'],
-  353: ['argentino'],
+const APELIDOS_LIGA: { [nomeLiga: string]: string[] } = {
+  'Liga do Brasil': ['brasileirao', 'brasileirão', 'brasileiro'],
+  'Premier League': ['inglês', 'ingles'],
+  'LALIGA EA SPORTS': ['espanhol', 'la liga'],
+  'Serie A Enilive': ['italiano', 'calcio', 'serie a'],
+  'Bundesliga': ['alemao', 'alemão'],
+  'Ligue 1 McDonald\'s': ['frances', 'francês', 'ligue 1'],
+  'LPF': ['argentino'],
+  'CONMEBOL Libertadores': ['libertadores'],
+  'CONMEBOL Sudamericana': ['sudamericana', 'sul-americana'],
 };
 
 @Component({
@@ -104,7 +107,7 @@ export class LigasComponent implements OnInit {
       ? this.ligas
       : this.ligas.filter(liga => {
           const nomeNormalizado = this.removerAcentos(liga.nome.toLowerCase());
-          const apelidos = APELIDOS_LIGA[liga.id] || [];
+          const apelidos = APELIDOS_LIGA[liga.nome] || [];
           const bateApelido = apelidos.some(a => {
             const apelidoNormalizado = this.removerAcentos(a.toLowerCase());
             return apelidoNormalizado.includes(termo) || termo.includes(apelidoNormalizado);
@@ -112,7 +115,7 @@ export class LigasComponent implements OnInit {
           return nomeNormalizado.includes(termo) || bateApelido;
         });
 
-    return [...filtradas].sort((a, b) => (ORDEM_FAMA[a.id] ?? 999) - (ORDEM_FAMA[b.id] ?? 999));
+    return [...filtradas].sort((a, b) => (ORDEM_FAMA[a.nome] ?? 999) - (ORDEM_FAMA[b.nome] ?? 999));
   }
 
   private removerAcentos(texto: string): string {
@@ -165,17 +168,25 @@ export class LigasComponent implements OnInit {
   }
 
   obterNomeExibicao(liga: Liga): string {
-    const mapaNomes: { [id: number]: string } = {
-      7: 'Brasileirão',
-      20: 'Bundesliga 2',
-      80: 'Bundesliga (Áustria)',
+    const mapaNomes: { [nomeLiga: string]: string } = {
+      'Liga do Brasil': 'Brasileirão',
+      'Bundesliga 2': 'Bundesliga 2',
+      'Ö. Bundesliga': 'Bundesliga (Áustria)',
+      'CONMEBOL Libertadores': 'Libertadores',
+      'CONMEBOL Sudamericana': 'Sul-Americana',
     };
 
-    return mapaNomes[liga.id] || liga.nome;
+    return mapaNomes[liga.nome] || liga.nome;
+  }
+
+  // Se a liga está na lista das 28 sem escudo salvo, nem tenta carregar
+  // imagem — evita 404 e já mostra o fallback de troféu direto.
+  temLogo(liga: Liga): boolean {
+    return temLogoLiga(liga.nome);
   }
 
   obterCaminhoLogo(liga: Liga): string {
-    return obterCaminhoLogoLiga(liga.nome, liga.id);
+    return obterCaminhoLogoLiga(liga.nome);
   }
 
   verTimes(liga: Liga): void {
