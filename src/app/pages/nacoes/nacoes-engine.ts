@@ -3,7 +3,7 @@ import { GeoCountry, GEO_COUNTRIES } from './nacoes-geo-data';
 import { obterCaminhoLogoLiga, obterNomeCanonicoLiga } from '../../shared/ligas.util';
 import { API_URL } from '../../shared/api.util';
 import { FOTOS_PAIS } from './nacoes-fotos';
-import { ISO2_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
+import { ISO2_POR_NOME_API, SUBNACAO_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
 
 /**
  * Constrói e inicia o globo 3D interativo dentro do elemento #globo-canvas
@@ -42,6 +42,23 @@ interface Liga {
   cor: string;
 }
 
+/**
+ * Uma seleção nacional dentro do polígono do globo (normalmente 1 por país;
+ * "gb" tem até 4 — Inglaterra, Escócia, País de Gales, Irlanda do Norte).
+ * Só é criada uma entrada por nome de API que realmente tenha liga própria
+ * cadastrada — evita criar seção vazia pra casos como "Holland" (nacionalidade
+ * de jogador que cai no mesmo polígono de "Netherlands" mas não é uma seleção
+ * de futebol separada).
+ */
+interface SubNacao {
+  nomeApi: string;
+  nome: string;
+  bandeira: string;
+  ligas: Liga[];
+  clubes: number;
+  jogadores: number | null;
+}
+
 interface PaisMock {
   nome: string;             // nome de exibição em português
   nomeApi: string;          // nome no banco (usado nos filtros da página de times)
@@ -50,6 +67,8 @@ interface PaisMock {
   ligas: Liga[];
   clubes: number;
   jogadores: number | null; // null enquanto o backend não enviar a contagem
+  /** Presente só quando o polígono representa mais de uma seleção de futebol. */
+  subnacoes?: SubNacao[];
 }
 
 
@@ -188,10 +207,22 @@ async function carregarDadosReais(): Promise<void> {
       const jogadores = typeof paisApi.quantidadeJogadores === 'number' ? paisApi.quantidadeJogadores : null;
       const existente = novoMock[iso2];
       if (existente) {
-        // mais de um país da API no mesmo polígono (ex.: Inglaterra + Escócia)
+        // mais de um país da API no mesmo polígono (ex.: Inglaterra + Escócia) —
+        // os totais continuam somados (usados no hover/destaque), mas cada um
+        // com liga própria também vira uma subnação, listada à parte no painel.
         existente.ligas.push(...ligas);
         existente.clubes += paisApi.quantidadeClubes;
         existente.jogadores = existente.jogadores !== null && jogadores !== null ? existente.jogadores + jogadores : existente.jogadores ?? jogadores;
+        if (ligas.length > 0) {
+          (existente.subnacoes ??= []).push({
+            nomeApi: paisApi.nome,
+            nome: SUBNACAO_POR_NOME_API[paisApi.nome]?.nome ?? paisApi.nome,
+            bandeira: SUBNACAO_POR_NOME_API[paisApi.nome]?.bandeira ?? iso2,
+            ligas,
+            clubes: paisApi.quantidadeClubes,
+            jogadores,
+          });
+        }
       } else {
         novoMock[iso2] = {
           nome: nomePaisPt(iso2, paisApi.nome),
@@ -201,6 +232,19 @@ async function carregarDadosReais(): Promise<void> {
           ligas,
           clubes: paisApi.quantidadeClubes,
           jogadores,
+          subnacoes:
+            ligas.length > 0
+              ? [
+                  {
+                    nomeApi: paisApi.nome,
+                    nome: SUBNACAO_POR_NOME_API[paisApi.nome]?.nome ?? paisApi.nome,
+                    bandeira: SUBNACAO_POR_NOME_API[paisApi.nome]?.bandeira ?? iso2,
+                    ligas,
+                    clubes: paisApi.quantidadeClubes,
+                    jogadores,
+                  },
+                ]
+              : undefined,
         };
       }
       (clubesPorNomeApi[iso2] ??= {})[paisApi.nome] = paisApi.quantidadeClubes;
@@ -211,6 +255,17 @@ async function carregarDadosReais(): Promise<void> {
       const porNome = clubesPorNomeApi[pais.iso2];
       pais.nomeApi = Object.keys(porNome).sort((a, b) => porNome[b] - porNome[a])[0];
       pais.ligas = ordenarLigasPorFama(pais.ligas).map((liga, i) => ({ ...liga, cor: PALETA_LIGAS[i % PALETA_LIGAS.length] }));
+      // Só vale a pena mostrar o painel dividido por seleção quando há mais de
+      // uma com liga própria (é o caso do "gb": Inglaterra + Escócia). Com uma
+      // só, undefined mantém o card único de sempre, sem seção duplicada.
+      if (pais.subnacoes && pais.subnacoes.length > 1) {
+        pais.subnacoes.forEach((sub) => {
+          sub.ligas = ordenarLigasPorFama(sub.ligas).map((liga, i) => ({ ...liga, cor: PALETA_LIGAS[i % PALETA_LIGAS.length] }));
+        });
+        pais.subnacoes.sort((a, b) => b.clubes - a.clubes);
+      } else {
+        pais.subnacoes = undefined;
+      }
     });
 
     DADOS_MOCK = novoMock;
@@ -638,6 +693,14 @@ interface Marcador {
   lat: number;
   lon: number;
   ehBrasil?: boolean;
+  /**
+   * nomeApi (nacao.nome no banco) de uma seleção específica dentro de um
+   * polígono compartilhado por mais de um país do futebol (ex.: "gb" reúne
+   * Inglaterra e Escócia). Quando presente, este pino tem hover/clique
+   * próprios: tooltip e painel mostram só os dados dessa seleção — nunca a
+   * soma com as outras que dividem o mesmo território.
+   */
+  subnacaoNomeApi?: string;
 }
 
 const PAISES_COM_MARCADOR: Marcador[] = [
@@ -653,7 +716,8 @@ const PAISES_COM_MARCADOR: Marcador[] = [
   { iso2: 'fr', lat: 46.227, lon: 2.213 },
   { iso2: 'de', lat: 51.165, lon: 10.451 },
   { iso2: 'it', lat: 41.871, lon: 12.567 },
-  { iso2: 'gb', lat: 52.355, lon: -1.174 },
+  { iso2: 'gb', lat: 52.355, lon: -1.174, subnacaoNomeApi: 'England' },
+  { iso2: 'gb', lat: 56.491, lon: -4.202, subnacaoNomeApi: 'Scotland' }, // pino próprio perto de Edimburgo/Glasgow
   { iso2: 'nl', lat: 52.132, lon: 5.291 },
   { iso2: 'be', lat: 50.503, lon: 4.469 },
   { iso2: 'tr', lat: 38.963, lon: 35.243 },
@@ -686,6 +750,7 @@ interface MarcadorRuntime {
   faseAnimacao: number;    // deslocamento de fase (evita pulsar tudo junto)
   ehBrasil: boolean;
   direcaoNormal: any;      // THREE.Vector3 — normal da superfície (p/ profundidade)
+  subnacaoNomeApi?: string; // ver Marcador.subnacaoNomeApi
 }
 
 const marcadoresRuntime: MarcadorRuntime[] = [];
@@ -767,6 +832,7 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
     faseAnimacao: indice * 0.55,
     ehBrasil: !!def.ehBrasil,
     direcaoNormal: normal,
+    subnacaoNomeApi: def.subnacaoNomeApi,
   };
 }
 
@@ -985,6 +1051,11 @@ const bottomSheetOverlay = document.getElementById('bottom-sheet-overlay') as HT
 
 let paisSobreMouse: CountryRuntime | null = null;
 let paisSelecionado: CountryRuntime | null = null;
+// nomeApi da subnação em foco (ex.: "Scotland"), quando o hover/seleção veio
+// do PINO de uma seleção específica dentro de um polígono compartilhado
+// (Reino Unido). null = área genérica do país (mostra a visão combinada).
+let subnacaoSobreMouse: string | null = null;
+let subnacaoSelecionada: string | null = null;
 let opacidadeDestaqueAtual = 0;
 
 function atualizarMousePicking(e: PointerEvent): void {
@@ -1026,7 +1097,7 @@ function detectarHover(): void {
   if (acertoMarcador.length > 0) {
     const marcador = marcadoresRuntime.find((m) => m.nucleo === acertoMarcador[0].object);
     if (marcador && marcador.pais) {
-      definirPaisHover(marcador.pais);
+      definirPaisHover(marcador.pais, marcador.subnacaoNomeApi ?? null);
       return;
     }
   }
@@ -1043,8 +1114,8 @@ function detectarHover(): void {
   definirPaisHover(pais);
 }
 
-function definirPaisHover(pais: CountryRuntime | null): void {
-  if (pais === paisSobreMouse) return;
+function definirPaisHover(pais: CountryRuntime | null, subnacaoNomeApi: string | null = null): void {
+  if (pais === paisSobreMouse && subnacaoNomeApi === subnacaoSobreMouse) return;
 
   // restaura o brilho do contorno do país anterior (se não for o selecionado)
   if (paisSobreMouse && paisSobreMouse !== paisSelecionado) {
@@ -1055,6 +1126,7 @@ function definirPaisHover(pais: CountryRuntime | null): void {
   }
 
   paisSobreMouse = pais;
+  subnacaoSobreMouse = subnacaoNomeApi;
 
   if (pais) {
     pais.outlineLines.forEach((l) => {
@@ -1101,9 +1173,14 @@ function codigoBandeira(iso2: string): string {
 function nomeExibicaoPais(pais: CountryRuntime): string {
   return DADOS_MOCK[pais.data.iso2]?.nome ?? nomePaisPt(pais.data.iso2, pais.data.name);
 }
-/** Ponto de referência do país: o marcador, se houver, senão o centro da bbox. */
-function centroPais(pais: CountryRuntime): { lat: number; lon: number } {
-  const marcador = PAISES_COM_MARCADOR.find((m) => m.iso2 === pais.data.iso2);
+/**
+ * Ponto de referência do país (ou de uma subnação específica, quando
+ * informada): o marcador correspondente, se houver, senão o centro da bbox.
+ */
+function centroPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): { lat: number; lon: number } {
+  const marcador =
+    (subnacaoNomeApi && PAISES_COM_MARCADOR.find((m) => m.iso2 === pais.data.iso2 && m.subnacaoNomeApi === subnacaoNomeApi)) ||
+    PAISES_COM_MARCADOR.find((m) => m.iso2 === pais.data.iso2);
   if (marcador) return { lat: marcador.lat, lon: marcador.lon };
   const [minLon, minLat, maxLon, maxLat] = pais.bbox;
   return { lat: (minLat + maxLat) / 2, lon: (minLon + maxLon) / 2 };
@@ -1113,28 +1190,43 @@ function centroPais(pais: CountryRuntime): { lat: number; lon: number } {
 // Segue o mouse enquanto um país está sob o cursor; sem hover, fica preso ao
 // país selecionado (projetado na tela a cada frame) e some se ele girar para trás.
 let paisNoTooltip: CountryRuntime | null = null;
+let subnacaoNoTooltip: string | null = null;
 
-function renderizarTooltip(pais: CountryRuntime): void {
+/** Busca os dados de uma subnação específica (ex.: "Scotland") dentro do país. */
+function obterSubnacao(iso2: string, nomeApi: string | null): SubNacao | null {
+  if (!nomeApi) return null;
+  return DADOS_MOCK[iso2]?.subnacoes?.find((s) => s.nomeApi === nomeApi) ?? null;
+}
+
+function renderizarTooltip(pais: CountryRuntime, subnacaoNomeApi: string | null): void {
   const mock = DADOS_MOCK[pais.data.iso2];
+  const sub = obterSubnacao(pais.data.iso2, subnacaoNomeApi);
+  const clubes = sub ? sub.clubes : mock?.clubes ?? 0;
+  const jogadores = sub ? sub.jogadores : mock?.jogadores ?? null;
   // O backend também manda países sem liga nenhuma, desde que tenham jogadores;
   // nesses casos a linha de clubes sai fora em vez de mostrar "0 clubes".
   const linhasMock = mock
     ? [
-        mock.clubes > 0
-          ? `<p class="tooltip-linha"><i class="pi pi-shield"></i>${mock.clubes} ${plural(mock.clubes, 'clube', 'clubes')}</p>`
+        clubes > 0
+          ? `<p class="tooltip-linha"><i class="pi pi-shield"></i>${clubes} ${plural(clubes, 'clube', 'clubes')}</p>`
           : '',
-        mock.jogadores
-          ? `<p class="tooltip-linha"><i class="pi pi-user"></i>${formatarQuantidade(mock.jogadores)} ${plural(mock.jogadores, 'jogador', 'jogadores')}</p>`
+        jogadores
+          ? `<p class="tooltip-linha"><i class="pi pi-user"></i>${formatarQuantidade(jogadores)} ${plural(jogadores, 'jogador', 'jogadores')}</p>`
           : '',
       ].filter(Boolean)
     : [];
   const linhas = linhasMock.length > 0
     ? linhasMock.join('')
     : '<p class="tooltip-linha tooltip-vazio">Sem clubes cadastrados</p>';
+  // Pino de uma subnação específica (ex.: pino da Escócia): nome e bandeira só
+  // dela. Sem pino específico e com mais de uma seleção no ponto (ex.: hover
+  // genérico no Reino Unido), o nome deixa isso explícito ("Inglaterra + Escócia").
+  const nomeExibido = sub ? sub.nome : mock?.subnacoes ? mock.subnacoes.map((s) => s.nome).join(' + ') : nomeExibicaoPais(pais);
+  const bandeira = sub ? sub.bandeira : codigoBandeira(pais.data.iso2);
   tooltipEl.innerHTML = `
-    <img class="tooltip-bandeira" src="https://flagcdn.com/w80/${codigoBandeira(pais.data.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
+    <img class="tooltip-bandeira" src="https://flagcdn.com/w80/${bandeira}.png" alt="" onerror="this.style.visibility='hidden'" />
     <div class="tooltip-info">
-      <p class="tooltip-nome">${nomeExibicaoPais(pais)}</p>
+      <p class="tooltip-nome">${nomeExibido}</p>
       ${linhas}
     </div>
     <i class="pi pi-chevron-right tooltip-seta"></i>
@@ -1143,14 +1235,17 @@ function renderizarTooltip(pais: CountryRuntime): void {
 
 function atualizarTooltip(): void {
   const alvo = paisSobreMouse || paisSelecionado;
+  const subnacaoAlvo = paisSobreMouse ? subnacaoSobreMouse : subnacaoSelecionada;
   if (!alvo) {
     tooltipEl.classList.remove('visivel');
     paisNoTooltip = null;
+    subnacaoNoTooltip = null;
     return;
   }
-  if (alvo !== paisNoTooltip) {
-    renderizarTooltip(alvo);
+  if (alvo !== paisNoTooltip || subnacaoAlvo !== subnacaoNoTooltip) {
+    renderizarTooltip(alvo, subnacaoAlvo);
     paisNoTooltip = alvo;
+    subnacaoNoTooltip = subnacaoAlvo;
   }
 
   const tw = tooltipEl.offsetWidth;
@@ -1163,7 +1258,7 @@ function atualizarTooltip(): void {
     if (x + tw > window.innerWidth - 16) x = ultimaPosicaoMouseTela.x - tw - 18;
     if (y + th > window.innerHeight - 16) y = ultimaPosicaoMouseTela.y - th - 18;
   } else {
-    const centro = centroPais(alvo);
+    const centro = centroPais(alvo, subnacaoAlvo);
     const ponto = latLonParaVetor3(centro.lat, centro.lon);
     const deFrente = ponto.clone().normalize().dot(camera.position.clone().normalize()) > 0.2;
     if (!deFrente) {
@@ -1183,10 +1278,10 @@ function atualizarTooltip(): void {
 
 canvasContainer.addEventListener('click', () => {
   if (!paisSobreMouse) return;
-  selecionarPais(paisSobreMouse);
+  selecionarPais(paisSobreMouse, subnacaoSobreMouse);
 });
 
-function selecionarPais(pais: CountryRuntime): void {
+function selecionarPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
   if (paisSelecionado) {
     paisSelecionado.outlineLines.forEach((l) => {
       l.material.opacity = OPACIDADE_BORDA_NORMAL;
@@ -1194,22 +1289,27 @@ function selecionarPais(pais: CountryRuntime): void {
     });
   }
   paisSelecionado = pais;
+  subnacaoSelecionada = subnacaoNomeApi;
   pais.outlineLines.forEach((l) => {
     l.material.opacity = OPACIDADE_BORDA_SELECIONADO;
     l.material.color.set(COR_BORDA_SELECIONADO);
   });
   atualizarMalhaDestaque();
-  atualizarMarcadorSelecionado(pais.data.iso2);
+  atualizarMarcadorSelecionado(pais.data.iso2, subnacaoNomeApi);
   atualizarDestaqueAtivo(pais.data.iso2);
-  preencherPainel(pais);
+  preencherPainel(pais, subnacaoNomeApi);
   painelEl.classList.add('painel-ativo');
   document.body.classList.add('sheet-aberto');
 }
 
-/** Liga o anel de destaque do marcador do país selecionado (e desliga os demais). */
-function atualizarMarcadorSelecionado(iso2Selecionado: string): void {
+/**
+ * Liga o anel de destaque só do pino exatamente selecionado (mesmo iso2 E
+ * mesma subnação) — evita acender os dois pinos (Inglaterra e Escócia) juntos
+ * quando só um deles foi clicado.
+ */
+function atualizarMarcadorSelecionado(iso2Selecionado: string, subnacaoNomeApi: string | null): void {
   marcadoresRuntime.forEach((m) => {
-    m.anelSelecao.userData.selecionado = m.iso2 === iso2Selecionado;
+    m.anelSelecao.userData.selecionado = m.iso2 === iso2Selecionado && (m.subnacaoNomeApi ?? null) === subnacaoNomeApi;
   });
 }
 
@@ -1225,14 +1325,19 @@ function voarParaPais(pais: CountryRuntime): void {
 }
 
 // --- Painel lateral ---------------------------------------------------------
-function preencherPainel(pais: CountryRuntime): void {
+function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
   const iso2 = pais.data.iso2;
   const mock = DADOS_MOCK[iso2];
-  const nome = nomeExibicaoPais(pais);
+  // Veio do pino de uma seleção específica (ex.: pino da Escócia)? O painel
+  // então mostra só essa seleção — nunca a soma com as outras do mesmo
+  // território. Sem pino específico, cai na visão combinada de sempre.
+  const sub = obterSubnacao(iso2, subnacaoNomeApi);
+  const nome = sub ? sub.nome : nomeExibicaoPais(pais);
+  const bandeira = sub ? sub.bandeira : codigoBandeira(iso2);
   const continente = mock?.continente ?? continentePais(iso2);
-  const ligas = mock ? mock.ligas : [];
-  const clubes = mock ? mock.clubes : 0;
-  const jogadores = mock ? mock.jogadores : null;
+  const ligas = sub ? sub.ligas : mock ? mock.ligas : [];
+  const clubes = sub ? sub.clubes : mock ? mock.clubes : 0;
+  const jogadores = sub ? sub.jogadores : mock ? mock.jogadores : null;
   const foto = FOTOS_PAIS[iso2];
 
   const estatistica = (icone: string, valor: string, rotulo: string) => `
@@ -1246,7 +1351,7 @@ function preencherPainel(pais: CountryRuntime): void {
 
     <header class="painel-cabecalho${foto ? ' painel-cabecalho--foto' : ''}"
       ${foto ? `style="--painel-foto: url('nacoes/fotos/${iso2}.jpg')"` : ''}>
-      <img class="painel-bandeira" src="https://flagcdn.com/w160/${codigoBandeira(iso2)}.png" alt="${nome}" onerror="this.style.visibility='hidden'" />
+      <img class="painel-bandeira" src="https://flagcdn.com/w160/${bandeira}.png" alt="${nome}" onerror="this.style.visibility='hidden'" />
       <div class="painel-titulo">
         <h2 class="painel-nome">${nome}</h2>
         ${continente ? `<p class="painel-continente">${continente}</p>` : ''}
@@ -1260,14 +1365,44 @@ function preencherPainel(pais: CountryRuntime): void {
       ${estatistica('pi pi-trophy', String(ligas.length), plural(ligas.length, 'Liga', 'Ligas'))}
     </div>
 
-    <p class="painel-secao">${plural(ligas.length, 'Liga do país', 'Ligas do país')}</p>
-    <div class="painel-ligas">
-      ${
-        ligas.length > 0
-          ? ligas
-              .map(
-                (liga) => `
-        <button class="liga-card" data-liga="${liga.nome}">
+    ${
+      !sub && mock?.subnacoes
+        ? // Visão combinada (sem pino específico) de um polígono com mais de uma
+          // seleção (ex.: Reino Unido = Inglaterra + Escócia): cada uma vira sua
+          // própria seção, com bandeira, nome e ligas — nunca misturadas, pra
+          // Scottish Premiership jamais aparecer como liga inglesa.
+          `<p class="painel-secao">Ligas por seleção</p>` +
+          mock.subnacoes.map((s) => renderizarBlocoLigas(s.ligas, s.bandeira, s.nome)).join('')
+        : `<p class="painel-secao">${plural(ligas.length, 'Liga do país', 'Ligas do país')}</p>` +
+          renderizarBlocoLigas(ligas)
+    }
+  `;
+
+  document.getElementById('painel-fechar')?.addEventListener('click', fecharPainel);
+  painelEl.querySelectorAll('.liga-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const nomeLiga = card.getAttribute('data-liga') || '';
+      const paisCodigo = card.getAttribute('data-pais-codigo') || (sub ? sub.bandeira : iso2);
+      navegar('/times', { liga: nomeLiga, ligaExibicao: obterNomeExibicaoLiga(nomeLiga), paisCodigo });
+    });
+  });
+}
+
+/** Uma lista de liga-cards, opcionalmente com um mini-cabeçalho de subnação acima. */
+function renderizarBlocoLigas(ligas: Liga[], bandeiraSubnacao?: string, nomeSubnacao?: string): string {
+  const cabecalho =
+    bandeiraSubnacao && nomeSubnacao
+      ? `<div class="painel-subnacao">
+           <img class="painel-subnacao-bandeira" src="https://flagcdn.com/w40/${bandeiraSubnacao}.png" alt="" onerror="this.style.visibility='hidden'" />
+           <span class="painel-subnacao-nome">${nomeSubnacao}</span>
+         </div>`
+      : '';
+  const corpo =
+    ligas.length > 0
+      ? ligas
+          .map(
+            (liga) => `
+        <button class="liga-card" data-liga="${liga.nome}" data-pais-codigo="${bandeiraSubnacao ?? ''}">
           <span class="liga-icone">
             <img src="${obterCaminhoLogoLiga(liga.nome)}" alt=""
               onerror="this.parentElement.classList.add('liga-icone--vazio'); this.remove();" />
@@ -1276,21 +1411,10 @@ function preencherPainel(pais: CountryRuntime): void {
           <span class="liga-clubes">${liga.clubes} ${plural(liga.clubes, 'clube', 'clubes')}</span>
           <i class="pi pi-chevron-right liga-seta"></i>
         </button>`
-              )
-              .join('')
-          : '<p class="painel-vazio">Nenhuma liga cadastrada ainda para este país.</p>'
-      }
-    </div>
-
-  `;
-
-  document.getElementById('painel-fechar')?.addEventListener('click', fecharPainel);
-  painelEl.querySelectorAll('.liga-card').forEach((card) => {
-    card.addEventListener('click', () => {
-      const nomeLiga = card.getAttribute('data-liga') || '';
-      navegar('/times', { liga: nomeLiga, ligaExibicao: obterNomeExibicaoLiga(nomeLiga), paisCodigo: iso2 });
-    });
-  });
+          )
+          .join('')
+      : '<p class="painel-vazio">Nenhuma liga cadastrada ainda para este país.</p>';
+  return `${cabecalho}<div class="painel-ligas">${corpo}</div>`;
 }
 
 function fecharPainel(): void {

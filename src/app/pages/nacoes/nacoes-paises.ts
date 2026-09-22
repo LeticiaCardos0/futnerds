@@ -4,8 +4,12 @@
 
 /**
  * Nomes da API (nacao.nome no banco) que não batem com o nome do país no mapa.
- * England e Scotland caem os dois em "United Kingdom" (gb), que é um polígono
- * só no Natural Earth — as ligas dos dois são somadas no mesmo país.
+ * England, Scotland, Wales e Northern Ireland caem todos em "United Kingdom"
+ * (gb), que é um polígono só no Natural Earth — não dá pra desenhar/selecionar
+ * cada seleção separadamente no globo. As ligas e contagens continuam sendo
+ * somadas para fins de hover/destaque, mas o painel lateral (preencherPainel)
+ * usa SUBNACAO_POR_NOME_API pra listar cada seleção com sua própria bandeira,
+ * nome e ligas — a Scottish Premiership nunca deve aparecer como liga inglesa.
  */
 export const ISO2_POR_NOME_API: Record<string, string> = {
   'England': 'gb',
@@ -27,6 +31,19 @@ export const ISO2_POR_NOME_API: Record<string, string> = {
   'Gambia': 'gm',              // no mapa: The Gambia
   'Chinese Taipei': 'cn-tw',   // no mapa: Taiwan
   'Korea DPR': 'kp',           // no mapa: North Korea
+};
+
+/**
+ * Seleções nacionais que compartilham o polígono "gb" (Reino Unido) mas são
+ * países distintos no futebol — cada uma com sua própria liga, bandeira e
+ * seleção. Usado pelo painel lateral pra nunca misturar a Escócia dentro de
+ * "Inglaterra". Códigos de bandeira conferem com o padrão flagcdn.com.
+ */
+export const SUBNACAO_POR_NOME_API: Record<string, { nome: string; bandeira: string }> = {
+  England: { nome: 'Inglaterra', bandeira: 'gb-eng' },
+  Scotland: { nome: 'Escócia', bandeira: 'gb-sct' },
+  Wales: { nome: 'País de Gales', bandeira: 'gb-wls' },
+  'Northern Ireland': { nome: 'Irlanda do Norte', bandeira: 'gb-nir' },
 };
 
 /** Nomes em português que o Intl.DisplayNames não resolve como queremos. */
