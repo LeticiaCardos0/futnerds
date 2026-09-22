@@ -11,7 +11,8 @@
   "private": true,
   "packageManager": "npm@11.11.0",
   "dependencies": {
-    "@angular/animations": "^20.1.8",
+    "@angular/animations": "^21.2.0",
+    "@angular/cdk": "^21.2.14",
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
     "@angular/core": "^21.2.0",
@@ -22,7 +23,7 @@
     "@primeuix/themes": "^1.2.5",
     "chart.js": "^4.5.1",
     "primeicons": "^8.0.0",
-    "primeng": "^19.1.4",
+    "primeng": "^21.1.10",
     "rxjs": "~7.8.0",
     "three": "^0.185.1",
     "tslib": "^2.3.0"
