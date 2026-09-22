@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TimeDetalhes } from '../times/times.model';
+import { API_URL } from '../../shared/api.util';
 
 @Injectable({ providedIn: 'root' })
 export class TimeDetalhesService {
   // mesmo padrão do JogadorService — ajuste se sua base tiver outro prefixo
-  private readonly apiUrl = 'http://localhost:8080/api/times';
+  private readonly apiUrl = `${API_URL}/times`;
 
   constructor(private http: HttpClient) {}
 

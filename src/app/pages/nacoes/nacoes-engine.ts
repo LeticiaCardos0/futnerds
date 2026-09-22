@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { GeoCountry, GEO_COUNTRIES } from './nacoes-geo-data';
-import { obterCaminhoLogoLiga } from '../../shared/ligas.util';
+import { obterCaminhoLogoLiga, obterNomeCanonicoLiga } from '../../shared/ligas.util';
+import { API_URL } from '../../shared/api.util';
+import { FOTOS_PAIS } from './nacoes-fotos';
+import { ISO2_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
 
 /**
  * Constrói e inicia o globo 3D interativo dentro do elemento #globo-canvas
@@ -40,10 +43,13 @@ interface Liga {
 }
 
 interface PaisMock {
-  nome: string;
+  nome: string;             // nome de exibição em português
+  nomeApi: string;          // nome no banco (usado nos filtros da página de times)
   iso2: string;
-  descricao: string;
+  continente: string;
   ligas: Liga[];
+  clubes: number;
+  jogadores: number | null; // null enquanto o backend não enviar a contagem
 }
 
 
@@ -76,8 +82,10 @@ function normalizarNomePais(nome: string): string {
  * Nomes de exibição mais amigáveis (apelidos populares) para ligas cujo nome
  * oficial retornado pela API não é o mais reconhecível pelo usuário final.
  */
-const NOME_EXIBICAO_LIGA: { [nomeOriginal: string]: string } = {
-  'Série A': 'Brasileirão',
+const NOME_EXIBICAO_LIGA: { [nomeCanonico: string]: string } = {
+  'Brasileirao': 'Brasileirão',
+  'Libertadores': 'CONMEBOL Libertadores',
+  'Sudamericana': 'CONMEBOL Sudamericana',
 };
 
 /**
@@ -94,7 +102,7 @@ const ORDEM_FAMA_LIGA: { [nomeOriginal: string]: number } = {
   'Serie A': 3,
   'Bundesliga': 4,
   'Ligue 1': 5,
-  'Série A': 6,
+  'Brasileirao': 6,
   'Primeira Liga': 7,
   'Eredivisie': 8,
   'Süper Lig': 9,
@@ -131,12 +139,16 @@ const ORDEM_FAMA_LIGA: { [nomeOriginal: string]: number } = {
   '3. Liga': 43,
 };
 
+// Os nomes do FC 27 ("LALIGA EA SPORTS", "Liga do Brasil"...) são convertidos
+// para o nome canônico de ligas.util antes de ordenar/exibir.
 function obterNomeExibicaoLiga(nomeOriginal: string): string {
-  return NOME_EXIBICAO_LIGA[nomeOriginal] || nomeOriginal;
+  const canonico = obterNomeCanonicoLiga(nomeOriginal);
+  return NOME_EXIBICAO_LIGA[canonico] || canonico.replace(/ - .+$/, '');
 }
 
 function ordenarLigasPorFama<T extends { nome: string }>(ligas: T[]): T[] {
-  return [...ligas].sort((a, b) => (ORDEM_FAMA_LIGA[a.nome] ?? 999) - (ORDEM_FAMA_LIGA[b.nome] ?? 999));
+  const fama = (liga: T) => ORDEM_FAMA_LIGA[obterNomeCanonicoLiga(liga.nome).replace(/ - .+$/, '')] ?? 999;
+  return [...ligas].sort((a, b) => fama(a) - fama(b));
 }
 
 interface LigaResumoApi {
@@ -147,6 +159,7 @@ interface PaisResumoApi {
   nome: string;
   quantidadeLigas: number;
   quantidadeClubes: number;
+  quantidadeJogadores?: number;
   ligas: LigaResumoApi[];
 }
 
@@ -158,35 +171,52 @@ interface PaisResumoApi {
  */
 async function carregarDadosReais(): Promise<void> {
   try {
-    const resposta = await fetch('http://localhost:8080/api/nacoes/resumo');
+    const resposta = await fetch(`${API_URL}/nacoes/resumo`);
     if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
     const paises: PaisResumoApi[] = await resposta.json();
 
     const novoMock: Record<string, PaisMock> = {};
+    const clubesPorNomeApi: Record<string, Record<string, number>> = {};
 
     paises.forEach((paisApi) => {
-      const nomeNormalizado = normalizarNomePais(paisApi.nome);
-      const correspondente = paisesRuntime.find(
-        (p) => normalizarNomePais(p.data.name) === nomeNormalizado
-      );
-      if (!correspondente) return; // país da API sem correspondência geográfica conhecida
+      const iso2 =
+        ISO2_POR_NOME_API[paisApi.nome] ??
+        paisesRuntime.find((p) => normalizarNomePais(p.data.name) === normalizarNomePais(paisApi.nome))?.data.iso2;
+      if (!iso2) return; // país da API sem correspondência geográfica conhecida
 
-      novoMock[correspondente.data.iso2] = {
-        nome: paisApi.nome,
-        iso2: correspondente.data.iso2,
-        descricao: `${paisApi.nome} conta com ${paisApi.quantidadeLigas} liga${paisApi.quantidadeLigas !== 1 ? 's' : ''} cadastrada${paisApi.quantidadeLigas !== 1 ? 's' : ''} e ${paisApi.quantidadeClubes} clube${paisApi.quantidadeClubes !== 1 ? 's' : ''} no total.`,
-        ligas: paisApi.ligas.map((liga, i) => ({
-          nome: liga.nome,
-          clubes: liga.quantidadeClubes,
-          cor: PALETA_LIGAS[i % PALETA_LIGAS.length],
-        })),
-      };
+      const ligas = paisApi.ligas.map((liga) => ({ nome: liga.nome, clubes: liga.quantidadeClubes, cor: '' }));
+      const jogadores = typeof paisApi.quantidadeJogadores === 'number' ? paisApi.quantidadeJogadores : null;
+      const existente = novoMock[iso2];
+      if (existente) {
+        // mais de um país da API no mesmo polígono (ex.: Inglaterra + Escócia)
+        existente.ligas.push(...ligas);
+        existente.clubes += paisApi.quantidadeClubes;
+        existente.jogadores = existente.jogadores !== null && jogadores !== null ? existente.jogadores + jogadores : existente.jogadores ?? jogadores;
+      } else {
+        novoMock[iso2] = {
+          nome: nomePaisPt(iso2, paisApi.nome),
+          nomeApi: paisApi.nome,
+          iso2,
+          continente: continentePais(iso2),
+          ligas,
+          clubes: paisApi.quantidadeClubes,
+          jogadores,
+        };
+      }
+      (clubesPorNomeApi[iso2] ??= {})[paisApi.nome] = paisApi.quantidadeClubes;
+    });
+
+    Object.values(novoMock).forEach((pais) => {
+      // filtro da página de times usa o país da API com mais clubes
+      const porNome = clubesPorNomeApi[pais.iso2];
+      pais.nomeApi = Object.keys(porNome).sort((a, b) => porNome[b] - porNome[a])[0];
+      pais.ligas = ordenarLigasPorFama(pais.ligas).map((liga, i) => ({ ...liga, cor: PALETA_LIGAS[i % PALETA_LIGAS.length] }));
     });
 
     DADOS_MOCK = novoMock;
     console.log('FutNerds · Dados reais carregados:', Object.keys(DADOS_MOCK).length, 'países com ligas.');
   } catch (erro) {
-    console.warn('FutNerds · Não foi possível carregar dados do backend (futdb rodando em localhost:8080?). Globo funcionará sem dados de liga.', erro);
+    console.warn(`FutNerds · Não foi possível carregar dados do backend (futdb rodando em ${API_URL}?). Globo funcionará sem dados de liga.`, erro);
   }
 }
 
@@ -201,8 +231,8 @@ const RAIO_GLOBO = 5;
 // O verde do FutNerds é usado só nos estados interativos — o globo em
 // repouso permanece neutro (cinza-azulado).
 const COR_BORDA_NORMAL = 0x5c7880;      // cinza-azulado discreto ~ rgba(120,160,170,0.25)
-const COR_BORDA_HOVER = 0x00e676;       // verde principal
-const COR_BORDA_SELECIONADO = 0x5effa2; // verde claro
+const COR_BORDA_HOVER = 0x19d45a;       // verde principal
+const COR_BORDA_SELECIONADO = 0x7dffb0; // verde claro (contorno neon do selecionado)
 const OPACIDADE_BORDA_NORMAL = 0.32;
 const OPACIDADE_BORDA_HOVER = 0.95;
 const OPACIDADE_BORDA_SELECIONADO = 1.0;
@@ -269,207 +299,36 @@ function extrairAneisExternos(geom: GeoCountry['geometry']): [number, number][][
 }
 
 /**
- * Ruído procedural (value-noise fractal, determinístico) usado para gerar a
- * variação natural de terreno dentro dos próprios países — nunca um bloco
- * sólido por país. `semente` isola diferentes camadas (bioma, elevação,
- * grão fino) para que não fiquem correlacionadas entre si.
+ * Máscara de terra (branco = terra, preto = oceano) desenhada a partir dos
+ * contornos reais dos países. O shader do globo usa essa máscara para tratar
+ * terra e oceano com cores diferentes sobre a textura de satélite da NASA.
  */
-function hashRuido2D(x: number, y: number, semente: number): number {
-  const v = Math.sin(x * 127.1 + y * 311.7 + semente * 74.7) * 43758.5453;
-  return v - Math.floor(v);
-}
-function ruidoSuave2D(x: number, y: number, semente: number): number {
-  const xi = Math.floor(x), yi = Math.floor(y);
-  const xf = x - xi, yf = y - yi;
-  const suavizar = (t: number) => t * t * (3 - 2 * t);
-  const a = hashRuido2D(xi, yi, semente);
-  const b = hashRuido2D(xi + 1, yi, semente);
-  const c = hashRuido2D(xi, yi + 1, semente);
-  const d = hashRuido2D(xi + 1, yi + 1, semente);
-  const u = suavizar(xf), v = suavizar(yf);
-  return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
-}
-function ruidoFractal2D(x: number, y: number, semente: number, oitavas: number = 4): number {
-  let total = 0, amplitude = 1, freq = 1, ampMax = 0;
-  for (let o = 0; o < oitavas; o++) {
-    total += ruidoSuave2D(x * freq, y * freq, semente) * amplitude;
-    ampMax += amplitude;
-    amplitude *= 0.52;
-    freq *= 2.05;
-  }
-  return total / ampMax; // 0..1
-}
-
-/** Paradas de cor do gradiente de bioma: 0 = equador (floresta) → 1 = polo (frio). */
-const PARADAS_BIOMA: { t: number; cor: [number, number, number] }[] = [
-  { t: 0.00, cor: [22, 64, 32] },   // floresta densa / amazônica — verde vivo, sem chegar a preto
-  { t: 0.12, cor: [34, 96, 46] },   // floresta média — mais saturada
-  { t: 0.22, cor: [58, 150, 68] },  // vegetação / verde médio — puxando para o verde FutNerds
-  { t: 0.32, cor: [124, 148, 58] }, // verde oliva — mais vivo
-  { t: 0.40, cor: [168, 156, 82] }, // amarelo queimado / transição para seco
-  { t: 0.50, cor: [201, 176, 112] },// areia / deserto
-  { t: 0.60, cor: [166, 142, 80] }, // ocre
-  { t: 0.70, cor: [110, 128, 68] }, // oliva temperado
-  { t: 0.82, cor: [64, 132, 66] },  // verde temperado — mais vivo e saturado
-  { t: 0.92, cor: [104, 85, 58] },  // terroso / marrom
-  { t: 1.00, cor: [104, 116, 106] },// frio / cinza-esverdeado, com mais luminosidade
-];
-function corBioma(t: number): [number, number, number] {
-  const tc = Math.max(0, Math.min(1, t));
-  for (let i = 0; i < PARADAS_BIOMA.length - 1; i++) {
-    const a = PARADAS_BIOMA[i], b = PARADAS_BIOMA[i + 1];
-    if (tc >= a.t && tc <= b.t) {
-      const f = (tc - a.t) / (b.t - a.t || 1);
-      return [
-        a.cor[0] + (b.cor[0] - a.cor[0]) * f,
-        a.cor[1] + (b.cor[1] - a.cor[1]) * f,
-        a.cor[2] + (b.cor[2] - a.cor[2]) * f,
-      ];
-    }
-  }
-  return PARADAS_BIOMA[PARADAS_BIOMA.length - 1].cor;
-}
-const COR_MONTANHA: [number, number, number] = [132, 123, 108];
-
-/**
- * Gera a textura equiretangular do globo: oceano azul-petróleo escuro com os
- * continentes em uma superfície terrestre procedural (bioma + elevação +
- * grão), recortada exatamente pelo contorno real dos países via máscara.
- * A variação existe DENTRO de cada país/continente (não é uma cor sólida
- * por país) e as transições entre tons são suaves, sem blocos vetoriais.
- * O verde neon fica reservado para marcadores, hover e seleção.
- */
-function criarTexturaContinentes(): any {
+function criarMascaraTerra(): any {
   const largura = 2048, altura = 1024;
-
-  // ---- 1) Máscara de terra: silhueta preenchida de todos os países ----------
-  const canvasMascara = document.createElement('canvas');
-  canvasMascara.width = largura;
-  canvasMascara.height = altura;
-  const ctxMascara = canvasMascara.getContext('2d')!;
+  const canvas = document.createElement('canvas');
+  canvas.width = largura;
+  canvas.height = altura;
+  const ctx = canvas.getContext('2d')!;
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, largura, altura);
+  ctx.filter = 'blur(1.5px)'; // borda suave entre terra e oceano
   GEO_COUNTRIES.forEach((pais) => {
     if (!pais.geometry || pais.iso2 === 'aq') return;
-    const aneis = extrairAneisExternos(pais.geometry);
-    aneis.forEach((anel) => {
+    extrairAneisExternos(pais.geometry).forEach((anel) => {
       if (anel.length < 3) return;
-      ctxMascara.beginPath();
+      ctx.beginPath();
       anel.forEach(([lon, lat], i) => {
         const x = (lon + 180) / 360 * largura;
         const y = (90 - lat) / 180 * altura;
-        if (i === 0) ctxMascara.moveTo(x, y);
-        else ctxMascara.lineTo(x, y);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
       });
-      ctxMascara.closePath();
-      ctxMascara.fillStyle = '#fff';
-      ctxMascara.fill('evenodd');
+      ctx.closePath();
+      ctx.fillStyle = '#fff';
+      ctx.fill('evenodd');
     });
   });
-
-  // ---- 2) Terreno procedural em baixa resolução (bioma + elevação + brilho) --
-  // Gerado em grade reduzida e depois ampliado com suavização — dá transições
-  // naturais sem exigir milhões de avaliações de ruído em resolução final.
-  const semente = 42;
-  const largGrade = 420, altGrade = 210;
-  const canvasTerreno = document.createElement('canvas');
-  canvasTerreno.width = largGrade;
-  canvasTerreno.height = altGrade;
-  const ctxTerreno = canvasTerreno.getContext('2d')!;
-  const imgTerreno = ctxTerreno.createImageData(largGrade, altGrade);
-  for (let gy = 0; gy < altGrade; gy++) {
-    const lat = 90 - (gy / altGrade) * 180;
-    const ny = gy / altGrade;
-    for (let gx = 0; gx < largGrade; gx++) {
-      const nx = gx / largGrade;
-
-      const ruidoBioma = ruidoFractal2D(nx * 5.5, ny * 5.5, semente, 4);
-      const ruidoElevacao = ruidoFractal2D(nx * 9.5 + 100, ny * 9.5 + 100, semente + 7, 3);
-      const ruidoDetalhe = ruidoFractal2D(nx * 24 + 50, ny * 24 + 50, semente + 3, 2);
-
-      // índice climático 0..1 (equador → polo), levemente "embaralhado" pelo
-      // ruído para que as faixas de bioma não fiquem retas/artificiais.
-      let indiceClimatico = Math.abs(lat) / 90 + (ruidoBioma - 0.5) * 0.4;
-      indiceClimatico = Math.max(0, Math.min(1, indiceClimatico));
-
-      let [r, g, b] = corBioma(indiceClimatico);
-
-      // relevo: regiões de "elevação" alta puxam a cor para tons de montanha
-      if (ruidoElevacao > 0.58) {
-        const forca = Math.min(1, (ruidoElevacao - 0.58) / 0.32);
-        r += (COR_MONTANHA[0] - r) * forca * 0.75;
-        g += (COR_MONTANHA[1] - g) * forca * 0.75;
-        b += (COR_MONTANHA[2] - b) * forca * 0.75;
-      }
-
-      // variação sutil de luminosidade — simula relevo/bump sem geometria 3D
-      // (piso elevado para que as regiões de sombra não fiquem escuras demais)
-      const brilho = 0.94 + ruidoDetalhe * 0.22;
-      r *= brilho; g *= brilho; b *= brilho;
-
-      const idx = (gy * largGrade + gx) * 4;
-      imgTerreno.data[idx] = Math.max(0, Math.min(255, r));
-      imgTerreno.data[idx + 1] = Math.max(0, Math.min(255, g));
-      imgTerreno.data[idx + 2] = Math.max(0, Math.min(255, b));
-      imgTerreno.data[idx + 3] = 255;
-    }
-  }
-  ctxTerreno.putImageData(imgTerreno, 0, 0);
-
-  // ---- 3) Amplia com suavização (evita blocos, dá transições naturais) ------
-  const canvasTerra = document.createElement('canvas');
-  canvasTerra.width = largura;
-  canvasTerra.height = altura;
-  const ctxTerra = canvasTerra.getContext('2d')!;
-  ctxTerra.imageSmoothingEnabled = true;
-  (ctxTerra as any).imageSmoothingQuality = 'high';
-  ctxTerra.drawImage(canvasTerreno, 0, 0, largGrade, altGrade, 0, 0, largura, altura);
-
-  // ---- 4) Grão fino adicional — mais uma "camada de ruído", em maior escala,
-  // para dar sensação de textura de terreno sem criar manchas gigantes. -----
-  const largGrao = 700, altGrao = 350;
-  const canvasGrao = document.createElement('canvas');
-  canvasGrao.width = largGrao;
-  canvasGrao.height = altGrao;
-  const ctxGrao = canvasGrao.getContext('2d')!;
-  const imgGrao = ctxGrao.createImageData(largGrao, altGrao);
-  for (let gy = 0; gy < altGrao; gy++) {
-    for (let gx = 0; gx < largGrao; gx++) {
-      const v = ruidoFractal2D((gx / largGrao) * 30, (gy / altGrao) * 30, semente + 21, 3);
-      const cinza = 128 + (v - 0.5) * 90;
-      const idx = (gy * largGrao + gx) * 4;
-      imgGrao.data[idx] = cinza;
-      imgGrao.data[idx + 1] = cinza;
-      imgGrao.data[idx + 2] = cinza;
-      imgGrao.data[idx + 3] = 255;
-    }
-  }
-  ctxGrao.putImageData(imgGrao, 0, 0);
-  ctxTerra.globalCompositeOperation = 'overlay';
-  ctxTerra.imageSmoothingEnabled = true;
-  ctxTerra.drawImage(canvasGrao, 0, 0, largGrao, altGrao, 0, 0, largura, altura);
-  ctxTerra.globalCompositeOperation = 'source-over';
-
-  // ---- 5) Recorta o terreno apenas para as áreas de terra (máscara real) ----
-  ctxTerra.globalCompositeOperation = 'destination-in';
-  ctxTerra.drawImage(canvasMascara, 0, 0);
-  ctxTerra.globalCompositeOperation = 'source-over';
-
-  // ---- 6) Compõe terreno sobre o oceano azul-petróleo ------------------------
-  const canvasFinal = document.createElement('canvas');
-  canvasFinal.width = largura;
-  canvasFinal.height = altura;
-  const ctxFinal = canvasFinal.getContext('2d')!;
-  const gradOceano = ctxFinal.createLinearGradient(0, 0, 0, altura);
-  gradOceano.addColorStop(0, '#0a2028');
-  gradOceano.addColorStop(0.5, '#06141a');
-  gradOceano.addColorStop(1, '#081b22');
-  ctxFinal.fillStyle = gradOceano;
-  ctxFinal.fillRect(0, 0, largura, altura);
-  ctxFinal.drawImage(canvasTerra, 0, 0);
-
-  const textura = new THREE.CanvasTexture(canvasFinal);
-  textura.anisotropy = 4;
-  textura.needsUpdate = true;
-  return textura;
+  return new THREE.CanvasTexture(canvas);
 }
 
 /**
@@ -573,27 +432,73 @@ const luzPreenchimento = new THREE.PointLight(0x24463f, 0.65, 40);
 luzPreenchimento.position.set(-8, -3, -6);
 scene.add(luzPreenchimento);
 
-// --- Esfera do oceano + continentes ----------------------------------------
-// A textura carrega o oceano azul-petróleo e os continentes em tons naturais;
-// o material usa cor branca para não retintar essas cores, e emissive/specular
-// bem discretos para não "lavar" o mapa de azul como na versão anterior.
-const texturaContinentes = criarTexturaContinentes();
-const geometriaOceano = new THREE.SphereGeometry(RAIO_GLOBO, 96, 96);
-const materialOceano = new THREE.MeshPhongMaterial({
-  map: texturaContinentes,
-  color: 0xffffff,
-  emissive: 0x0d1712,
-  emissiveIntensity: 0.24,
-  shininess: 9,
-  specular: 0x1a2429,
-  transparent: false,
+// --- Esfera do globo -------------------------------------------------------
+// Textura de satélite da NASA (Blue Marble + luzes noturnas, domínio público)
+// estilizada no shader: terra escura puxada para o verde, oceano azul-petróleo,
+// luzes das cidades em verde e brilho verde na borda do planeta. A luz acompanha
+// a câmera (espaço de visão), então o lado voltado para o usuário está sempre iluminado.
+const carregadorTextura = new THREE.TextureLoader();
+const anisotropia = renderer.capabilities.getMaxAnisotropy();
+function carregarTextura(caminho: string): any {
+  const textura = carregadorTextura.load(caminho);
+  textura.anisotropy = anisotropia;
+  return textura;
+}
+const texturaDia = carregarTextura('nacoes/terra-dia.jpg');
+const texturaNoite = carregarTextura('nacoes/terra-noite.jpg');
+const mascaraTerra = criarMascaraTerra();
+
+const geometriaOceano = new THREE.SphereGeometry(RAIO_GLOBO, 128, 128);
+const materialOceano = new THREE.ShaderMaterial({
+  uniforms: {
+    mapaDia: { value: texturaDia },
+    mapaNoite: { value: texturaNoite },
+    mascara: { value: mascaraTerra },
+  },
+  vertexShader: `
+    varying vec2 vUv;
+    varying vec3 vNormalVisao;
+    void main() {
+      vUv = uv;
+      vNormalVisao = normalize(normalMatrix * normal);
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+  fragmentShader: `
+    uniform sampler2D mapaDia;
+    uniform sampler2D mapaNoite;
+    uniform sampler2D mascara;
+    varying vec2 vUv;
+    varying vec3 vNormalVisao;
+    void main() {
+      vec3 dia = texture2D(mapaDia, vUv).rgb;
+      float terra = texture2D(mascara, vUv).r;
+      float lum = dot(dia, vec3(0.299, 0.587, 0.114));
+
+      vec3 corTerra = mix(dia, vec3(lum) * vec3(0.62, 0.95, 0.68), 0.45) * 0.66;
+      vec3 corOceano = vec3(0.010, 0.045, 0.060) + dia * vec3(0.04, 0.10, 0.12);
+      vec3 cor = mix(corOceano, corTerra, terra);
+
+      vec3 n = normalize(vNormalVisao);
+      float difusa = 0.42 + 0.78 * max(dot(n, normalize(vec3(-0.35, 0.35, 1.0))), 0.0);
+      cor *= difusa;
+
+      float noite = texture2D(mapaNoite, vUv).r;
+      cor += vec3(0.10, 0.95, 0.50) * pow(noite, 2.2) * 0.30 * terra;
+
+      float fresnel = pow(1.0 - max(dot(n, vec3(0.0, 0.0, 1.0)), 0.0), 3.0);
+      cor += vec3(0.05, 0.85, 0.55) * fresnel * 0.55;
+
+      gl_FragColor = vec4(cor, 1.0);
+    }
+  `,
 });
 const esferaOceano = new THREE.Mesh(geometriaOceano, materialOceano);
 scene.add(esferaOceano);
 
 // --- Grid discreto (linhas de latitude/longitude) --------------------------
 const grupoGrid = new THREE.Group();
-const materialGrid = new THREE.LineBasicMaterial({ color: 0x2a4048, transparent: true, opacity: 0.25 });
+const materialGrid = new THREE.LineBasicMaterial({ color: 0x2f6a58, transparent: true, opacity: 0.22 });
 for (let lat = -60; lat <= 60; lat += 30) {
   const pontos: any[] = [];
   for (let lon = -180; lon <= 180; lon += 4) pontos.push(latLonParaVetor3(lat, lon, RAIO_GLOBO * 1.001));
@@ -617,13 +522,13 @@ const shaderAtmosferaVertex = `
 const shaderAtmosferaFragment = `
   varying vec3 vNormal;
   void main() {
-    float intensidade = pow(0.72 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 4.0);
-    vec3 corAtmosfera = vec3(0.35, 0.55, 0.58); // azul petróleo esbranquiçado, leve toque verde
-    gl_FragColor = vec4(corAtmosfera, 1.0) * intensidade * 0.55;
+    float intensidade = pow(0.74 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.2);
+    vec3 corAtmosfera = vec3(0.08, 0.95, 0.55); // halo verde FutNerds
+    gl_FragColor = vec4(corAtmosfera, 1.0) * intensidade * 0.9;
   }
 `;
 const atmosfera = new THREE.Mesh(
-  new THREE.SphereGeometry(RAIO_GLOBO * 1.18, 64, 64),
+  new THREE.SphereGeometry(RAIO_GLOBO * 1.14, 64, 64),
   new THREE.ShaderMaterial({
     vertexShader: shaderAtmosferaVertex,
     fragmentShader: shaderAtmosferaFragment,
@@ -755,6 +660,20 @@ const PAISES_COM_MARCADOR: Marcador[] = [
   { iso2: 'sa', lat: 23.885, lon: 45.079 },
   { iso2: 'jp', lat: 36.204, lon: 138.252 },
   { iso2: 'kr', lat: 35.907, lon: 127.766 },
+  { iso2: 'pl', lat: 52.07, lon: 19.48 },
+  { iso2: 'se', lat: 60.13, lon: 15.0 },
+  { iso2: 'no', lat: 61.0, lon: 8.5 },
+  { iso2: 'dk', lat: 56.0, lon: 9.5 },
+  { iso2: 'cn', lat: 35.0, lon: 104.0 },
+  { iso2: 'ch', lat: 46.8, lon: 8.2 },
+  { iso2: 'au', lat: -25.3, lon: 133.8 },
+  { iso2: 'in', lat: 22.0, lon: 79.0 },
+  { iso2: 'ie', lat: 53.4, lon: -8.0 },
+  { iso2: 'at', lat: 47.5, lon: 14.5 },
+  { iso2: 'gr', lat: 39.0, lon: 22.0 },
+  { iso2: 'cz', lat: 49.8, lon: 15.5 },
+  { iso2: 'ua', lat: 49.0, lon: 31.4 },
+  { iso2: 'hr', lat: 45.1, lon: 15.2 },
 ];
 
 interface MarcadorRuntime {
@@ -870,9 +789,10 @@ const RAIO_MAX = 22;
 const MARGEM_SEGURANCA_PX = 16; // respiro entre a borda do globo e a borda do container
 
 /**
- * Calcula a menor distância de câmera (= maior zoom permitido) que ainda
- * mantém o globo (a esfera de terreno) 100% dentro da área disponível para
- * o globo, com uma margem de segurança. Considera o tamanho real do
+ * Calcula a menor distância de câmera que ainda mantém o globo (a esfera
+ * de terreno) 100% dentro da área disponível — usada no enquadramento
+ * inicial e no reset (o zoom do usuário pode passar disso), com uma margem
+ * de segurança. Considera o tamanho real do
  * container (que já exclui o painel lateral, pois ambos são colunas irmãs
  * do grid `.palco`), a largura/altura da tela e o FOV vertical e horizontal
  * da câmera. Recalculada sempre que o layout muda.
@@ -903,8 +823,12 @@ function calcularRaioMinimoZoom(): number {
   return raioVisual / Math.sin(meioFovDisponivel);
 }
 
-let RAIO_MIN = calcularRaioMinimoZoom();
-let raioCamera = THREE.MathUtils.clamp(12, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+// Distância em que o globo inteiro cabe na tela: usada só para o
+// enquadramento inicial e o reset. O zoom do usuário pode ir além disso.
+let RAIO_AJUSTE = calcularRaioMinimoZoom();
+// Zoom máximo: câmera bem próxima da superfície do globo.
+const RAIO_MIN = RAIO_GLOBO * 1.15;
+let raioCamera = THREE.MathUtils.clamp(12, RAIO_AJUSTE, Math.max(RAIO_MAX, RAIO_AJUSTE));
 let raioAlvo = raioCamera;
 
 let theta = 0.6;       // ângulo horizontal (longitude da câmera)
@@ -921,6 +845,19 @@ let velocidadePhi = 0;
 const AMORTECIMENTO = 0.08;       // suavidade da câmera "chegando" no alvo
 const FATOR_INERCIA = 0.94;       // decaimento da velocidade após soltar o arraste
 const SENSIBILIDADE = 0.0045;
+const DISTANCIA_REFERENCIA = 11; // distância da câmera em que a sensibilidade é 100%
+
+/**
+ * Fator proporcional à altura da câmera sobre a superfície: com zoom alto o
+ * globo gira mais devagar e a roda do mouse aproxima em passos menores.
+ */
+function fatorZoom(): number {
+  return THREE.MathUtils.clamp((raioCamera - RAIO_GLOBO) / (DISTANCIA_REFERENCIA - RAIO_GLOBO), 0.08, 2);
+}
+
+function limitarZoom(raio: number): number {
+  return THREE.MathUtils.clamp(raio, RAIO_MIN, Math.max(RAIO_MAX, RAIO_AJUSTE));
+}
 
 function atualizarCamera(): void {
   if (!arrastando) {
@@ -957,10 +894,13 @@ function aoPointerMoveGlobal(e: PointerEvent): void {
   if (!arrastando) return;
   const dx = e.clientX - mouseAnteriorX;
   const dy = e.clientY - mouseAnteriorY;
-  thetaAlvo -= dx * SENSIBILIDADE;
-  phiAlvo -= dy * SENSIBILIDADE;
-  velocidadeTheta = -dx * SENSIBILIDADE * 0.5;
-  velocidadePhi = -dy * SENSIBILIDADE * 0.5;
+  // eixo X invertido (o globo gira no sentido oposto ao mouse na horizontal);
+  // eixo Y acompanha o mouse (arrastar para baixo puxa o globo para baixo)
+  const sensibilidade = SENSIBILIDADE * fatorZoom();
+  thetaAlvo += dx * sensibilidade;
+  phiAlvo -= dy * sensibilidade;
+  velocidadeTheta = dx * sensibilidade * 0.5;
+  velocidadePhi = -dy * sensibilidade * 0.5;
   mouseAnteriorX = e.clientX;
   mouseAnteriorY = e.clientY;
 }
@@ -976,7 +916,7 @@ canvasContainer.addEventListener(
   'wheel',
   (e: WheelEvent) => {
     e.preventDefault();
-    raioAlvo = THREE.MathUtils.clamp(raioAlvo + e.deltaY * 0.012, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+    raioAlvo = limitarZoom(raioAlvo + e.deltaY * 0.012 * fatorZoom());
   },
   { passive: false }
 );
@@ -989,7 +929,7 @@ canvasContainer.addEventListener('touchmove', (e: TouchEvent) => {
     const dy = e.touches[0].clientY - e.touches[1].clientY;
     const distancia = Math.sqrt(dx * dx + dy * dy);
     if (distanciaPinchAnterior !== null) {
-      raioAlvo = THREE.MathUtils.clamp(raioAlvo - (distancia - distanciaPinchAnterior) * 0.02, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+      raioAlvo = limitarZoom(raioAlvo - (distancia - distanciaPinchAnterior) * 0.02 * fatorZoom());
     }
     distanciaPinchAnterior = distancia;
   }
@@ -1001,17 +941,17 @@ canvasContainer.addEventListener('touchend', () => { distanciaPinchAnterior = nu
 const anguloBrasil = anguloCameraParaLatLon(-12, -52);
 theta = thetaAlvo = anguloBrasil.theta;
 phi = phiAlvo = anguloBrasil.phi;
-raioCamera = raioAlvo = THREE.MathUtils.clamp(11, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+raioCamera = raioAlvo = THREE.MathUtils.clamp(11, RAIO_AJUSTE, Math.max(RAIO_MAX, RAIO_AJUSTE));
 
 const THETA_INICIAL = theta;
 const PHI_INICIAL = phi;
 const RAIO_INICIAL = raioCamera;
 
 document.getElementById('zoom-in')?.addEventListener('click', () => {
-  raioAlvo = THREE.MathUtils.clamp(raioAlvo - 1.6, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+  raioAlvo = limitarZoom(raioAlvo - 1.6 * fatorZoom());
 });
 document.getElementById('zoom-out')?.addEventListener('click', () => {
-  raioAlvo = THREE.MathUtils.clamp(raioAlvo + 1.6, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+  raioAlvo = limitarZoom(raioAlvo + 1.6 * fatorZoom());
 });
 document.getElementById('zoom-reset')?.addEventListener('click', () => {
   thetaAlvo = THETA_INICIAL;
@@ -1104,10 +1044,7 @@ function detectarHover(): void {
 }
 
 function definirPaisHover(pais: CountryRuntime | null): void {
-  if (pais === paisSobreMouse) {
-    posicionarTooltip();
-    return;
-  }
+  if (pais === paisSobreMouse) return;
 
   // restaura o brilho do contorno do país anterior (se não for o selecionado)
   if (paisSobreMouse && paisSobreMouse !== paisSelecionado) {
@@ -1124,10 +1061,8 @@ function definirPaisHover(pais: CountryRuntime | null): void {
       l.material.opacity = OPACIDADE_BORDA_HOVER;
       l.material.color.set(COR_BORDA_HOVER);
     });
-    mostrarTooltip(pais);
     canvasContainer.style.cursor = 'pointer';
   } else {
-    esconderTooltip();
     canvasContainer.style.cursor = 'grab';
   }
 
@@ -1143,50 +1078,107 @@ function atualizarMalhaDestaque(): void {
     malhaDestaque = null;
   }
   if (alvo) {
-    const cor = paisSelecionado === alvo ? COR_BORDA_SELECIONADO : COR_BORDA_HOVER;
+    const cor = COR_BORDA_HOVER; // preenchimento sempre no verde da marca; o contorno diferencia o selecionado
     malhaDestaque = construirMalhaDestaque(alvo, cor);
     scene.add(malhaDestaque);
     opacidadeDestaqueAtual = 0;
   }
 }
 
-function mostrarTooltip(pais: CountryRuntime): void {
+// --- Formatação e dados auxiliares ----------------------------------------
+function formatarQuantidade(n: number): string {
+  if (n >= 10000) return `${Math.round(n / 1000)} mil`;
+  if (n >= 1000) return `${(n / 1000).toFixed(1).replace('.', ',')} mil`;
+  return String(n);
+}
+function plural(n: number, singular: string, pluralTexto: string): string {
+  return n === 1 ? singular : pluralTexto;
+}
+/** O polígono "gb" representa a Inglaterra no futebol — usa a bandeira inglesa. */
+function codigoBandeira(iso2: string): string {
+  return iso2 === 'gb' ? 'gb-eng' : iso2;
+}
+function nomeExibicaoPais(pais: CountryRuntime): string {
+  return DADOS_MOCK[pais.data.iso2]?.nome ?? nomePaisPt(pais.data.iso2, pais.data.name);
+}
+/** Ponto de referência do país: o marcador, se houver, senão o centro da bbox. */
+function centroPais(pais: CountryRuntime): { lat: number; lon: number } {
+  const marcador = PAISES_COM_MARCADOR.find((m) => m.iso2 === pais.data.iso2);
+  if (marcador) return { lat: marcador.lat, lon: marcador.lon };
+  const [minLon, minLat, maxLon, maxLat] = pais.bbox;
+  return { lat: (minLat + maxLat) / 2, lon: (minLon + maxLon) / 2 };
+}
+
+// --- Card flutuante do país -------------------------------------------------
+// Segue o mouse enquanto um país está sob o cursor; sem hover, fica preso ao
+// país selecionado (projetado na tela a cada frame) e some se ele girar para trás.
+let paisNoTooltip: CountryRuntime | null = null;
+
+function renderizarTooltip(pais: CountryRuntime): void {
   const mock = DADOS_MOCK[pais.data.iso2];
-  const listaLigas = mock
-    ? ordenarLigasPorFama(mock.ligas).slice(0, 3).map((l) => `<li>${obterNomeExibicaoLiga(l.nome)}</li>`).join('')
-    : '<li class="tooltip-vazio">Nenhuma liga cadastrada ainda</li>';
-  const rodape = mock
-    ? `${mock.ligas.length} liga${mock.ligas.length !== 1 ? 's' : ''} disponível${mock.ligas.length !== 1 ? 'is' : ''}`
-    : 'Sem dados cadastrados';
-
+  // O backend também manda países sem liga nenhuma, desde que tenham jogadores;
+  // nesses casos a linha de clubes sai fora em vez de mostrar "0 clubes".
+  const linhasMock = mock
+    ? [
+        mock.clubes > 0
+          ? `<p class="tooltip-linha"><i class="pi pi-shield"></i>${mock.clubes} ${plural(mock.clubes, 'clube', 'clubes')}</p>`
+          : '',
+        mock.jogadores
+          ? `<p class="tooltip-linha"><i class="pi pi-user"></i>${formatarQuantidade(mock.jogadores)} ${plural(mock.jogadores, 'jogador', 'jogadores')}</p>`
+          : '',
+      ].filter(Boolean)
+    : [];
+  const linhas = linhasMock.length > 0
+    ? linhasMock.join('')
+    : '<p class="tooltip-linha tooltip-vazio">Sem clubes cadastrados</p>';
   tooltipEl.innerHTML = `
-    <div class="tooltip-cabecalho">
-      <img class="tooltip-bandeira" src="https://flagcdn.com/w40/${pais.data.iso2}.png" alt="${pais.data.name}" onerror="this.style.display='none'" />
-      <span class="tooltip-nome">${mock ? mock.nome : pais.data.name}</span>
+    <img class="tooltip-bandeira" src="https://flagcdn.com/w80/${codigoBandeira(pais.data.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
+    <div class="tooltip-info">
+      <p class="tooltip-nome">${nomeExibicaoPais(pais)}</p>
+      ${linhas}
     </div>
-    <p class="tooltip-rotulo">Principais ligas</p>
-    <ul class="tooltip-lista">${listaLigas}</ul>
-    <p class="tooltip-rodape">${rodape}</p>
+    <i class="pi pi-chevron-right tooltip-seta"></i>
   `;
-  tooltipEl.classList.add('visivel');
-  posicionarTooltip();
 }
 
-function esconderTooltip(): void {
-  tooltipEl.classList.remove('visivel');
-}
+function atualizarTooltip(): void {
+  const alvo = paisSobreMouse || paisSelecionado;
+  if (!alvo) {
+    tooltipEl.classList.remove('visivel');
+    paisNoTooltip = null;
+    return;
+  }
+  if (alvo !== paisNoTooltip) {
+    renderizarTooltip(alvo);
+    paisNoTooltip = alvo;
+  }
 
-function posicionarTooltip(): void {
-  if (!tooltipEl.classList.contains('visivel')) return;
-  const offsetX = 18;
-  const offsetY = 18;
-  let x = ultimaPosicaoMouseTela.x + offsetX;
-  let y = ultimaPosicaoMouseTela.y + offsetY;
   const tw = tooltipEl.offsetWidth;
   const th = tooltipEl.offsetHeight;
-  if (x + tw > window.innerWidth - 16) x = ultimaPosicaoMouseTela.x - tw - offsetX;
-  if (y + th > window.innerHeight - 16) y = ultimaPosicaoMouseTela.y - th - offsetY;
-  tooltipEl.style.transform = `translate(${x}px, ${y}px)`;
+  let x: number;
+  let y: number;
+  if (paisSobreMouse) {
+    x = ultimaPosicaoMouseTela.x + 18;
+    y = ultimaPosicaoMouseTela.y + 18;
+    if (x + tw > window.innerWidth - 16) x = ultimaPosicaoMouseTela.x - tw - 18;
+    if (y + th > window.innerHeight - 16) y = ultimaPosicaoMouseTela.y - th - 18;
+  } else {
+    const centro = centroPais(alvo);
+    const ponto = latLonParaVetor3(centro.lat, centro.lon);
+    const deFrente = ponto.clone().normalize().dot(camera.position.clone().normalize()) > 0.2;
+    if (!deFrente) {
+      tooltipEl.classList.remove('visivel');
+      return;
+    }
+    const ndc = ponto.clone().project(camera);
+    const rect = canvasContainer.getBoundingClientRect();
+    x = rect.left + ((ndc.x + 1) / 2) * rect.width + 34;
+    y = rect.top + ((1 - ndc.y) / 2) * rect.height - th - 60;
+    x = THREE.MathUtils.clamp(x, rect.left + 8, rect.right - tw - 8);
+    y = THREE.MathUtils.clamp(y, rect.top + 8, rect.bottom - th - 8);
+  }
+  tooltipEl.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+  tooltipEl.classList.add('visivel');
 }
 
 canvasContainer.addEventListener('click', () => {
@@ -1208,6 +1200,7 @@ function selecionarPais(pais: CountryRuntime): void {
   });
   atualizarMalhaDestaque();
   atualizarMarcadorSelecionado(pais.data.iso2);
+  atualizarDestaqueAtivo(pais.data.iso2);
   preencherPainel(pais);
   painelEl.classList.add('painel-ativo');
   document.body.classList.add('sheet-aberto');
@@ -1220,101 +1213,140 @@ function atualizarMarcadorSelecionado(iso2Selecionado: string): void {
   });
 }
 
+/** Gira a câmera até o país (pelo caminho mais curto). */
+function voarParaPais(pais: CountryRuntime): void {
+  const centro = centroPais(pais);
+  const angulo = anguloCameraParaLatLon(centro.lat, centro.lon);
+  const diferenca = angulo.theta - thetaAlvo;
+  thetaAlvo += Math.atan2(Math.sin(diferenca), Math.cos(diferenca));
+  phiAlvo = angulo.phi;
+  velocidadeTheta = 0;
+  velocidadePhi = 0;
+}
+
+// --- Painel lateral ---------------------------------------------------------
 function preencherPainel(pais: CountryRuntime): void {
-  const mock = DADOS_MOCK[pais.data.iso2];
-  const nome = mock ? mock.nome : pais.data.name;
-  const descricao = mock
-    ? mock.descricao
-    : `Ainda não temos dados detalhados sobre as ligas de ${nome} nesta demonstração.`;
+  const iso2 = pais.data.iso2;
+  const mock = DADOS_MOCK[iso2];
+  const nome = nomeExibicaoPais(pais);
+  const continente = mock?.continente ?? continentePais(iso2);
   const ligas = mock ? mock.ligas : [];
-  const totalClubes = ligas.reduce((soma, l) => soma + l.clubes, 0);
+  const clubes = mock ? mock.clubes : 0;
+  const jogadores = mock ? mock.jogadores : null;
+  const foto = FOTOS_PAIS[iso2];
+
+  const estatistica = (icone: string, valor: string, rotulo: string) => `
+    <div class="painel-stat">
+      <span class="painel-stat-icone"><i class="${icone}"></i></span>
+      <div><strong>${valor}</strong><span>${rotulo}</span></div>
+    </div>`;
 
   painelEl.innerHTML = `
     <button class="painel-fechar" id="painel-fechar" aria-label="Fechar">✕</button>
 
-    <div class="painel-topo">
-      <img class="painel-bandeira" src="https://flagcdn.com/w80/${pais.data.iso2}.png" alt="${nome}" onerror="this.style.display='none'" />
-      <div>
-        <p class="painel-eyebrow">País selecionado</p>
-        <h2 class="painel-nome">${nome.toUpperCase()}</h2>
+    <header class="painel-cabecalho${foto ? ' painel-cabecalho--foto' : ''}"
+      ${foto ? `style="--painel-foto: url('nacoes/fotos/${iso2}.jpg')"` : ''}>
+      <img class="painel-bandeira" src="https://flagcdn.com/w160/${codigoBandeira(iso2)}.png" alt="${nome}" onerror="this.style.visibility='hidden'" />
+      <div class="painel-titulo">
+        <h2 class="painel-nome">${nome}</h2>
+        ${continente ? `<p class="painel-continente">${continente}</p>` : ''}
       </div>
-    </div>
-    <p class="painel-subtitulo">Explore as principais ligas do país</p>
+      ${foto ? `<a class="painel-credito" href="${foto.fonte}" target="_blank" rel="noopener">Foto: ${foto.autor} · ${foto.licenca}</a>` : ''}
+    </header>
 
-    <div class="painel-stats-row">
-      <div class="stat-pill">
-        <span class="stat-numero">${ligas.length}</span>
-        <span class="stat-rotulo">liga${ligas.length !== 1 ? 's' : ''}</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-numero">${totalClubes}</span>
-        <span class="stat-rotulo">clube${totalClubes !== 1 ? 's' : ''}</span>
-      </div>
+    <div class="painel-stats">
+      ${estatistica('pi pi-shield', String(clubes), plural(clubes, 'Clube', 'Clubes'))}
+      ${estatistica('pi pi-user', jogadores !== null ? formatarQuantidade(jogadores) : '—', 'Jogadores')}
+      ${estatistica('pi pi-trophy', String(ligas.length), plural(ligas.length, 'Liga', 'Ligas'))}
     </div>
 
-    <p class="painel-descricao">${descricao}</p>
-
+    <p class="painel-secao">${plural(ligas.length, 'Liga do país', 'Ligas do país')}</p>
     <div class="painel-ligas">
       ${
         ligas.length > 0
-          ? ordenarLigasPorFama(ligas)
+          ? ligas
               .map(
                 (liga) => `
-        <div class="liga-card" data-liga="${liga.nome}">
-          <div class="liga-icone" style="background:white">
-            <img
-              src="${obterCaminhoLogoLiga(liga.nome)}"
-              alt=""
-              style="width:100%;height:100%;object-fit:contain;padding:4px"
-              onerror="this.parentElement.style.background='${liga.cor}22'; this.parentElement.style.color='${liga.cor}'; this.parentElement.innerHTML='🏆';"
-            />
-          </div>
-          <div class="liga-info">
-            <p class="liga-nome">${obterNomeExibicaoLiga(liga.nome)}</p>
-            <p class="liga-clubes">${liga.clubes} times</p>
-          </div>
-          <span class="liga-seta">›</span>
-        </div>`
+        <button class="liga-card" data-liga="${liga.nome}">
+          <span class="liga-icone">
+            <img src="${obterCaminhoLogoLiga(liga.nome)}" alt=""
+              onerror="this.parentElement.classList.add('liga-icone--vazio'); this.remove();" />
+          </span>
+          <span class="liga-nome">${obterNomeExibicaoLiga(liga.nome)}</span>
+          <span class="liga-clubes">${liga.clubes} ${plural(liga.clubes, 'clube', 'clubes')}</span>
+          <i class="pi pi-chevron-right liga-seta"></i>
+        </button>`
               )
               .join('')
           : '<p class="painel-vazio">Nenhuma liga cadastrada ainda para este país.</p>'
       }
     </div>
 
-    ${
-      ligas.length > 0
-        ? `
-    <div class="card-ver-times" id="botao-ver-times">
-      <div class="card-ver-times-icone">🏟️</div>
-      <div class="card-ver-times-texto">
-        <p class="card-ver-times-titulo">Ver todos os times do ${nome}</p>
-        <p class="card-ver-times-sub">Acessar página de times</p>
-      </div>
-      <span class="liga-seta">›</span>
-    </div>`
-        : ''
-    }
   `;
 
   document.getElementById('painel-fechar')?.addEventListener('click', fecharPainel);
-  document.getElementById('botao-ver-times')?.addEventListener('click', () => {
-    navegar('/times', { pais: nome, paisCodigo: pais.data.iso2 });
-  });
   painelEl.querySelectorAll('.liga-card').forEach((card) => {
     card.addEventListener('click', () => {
       const nomeLiga = card.getAttribute('data-liga') || '';
-      navegar('/times', { liga: nomeLiga, ligaExibicao: obterNomeExibicaoLiga(nomeLiga), paisCodigo: pais.data.iso2 });
+      navegar('/times', { liga: nomeLiga, ligaExibicao: obterNomeExibicaoLiga(nomeLiga), paisCodigo: iso2 });
     });
   });
 }
 
 function fecharPainel(): void {
-  // No desktop o painel é fixo (30% da tela) e sempre mostra o último país
-  // selecionado — o X aqui só fecha a gaveta (bottom sheet) no mobile.
+  // No desktop o painel é fixo e sempre mostra o último país selecionado —
+  // o X aqui só fecha a gaveta (bottom sheet) no mobile.
   document.body.classList.remove('sheet-aberto');
 }
 
 bottomSheetOverlay?.addEventListener('click', fecharPainel);
+
+// --- Países em destaque (carrossel abaixo do globo) -------------------------
+const listaDestaquesEl = document.getElementById('destaques-lista') as HTMLElement | null;
+const QUANTIDADE_DESTAQUES = 12;
+
+function montarDestaques(): void {
+  if (!listaDestaquesEl) return;
+  // Brasil sempre primeiro; os demais pelos que têm mais clubes no banco
+  const destaques = Object.values(DADOS_MOCK)
+    .sort((a, b) => (a.iso2 === 'br' ? -1 : b.iso2 === 'br' ? 1 : b.clubes - a.clubes))
+    .slice(0, QUANTIDADE_DESTAQUES);
+
+  listaDestaquesEl.innerHTML = destaques
+    .map(
+      (pais) => `
+    <button class="destaque-card" data-iso2="${pais.iso2}">
+      <img class="destaque-bandeira" src="https://flagcdn.com/w80/${codigoBandeira(pais.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
+      <span class="destaque-nome">${pais.nome}</span>
+      <span class="destaque-clubes"><i class="pi pi-shield"></i>${pais.clubes} ${plural(pais.clubes, 'clube', 'clubes')}</span>
+      <i class="pi pi-chevron-right destaque-seta"></i>
+    </button>`
+    )
+    .join('');
+
+  listaDestaquesEl.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      const pais = paisesRuntime.find((p) => p.data.iso2 === card.dataset['iso2']);
+      if (!pais) return;
+      selecionarPais(pais);
+      voarParaPais(pais);
+    });
+  });
+  if (paisSelecionado) atualizarDestaqueAtivo(paisSelecionado.data.iso2);
+}
+
+function atualizarDestaqueAtivo(iso2: string): void {
+  listaDestaquesEl?.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
+    card.classList.toggle('destaque-card--ativo', card.dataset['iso2'] === iso2);
+  });
+}
+
+document.getElementById('destaques-anterior')?.addEventListener('click', () => {
+  listaDestaquesEl?.scrollBy({ left: -listaDestaquesEl.clientWidth * 0.8, behavior: 'smooth' });
+});
+document.getElementById('destaques-proximo')?.addEventListener('click', () => {
+  listaDestaquesEl?.scrollBy({ left: listaDestaquesEl.clientWidth * 0.8, behavior: 'smooth' });
+});
 
 // ----------------------------------------------------------------------------
 // 8. LOOP DE RENDERIZAÇÃO
@@ -1337,13 +1369,15 @@ function animar(agora: number): void {
 
   // fade suave de opacidade da malha de destaque (hover/seleção)
   if (malhaDestaque) {
-    const opacidadeAlvo = paisSelecionado === (paisSobreMouse || paisSelecionado) ? 0.32 : 0.24;
+    const opacidadeAlvo = paisSelecionado === (paisSobreMouse || paisSelecionado) ? 0.62 : 0.42;
     opacidadeDestaqueAtual += (opacidadeAlvo - opacidadeDestaqueAtual) * Math.min(delta * 8, 1);
     malhaDestaque.material.opacity = opacidadeDestaqueAtual;
   }
 
   // rotação ambiente muito sutil quando o usuário não está interagindo
   grupoGrid.rotation.y += delta * 0.01;
+
+  atualizarTooltip();
 
   renderer.render(scene, camera);
 }
@@ -1394,17 +1428,17 @@ function aoRedimensionar(): void {
   camera.updateProjectionMatrix();
   renderer.setSize(largura, altura);
 
-  // recalcula o limite de zoom para o novo tamanho de tela/painel e, se o
-  // zoom atual (ou o alvo) ultrapassar o novo limite, ajusta automaticamente
-  // para que o globo nunca fique cortado após um redimensionamento.
-  RAIO_MIN = calcularRaioMinimoZoom();
-  raioAlvo = THREE.MathUtils.clamp(raioAlvo, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
-  raioCamera = THREE.MathUtils.clamp(raioCamera, RAIO_MIN, Math.max(RAIO_MAX, RAIO_MIN));
+  // recalcula o enquadramento do globo inteiro para o novo tamanho de tela
+  RAIO_AJUSTE = calcularRaioMinimoZoom();
+  raioAlvo = limitarZoom(raioAlvo);
+  raioCamera = limitarZoom(raioCamera);
 }
 window.addEventListener('resize', aoRedimensionar);
 
 // --- Estado inicial: carrega dados reais, então seleciona o Brasil ---------
 carregarDadosReais().finally(() => {
+  if (!globoAtivo) return; // usuário saiu da página antes da resposta chegar
+  montarDestaques();
   const paisBrasilInicial = paisesRuntime.find((p) => p.data.iso2 === 'br');
   if (paisBrasilInicial) {
     selecionarPais(paisBrasilInicial);
@@ -1432,7 +1466,9 @@ function destruirGlobo(): void {
   materialOceano.dispose();
 
   // libera as texturas/canvas gerados em memória
-  if (materialOceano.map) materialOceano.map.dispose();
+  texturaDia.dispose();
+  texturaNoite.dispose();
+  mascaraTerra.dispose();
   texturaGlow.dispose();
 
   // remove o <canvas> do WebGL do DOM (o próprio Angular remove o restante

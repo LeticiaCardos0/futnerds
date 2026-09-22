@@ -6,41 +6,65 @@
 
 <div class="pagina-nacoes">
 
-  <header class="pb-6 pt-11 px-3">
-    <h2 class="text-3xl font-black uppercase tracking-tighter">
-      Explore o <span class="text-accent">futebol mundial</span>
-    </h2>
-    <p class="text-fg-subtle mt-1 text-sm font-medium">
-      Explore ligas e competições de futebol ao redor do mundo
-    </p>
-  </header>
-
   <div class="palco">
+
+    <!-- Coluna de apresentação -->
+    <section class="nacoes-intro">
+      <p class="nacoes-eyebrow"><i class="fa-solid fa-crown" aria-hidden="true"></i> Mundo do futebol</p>
+      <h1 class="nacoes-titulo">
+        Explore os países
+        <span>do futebol mundial</span>
+      </h1>
+      <p class="nacoes-texto">
+        Descubra ligas, clubes e jogadores de todos os países. Explore o futebol sem fronteiras.
+      </p>
+
+      <p class="nacoes-dica-mouse">
+        <i class="fa-solid fa-computer-mouse" aria-hidden="true"></i>
+        Passe o mouse sobre um país para ver mais informações
+      </p>
+    </section>
 
     <!-- Globo 3D -->
     <section class="area-globo">
       <div id="globo-canvas"></div>
 
+      <!-- Card do país sob o mouse (ou fixo no país selecionado) -->
       <div id="tooltip" class="tooltip"></div>
 
-      <!-- Controles de zoom / reset -->
-      <div class="globo-controles">
-        <button id="zoom-out" class="controle-botao" aria-label="Diminuir zoom">−</button>
-        <button id="zoom-in" class="controle-botao" aria-label="Aumentar zoom">+</button>
-        <button id="zoom-reset" class="controle-botao controle-botao--reset" aria-label="Posição inicial">⟳</button>
-      </div>
-
-      <!-- Dicas de uso -->
-      <div class="globo-dicas">
-        <p>Arraste o globo para explorar</p>
-        <p>Role para zoom</p>
-        <p>Passe sobre um país para visualizar suas ligas</p>
+      <div class="globo-rodape">
+        <div class="globo-controles">
+          <button id="zoom-out" class="controle-botao" aria-label="Diminuir zoom">−</button>
+          <button id="zoom-in" class="controle-botao" aria-label="Aumentar zoom">+</button>
+        </div>
+        <p class="globo-dica">Arraste o globo para explorar <i class="fa-solid fa-hand" aria-hidden="true"></i></p>
       </div>
     </section>
 
     <!-- Painel do país selecionado (preenchido dinamicamente pelo motor) -->
     <aside id="painel" class="painel"></aside>
 
+  </div>
+
+  <!-- Países em destaque (preenchido pelo motor, ordenado por clubes) -->
+  <section class="nacoes-destaques">
+    <div class="nacoes-destaques-topo">
+      <h2><i class="pi pi-star" aria-hidden="true"></i> Países em destaque</h2>
+      <div class="nacoes-destaques-setas">
+        <button id="destaques-anterior" class="seta-botao" aria-label="Países anteriores"><i class="pi pi-chevron-left"></i></button>
+        <button id="destaques-proximo" class="seta-botao" aria-label="Próximos países"><i class="pi pi-chevron-right"></i></button>
+      </div>
+    </div>
+    <div id="destaques-lista" class="nacoes-destaques-lista"></div>
+  </section>
+
+  <div class="nacoes-faixa">
+    <p class="nacoes-faixa-marca">
+      <i class="pi pi-circle-fill" aria-hidden="true"></i>
+      <strong>FutNerds</strong>
+      <span>Mais que um jogo, é uma comunidade.</span>
+    </p>
+    <p class="nacoes-faixa-lema"><span class="nacoes-faixa-barras">///</span> Explorar / Descobrir / Evoluir</p>
   </div>
 
 </div>

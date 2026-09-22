@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Jogador } from '../jogadores/jogadores';
 import { JogadorService } from '../jogadores/jogador.service';
+import { urlImagemJogador } from '../../shared/api.util';
 import { traduzirPosicao } from '../../shared/posicoes.util';
 import { calcularPAC, calcularSHO, calcularPAS, calcularDRI, calcularPHY, calcularDEF, obterEstrelas, obterCorpo, obterClasseStatPill, ehPeEsquerdo, ehPeDireito, traduzirPe, traduzirNacionalidade, obterClasseTier, LAYOUT_CAMPO, imagemPlaystyle, traduzirPlaystyle, descricaoPlaystyle } from '../../shared/jogador-stats.util';
 
@@ -72,6 +73,7 @@ interface PontoGrafico {
   styleUrl: './jogador-detalhes.css',
 })
 export class JogadorDetalhesComponent implements OnInit, AfterViewInit {
+  readonly urlImagemJogador = urlImagemJogador;
   jogador!: Jogador;
   carregando = true;
   erroCarregamento = false;

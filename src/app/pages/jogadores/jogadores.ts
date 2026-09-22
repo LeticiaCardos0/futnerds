@@ -11,6 +11,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 
 import { JogadorService } from './jogador.service';
+import { urlImagemJogador } from '../../shared/api.util';
 
 export interface JogadorElenco {
   id: number;
@@ -112,6 +113,8 @@ export interface JogadorHistoricoItem {
   styleUrl: './jogadores.css'
 })
 export class JogadoresComponent implements OnInit {
+  readonly urlImagemJogador = urlImagemJogador;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,

@@ -70,6 +70,11 @@ export function temLogoLiga(nomeLiga: string): boolean {
   return !LIGAS_SEM_LOGO.has(nomeLiga);
 }
 
+/** Nome canônico da liga (o mesmo do arquivo de escudo), ex.: "LALIGA EA SPORTS" -> "La Liga". */
+export function obterNomeCanonicoLiga(nomeLiga: string): string {
+  return MAPA_ESPECIAL_LIGA[nomeLiga] || nomeLiga;
+}
+
 export function obterCaminhoLogoLiga(nomeLiga: string): string {
   const nomeArquivo = MAPA_ESPECIAL_LIGA[nomeLiga] || nomeLiga;
   return `/ligas/${nomeArquivo}.png`;

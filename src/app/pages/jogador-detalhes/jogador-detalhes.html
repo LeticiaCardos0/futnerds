@@ -30,7 +30,7 @@
           <div class="holo-card__badge">
             <span [attr.data-count]="jogador.overall || 0">0</span>
           </div>
-          <img [src]="'http://localhost:8080/api/imagem/jogador/' + jogador.id" [alt]="jogador.nome"
+          <img [src]="urlImagemJogador(jogador.id)" [alt]="jogador.nome"
             (error)="$event.target.style.display='none'" />
         </div>
 

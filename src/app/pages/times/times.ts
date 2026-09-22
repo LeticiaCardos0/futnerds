@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { obterCaminhoLogoLiga } from '../../shared/ligas.util';
+import { API_URL } from '../../shared/api.util';
 
 export interface Time {
   id: number;
@@ -74,7 +75,7 @@ export class TimesComponent implements OnInit {
     if (this.filtroLiga) params.liga = this.filtroLiga;
     if (this.filtroPais) params.pais = this.filtroPais;
 
-    this.http.get<any>('http://localhost:8080/api/times', { params }).subscribe(resultado => {
+    this.http.get<any>(`${API_URL}/times`, { params }).subscribe(resultado => {
       this.times = resultado.times;
       this.totalPaginas = resultado.totalPaginas;
       this.totalItens = resultado.totalItens;

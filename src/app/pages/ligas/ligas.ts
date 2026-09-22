@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { obterCaminhoLogoLiga, temLogoLiga } from '../../shared/ligas.util';
+import { API_URL } from '../../shared/api.util';
 
 export interface Liga {
   id: number;
@@ -95,7 +96,7 @@ export class LigasComponent implements OnInit {
   itensPorPagina: number = 20;
 
   ngOnInit(): void {
-    this.http.get<Liga[]>('http://localhost:8080/api/ligas').subscribe(dados => {
+    this.http.get<Liga[]>(`${API_URL}/ligas`).subscribe(dados => {
       this.ligas = dados;
       this.cdr.markForCheck();
     });

@@ -2,6 +2,41 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
 
+## Rodando o projeto completo (banco + backend + frontend)
+
+O backend Spring Boot fica em [futdb/](futdb/) (vindo de https://github.com/LeticiaCardos0/futdb) e usa PostgreSQL.
+
+| Peça | Endereço |
+|---|---|
+| Frontend (Angular) | `http://localhost:4200` |
+| Backend (Spring Boot) | `http://localhost:8081` — a 8080 fica livre para o Apache/XAMPP |
+| Banco (PostgreSQL 18 local) | `localhost:5433`, banco `futdb`, usuário `postgres` / senha `admin` |
+
+O endereço do backend no frontend fica em [src/app/shared/api.util.ts](src/app/shared/api.util.ts); a porta e o banco do backend, em [futdb/src/main/resources/application.properties](futdb/src/main/resources/application.properties).
+
+1. **Backend** (Java 21+): `cd futdb && ./mvnw spring-boot:run`
+2. **Frontend**: `npm ci --legacy-peer-deps` (só na primeira vez) e depois `npm start`
+
+### Recriar o banco do zero
+
+1. Criar o banco e as tabelas:
+   ```bash
+   createdb -U postgres -h localhost -p 5433 futdb
+   psql -U postgres -h localhost -p 5433 -d futdb -f futdb/db/schema.sql
+   ```
+2. Com o backend rodando, importar os CSVs de [futdb/dados/](futdb/dados/):
+   ```bash
+   curl -X POST http://localhost:8081/api/import/csv
+   curl -X POST http://localhost:8081/api/jogadores/historico/importar
+   curl -X POST http://localhost:8081/api/jogadores/historico/importar-edicao-atual
+   ```
+3. Imagens (rodam em segundo plano; acompanhe pelo log do backend):
+   ```bash
+   curl -X POST http://localhost:8081/api/import/fotos            # fotos dos jogadores (CDN do sofifa, ~6 min)
+   curl -X POST http://localhost:8081/api/import/detalhes-times   # escudos e estádios (TheSportsDB, ~30 min)
+   curl -X POST http://localhost:8081/api/import/uniformes        # uniformes, só depois dos escudos (~30s por clube, várias horas)
+   ```
+
 ## Development server
 
 To start a local development server, run:
