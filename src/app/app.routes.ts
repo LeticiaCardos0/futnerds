@@ -25,6 +25,14 @@ export const routes: Routes = [
   { path: 'jogadores/:id', component: JogadorDetalhesComponent },
   { path: 'nacoes', component: NacoesComponent },
   { path: 'ligas', component: LigasComponent },
+  // loadComponent (e não `component`) de propósito: é a única rota que puxa o
+  // maplibre-gl, e carregar sob demanda evita ~800 kB no bundle inicial de
+  // todas as outras telas. É o único ponto do projeto com lazy loading.
+  {
+    path: 'ligas/:ligaId',
+    loadComponent: () =>
+      import('./pages/ligas/liga-mapa/liga-mapa').then((m) => m.LigaMapaPageComponent),
+  },
   { path: 'elenco', component: ElencoComponent },
   { path: '**', redirectTo: '' }
 ];

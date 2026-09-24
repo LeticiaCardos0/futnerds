@@ -1,0 +1,91 @@
+{
+  "ligaId": "premier-league",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Campos possíveis, todos opcionais:",
+    "  clubeWikidata   Q-id do clube. Pula o casamento por nome — use quando o nome for ambíguo.",
+    "  estadioWikidata Q-id do estádio. Sobrepõe o P115 — use quando o Wikidata estiver desatualizado.",
+    "  cidade          Nome do rótulo no mapa. É o que vai para a lista `cidades` e para a busca do centro.",
+    "  estadio         Nome de exibição do estádio.",
+    "  lat, lng        Último recurso. Preferir estadioWikidata, que mantém a coordenada vindo da fonte."
+  ],
+  "clubes": {
+    "AFC Bournemouth": {
+      "_nota": "Sem o pin, 'AFC Bournemouth' colide com o Bournemouth F.C. (Q5212324), outro clube.",
+      "clubeWikidata": "Q19568",
+      "cidade": "Bournemouth",
+      "estadio": "Vitality Stadium"
+    },
+    "Arsenal": {
+      "cidade": "Londres"
+    },
+    "Aston Villa": {
+      "_nota": "P159 devolve 'Aston', que é um bairro.",
+      "cidade": "Birmingham"
+    },
+    "Brentford": {
+      "_nota": "O Wikidata só tem Griffin Park em P115 (desatualizado desde 2020).",
+      "estadioWikidata": "Q4961609",
+      "estadio": "Gtech Community Stadium",
+      "cidade": "Londres"
+    },
+    "Brighton": {
+      "_nota": "P159 devolve 'Brighton and Hove'.",
+      "cidade": "Brighton",
+      "estadio": "Amex Stadium"
+    },
+    "Chelsea": {
+      "cidade": "Londres"
+    },
+    "Coventry City": {
+      "cidade": "Coventry"
+    },
+    "Crystal Palace": {
+      "cidade": "Londres"
+    },
+    "Everton": {
+      "cidade": "Liverpool"
+    },
+    "Fulham": {
+      "cidade": "Londres"
+    },
+    "Hull City": {
+      "_nota": "P159 devolve 'Kingston upon Hull', o nome formal.",
+      "cidade": "Hull"
+    },
+    "Ipswich": {
+      "cidade": "Ipswich"
+    },
+    "Leeds United": {
+      "cidade": "Leeds"
+    },
+    "Liverpool": {
+      "cidade": "Liverpool"
+    },
+    "Man Utd": {
+      "cidade": "Manchester"
+    },
+    "Manchester City": {
+      "cidade": "Manchester"
+    },
+    "Newcastle Utd": {
+      "_nota": "Casaria só por expansão de abreviação, que o script manda para revisão. E 'Newcastle' sozinho casa com homônimos no País de Gales — daí o pin da cidade.",
+      "clubeWikidata": "Q18716",
+      "cidade": "Newcastle",
+      "cidadeWikidata": "Q1425428"
+    },
+    "Nott'm Forest": {
+      "_nota": "Idem, e o P159 devolve 'West Bridgford', onde fica o estádio.",
+      "clubeWikidata": "Q19490",
+      "cidade": "Nottingham"
+    },
+    "Spurs": {
+      "_nota": "P159 devolve 'London Borough of Haringey'.",
+      "cidade": "Londres"
+    },
+    "Sunderland": {
+      "cidade": "Sunderland"
+    }
+  }
+}

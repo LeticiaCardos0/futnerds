@@ -1,5 +1,7 @@
 // Fotos de cabeçalho do painel de país (public/nacoes/fotos/<iso2>.jpg).
-// Todas do Wikimedia Commons, com licença livre — o crédito é exibido no painel.
+// Todas do Wikimedia Commons. O crédito NÃO é mais exibido no painel, mas os
+// campos autor/licenca/fonte ficam aqui como registro: CC BY e CC BY-SA exigem
+// atribuição em algum lugar do site (uma página de créditos serve).
 export interface FotoPais { autor: string; licenca: string; fonte: string; }
 
 export const FOTOS_PAIS: Record<string, FotoPais> = {

@@ -1,0 +1,360 @@
+{
+  "ligaId": "la-liga",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-24",
+  "cidades": [
+    {
+      "nome": "A Corunha",
+      "lat": 43.3739,
+      "lng": -8.4,
+      "_wikidata": "Q8757"
+    },
+    {
+      "nome": "Barcelona",
+      "lat": 41.3825,
+      "lng": 2.1769,
+      "_wikidata": "Q1492"
+    },
+    {
+      "nome": "Bilbao",
+      "lat": 43.2604,
+      "lng": -2.9334,
+      "_wikidata": "Q31913753"
+    },
+    {
+      "nome": "Elche",
+      "lat": 38.2654,
+      "lng": -0.6989,
+      "_wikidata": "Q31916107"
+    },
+    {
+      "nome": "Getafe",
+      "lat": 40.304,
+      "lng": -3.7294,
+      "_wikidata": "Q24012739"
+    },
+    {
+      "nome": "Madri",
+      "lat": 40.4169,
+      "lng": -3.7033,
+      "_wikidata": "Q2807"
+    },
+    {
+      "nome": "Málaga",
+      "lat": 36.7167,
+      "lng": -4.4167,
+      "_wikidata": "Q8851",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Pamplona",
+      "lat": 42.8128,
+      "lng": -1.6443,
+      "_wikidata": "Q24012386"
+    },
+    {
+      "nome": "San Sebastián",
+      "lat": 43.3128,
+      "lng": -1.975,
+      "_wikidata": "Q24013530"
+    },
+    {
+      "nome": "Santander",
+      "lat": 43.4647,
+      "lng": -3.8044,
+      "_wikidata": "Q23992498"
+    },
+    {
+      "nome": "Sevilha",
+      "lat": 37.3886,
+      "lng": -5.995,
+      "_wikidata": "Q8717"
+    },
+    {
+      "nome": "Valência",
+      "lat": 39.47,
+      "lng": -0.3764,
+      "_wikidata": "Q8818"
+    },
+    {
+      "nome": "Vigo",
+      "lat": 42.2358,
+      "lng": -8.7267,
+      "_wikidata": "Q8745"
+    },
+    {
+      "nome": "Villarreal",
+      "lat": 39.9378,
+      "lng": -0.1014,
+      "_wikidata": "Q12292",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Vitoria-Gasteiz",
+      "lat": 42.8467,
+      "lng": -2.6731,
+      "_wikidata": "Q14318"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "athletic-club",
+      "nomesBase": [
+        "Athletic Club"
+      ],
+      "cidade": "Bilbao",
+      "estadio": "San Mamés Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bilbao%20San%20Mam%C3%A9s%20Stadium%204.jpg?width=800",
+      "lat": 43.2642,
+      "lng": -2.9494,
+      "_wikidata": "Q8687",
+      "_wikidataLabel": "Athletic Club"
+    },
+    {
+      "slug": "atletico-madrid",
+      "nomesBase": [
+        "Atlético de Madrid"
+      ],
+      "cidade": "Madri",
+      "estadio": "Metropolitano Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wanda-Metropolitano.jpg?width=800",
+      "lat": 40.4361,
+      "lng": -3.5994,
+      "_wikidata": "Q8701",
+      "_wikidataLabel": "Atlético Madrid"
+    },
+    {
+      "slug": "club-atletico-osasuna",
+      "nomesBase": [
+        "CA Osasuna"
+      ],
+      "cidade": "Pamplona",
+      "estadio": "El Sadar Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20El%20Sadar.jpg?width=800",
+      "lat": 42.7967,
+      "lng": -1.6369,
+      "_wikidata": "Q10286",
+      "_wikidataLabel": "Club Atlético Osasuna"
+    },
+    {
+      "slug": "deportivo-alaves",
+      "nomesBase": [
+        "D. Alavés"
+      ],
+      "cidade": "Vitoria-Gasteiz",
+      "estadio": "Mendizorrotza Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Alav%C3%A9s2-2Lega2018.jpg?width=800",
+      "lat": 42.8371,
+      "lng": -2.688,
+      "_wikidata": "Q223620",
+      "_wikidataLabel": "Deportivo Alavés"
+    },
+    {
+      "slug": "deportivo-de-a-coruna",
+      "nomesBase": [
+        "RC Deportivo"
+      ],
+      "cidade": "A Corunha",
+      "estadio": "Estadio Municipal de Abanca Riazor",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20de%20Riazor.A%20Corunha.Galiza.jpg?width=800",
+      "lat": 43.3687,
+      "lng": -8.4174,
+      "_wikidata": "Q8760",
+      "_wikidataLabel": "Deportivo de A Coruña"
+    },
+    {
+      "slug": "elche-cf",
+      "nomesBase": [
+        "Elche CF"
+      ],
+      "cidade": "Elche",
+      "estadio": "Estadio Manuel Martínez Valero",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Elche-Xerez.jpg?width=800",
+      "lat": 38.2669,
+      "lng": -0.6633,
+      "_wikidata": "Q10512",
+      "_wikidataLabel": "Elche CF"
+    },
+    {
+      "slug": "fc-barcelona",
+      "nomesBase": [
+        "FC Barcelona"
+      ],
+      "cidade": "Barcelona",
+      "estadio": "Camp Nou",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Camp%20Nou%20aerial%20%28cropped%29.jpg?width=800",
+      "lat": 41.3808,
+      "lng": 2.1228,
+      "_wikidata": "Q7156",
+      "_wikidataLabel": "FC Barcelona"
+    },
+    {
+      "slug": "getafe-cf",
+      "nomesBase": [
+        "Getafe CF"
+      ],
+      "cidade": "Getafe",
+      "estadio": "Estadio Coliseum",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Coliseum%20Alfonso%20P%C3%A9rez%20in%202018.jpg?width=800",
+      "lat": 40.3256,
+      "lng": -3.7147,
+      "_wikidata": "Q8806",
+      "_wikidataLabel": "Getafe CF"
+    },
+    {
+      "slug": "levante-ud",
+      "nomesBase": [
+        "Levante UD"
+      ],
+      "cidade": "Valência",
+      "estadio": "Estadi Ciutat de València",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadi%20Ciutat%20de%20Val%C3%A8ncia%20-%20nocturna.jpg?width=800",
+      "lat": 39.4947,
+      "lng": -0.3642,
+      "_wikidata": "Q8823",
+      "_wikidataLabel": "Levante UD"
+    },
+    {
+      "slug": "malaga-cf",
+      "nomesBase": [
+        "Málaga CF"
+      ],
+      "cidade": "Málaga",
+      "estadio": "La Rosaleda Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estado%20de%20la%20Rosaleda%20%28M%C3%A1laga%20C.F.%29.jpg?width=800",
+      "lat": 36.7341,
+      "lng": -4.4264,
+      "_wikidata": "Q8857",
+      "_wikidataLabel": "Málaga CF"
+    },
+    {
+      "slug": "racing-de-santander",
+      "nomesBase": [
+        "R. Racing Club"
+      ],
+      "cidade": "Santander",
+      "estadio": "Campos de Sport de El Sardinero",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Fachada%20oeste%20Campos%20de%20Sport%20de%20El%20Sardinero.jpg?width=800",
+      "lat": 43.4764,
+      "lng": -3.7933,
+      "_wikidata": "Q12236",
+      "_wikidataLabel": "Racing de Santander"
+    },
+    {
+      "slug": "rayo-vallecano",
+      "nomesBase": [
+        "Rayo Vallecano"
+      ],
+      "cidade": "Madri",
+      "estadio": "Campo de Fútbol de Vallecas",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20de%20Vallecas.jpg?width=800",
+      "lat": 40.3919,
+      "lng": -3.659,
+      "_wikidata": "Q10300",
+      "_wikidataLabel": "Rayo Vallecano"
+    },
+    {
+      "slug": "rc-celta-de-vigo",
+      "nomesBase": [
+        "Celta"
+      ],
+      "cidade": "Vigo",
+      "estadio": "Abanca Balaídos Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Grada%20R%C3%ADo.JPG?width=800",
+      "lat": 42.2119,
+      "lng": -8.7403,
+      "_wikidata": "Q8749",
+      "_wikidataLabel": "RC Celta de Vigo"
+    },
+    {
+      "slug": "rcd-espanyol-de-barcelona",
+      "nomesBase": [
+        "RCD Espanyol"
+      ],
+      "cidade": "Barcelona",
+      "estadio": "RCDE Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stage%20Front%20Stadium.jpg?width=800",
+      "lat": 41.3479,
+      "lng": 2.0757,
+      "_wikidata": "Q8780",
+      "_wikidataLabel": "RCD Espanyol de Barcelona"
+    },
+    {
+      "slug": "real-betis-balompie",
+      "nomesBase": [
+        "Real Betis"
+      ],
+      "cidade": "Sevilha",
+      "estadio": "Estadio Benito Villamarín",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Manuel%20Ruiz%20de%20Lopera%20S%C3%A9ville.JPG?width=800",
+      "lat": 37.3564,
+      "lng": -5.9816,
+      "_wikidata": "Q8723",
+      "_wikidataLabel": "Real Betis Balompié"
+    },
+    {
+      "slug": "real-madrid-club-de-futbol",
+      "nomesBase": [
+        "Real Madrid"
+      ],
+      "cidade": "Madri",
+      "estadio": "Santiago Bernabéu",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Santiago%20Bernab%C3%A9u%204973.jpg?width=800",
+      "lat": 40.4521,
+      "lng": -3.6908,
+      "_wikidata": "Q8682",
+      "_wikidataLabel": "Real Madrid Club de Fútbol"
+    },
+    {
+      "slug": "real-sociedad",
+      "nomesBase": [
+        "Real Sociedad"
+      ],
+      "cidade": "San Sebastián",
+      "estadio": "Anoeta Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoeta%2000%2C%20Donostia%2C%20Gipuzkoa%2C%20Euskal%20Herria.jpg?width=800",
+      "lat": 43.3014,
+      "lng": -1.9736,
+      "_wikidata": "Q10315",
+      "_wikidataLabel": "Real Sociedad"
+    },
+    {
+      "slug": "sevilla",
+      "nomesBase": [
+        "Sevilla FC"
+      ],
+      "cidade": "Sevilha",
+      "estadio": "Ramón Sánchez Pizjuán Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2022-10-25%201%20Estadio%20Ram%C3%B3n%20S%C3%A1nchez%20Pizju%C3%A1n%20%28Sevilla%20FC%29.jpg?width=800",
+      "lat": 37.3839,
+      "lng": -5.9705,
+      "_wikidata": "Q10329",
+      "_wikidataLabel": "Sevilla FC"
+    },
+    {
+      "slug": "valencia-cf",
+      "nomesBase": [
+        "Valencia CF"
+      ],
+      "cidade": "Valência",
+      "estadio": "Mestalla Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/CAMP%20DE%20MESTALLA%20GRADA%20DE%20LA%20MAR%202014.JPG?width=800",
+      "lat": 39.4747,
+      "lng": -0.3583,
+      "_wikidata": "Q10333",
+      "_wikidataLabel": "Valencia CF"
+    },
+    {
+      "slug": "villarreal-cf",
+      "nomesBase": [
+        "Villarreal CF"
+      ],
+      "cidade": "Villarreal",
+      "estadio": "Estadio de la Cerámica",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/City%20v%20Villarreal.jpg?width=800",
+      "lat": 39.9442,
+      "lng": -0.1036,
+      "_wikidata": "Q12297",
+      "_wikidataLabel": "Villarreal CF"
+    }
+  ]
+}

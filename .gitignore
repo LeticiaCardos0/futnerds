@@ -42,3 +42,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Rascunhos do gerador de localizacao (scripts/gerar-localizacao-clubes.js).
+# Sao regravados a cada execucao; o arquivo promovido e o .clubes.json ao lado.
+*.clubes.rascunho.json

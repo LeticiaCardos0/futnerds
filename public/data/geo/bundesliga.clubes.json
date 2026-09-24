@@ -1,0 +1,353 @@
+{
+  "ligaId": "bundesliga",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-24",
+  "cidades": [
+    {
+      "nome": "Augsburgo",
+      "lat": 48.3689,
+      "lng": 10.8978,
+      "_wikidata": "Q2749"
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5167,
+      "lng": 13.3833,
+      "_wikidata": "Q64"
+    },
+    {
+      "nome": "Bremen",
+      "lat": 53.1333,
+      "lng": 8.7333,
+      "_wikidata": "Q1209",
+      "_homonimos": 6
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.9422,
+      "lng": 6.9578,
+      "_wikidata": "Q365"
+    },
+    {
+      "nome": "Dortmund",
+      "lat": 51.5139,
+      "lng": 7.4653,
+      "_wikidata": "Q1295"
+    },
+    {
+      "nome": "Elversberg",
+      "lat": 49.3167,
+      "lng": 7.1331,
+      "_wikidata": "Q629932"
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1106,
+      "lng": 8.6822,
+      "_wikidata": "Q1794",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Freiburg",
+      "lat": 47.995,
+      "lng": 7.85,
+      "_wikidata": "Q2833",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Gelsenkirchen",
+      "lat": 51.5103,
+      "lng": 7.0942,
+      "_wikidata": "Q2765"
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.55,
+      "lng": 10,
+      "_wikidata": "Q1055"
+    },
+    {
+      "nome": "Leipzig",
+      "lat": 51.3406,
+      "lng": 12.3747,
+      "_wikidata": "Q2079"
+    },
+    {
+      "nome": "Leverkusen",
+      "lat": 51.0333,
+      "lng": 6.9833,
+      "_wikidata": "Q2938"
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9994,
+      "lng": 8.2736,
+      "_wikidata": "Q1720"
+    },
+    {
+      "nome": "Mönchengladbach",
+      "lat": 51.2,
+      "lng": 6.4333,
+      "_wikidata": "Q2758"
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1375,
+      "lng": 11.575,
+      "_wikidata": "Q1726"
+    },
+    {
+      "nome": "Paderborn",
+      "lat": 51.7167,
+      "lng": 8.7667,
+      "_wikidata": "Q2971"
+    },
+    {
+      "nome": "Sinsheim",
+      "lat": 49.25,
+      "lng": 8.8833,
+      "_wikidata": "Q14950"
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.7775,
+      "lng": 9.18,
+      "_wikidata": "Q1022"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "1-fc-koln",
+      "nomesBase": [
+        "1. FC Köln"
+      ],
+      "cidade": "Colônia",
+      "estadio": "RheinEnergie Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Drohnenaufnahme%20RheinEnergieStadion%20im%20Sportpark%20M%C3%BCngersdorf-0551.jpg?width=800",
+      "lat": 50.9336,
+      "lng": 6.875,
+      "_wikidata": "Q104770",
+      "_wikidataLabel": "1. FC Köln"
+    },
+    {
+      "slug": "1-fc-union-berlin",
+      "nomesBase": [
+        "Union Berlin"
+      ],
+      "cidade": "Berlim",
+      "estadio": "Stadion An der Alten Försterei",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20alte%20f%C3%B6rsterei.jpg?width=800",
+      "lat": 52.4572,
+      "lng": 13.5681,
+      "_wikidata": "Q141971",
+      "_wikidataLabel": "1. FC Union Berlin"
+    },
+    {
+      "slug": "1-fsv-mainz-05",
+      "nomesBase": [
+        "1. FSV Mainz 05"
+      ],
+      "cidade": "Mainz",
+      "estadio": "Mewa Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-06-11%20Fu%C3%9Fball%2C%20M%C3%A4nner%2C%20L%C3%A4nderspiel%2C%20Deutschland-Estland%20StP%202019%20LR10%20by%20Stepro.jpg?width=800",
+      "lat": 49.9842,
+      "lng": 8.2242,
+      "_wikidata": "Q105254",
+      "_wikidataLabel": "1. FSV Mainz 05"
+    },
+    {
+      "slug": "bayer-04-leverkusen",
+      "nomesBase": [
+        "Leverkusen"
+      ],
+      "cidade": "Leverkusen",
+      "estadio": "BayArena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bayarena%20Leverkusen%202020.jpg?width=800",
+      "lat": 51.0383,
+      "lng": 7.0022,
+      "_wikidata": "Q104761",
+      "_wikidataLabel": "Bayer 04 Leverkusen"
+    },
+    {
+      "slug": "borussia-dortmund",
+      "nomesBase": [
+        "Borussia Dortmund"
+      ],
+      "cidade": "Dortmund",
+      "estadio": "Westfalenstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Signal%20iduna%20park%20stadium%20dortmund%206.jpg?width=800",
+      "lat": 51.4925,
+      "lng": 7.4517,
+      "_wikidata": "Q41420",
+      "_wikidataLabel": "Borussia Dortmund"
+    },
+    {
+      "slug": "borussia-monchengladbach",
+      "nomesBase": [
+        "M'gladbach"
+      ],
+      "cidade": "Mönchengladbach",
+      "estadio": "ista-Borussia-Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%B6nchengladbach%20stadion.jpg?width=800",
+      "lat": 51.1746,
+      "lng": 6.3855,
+      "_wikidata": "Q101959",
+      "_wikidataLabel": "Borussia Mönchengladbach"
+    },
+    {
+      "slug": "eintracht-frankfurt",
+      "nomesBase": [
+        "Frankfurt"
+      ],
+      "cidade": "Frankfurt",
+      "estadio": "Waldstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt%20stadium.jpg?width=800",
+      "lat": 50.0686,
+      "lng": 8.6453,
+      "_wikidata": "Q38245",
+      "_wikidataLabel": "Eintracht Frankfurt"
+    },
+    {
+      "slug": "fc-augsburg",
+      "nomesBase": [
+        "FC Augsburg"
+      ],
+      "cidade": "Augsburgo",
+      "estadio": "WWK Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Impuls%20Arena%20Augsburg%202011.jpg?width=800",
+      "lat": 48.3233,
+      "lng": 10.8859,
+      "_wikidata": "Q15755",
+      "_wikidataLabel": "FC Augsburg"
+    },
+    {
+      "slug": "fc-bayern-munich",
+      "nomesBase": [
+        "FC Bayern München"
+      ],
+      "cidade": "Munique",
+      "estadio": "Allianz Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Allianz%20arena%20daylight%20Richard%20Bartz.jpg?width=800",
+      "lat": 48.2188,
+      "lng": 11.6248,
+      "_wikidata": "Q15789",
+      "_wikidataLabel": "FC Bayern Munich"
+    },
+    {
+      "slug": "hamburger-sv",
+      "nomesBase": [
+        "Hamburger SV"
+      ],
+      "cidade": "Hamburgo",
+      "estadio": "Volksparkstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Well%20lit%20soccer%20stadium%20%28Unsplash%29.jpg?width=800",
+      "lat": 53.5869,
+      "lng": 9.8986,
+      "_wikidata": "Q51974",
+      "_wikidataLabel": "Hamburger SV"
+    },
+    {
+      "slug": "rb-leipzig",
+      "nomesBase": [
+        "RB Leipzig"
+      ],
+      "cidade": "Leipzig",
+      "estadio": "Red Bull Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Leipzig%20stadium.jpg?width=800",
+      "lat": 51.3458,
+      "lng": 12.3481,
+      "_wikidata": "Q702455",
+      "_wikidataLabel": "RB Leipzig"
+    },
+    {
+      "slug": "sc-freiburg",
+      "nomesBase": [
+        "SC Freiburg"
+      ],
+      "cidade": "Freiburg",
+      "estadio": "Europa-Park-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Europa%20Park%20Stadion%20in%20Freiburg%20von%20der%20Georges-K%C3%B6hler-Allee%20gesehen%208.jpg?width=800",
+      "lat": 48.0215,
+      "lng": 7.83,
+      "_wikidata": "Q106394",
+      "_wikidataLabel": "SC Freiburg"
+    },
+    {
+      "slug": "sc-paderborn-07",
+      "nomesBase": [
+        "SC Paderborn 07"
+      ],
+      "cidade": "Paderborn",
+      "estadio": "Home Deluxe Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Benteler-Arena%20%2817107125877%29.jpg?width=800",
+      "lat": 51.7314,
+      "lng": 8.7108,
+      "_wikidata": "Q160532",
+      "_wikidataLabel": "SC Paderborn 07"
+    },
+    {
+      "slug": "schalke-04",
+      "nomesBase": [
+        "FC Schalke 04"
+      ],
+      "cidade": "Gelsenkirchen",
+      "estadio": "Arena AufSchalke",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gelsenkirchen%20-%20Schalker%20Feld%20-%20AufSchalke%2026%20ies.jpg?width=800",
+      "lat": 51.5545,
+      "lng": 7.0676,
+      "_wikidata": "Q32494",
+      "_wikidataLabel": "Schalke 04"
+    },
+    {
+      "slug": "sv-elversberg",
+      "nomesBase": [
+        "SV Elversberg"
+      ],
+      "cidade": "Elversberg",
+      "estadio": "Waldstadion an der Kaiserlinde",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Pan%20waldstadion.jpg?width=800",
+      "lat": 49.3186,
+      "lng": 7.1217,
+      "_wikidata": "Q692691",
+      "_wikidataLabel": "SV Elversberg"
+    },
+    {
+      "slug": "sv-werder-bremen",
+      "nomesBase": [
+        "SV Werder Bremen"
+      ],
+      "cidade": "Bremen",
+      "estadio": "Weserstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Germany%20bremen%20stadium.jpg?width=800",
+      "lat": 53.0664,
+      "lng": 8.8375,
+      "_wikidata": "Q51976",
+      "_wikidataLabel": "SV Werder Bremen"
+    },
+    {
+      "slug": "tsg-1899-hoffenheim",
+      "nomesBase": [
+        "TSG Hoffenheim"
+      ],
+      "cidade": "Sinsheim",
+      "estadio": "SNP Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sinsheim%20-%20Rhein-Neckar-Arena%20-%20blick%20von%20der%20Burg%20Steinsberg%202016-03-28%2017-08-31.JPG?width=800",
+      "lat": 49.239,
+      "lng": 8.8883,
+      "_wikidata": "Q22707",
+      "_wikidataLabel": "TSG 1899 Hoffenheim"
+    },
+    {
+      "slug": "vfb-stuttgart",
+      "nomesBase": [
+        "VfB Stuttgart"
+      ],
+      "cidade": "Stuttgart",
+      "estadio": "MHPArena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Blick%20vom%20Rotenberg%20Stadion.jpg?width=800",
+      "lat": 48.7922,
+      "lng": 9.2319,
+      "_wikidata": "Q4512",
+      "_wikidataLabel": "VfB Stuttgart"
+    }
+  ]
+}

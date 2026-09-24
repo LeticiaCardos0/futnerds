@@ -1,0 +1,70 @@
+{
+  "ligaId": "la-liga",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "Athletic Club": {
+      "_nota": "'Athletic Club' casa com 2 clubes no Wikidata (o time e o filial B).",
+      "clubeWikidata": "Q8687",
+      "cidade": "Bilbao"
+    },
+    "Atlético de Madrid": { "cidade": "Madri",
+      "cidadeWikidata": "Q2807" },
+    "CA Osasuna": { "cidade": "Pamplona" },
+    "Celta": {
+      "_nota": "'Vigo' tem dezenas de homônimos na Galiza; o teste de distância pegou um a 228 km.",
+      "cidade": "Vigo",
+      "cidadeWikidata": "Q8745"
+    },
+    "D. Alavés": {
+      "_nota": "A base abrevia 'Deportivo' como 'D.', que o Wikidata não conhece.",
+      "clubeWikidata": "Q223620",
+      "cidade": "Vitoria-Gasteiz",
+      "cidadeWikidata": "Q14318"
+    },
+    "Elche CF": { "cidade": "Elche" },
+    "FC Barcelona": { "cidade": "Barcelona" },
+    "Getafe CF": { "cidade": "Getafe" },
+    "Levante UD": {
+      "_nota": "'Valencia' sozinho não resolve: há municípios homônimos nas Filipinas, no Equador e nos EUA.",
+      "cidade": "Valência",
+      "cidadeWikidata": "Q8818"
+    },
+    "Málaga CF": { "cidade": "Málaga" },
+    "R. Racing Club": {
+      "_nota": "A base abrevia 'Real' como 'R.'.",
+      "clubeWikidata": "Q12236",
+      "cidade": "Santander"
+    },
+    "Rayo Vallecano": { "cidade": "Madri",
+      "cidadeWikidata": "Q2807" },
+    "RC Deportivo": {
+      "_nota": "O rótulo no Wikidata é 'Deportivo de A Coruña', em galego.",
+      "clubeWikidata": "Q8760",
+      "cidade": "A Corunha",
+      "cidadeWikidata": "Q8757"
+    },
+    "RCD Espanyol": { "cidade": "Barcelona" },
+    "Real Betis": { "cidade": "Sevilha",
+      "cidadeWikidata": "Q8717" },
+    "Real Madrid": {
+      "_nota": "P115 traz o Bernabéu e o Alfredo di Stéfano (centro de treinos) sem desempate.",
+      "clubeWikidata": "Q8682",
+      "estadioWikidata": "Q2704346",
+      "estadio": "Santiago Bernabéu",
+      "cidade": "Madri",
+      "cidadeWikidata": "Q2807"
+    },
+    "Real Sociedad": { "cidade": "San Sebastián" },
+    "Sevilla FC": { "cidade": "Sevilha",
+      "cidadeWikidata": "Q8717" },
+    "Valencia CF": {
+      "cidade": "Valência",
+      "cidadeWikidata": "Q8818"
+    },
+    "Villarreal CF": { "cidade": "Villarreal" }
+  }
+}

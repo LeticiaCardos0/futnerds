@@ -5,8 +5,9 @@
 /**
  * Nomes da API (nacao.nome no banco) que não batem com o nome do país no mapa.
  * England, Scotland, Wales e Northern Ireland caem todos em "United Kingdom"
- * (gb), que é um polígono só no Natural Earth — não dá pra desenhar/selecionar
- * cada seleção separadamente no globo. As ligas e contagens continuam sendo
+ * (gb), que é um polígono só no Natural Earth. A divisa Inglaterra/Escócia é
+ * desenhada por cima dele (ver FRONTEIRAS_INTERNAS), mas o polígono em si
+ * continua indivisível. As ligas e contagens continuam sendo
  * somadas para fins de hover/destaque, mas o painel lateral (preencherPainel)
  * usa SUBNACAO_POR_NOME_API pra listar cada seleção com sua própria bandeira,
  * nome e ligas — a Scottish Premiership nunca deve aparecer como liga inglesa.
@@ -96,3 +97,45 @@ Object.entries(PAISES_POR_CONTINENTE).forEach(([continente, codigos]) => {
 export function continentePais(iso2: string): string {
   return CONTINENTE_POR_ISO2[iso2] ?? '';
 }
+
+/**
+ * Fronteiras internas desenhadas por cima de um polígono que reúne mais de uma
+ * seleção de futebol. O Natural Earth 110m traz o Reino Unido como um polígono
+ * só, então a divisa Inglaterra/Escócia não existe no mapa — sem ela, o globo
+ * mostra a Grã-Bretanha como um bloco contínuo mesmo com os dados já separados
+ * (ver SUBNACAO_POR_NOME_API).
+ *
+ * Cada traçado é uma polilinha aberta em [lon, lat], de costa a costa: as duas
+ * pontas precisam cair exatamente sobre o contorno do polígono, senão sobra
+ * ponta no mar ou a linha morre no meio da ilha.
+ */
+export const FRONTEIRAS_INTERNAS: Record<string, { entre: [string, string]; pontos: [number, number][] }[]> = {
+  gb: [
+    {
+      entre: ['England', 'Scotland'],
+      // Oeste → leste. O trecho até Gretna (-3.05, 54.99) corre pelo Solway
+      // Firth, que o polígono de 110m preenche como terra; da Gretna em diante
+      // acompanha a divisa terrestre real pelos Cheviots até Berwick-upon-Tweed
+      // (-2.01, 55.80), que por sorte é um vértice do próprio contorno.
+      pontos: [
+        [-3.61, 54.61], [-3.44, 54.72], [-3.27, 54.84], [-3.10, 54.95],
+        [-3.05, 54.99], [-2.95, 55.06], [-2.83, 55.12], [-2.69, 55.18],
+        [-2.56, 55.24], [-2.45, 55.31], [-2.35, 55.40], [-2.28, 55.49],
+        [-2.23, 55.58], [-2.16, 55.65], [-2.09, 55.71], [-2.01, 55.80],
+      ],
+    },
+  ],
+};
+
+/**
+ * Anéis que pertencem inteiros a uma seleção, sem precisar de divisa. O "gb"
+ * traz a Irlanda do Norte como anel próprio (a ponta nordeste da ilha da
+ * Irlanda); sem esta tabela ela cai na visão somada, porque nenhuma divisa
+ * interna a atravessa.
+ *
+ * O anel é identificado por um ponto conhecido dentro dele, nunca por índice:
+ * índice depende da ordem em que o Natural Earth serializou o polígono.
+ */
+export const SUBNACAO_POR_ANEL: Record<string, { nomeApi: string; pontoInterno: [number, number] }[]> = {
+  gb: [{ nomeApi: 'Northern Ireland', pontoInterno: [-6.6, 54.6] }],
+};

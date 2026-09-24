@@ -1,0 +1,349 @@
+{
+  "ligaId": "premier-league",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-24",
+  "cidades": [
+    {
+      "nome": "Birmingham",
+      "lat": 52.48,
+      "lng": -1.9025,
+      "_wikidata": "Q2256"
+    },
+    {
+      "nome": "Bournemouth",
+      "lat": 50.72,
+      "lng": -1.88,
+      "_wikidata": "Q170478"
+    },
+    {
+      "nome": "Brighton",
+      "lat": 50.8208,
+      "lng": -0.1375,
+      "_wikidata": "Q131491",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Coventry",
+      "lat": 52.4167,
+      "lng": -1.5167,
+      "_wikidata": "Q6225"
+    },
+    {
+      "nome": "Hull",
+      "lat": 53.7444,
+      "lng": -0.3325,
+      "_wikidata": "Q128147"
+    },
+    {
+      "nome": "Ipswich",
+      "lat": 52.0594,
+      "lng": 1.1556,
+      "_wikidata": "Q184775"
+    },
+    {
+      "nome": "Leeds",
+      "lat": 53.7975,
+      "lng": -1.5436,
+      "_wikidata": "Q39121",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Liverpool",
+      "lat": 53.4072,
+      "lng": -2.9917,
+      "_wikidata": "Q24826"
+    },
+    {
+      "nome": "Londres",
+      "lat": 51.5072,
+      "lng": -0.1275,
+      "_wikidata": "Q84"
+    },
+    {
+      "nome": "Manchester",
+      "lat": 53.4794,
+      "lng": -2.2453,
+      "_wikidata": "Q18125"
+    },
+    {
+      "nome": "Newcastle",
+      "lat": 54.9778,
+      "lng": -1.6133,
+      "_wikidata": "Q1425428"
+    },
+    {
+      "nome": "Nottingham",
+      "lat": 52.955,
+      "lng": -1.1492,
+      "_wikidata": "Q41262"
+    },
+    {
+      "nome": "Sunderland",
+      "lat": 54.9044,
+      "lng": -1.3811,
+      "_wikidata": "Q188304",
+      "_homonimos": 3
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "afc-bournemouth",
+      "nomesBase": [
+        "AFC Bournemouth"
+      ],
+      "cidade": "Bournemouth",
+      "estadio": "Vitality Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Deancourt%2014092013%20vblackpool.jpg?width=800",
+      "lat": 50.7353,
+      "lng": -1.8383,
+      "_wikidata": "Q19568",
+      "_wikidataLabel": "AFC Bournemouth"
+    },
+    {
+      "slug": "arsenal",
+      "nomesBase": [
+        "Arsenal"
+      ],
+      "cidade": "Londres",
+      "estadio": "Emirates Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Emirates%20Stadium%20arsenal.jpg?width=800",
+      "lat": 51.555,
+      "lng": -0.1083,
+      "_wikidata": "Q9617",
+      "_wikidataLabel": "Arsenal F.C."
+    },
+    {
+      "slug": "aston-villa",
+      "nomesBase": [
+        "Aston Villa"
+      ],
+      "cidade": "Birmingham",
+      "estadio": "Villa Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Birmingham%20aston%20villa%20park%20stadium.jpg?width=800",
+      "lat": 52.5092,
+      "lng": -1.8847,
+      "_wikidata": "Q18711",
+      "_wikidataLabel": "Aston Villa F.C."
+    },
+    {
+      "slug": "brentford",
+      "nomesBase": [
+        "Brentford"
+      ],
+      "cidade": "Londres",
+      "estadio": "Gtech Community Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Brentford%20Community%20Stadium%202020.jpg?width=800",
+      "lat": 51.4908,
+      "lng": -0.2887,
+      "_wikidata": "Q19571",
+      "_wikidataLabel": "Brentford F.C."
+    },
+    {
+      "slug": "brighton-hove-albion",
+      "nomesBase": [
+        "Brighton"
+      ],
+      "cidade": "Brighton",
+      "estadio": "Amex Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Falmer%20Stadium%20-%20night.jpg?width=800",
+      "lat": 50.8618,
+      "lng": -0.0833,
+      "_wikidata": "Q19453",
+      "_wikidataLabel": "Brighton & Hove Albion F.C."
+    },
+    {
+      "slug": "chelsea",
+      "nomesBase": [
+        "Chelsea"
+      ],
+      "cidade": "Londres",
+      "estadio": "Stamford Bridge",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Stamford%20Bridge.jpg?width=800",
+      "lat": 51.4817,
+      "lng": -0.1911,
+      "_wikidata": "Q9616",
+      "_wikidataLabel": "Chelsea F.C."
+    },
+    {
+      "slug": "coventry-city",
+      "nomesBase": [
+        "Coventry City"
+      ],
+      "cidade": "Coventry",
+      "estadio": "Coventry Building Society Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ricoh%20Arena%20-%20geograph.org.uk%20-%20901396.jpg?width=800",
+      "lat": 52.4481,
+      "lng": -1.4956,
+      "_wikidata": "Q19580",
+      "_wikidataLabel": "Coventry City F.C."
+    },
+    {
+      "slug": "crystal-palace",
+      "nomesBase": [
+        "Crystal Palace"
+      ],
+      "cidade": "Londres",
+      "estadio": "Selhurst Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Selhurst%20Park%20crystal%20palace%20stadium%20aerialview.JPG?width=800",
+      "lat": 51.3983,
+      "lng": -0.0856,
+      "_wikidata": "Q19467",
+      "_wikidataLabel": "Crystal Palace F.C."
+    },
+    {
+      "slug": "everton",
+      "nomesBase": [
+        "Everton"
+      ],
+      "cidade": "Liverpool",
+      "estadio": "Hill Dickinson Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Project%20366%20-217%20040824%20Approaching%20Lift%20Off%20%2853902389448%29.jpg?width=800",
+      "lat": 53.425,
+      "lng": -3.0028,
+      "_wikidata": "Q5794",
+      "_wikidataLabel": "Everton F.C."
+    },
+    {
+      "slug": "fulham",
+      "nomesBase": [
+        "Fulham"
+      ],
+      "cidade": "Londres",
+      "estadio": "Craven Cottage",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Craven%20Cottage%20Football%20Ground%20-%20geograph.org.uk%20-%20778731.jpg?width=800",
+      "lat": 51.475,
+      "lng": -0.2217,
+      "_wikidata": "Q18708",
+      "_wikidataLabel": "Fulham F.C."
+    },
+    {
+      "slug": "hull-city",
+      "nomesBase": [
+        "Hull City"
+      ],
+      "cidade": "Hull",
+      "estadio": "MKM Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/KC%20South%20Stand.JPG?width=800",
+      "lat": 53.7461,
+      "lng": -0.3678,
+      "_wikidata": "Q19477",
+      "_wikidataLabel": "Hull City A.F.C."
+    },
+    {
+      "slug": "ipswich-town",
+      "nomesBase": [
+        "Ipswich"
+      ],
+      "cidade": "Ipswich",
+      "estadio": "Portman Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cobbold%20Stand%2C%20Ipswich%20Town%20Football%20Club%208418.jpg?width=800",
+      "lat": 52.055,
+      "lng": 1.1453,
+      "_wikidata": "Q9653",
+      "_wikidataLabel": "Ipswich Town F.C."
+    },
+    {
+      "slug": "leeds-united",
+      "nomesBase": [
+        "Leeds United"
+      ],
+      "cidade": "Leeds",
+      "estadio": "Elland Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Elland%20Road%202023%20cropped.jpg?width=800",
+      "lat": 53.7778,
+      "lng": -1.5722,
+      "_wikidata": "Q1128631",
+      "_wikidataLabel": "Leeds United F.C."
+    },
+    {
+      "slug": "liverpool",
+      "nomesBase": [
+        "Liverpool"
+      ],
+      "cidade": "Liverpool",
+      "estadio": "Anfield",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Liverpool%20anfield%20road%20stadium.jpg?width=800",
+      "lat": 53.4308,
+      "lng": -2.9608,
+      "_wikidata": "Q1130849",
+      "_wikidataLabel": "Liverpool F.C."
+    },
+    {
+      "slug": "manchester-city",
+      "nomesBase": [
+        "Manchester City"
+      ],
+      "cidade": "Manchester",
+      "estadio": "Etihad Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/City%20of%20Manchester%20Stadium%202023%20cropped.jpg?width=800",
+      "lat": 53.4831,
+      "lng": -2.2003,
+      "_wikidata": "Q50602",
+      "_wikidataLabel": "Manchester City F.C."
+    },
+    {
+      "slug": "manchester-united",
+      "nomesBase": [
+        "Man Utd"
+      ],
+      "cidade": "Manchester",
+      "estadio": "Old Trafford",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Old%20Traford.jpg?width=800",
+      "lat": 53.4631,
+      "lng": -2.2914,
+      "_wikidata": "Q18656",
+      "_wikidataLabel": "Manchester United F.C."
+    },
+    {
+      "slug": "newcastle-united",
+      "nomesBase": [
+        "Newcastle Utd"
+      ],
+      "cidade": "Newcastle",
+      "estadio": "St James’ Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Newcastle%20st-james-park%20stadium.jpg?width=800",
+      "lat": 54.9756,
+      "lng": -1.6217,
+      "_wikidata": "Q18716",
+      "_wikidataLabel": "Newcastle United F.C."
+    },
+    {
+      "slug": "nottingham-forest",
+      "nomesBase": [
+        "Nott'm Forest"
+      ],
+      "cidade": "Nottingham",
+      "estadio": "City Ground",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nottingham%20the%20city%20ground%20stadium%20forest.jpg?width=800",
+      "lat": 52.94,
+      "lng": -1.1328,
+      "_wikidata": "Q19490",
+      "_wikidataLabel": "Nottingham Forest F.C."
+    },
+    {
+      "slug": "sunderland",
+      "nomesBase": [
+        "Sunderland"
+      ],
+      "cidade": "Sunderland",
+      "estadio": "Stadium of Light",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sunderland%20stadium%20of%20light.jpg?width=800",
+      "lat": 54.9144,
+      "lng": -1.3882,
+      "_wikidata": "Q18739",
+      "_wikidataLabel": "Sunderland A.F.C."
+    },
+    {
+      "slug": "tottenham-hotspur",
+      "nomesBase": [
+        "Spurs"
+      ],
+      "cidade": "Londres",
+      "estadio": "Tottenham Hotspur Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Tottenham%20Hotspur%20Stadium.jpg?width=800",
+      "lat": 51.6044,
+      "lng": -0.0664,
+      "_wikidata": "Q18741",
+      "_wikidataLabel": "Tottenham Hotspur F.C."
+    }
+  ]
+}

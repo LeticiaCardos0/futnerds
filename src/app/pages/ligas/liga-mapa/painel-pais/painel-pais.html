@@ -1,0 +1,37 @@
+<!--
+  Painel esquerdo. As classes ml-* vêm de src/styles/mapa-liga.css (global),
+  pelo mesmo motivo dos marcadores: o painel fica por cima do mapa e o visual
+  precisa ser consistente com ele.
+-->
+<aside class="ml-painel ml-painel-esq">
+  <a routerLink="/nacoes" class="ml-voltar">
+    <i class="pi pi-arrow-left"></i>
+    Voltar para Nações
+  </a>
+
+  <header class="ml-pais">
+    <img
+      class="ml-pais-bandeira"
+      [src]="'https://flagcdn.com/w80/' + paisCodigo() + '.png'"
+      [alt]="paisNome()"
+      (error)="$any($event.target).style.visibility = 'hidden'" />
+    <div>
+      <h1>{{ paisNome() }}</h1>
+      <p>{{ ligaNome() }}</p>
+    </div>
+  </header>
+
+  <p class="ml-secao">Clubes da liga</p>
+  <div class="ml-chips">
+    @for (c of clubesOrdenados(); track c.id) {
+      <button
+        type="button"
+        class="ml-chip"
+        [attr.aria-pressed]="c.id === selecionadoId()"
+        (click)="clubeSelecionado.emit(c)">
+        <img [src]="c.escudoUrl" alt="" (error)="$any($event.target).style.visibility = 'hidden'" />
+        <span>{{ c.nome }}</span>
+      </button>
+    }
+  </div>
+</aside>

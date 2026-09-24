@@ -1,0 +1,340 @@
+/* ============================================================================
+   FUTNERDS · Marcadores e rótulos do mapa da liga
+
+   GLOBAL de propósito. Os elementos dos marcadores são criados em JavaScript e
+   movidos pelo MapLibre para fora da subárvore do componente, então o CSS
+   encapsulado do Angular (que depende do atributo _ngcontent-*) nunca os
+   alcançaria.
+
+   Todas as classes usam o prefixo `ml-` para não colidir com o resto do site.
+   Portado de docs/referencias/futnerds-mapa-satelite.html.
+   ============================================================================ */
+
+/* --- palco do mapa ------------------------------------------------------
+   Altura em CSS comum, e nao num utilitario arbitrario do Tailwind: a classe
+   h-[calc(100vh-64px)] nao estava sendo aplicada e o container ficava com
+   altura 0 (diagnostico: "container 1885 x 0"), o que deixa o canvas sem
+   altura util e a tela preta.
+
+   64px = altura da navbar (h-16, fixed). 24px de margem = 64 menos o pt-10
+   (40px) que o app shell ja aplica acima da rota. */
+.ml-palco {
+  position: relative;
+  height: calc(100vh - 64px);
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+/* A area do mapa e `fixed`, ancorada na viewport, e NAO `absolute inset-0`.
+   Com absolute a altura depende do ancestral posicionado, e o diagnostico
+   mostrou "container 1885 x 0" mesmo com o palco tendo altura declarada —
+   algum ancestral zera a altura. Fixed nao depende de ninguem: 64px = navbar. */
+.ml-mapa-area {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:root {
+  --ml-verde: #00d639;
+  --ml-verde-escuro: #0b7f35;
+}
+
+/* --- nomes das cidades ---------------------------------------------------
+   O script escolhe o lado livre e esconde os que não cabem, como no Google
+   Maps. O wrapper tem tamanho zero: quem aparece é o <span> posicionado. */
+.ml-lbl {
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+.ml-lbl span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: #fff;
+  text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/* cidade COM time: Rajdhani, caixa alta, sempre visível.
+   z-index acima dos waypoints: o declutter tira os pinos de cima do nome, mas
+   num aglomerado como Londres algum pode nao conseguir sair inteiro. O nome da
+   cidade vence, e a sombra do texto garante a leitura sobre o escudo. */
+.ml-lbl.ml-club {
+  z-index: 3;
+}
+.ml-lbl.ml-club span {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* cidade SEM time: tom creme de atlas, serifada e em itálico */
+.ml-lbl.ml-minor span {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(242, 234, 214, 0.86);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.65);
+}
+.ml-lbl.ml-minor.ml-r1 span { font-size: 13px; }                                /* médias */
+.ml-lbl.ml-minor.ml-r2 span { font-size: 12px; color: rgba(242, 234, 214, 0.74); } /* menores, só com zoom */
+.ml-lbl.ml-minor.ml-big span { font-size: 14px; color: rgba(246, 239, 220, 0.94); } /* grandes */
+
+.ml-lbl .ml-cdot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  margin: 1px;
+  border-radius: 50%;
+  background: rgba(242, 234, 214, 0.9);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* --- waypoints dos clubes (a ponta fica no estádio) ---------------------- */
+
+/* SEM `position` aqui de propósito: este é o elemento raiz do Marker, e o
+   MapLibre o posiciona escrevendo `transform` nele. Definir position aqui
+   quebra o posicionamento e o marcador "escapa" do mapa ao arrastar. */
+/* Medidas espelhadas em WP_LARGURA / WP_ALTURA (config-liga.ts), que o
+   TypeScript usa para a linha fina, o ponto do estadio e a colisao. */
+.ml-wpm {
+  width: 46px;
+  height: 58px;
+}
+
+/* linha fina até o ponto real do estádio, quando o declutter desloca o pino */
+.ml-wpm .ml-lead {
+  position: absolute;
+  left: 23px;
+  top: 58px;
+  height: 1.5px;
+  background: rgba(0, 214, 57, 0.75);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+/* ponto no local exato do estádio */
+.ml-wpm .ml-spot {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ml-verde);
+  box-shadow: 0 0 8px rgba(0, 214, 57, 0.9);
+  pointer-events: none;
+}
+
+/* --ml-escala: escala por zoom, escrita pelo JS no proprio botao.
+   Ela COMPOE com hover e selecao via calc(); se o JS escrevesse `transform`
+   inline, o inline venceria a regra de :hover e mataria os dois efeitos. */
+.ml-wp {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  transform-origin: 50% 100%;
+  transform: scale(var(--ml-escala, 1));
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.ml-wp .ml-head {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #0b1012;
+  border: 2px solid rgba(0, 214, 57, 0.6);
+  box-shadow: 0 0 10px rgba(0, 214, 57, 0.5), 0 4px 10px rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.ml-wp .ml-head img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+/* fallback quando o escudo não carrega: sigla do clube sobre a cor dele */
+.ml-wp .ml-head .ml-dot {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+.ml-wp .ml-tip {
+  position: absolute;
+  left: 16px;
+  top: 45px;
+  width: 14px;
+  height: 13px;
+  background: var(--ml-verde);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  filter: drop-shadow(0 0 4px rgba(0, 214, 57, 0.8));
+}
+.ml-wp:hover,
+.ml-wp:focus-visible { transform: scale(calc(var(--ml-escala, 1) * 1.12)); }
+.ml-wp.ml-sel { transform: scale(calc(var(--ml-escala, 1) * 1.15)); }
+.ml-wp.ml-sel .ml-head {
+  border: 3px solid var(--ml-verde);
+  box-shadow: 0 0 0 3px rgba(0, 214, 57, 0.25), 0 0 24px rgba(0, 214, 57, 0.95);
+}
+
+/* ============================================================================
+   PAINÉIS E CONTROLES (por cima do mapa)
+
+   `fixed`, e não `absolute`, pela mesma razão do .ml-mapa-area: o palco não
+   é confiável como bloco de contenção. 84px = 64 da navbar + 20 de respiro.
+   As larguras (312 / 372) batem com o padding do enquadramento na config —
+   mexer numa exige mexer na outra.
+   ============================================================================ */
+.ml-painel {
+  position: fixed;
+  top: 84px;
+  z-index: 10;
+  max-height: calc(100vh - 168px);
+  overflow-y: auto;
+  background: rgba(5, 8, 9, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  font-family: 'Rajdhani', sans-serif;
+  color: #f2f5f2;
+}
+.ml-painel::-webkit-scrollbar { width: 6px; }
+.ml-painel::-webkit-scrollbar-thumb { background: rgba(255,255,255,.14); border-radius: 99px; }
+
+.ml-painel-esq { left: 28px; width: 312px; }
+.ml-painel-dir { right: 28px; width: 372px; }
+
+/* --- painel esquerdo --- */
+.ml-voltar {
+  display: flex; align-items: center; gap: 8px;
+  height: 48px; padding: 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--ml-verde); font-size: 16px; font-weight: 600;
+  text-decoration: none;
+}
+.ml-voltar:hover { background: rgba(0, 214, 57, 0.08); }
+
+.ml-pais {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 18px 14px;
+  /* a divisoria ficava na linha de numeros, que saiu do painel */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ml-pais-bandeira { width: 42px; height: 30px; object-fit: cover; border-radius: 4px; flex: none; }
+.ml-pais h1 { margin: 0; font-size: 26px; font-weight: 700; letter-spacing: 0.03em; line-height: 1.05; text-transform: uppercase; }
+.ml-pais p { margin: 0; color: #8d9694; font-size: 15px; }
+
+.ml-elenco { display: grid; padding: 0 18px 14px; }
+.ml-elenco strong { display: block; font-size: 22px; font-weight: 700; line-height: 1.1; }
+.ml-elenco span { font-size: 13px; color: #8d9694; }
+
+.ml-secao {
+  margin: 0; padding: 14px 18px 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #8d9694;
+}
+
+.ml-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 0 14px 14px; }
+.ml-chip {
+  display: flex; align-items: center; gap: 8px;
+  height: 36px; padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  color: inherit; font: inherit; font-size: 14px; font-weight: 600;
+  text-align: left; white-space: nowrap; overflow: hidden; cursor: pointer;
+}
+.ml-chip img { width: 20px; height: 20px; object-fit: contain; flex: none; }
+.ml-chip span { overflow: hidden; text-overflow: ellipsis; }
+.ml-chip:hover { border-color: rgba(0, 214, 57, 0.5); }
+.ml-chip[aria-pressed='true'] { border-color: var(--ml-verde); background: rgba(0, 214, 57, 0.12); }
+
+/* --- painel direito --- */
+/* A foto do estadio entra por `background` inline (ver PainelClubeComponent);
+   aqui so o enquadramento dela e a altura minima para a imagem respirar. */
+.ml-clube-topo {
+  position: relative;
+  display: flex; align-items: center; gap: 14px;
+  min-height: 132px;
+  padding: 18px;
+  border-radius: 15px 15px 0 0;
+  background-size: cover !important;
+  background-position: center !important;
+}
+/* Sombra mais forte porque o veu por cima da foto e fraco de proposito: quem
+   sustenta a leitura do texto e a sombra, nao o escurecimento da imagem. */
+.ml-clube-topo h2 { text-shadow: 0 1px 2px #000, 0 2px 10px rgba(0, 0, 0, 0.9); }
+.ml-clube-topo p { text-shadow: 0 1px 2px #000, 0 2px 8px rgba(0, 0, 0, 0.85); }
+.ml-clube-topo .ml-clube-escudo { filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6)); }
+.ml-clube-escudo { width: 64px; height: 64px; object-fit: contain; flex: none; }
+.ml-clube-id h2 { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.1; text-transform: uppercase; }
+.ml-clube-id p { margin: 2px 0 0; color: rgba(255,255,255,.75); font-size: 14px; }
+.ml-fav {
+  position: absolute; top: 14px; right: 14px;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.18); background: rgba(0, 0, 0, 0.35); color: #fff;
+}
+.ml-fav[aria-pressed='true'] { color: var(--ml-verde); border-color: var(--ml-verde); }
+
+.ml-campos { margin: 0; padding: 14px 18px; display: grid; gap: 10px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.ml-campos div { display: flex; justify-content: space-between; gap: 12px; }
+.ml-campos dt { color: #8d9694; font-size: 14px; }
+.ml-campos dd { margin: 0; font-size: 15px; font-weight: 600; text-align: right; }
+
+.ml-elenco { grid-template-columns: 1fr 1fr; gap: 12px 8px; padding-top: 4px; }
+
+.ml-ver-time {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 4px 14px 14px; height: 44px; border-radius: 10px;
+  background: var(--ml-verde); color: #021307;
+  font-size: 16px; font-weight: 700; text-decoration: none;
+}
+.ml-ver-time:hover { filter: brightness(1.1); }
+
+/* --- controles --- */
+.ml-controles {
+  position: fixed; right: 28px; bottom: 28px; z-index: 10;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  font-family: 'Rajdhani', sans-serif;
+}
+.ml-btn-redondo, .ml-zoom, .ml-v3d {
+  background: rgba(5, 8, 9, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #f2f5f2;
+  backdrop-filter: blur(10px);
+}
+.ml-btn-redondo { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
+.ml-zoom { border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+.ml-zoom button {
+  width: 52px; height: 40px; border: none; background: none; color: inherit;
+  font: inherit; font-size: 22px; font-weight: 600; cursor: pointer;
+}
+.ml-zoom button + button { border-top: 1px solid rgba(255, 255, 255, 0.14); }
+.ml-v3d {
+  height: 44px; padding: 0 16px; border-radius: 10px;
+  display: flex; align-items: center; gap: 10px;
+  font: inherit; font-size: 16px; font-weight: 600; cursor: pointer;
+}
+.ml-v3d[aria-pressed='true'] { border-color: var(--ml-verde); }
+.ml-led { width: 8px; height: 8px; border-radius: 50%; background: #3a4442; }
+.ml-v3d[aria-pressed='true'] .ml-led { background: var(--ml-verde); box-shadow: 0 0 8px var(--ml-verde); }
+
+.ml-btn-redondo:hover, .ml-zoom button:hover, .ml-v3d:hover { border-color: rgba(0, 214, 57, 0.6); }

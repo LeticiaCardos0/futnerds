@@ -1,0 +1,22 @@
+<!--
+  Controles flutuantes, canto inferior direito. Só emitem eventos: quem age no
+  mapa é a página, chamando os métodos públicos do MapaLigaComponent.
+-->
+<div class="ml-controles">
+  <button type="button" class="ml-btn-redondo" aria-label="Voltar ao enquadramento do país"
+    (click)="bussola.emit()">
+    <i class="pi pi-compass"></i>
+  </button>
+
+  <div class="ml-zoom">
+    <button type="button" aria-label="Aproximar" (click)="aproximar.emit()">+</button>
+    <button type="button" aria-label="Afastar" (click)="afastar.emit()">−</button>
+  </div>
+
+  <button type="button" class="ml-v3d" [attr.aria-pressed]="ativo3d()"
+    (click)="alternar3d.emit(!ativo3d())">
+    <i class="pi pi-box"></i>
+    Vista 3D
+    <span class="ml-led"></span>
+  </button>
+</div>

@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+@import "maplibre-gl/dist/maplibre-gl.css";
+/* marcadores/rotulos do mapa da liga: global porque o MapLibre tira os
+   elementos da subarvore do componente (ver o cabecalho do arquivo) */
+@import "./styles/mapa-liga.css";
 @import "primeicons/primeicons.css";
 @import "@fortawesome/fontawesome-free/css/fontawesome.css";
 @import "@fortawesome/fontawesome-free/css/solid.css";

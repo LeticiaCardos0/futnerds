@@ -606,3 +606,32 @@
     animation: none !important;
   }
 }
+/* =============================================================
+   RESPONSIVO
+   Blocos só de override: a partir daqui nada muda no desktop.
+   Os pontos de corte seguem a largura em que cada grade começa a
+   espremer, não uma régua de dispositivos.
+   ============================================================= */
+
+/* A coluna lateral de 240px + gap de 60px deixa de caber confortavelmente,
+   e os 6 atributos por linha ficam estreitos demais para o rótulo. */
+@media (max-width: 1100px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 36px; }
+  .attrs-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Aqui os dois flex sem quebra (hero e posições) passariam a forçar rolagem
+   horizontal, porque têm colunas com flex-shrink: 0. */
+@media (max-width: 820px) {
+  .holo-hero { flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+  .holo-positions-layout { flex-direction: column; gap: 28px; }
+  .holo-styles-col { width: 100%; }
+  .styles-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .attrs-grid { grid-template-columns: repeat(2, 1fr); }
+  .info-grid { grid-template-columns: 1fr; }
+  .holo-card { width: 160px; height: 160px; }
+  .overview-grid { gap: 26px; }
+}

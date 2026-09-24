@@ -1,9 +1,16 @@
 import * as THREE from 'three';
+// Espessura de linha em WebGL: LineBasicMaterial ignora `linewidth` na maioria
+// dos navegadores (fica sempre 1px). Line2 desenha a linha como faixa de
+// triângulos, então a borda de destaque pode ter espessura de verdade.
+import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { GeoCountry, GEO_COUNTRIES } from './nacoes-geo-data';
 import { obterCaminhoLogoLiga, obterNomeCanonicoLiga } from '../../shared/ligas.util';
 import { API_URL } from '../../shared/api.util';
 import { FOTOS_PAIS } from './nacoes-fotos';
-import { ISO2_POR_NOME_API, SUBNACAO_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
+import { rotaMapaDaLiga } from '../../shared/ligas-mapa.util';
+import { FRONTEIRAS_INTERNAS, ISO2_POR_NOME_API, SUBNACAO_POR_ANEL, SUBNACAO_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
 
 /**
  * Constrói e inicia o globo 3D interativo dentro do elemento #globo-canvas
@@ -73,11 +80,27 @@ interface PaisMock {
 
 
 
+/**
+ * Um pedaço fechado do território de um país, já com dono definido. As regiões
+ * ladrilham o polígono inteiro, sem sobra nem sobreposição: para a maioria dos
+ * países é um anel por região com `subnacao: null`, e para o "gb" são a metade
+ * inglesa, a metade escocesa e o anel da Irlanda do Norte.
+ *
+ * É o conceito que unifica as três coisas que precisavam saber "de quem é este
+ * pedaço": o contorno que acende, o preenchimento do destaque e o hover.
+ */
+interface Regiao {
+  anel: [number, number][];
+  /** nomeApi da seleção dona, ou null quando o pedaço é do país como um todo. */
+  subnacao: string | null;
+}
+
 interface CountryRuntime {
   data: GeoCountry;
   bbox: [number, number, number, number]; // minLon, minLat, maxLon, maxLat
-  outlineLines: any[]; // THREE.LineLoop[]
-  ringsFlat: [number, number][][]; // anéis externos (para point-in-polygon e preenchimento)
+  regioes: Regiao[];
+  /** Um contorno fechado por região, na mesma ordem de `regioes`. */
+  outlineLines: { linha: any; subnacao: string | null }[];
 }
 
 // ----------------------------------------------------------------------------
@@ -188,6 +211,16 @@ interface PaisResumoApi {
  * casando cada país retornado pela API com o país correspondente em
  * GEO_COUNTRIES/paisesRuntime através do nome (normalizado, case-insensitive).
  */
+/**
+ * A seleção tem território próprio desenhado no globo? Quem tem vira subnação
+ * mesmo sem liga nenhuma — senão a Irlanda do Norte ficaria clicável no globo
+ * mas sem card no painel. Gales não tem divisa própria e continua somado à
+ * Inglaterra, como sempre esteve.
+ */
+function temTerritorioProprio(nomeApi: string): boolean {
+  return paisesRuntime.some((pais) => pais.regioes.some((r) => r.subnacao === nomeApi));
+}
+
 async function carregarDadosReais(): Promise<void> {
   try {
     const resposta = await fetch(`${API_URL}/nacoes/resumo`);
@@ -213,7 +246,7 @@ async function carregarDadosReais(): Promise<void> {
         existente.ligas.push(...ligas);
         existente.clubes += paisApi.quantidadeClubes;
         existente.jogadores = existente.jogadores !== null && jogadores !== null ? existente.jogadores + jogadores : existente.jogadores ?? jogadores;
-        if (ligas.length > 0) {
+        if (ligas.length > 0 || temTerritorioProprio(paisApi.nome)) {
           (existente.subnacoes ??= []).push({
             nomeApi: paisApi.nome,
             nome: SUBNACAO_POR_NOME_API[paisApi.nome]?.nome ?? paisApi.nome,
@@ -229,11 +262,14 @@ async function carregarDadosReais(): Promise<void> {
           nomeApi: paisApi.nome,
           iso2,
           continente: continentePais(iso2),
-          ligas,
+          // Cópia, não a mesma lista da subnação: o total do país recebe um
+          // push por cada outra seleção do mesmo polígono, e compartilhando o
+          // array a Scottish Premiership entrava também na lista da Inglaterra.
+          ligas: [...ligas],
           clubes: paisApi.quantidadeClubes,
           jogadores,
           subnacoes:
-            ligas.length > 0
+            ligas.length > 0 || temTerritorioProprio(paisApi.nome)
               ? [
                   {
                     nomeApi: paisApi.nome,
@@ -285,6 +321,10 @@ const RAIO_GLOBO = 5;
 // --- Cores por estado (normal / hover / selecionado) -----------------------
 // O verde do FutNerds é usado só nos estados interativos — o globo em
 // repouso permanece neutro (cinza-azulado).
+// Contornos ficam um pouco acima da textura do globo para não brigarem com
+// ela em profundidade.
+const RAIO_CONTORNO = RAIO_GLOBO * 1.0038;
+
 const COR_BORDA_NORMAL = 0x5c7880;      // cinza-azulado discreto ~ rgba(120,160,170,0.25)
 const COR_BORDA_HOVER = 0x19d45a;       // verde principal
 const COR_BORDA_SELECIONADO = 0x7dffb0; // verde claro (contorno neon do selecionado)
@@ -358,6 +398,105 @@ function extrairAneisExternos(geom: GeoCountry['geometry']): [number, number][][
  * contornos reais dos países. O shader do globo usa essa máscara para tratar
  * terra e oceano com cores diferentes sobre a textura de satélite da NASA.
  */
+/**
+ * Projeta um ponto na aresta mais próxima de um anel. Usado para ancorar as
+ * pontas de uma divisa interna exatamente sobre o contorno — se a ponta ficar
+ * um triz para dentro ou para fora, o recorte do anel abre fenda ou sobrepõe.
+ */
+function projetarNoAnel(
+  ponto: [number, number],
+  anel: [number, number][],
+): { aresta: number; ponto: [number, number] } {
+  let menorDistancia = Infinity;
+  let resultado = { aresta: 0, ponto };
+
+  for (let i = 0; i < anel.length; i++) {
+    const a = anel[i];
+    const b = anel[(i + 1) % anel.length];
+    const dx = b[0] - a[0];
+    const dy = b[1] - a[1];
+    const comprimento2 = dx * dx + dy * dy;
+    const t =
+      comprimento2 === 0
+        ? 0
+        : Math.max(0, Math.min(1, ((ponto[0] - a[0]) * dx + (ponto[1] - a[1]) * dy) / comprimento2));
+    const q: [number, number] = [a[0] + dx * t, a[1] + dy * t];
+    const distancia = Math.hypot(ponto[0] - q[0], ponto[1] - q[1]);
+    if (distancia < menorDistancia) {
+      menorDistancia = distancia;
+      resultado = { aresta: i, ponto: q };
+    }
+  }
+
+  return resultado;
+}
+
+/** Vértices do anel percorridos de uma aresta de corte até a outra, no sentido do anel. */
+function arcoDoAnel(daAresta: number, ateAresta: number, anel: [number, number][]): [number, number][] {
+  const saida: [number, number][] = [];
+  let i = (daAresta + 1) % anel.length;
+  for (let passo = 0; passo <= anel.length; passo++) {
+    saida.push(anel[i]);
+    if (i === ateAresta) break;
+    i = (i + 1) % anel.length;
+  }
+  return saida;
+}
+
+/** Remove pontos repetidos em sequência — a triangulação por corte de orelha engasga com eles. */
+function semPontosRepetidos(anel: [number, number][]): [number, number][] {
+  return anel.filter((p, i) => {
+    const anterior = anel[(i - 1 + anel.length) % anel.length];
+    return Math.abs(p[0] - anterior[0]) > 1e-9 || Math.abs(p[1] - anterior[1]) > 1e-9;
+  });
+}
+
+/**
+ * Parte um anel em dois usando a divisa como corda. As duas pontas da divisa
+ * caem no contorno, então cada metade é: a divisa + o arco do anel que fecha
+ * aquele lado. Devolve as metades já rotuladas pelo nomeApi de cada seleção,
+ * decidido por uma sonda lançada à esquerda do traçado (mesma convenção do
+ * ordem dos pontos da divisa: esquerda do traçado é `entre[1]`).
+ */
+function recortarAnelPelaDivisa(
+  anel: [number, number][],
+  divisa: { entre: [string, string]; pontos: [number, number][] },
+): Record<string, [number, number][]> {
+  const corteInicio = projetarNoAnel(divisa.pontos[0], anel);
+  const corteFim = projetarNoAnel(divisa.pontos[divisa.pontos.length - 1], anel);
+  const miolo = divisa.pontos.slice(1, -1);
+
+  const ladoA = semPontosRepetidos([
+    corteInicio.ponto,
+    ...miolo,
+    corteFim.ponto,
+    ...arcoDoAnel(corteFim.aresta, corteInicio.aresta, anel),
+  ]);
+  const ladoB = semPontosRepetidos([
+    corteFim.ponto,
+    ...miolo.slice().reverse(),
+    corteInicio.ponto,
+    ...arcoDoAnel(corteInicio.aresta, corteFim.aresta, anel),
+  ]);
+
+  // Sonda um passo à esquerda do segmento do meio da divisa: a metade que a
+  // contiver é a de `entre[1]`.
+  const meio = Math.floor((divisa.pontos.length - 1) / 2);
+  const [aLon, aLat] = divisa.pontos[meio];
+  const [bLon, bLat] = divisa.pontos[meio + 1];
+  const dx = bLon - aLon;
+  const dy = bLat - aLat;
+  const norma = Math.hypot(dx, dy) || 1;
+  const sonda: [number, number] = [
+    (aLon + bLon) / 2 - (dy / norma) * 0.05,
+    (aLat + bLat) / 2 + (dx / norma) * 0.05,
+  ];
+
+  const esquerda = pontoDentroDoAnel(sonda[0], sonda[1], ladoA) ? ladoA : ladoB;
+  const direita = esquerda === ladoA ? ladoB : ladoA;
+  return { [divisa.entre[1]]: esquerda, [divisa.entre[0]]: direita };
+}
+
 function criarMascaraTerra(): any {
   const largura = 2048, altura = 1024;
   const canvas = document.createElement('canvas');
@@ -384,73 +523,6 @@ function criarMascaraTerra(): any {
     });
   });
   return new THREE.CanvasTexture(canvas);
-}
-
-/**
- * Triangulação "ear clipping" — usada para o preenchimento visual do país
- * em destaque (hover/seleção). Retorna uma lista de trios de coordenadas
- * [lon, lat] já prontos para virar vértices de triângulos no Three.js.
- * Simplificado o suficiente para os polígonos da resolução 110m usada aqui.
- */
-function triangularPoligono(anel: [number, number][]): [number, number][] {
-  const pontos = anel.slice(0, -1); // remove o ponto de fechamento duplicado
-  if (pontos.length < 3) return [];
-
-  const areaSinal = (a: [number, number], b: [number, number], c: [number, number]): number =>
-    (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0]);
-
-  const pontoDentroTriangulo = (
-    p: [number, number], a: [number, number], b: [number, number], c: [number, number]
-  ): boolean => {
-    const s1 = areaSinal(a, b, p);
-    const s2 = areaSinal(b, c, p);
-    const s3 = areaSinal(c, a, p);
-    const temNeg = s1 < 0 || s2 < 0 || s3 < 0;
-    const temPos = s1 > 0 || s2 > 0 || s3 > 0;
-    return !(temNeg && temPos);
-  };
-
-  // Garante orientação anti-horária (CCW); se a área total for negativa, inverte.
-  let areaTotal = 0;
-  for (let i = 0; i < pontos.length; i++) {
-    const [x1, y1] = pontos[i];
-    const [x2, y2] = pontos[(i + 1) % pontos.length];
-    areaTotal += x1 * y2 - x2 * y1;
-  }
-  const anelOrdenado = areaTotal < 0 ? pontos.slice().reverse() : pontos.slice();
-
-  let restantes = anelOrdenado.map((_, i) => i);
-  const resultado: [number, number][] = [];
-  let guarda = 0;
-
-  while (restantes.length > 3 && guarda < 3000) {
-    guarda++;
-    let orelhaEncontrada = false;
-    for (let i = 0; i < restantes.length; i++) {
-      const iPrev = restantes[(i - 1 + restantes.length) % restantes.length];
-      const iCur = restantes[i];
-      const iNext = restantes[(i + 1) % restantes.length];
-      const a = anelOrdenado[iPrev], b = anelOrdenado[iCur], c = anelOrdenado[iNext];
-      if (areaSinal(a, b, c) <= 0) continue;
-
-      let valido = true;
-      for (const iTeste of restantes) {
-        if (iTeste === iPrev || iTeste === iCur || iTeste === iNext) continue;
-        if (pontoDentroTriangulo(anelOrdenado[iTeste], a, b, c)) { valido = false; break; }
-      }
-      if (valido) {
-        resultado.push(a, b, c);
-        restantes.splice(i, 1);
-        orelhaEncontrada = true;
-        break;
-      }
-    }
-    if (!orelhaEncontrada) break; // polígono complexo demais — desiste graciosamente
-  }
-  if (restantes.length === 3) {
-    resultado.push(anelOrdenado[restantes[0]], anelOrdenado[restantes[1]], anelOrdenado[restantes[2]]);
-  }
-  return resultado;
 }
 
 // ----------------------------------------------------------------------------
@@ -525,17 +597,38 @@ const materialOceano = new THREE.ShaderMaterial({
     uniform sampler2D mascara;
     varying vec2 vUv;
     varying vec3 vNormalVisao;
+
+    // Puxa a cor para longe do cinza (fator > 1) ou para perto dele (< 1),
+    // mantendo o brilho — é o que dá "cor viva" sem simplesmente clarear tudo.
+    vec3 saturar(vec3 cor, float fator) {
+      float luz = dot(cor, vec3(0.299, 0.587, 0.114));
+      return mix(vec3(luz), cor, fator);
+    }
+
     void main() {
       vec3 dia = texture2D(mapaDia, vUv).rgb;
       float terra = texture2D(mascara, vUv).r;
       float lum = dot(dia, vec3(0.299, 0.587, 0.114));
 
-      vec3 corTerra = mix(dia, vec3(lum) * vec3(0.62, 0.95, 0.68), 0.45) * 0.66;
-      vec3 corOceano = vec3(0.010, 0.045, 0.060) + dia * vec3(0.04, 0.10, 0.12);
+      // Terra em luz de dia. TINGE é o quanto a textura é lavada para o verde
+      // da marca (0 = satélite cru); BRILHO e SATURACAO trazem o resto.
+      const float TERRA_TINGE = 0.18;
+      const float TERRA_SATURACAO = 1.28;
+      const float TERRA_BRILHO = 1.06;
+      vec3 corTerra = mix(dia, vec3(lum) * vec3(0.62, 0.95, 0.68), TERRA_TINGE);
+      corTerra = saturar(corTerra, TERRA_SATURACAO) * TERRA_BRILHO;
+      // Cor do mar: uma base (o que aparece mesmo onde a textura é quase preta)
+      // mais um ganho sobre a textura de satélite. Subir os dois clareia o
+      // oceano sem encostar na terra, que vem do mix logo abaixo.
+      const vec3 OCEANO_BASE = vec3(0.020, 0.075, 0.105);
+      const vec3 OCEANO_GANHO = vec3(0.07, 0.17, 0.22);
+      vec3 corOceano = OCEANO_BASE + dia * OCEANO_GANHO;
       vec3 cor = mix(corOceano, corTerra, terra);
 
       vec3 n = normalize(vNormalVisao);
-      float difusa = 0.42 + 0.78 * max(dot(n, normalize(vec3(-0.35, 0.35, 1.0))), 0.0);
+      // Piso mais alto e ganho menor: o lado afastado do sol deixa de afundar
+      // no escuro, que era o que dava ao globo inteiro uma cara de entardecer.
+      float difusa = 0.62 + 0.55 * max(dot(n, normalize(vec3(-0.35, 0.35, 1.0))), 0.0);
       cor *= difusa;
 
       float noite = texture2D(mapaNoite, vUv).r;
@@ -623,29 +716,59 @@ criarEstrelas();
 const paisesRuntime: CountryRuntime[] = [];
 const grupoContornos = new THREE.Group();
 
-function construirContornoPais(pais: GeoCountry): CountryRuntime {
-  const aneisExternos = extrairAneisExternos(pais.geometry);
-  const linhas: any[] = [];
-
-  aneisExternos.forEach((anel) => {
-    const pontos3D = anel.map(([lon, lat]) => latLonParaVetor3(lat, lon, RAIO_GLOBO * 1.002));
-    const geometriaLinha = new THREE.BufferGeometry().setFromPoints(pontos3D);
-    const materialLinha = new THREE.LineBasicMaterial({
-      color: COR_BORDA_NORMAL,
-      transparent: true,
-      opacity: OPACIDADE_BORDA_NORMAL,
-    });
-    const linha = new THREE.LineLoop(geometriaLinha, materialLinha);
-    grupoContornos.add(linha);
-    linhas.push(linha);
+/**
+ * Fatia o polígono de um país nas regiões que o compõem. Anel atravessado por
+ * uma divisa vira duas regiões; anel com dono declarado vira uma região dele;
+ * o resto segue inteiro e sem dono. As regiões ladrilham o país exatamente —
+ * é isso que permite usar a mesma lista para contorno, destaque e hover.
+ */
+function dividirEmRegioes(iso2: string, aneis: [number, number][][]): Regiao[] {
+  const divisaPorAnel = new Map<number, (typeof FRONTEIRAS_INTERNAS)[string][number]>();
+  (FRONTEIRAS_INTERNAS[iso2] ?? []).forEach((divisa) => {
+    const meio = divisa.pontos[Math.floor(divisa.pontos.length / 2)];
+    const anel = aneis.findIndex((a) => pontoDentroDoAnel(meio[0], meio[1], a));
+    if (anel >= 0) divisaPorAnel.set(anel, divisa);
   });
 
-  return {
-    data: pais,
-    bbox: calcularBBox(aneisExternos),
-    outlineLines: linhas,
-    ringsFlat: aneisExternos,
-  };
+  const donoPorAnel = new Map<number, string>();
+  (SUBNACAO_POR_ANEL[iso2] ?? []).forEach(({ nomeApi, pontoInterno }) => {
+    const anel = aneis.findIndex((a) => pontoDentroDoAnel(pontoInterno[0], pontoInterno[1], a));
+    if (anel >= 0) donoPorAnel.set(anel, nomeApi);
+  });
+
+  const regioes: Regiao[] = [];
+  aneis.forEach((anel, i) => {
+    const divisa = divisaPorAnel.get(i);
+    if (divisa) {
+      Object.entries(recortarAnelPelaDivisa(anel, divisa)).forEach(([subnacao, metade]) =>
+        regioes.push({ anel: metade, subnacao }),
+      );
+      return;
+    }
+    regioes.push({ anel, subnacao: donoPorAnel.get(i) ?? null });
+  });
+  return regioes;
+}
+
+function construirContornoPais(pais: GeoCountry): CountryRuntime {
+  const aneisExternos = extrairAneisExternos(pais.geometry);
+  const regioes = dividirEmRegioes(pais.iso2, aneisExternos);
+
+  const outlineLines = regioes.map((regiao) => {
+    const pontos3D = regiao.anel.map(([lon, lat]) => latLonParaVetor3(lat, lon, RAIO_CONTORNO));
+    const linha = new THREE.LineLoop(
+      new THREE.BufferGeometry().setFromPoints(pontos3D),
+      new THREE.LineBasicMaterial({
+        color: COR_BORDA_NORMAL,
+        transparent: true,
+        opacity: OPACIDADE_BORDA_NORMAL,
+      }),
+    );
+    grupoContornos.add(linha);
+    return { linha, subnacao: regiao.subnacao };
+  });
+
+  return { data: pais, bbox: calcularBBox(aneisExternos), regioes, outlineLines };
 }
 
 GEO_COUNTRIES.forEach((pais) => {
@@ -654,29 +777,51 @@ GEO_COUNTRIES.forEach((pais) => {
 });
 scene.add(grupoContornos);
 
-// --- Malha de preenchimento reaproveitável (hover/seleção) -----------------
-let malhaDestaque: any = null;
-function construirMalhaDestaque(pais: CountryRuntime, cor: number): any {
-  const posicoes: number[] = [];
-  pais.ringsFlat.forEach((anel) => {
-    const triangulos = triangularPoligono(anel);
-    for (const [lon, lat] of triangulos) {
-      const v = latLonParaVetor3(lat, lon, RAIO_GLOBO * 1.003);
+// --- Contorno de destaque (hover/seleção) ---------------------------------
+// Só a borda acende: o preenchimento chapado escondia o terreno e o relevo do
+// país, que é justamente o que dá contexto no globo.
+const ESPESSURA_DESTAQUE = 3.2; // px em tela, independente do zoom
+let contornoDestaque: any = null;
+let materiaisDestaque: any[] = [];
+
+function construirContornoDestaque(pais: CountryRuntime, cor: number, subnacaoNomeApi: string | null): any {
+  // Com uma seleção identificada, acende só as regiões dela; sem ela, o país
+  // inteiro (que é o mesmo que acender todas as regiões).
+  const regioes = subnacaoNomeApi
+    ? pais.regioes.filter((r) => r.subnacao === subnacaoNomeApi)
+    : pais.regioes;
+
+  const grupo = new THREE.Group();
+  materiaisDestaque = [];
+
+  (regioes.length > 0 ? regioes : pais.regioes).forEach(({ anel }) => {
+    const posicoes: number[] = [];
+    // repete o primeiro ponto no fim: LineGeometry é aberta, e sem isso o
+    // contorno ficaria com uma fenda no ponto de partida do anel
+    [...anel, anel[0]].forEach(([lon, lat]) => {
+      const v = latLonParaVetor3(lat, lon, RAIO_CONTORNO);
       posicoes.push(v.x, v.y, v.z);
-    }
+    });
+
+    const geometria = new LineGeometry();
+    geometria.setPositions(posicoes);
+
+    const material = new LineMaterial({
+      color: cor,
+      linewidth: ESPESSURA_DESTAQUE,
+      transparent: true,
+      opacity: 0,
+      depthTest: false, // a borda acompanha a curvatura e sairia cortada perto do limbo
+    });
+    material.resolution.set(canvasContainer.clientWidth, canvasContainer.clientHeight);
+    materiaisDestaque.push(material);
+
+    const linha = new Line2(geometria, material);
+    linha.renderOrder = 3;
+    grupo.add(linha);
   });
-  const geometria = new THREE.BufferGeometry();
-  geometria.setAttribute('position', new THREE.Float32BufferAttribute(posicoes, 3));
-  geometria.computeVertexNormals();
-  const material = new THREE.MeshBasicMaterial({
-    color: cor,
-    transparent: true,
-    opacity: 0,
-    side: THREE.DoubleSide,
-    blending: THREE.NormalBlending, // sólido por cima da textura — evita o efeito "manchado" que o modo aditivo causava ao somar brilho com o ruído do terreno
-    depthWrite: false,
-  });
-  return new THREE.Mesh(geometria, material);
+
+  return grupo;
 }
 
 // ----------------------------------------------------------------------------
@@ -743,13 +888,16 @@ const PAISES_COM_MARCADOR: Marcador[] = [
 interface MarcadorRuntime {
   iso2: string;
   pais: CountryRuntime | null;
-  grupo: any;             // THREE.Group — posição fixa na superfície
-  nucleo: any;             // THREE.Mesh — bolinha central
-  glow: any;               // THREE.Sprite — halo pulsante
-  anelSelecao: any;        // THREE.Mesh — anel, visível só quando selecionado
+  grupo: any;              // THREE.Group — posição fixa na superfície
+  alfinete: any;           // THREE.Sprite — o pino; é também o alvo do clique/hover
+  base: any;               // THREE.Mesh — ponto rente ao chão, na coordenada exata
+  anelSelecao: any;        // THREE.Mesh — halo na base, visível só quando selecionado
   faseAnimacao: number;    // deslocamento de fase (evita pulsar tudo junto)
   ehBrasil: boolean;
   direcaoNormal: any;      // THREE.Vector3 — normal da superfície (p/ profundidade)
+  selecionado: boolean;
+  /** Altura atual do pino acima do chão, animada no hover. */
+  altura: number;
   subnacaoNomeApi?: string; // ver Marcador.subnacaoNomeApi
 }
 
@@ -757,65 +905,117 @@ const marcadoresRuntime: MarcadorRuntime[] = [];
 const grupoMarcadores = new THREE.Group();
 
 /** Textura radial simples (canvas) usada como sprite de glow do marcador. */
-function criarTexturaGlow(): any {
-  const tamanho = 128;
+// Alfinete desenhado num canvas e usado como textura de sprite. Sprite sempre
+// encara a câmera, então o pino nunca aparece encurtado — que é o que acontece
+// com um pino 3D de verdade quando se olha o globo de cima, bem em cima dele.
+const ALFINETE_LARGURA = 128;
+const ALFINETE_ALTURA = 168;
+const ALFINETE_CENTRO_Y = 54;
+const ALFINETE_RAIO = 38;
+const ALFINETE_PONTA_Y = 158;
+
+function criarTexturaAlfinete(): any {
   const canvas = document.createElement('canvas');
-  canvas.width = tamanho;
-  canvas.height = tamanho;
+  canvas.width = ALFINETE_LARGURA;
+  canvas.height = ALFINETE_ALTURA;
   const ctx = canvas.getContext('2d')!;
-  const gradiente = ctx.createRadialGradient(
-    tamanho / 2, tamanho / 2, 0,
-    tamanho / 2, tamanho / 2, tamanho / 2
+  const cx = ALFINETE_LARGURA / 2;
+
+  // Tangentes da ponta até a cabeça: com a ponta a uma distância d do centro,
+  // o raio que toca o ponto de tangência faz acos(R/d) com a linha centro-ponta.
+  // Desenhar assim (em vez de chutar um triângulo) evita o bico "quebrado"
+  // onde a reta encontra o círculo.
+  const distancia = ALFINETE_PONTA_Y - ALFINETE_CENTRO_Y;
+  const abertura = Math.acos(ALFINETE_RAIO / distancia);
+  const anguloParaPonta = Math.PI / 2; // ponta fica abaixo do centro no canvas
+
+  ctx.beginPath();
+  ctx.arc(
+    cx,
+    ALFINETE_CENTRO_Y,
+    ALFINETE_RAIO,
+    anguloParaPonta + abertura,
+    anguloParaPonta - abertura + Math.PI * 2,
   );
-  gradiente.addColorStop(0, 'rgba(0,230,118,0.9)');
-  gradiente.addColorStop(0.4, 'rgba(0,230,118,0.35)');
-  gradiente.addColorStop(1, 'rgba(0,230,118,0)');
-  ctx.fillStyle = gradiente;
-  ctx.fillRect(0, 0, tamanho, tamanho);
+  ctx.lineTo(cx, ALFINETE_PONTA_Y);
+  ctx.closePath();
+  ctx.strokeStyle = '#ffffff'; // branco: a cor real vem do material do sprite
+  ctx.lineWidth = 9;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // furo da cabeça marcado por um ponto sólido, não por preenchimento — o
+  // vazado é o que deixa o terreno aparecer por dentro do pino.
+  ctx.beginPath();
+  ctx.arc(cx, ALFINETE_CENTRO_Y, 13, 0, Math.PI * 2);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+
   return new THREE.CanvasTexture(canvas);
 }
-const texturaGlow = criarTexturaGlow();
+const texturaAlfinete = criarTexturaAlfinete();
+
+/**
+ * Fração da altura do sprite que sobra abaixo da ponta do pino. Serve de
+ * âncora (`center`) para que a ponta caia exatamente na coordenada do país, e
+ * não o meio do sprite.
+ */
+const ALFINETE_ANCORA_Y = (ALFINETE_ALTURA - ALFINETE_PONTA_Y) / ALFINETE_ALTURA;
+
+const COR_ALFINETE = 0x00e676;
 
 function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const paisAssociado = paisesRuntime.find((p) => p.data.iso2 === def.iso2) || null;
+  // acima de RAIO_CONTORNO, senão o ponto da base briga em profundidade com os contornos
   const posicaoSuperficie = latLonParaVetor3(def.lat, def.lon, RAIO_GLOBO * 1.006);
   const normal = posicaoSuperficie.clone().normalize();
 
   const grupo = new THREE.Group();
   grupo.position.copy(posicaoSuperficie);
 
-  const raioBase = def.ehBrasil ? 0.052 : 0.038;
+  const escala = def.ehBrasil ? 0.2 : 0.15;
 
-  // núcleo (bolinha central)
-  const nucleo = new THREE.Mesh(
-    new THREE.SphereGeometry(raioBase, 16, 16),
-    new THREE.MeshBasicMaterial({ color: 0x00e676, transparent: true })
-  );
-  grupo.add(nucleo);
-
-  // glow (sprite radial, sempre de frente para a câmera)
-  const glow = new THREE.Sprite(
+  // O pino. depthTest desligado para ele nunca sair fatiado pela curvatura do
+  // globo perto da borda; quem esconde o lado oculto é o corte por ângulo em
+  // atualizarMarcadores().
+  const alfinete = new THREE.Sprite(
     new THREE.SpriteMaterial({
-      map: texturaGlow,
+      map: texturaAlfinete,
+      color: COR_ALFINETE,
       transparent: true,
+      depthTest: false,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
-    })
+    }),
   );
-  const escalaGlow = def.ehBrasil ? 0.34 : 0.24;
-  glow.scale.set(escalaGlow, escalaGlow, 1);
-  grupo.add(glow);
+  alfinete.center.set(0.5, ALFINETE_ANCORA_Y);
+  alfinete.scale.set(escala, escala * (ALFINETE_ALTURA / ALFINETE_LARGURA), 1);
+  alfinete.renderOrder = 2;
+  grupo.add(alfinete);
 
-  // anel de seleção (só aparece quando o país estiver selecionado)
+  // Ponto rente ao chão: é ele que marca a coordenada de verdade e dá a
+  // sensação de pino plantado, já que o sprite flutua acima.
+  const base = new THREE.Mesh(
+    new THREE.CircleGeometry(def.ehBrasil ? 0.022 : 0.016, 24),
+    new THREE.MeshBasicMaterial({
+      color: COR_ALFINETE,
+      transparent: true,
+      opacity: 0.9,
+      depthWrite: false,
+    }),
+  );
+  base.lookAt(normal.clone().multiplyScalar(RAIO_GLOBO * 2));
+  grupo.add(base);
+
+  // Halo na base, só quando selecionado
   const anelSelecao = new THREE.Mesh(
-    new THREE.RingGeometry(raioBase * 1.8, raioBase * 2.2, 32),
+    new THREE.RingGeometry(escala * 0.22, escala * 0.3, 32),
     new THREE.MeshBasicMaterial({
       color: 0x5effa2,
       transparent: true,
       opacity: 0,
       side: THREE.DoubleSide,
       depthWrite: false,
-    })
+    }),
   );
   anelSelecao.lookAt(normal.clone().multiplyScalar(RAIO_GLOBO * 2));
   grupo.add(anelSelecao);
@@ -826,12 +1026,14 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
     iso2: def.iso2,
     pais: paisAssociado,
     grupo,
-    nucleo,
-    glow,
+    alfinete,
+    base,
     anelSelecao,
     faseAnimacao: indice * 0.55,
     ehBrasil: !!def.ehBrasil,
     direcaoNormal: normal,
+    selecionado: false,
+    altura: 0,
     subnacaoNomeApi: def.subnacaoNomeApi,
   };
 }
@@ -892,8 +1094,11 @@ function calcularRaioMinimoZoom(): number {
 // Distância em que o globo inteiro cabe na tela: usada só para o
 // enquadramento inicial e o reset. O zoom do usuário pode ir além disso.
 let RAIO_AJUSTE = calcularRaioMinimoZoom();
-// Zoom máximo: câmera bem próxima da superfície do globo.
-const RAIO_MIN = RAIO_GLOBO * 1.15;
+// Zoom máximo. A 1.15 a câmera chegava quase encostada na superfície e só
+// sobrava ~30° de mundo ao redor do centro, o que desmancha a leitura de globo.
+// Em 1.8 o enquadramento para no nível de "um continente e os vizinhos"
+// (~56° ao redor do centro) — é o limite calibrado com o time.
+const RAIO_MIN = RAIO_GLOBO * 1.8;
 let raioCamera = THREE.MathUtils.clamp(12, RAIO_AJUSTE, Math.max(RAIO_MAX, RAIO_AJUSTE));
 let raioAlvo = raioCamera;
 
@@ -924,6 +1129,7 @@ function fatorZoom(): number {
 function limitarZoom(raio: number): number {
   return THREE.MathUtils.clamp(raio, RAIO_MIN, Math.max(RAIO_MAX, RAIO_AJUSTE));
 }
+
 
 function atualizarCamera(): void {
   if (!arrastando) {
@@ -1055,6 +1261,8 @@ let paisSelecionado: CountryRuntime | null = null;
 // do PINO de uma seleção específica dentro de um polígono compartilhado
 // (Reino Unido). null = área genérica do país (mostra a visão combinada).
 let subnacaoSobreMouse: string | null = null;
+/** Alfinete sob o cursor — só quando o cursor está sobre o pino em si. */
+let marcadorSobreMouse: MarcadorRuntime | null = null;
 let subnacaoSelecionada: string | null = null;
 let opacidadeDestaqueAtual = 0;
 
@@ -1077,12 +1285,17 @@ function bandeiraEmoji(iso2: string): string {
   return String.fromCodePoint(...codePoints);
 }
 
-function encontrarPaisSobPonto(lat: number, lon: number): CountryRuntime | null {
+function encontrarPaisSobPonto(
+  lat: number,
+  lon: number,
+): { pais: CountryRuntime; subnacao: string | null } | null {
   for (const pais of paisesRuntime) {
     const [minLon, minLat, maxLon, maxLat] = pais.bbox;
     if (lon < minLon || lon > maxLon || lat < minLat || lat > maxLat) continue;
-    for (const anel of pais.ringsFlat) {
-      if (pontoDentroDoAnel(lon, lat, anel)) return pais;
+    for (const regiao of pais.regioes) {
+      // As regiões ladrilham o país, então a primeira que contiver o ponto já
+      // responde de quem é o pedaço — sem teste de lado nem índice de anel.
+      if (pontoDentroDoAnel(lon, lat, regiao.anel)) return { pais, subnacao: regiao.subnacao };
     }
   }
   return null;
@@ -1091,16 +1304,20 @@ function encontrarPaisSobPonto(lat: number, lon: number): CountryRuntime | null 
 function detectarHover(): void {
   raycaster.setFromCamera(mouseNDC, camera);
 
-  // Prioridade 1: o cursor está sobre a bolinha de um marcador?
-  const nucleosMarcadores = marcadoresRuntime.map((m) => m.nucleo);
-  const acertoMarcador = raycaster.intersectObjects(nucleosMarcadores, false);
+  // Prioridade 1: o cursor está sobre o alfinete de um marcador?
+  // só os pinos do lado visível: raycast não olha a visibilidade do grupo pai,
+  // e sem esse filtro dá para clicar num marcador através do planeta
+  const alfinetes = marcadoresRuntime.filter((m) => m.grupo.visible).map((m) => m.alfinete);
+  const acertoMarcador = raycaster.intersectObjects(alfinetes, false);
   if (acertoMarcador.length > 0) {
-    const marcador = marcadoresRuntime.find((m) => m.nucleo === acertoMarcador[0].object);
+    const marcador = marcadoresRuntime.find((m) => m.alfinete === acertoMarcador[0].object);
     if (marcador && marcador.pais) {
+      marcadorSobreMouse = marcador;
       definirPaisHover(marcador.pais, marcador.subnacaoNomeApi ?? null);
       return;
     }
   }
+  marcadorSobreMouse = null;
 
   // Prioridade 2: teste geográfico normal contra a superfície do globo
   const intersecoes = raycaster.intersectObject(esferaOceano);
@@ -1110,49 +1327,82 @@ function detectarHover(): void {
   }
   const ponto = intersecoes[0].point;
   const { lat, lon } = vetor3ParaLatLon(ponto);
-  const pais = encontrarPaisSobPonto(lat, lon);
-  definirPaisHover(pais);
+  const acerto = encontrarPaisSobPonto(lat, lon);
+  definirPaisHover(acerto?.pais ?? null, acerto?.subnacao ?? null);
+}
+
+/** Contornos que respondem por uma seleção; sem ela, os do país inteiro. */
+function contornosDaSubnacao(pais: CountryRuntime, subnacaoNomeApi: string | null): any[] {
+  const doPais = pais.outlineLines.map((o) => o.linha);
+  if (!subnacaoNomeApi) return doPais;
+  const daSelecao = pais.outlineLines.filter((o) => o.subnacao === subnacaoNomeApi);
+  return daSelecao.length > 0 ? daSelecao.map((o) => o.linha) : doPais;
+}
+
+/** Contornos pintados agora — guardados para apagar sem varrer o globo inteiro. */
+let contornosRealcados: any[] = [];
+
+/**
+ * Repinta os contornos a partir do estado atual de hover e seleção. Recalcula
+ * tudo em vez de aplicar e desfazer incrementalmente: com região por região, o
+ * caminho incremental deixava a metade anterior acesa quando o mouse andava de
+ * uma seleção para outra dentro do mesmo polígono.
+ */
+function atualizarRealceContornos(): void {
+  contornosRealcados.forEach((linha) => {
+    linha.material.opacity = OPACIDADE_BORDA_NORMAL;
+    linha.material.color.set(COR_BORDA_NORMAL);
+  });
+  contornosRealcados = [];
+
+  const pintar = (linhas: any[], opacidade: number, cor: number) =>
+    linhas.forEach((linha) => {
+      linha.material.opacity = opacidade;
+      linha.material.color.set(cor);
+      contornosRealcados.push(linha);
+    });
+
+  if (paisSelecionado) {
+    pintar(
+      contornosDaSubnacao(paisSelecionado, subnacaoSelecionada),
+      OPACIDADE_BORDA_SELECIONADO,
+      COR_BORDA_SELECIONADO,
+    );
+  }
+  // o hover vem depois de propósito: sobrepõe a seleção quando os dois batem
+  if (paisSobreMouse) {
+    pintar(contornosDaSubnacao(paisSobreMouse, subnacaoSobreMouse), OPACIDADE_BORDA_HOVER, COR_BORDA_HOVER);
+  }
 }
 
 function definirPaisHover(pais: CountryRuntime | null, subnacaoNomeApi: string | null = null): void {
   if (pais === paisSobreMouse && subnacaoNomeApi === subnacaoSobreMouse) return;
 
-  // restaura o brilho do contorno do país anterior (se não for o selecionado)
-  if (paisSobreMouse && paisSobreMouse !== paisSelecionado) {
-    paisSobreMouse.outlineLines.forEach((l) => {
-      l.material.opacity = OPACIDADE_BORDA_NORMAL;
-      l.material.color.set(COR_BORDA_NORMAL);
-    });
-  }
-
   paisSobreMouse = pais;
   subnacaoSobreMouse = subnacaoNomeApi;
+  canvasContainer.style.cursor = pais ? 'pointer' : 'grab';
 
-  if (pais) {
-    pais.outlineLines.forEach((l) => {
-      l.material.opacity = OPACIDADE_BORDA_HOVER;
-      l.material.color.set(COR_BORDA_HOVER);
-    });
-    canvasContainer.style.cursor = 'pointer';
-  } else {
-    canvasContainer.style.cursor = 'grab';
-  }
-
-  atualizarMalhaDestaque();
+  atualizarRealceContornos();
+  atualizarContornoDestaque();
 }
 
-function atualizarMalhaDestaque(): void {
+function atualizarContornoDestaque(): void {
   const alvo = paisSobreMouse || paisSelecionado;
-  if (malhaDestaque) {
-    scene.remove(malhaDestaque);
-    malhaDestaque.geometry.dispose();
-    malhaDestaque.material.dispose();
-    malhaDestaque = null;
+  if (contornoDestaque) {
+    scene.remove(contornoDestaque);
+    contornoDestaque.children.forEach((l: any) => {
+      l.geometry.dispose();
+      l.material.dispose();
+    });
+    contornoDestaque = null;
+    materiaisDestaque = [];
   }
   if (alvo) {
-    const cor = COR_BORDA_HOVER; // preenchimento sempre no verde da marca; o contorno diferencia o selecionado
-    malhaDestaque = construirMalhaDestaque(alvo, cor);
-    scene.add(malhaDestaque);
+    const cor = paisSobreMouse ? COR_BORDA_HOVER : COR_BORDA_SELECIONADO;
+    // Mesma regra do tooltip: o hover manda enquanto existe; fora dele vale a seleção.
+    const subnacaoAlvo = paisSobreMouse ? subnacaoSobreMouse : subnacaoSelecionada;
+    contornoDestaque = construirContornoDestaque(alvo, cor, subnacaoAlvo);
+    scene.add(contornoDestaque);
     opacidadeDestaqueAtual = 0;
   }
 }
@@ -1234,44 +1484,30 @@ function renderizarTooltip(pais: CountryRuntime, subnacaoNomeApi: string | null)
 }
 
 function atualizarTooltip(): void {
-  const alvo = paisSobreMouse || paisSelecionado;
-  const subnacaoAlvo = paisSobreMouse ? subnacaoSobreMouse : subnacaoSelecionada;
-  if (!alvo) {
+  // Só aparece com o cursor sobre um país. Sem isso o card ficava ancorado no
+  // país selecionado e seguia na tela mesmo com o mouse longe dele — quem
+  // representa a seleção é o painel lateral e o realce no globo, não o card.
+  if (!paisSobreMouse) {
     tooltipEl.classList.remove('visivel');
     paisNoTooltip = null;
     subnacaoNoTooltip = null;
     return;
   }
-  if (alvo !== paisNoTooltip || subnacaoAlvo !== subnacaoNoTooltip) {
-    renderizarTooltip(alvo, subnacaoAlvo);
-    paisNoTooltip = alvo;
-    subnacaoNoTooltip = subnacaoAlvo;
+
+  if (paisSobreMouse !== paisNoTooltip || subnacaoSobreMouse !== subnacaoNoTooltip) {
+    renderizarTooltip(paisSobreMouse, subnacaoSobreMouse);
+    paisNoTooltip = paisSobreMouse;
+    subnacaoNoTooltip = subnacaoSobreMouse;
   }
 
   const tw = tooltipEl.offsetWidth;
   const th = tooltipEl.offsetHeight;
-  let x: number;
-  let y: number;
-  if (paisSobreMouse) {
-    x = ultimaPosicaoMouseTela.x + 18;
-    y = ultimaPosicaoMouseTela.y + 18;
-    if (x + tw > window.innerWidth - 16) x = ultimaPosicaoMouseTela.x - tw - 18;
-    if (y + th > window.innerHeight - 16) y = ultimaPosicaoMouseTela.y - th - 18;
-  } else {
-    const centro = centroPais(alvo, subnacaoAlvo);
-    const ponto = latLonParaVetor3(centro.lat, centro.lon);
-    const deFrente = ponto.clone().normalize().dot(camera.position.clone().normalize()) > 0.2;
-    if (!deFrente) {
-      tooltipEl.classList.remove('visivel');
-      return;
-    }
-    const ndc = ponto.clone().project(camera);
-    const rect = canvasContainer.getBoundingClientRect();
-    x = rect.left + ((ndc.x + 1) / 2) * rect.width + 34;
-    y = rect.top + ((1 - ndc.y) / 2) * rect.height - th - 60;
-    x = THREE.MathUtils.clamp(x, rect.left + 8, rect.right - tw - 8);
-    y = THREE.MathUtils.clamp(y, rect.top + 8, rect.bottom - th - 8);
-  }
+  let x = ultimaPosicaoMouseTela.x + 18;
+  let y = ultimaPosicaoMouseTela.y + 18;
+  // vira para o outro lado do cursor quando encostaria na borda da janela
+  if (x + tw > window.innerWidth - 16) x = ultimaPosicaoMouseTela.x - tw - 18;
+  if (y + th > window.innerHeight - 16) y = ultimaPosicaoMouseTela.y - th - 18;
+
   tooltipEl.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
   tooltipEl.classList.add('visivel');
 }
@@ -1282,19 +1518,10 @@ canvasContainer.addEventListener('click', () => {
 });
 
 function selecionarPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
-  if (paisSelecionado) {
-    paisSelecionado.outlineLines.forEach((l) => {
-      l.material.opacity = OPACIDADE_BORDA_NORMAL;
-      l.material.color.set(COR_BORDA_NORMAL);
-    });
-  }
   paisSelecionado = pais;
   subnacaoSelecionada = subnacaoNomeApi;
-  pais.outlineLines.forEach((l) => {
-    l.material.opacity = OPACIDADE_BORDA_SELECIONADO;
-    l.material.color.set(COR_BORDA_SELECIONADO);
-  });
-  atualizarMalhaDestaque();
+  atualizarRealceContornos();
+  atualizarContornoDestaque();
   atualizarMarcadorSelecionado(pais.data.iso2, subnacaoNomeApi);
   atualizarDestaqueAtivo(pais.data.iso2);
   preencherPainel(pais, subnacaoNomeApi);
@@ -1309,7 +1536,7 @@ function selecionarPais(pais: CountryRuntime, subnacaoNomeApi: string | null = n
  */
 function atualizarMarcadorSelecionado(iso2Selecionado: string, subnacaoNomeApi: string | null): void {
   marcadoresRuntime.forEach((m) => {
-    m.anelSelecao.userData.selecionado = m.iso2 === iso2Selecionado && (m.subnacaoNomeApi ?? null) === subnacaoNomeApi;
+    m.selecionado = m.iso2 === iso2Selecionado && (m.subnacaoNomeApi ?? null) === subnacaoNomeApi;
   });
 }
 
@@ -1340,10 +1567,13 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
   const jogadores = sub ? sub.jogadores : mock ? mock.jogadores : null;
   const foto = FOTOS_PAIS[iso2];
 
+  // Número em cima, ícone junto do rótulo embaixo. O ícone em caixa própria ao
+  // lado do número ocupava quase metade da célula e forçava o rótulo a quebrar
+  // assim que o painel estreitava.
   const estatistica = (icone: string, valor: string, rotulo: string) => `
     <div class="painel-stat">
-      <span class="painel-stat-icone"><i class="${icone}"></i></span>
-      <div><strong>${valor}</strong><span>${rotulo}</span></div>
+      <strong>${valor}</strong>
+      <span class="painel-stat-rotulo"><i class="${icone}"></i>${rotulo}</span>
     </div>`;
 
   painelEl.innerHTML = `
@@ -1356,7 +1586,6 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
         <h2 class="painel-nome">${nome}</h2>
         ${continente ? `<p class="painel-continente">${continente}</p>` : ''}
       </div>
-      ${foto ? `<a class="painel-credito" href="${foto.fonte}" target="_blank" rel="noopener">Foto: ${foto.autor} · ${foto.licenca}</a>` : ''}
     </header>
 
     <div class="painel-stats">
@@ -1383,6 +1612,15 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
     card.addEventListener('click', () => {
       const nomeLiga = card.getAttribute('data-liga') || '';
       const paisCodigo = card.getAttribute('data-pais-codigo') || (sub ? sub.bandeira : iso2);
+
+      // Liga com mapa próprio vai para a página do mapa; o resto segue para a
+      // grade de times como sempre. Sem esse desvio, as outras 48 ligas cairiam
+      // todas no "Mapa em breve" e perderiam a listagem que já funciona.
+      const idMapa = rotaMapaDaLiga(nomeLiga);
+      if (idMapa) {
+        navegar(`/ligas/${idMapa}`, {});
+        return;
+      }
       navegar('/times', { liga: nomeLiga, ligaExibicao: obterNomeExibicaoLiga(nomeLiga), paisCodigo });
     });
   });
@@ -1491,11 +1729,11 @@ function animar(agora: number): void {
   detectarHover();
   atualizarMarcadores();
 
-  // fade suave de opacidade da malha de destaque (hover/seleção)
-  if (malhaDestaque) {
-    const opacidadeAlvo = paisSelecionado === (paisSobreMouse || paisSelecionado) ? 0.62 : 0.42;
+  // fade suave do contorno de destaque (hover/seleção)
+  if (materiaisDestaque.length > 0) {
+    const opacidadeAlvo = paisSobreMouse ? 1 : 0.85;
     opacidadeDestaqueAtual += (opacidadeAlvo - opacidadeDestaqueAtual) * Math.min(delta * 8, 1);
-    malhaDestaque.material.opacity = opacidadeDestaqueAtual;
+    materiaisDestaque.forEach((m) => (m.opacity = opacidadeDestaqueAtual));
   }
 
   // rotação ambiente muito sutil quando o usuário não está interagindo
@@ -1516,33 +1754,46 @@ function atualizarMarcadores(): void {
   const direcaoCamera = camera.position.clone().normalize();
 
   marcadoresRuntime.forEach((m) => {
-    // pulsação suave (mais lenta quando selecionado, per spec item 18)
-    const velocidadePulso = m.anelSelecao.userData.selecionado ? 1.1 : 1.6;
-    const pulso = 0.5 + 0.5 * Math.sin(tempoTotal * velocidadePulso + m.faseAnimacao);
-    const escalaNucleo = 0.88 + pulso * 0.28;
-    m.nucleo.scale.setScalar(escalaNucleo);
+    const destacado = m.selecionado || m === marcadorSobreMouse;
 
-    const escalaGlowBase = m.ehBrasil ? 1.0 : 0.85;
-    m.glow.scale.setScalar((m.ehBrasil ? 0.34 : 0.24) * (escalaGlowBase + pulso * 0.35));
-    m.glow.material.opacity = 0.5 + pulso * 0.4;
+    // pulsação suave (mais lenta quando selecionado, per spec item 18)
+    const velocidadePulso = m.selecionado ? 1.1 : 1.6;
+    const pulso = 0.5 + 0.5 * Math.sin(tempoTotal * velocidadePulso + m.faseAnimacao);
+
+    // o pino sobe no hover/seleção e volta sozinho — o movimento é o que dá a
+    // leitura de "levantou", já que o sprite não tem perspectiva própria
+    const alturaAlvo = destacado ? (m.ehBrasil ? 0.075 : 0.06) : 0;
+    m.altura += (alturaAlvo - m.altura) * 0.15;
+    m.alfinete.position.copy(m.direcaoNormal).multiplyScalar(m.altura);
+
+    const escala = m.ehBrasil ? 0.2 : 0.15;
+    const ampliacao = destacado ? 1.18 : 1;
+    m.alfinete.scale.set(
+      escala * ampliacao,
+      escala * ampliacao * (ALFINETE_ALTURA / ALFINETE_LARGURA),
+      1,
+    );
+    m.alfinete.material.color.setHex(destacado ? 0xb6ffd2 : COR_ALFINETE);
 
     // fator de profundidade: 1 = de frente para a câmera, ~0 = na borda do globo
     const fatorFrente = THREE.MathUtils.clamp(m.direcaoNormal.dot(direcaoCamera), -1, 1);
     const intensidadeProfundidade = THREE.MathUtils.smoothstep
-      ? THREE.MathUtils.smoothstep(fatorFrente, 0.05, 0.55)
-      : Math.max(0, Math.min(1, (fatorFrente - 0.05) / 0.5));
+      ? THREE.MathUtils.smoothstep(fatorFrente, 0.0, 0.22)
+      : Math.max(0, Math.min(1, fatorFrente / 0.22));
 
-    m.nucleo.material.opacity = 0.35 + intensidadeProfundidade * 0.65;
-    m.glow.material.opacity *= 0.3 + intensidadeProfundidade * 0.7;
-    m.grupo.visible = fatorFrente > -0.08; // some quando totalmente do lado oculto
+    m.alfinete.material.opacity = (destacado ? 1 : 0.62 + pulso * 0.2) * intensidadeProfundidade;
+    m.base.material.opacity = 0.9 * intensidadeProfundidade;
+    // com depthTest desligado no pino, o corte por ângulo é o único guarda
+    // contra ele aparecer por cima do lado oculto do planeta
+    m.grupo.visible = fatorFrente > 0.01;
 
-    // anel de seleção (fade in/out conforme o país selecionado muda)
-    const opacidadeAnelAlvo = m.anelSelecao.userData.selecionado ? 0.85 : 0;
-    m.anelSelecao.material.opacity += (opacidadeAnelAlvo - m.anelSelecao.material.opacity) * 0.12;
-    const escalaAnel = 1 + pulso * 0.12;
-    m.anelSelecao.scale.setScalar(m.anelSelecao.userData.selecionado ? escalaAnel : 1);
+    // halo da base (fade in/out conforme o país selecionado muda)
+    const opacidadeHaloAlvo = m.selecionado ? 0.85 * intensidadeProfundidade : 0;
+    m.anelSelecao.material.opacity += (opacidadeHaloAlvo - m.anelSelecao.material.opacity) * 0.12;
+    m.anelSelecao.scale.setScalar(m.selecionado ? 1 + pulso * 0.12 : 1);
   });
 }
+
 
 // --- Responsividade ------------------------------------------------------
 function aoRedimensionar(): void {
@@ -1550,7 +1801,13 @@ function aoRedimensionar(): void {
   const altura = canvasContainer.clientHeight;
   camera.aspect = largura / altura;
   camera.updateProjectionMatrix();
+  // Reaplica a densidade de pixel: arrastar a janela para um monitor com DPI
+  // diferente muda devicePixelRatio, e setSize sozinho mantém o valor antigo —
+  // o globo ficaria borrado (ou desperdiçando pixels) no segundo monitor.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(largura, altura);
+  // Line2 calcula a espessura em px a partir disso
+  materiaisDestaque.forEach((m) => m.resolution.set(largura, altura));
 
   // recalcula o enquadramento do globo inteiro para o novo tamanho de tela
   RAIO_AJUSTE = calcularRaioMinimoZoom();
@@ -1558,6 +1815,11 @@ function aoRedimensionar(): void {
   raioCamera = limitarZoom(raioCamera);
 }
 window.addEventListener('resize', aoRedimensionar);
+
+// O container pode mudar de tamanho sem a janela mudar (mudança de layout,
+// barra de rolagem aparecendo), e o evento resize não cobre isso.
+const observadorTamanho = new ResizeObserver(() => aoRedimensionar());
+observadorTamanho.observe(canvasContainer);
 
 // --- Estado inicial: carrega dados reais, então seleciona o Brasil ---------
 carregarDadosReais().finally(() => {
@@ -1584,6 +1846,7 @@ function destruirGlobo(): void {
   window.removeEventListener('pointermove', aoPointerMoveGlobal);
   window.removeEventListener('pointerup', aoPointerUpGlobal);
   window.removeEventListener('resize', aoRedimensionar);
+  observadorTamanho.disconnect();
 
   renderer.dispose();
   geometriaOceano.dispose();
@@ -1593,7 +1856,7 @@ function destruirGlobo(): void {
   texturaDia.dispose();
   texturaNoite.dispose();
   mascaraTerra.dispose();
-  texturaGlow.dispose();
+  texturaAlfinete.dispose();
 
   // remove o <canvas> do WebGL do DOM (o próprio Angular remove o restante
   // da árvore do componente, mas o canvas do renderer não é filho do Angular

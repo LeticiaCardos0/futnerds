@@ -1,0 +1,54 @@
+<!-- Painel direito: clube selecionado. Classes ml-* em src/styles/mapa-liga.css. -->
+<aside class="ml-painel ml-painel-dir">
+  <header class="ml-clube-topo" [style.background]="fundoTopo()">
+    <img
+      class="ml-clube-escudo"
+      [src]="clube().escudoUrl"
+      [alt]="clube().nome"
+      (error)="$any($event.target).style.visibility = 'hidden'" />
+    <div class="ml-clube-id">
+      <h2>{{ clube().nome }}</h2>
+      <p>{{ paisNome() }}</p>
+    </div>
+    <button
+      type="button"
+      class="ml-fav"
+      [attr.aria-pressed]="favorito()"
+      aria-label="Favoritar clube"
+      (click)="alternarFavorito()">
+      <i class="pi" [class.pi-heart-fill]="favorito()" [class.pi-heart]="!favorito()"></i>
+    </button>
+  </header>
+
+  <dl class="ml-campos">
+    <div><dt>Cidade</dt><dd>{{ clube().cidade }}</dd></div>
+    <div><dt>Estádio</dt><dd>{{ clube().estadio }}</dd></div>
+    <div><dt>Fundação</dt><dd>{{ fundacao() ?? '—' }}</dd></div>
+    <div><dt>Liga</dt><dd>{{ ligaNome() }}</dd></div>
+  </dl>
+
+  <p class="ml-secao">Elenco</p>
+  <div class="ml-elenco">
+    <div>
+      <strong>{{ formatarNumero(clube().overallMedio, 1) }}</strong>
+      <span>Overall médio</span>
+    </div>
+    <div>
+      <strong>{{ formatarValor(clube().valorElenco) }}</strong>
+      <span>Valor do elenco</span>
+    </div>
+    <div>
+      <strong>{{ clube().quantidadeJogadores }}</strong>
+      <span>Jogadores</span>
+    </div>
+    <div>
+      <strong>{{ formatarNumero(clube().idadeMedia, 1) }}</strong>
+      <span>Idade média</span>
+    </div>
+  </div>
+
+  <a class="ml-ver-time" [routerLink]="['/times', clube().id]">
+    Ver time
+    <i class="pi pi-arrow-right"></i>
+  </a>
+</aside>

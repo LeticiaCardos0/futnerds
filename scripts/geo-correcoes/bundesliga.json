@@ -1,0 +1,69 @@
+{
+  "ligaId": "bundesliga",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Padrão desta liga: quase todo nome casa também com o time FEMININO, que tem",
+    "o mesmo rótulo no Wikidata. Daí a quantidade de clubeWikidata aqui."
+  ],
+  "clubes": {
+    "1. FC Köln": {
+      "_nota": "O nome em português não resolve no Wikidata.",
+      "cidade": "Colônia",
+      "cidadeWikidata": "Q365"
+    },
+    "1. FSV Mainz 05": { "cidade": "Mainz" },
+    "Borussia Dortmund": { "cidade": "Dortmund" },
+    "FC Augsburg": {
+      "_nota": "Colide com o time feminino (Q97905916).",
+      "clubeWikidata": "Q15755",
+      "cidade": "Augsburgo"
+    },
+    "FC Bayern München": { "cidade": "Munique" },
+    "FC Schalke 04": { "cidade": "Gelsenkirchen" },
+    "Frankfurt": { "cidade": "Frankfurt" },
+    "Hamburger SV": {
+      "_nota": "Colide com o time feminino (Q97905930).",
+      "clubeWikidata": "Q51974",
+      "cidade": "Hamburgo"
+    },
+    "Leverkusen": { "cidade": "Leverkusen" },
+    "M'gladbach": {
+      "_nota": "A base abrevia 'Borussia Mönchengladbach' como M'gladbach.",
+      "clubeWikidata": "Q101959",
+      "cidade": "Mönchengladbach"
+    },
+    "RB Leipzig": {
+      "_nota": "Colide com o RB Leipzig feminino (Q30033219).",
+      "clubeWikidata": "Q702455",
+      "cidade": "Leipzig"
+    },
+    "SC Freiburg": {
+      "_nota": "Colide com o feminino (Q820739); e o clube tem 2 estádios em P115 (o Europa-Park e o antigo Dreisamstadion).",
+      "clubeWikidata": "Q106394",
+      "estadioWikidata": "Q64586775",
+      "estadio": "Europa-Park-Stadion",
+      "cidade": "Freiburg"
+    },
+    "SC Paderborn 07": { "cidade": "Paderborn" },
+    "SV Elversberg": {
+      "_nota": "Spiesen-Elversberg tem 12 mil habitantes e não estava no índice de cidades.",
+      "cidade": "Elversberg",
+      "cidadeWikidata": "Q629932"
+    },
+    "SV Werder Bremen": {
+      "_nota": "Colide com o time feminino (Q2560150).",
+      "clubeWikidata": "Q51976",
+      "cidade": "Bremen"
+    },
+    "TSG Hoffenheim": {
+      "_nota": "O estádio fica em Sinsheim; Hoffenheim é um distrito.",
+      "cidade": "Sinsheim",
+      "cidadeWikidata": "Q14950"
+    },
+    "Union Berlin": { "cidade": "Berlim" },
+    "VfB Stuttgart": { "cidade": "Stuttgart" }
+  }
+}
