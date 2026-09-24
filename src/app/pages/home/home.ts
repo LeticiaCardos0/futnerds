@@ -31,7 +31,8 @@ interface Desafio {
   standalone: true,
   imports: [CommonModule, RouterLink, AtlasGlobe],
   templateUrl: './home.html',
-  styleUrl: './home.scss',
+  // Tres arquivos por causa do budget anyComponentStyle; a ordem importa.
+  styleUrls: ['./home.scss', './home-2.scss', './home-3.scss'],
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   private readonly imgBase = '/home';
