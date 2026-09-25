@@ -1,0 +1,4 @@
+# Scripts de shell sempre com LF: com CRLF o bash quebra ($'': command not found).
+*.sh text eol=lf
+# Backup do PostgreSQL: binário, sem conversão nem diff.
+*.dump binary
