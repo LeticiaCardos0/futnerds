@@ -499,6 +499,34 @@ function recortarAnelPelaDivisa(
 
 function criarMascaraTerra(): any {
   const largura = 2048, altura = 1024;
+
+  // Os países vão SEM filtro num canvas à parte, e o desfoque é aplicado uma
+  // vez só, no fim. Com o blur ligado durante o desenho, o canvas desfocava
+  // cada fill separadamente — centenas de passadas, ~1,1 s de GPU na primeira
+  // vez que a textura era usada, o que congelava a entrada em Nações. De
+  // quebra some a costura mais escura que o blur por país deixava na
+  // fronteira entre dois vizinhos.
+  const formas = document.createElement('canvas');
+  formas.width = largura;
+  formas.height = altura;
+  const ctxFormas = formas.getContext('2d')!;
+  ctxFormas.fillStyle = '#fff';
+  GEO_COUNTRIES.forEach((pais) => {
+    if (!pais.geometry || pais.iso2 === 'aq') return;
+    extrairAneisExternos(pais.geometry).forEach((anel) => {
+      if (anel.length < 3) return;
+      ctxFormas.beginPath();
+      anel.forEach(([lon, lat], i) => {
+        const x = (lon + 180) / 360 * largura;
+        const y = (90 - lat) / 180 * altura;
+        if (i === 0) ctxFormas.moveTo(x, y);
+        else ctxFormas.lineTo(x, y);
+      });
+      ctxFormas.closePath();
+      ctxFormas.fill('evenodd');
+    });
+  });
+
   const canvas = document.createElement('canvas');
   canvas.width = largura;
   canvas.height = altura;
@@ -506,22 +534,7 @@ function criarMascaraTerra(): any {
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, largura, altura);
   ctx.filter = 'blur(1.5px)'; // borda suave entre terra e oceano
-  GEO_COUNTRIES.forEach((pais) => {
-    if (!pais.geometry || pais.iso2 === 'aq') return;
-    extrairAneisExternos(pais.geometry).forEach((anel) => {
-      if (anel.length < 3) return;
-      ctx.beginPath();
-      anel.forEach(([lon, lat], i) => {
-        const x = (lon + 180) / 360 * largura;
-        const y = (90 - lat) / 180 * altura;
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      });
-      ctx.closePath();
-      ctx.fillStyle = '#fff';
-      ctx.fill('evenodd');
-    });
-  });
+  ctx.drawImage(formas, 0, 0);
   return new THREE.CanvasTexture(canvas);
 }
 
@@ -564,15 +577,38 @@ scene.add(luzPreenchimento);
 // estilizada no shader: terra escura puxada para o verde, oceano azul-petróleo,
 // luzes das cidades em verde e brilho verde na borda do planeta. A luz acompanha
 // a câmera (espaço de visão), então o lado voltado para o usuário está sempre iluminado.
-const carregadorTextura = new THREE.TextureLoader();
+//
+// ImageBitmap, e não TextureLoader: com <img>, o navegador decodificava o JPEG
+// de 4096x2048 e o invertia NA thread principal, dentro do primeiro frame —
+// era o trecho mais pesado da entrada em Nações (a página congelava). O
+// createImageBitmap decodifica fora da thread principal e já entrega invertido.
+// As opções reproduzem o padrão do TextureLoader (ver docs do ImageBitmapLoader).
+const carregadorImagem = new THREE.ImageBitmapLoader();
+carregadorImagem.setOptions({ imageOrientation: 'flipY', premultiplyAlpha: 'none', colorSpaceConversion: 'none' });
 const anisotropia = renderer.capabilities.getMaxAnisotropy();
 function carregarTextura(caminho: string): any {
-  const textura = carregadorTextura.load(caminho);
+  const textura = new THREE.Texture();
   textura.anisotropy = anisotropia;
+  carregadorImagem.load(caminho, (bitmap: ImageBitmap) => {
+    // Saiu da tela antes de a imagem chegar: ninguém mais vai usá-la.
+    if (!globoAtivo) {
+      bitmap.close();
+      return;
+    }
+    textura.image = bitmap;
+    textura.needsUpdate = true;
+  });
   return textura;
 }
-const texturaDia = carregarTextura('nacoes/terra-dia.jpg');
-const texturaNoite = carregarTextura('nacoes/terra-noite.jpg');
+// 2K em tela comum; 4K só em tela de alta densidade. O globo nunca passa de
+// ~800 px de diâmetro (o zoom máximo é ele inteiro cabendo no canvas) e o
+// hemisfério visível mostra metade da largura da textura: 1024 texels cobrem
+// isso com folga em densidade 1. Em densidade 2 viram ~1600 px físicos, e aí a
+// 4K aparece. Enviar a 4K para a GPU custava ~1,8 s de thread principal numa
+// Intel HD 630 — era o congelamento ao entrar em Nações.
+const sufixoTextura = window.devicePixelRatio > 1.5 ? '' : '-2k';
+const texturaDia = carregarTextura(`nacoes/terra-dia${sufixoTextura}.jpg`);
+const texturaNoite = carregarTextura(`nacoes/terra-noite${sufixoTextura}.jpg`);
 const mascaraTerra = criarMascaraTerra();
 
 const geometriaOceano = new THREE.SphereGeometry(RAIO_GLOBO, 128, 128);
@@ -1743,7 +1779,17 @@ function animar(agora: number): void {
 
   renderer.render(scene, camera);
 }
-requestAnimationFrame(animar);
+
+// Shaders compilados em paralelo (KHR_parallel_shader_compile) ANTES do
+// primeiro frame. Compilados dentro do primeiro render, travavam a página por
+// centenas de ms — no Windows o ANGLE ainda traduz tudo para HLSL. Sem a
+// extensão, o compileAsync compila na hora e resolve em seguida.
+renderer
+  .compileAsync(scene, camera)
+  .catch(() => {})
+  .finally(() => {
+    if (globoAtivo) requestAnimationFrame(animar);
+  });
 
 /**
  * Anima a pulsação de cada marcador (com fase própria, para não pulsarem
@@ -1857,6 +1903,9 @@ function destruirGlobo(): void {
   texturaNoite.dispose();
   mascaraTerra.dispose();
   texturaAlfinete.dispose();
+  // O dispose da textura não fecha o ImageBitmap, que segura a imagem
+  // decodificada (~32 MB cada) até ser fechado ou coletado.
+  for (const textura of [texturaDia, texturaNoite]) (textura.image as ImageBitmap | null)?.close?.();
 
   // remove o <canvas> do WebGL do DOM (o próprio Angular remove o restante
   // da árvore do componente, mas o canvas do renderer não é filho do Angular

@@ -31,6 +31,8 @@ export interface ClubeMapa {
   id: number;
   nome: string;
   escudoUrl: string;
+  /** Versão pequena do escudo para o pino; sem ela, usa `escudoUrl`. */
+  escudoMiniUrl?: string;
   cidade: string;
   estadio: string;
   lat: number;
@@ -53,6 +55,8 @@ interface RotuloRuntime {
   lat: number;
   lng: number;
   comTime: boolean;
+  /** Cidade de país vizinho: cede lugar às do país (ver layoutRotulos). */
+  vizinha: boolean;
   rank: number;
   /** Quantos clubes da liga estao nesta cidade. Define a ordem de colocacao. */
   clubes: number;
@@ -134,6 +138,11 @@ export class MapaLigaComponent implements OnDestroy {
     this.declutter();
   };
 
+  private readonly aoCarregarFontes = () => {
+    this.medirRotulos();
+    this.declutter();
+  };
+
   constructor() {
     // afterNextRender: só no browser, e com o elemento já medido.
     afterNextRender(() => {
@@ -145,7 +154,7 @@ export class MapaLigaComponent implements OnDestroy {
       }
     });
 
-    // Os dados podem chegar antes OU depois do `load` do MapLibre. O effect
+    // Os dados podem chegar antes OU depois da criação do mapa. O effect
     // reage às duas ordens; `desenhar()` sempre limpa antes de recriar, então
     // rodar de novo não duplica marcador.
     effect(() => {
@@ -267,12 +276,6 @@ export class MapaLigaComponent implements OnDestroy {
       console.error('FutNerds · erro do MapLibre no mapa da liga:', e?.error ?? e),
     );
 
-    this.mapa.on('load', () => {
-      this.mapaPronto = true;
-      this.aplicarZoomMinimo();
-      this.desenhar(this.clubes(), this.cidades(), this.cidadesSemTime());
-    });
-
     // A correção de posição roda só quando o movimento TERMINA. Corrigir no
     // `move` faz o MapLibre cancelar o zoom do scroll e o arrasto.
     this.mapa.on('moveend', (e: any) => {
@@ -297,11 +300,18 @@ export class MapaLigaComponent implements OnDestroy {
     this.observador.observe(alvo);
 
     // As fontes mudam a largura dos rótulos; sem remedir, o layout usa
-    // medidas da fonte de fallback e as colisões saem erradas.
-    document.fonts?.ready.then(() => {
-      this.medirRotulos();
-      this.declutter();
-    });
+    // medidas da fonte de fallback e as colisões saem erradas. `loadingdone`,
+    // e não `fonts.ready`: a Source Serif só começa a baixar quando o primeiro
+    // rótulo de cidade sem time aparece, depois de o `ready` já ter resolvido.
+    document.fonts?.addEventListener('loadingdone', this.aoCarregarFontes);
+
+    // Desenha já, sem esperar o `load`. Pinos e rótulos são DOM puro (Marker)
+    // e só dependem da câmera, que o construtor posiciona com `bounds`. O
+    // `load` só dispara quando TODOS os tiles chegam, inclusive os de relevo
+    // da AWS: medido, a lista de clubes aparecia em ~0,2 s e os pinos em ~1,7 s.
+    this.mapaPronto = true;
+    this.aplicarZoomMinimo();
+    this.desenhar(this.clubes(), this.cidades(), this.cidadesSemTime());
   }
 
   /**
@@ -400,7 +410,14 @@ export class MapaLigaComponent implements OnDestroy {
     semTime: CidadeSemTime[],
     clubesPorCidade: Map<string, number>,
   ): void {
-    const add = (nome: string, lat: number, lng: number, comTime: boolean, rank: number) => {
+    const add = (
+      nome: string,
+      lat: number,
+      lng: number,
+      comTime: boolean,
+      rank: number,
+      vizinha = false,
+    ) => {
       const classes = comTime
         ? 'ml-lbl ml-club'
         : `ml-lbl ml-minor ml-r${rank}${BIG_TOWNS.includes(nome) ? ' ml-big' : ''}`;
@@ -424,6 +441,7 @@ export class MapaLigaComponent implements OnDestroy {
         lat,
         lng,
         comTime,
+        vizinha,
         rank,
         clubes: clubesPorCidade.get(nome) ?? 0,
         w: 0,
@@ -432,7 +450,7 @@ export class MapaLigaComponent implements OnDestroy {
     };
 
     for (const c of cidades) add(c.nome, c.lat, c.lng, true, 0);
-    for (const t of semTime) add(t.nome, t.lat, t.lng, false, t.rank);
+    for (const t of semTime) add(t.nome, t.lat, t.lng, false, t.rank, t.vizinha);
 
     // Ordem de colocacao: quem tem mais clubes escolhe primeiro. Londres (6)
     // pega a melhor posicao, depois Liverpool e Manchester (2), e assim por
@@ -456,10 +474,18 @@ export class MapaLigaComponent implements OnDestroy {
 
       const head = el('span', 'ml-head');
       const img = document.createElement('img');
-      img.src = clube.escudoUrl;
+      const mini = clube.escudoMiniUrl ?? clube.escudoUrl;
+      let tentouOriginal = mini === clube.escudoUrl;
+      img.src = mini;
       img.alt = '';
-      // Escudo quebrado vira a sigla sobre a cor do clube — nunca um vazio.
+      // Miniatura quebrada tenta o escudo original; escudo quebrado vira a
+      // sigla sobre a cor do clube — nunca um vazio.
       img.onerror = () => {
+        if (!tentouOriginal) {
+          tentouOriginal = true;
+          img.src = clube.escudoUrl;
+          return;
+        }
         img.remove();
         const dot = el('span', 'ml-dot');
         dot.textContent = sigla(clube.nome);
@@ -537,11 +563,20 @@ export class MapaLigaComponent implements OnDestroy {
    * forcaria reflow no arrasto do mapa.
    */
   private medirRotulos(): void {
+    // Rótulo que o layout escondeu (display: none) mede 0, e com largura 0 ele
+    // nunca colide — voltava a aparecer por cima dos pinos. Mede todos visíveis
+    // e devolve o display de antes; o declutter em seguida decide de novo.
+    // Escreve tudo, lê tudo, restaura: um reflow só, não um por rótulo.
+    const displays = this.rotulos.map((r) => r.el.style.display);
     for (const r of this.rotulos) {
+      r.el.style.display = 'block';
       if (r.comTime) r.span.style.fontSize = '';
+    }
+    for (const r of this.rotulos) {
       r.w = r.span.offsetWidth;
       r.h = r.span.offsetHeight;
     }
+    this.rotulos.forEach((r, i) => (r.el.style.display = displays[i]));
   }
 
   /**
@@ -658,6 +693,13 @@ export class MapaLigaComponent implements OnDestroy {
    * sai da frente sao os pinos. Cidade SEM time procura lugar livre em 4
    * direcoes e 2 distancias, e some quando nao cabe.
    * Rank 2 so a partir de RANK2_ZOOM.
+   *
+   * Cidades de paises vizinhos cedem lugar as do pais. Com Bristol escrito por
+   * cima do ponto de Cardiff, o leitor ligava o ponto ao nome errado; entao os
+   * nomes evitam o ponto de uma vizinha quando ha outra direcao livre na mesma
+   * distancia, e a vizinha com o ponto coberto mesmo assim some ate o zoom
+   * abrir espaco. As cidades do pais seguem o layout de sempre: aplicar essas
+   * regras a elas escondia nomes que o usuario ja via (Kassel, Magdeburg).
    */
   private layoutRotulos(caixasPinos: Caixa[]): void {
     if (!this.mapa) return;
@@ -666,6 +708,17 @@ export class MapaLigaComponent implements OnDestroy {
     const cw = this.mapa.getContainer().clientWidth;
     const ch = this.mapa.getContainer().clientHeight;
     const pad = 4;
+    const naTela = (p: { x: number; y: number }) =>
+      p.x >= -50 && p.y >= -50 && p.x <= cw + 50 && p.y <= ch + 50;
+
+    // Pontos das vizinhas que podem aparecer. Calculados antes do laco porque
+    // elas sao posicionadas por ultimo, depois dos nomes que as cobririam.
+    const pontosVizinhas = new Map<RotuloRuntime, Caixa>();
+    for (const l of this.rotulos) {
+      if (!l.vizinha || !(l.rank === 1 || z >= RANK2_ZOOM)) continue;
+      const p = this.mapa.project([l.lng, l.lat]);
+      if (naTela(p)) pontosVizinhas.set(l, { x1: p.x - 5, x2: p.x + 5, y1: p.y - 5, y2: p.y + 5 });
+    }
 
     const corpo = this.corpoCidade();
     // As medidas foram tiradas no corpo base; escalar e mais barato que remedir.
@@ -682,7 +735,7 @@ export class MapaLigaComponent implements OnDestroy {
     for (const l of this.rotulos) {
       const mostrar = l.comTime || l.rank === 1 || z >= RANK2_ZOOM;
       const p = this.mapa.project([l.lng, l.lat]);
-      if (!mostrar || p.x < -50 || p.y < -50 || p.x > cw + 50 || p.y > ch + 50) {
+      if (!mostrar || !naTela(p)) {
         l.el.style.display = 'none';
         continue;
       }
@@ -706,14 +759,33 @@ export class MapaLigaComponent implements OnDestroy {
         continue;
       }
 
+      const meuPonto: Caixa = { x1: p.x - 5, x2: p.x + 5, y1: p.y - 5, y2: p.y + 5 };
+
+      // Vizinha com o ponto ja coberto por um nome (ou pelo ponto de outra
+      // cidade) posto antes: o nome ficaria ao lado de um ponto que ninguem ve.
+      // As caixas dos pinos (o comeco de `postas`) ficam de fora: sao
+      // retangulos folgados, pino + linha ate o estadio.
+      if (l.vizinha) {
+        let coberto = false;
+        for (let i = caixasPinos.length; i < postas.length && !coberto; i++) {
+          coberto = areaSobreposta(meuPonto, postas[i]) > 0;
+        }
+        if (coberto) {
+          l.el.style.display = 'none';
+          continue;
+        }
+      }
+
       const distancias = [0, AFASTAMENTO_EXTRA];
       const direcoes = DIRECOES_MINOR;
 
-      let melhor: [number, number] = [0, H + g];
-      let menorSobra = Infinity;
-      let melhorCaixa: Caixa | null = null;
-
+      // Primeira posicao livre, como sempre — com uma preferencia: dentro da
+      // MESMA distancia, uma livre que nao cubra o ponto de uma vizinha ganha
+      // da primeira livre. Nunca se afasta mais so por causa de ponto: o nome
+      // longe do proprio ponto ocupa o lugar de outros e confunde a leitura.
+      let escolhida: { c: [number, number]; caixa: Caixa } | null = null;
       busca: for (const extra of distancias) {
+        let primeiraLivre: { c: [number, number]; caixa: Caixa } | null = null;
         for (const [dx, dy] of direcoes) {
           const c: [number, number] = [dx * (W + g + extra), dy * (H + g + extra)];
           const caixa: Caixa = {
@@ -722,31 +794,38 @@ export class MapaLigaComponent implements OnDestroy {
             y1: p.y + c[1] - H - pad,
             y2: p.y + c[1] + H + pad,
           };
-          let ov = 0;
-          for (const b of postas) ov += areaSobreposta(caixa, b);
-          if (ov < menorSobra) {
-            melhor = c;
-            menorSobra = ov;
-            melhorCaixa = caixa;
+          if (postas.some((b) => areaSobreposta(caixa, b) > 0)) continue;
+          let cobre = false;
+          for (const [outra, ponto] of pontosVizinhas) {
+            if (outra !== l && areaSobreposta(caixa, ponto) > 0) {
+              cobre = true;
+              break;
+            }
           }
-          // Livre: para na hora. A de menor sobreposicao so vale se nenhuma
-          // das tentativas estiver limpa.
-          if (ov === 0) break busca;
+          if (!cobre) {
+            escolhida = { c, caixa };
+            break busca;
+          }
+          primeiraLivre ??= { c, caixa };
+        }
+        if (primeiraLivre) {
+          escolhida = primeiraLivre;
+          break;
         }
       }
 
-      if (menorSobra > 0) {
+      if (!escolhida) {
         l.el.style.display = 'none';
         continue;
       }
       l.el.style.display = 'block';
-      l.marker.setOffset(melhor);
+      l.marker.setOffset(escolhida.c);
       if (l.dot) {
-        l.dot.style.left = `${-melhor[0] - 3.5}px`;
-        l.dot.style.top = `${-melhor[1] - 3.5}px`;
-        postas.push({ x1: p.x - 5, x2: p.x + 5, y1: p.y - 5, y2: p.y + 5 });
+        l.dot.style.left = `${-escolhida.c[0] - 3.5}px`;
+        l.dot.style.top = `${-escolhida.c[1] - 3.5}px`;
+        postas.push(meuPonto);
       }
-      if (melhorCaixa) postas.push(melhorCaixa);
+      postas.push(escolhida.caixa);
     }
   }
 
@@ -812,6 +891,7 @@ export class MapaLigaComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     window.removeEventListener('resize', this.aoRedimensionar);
+    document.fonts?.removeEventListener('loadingdone', this.aoCarregarFontes);
     this.observador?.disconnect();
     this.limparMarcadores();
     // Libera o contexto WebGL e os listeners internos do MapLibre.

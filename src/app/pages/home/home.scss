@@ -1,25 +1,28 @@
 /* ============================================================================
-   Home — parte 1 de 3.
+   Home — parte 1 de 3 (tokens, base, animações de entrada, hero).
 
-   O arquivo foi partido para caber no budget `anyComponentStyle` (16 kB de
-   erro, 10 kB de aviso): inteiro, ele compilava 22,43 kB e QUEBRAVA o build.
-   O budget e avaliado por ARQUIVO, entao tres partes passam.
+   Layout vindo do Figma "FUTNERDS — Home Full HD" (1920 px, conteúdo 1440 px).
 
-   A ORDEM em styleUrls (home.ts) importa: o Angular concatena na ordem do
-   array, e a cascata depende disso. Nao reordene.
+   O arquivo e partido para caber no budget `anyComponentStyle` (16 kB de
+   erro, 10 kB de aviso), que e avaliado por ARQUIVO. A ORDEM em styleUrls
+   (home.ts) importa: o Angular concatena na ordem do array. Nao reordene.
    ============================================================================ */
 
-
 :host {
-  --lime: rgb(25, 212, 90);
-  --lime-soft: rgb(25, 212, 90);
-  --bg: #0e100f;
-  --bg-deep: #020705;
-  --text: #e8f2ec;
+  --preto: #050807;
+  --verde: #16c449;
+  --neon: #00e65f;
+  --branco: #ffffff;
+  --cinza: #9ca3af;
+  --painel: #0a120d;
+  --borda: #1e2a23;
+  --titulo: 'Unbounded', 'Inter', system-ui, sans-serif;
+  --texto: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --ease: cubic-bezier(.2, .8, .2, 1);
   display: block;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--preto);
+  color: var(--branco);
+  font-family: var(--texto);
 }
 
 .ms {
@@ -34,536 +37,339 @@
   direction: ltr;
 }
 
-@keyframes fnMarquee {
-  to {
-    transform: translateX(-50%);
-  }
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@keyframes fnPulse {
-
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: .35;
-    transform: scale(1.9);
-  }
-}
-
-@keyframes fnTwinkle {
-
-  0%,
-  100% {
-    opacity: .15;
-  }
-
-  50% {
-    opacity: .9;
-  }
-}
-
-@keyframes fnScrollCue {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(14px);
-    opacity: 0;
-  }
-}
-
-@keyframes fnSweep {
-  0% {
-    transform: translateX(-120%);
-  }
-
-  100% {
-    transform: translateX(220%);
-  }
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
 }
 
 .fn-home {
-  padding: 25px 0 96px;
-  background: var(--bg);
-  box-sizing: border-box;
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
   width: 100%;
   overflow-x: hidden;
+  background: var(--preto);
 }
 
-a {
-  color: var(--lime);
-  text-decoration: none;
+// 1440 de conteúdo + 24 de respiro de cada lado (em 1920 sobram as margens de 240)
+.fn-wrap {
+  position: relative;
+  max-width: 1488px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
 
-  &:hover {
-    color: var(--lime-soft);
+/* ---------- animações ---------- */
+@keyframes fnEntrada {
+  from { opacity: 0; transform: translateY(26px); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes fnFundo {
+  from { opacity: 0; transform: scale(1.14); }
+  to { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes fnQuica {
+  0%, 100% { transform: translateY(0); opacity: .5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@keyframes fnGiro {
+  to { transform: rotate(360deg); }
+}
+
+// entrada em cascata do hero: --i é a ordem do elemento
+.fn-in {
+  animation: fnEntrada .9s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 90ms + 250ms);
+}
+
+// seções que entram ao aparecer na tela (classes postas pelo home.ts; --d = atraso em ms).
+// Animação e não transition para não brigar com o transform do hover dos cards; o
+// home.ts tira as classes no fim da animação.
+.fn-reveal {
+  opacity: 0;
+
+  &.is-in {
+    animation: fnEntrada .8s var(--ease) both;
+    animation-delay: calc(var(--d, 0) * 1ms);
   }
 }
 
-/* ---------- marquee ---------- */
-.fn-marquee {
-  height: 30px;
-  background: var(--lime);
-  color: #03150c;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
+.fn-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.fn-marquee-track {
-  display: flex;
-  gap: 44px;
-  white-space: nowrap;
-  padding-left: 44px;
-  animation: fnMarquee 34s linear infinite;
-}
-
-/* ---------- header ---------- */
-.fn-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 0 34px;
-  background: rgba(3, 9, 6, .5);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, .05);
-  transition: height .4s cubic-bezier(.2, .8, .2, 1), background .4s, border-color .4s;
-}
-
-.fn-brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.fn-brand-badge {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1.5px solid var(--lime);
-  display: flex;
+/* ---------- botões 220 × 56 ---------- */
+.fn-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--lime);
-  box-shadow: 0 0 18px rgb(25, 212, 90, .4);
-
-  &--sm {
-    width: 30px;
-    height: 30px;
-    font-size: 11px;
-    box-shadow: none;
-  }
-}
-
-.fn-brand-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-
-  &--sm {
-    font-size: 20px;
-  }
-}
-
-.fn-nav {
-  display: flex;
-  gap: 26px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.fn-nav-link {
-  position: relative;
-  color: #9fb3a7;
-
-  &:hover {
-    color: var(--lime);
-  }
-
-  &--active {
-    color: var(--lime);
-  }
-}
-
-.fn-spacer {
-  flex: 1;
-}
-
-.fn-search {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  height: 34px;
-  padding: 0 14px;
-  border-radius: 17px;
-  background: rgba(255, 255, 255, .045);
-  border: 1px solid rgba(255, 255, 255, .09);
-  color: #7b8f84;
-  font-size: 12.5px;
-  width: 210px;
-  transition: border-color .35s, background .35s, width .35s;
+  gap: 10px;
+  min-width: 220px;
+  height: 56px;
+  padding: 0 24px;
+  border-radius: 14px;
+  box-sizing: border-box;
+  font: 500 16px var(--texto);
+  transition: background .25s, border-color .25s, box-shadow .3s, transform .3s var(--ease);
 
   .ms {
-    font-size: 17px;
+    font-size: 20px;
+    transition: transform .25s;
   }
 
   &:hover {
-    border-color: rgb(25, 212, 90, .5);
-    background: rgb(25, 212, 90, .08);
-    width: 250px;
+    transform: translateY(-2px);
+
+    .ms { transform: translateX(3px); }
+  }
+
+  &--solid {
+    background: linear-gradient(135deg, var(--neon), var(--verde));
+    color: #04120a;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 30px rgba(0, 230, 95, .3);
+
+    &:hover {
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 0 44px rgba(0, 230, 95, .55);
+    }
+  }
+
+  &--line {
+    border: 1px solid rgba(0, 230, 95, .45);
+    background: rgba(0, 230, 95, .06);
+    color: var(--neon);
+
+    &:hover {
+      border-color: var(--neon);
+      background: rgba(0, 230, 95, .12);
+    }
   }
 }
 
-.fn-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: linear-gradient(140deg, #1d3a2a, #0a1a12);
-  border: 1px solid rgb(25, 212, 90, .4);
-  transition: transform .3s, box-shadow .3s;
-
-  &:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 16px rgb(25, 212, 90, .45);
-  }
-}
-
-/* ---------- hero ---------- */
+/* ---------- hero (topbar 64 + 720) ---------- */
 .fn-hero {
   position: relative;
-  height: 820px;
+  // passa por baixo da topbar fixa (o shell tem pt-10)
+  margin-top: -40px;
+  // ocupa a tela inteira: o "Explore" só aparece ao rolar e a seta fica no rodapé da tela
+  height: 100vh;
+  height: 100svh;
+  min-height: 640px;
   overflow: hidden;
-  background: var(--bg-deep);
+  background: var(--preto);
 }
 
-.fn-hero-video-layer {
+.fn-hero-bg {
   position: absolute;
-  inset: -16% 0;
+  inset: -12% 0;
   will-change: transform;
 }
 
-.fn-hero-radial {
+.fn-hero-img {
   position: absolute;
   inset: 0;
-  background: radial-gradient(80% 60% at 50% 30%, rgba(24, 72, 50, .55), rgba(3, 12, 8, .9) 70%, #020705);
+  // maior que a largura para o jogador ficar parcialmente visível à direita
+  background-size: 120% auto;
+  background-position: 0% 35%;
+  background-repeat: no-repeat;
+  animation: fnFundo 2.2s var(--ease) both;
+
+  // telas menos largas que ~9:5 (1920 × 1080, 1440 × 900…): com o hero da altura da tela,
+  // 120% da largura não cobre mais a altura. Cobre pela altura e ancora a 40% para o
+  // jogador continuar entre 75% e 90% da largura.
+  @media (max-aspect-ratio: 9/5) {
+    background-size: cover;
+    background-position: 40% 35%;
+  }
 }
 
-.fn-hero-video {
+// aproximação lenta da câmera em direção ao jogador, indo e voltando (loop sem salto)
+@keyframes fnCamera {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.06) translate3d(-1.2%, -.6%, 0); }
+}
+
+@keyframes fnNevoa {
+  to { transform: translateX(-50%); }
+}
+
+.fn-hero-cam {
+  position: absolute;
+  inset: 0;
+  transform-origin: 75% 45%;
+  animation: fnCamera 24s ease-in-out infinite alternate;
+}
+
+// névoa rasteira: duas camadas com o desenho repetido a cada 50% da largura, então
+// deslizar -50% emenda perfeitamente. Some à esquerda para não pesar sobre o texto.
+.fn-fog {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 62%;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(90deg, transparent 22%, #000 55%);
+  mask-image: linear-gradient(90deg, transparent 22%, #000 55%);
+
+  i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    background:
+      radial-gradient(ellipse 22% 34% at 25% 74%, rgba(113, 135, 120, .3), transparent 70%),
+      radial-gradient(ellipse 16% 26% at 70% 84%, rgba(22, 196, 73, .14), transparent 70%);
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+    filter: blur(26px);
+    animation: fnNevoa 50s linear infinite;
+  }
+
+  i + i {
+    top: 12%;
+    background-position: 30% 0;
+    opacity: .7;
+    animation-duration: 80s;
+    animation-direction: reverse;
+  }
+}
+
+.fn-palco {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: .72;
-  filter: saturate(1.1) contrast(1.05);
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
-.fn-hero-multiply {
+.fn-hero-light {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(2, 7, 5, .55), rgba(3, 20, 12, .35) 45%, rgba(2, 7, 5, .8));
-  mix-blend-mode: multiply;
+  right: 4%;
+  top: 22%;
+  width: 720px;
+  height: 520px;
+  border-radius: 50%;
+  background: rgba(22, 196, 73, .14);
+  filter: blur(120px);
   pointer-events: none;
 }
 
-.fn-hero-canvas {
+.fn-hero-shade {
   position: absolute;
   inset: 0;
-  width: 100%;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--preto) 0%, rgba(5, 8, 7, .9) 28%, rgba(5, 8, 7, .4) 52%, rgba(5, 8, 7, .05) 78%, rgba(5, 8, 7, .25) 100%),
+    linear-gradient(180deg, rgba(5, 8, 7, .6) 0%, transparent 16%, transparent 72%, var(--preto) 100%);
+}
+
+.fn-hero-inner {
+  z-index: 2;
   height: 100%;
-  display: block;
-}
-
-.fn-hero-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(110% 70% at 50% 42%, rgba(3, 9, 6, 0), rgba(2, 7, 5, .72) 68%, #020705 100%);
-  pointer-events: none;
-}
-
-.fn-hero-lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.fn-hero-line {
-  position: absolute;
-  top: 110px;
-  bottom: 110px;
-  width: 1px;
-  background: linear-gradient(180deg, transparent, rgb(25, 212, 90, .4), transparent);
-
-  &--left {
-    left: 34px;
-  }
-
-  &--right {
-    right: 34px;
-  }
-}
-
-.fn-hero-vlabel {
-  position: absolute;
-  top: 140px;
-  writing-mode: vertical-rl;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .32em;
-  color: rgb(25, 212, 90, .5);
-  text-transform: uppercase;
-
-  &--left {
-    left: 22px;
-    transform: rotate(180deg);
-  }
-
-  &--right {
-    right: 22px;
-  }
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
 }
 
 .fn-hero-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 120px;
-  pointer-events: none;
-  will-change: transform, opacity;
+  will-change: opacity;
 }
 
 .fn-pill {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 6px 14px;
+  gap: 10px;
+  padding: 8px 16px 8px 12px;
+  border: 1px solid rgba(255, 255, 255, .1);
   border-radius: 999px;
-  border: 1px solid rgb(25, 212, 90, .32);
-  background: rgb(25, 212, 90, .08);
-  backdrop-filter: blur(6px);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #a9f7cd;
-}
+  background: rgba(255, 255, 255, .05);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .8);
 
-.fn-pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--lime);
-  animation: fnPulse 2s ease-in-out infinite;
-
-  &--sm {
-    width: 5px;
-    height: 5px;
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--neon);
+    box-shadow: 0 0 0 4px rgba(0, 230, 95, .18), 0 0 12px var(--neon);
   }
 }
 
 .fn-hero-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 190px;
-  font-weight: 800;
-  line-height: .82;
-  letter-spacing: -.022em;
-  margin-top: 26px;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #ffffff 26%, #7fd7ab 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 0 40px rgb(25, 212, 90, .22));
+  margin: 26px 0 0;
+  font: 800 clamp(52px, 5.4vw, 104px) / .95 var(--titulo);
+  letter-spacing: -.03em;
+
+  span {
+    color: var(--neon);
+    text-shadow: 0 0 28px rgba(0, 230, 95, .45);
+  }
 }
 
-.fn-hero-rule {
-  width: 200px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--lime), transparent);
-  margin: 24px 0 18px;
-}
+.fn-hero-slogan {
+  margin: 22px 0 0;
+  font: 500 clamp(21px, 1.5vw, 28px) / 1.25 var(--texto);
+  letter-spacing: -.01em;
+  color: rgba(255, 255, 255, .92);
 
-.fn-hero-subtitle {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 30px;
-  font-weight: 600;
-  letter-spacing: .26em;
-  text-transform: uppercase;
+  em {
+    font-style: normal;
+    color: var(--neon);
+  }
 }
 
 .fn-hero-desc {
-  max-width: 560px;
+  max-width: 540px;
   margin: 16px 0 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: #9fb3a7;
-  text-wrap: pretty;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .64);
 }
 
 .fn-hero-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
-  margin-top: 36px;
-  pointer-events: auto;
-}
-
-.fn-btn-primary,
-.fn-btn-secondary,
-.fn-btn-outline {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  height: 52px;
-  padding: 0 28px;
-  border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-
-  .ms {
-    font-size: 18px;
-  }
-}
-
-.fn-btn-primary {
-  background: var(--lime);
-  color: #03150c;
-  transition: transform .3s cubic-bezier(.2, .8, .2, 1), box-shadow .3s;
-
-  &:hover {
-    box-shadow: 0 16px 38px rgb(25, 212, 90, .4);
-    color: #03150c;
-  }
-}
-
-.fn-btn-secondary {
-  border: 1px solid rgba(255, 255, 255, .22);
-  background: rgba(255, 255, 255, .04);
-  color: var(--text);
-  backdrop-filter: blur(8px);
-  transition: transform .3s cubic-bezier(.2, .8, .2, 1), border-color .3s, background .3s;
-
-  &:hover {
-    border-color: var(--lime);
-    background: rgb(25, 212, 90, .12);
-    color: var(--text);
-  }
-}
-
-.fn-btn-outline {
-  display: inline-flex;
-  height: 44px;
-  padding: 0 22px;
-  margin-top: 22px;
-  border-radius: 6px;
-  border: 1px solid rgb(25, 212, 90, .45);
-  background: rgb(25, 212, 90, .09);
-  color: var(--lime);
-  font-size: 11.5px;
-
-  .ms {
-    font-size: 17px;
-  }
-
-  transition: transform .3s,
-  background .3s;
-
-  &:hover {
-    background: rgb(25, 212, 90, .16);
-    color: var(--lime);
-  }
-}
-
-.fn-hero-corner {
-  position: absolute;
-  bottom: 34px;
-  pointer-events: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(169, 247, 205, .62);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-
-  &--left {
-    left: 34px;
-  }
-
-  &--right {
-    right: 34px;
-    text-align: right;
-  }
-}
-
-.fn-hero-corner-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.fn-hero-corner-dim {
-  color: rgba(169, 247, 205, .34);
+  margin-top: 32px;
 }
 
 .fn-scroll-cue {
   position: absolute;
+  z-index: 2;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: 24px;
-  width: 220px;
+  bottom: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: .26em;
+  gap: 4px;
+  margin-left: -80px;
+  width: 160px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(232, 242, 236, .42);
-  pointer-events: none;
-  text-align: center;
-}
+  color: rgba(255, 255, 255, .45);
 
-.fn-scroll-cue-icon {
-  font-size: 18px;
-  color: var(--lime);
-  animation: fnScrollCue 1.9s ease-in-out infinite;
+  .ms {
+    font-size: 22px;
+    color: var(--neon);
+    animation: fnQuica 1.8s ease-in-out infinite;
+  }
 }

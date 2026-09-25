@@ -1,307 +1,217 @@
 <section class="fn-home">
-  <div class="fn-marquee" data-marquee-wrap>
-    <div data-marquee class="fn-marquee-track">
-      <span>Wonderkid da semana · L. Yamal · OVR 84 / POT 94</span><span>Base atualizada há 2 h</span><span>+312 jogadores adicionados esta semana</span><span>Nova liga: Eredivisie</span><span>Top valorização · J. Musiala +11 M</span>
-      <span>Wonderkid da semana · L. Yamal · OVR 89 / POT 94</span><span>Base atualizada há 2 h</span><span>+312 jogadores adicionados esta semana</span><span>Nova liga: Eredivisie</span><span>Top valorização · J. Musiala +11 M</span>
-    </div>
-  </div>
 
-  <!-- HERO -->
-  <div data-hero class="fn-hero">
-    <div data-parallax="0.4" class="fn-hero-video-layer">
-      <div class="fn-hero-radial"></div>
-      <video data-hero-video autoplay muted loop playsinline preload="auto" [src]="heroVideoSrc" class="fn-hero-video"></video>
-    </div>
-    <div class="fn-hero-multiply"></div>
-    <div class="fn-hero-vignette"></div>
-
-    <div data-parallax="0.14" class="fn-hero-lines">
-      <div class="fn-hero-line fn-hero-line--left"></div>
-      <div class="fn-hero-line fn-hero-line--right"></div>
-      <div class="fn-hero-vlabel fn-hero-vlabel--left"></div>
-      <div class="fn-hero-vlabel fn-hero-vlabel--right"></div>
-    </div>
-
-    <div data-parallax="-0.16" data-hero-fade class="fn-hero-content">
-      <div data-reveal class="fn-pill">
-        <span class="fn-pulse-dot"></span>Comunidade ativa de Modo Carreira
+  <!-- HERO (720 + área da topbar) -->
+  <div class="fn-hero">
+    <!-- camadas: parallax (bg) > aproximação lenta da câmera (cam) > foto com entrada (img) -->
+    <div class="fn-hero-bg" data-parallax="0.35" data-parallax-topo>
+      <div class="fn-hero-cam">
+        <div class="fn-hero-img" [style.background-image]="'url(' + heroImg + ')'"></div>
       </div>
-      <div data-split class="fn-hero-title">FUTNERDS</div>
-      <div data-reveal data-delay="420" class="fn-hero-rule"></div>
-      <div data-reveal data-delay="470" class="fn-hero-subtitle">O universo do Modo Carreira</div>
-      <p data-reveal data-delay="520" class="fn-hero-desc">Dados de jogadores, times e ligas reunidos, comparados e atualizados por quem joga carreira a sério.</p>
-      <div data-reveal data-delay="580" class="fn-hero-actions">
-        <a routerLink="/jogadores" data-magnet class="fn-btn-primary">
-          <span class="ms">person_search</span>Explorar jogadores
-        </a>
-        <a routerLink="/times" data-magnet class="fn-btn-secondary">
-          <span class="ms">shield</span>Explorar times
-        </a>
+    </div>
+    <div class="fn-fog" aria-hidden="true"><i></i><i></i></div>
+    <!-- holofotes, luzes da torcida e faixas de LED (home.ts → palco) -->
+    <canvas class="fn-palco" data-palco aria-hidden="true"></canvas>
+    <div class="fn-hero-light" aria-hidden="true"></div>
+    <div class="fn-hero-shade" aria-hidden="true"></div>
+    <canvas class="fn-particles" data-particles="90" aria-hidden="true"></canvas>
+
+    <div class="fn-wrap fn-hero-inner">
+      <div class="fn-hero-content" data-hero-fade>
+        <div class="fn-pill fn-in" style="--i: 0"><i></i>A comunidade de Modo Carreira mais completa do Brasil</div>
+        <h1 class="fn-hero-title fn-in" style="--i: 1">FUT<span>NERDS</span></h1>
+        <p class="fn-hero-slogan fn-in" style="--i: 2">Seu modo carreira com <em>dados de verdade</em></p>
+        <p class="fn-hero-desc fn-in" style="--i: 3">A base do jogo organizada para planejar contratações e montar um save realista.</p>
+        <div class="fn-hero-actions fn-in" style="--i: 4">
+          <a routerLink="/jogadores" class="fn-btn fn-btn--solid">Explorar Jogadores <span class="ms">arrow_forward</span></a>
+          <a routerLink="/times" class="fn-btn fn-btn--line">Explorar Times <span class="ms">arrow_forward</span></a>
+        </div>
       </div>
     </div>
 
-    <div data-parallax="-0.06" class="fn-hero-corner fn-hero-corner--left">
-      <div class="fn-hero-corner-row"><span class="fn-pulse-dot fn-pulse-dot--sm"></span>Sync ativo · 18.420 fichas</div>
-      <div class="fn-hero-corner-dim">Latência 42 ms · nó SA-1</div>
-    </div>
-    <div data-parallax="-0.06" class="fn-hero-corner fn-hero-corner--right">
-      <div>Temporada 2026/27</div>
-      <div class="fn-hero-corner-dim">63 ligas · 724 clubes</div>
-    </div>
-
-    <div class="fn-scroll-cue">
+    <div class="fn-scroll-cue fn-in" style="--i: 7" aria-hidden="true">
       Role para explorar
-      <span class="ms fn-scroll-cue-icon">keyboard_arrow_down</span>
+      <span class="ms">keyboard_arrow_down</span>
     </div>
   </div>
 
-  <!-- STATS -->
-  <div class="fn-stats">
-    <div data-reveal data-delay="0" class="fn-stat-card">
-      <div class="fn-stat-label"><span class="ms fn-stat-icon">groups</span>Jogadores analisados</div>
-      <div class="fn-stat-value"><span data-count="18420">0</span></div>
-      <div class="fn-stat-track"><div data-bar="88" class="fn-stat-bar"></div></div>
+  <!-- EXPLORE O UNIVERSO -->
+  <div class="fn-wrap fn-explore">
+    <div data-reveal class="fn-head fn-head--center">
+      <div class="fn-eyebrow">Explore</div>
+      <h2 class="fn-title">Explore o universo <span>FutNerds</span></h2>
+      <p class="fn-subtitle">Tudo o que você precisa para planejar e jogar um Modo Carreira realista.</p>
     </div>
-    <div data-reveal data-delay="90" class="fn-stat-card">
-      <div class="fn-stat-label"><span class="ms fn-stat-icon">shield</span>Times monitorados</div>
-      <div class="fn-stat-value"><span data-count="724">0</span></div>
-      <div class="fn-stat-track"><div data-bar="64" class="fn-stat-bar"></div></div>
-    </div>
-    <div data-reveal data-delay="180" class="fn-stat-card">
-      <div class="fn-stat-label"><span class="ms fn-stat-icon">sports_esports</span>Ligas cadastradas</div>
-      <div class="fn-stat-value"><span data-count="63">0</span></div>
-      <div class="fn-stat-track"><div data-bar="42" class="fn-stat-bar"></div></div>
-    </div>
-    <div data-reveal data-delay="270" class="fn-stat-card fn-stat-card--last">
-      <div class="fn-stat-label"><span class="ms fn-stat-icon">forum</span>Comunidade</div>
-      <div class="fn-stat-value"><span data-count="12900" data-format="k">0</span></div>
-      <div class="fn-stat-track"><div data-bar="76" class="fn-stat-bar"></div></div>
-    </div>
-  </div>
 
-  <!-- BENTO -->
-  <div class="fn-section">
-    <div data-reveal class="fn-section-head">
-      <div>
-       <div class="fn-section-title">Explore o universo</div>
+    <div class="fn-cards">
+      <ng-container *ngFor="let c of cards; let i = index">
+        <a *ngIf="c.link; else semLink" [routerLink]="c.link" data-reveal [style.--d]="i * 90" class="fn-card"
+          [class.fn-card--escudos]="c.escudos && colunasEscudos().length">
+          <ng-container *ngTemplateOutlet="cardBody; context: { $implicit: c }"></ng-container>
+        </a>
+        <ng-template #semLink>
+          <div data-reveal [style.--d]="i * 90" class="fn-card">
+            <ng-container *ngTemplateOutlet="cardBody; context: { $implicit: c }"></ng-container>
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+
+    <ng-template #cardBody let-c>
+      <!-- card Ligas: câmera voando pelo globo (home.ts → globoLigas); o selo mostra a liga da parada -->
+      <div *ngIf="c.globo" class="fn-globo" data-globo-ligas aria-hidden="true">
+        <div class="fn-globo-cena"><img [src]="c.img" alt="" /></div>
+        <span class="fn-globo-pino"></span>
+        <div class="fn-globo-liga">
+          <ng-container *ngIf="ligaAtual() as l">
+            <span class="fn-globo-logo"><img [src]="l.logo" alt="" /></span>
+            <span class="fn-globo-txt"><strong>{{ l.nome }}</strong><small>{{ l.pais }}</small></span>
+          </ng-container>
+        </div>
       </div>
-      <a routerLink="/jogadores" class="fn-link-arrow">Ver tudo <span class="ms">arrow_forward</span></a>
-    </div>
-    <div class="fn-bento-grid">
-      <a routerLink="/jogadores" data-reveal data-delay="0" data-tilt class="fn-bento-card fn-bento-card--lg">
-        <div data-zoom data-parallax-in="0.06" class="fn-media-wrap">
-          <img [src]="imgBentoJogadores" alt="Jogadores em campo" class="fn-media-img" />
+      <!-- com vídeo: a capa aparece até ele carregar; home.ts só baixa/toca quando o card está na tela -->
+      <video *ngIf="c.video && !c.globo; else imagem" class="fn-card-img" data-card-video muted loop playsinline preload="none"
+        [poster]="c.video.capa" [attr.aria-label]="c.titulo">
+        <source [src]="c.video.webm" type="video/webm" />
+        <source [src]="c.video.mp4" type="video/mp4" />
+      </video>
+      <ng-template #imagem><img *ngIf="!c.globo" [src]="c.img" [alt]="c.titulo" class="fn-card-img" loading="lazy" /></ng-template>
+      <!-- parede de escudos dos clubes da base: colunas rolando em sentidos alternados (cada
+           coluna tem a lista duas vezes, então deslizar -50% emenda sem salto) -->
+      <div *ngIf="c.escudos && colunasEscudos().length" class="fn-crests" aria-hidden="true">
+        <div *ngFor="let col of colunasEscudos(); let k = index" class="fn-crests-col" [class.is-sobe]="k % 2 === 0"
+          [style.animation-duration.s]="16 + k * 4">
+          <span *ngFor="let e of col" class="fn-crest"><img [src]="e.url" alt="" loading="lazy" /></span>
+          <span *ngFor="let e of col" class="fn-crest"><img [src]="e.url" alt="" loading="lazy" /></span>
         </div>
-        <div class="fn-bento-scrim"></div>
-        <div class="fn-bento-copy">
-          <div class="fn-bento-icon"><span class="ms">person_search</span></div>
-          <div class="fn-bento-title">Jogadores</div>
-          <p class="fn-bento-desc">Atributos, potencial, valor de mercado e evolução por temporada.</p>
-          <div class="fn-bento-cta">Explorar <span class="ms">arrow_forward</span></div>
-        </div>
-        <div class="fn-corner fn-corner--tl"></div>
-        <div class="fn-corner fn-corner--br"></div>
-      </a>
-      <a routerLink="/times" data-reveal data-delay="90" data-tilt class="fn-bento-card fn-bento-card--md">
-        <div data-zoom data-parallax-in="0.06" class="fn-media-wrap">
-          <img [src]="imgBentoTimes" alt="Arquibancada / torcida" class="fn-media-img" />
-        </div>
-        <div class="fn-bento-scrim"></div>
-        <div class="fn-bento-copy">
-          <div class="fn-bento-icon"><span class="ms">shield</span></div>
-          <div class="fn-bento-title">Times</div>
-          <p class="fn-bento-desc">Elenco, orçamento, folha salarial e prestígio de 724 clubes.</p>
-          <div class="fn-bento-cta">Explorar <span class="ms">arrow_forward</span></div>
-        </div>
-      </a>
-      <!-- Troque os 3 blocos .fn-mini-card por estes: -->
-
-<!-- Troque os 3 blocos .fn-mini-card por estes: -->
-
-<a routerLink="/jogadores" [queryParams]="{ idadeMax: 21, potencialMin: 85 }" data-reveal data-delay="170" data-tilt class="fn-mini-card">
-  <div data-parallax-in="0.05" class="fn-media-wrap">
-    <img [src]="imgWonderkidsCard" alt="Wonderkids" class="fn-media-img" />
-  </div>
-  <div class="fn-mini-scrim"></div>
-  <div class="fn-mini-body">
-    <div class="fn-mini-icon-badge"><span class="ms">bolt</span></div>
-    <div class="fn-mini-title">Wonderkids</div>
-    <p class="fn-mini-desc">Sub-21 com potencial 85+, filtrados por posição e preço.</p>
-    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
-  </div>
-</a>
-<!-- TODO: sem tela de comparador de jogadores ainda no projeto — card fica sem navegação -->
-<div data-reveal data-delay="230" data-tilt class="fn-mini-card">
-  <div data-parallax-in="0.05" class="fn-media-wrap">
-    <img [src]="imgComparadorCard" alt="Comparador" class="fn-media-img" />
-  </div>
-  <div class="fn-mini-scrim"></div>
-  <div class="fn-mini-body">
-    <div class="fn-mini-icon-badge"><span class="ms">compare_arrows</span></div>
-    <div class="fn-mini-title">Comparador</div>
-    <p class="fn-mini-desc">Até quatro jogadores frente a frente, atributo por atributo.</p>
-    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
-  </div>
-</div>
-<!-- TODO: sem tela de scouting/olheiros ainda no projeto — card fica sem navegação -->
-<div data-reveal data-delay="290" data-tilt class="fn-mini-card">
-  <div data-parallax-in="0.05" class="fn-media-wrap">
-    <img [src]="imgScoutingCard" alt="Scouting" class="fn-media-img" />
-  </div>
-  <div class="fn-mini-scrim"></div>
-  <div class="fn-mini-body">
-    <div class="fn-mini-icon-badge"><span class="ms">travel_explore</span></div>
-    <div class="fn-mini-title">Scouting</div>
-    <p class="fn-mini-desc">Rede de olheiros por região e custo estimado de relatório.</p>
-    <div class="fn-mini-cta">Explorar <span class="ms">arrow_forward</span></div>
-  </div>
-</div>
+      </div>
+      <div class="fn-card-body">
+        <div class="fn-card-title">{{ c.titulo }}</div>
+        <p class="fn-card-desc">{{ c.desc }}</p>
+        <span class="fn-card-link">{{ c.link ? 'Explorar' : 'Em breve' }} <span class="ms">arrow_forward</span></span>
+      </div>
+    </ng-template>
   </div>
 
-  <!-- ATLAS -->
-  <div class="fn-section">
-    <div data-reveal class="fn-section-head fn-section-head--single">
-      <div class="fn-section-title">Futebol do mundo</div>
-    </div>
-    <div class="fn-atlas-grid">
-      <div data-reveal data-globe-host class="fn-atlas-globe-card">
-        <div data-stars class="fn-stars"></div>
-        <div class="fn-globe-el">
-          <app-atlas-globe (countrySelect)="onCountrySelect($event)"></app-atlas-globe>
+  <!-- JOGADOR EM DESTAQUE -->
+  <div class="fn-wrap fn-wk-wrap">
+    <div data-reveal class="fn-wk">
+      <div class="fn-wk-lines" aria-hidden="true"></div>
+      <div class="fn-wk-light" aria-hidden="true"></div>
+      <div class="fn-wk-aim" aria-hidden="true"></div>
+      <canvas class="fn-particles" data-particles="40" aria-hidden="true"></canvas>
+
+      <div class="fn-wk-info">
+        <div class="fn-wk-name">{{ wonderkid().nome }}</div>
+        <div class="fn-wk-meta">
+          <img [src]="'https://flagcdn.com/w40/' + wonderkid().pais + '.png'" alt="" class="fn-flag" />
+          <span>{{ wonderkid().clube }}</span><i></i>
+          <span>{{ wonderkid().nacionalidade }}</span><i></i>
+          <span>{{ wonderkid().posicao }}</span><i></i>
+          <span>{{ wonderkid().idade }} anos</span>
         </div>
-
-        <div class="fn-corner fn-corner--tl fn-corner--z"></div>
-        <div class="fn-corner fn-corner--tr fn-corner--z"></div>
-        <div class="fn-corner fn-corner--bl fn-corner--z"></div>
-        <div class="fn-corner fn-corner--br fn-corner--z"></div>
-
-        <div class="fn-atlas-topbar">
-          <span>Rede global de dados</span>
-          <span>Arraste para girar</span>
-        </div>
-
-        <div class="fn-atlas-footer">
+        <div class="fn-wk-stats">
           <div>
-            <div class="fn-atlas-footer-label">Nação selecionada</div>
-            <div class="fn-atlas-nation">{{ paisSelecionado.nome }}</div>
-            <div class="fn-atlas-league">{{ paisSelecionado.top }}</div>
+            <div class="fn-wk-label">Overall</div>
+            <div class="fn-wk-value">{{ wonderkid().ovr }}</div>
           </div>
-          <div class="fn-atlas-metrics">
-            <div class="fn-atlas-metric">
-              <div class="fn-atlas-metric-label">Ligas</div>
-              <div class="fn-atlas-metric-value">{{ paisSelecionado.ligas }}</div>
-            </div>
-            <div class="fn-atlas-metric-divider"></div>
-            <div class="fn-atlas-metric">
-              <div class="fn-atlas-metric-label">Jogadores</div>
-              <div class="fn-atlas-metric-value fn-atlas-metric-value--light">{{ paisSelecionado.jogadores.toLocaleString('pt-BR') }}</div>
-            </div>
+          <div>
+            <div class="fn-wk-label">Potencial</div>
+            <div class="fn-wk-value fn-wk-value--neon">{{ wonderkid().pot ?? '—' }}</div>
+          </div>
+          <div>
+            <div class="fn-wk-label">Valor de mercado</div>
+            <div class="fn-wk-value">{{ wonderkid().valor ?? '—' }}</div>
           </div>
         </div>
+        <a [routerLink]="wonderkid().id ? ['/jogadores', wonderkid().id] : ['/jogadores']" class="fn-btn fn-btn--solid">
+          Ver ficha completa <span class="ms">arrow_forward</span>
+        </a>
       </div>
-      <div data-reveal data-delay="120" class="fn-league-panel">
-        <div class="fn-league-panel-title">Ligas por volume de jogadores</div>
-        <div class="fn-league-list">
-          <ng-container *ngFor="let l of ligas">
-            <div data-stagger (click)="irParaTimes(l)" class="fn-league-row">
-              <img class="fn-league-badge" [src]="l.escudo" [alt]="l.nome + ' escudo'" loading="lazy" />
-              <div class="fn-league-info">
-                <div class="fn-league-nome">{{ l.nome }}</div>
-                <div class="fn-league-pais">{{ l.pais }}</div>
-              </div>
-              <div class="fn-league-count">{{ l.jogadores }}</div>
-            </div>
-          </ng-container>
-        </div>
-        <a routerLink="/ligas" class="fn-link-arrow fn-league-panel-cta">Ver todas as ligas <span class="ms">arrow_forward</span></a>
+
+      <img [src]="wonderkidImg" [alt]="wonderkid().nome" class="fn-wk-photo" />
+
+      <div class="fn-wk-radar">
+        <svg viewBox="0 0 300 300" class="fn-radar" role="group" [attr.aria-label]="'Atributos de ' + wonderkid().nome">
+          <polygon *ngFor="let g of radarGrade" [attr.points]="g" class="fn-radar-grid" />
+          <polygon [attr.points]="radarForma()" class="fn-radar-shape" />
+          <!-- cada atributo é um grupo: passar o mouse (ou focar com Tab) destaca eixo, ponto e rótulo -->
+          <g *ngFor="let r of radarRotulos()" class="fn-radar-attr" tabindex="0" [attr.aria-label]="r.sigla + ' ' + r.valor">
+            <line x1="150" y1="150" [attr.x2]="r.ex" [attr.y2]="r.ey" class="fn-radar-axis" />
+            <circle [attr.cx]="r.x" [attr.cy]="r.y + 4" r="26" class="fn-radar-hit" />
+            <circle [attr.cx]="r.px" [attr.cy]="r.py" r="14" class="fn-radar-hit" />
+            <circle [attr.cx]="r.px" [attr.cy]="r.py" r="3.5" class="fn-radar-dot" />
+            <text [attr.x]="r.x" [attr.y]="r.y - 5" text-anchor="middle" class="fn-radar-sigla">{{ r.sigla }}</text>
+            <text [attr.x]="r.x" [attr.y]="r.y + 14" text-anchor="middle" class="fn-radar-num">{{ r.valor }}</text>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
 
-  <!-- WONDERKID -->
-  <div class="fn-section">
-    <div data-reveal class="fn-section-head--single">
-      <div class="fn-section-title">Wonderkid da semana</div>
-    </div>
-    <div data-reveal data-delay="80" class="fn-spotlight">
-      <div class="fn-spotlight-sweep"><div class="fn-spotlight-sweep-bar"></div></div>
-      <div class="fn-spotlight-media">
-        <div data-zoom data-parallax-in="0.05" class="fn-media-wrap">
-          <img [src]="imgWonderkid" alt="Retrato do jogador" class="fn-media-img" />
+  <!-- FUTEBOL DO MUNDO -->
+  <div class="fn-world">
+    <div class="fn-wrap fn-world-grid">
+      <div class="fn-world-globe">
+        <div class="fn-world-glow" aria-hidden="true"></div>
+        <div class="fn-world-orbit" aria-hidden="true"></div>
+        <app-atlas-globe (countrySelect)="onCountrySelect($event)"></app-atlas-globe>
+        <div class="fn-callout">
+          <div class="fn-callout-name">{{ paisSelecionado().nome }}</div>
+          <div class="fn-callout-info">{{ paisSelecionado().ligas }} ligas · {{ paisSelecionado().jogadores.toLocaleString('pt-BR') }} jogadores</div>
+          <a routerLink="/ligas" class="fn-callout-link">Ver ligas no mapa <span class="ms">zoom_in</span></a>
         </div>
       </div>
-      <div class="fn-spotlight-body">
-        <div class="fn-spotlight-updated">
-          <span class="fn-pulse-dot"></span>Atualizado há 2 h
+
+      <div data-reveal class="fn-world-copy">
+        <div class="fn-tag">Ligas e seleções</div>
+        <h2 class="fn-world-title">Explore o futebol do mundo</h2>
+        <p class="fn-world-desc">Gire o globo, escolha um país e aproxime até o mapa de satélite com as ligas e a localização de cada clube.</p>
+        <div class="fn-chips">
+          <button *ngFor="let p of paises" type="button" class="fn-chip"
+            [class.is-on]="p.id === paisSelecionado().id" [attr.aria-pressed]="p.id === paisSelecionado().id"
+            (click)="selecionarPais(p.id)">
+            <img [src]="'https://flagcdn.com/w40/' + p.bandeira + '.png'" alt="" class="fn-flag" />{{ p.nome }}
+          </button>
+          <a routerLink="/nacoes" class="fn-chip fn-chip--all"><span class="ms">public</span>Ver todos os países <span class="ms">arrow_forward</span></a>
         </div>
-        <div class="fn-spotlight-heading">
-          <div class="fn-spotlight-name">Lamine Yamal</div>
-          <div class="fn-spotlight-meta">PD · 18 anos · FC Barcelona</div>
-        </div>
-        <div class="fn-spotlight-stats">
-          <div class="fn-attr-box">
-            <div class="fn-attr-label">Overall</div>
-            <div class="fn-attr-value"><span data-count="89">0</span></div>
-          </div>
-          <div class="fn-attr-box fn-attr-box--highlight">
-            <div class="fn-attr-label">Potencial</div>
-            <div class="fn-attr-value fn-attr-value--accent"><span data-count="94">0</span></div>
-          </div>
-          <div class="fn-attr-box">
-            <div class="fn-attr-label">Valor</div>
-            <div class="fn-attr-value">€138M</div>
-          </div>
-        </div>
-        <div class="fn-attributes-grid">
-          <ng-container *ngFor="let a of atributos">
-            <div>
-              <div class="fn-attribute-row"><span>{{ a.nome }}</span><span class="fn-attribute-value">{{ a.valor }}</span></div>
-              <div class="fn-attribute-track"><div [attr.data-bar]="a.valor" class="fn-attribute-bar"></div></div>
-            </div>
-          </ng-container>
-        </div>
-        <!-- TODO: id real quando os dados pararem de ser mockados — hoje o wonderkid em destaque
-             (Lamine Yamal) não tem um Jogador/id real por trás, então aponta pra listagem geral -->
-        <a routerLink="/jogadores" data-magnet class="fn-btn-outline">Ver ficha completa <span class="ms">arrow_forward</span></a>
+        <p class="fn-world-hint"><span class="ms">touch_app</span>Arraste o globo para girar e clique em um país para ver os detalhes.</p>
       </div>
     </div>
   </div>
 
   <!-- DESAFIOS -->
-  <div class="fn-section">
-    <div data-reveal class="fn-section-head--single">
-      <div class="fn-section-title">Escolha seu desafio</div>
+  <div class="fn-wrap fn-desafios">
+    <div data-reveal class="fn-head">
+      <div class="fn-eyebrow">Comunidade</div>
+      <h2 class="fn-title">Desafios do <span>FutNerds</span></h2>
+      <p class="fn-subtitle">Regras criadas pela comunidade para deixar o modo carreira mais difícil e mais realista.</p>
     </div>
-    <!-- TODO: sem tela de modos/desafios ainda no projeto — cards ficam sem navegação -->
-    <div class="fn-desafios-grid">
-      <ng-container *ngFor="let d of desafios">
-        <div data-reveal [attr.data-delay]="d.delay" class="fn-desafio-card">
-          <div data-zoom data-parallax-in="0.05" class="fn-media-wrap">
-            <img [src]="d.img" [alt]="d.foto" class="fn-media-img" />
-          </div>
-          <div class="fn-desafio-scrim"></div>
-          <div class="fn-desafio-num">{{ d.num }}</div>
-          <div class="fn-desafio-copy">
-            <span class="ms fn-desafio-icon">{{ d.icone }}</span>
-            <div class="fn-desafio-title">{{ d.titulo }}</div>
-            <p class="fn-desafio-desc">{{ d.desc }}</p>
-          </div>
+    <!-- TODO: sem tela de desafios ainda no projeto — cards ficam sem navegação -->
+    <div class="fn-des-grid">
+      <div *ngFor="let d of desafios; let i = index" data-reveal [style.--d]="i * 90" class="fn-des">
+        <div class="fn-des-media"><img [src]="d.img" [alt]="d.titulo" loading="lazy" /></div>
+        <div class="fn-des-body">
+          <div class="fn-des-title">{{ d.titulo }}</div>
+          <p class="fn-des-desc">{{ d.desc }}</p>
+          <span class="fn-des-btn">Em breve <span class="ms">schedule</span></span>
         </div>
-      </ng-container>
-    </div>
-  </div>
-
-  <!-- CTA + FOOTER -->
-  <div class="fn-section">
-    <div data-reveal class="fn-cta">
-      <div class="fn-cta-sweep"><div class="fn-cta-sweep-bar"></div></div>
-      <div class="fn-cta-title">Entre para a comunidade</div>
-      <p class="fn-cta-desc">Salve buscas, monte listas de alvos e receba o boletim de wonderkids toda semana.</p>
-      <div class="fn-cta-form">
-        <div class="fn-email-input">seu&#64;email.com</div>
-        <a routerLink="/registro" data-magnet class="fn-btn-primary">Criar conta</a>
       </div>
     </div>
   </div>
+
+  <!-- CTA FINAL -->
+  <div class="fn-cta">
+    <div class="fn-cta-bg" data-parallax="0.18">
+      <div class="fn-cta-img" [style.background-image]="'url(' + ctaImg + ')'"></div>
+    </div>
+    <div class="fn-cta-shade" aria-hidden="true"></div>
+    <canvas class="fn-particles" data-particles="40" aria-hidden="true"></canvas>
+    <div class="fn-wrap fn-cta-inner">
+      <div data-reveal>
+        <h2 class="fn-cta-title">Sua próxima carreira<br /><span>começa aqui</span></h2>
+        <p class="fn-cta-desc">Crie sua conta, escolha um clube e leve seu Modo Carreira para o próximo nível.</p>
+      </div>
+      <a data-reveal [style.--d]="120" routerLink="/cadastro" class="fn-btn fn-btn--solid">Começar agora <span class="ms">arrow_forward</span></a>
+    </div>
   </div>
 </section>

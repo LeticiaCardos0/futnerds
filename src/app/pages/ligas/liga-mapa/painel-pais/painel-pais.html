@@ -29,7 +29,7 @@
         class="ml-chip"
         [attr.aria-pressed]="c.id === selecionadoId()"
         (click)="clubeSelecionado.emit(c)">
-        <img [src]="c.escudoUrl" alt="" (error)="$any($event.target).style.visibility = 'hidden'" />
+        <img [src]="c.escudoMiniUrl" alt="" (error)="$any($event.target).style.visibility = 'hidden'" />
         <span>{{ c.nome }}</span>
       </button>
     }

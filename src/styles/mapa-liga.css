@@ -75,18 +75,21 @@
   text-transform: uppercase;
 }
 
-/* cidade SEM time: tom creme de atlas, serifada e em itálico */
+/* cidade SEM time: tom creme de atlas, serifada e em itálico.
+   Peso 500 (o itálico 500 já vem no link do Google Fonts, src/index.html) e
+   halo em camadas: o contorno fechado de 1px separa a letra da textura do
+   satélite, que é o que deixava o nome ilegível; o difuso dá o respiro. */
 .ml-lbl.ml-minor span {
   font-family: 'Source Serif 4', serif;
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: rgba(242, 234, 214, 0.86);
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.65);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(246, 239, 222, 0.95);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.95), 0 0 2px rgba(0, 0, 0, 0.9), 0 0 6px rgba(0, 0, 0, 0.7);
 }
-.ml-lbl.ml-minor.ml-r1 span { font-size: 13px; }                                /* médias */
-.ml-lbl.ml-minor.ml-r2 span { font-size: 12px; color: rgba(242, 234, 214, 0.74); } /* menores, só com zoom */
-.ml-lbl.ml-minor.ml-big span { font-size: 14px; color: rgba(246, 239, 220, 0.94); } /* grandes */
+.ml-lbl.ml-minor.ml-r1 span { font-size: 14px; }                                /* médias */
+.ml-lbl.ml-minor.ml-r2 span { font-size: 13px; color: rgba(242, 234, 214, 0.86); } /* menores, só com zoom */
+.ml-lbl.ml-minor.ml-big span { font-size: 15px; color: rgba(250, 244, 228, 0.98); } /* grandes */
 
 .ml-lbl .ml-cdot {
   position: absolute;

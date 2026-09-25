@@ -13,6 +13,8 @@ export interface CidadeSemTime {
   lng: number;
   /** 1 aparece desde o enquadramento inicial; 2 só com mais zoom. */
   rank: 1 | 2;
+  /** Posta pelo LigaMapaService nas cidades de `cidadesVizinhas`. */
+  vizinha?: boolean;
 }
 
 export interface ConfigPaisLiga {
@@ -50,6 +52,14 @@ export interface ConfigPaisLiga {
   clubesUrl: string;
 
   cidadesSemTime: CidadeSemTime[];
+
+  /**
+   * Cidades dos países vizinhos que aparecem em volta do país, só como
+   * referência geográfica. Mesmo estilo das cidades sem time; entram depois
+   * delas e perdem as disputas de espaço (ver LigaMapaService.cruzar).
+   * Coordenadas conferidas no OpenStreetMap.
+   */
+  cidadesVizinhas: CidadeSemTime[];
 }
 
 /** A partir deste zoom aparecem as cidades de rank 2. */
@@ -166,6 +176,38 @@ export const CONFIG_INGLATERRA: ConfigPaisLiga = {
   { nome: 'Chester', lat: 53.1934, lng: -2.8931, rank: 2 },
   { nome: 'Lancaster', lat: 54.0466, lng: -2.8007, rank: 2 },
   { nome: 'Truro', lat: 50.2632, lng: -5.0510, rank: 2 },  ],
+
+  // Irlanda, Escócia, País de Gales, norte da França, Bélgica e Holanda.
+  cidadesVizinhas: [
+  { nome: 'Dublin', lat: 53.3498, lng: -6.2603, rank: 1 },
+  { nome: 'Belfast', lat: 54.5973, lng: -5.9301, rank: 1 },
+  { nome: 'Glasgow', lat: 55.8642, lng: -4.2518, rank: 1 },
+  { nome: 'Edimburgo', lat: 55.9533, lng: -3.1883, rank: 1 },
+  { nome: 'Cardiff', lat: 51.4816, lng: -3.1791, rank: 1 },
+  { nome: 'Swansea', lat: 51.6214, lng: -3.9436, rank: 1 },
+  { nome: 'Paris', lat: 48.8566, lng: 2.3522, rank: 1 },
+  { nome: 'Lille', lat: 50.6292, lng: 3.0573, rank: 1 },
+  { nome: 'Calais', lat: 50.9513, lng: 1.8587, rank: 1 },
+  { nome: 'Le Havre', lat: 49.4944, lng: 0.1079, rank: 1 },
+  { nome: 'Bruxelas', lat: 50.8503, lng: 4.3517, rank: 1 },
+  { nome: 'Antuérpia', lat: 51.2194, lng: 4.4025, rank: 1 },
+  { nome: 'Amsterdã', lat: 52.3676, lng: 4.9041, rank: 1 },
+  { nome: 'Roterdã', lat: 51.9244, lng: 4.4777, rank: 1 },
+  { nome: 'Douglas', lat: 54.1523, lng: -4.4861, rank: 2 },
+  { nome: 'Wrexham', lat: 53.0466, lng: -2.9925, rank: 2 },
+  { nome: 'Newport', lat: 51.5842, lng: -2.9977, rank: 2 },
+  { nome: 'Boulogne-sur-Mer', lat: 50.7264, lng: 1.6147, rank: 2 },
+  { nome: 'Dunquerque', lat: 51.0343, lng: 2.3768, rank: 2 },
+  { nome: 'Rouen', lat: 49.4432, lng: 1.0999, rank: 2 },
+  { nome: 'Caen', lat: 49.1829, lng: -0.3707, rank: 2 },
+  { nome: 'Cherbourg', lat: 49.6337, lng: -1.6222, rank: 2 },
+  { nome: 'Amiens', lat: 49.8941, lng: 2.2958, rank: 2 },
+  { nome: 'Bruges', lat: 51.2093, lng: 3.2247, rank: 2 },
+  { nome: 'Gante', lat: 51.0543, lng: 3.7174, rank: 2 },
+  { nome: 'Haia', lat: 52.0705, lng: 4.3007, rank: 2 },
+  { nome: 'Utrecht', lat: 52.0907, lng: 5.1214, rank: 2 },
+  { nome: 'Eindhoven', lat: 51.4416, lng: 5.4697, rank: 2 },
+  ],
 };
 
 export const CONFIG_ESPANHA: ConfigPaisLiga = {
@@ -243,6 +285,27 @@ export const CONFIG_ESPANHA: ConfigPaisLiga = {
   { nome: 'Vitoria', lat: 42.8467, lng: -2.6731, rank: 1 },
   { nome: 'Zaragoza', lat: 41.6500, lng: -0.8833, rank: 1 },
   ],
+
+  // Portugal, sul da França, Andorra, Gibraltar e o norte da África.
+  cidadesVizinhas: [
+  { nome: 'Lisboa', lat: 38.7223, lng: -9.1393, rank: 1 },
+  { nome: 'Porto', lat: 41.1579, lng: -8.6291, rank: 1 },
+  { nome: 'Bordeaux', lat: 44.8378, lng: -0.5792, rank: 1 },
+  { nome: 'Toulouse', lat: 43.6047, lng: 1.4442, rank: 1 },
+  { nome: 'Marselha', lat: 43.2965, lng: 5.3698, rank: 1 },
+  { nome: 'Tânger', lat: 35.7595, lng: -5.8340, rank: 1 },
+  { nome: 'Orã', lat: 35.6971, lng: -0.6308, rank: 1 },
+  { nome: 'Argel', lat: 36.7538, lng: 3.0588, rank: 1 },
+  { nome: 'Braga', lat: 41.5454, lng: -8.4265, rank: 2 },
+  { nome: 'Coimbra', lat: 40.2033, lng: -8.4103, rank: 2 },
+  { nome: 'Faro', lat: 37.0194, lng: -7.9304, rank: 2 },
+  { nome: 'Montpellier', lat: 43.6108, lng: 3.8767, rank: 2 },
+  { nome: 'Perpignan', lat: 42.6887, lng: 2.8948, rank: 2 },
+  { nome: 'Bayonne', lat: 43.4929, lng: -1.4748, rank: 2 },
+  { nome: 'Andorra la Vella', lat: 42.5063, lng: 1.5218, rank: 2 },
+  { nome: 'Gibraltar', lat: 36.1408, lng: -5.3536, rank: 2 },
+  { nome: 'Tetuão', lat: 35.5889, lng: -5.3626, rank: 2 },
+  ],
 };
 
 export const CONFIG_ALEMANHA: ConfigPaisLiga = {
@@ -315,6 +378,44 @@ export const CONFIG_ALEMANHA: ConfigPaisLiga = {
   { nome: 'Saarbrücken', lat: 49.2333, lng: 7.0000, rank: 1 },
   { nome: 'Wiesbaden', lat: 50.0825, lng: 8.2400, rank: 1 },
   { nome: 'Wuppertal', lat: 51.2667, lng: 7.1833, rank: 1 },
+  ],
+
+  // Os nove vizinhos: Holanda, Bélgica, Luxemburgo, França, Suíça, Áustria,
+  // Tchéquia, Polônia e Dinamarca.
+  cidadesVizinhas: [
+  { nome: 'Amsterdã', lat: 52.3676, lng: 4.9041, rank: 1 },
+  { nome: 'Roterdã', lat: 51.9244, lng: 4.4777, rank: 1 },
+  { nome: 'Bruxelas', lat: 50.8503, lng: 4.3517, rank: 1 },
+  { nome: 'Luxemburgo', lat: 49.6116, lng: 6.1319, rank: 1 },
+  { nome: 'Paris', lat: 48.8566, lng: 2.3522, rank: 1 },
+  { nome: 'Estrasburgo', lat: 48.5734, lng: 7.7521, rank: 1 },
+  { nome: 'Zurique', lat: 47.3769, lng: 8.5417, rank: 1 },
+  { nome: 'Berna', lat: 46.9480, lng: 7.4474, rank: 1 },
+  { nome: 'Viena', lat: 48.2082, lng: 16.3738, rank: 1 },
+  { nome: 'Praga', lat: 50.0755, lng: 14.4378, rank: 1 },
+  { nome: 'Varsóvia', lat: 52.2297, lng: 21.0122, rank: 1 },
+  { nome: 'Szczecin', lat: 53.4285, lng: 14.5528, rank: 1 },
+  { nome: 'Copenhague', lat: 55.6761, lng: 12.5683, rank: 1 },
+  { nome: 'Groningen', lat: 53.2194, lng: 6.5665, rank: 2 },
+  { nome: 'Enschede', lat: 52.2215, lng: 6.8937, rank: 2 },
+  { nome: 'Arnhem', lat: 51.9851, lng: 5.8987, rank: 2 },
+  { nome: 'Utrecht', lat: 52.0907, lng: 5.1214, rank: 2 },
+  { nome: 'Eindhoven', lat: 51.4416, lng: 5.4697, rank: 2 },
+  { nome: 'Maastricht', lat: 50.8514, lng: 5.6910, rank: 2 },
+  { nome: 'Antuérpia', lat: 51.2194, lng: 4.4025, rank: 2 },
+  { nome: 'Liège', lat: 50.6326, lng: 5.5797, rank: 2 },
+  { nome: 'Metz', lat: 49.1193, lng: 6.1757, rank: 2 },
+  { nome: 'Nancy', lat: 48.6921, lng: 6.1844, rank: 2 },
+  { nome: 'Mulhouse', lat: 47.7508, lng: 7.3359, rank: 2 },
+  { nome: 'Basileia', lat: 47.5596, lng: 7.5886, rank: 2 },
+  { nome: 'Salzburgo', lat: 47.8095, lng: 13.0550, rank: 2 },
+  { nome: 'Innsbruck', lat: 47.2692, lng: 11.4041, rank: 2 },
+  { nome: 'Linz', lat: 48.3069, lng: 14.2858, rank: 2 },
+  { nome: 'Bratislava', lat: 48.1486, lng: 17.1077, rank: 2 },
+  { nome: 'Pilsen', lat: 49.7384, lng: 13.3736, rank: 2 },
+  { nome: 'Brno', lat: 49.1951, lng: 16.6068, rank: 2 },
+  { nome: 'Poznań', lat: 52.4064, lng: 16.9252, rank: 2 },
+  { nome: 'Wrocław', lat: 51.1079, lng: 17.0385, rank: 2 },
   ],
 };
 

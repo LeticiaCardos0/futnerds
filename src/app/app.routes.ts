@@ -28,10 +28,13 @@ export const routes: Routes = [
   // loadComponent (e não `component`) de propósito: é a única rota que puxa o
   // maplibre-gl, e carregar sob demanda evita ~800 kB no bundle inicial de
   // todas as outras telas. É o único ponto do projeto com lazy loading.
+  // semFooter: o mapa ocupa a tela inteira (mapa e painéis são `fixed`), e o
+  // footer do shell só servia para criar rolagem e cobrir o mapa. Ver App.
   {
     path: 'ligas/:ligaId',
     loadComponent: () =>
       import('./pages/ligas/liga-mapa/liga-mapa').then((m) => m.LigaMapaPageComponent),
+    data: { semFooter: true },
   },
   { path: 'elenco', component: ElencoComponent },
   { path: '**', redirectTo: '' }

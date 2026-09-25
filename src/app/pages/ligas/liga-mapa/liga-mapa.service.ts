@@ -49,6 +49,8 @@ export interface ClubeNoMapa {
   id: number;
   nome: string;
   escudoUrl: string;
+  /** 100x100, para o pino e a lista do painel. Ver escudoMiniatura. */
+  escudoMiniUrl: string;
   cidade: string;
   estadio: string;
   imagemEstadio?: string;
@@ -73,8 +75,8 @@ export interface DadosMapaLiga {
   /** Cidades com pelo menos um clube da liga. */
   cidades: CidadeMapa[];
   /**
-   * Cidades sem clube, já filtradas: sai da lista da config qualquer uma que
-   * tenha clube NESTA liga. Filtrar em tempo de execução, e não apagar da
+   * Cidades sem clube (do país e dos vizinhos), já filtradas: sai da lista da
+   * config qualquer uma que tenha clube NESTA liga. Filtrar em tempo de execução, e não apagar da
    * config, faz o mapa se ajustar sozinho quando os times mudam de divisão.
    */
   cidadesSemTime: CidadeSemTime[];
@@ -97,6 +99,16 @@ function normalizar(nome: string): string {
     .replace(/\b(f\.?c\.?|a\.?f\.?c\.?|football club)\b/g, '')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
+}
+
+/**
+ * Versão 100x100 (~13 kB) do escudo, para onde ele aparece pequeno: o pino do
+ * mapa (38px) e a lista do painel. O original tem 512x512 e ~128 kB — nos 20
+ * clubes eram ~2,5 MB baixados de uma vez só para desenhar bolinhas. Só o
+ * TheSportsDB tem o sufixo /tiny; qualquer outro endereço segue como veio.
+ */
+function escudoMiniatura(url: string): string {
+  return url?.startsWith('https://r2.thesportsdb.com/') ? `${url}/tiny` : url;
 }
 
 /** Distancia aproximada em km (haversine). */
@@ -187,6 +199,7 @@ export class LigaMapaService {
         id: time.id,
         nome: time.nome,
         escudoUrl: time.escudoUrl,
+        escudoMiniUrl: escudoMiniatura(time.escudoUrl),
         cidade: loc.cidade,
         estadio: loc.estadio,
         imagemEstadio: loc.imagemEstadio,
@@ -232,9 +245,15 @@ export class LigaMapaService {
     // exibição em português ("Madri", "Berlim"), então a mesma cidade apareceria
     // duas vezes — uma em Rajdhani caixa alta e outra em serifada itálica, a
     // poucos pixels de distância.
+    //
+    // As vizinhas vão DEPOIS e passam pelo mesmo filtro. Depois porque a
+    // ordenação em criarRotulos é estável: numa disputa de espaço, a cidade do
+    // país da liga vence. Pelo filtro porque clube galês joga no sistema inglês
+    // — se Cardiff, Swansea ou Wrexham subir, o nome não aparece duas vezes.
     const nomesComClube = new Set([...comClube].map(normalizar));
     const pontosComClube = cidades;
-    const cidadesSemTime = config.cidadesSemTime.filter((c) => {
+    const vizinhas = config.cidadesVizinhas.map((c) => ({ ...c, vizinha: true }));
+    const cidadesSemTime = [...config.cidadesSemTime, ...vizinhas].filter((c) => {
       if (nomesComClube.has(normalizar(c.nome))) return false;
       return !pontosComClube.some((p) => distanciaKm(p, c) < KM_MESMA_CIDADE);
     });

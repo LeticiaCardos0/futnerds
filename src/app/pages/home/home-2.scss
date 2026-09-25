@@ -1,545 +1,569 @@
 /* ============================================================================
-   Home — parte 2 de 3.
-
-   O arquivo foi partido para caber no budget `anyComponentStyle` (16 kB de
-   erro, 10 kB de aviso): inteiro, ele compilava 22,43 kB e QUEBRAVA o build.
-   O budget e avaliado por ARQUIVO, entao tres partes passam.
-
-   A ORDEM em styleUrls (home.ts) importa: o Angular concatena na ordem do
-   array, e a cascata depende disso. Nao reordene.
+   Home — parte 2 de 3 (cabeçalhos, cards do universo, jogador em destaque).
+   Ver o cabecalho de home.scss sobre a divisao e a ordem dos arquivos.
    ============================================================================ */
 
-/* ---------- stats ---------- */
-.fn-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgb(25, 212, 90, .18);
-  border-bottom: 1px solid rgb(25, 212, 90, .18);
-  background: linear-gradient(180deg, rgb(25, 212, 90, .05), rgb(25, 212, 90, 0));
-}
-
-.fn-stat-card {
-  padding: 28px 30px;
-  border-right: 1px solid rgba(255, 255, 255, .06);
-  transition: background .35s;
-
-  &--last {
-    border-right: none;
+.fn-head {
+  &--center {
+    text-align: center;
   }
-
-  &:hover {
-    background: rgb(25, 212, 90, .05);
-  }
-}
-
-.fn-stat-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #7b8f84;
-}
-
-.fn-stat-icon {
-  font-size: 15px;
-  color: var(--lime);
-}
-
-.fn-stat-value {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 60px;
-  font-weight: 800;
-  line-height: 1;
-  margin-top: 8px;
-}
-
-.fn-stat-track {
-  height: 3px;
-  background: rgba(255, 255, 255, .08);
-  margin-top: 12px;
-}
-
-.fn-stat-bar {
-  height: 3px;
-  width: 0;
-  background: var(--lime);
-  transition: width 1.3s cubic-bezier(.2, .8, .2, 1);
-}
-
-/* ---------- generic section ---------- */
-.fn-section {
-  padding: 88px 34px 0;
-
-  &:first-of-type {
-    padding-top: 80px;
-  }
-}
-
-.fn-section-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 26px;
-}
-
-.fn-section-head--single {
-  margin-bottom: 26px;
 }
 
 .fn-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .24em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .3em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: var(--neon);
 }
 
-.fn-section-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 58px;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-top: 8px;
+.fn-title {
+  margin: 12px 0 0;
+  font: 700 38px / 1.1 var(--titulo);
+  letter-spacing: -.02em;
+
+  span { color: var(--neon); }
 }
 
-.fn-link-arrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  transition: gap .3s;
-
-  .ms {
-    font-size: 16px;
-  }
-
-  &:hover {
-    gap: 13px;
-  }
+.fn-subtitle {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--cinza);
 }
 
-/* ---------- bento ---------- */
-.fn-bento-grid {
+.fn-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--verde);
+  border-radius: 4px;
+  background: rgba(22, 196, 73, .1);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--neon);
+}
+
+.fn-flag {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* ---------- explore o universo (650) ---------- */
+.fn-explore {
+  padding-top: 68px;
+  padding-bottom: 40px;
+}
+
+.fn-cards {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 170px;
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
 }
 
-.fn-bento-card {
-  display: block;
+.fn-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 420px;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background: var(--painel);
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .09);
-  cursor: pointer;
-  transform-style: preserve-3d;
-  color: inherit;
+  isolation: isolate;
+  transition: transform .45s var(--ease), border-color .3s, box-shadow .45s;
 
-  &--lg {
-    grid-column: span 7;
-    grid-row: span 2;
-  }
-
-  &--md {
-    grid-column: span 5;
-    grid-row: span 2;
-  }
-
-  &:hover {
-    border-color: rgb(25, 212, 90, .5);
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(5, 8, 7, 0) 0%, rgba(5, 8, 7, .15) 38%, rgba(5, 8, 7, .92) 72%, var(--preto) 100%);
   }
 }
 
-.fn-media-wrap {
-  position: absolute;
-  margin-bottom: 50px;
-  inset: -8% 0;
-  transition: transform .9s cubic-bezier(.2, .8, .2, 1);
-}
-
-.fn-media-img {
+.fn-card-img {
   position: absolute;
   inset: 0;
+  z-index: -2;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform .9s var(--ease);
 }
 
-.fn-bento-scrim {
+video.fn-card-img {
+  object-position: 50% 15%;
+}
+
+/* ---------- globo das ligas (card Ligas) ---------- */
+@keyframes fnPulsoPino {
+  from { transform: scale(1); opacity: .7; }
+  to { transform: scale(3.2); opacity: 0; }
+}
+
+.fn-globo {
   position: absolute;
   inset: 0;
-  background: linear-gradient(200deg, rgba(3, 9, 6, .12), rgba(3, 9, 6, .92) 72%);
-  pointer-events: none;
-}
-
-.fn-bento-copy {
-  position: absolute;
-  left: 26px;
-  bottom: 24px;
-  right: 26px;
-  pointer-events: none;
-}
-
-.fn-bento-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgb(25, 212, 90, .5);
-  background: rgb(25, 212, 90, .12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-
-  .ms {
-    font-size: 22px;
-    color: var(--lime);
-  }
-}
-
-.fn-bento-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 46px;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.fn-bento-desc {
-  margin: 8px 0 0;
-  max-width: 380px;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #a8bcb0;
-}
-
-.fn-bento-cta {
-  margin-top: 14px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--lime);
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.fn-corner {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  pointer-events: none;
-}
-
-.fn-corner--tl {
-  left: 16px;
-  top: 16px;
-  border-left: 1.5px solid rgb(25, 212, 90, .6);
-  border-top: 1.5px solid rgb(25, 212, 90, .6);
-}
-
-.fn-corner--br {
-  right: 16px;
-  bottom: 16px;
-  border-right: 1.5px solid rgb(25, 212, 90, .6);
-  border-bottom: 1.5px solid rgb(25, 212, 90, .6);
-}
-
-.fn-mini-card {
-  grid-column: span 4;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .09);
-  background: rgba(255, 255, 255, .028);
-  padding: 22px;
-  cursor: pointer;
-  transition: background .35s, border-color .35s, transform .35s cubic-bezier(.2, .8, .2, 1);
-
-  &:hover {
-    background: rgb(25, 212, 90, .07);
-    border-color: rgb(25, 212, 90, .45);
-    transform: translateY(-6px);
-  }
-}
-
-.fn-mini-icon {
-  font-size: 24px;
-  color: var(--lime);
-}
-
-.fn-mini-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 34px;
-}
-
-.fn-mini-desc {
-  margin: 6px 0 0;
-  font-size: 12.5px;
-  line-height: 1.55;
-  color: #8fa398;
-}
-
-/* ---------- atlas / globe ---------- */
-.fn-atlas-grid {
-  display: grid;
-  grid-template-columns: 1fr 460px;
-  gap: 18px;
-  align-items: stretch;
-}
-
-.fn-atlas-globe-card {
-  position: relative;
-  height: 680px;
-  border-radius: 12px;
-  border: 1px solid rgb(25, 212, 90, .16);
-  background: radial-gradient(62% 78% at 50% 44%, rgb(25, 212, 90, .055), rgba(3, 9, 6, .94) 66%, #020705);
+  z-index: -2;
   overflow: hidden;
-}
-
-.fn-stars {
-  position: absolute;
-  inset: 0;
   pointer-events: none;
 }
 
-.fn-globe-el {
+.fn-globo-cena {
   position: absolute;
-  top: 66px;
-  bottom: 158px;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// pino no ponto da câmera (36% da altura): é sempre ali que o país da parada fica
+.fn-globo-pino {
+  position: absolute;
   left: 50%;
-  z-index: 2;
-  width: min(500px, calc(100% - 64px));
-  transform: translateX(-50%);
-  overflow: hidden;
-  border-radius: 8px;
+  top: 36%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: var(--neon);
+  box-shadow: 0 0 14px var(--neon);
+  opacity: 0;
+  transform: scale(.3);
+  transition: opacity .35s, transform .35s var(--ease);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid var(--neon);
+    border-radius: 50%;
+    animation: fnPulsoPino 1.6s ease-out infinite;
+  }
+
+  &::after { animation-delay: .8s; }
 }
 
-.fn-corner--z {
-  z-index: 4;
-}
-
-.fn-corner--tr {
-  right: 18px;
-  top: 16px;
-  border-right: 1px solid rgb(25, 212, 90, .42);
-  border-top: 1px solid rgb(25, 212, 90, .42);
-  width: 18px;
-  height: 18px;
-}
-
-.fn-corner--bl {
-  left: 18px;
-  bottom: 16px;
-  border-left: 1px solid rgb(25, 212, 90, .42);
-  border-bottom: 1px solid rgb(25, 212, 90, .42);
-  width: 18px;
-  height: 18px;
-}
-
-.fn-atlas-topbar {
+.fn-globo-liga {
   position: absolute;
-  left: 32px;
-  right: 32px;
-  top: 26px;
+  left: 50%;
+  bottom: calc(64% + 20px);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  pointer-events: none;
-  z-index: 4;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #5d7268;
+  gap: 10px;
+  padding: 5px 14px 5px 5px;
+  border: 1px solid rgba(0, 230, 95, .5);
+  border-radius: 999px;
+  background: rgba(5, 8, 7, .8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 24px rgba(0, 230, 95, .25);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 10px) scale(.9);
+  transition: opacity .4s .12s, transform .45s .12s var(--ease);
 }
 
-.fn-atlas-footer {
-  position: absolute;
-  left: 26px;
-  right: 26px;
-  bottom: 26px;
-  z-index: 4;
-  pointer-events: none;
+.is-parado {
+  .fn-globo-pino { opacity: 1; transform: none; }
+  .fn-globo-liga { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.fn-globo-logo {
+  width: 34px;
+  height: 34px;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 18px;
-  align-items: end;
-  padding-top: 18px;
-  border-top: 1px solid rgb(25, 212, 90, .14);
-}
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
 
-.fn-atlas-footer-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: #7b8f84;
-  margin-bottom: 5px;
-}
-
-.fn-atlas-nation {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 42px;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-  color: var(--text);
-  transition: opacity .4s;
-}
-
-.fn-atlas-league {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--lime);
-  margin-top: 6px;
-}
-
-.fn-atlas-metrics {
-  display: flex;
-  gap: 26px;
-  align-items: flex-end;
-}
-
-.fn-atlas-metric {
-  text-align: right;
-}
-
-.fn-atlas-metric-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #7b8f84;
-}
-
-.fn-atlas-metric-value {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--lime);
-
-  &--light {
-    color: var(--text);
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
   }
 }
 
-.fn-atlas-metric-divider {
-  width: 1px;
-  height: 38px;
-  background: rgba(255, 255, 255, .12);
-}
-
-.fn-league-panel {
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .09);
-  background: rgba(255, 255, 255, .028);
-  padding: 20px;
+.fn-globo-txt {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  min-width: 0;
-  overflow: hidden;
+  line-height: 1.15;
+
+  strong { font: 700 12.5px var(--titulo); }
+  small { font-size: 11px; color: var(--cinza); }
 }
 
-.fn-league-panel-title {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: #7b8f84;
-  margin-bottom: 14px;
+/* ---------- parede de escudos (card Times) ---------- */
+@keyframes fnEscudosSobe {
+  to { transform: translateY(-50%); }
 }
 
-.fn-league-list {
-  flex: 1;
+@keyframes fnEscudosDesce {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
+}
+
+// com a parede, a foto do estádio vira só fundo
+.fn-card--escudos .fn-card-img {
+  opacity: .35;
+}
+
+.fn-crests {
+  position: absolute;
+  z-index: -2;
+  inset: -30% -25% 10%;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  transform: rotate(-12deg);
+  // some nas bordas de cima e de baixo
+  // a borda de cima do card fica em ~25% da altura da parede: os escudos surgem num degradê ali
+  -webkit-mask-image: linear-gradient(180deg, transparent 22%, #000 40%, #000 72%, transparent 94%);
+  mask-image: linear-gradient(180deg, transparent 22%, #000 40%, #000 72%, transparent 94%);
+  pointer-events: none;
+}
+
+.fn-crests-col {
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  gap: 12px;
+  animation: fnEscudosDesce linear infinite;
+
+  &.is-sobe { animation-name: fnEscudosSobe; }
 }
 
-.fn-league-row {
-  flex: 1;
-  display: flex;
+.fn-crest {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 16px;
+  background: rgba(10, 18, 13, .72);
+  backdrop-filter: blur(6px);
+  transition: border-color .4s, box-shadow .4s, background .4s;
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .5));
+  }
+}
+
+a.fn-card:hover .fn-crest {
+  border-color: rgba(0, 230, 95, .45);
+  background: rgba(10, 30, 18, .8);
+  box-shadow: 0 0 16px rgba(0, 230, 95, .2);
+}
+
+.fn-card-body {
+  padding: 24px 24px 26px;
+}
+
+.fn-card-title {
+  font: 700 22px / 1.1 var(--titulo);
+  letter-spacing: -.01em;
+}
+
+.fn-card-desc {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cinza);
+}
+
+.fn-card-link {
+  display: inline-flex;
   align-items: center;
-  gap: 11px;
-  margin: 0 -20px;
-  padding: 0 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, .05);
-  min-width: 0;
-  cursor: pointer;
-  transition: background .3s;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--verde);
+  transition: gap .3s var(--ease), color .3s;
+
+  .ms { font-size: 20px; }
+}
+
+a.fn-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--neon);
+  box-shadow: 0 0 36px rgba(0, 230, 95, .35);
+
+  .fn-card-img { transform: scale(1.08); }
+  .fn-card-link { gap: 10px; color: var(--neon); }
+}
+
+/* ---------- jogador em destaque (440) ---------- */
+@keyframes fnRadar {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.fn-wk-wrap {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.fn-wk {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px minmax(0, 1fr);
+  // linha travada na altura do painel: a foto (520 px) vaza e é cortada, sem esticar a grade
+  grid-template-rows: minmax(0, 1fr);
+  height: 360px;
+  border: 1px solid rgba(22, 196, 73, .45);
+  border-radius: 18px;
+  background: linear-gradient(90deg, #07130c, var(--preto) 45%, #07130c);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+// linhas horizontais de "análise"
+.fn-wk-lines {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(180deg, transparent 0 59px, rgba(22, 196, 73, .05) 59px 60px);
+}
+
+.fn-wk-light {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 20px;
+  width: 460px;
+  height: 460px;
+  margin-left: -230px;
+  border-radius: 50%;
+  background: rgba(22, 196, 73, .22);
+  filter: blur(90px);
+}
+
+// mira tracejada girando devagar atrás do jogador
+.fn-wk-aim {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 30px;
+  width: 360px;
+  height: 360px;
+  margin-left: -180px;
+  border: 1px dashed rgba(22, 196, 73, .3);
+  border-radius: 50%;
+  animation: fnGiro 60s linear infinite;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 50px;
+    border: 1px solid rgba(22, 196, 73, .15);
+    border-radius: 50%;
+  }
+}
+
+.fn-wk-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 56px;
+}
+
+.fn-wk-name {
+  font: 800 44px / 1 var(--titulo);
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+.fn-wk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, .9);
+
+  i {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(156, 163, 175, .6);
+  }
+}
+
+.fn-wk-stats {
+  display: flex;
+  margin: 18px 0 22px;
+
+  > div {
+    padding: 0 28px;
+    border-left: 1px solid var(--borda);
+
+    &:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}
+
+.fn-wk-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--cinza);
+}
+
+.fn-wk-value {
+  font: 700 32px / 1.2 var(--titulo);
+  letter-spacing: -.02em;
+  white-space: nowrap;
+
+  &--neon { color: var(--neon); }
+}
+
+.fn-wk-photo {
+  align-self: end;
+  justify-self: center;
+  // o recorte tem bastante área vazia no alto: sobra para cima e o corpo é cortado embaixo
+  height: 520px;
+  margin-bottom: -60px;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .6));
+  // hover como o do logo do topo: cresce suave. A origem fica no rosto para a cabeça
+  // não ser cortada pelo topo do painel.
+  transform-origin: 50% 30%;
+  transition: transform .45s var(--ease), filter .45s;
 
   &:hover {
-    background: rgb(25, 212, 90, .05);
-    border-bottom-color: transparent;
+    transform: scale(1.1);
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .6)) drop-shadow(0 0 26px rgba(0, 230, 95, .45));
   }
 }
 
-.fn-league-panel-cta {
-  padding-top: 22px;
-  flex: 0 0 auto;
+// com o mouse no jogador, a luz e a mira atrás dele acendem
+.fn-wk-light,
+.fn-wk-aim {
+  transition: opacity .45s, border-color .45s, filter .45s;
 }
 
-.fn-league-dot {
-  flex: 0 0 3px;
-  width: 3px;
-  height: 26px;
-  border-radius: 2px;
+.fn-wk:has(.fn-wk-photo:hover) {
+  .fn-wk-light { filter: blur(70px) brightness(1.6); }
+  .fn-wk-aim { border-color: rgba(0, 230, 95, .6); }
 }
 
-.fn-league-badge {
-  flex: 0 0 auto;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, .1);
+.fn-wk-radar {
+  display: grid;
+  place-items: center;
+
+  svg {
+    width: 300px;
+    overflow: visible;
+  }
 }
 
-.fn-league-info {
-  flex: 1;
-  min-width: 0;
+.fn-radar-grid {
+  fill: rgba(22, 196, 73, .03);
+  stroke: rgba(22, 196, 73, .3);
+  transition: stroke .35s, fill .35s;
 }
 
-.fn-league-nome {
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.fn-radar-axis {
+  stroke: rgba(22, 196, 73, .2);
+  stroke-width: 1;
+  transition: stroke .25s, stroke-width .25s;
 }
 
-.fn-league-pais {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: #6d8177;
-  margin-top: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.fn-radar-shape {
+  fill: rgba(22, 196, 73, .5);
+  stroke: var(--neon);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(0, 230, 95, .5));
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  // sem transform aqui: ele é da animação de entrada (fnRadar)
+  transition: fill .35s, filter .35s;
 }
 
-.fn-league-count {
-  flex: 0 0 auto;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--lime);
+.is-visto .fn-radar-shape {
+  animation: fnRadar 1.1s .35s var(--ease) both;
+}
+
+// área invisível maior em volta do rótulo e do ponto, para o hover ser fácil de acertar
+.fn-radar-hit {
+  fill: transparent;
+  pointer-events: all;
+}
+
+.fn-radar-dot {
+  fill: var(--neon);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .3s var(--ease), filter .3s;
+}
+
+.fn-radar-sigla,
+.fn-radar-num {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill .25s, transform .3s var(--ease);
+}
+
+.fn-radar-sigla {
+  font: 600 11px var(--texto);
+  letter-spacing: .08em;
+  fill: var(--cinza);
+}
+
+.fn-radar-num {
+  font: 700 18px var(--titulo);
+  fill: var(--branco);
+}
+
+.fn-radar-attr {
+  cursor: default;
+  outline: none;
+  transition: opacity .3s;
+}
+
+// mouse no gráfico: o hexágono acende
+.fn-radar:hover {
+  .fn-radar-shape {
+    fill: rgba(22, 196, 73, .62);
+    filter: drop-shadow(0 0 16px rgba(0, 230, 95, .75));
+  }
+
+  .fn-radar-grid {
+    stroke: rgba(22, 196, 73, .45);
+    fill: rgba(22, 196, 73, .05);
+  }
+}
+
+// mouse (ou foco) num atributo: ele se destaca e os outros esmaecem
+.fn-radar-attr:hover,
+.fn-radar-attr:focus-visible {
+  .fn-radar-axis { stroke: var(--neon); stroke-width: 1.5; }
+  .fn-radar-dot { transform: scale(2); filter: drop-shadow(0 0 6px var(--neon)); }
+  .fn-radar-sigla { fill: var(--neon); }
+  .fn-radar-num { fill: var(--neon); transform: scale(1.18); }
+}
+
+.fn-radar:has(.fn-radar-attr:hover, .fn-radar-attr:focus-visible) .fn-radar-attr:not(:hover, :focus-visible) {
+  opacity: .4;
 }

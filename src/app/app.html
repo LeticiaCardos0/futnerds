@@ -2,4 +2,6 @@
 <div class="min-h-screen bg-bg text-fg pt-10">
   <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+@if (mostrarFooter()) {
+  <app-footer></app-footer>
+}

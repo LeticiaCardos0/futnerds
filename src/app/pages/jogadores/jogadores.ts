@@ -236,6 +236,8 @@ export class JogadoresComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.filtroIdadeMax = params['idadeMax'] ? Number(params['idadeMax']) : null;
       this.filtroPotencialMin = params['potencialMin'] ? Number(params['potencialMin']) : null;
+      // termo vindo da busca do hero da Home
+      if (params['busca']) this.termoBusca = params['busca'];
       this.paginaAtual = 1;
       this.carregarJogadores();
     });
