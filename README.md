@@ -17,7 +17,19 @@ O endereço do backend no frontend fica em [src/app/shared/api.util.ts](src/app/
 1. **Backend** (Java 21+): `cd futdb && ./mvnw spring-boot:run`
 2. **Frontend**: `npm ci --legacy-peer-deps` (só na primeira vez) e depois `npm start`
 
-### Recriar o banco do zero
+### Recriar o banco numa máquina nova
+
+O jeito rápido é restaurar o backup que vem no repositório ([futdb/db/futdb.dump](futdb/db/futdb.dump), cópia exata do banco com fotos, escudos e uniformes):
+
+```bash
+bash scripts/recriar-banco.sh                # restaura o backup (minutos)
+bash scripts/recriar-banco.sh --do-zero      # schema + todas as importações abaixo (horas; backend rodando)
+bash scripts/recriar-banco.sh --gerar-backup # atualiza o backup a partir do banco local; depois é só commitar
+```
+
+O script acha o PostgreSQL na pasta padrão do Windows e se recusa a apagar um `futdb` com dados sem `--substituir`.
+
+### Recriar o banco do zero, passo a passo
 
 1. Criar o banco e as tabelas:
    ```bash
