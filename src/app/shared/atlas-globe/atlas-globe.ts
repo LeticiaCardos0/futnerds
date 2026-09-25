@@ -51,7 +51,7 @@ const ROTAS: [string, string][] = [
 ];
 
 const R = 1;
-const NEON = 0x53f59a;
+const NEON = 0x8be86a;
 
 function toVec(lat: number, lon: number, r = R): THREE.Vector3 {
   const phi = ((90 - lat) * Math.PI) / 180;
@@ -88,6 +88,8 @@ interface Marcador {
 export class AtlasGlobe implements AfterViewInit, OnDestroy {
   @ViewChild('host', { static: true }) hostRef!: ElementRef<HTMLDivElement>;
   @Output() countrySelect = new EventEmitter<PaisAtlas>();
+  // o usuário arrastou/girou/deu zoom (a Home usa para pausar o tour automático)
+  @Output() interagiu = new EventEmitter<void>();
 
   private reduced = false;
   private renderer!: THREE.WebGLRenderer;
@@ -114,6 +116,14 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
   private ro?: ResizeObserver;
   private io?: IntersectionObserver;
   private idleTimeout: ReturnType<typeof setTimeout> | undefined;
+
+  // parado num país depois de focar(): sem giro automático até o usuário mexer
+  private fixo = false;
+  // voo de câmera em andamento (rotação do globo + distância da câmera)
+  private voo: { inicio: number; dur: number; x0: number; x1: number; y0: number; y1: number; d0: number; d1: number } | null = null;
+  // "cometas" percorrendo as rotas: trecho visível da linha + ponto brilhante na frente
+  private trilhas: Array<{ linha: THREE.Line; cabeca: THREE.Mesh; pts: THREE.Vector3[]; vel: number; fase: number }> = [];
+  private ultimoT = 0;
 
   ngAfterViewInit(): void {
     this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -151,42 +161,41 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
     scene.add(root);
     this.root = root;
 
-    scene.add(new THREE.AmbientLight(0xdfe9e4, 0.62));
-    const key = new THREE.DirectionalLight(0xfff8ec, 1.35);
+    scene.add(new THREE.AmbientLight(0xcfe9dc, 0.4));
+    const key = new THREE.DirectionalLight(0xe9fff2, 0.95);
     key.position.set(-2.2, 1.2, 2.6);
     scene.add(key);
-    const fill = new THREE.DirectionalLight(0xcfe3d8, 0.55);
-    fill.position.set(2.4, 0.6, 1.6);
-    scene.add(fill);
-    const rim = new THREE.DirectionalLight(NEON, 0.34);
+    const rim = new THREE.DirectionalLight(NEON, 0.6);
     rim.position.set(2.8, -0.6, -2.4);
     scene.add(rim);
 
     const geo = new THREE.SphereGeometry(R, 96, 96);
     const mat = new THREE.MeshPhongMaterial({
-      color: 0x3d4f46,
-      emissive: 0x0a1410,
-      specular: 0x243a31,
-      shininess: 6,
+      color: 0x0b1510,
+      emissive: 0x000000,
+      specular: 0x0f2a1c,
+      shininess: 14,
     });
     const earth = new THREE.Mesh(geo, mat);
     root.add(earth);
 
     const loader = new THREE.TextureLoader();
     const aniso = renderer.capabilities.getMaxAnisotropy();
+    // textura do dia bem escurecida e esverdeada: só o desenho dos continentes
     loader.load(TEX_DAY, (tex) => {
       if ((tex as any).colorSpace !== undefined) tex.colorSpace = THREE.SRGBColorSpace;
       tex.anisotropy = aniso;
       mat.map = tex;
-      mat.color = new THREE.Color(0xdcece4);
+      mat.color = new THREE.Color(0x1d3328);
       mat.needsUpdate = true;
     });
+    // luzes das cidades (textura da noite) acesas em verde
     loader.load(TEX_NIGHT, (tex) => {
       if ((tex as any).colorSpace !== undefined) tex.colorSpace = THREE.SRGBColorSpace;
       tex.anisotropy = aniso;
       mat.emissiveMap = tex;
-      mat.emissive = new THREE.Color(0x6f8f7c);
-      mat.emissiveIntensity = 0.34;
+      mat.emissive = new THREE.Color(0x1dff7e);
+      mat.emissiveIntensity = 1.7;
       mat.needsUpdate = true;
     });
     loader.load(TEX_BUMP, (tex) => {
@@ -197,29 +206,31 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
 
     const grat = new THREE.LineSegments(
       new THREE.WireframeGeometry(new THREE.SphereGeometry(R * 1.002, 36, 18)),
-      new THREE.LineBasicMaterial({ color: NEON, transparent: true, opacity: 0.035 })
+      new THREE.LineBasicMaterial({ color: NEON, transparent: true, opacity: 0.05 })
     );
     root.add(grat);
 
-    const atmo = new THREE.Mesh(
-      new THREE.SphereGeometry(R * 1.045, 64, 64),
+    const fresnel = (lado: THREE.Side, potencia: number, forca: number, frente: boolean) =>
       new THREE.ShaderMaterial({
         transparent: true,
-        side: THREE.BackSide,
+        side: lado,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
         uniforms: { uColor: { value: new THREE.Color(NEON) } },
         vertexShader:
           'varying vec3 vN; void main(){ vN = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
-        fragmentShader:
-          'uniform vec3 uColor; varying vec3 vN; void main(){ float i = pow(1.0 - abs(dot(vN, vec3(0.0,0.0,1.0))), 5.0); gl_FragColor = vec4(uColor, clamp(i,0.0,1.0) * 0.34); }',
-      })
-    );
-    root.add(atmo);
+        fragmentShader: frente
+          ? `uniform vec3 uColor; varying vec3 vN; void main(){ float i = pow(1.0 - max(dot(vN, vec3(0.0,0.0,1.0)), 0.0), ${potencia.toFixed(1)}); gl_FragColor = vec4(uColor, i * ${forca.toFixed(2)}); }`
+          : `uniform vec3 uColor; varying vec3 vN; void main(){ float i = pow(1.0 - abs(dot(vN, vec3(0.0,0.0,1.0))), ${potencia.toFixed(1)}); gl_FragColor = vec4(uColor, clamp(i,0.0,1.0) * ${forca.toFixed(2)}); }`,
+      });
+    // halo de atmosfera em volta e um brilho verde na borda da própria Terra
+    root.add(new THREE.Mesh(new THREE.SphereGeometry(R * 1.06, 64, 64), fresnel(THREE.BackSide, 5, 0.45, false)));
+    root.add(new THREE.Mesh(new THREE.SphereGeometry(R * 1.003, 64, 64), fresnel(THREE.FrontSide, 5, 0.22, true)));
 
     const routeGroup = new THREE.Group();
     root.add(routeGroup);
     const byId: Record<string, PaisAtlas> = Object.fromEntries(PAISES_ATLAS.map((c) => [c.id, c]));
+    const cabecaGeo = new THREE.SphereGeometry(0.0075, 10, 10);
     ROTAS.forEach(([a, b], i) => {
       if (!byId[a] || !byId[b]) return;
       const va = toVec(byId[a].lat, byId[a].lon);
@@ -233,17 +244,22 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
         pts.push(v.multiplyScalar(R * (1 + (lift - 1) * arc)));
       }
       const g = new THREE.BufferGeometry().setFromPoints(pts);
-      const line = new THREE.Line(
-        g,
-        new THREE.LineDashedMaterial({ color: NEON, transparent: true, opacity: 0.3, dashSize: 0.028, gapSize: 0.026 })
+      // rota inteira, bem sutil
+      routeGroup.add(
+        new THREE.Line(g, new THREE.LineBasicMaterial({ color: NEON, transparent: true, opacity: 0.14, blending: THREE.AdditiveBlending, depthWrite: false }))
       );
-      line.computeLineDistances();
-      line.userData['speed'] = 0.12 + (i % 5) * 0.03;
-      routeGroup.add(line);
+      // cometa: só um trecho da mesma linha, mais forte, andando pela rota
+      const linha = new THREE.Line(
+        g,
+        new THREE.LineBasicMaterial({ color: 0x8dffc0, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false })
+      );
+      const cabeca = new THREE.Mesh(cabecaGeo, new THREE.MeshBasicMaterial({ color: 0xe8fff1, transparent: true, blending: THREE.AdditiveBlending }));
+      routeGroup.add(linha, cabeca);
+      this.trilhas.push({ linha, cabeca, pts, vel: 0.16 + (i % 5) * 0.035, fase: (i * 0.37) % 1 });
     });
     this.routeGroup = routeGroup;
 
-    const ringGeo = new THREE.RingGeometry(0.009, 0.03, 32);
+    const ringGeo = new THREE.RingGeometry(0.008, 0.021, 32);
     const markerGroup = new THREE.Group();
     root.add(markerGroup);
     this.markers = PAISES_ATLAS.map((c) => {
@@ -296,7 +312,7 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
 
     this.tooltip = document.createElement('div');
     this.tooltip.style.cssText =
-      'position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-140%);transition:opacity .2s;padding:5px 9px;border:1px solid rgba(83,245,154,.45);background:rgba(3,9,6,.88);backdrop-filter:blur(6px);font-family:JetBrains Mono,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#a9f7cd;white-space:nowrap;z-index:3';
+      'position:absolute;pointer-events:none;opacity:0;transform:translate(-50%,-140%);transition:opacity .2s;padding:5px 9px;border:1px solid rgba(139,232,106,.45);background:rgba(3,9,6,.88);backdrop-filter:blur(6px);font-family:JetBrains Mono,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#C8F5B5;white-space:nowrap;z-index:3';
     host.appendChild(this.tooltip);
 
     this.scene = scene;
@@ -331,6 +347,9 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
       px = e.clientX;
       py = e.clientY;
       this.interacting = true;
+      this.voo = null;
+      this.fixo = false;
+      this.interagiu.emit();
       clearTimeout(this.idleTimeout);
       el.style.cursor = 'grabbing';
       el.setPointerCapture(e.pointerId);
@@ -384,6 +403,8 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
         e.preventDefault();
         clearTimeout(this.idleTimeout);
         this.interacting = true;
+        this.voo = null;
+        this.interagiu.emit();
         this.idleTimeout = setTimeout(() => {
           this.interacting = false;
         }, 2200);
@@ -392,6 +413,36 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
       },
       { passive: false }
     );
+  }
+
+  /**
+   * Gira o globo até o país ficar de frente para a câmera e aproxima, afastando um pouco
+   * no meio do caminho (voo). Destaca o marcador sem emitir countrySelect.
+   */
+  focar(id: string): void {
+    const c = PAISES_ATLAS.find((p) => p.id === id);
+    if (!c || !this.root || !this.camera) return;
+    this.selected = c;
+    const v = toVec(c.lat, c.lon);
+    // rotação Euler XYZ (v' = Rx·Ry·v): Ry traz o país para o plano da câmera, Rx acerta a altura
+    const y1 = Math.atan2(-v.x, v.z);
+    const elevCamera = Math.atan2(this.camera.position.y, this.camera.position.z);
+    const x1 = Math.max(-0.9, Math.min(0.9, Math.atan2(v.y, Math.hypot(v.x, v.z)) - elevCamera));
+    // caminho mais curto no eixo Y
+    const y0 = this.root.rotation.y;
+    let dy = (y1 - y0) % (Math.PI * 2);
+    if (dy > Math.PI) dy -= Math.PI * 2;
+    if (dy < -Math.PI) dy += Math.PI * 2;
+    // pouco mais perto que o limite em que o globo inteiro (com o halo) cabe no quadro
+    const d1 = this.minDist * 0.96;
+    if (this.reduced) {
+      this.root.rotation.set(x1, y0 + dy, 0);
+      this.camera.position.setLength(d1);
+      this.fixo = true;
+      return;
+    }
+    this.voo = { inicio: this.ultimoT, dur: 1.9, x0: this.root.rotation.x, x1, y0, y1: y0 + dy, d0: this.camera.position.length(), d1 };
+    this.vel.x = 0;
   }
 
   private select(c: PaisAtlas): void {
@@ -428,7 +479,7 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
    */
   private updateZoomLimits(): void {
     if (!this.camera) return;
-    const outerR = R * 1.045; // raio incluindo o halo da atmosfera
+    const outerR = R * 1.075; // raio incluindo o halo da atmosfera
     const margin = 1.03; // folga mínima para não "grudar" nas bordas
     const vFov = THREE.MathUtils.degToRad(this.camera.fov);
     const hFov = 2 * Math.atan(Math.tan(vFov / 2) * this.camera.aspect);
@@ -478,14 +529,26 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
     if (host.clientWidth !== this.sw || host.clientHeight !== this.sh) this.applySize();
     if (!this.visible) return;
     const t = this.clock.getElapsedTime();
-    const dt = Math.min(0.05, this.clock.getDelta());
+    const dt = this.ultimoT ? Math.min(0.1, t - this.ultimoT) : 0;
+    this.ultimoT = t;
 
-    if (!this.reduced) {
+    if (this.voo) {
+      const v = this.voo;
+      const p = Math.min(1, (t - v.inicio) / v.dur);
+      const e = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+      this.root.rotation.x = v.x0 + (v.x1 - v.x0) * e;
+      this.root.rotation.y = v.y0 + (v.y1 - v.y0) * e;
+      this.camera.position.setLength((v.d0 + (v.d1 - v.d0) * e) * (1 + 0.18 * Math.sin(Math.PI * p)));
+      if (p >= 1) {
+        this.voo = null;
+        this.fixo = true;
+      }
+    } else if (!this.reduced && !this.fixo) {
       const idleSpin = this.interacting ? 0 : 0.0011;
       this.root.rotation.y += this.vel.x;
       this.vel.x += (idleSpin - this.vel.x) * 0.035;
-      this.dust.rotation.y -= 0.0003;
     }
+    if (!this.reduced) this.dust.rotation.y -= 0.0003;
 
     this.markers.forEach((m) => {
       const sel = this.selected?.id === m.data.id;
@@ -495,16 +558,22 @@ export class AtlasGlobe implements AfterViewInit, OnDestroy {
       m.halo.scale.setScalar(s);
       (m.halo.material as THREE.MeshBasicMaterial).opacity = 0.55 - p * 0.3 + (sel || hov ? 0.35 : 0);
       m.dot.scale.setScalar(1 + (sel ? 0.6 : hov ? 0.35 : 0));
-      (m.dot.material as THREE.MeshBasicMaterial).color.set(sel ? 0x53f59a : 0xd8ffe9);
-      (m.beam.material as THREE.MeshBasicMaterial).opacity = sel ? 0.8 : hov ? 0.6 : 0.28;
-      m.beam.scale.y = sel ? 1.7 : 1;
+      (m.dot.material as THREE.MeshBasicMaterial).color.set(sel ? 0x8be86a : 0xe6fbdc);
+      (m.beam.material as THREE.MeshBasicMaterial).opacity = sel ? 0.9 : hov ? 0.6 : 0.28;
+      m.beam.scale.y = sel ? 2.4 : 1;
     });
 
-    this.routeGroup.children.forEach((l) => {
-      const line = l as THREE.Line;
-      const mat = line.material as THREE.LineDashedMaterial & { dashOffset?: number };
-      mat.dashOffset = (mat.dashOffset || 0) - line.userData['speed'] * dt;
-      mat.opacity = 0.28 + 0.18 * Math.sin(t * 1.1 + line.userData['speed'] * 10);
+    // cometas: um trecho de ~14 pontos anda pela rota e a cabeça brilha na frente
+    const n = 81;
+    const comprimento = 14;
+    this.trilhas.forEach((tr) => {
+      tr.fase = (tr.fase + tr.vel * (this.reduced ? 0 : dt)) % 1.25; // 0,25 de pausa entre passagens
+      const frente = Math.floor(tr.fase * n);
+      const inicio = Math.max(0, frente - comprimento);
+      const visivel = frente < n;
+      tr.linha.geometry.setDrawRange(inicio, visivel ? Math.max(0, Math.min(n, frente) - inicio) : 0);
+      tr.cabeca.visible = visivel && frente > 0;
+      if (tr.cabeca.visible) tr.cabeca.position.copy(tr.pts[Math.min(n - 1, frente)]);
     });
 
     this.renderer.render(this.scene, this.camera);

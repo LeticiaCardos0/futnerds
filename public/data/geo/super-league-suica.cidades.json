@@ -3,13 +3,13 @@
   "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
   "cidadesSemTime": [
     {
-      "nome": "Bienna",
+      "nome": "Biel",
       "lat": 47.1666,
       "lng": 7.25,
       "rank": 1
     },
     {
-      "nome": "Coira",
+      "nome": "Chur",
       "lat": 46.85,
       "lng": 9.5,
       "rank": 1
@@ -51,7 +51,7 @@
       "rank": 1
     },
     {
-      "nome": "Soleura",
+      "nome": "Solothurn",
       "lat": 47.212,
       "lng": 7.537,
       "rank": 1
@@ -75,10 +75,40 @@
       "rank": 1
     },
     {
-      "nome": "Glarona",
+      "nome": "Glarus",
       "lat": 47.05,
       "lng": 9.0667,
       "rank": 1
+    },
+    {
+      "nome": "Winterthur",
+      "lat": 47.5056,
+      "lng": 8.7241,
+      "rank": 3
+    },
+    {
+      "nome": "La Chaux-de-Fonds",
+      "lat": 47.0999,
+      "lng": 6.8259,
+      "rank": 3
+    },
+    {
+      "nome": "Rapperswil",
+      "lat": 47.2256,
+      "lng": 8.8223,
+      "rank": 3
+    },
+    {
+      "nome": "Uster",
+      "lat": 47.3471,
+      "lng": 8.7209,
+      "rank": 3
+    },
+    {
+      "nome": "Yverdon-les-Bains",
+      "lat": 46.7785,
+      "lng": 6.6411,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -86,7 +116,8 @@
       "nome": "Milão",
       "lat": 45.4719,
       "lng": 9.2031,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Lyon",
@@ -98,6 +129,19 @@
       "nome": "Munique",
       "lat": 48.1319,
       "lng": 11.573,
+      "rank": 1
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Turim",
+      "lat": 45.0723,
+      "lng": 7.668,
       "rank": 1
     },
     {
@@ -113,9 +157,21 @@
       "rank": 1
     },
     {
-      "nome": "Freiburg im Breisgau",
+      "nome": "Grenoble",
+      "lat": 45.1804,
+      "lng": 5.72,
+      "rank": 1
+    },
+    {
+      "nome": "Freiburg",
       "lat": 48.0004,
       "lng": 7.8699,
+      "rank": 1
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
       "rank": 1
     },
     {
@@ -149,9 +205,39 @@
       "rank": 2
     },
     {
+      "nome": "Ulm",
+      "lat": 48.4004,
+      "lng": 10,
+      "rank": 2
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Saint-Étienne",
+      "lat": 45.4304,
+      "lng": 4.38,
+      "rank": 2
+    },
+    {
       "nome": "Besançon",
       "lat": 47.23,
       "lng": 6.03,
+      "rank": 2
+    },
+    {
+      "nome": "Gênova",
+      "lat": 44.41,
+      "lng": 8.93,
+      "rank": 2
+    },
+    {
+      "nome": "Nancy",
+      "lat": 48.6837,
+      "lng": 6.2,
       "rank": 2
     },
     {
@@ -161,9 +247,21 @@
       "rank": 2
     },
     {
+      "nome": "Bolonha",
+      "lat": 44.5004,
+      "lng": 11.34,
+      "rank": 2
+    },
+    {
       "nome": "Annecy",
       "lat": 45.9,
       "lng": 6.1167,
+      "rank": 2
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49,
+      "lng": 8.4,
       "rank": 2
     },
     {
@@ -179,16 +277,298 @@
       "rank": 2
     },
     {
+      "nome": "Veneza",
+      "lat": 45.4387,
+      "lng": 12.335,
+      "rank": 2
+    },
+    {
+      "nome": "Metz",
+      "lat": 49.1203,
+      "lng": 6.18,
+      "rank": 2
+    },
+    {
+      "nome": "Treviso",
+      "lat": 45.67,
+      "lng": 12.24,
+      "rank": 2
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.42,
+      "lng": 8.7,
+      "rank": 2
+    },
+    {
+      "nome": "Ingolstadt",
+      "lat": 48.7704,
+      "lng": 11.45,
+      "rank": 2
+    },
+    {
+      "nome": "Parma",
+      "lat": 44.8104,
+      "lng": 10.32,
+      "rank": 2
+    },
+    {
+      "nome": "Ferrara",
+      "lat": 44.8504,
+      "lng": 11.6099,
+      "rank": 2
+    },
+    {
+      "nome": "Módena",
+      "lat": 44.65,
+      "lng": 10.92,
+      "rank": 2
+    },
+    {
+      "nome": "Rosenheim",
+      "lat": 47.8503,
+      "lng": 12.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Regensburg",
+      "lat": 49.0204,
+      "lng": 12.12,
+      "rank": 3
+    },
+    {
+      "nome": "Salzburgo",
+      "lat": 47.8105,
+      "lng": 13.04,
+      "rank": 3
+    },
+    {
       "nome": "Aosta",
       "lat": 45.737,
       "lng": 7.315,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Reims",
+      "lat": 49.2504,
+      "lng": 4.03,
+      "rank": 3
+    },
+    {
+      "nome": "Clermont-Ferrand",
+      "lat": 45.78,
+      "lng": 3.08,
+      "rank": 3
+    },
+    {
+      "nome": "Asti",
+      "lat": 44.93,
+      "lng": 8.21,
+      "rank": 3
+    },
+    {
+      "nome": "Melun",
+      "lat": 48.5333,
+      "lng": 2.6666,
+      "rank": 3
     },
     {
       "nome": "Bregenz",
       "lat": 47.5167,
       "lng": 9.7667,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Roanne",
+      "lat": 46.0333,
+      "lng": 4.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Ravena",
+      "lat": 44.4204,
+      "lng": 12.22,
+      "rank": 3
+    },
+    {
+      "nome": "Troyes",
+      "lat": 48.3404,
+      "lng": 4.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Trieste",
+      "lat": 45.6504,
+      "lng": 13.8,
+      "rank": 3
+    },
+    {
+      "nome": "Udine",
+      "lat": 46.07,
+      "lng": 13.24,
+      "rank": 3
+    },
+    {
+      "nome": "Auxerre",
+      "lat": 47.8004,
+      "lng": 3.5666,
+      "rank": 3
+    },
+    {
+      "nome": "Vichy",
+      "lat": 46.1171,
+      "lng": 3.4167,
+      "rank": 3
+    },
+    {
+      "nome": "Nevers",
+      "lat": 46.9837,
+      "lng": 3.1667,
+      "rank": 3
+    },
+    {
+      "nome": "Passau",
+      "lat": 48.5755,
+      "lng": 13.4412,
+      "rank": 3
+    },
+    {
+      "nome": "Bourges",
+      "lat": 47.0837,
+      "lng": 2.4,
+      "rank": 3
+    },
+    {
+      "nome": "Pula",
+      "lat": 44.8687,
+      "lng": 13.8481,
+      "rank": 3
+    },
+    {
+      "nome": "Brescia",
+      "lat": 45.5356,
+      "lng": 10.2147,
+      "rank": 3
+    },
+    {
+      "nome": "Paris",
+      "lat": 48.8534,
+      "lng": 2.3488,
+      "rank": 3
+    },
+    {
+      "nome": "Padua",
+      "lat": 45.408,
+      "lng": 11.8859,
+      "rank": 3
+    },
+    {
+      "nome": "Monza",
+      "lat": 45.58,
+      "lng": 9.2725,
+      "rank": 3
+    },
+    {
+      "nome": "Vicenza",
+      "lat": 45.5467,
+      "lng": 11.5475,
+      "rank": 3
+    },
+    {
+      "nome": "Busto Arsizio",
+      "lat": 45.6113,
+      "lng": 8.8491,
+      "rank": 3
+    },
+    {
+      "nome": "Villingen-Schwenningen",
+      "lat": 48.0623,
+      "lng": 8.4936,
+      "rank": 3
+    },
+    {
+      "nome": "Konstanz",
+      "lat": 47.6603,
+      "lng": 9.1758,
+      "rank": 3
+    },
+    {
+      "nome": "Varese",
+      "lat": 45.8206,
+      "lng": 8.8251,
+      "rank": 3
+    },
+    {
+      "nome": "Reutlingen",
+      "lat": 48.4914,
+      "lng": 9.2043,
+      "rank": 3
+    },
+    {
+      "nome": "Tübingen",
+      "lat": 48.5227,
+      "lng": 9.0522,
+      "rank": 3
+    },
+    {
+      "nome": "Piacenza",
+      "lat": 45.0524,
+      "lng": 9.6934,
+      "rank": 3
+    },
+    {
+      "nome": "Reggio nell'Emilia",
+      "lat": 44.6983,
+      "lng": 10.6312,
+      "rank": 3
+    },
+    {
+      "nome": "Pforzheim",
+      "lat": 48.8844,
+      "lng": 8.6989,
+      "rank": 3
+    },
+    {
+      "nome": "Alessandria",
+      "lat": 44.9092,
+      "lng": 8.6101,
+      "rank": 3
+    },
+    {
+      "nome": "Marne-la-Vallée",
+      "lat": 48.8358,
+      "lng": 2.6424,
+      "rank": 3
+    },
+    {
+      "nome": "Ludwigsburg",
+      "lat": 48.8973,
+      "lng": 9.1916,
+      "rank": 3
+    },
+    {
+      "nome": "Heilbronn",
+      "lat": 49.1399,
+      "lng": 9.2205,
+      "rank": 3
+    },
+    {
+      "nome": "Forlì",
+      "lat": 44.2218,
+      "lng": 12.0414,
+      "rank": 3
+    },
+    {
+      "nome": "Créteil",
+      "lat": 48.7927,
+      "lng": 2.4657,
+      "rank": 3
+    },
+    {
+      "nome": "Aulnay-sous-Bois",
+      "lat": 48.9381,
+      "lng": 2.494,
+      "rank": 3
     }
   ]
 }

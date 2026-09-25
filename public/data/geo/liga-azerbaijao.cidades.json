@@ -1,0 +1,857 @@
+{
+  "ligaId": "liga-azerbaijao",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Ganja",
+      "lat": 40.685,
+      "lng": 46.35,
+      "rank": 1
+    },
+    {
+      "nome": "Sumqayit",
+      "lat": 40.58,
+      "lng": 49.63,
+      "rank": 1
+    },
+    {
+      "nome": "Nakhchivan",
+      "lat": 39.2092,
+      "lng": 45.4122,
+      "rank": 1
+    },
+    {
+      "nome": "Shirvan",
+      "lat": 39.9323,
+      "lng": 48.9203,
+      "rank": 1
+    },
+    {
+      "nome": "Shaki",
+      "lat": 41.1923,
+      "lng": 47.1705,
+      "rank": 1
+    },
+    {
+      "nome": "Lankaran",
+      "lat": 38.754,
+      "lng": 48.8511,
+      "rank": 1
+    },
+    {
+      "nome": "Khankendi",
+      "lat": 39.8156,
+      "lng": 46.752,
+      "rank": 1
+    },
+    {
+      "nome": "Yevlakh",
+      "lat": 40.6172,
+      "lng": 47.15,
+      "rank": 1
+    },
+    {
+      "nome": "Kapan",
+      "lat": 39.2015,
+      "lng": 46.415,
+      "rank": 1
+    },
+    {
+      "nome": "Goychay",
+      "lat": 40.6534,
+      "lng": 47.7406,
+      "rank": 1
+    },
+    {
+      "nome": "Tovuz",
+      "lat": 40.9922,
+      "lng": 45.6289,
+      "rank": 1
+    },
+    {
+      "nome": "Qabala",
+      "lat": 40.9814,
+      "lng": 47.8458,
+      "rank": 1
+    },
+    {
+      "nome": "Gadabay",
+      "lat": 40.5656,
+      "lng": 45.8161,
+      "rank": 1
+    },
+    {
+      "nome": "Goranboy",
+      "lat": 40.6103,
+      "lng": 46.7897,
+      "rank": 1
+    },
+    {
+      "nome": "Oğuz",
+      "lat": 41.0708,
+      "lng": 47.4583,
+      "rank": 1
+    },
+    {
+      "nome": "Khirdalan",
+      "lat": 40.4481,
+      "lng": 49.755,
+      "rank": 3
+    },
+    {
+      "nome": "Mingachevir",
+      "lat": 40.7642,
+      "lng": 47.0623,
+      "rank": 3
+    },
+    {
+      "nome": "Lerik",
+      "lat": 38.7739,
+      "lng": 48.415,
+      "rank": 3
+    },
+    {
+      "nome": "Xaçmaz",
+      "lat": 41.4643,
+      "lng": 48.8056,
+      "rank": 3
+    },
+    {
+      "nome": "Barda",
+      "lat": 40.3758,
+      "lng": 47.1262,
+      "rank": 3
+    },
+    {
+      "nome": "Shamkhir",
+      "lat": 40.8297,
+      "lng": 46.0178,
+      "rank": 3
+    },
+    {
+      "nome": "Aghjabadi",
+      "lat": 40.0502,
+      "lng": 47.4594,
+      "rank": 3
+    },
+    {
+      "nome": "Shamakhi",
+      "lat": 40.6314,
+      "lng": 48.6414,
+      "rank": 3
+    },
+    {
+      "nome": "Maştağa",
+      "lat": 40.5298,
+      "lng": 50.0062,
+      "rank": 3
+    },
+    {
+      "nome": "Aghdam",
+      "lat": 39.991,
+      "lng": 46.9274,
+      "rank": 3
+    },
+    {
+      "nome": "Salyan",
+      "lat": 39.5962,
+      "lng": 48.9848,
+      "rank": 3
+    },
+    {
+      "nome": "Hövsan",
+      "lat": 40.3744,
+      "lng": 50.0853,
+      "rank": 3
+    },
+    {
+      "nome": "Jalilabad",
+      "lat": 39.2096,
+      "lng": 48.4919,
+      "rank": 3
+    },
+    {
+      "nome": "Imishli",
+      "lat": 39.871,
+      "lng": 48.06,
+      "rank": 3
+    },
+    {
+      "nome": "Zaqatala",
+      "lat": 41.6316,
+      "lng": 46.6448,
+      "rank": 3
+    },
+    {
+      "nome": "Sabirabad",
+      "lat": 40.0087,
+      "lng": 48.477,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Erevan",
+      "lat": 40.1831,
+      "lng": 44.5116,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tbilisi",
+      "lat": 41.727,
+      "lng": 44.7888,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Teerã",
+      "lat": 35.6739,
+      "lng": 51.4224,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tabriz",
+      "lat": 38.0882,
+      "lng": 46.2993,
+      "rank": 1
+    },
+    {
+      "nome": "Urmia",
+      "lat": 37.53,
+      "lng": 45,
+      "rank": 1
+    },
+    {
+      "nome": "Ardabil",
+      "lat": 38.25,
+      "lng": 48.3,
+      "rank": 1
+    },
+    {
+      "nome": "Makhachkala",
+      "lat": 42.98,
+      "lng": 47.5,
+      "rank": 1
+    },
+    {
+      "nome": "Rasht",
+      "lat": 37.3,
+      "lng": 49.63,
+      "rank": 1
+    },
+    {
+      "nome": "Van",
+      "lat": 38.4954,
+      "lng": 43.4,
+      "rank": 1
+    },
+    {
+      "nome": "Dohuk",
+      "lat": 36.8667,
+      "lng": 43,
+      "rank": 1
+    },
+    {
+      "nome": "Mossul",
+      "lat": 36.3469,
+      "lng": 43.1431,
+      "rank": 1
+    },
+    {
+      "nome": "Vladikavkaz",
+      "lat": 43.0504,
+      "lng": 44.67,
+      "rank": 1
+    },
+    {
+      "nome": "Khoy",
+      "lat": 38.5304,
+      "lng": 44.97,
+      "rank": 2
+    },
+    {
+      "nome": "Karaj",
+      "lat": 35.8023,
+      "lng": 50.9681,
+      "rank": 2
+    },
+    {
+      "nome": "Rustavi",
+      "lat": 41.5704,
+      "lng": 45.05,
+      "rank": 2
+    },
+    {
+      "nome": "Gyumri",
+      "lat": 40.7894,
+      "lng": 43.8475,
+      "rank": 2
+    },
+    {
+      "nome": "Erbil",
+      "lat": 36.181,
+      "lng": 44.0067,
+      "rank": 2
+    },
+    {
+      "nome": "Maragha",
+      "lat": 37.4204,
+      "lng": 46.22,
+      "rank": 2
+    },
+    {
+      "nome": "Derbent",
+      "lat": 42.0578,
+      "lng": 48.2774,
+      "rank": 2
+    },
+    {
+      "nome": "Ahar",
+      "lat": 38.4829,
+      "lng": 47.0629,
+      "rank": 2
+    },
+    {
+      "nome": "Vanadzor",
+      "lat": 40.8128,
+      "lng": 44.4883,
+      "rank": 2
+    },
+    {
+      "nome": "Nalchik",
+      "lat": 43.4981,
+      "lng": 43.6179,
+      "rank": 2
+    },
+    {
+      "nome": "Grózni",
+      "lat": 43.3187,
+      "lng": 45.6987,
+      "rank": 2
+    },
+    {
+      "nome": "Zanjan",
+      "lat": 36.67,
+      "lng": 48.5,
+      "rank": 2
+    },
+    {
+      "nome": "Kutaisi",
+      "lat": 42.25,
+      "lng": 42.73,
+      "rank": 2
+    },
+    {
+      "nome": "Hakkâri",
+      "lat": 37.5744,
+      "lng": 43.7408,
+      "rank": 2
+    },
+    {
+      "nome": "Qazvin",
+      "lat": 36.27,
+      "lng": 50,
+      "rank": 2
+    },
+    {
+      "nome": "Buynaksk",
+      "lat": 42.8335,
+      "lng": 47.113,
+      "rank": 2
+    },
+    {
+      "nome": "Kaspiysk",
+      "lat": 42.8747,
+      "lng": 47.6244,
+      "rank": 2
+    },
+    {
+      "nome": "Ağrı",
+      "lat": 39.7198,
+      "lng": 43.0513,
+      "rank": 2
+    },
+    {
+      "nome": "Kars",
+      "lat": 40.6085,
+      "lng": 43.0975,
+      "rank": 2
+    },
+    {
+      "nome": "Erzurum",
+      "lat": 39.9204,
+      "lng": 41.29,
+      "rank": 2
+    },
+    {
+      "nome": "Zakho",
+      "lat": 37.1445,
+      "lng": 42.6872,
+      "rank": 2
+    },
+    {
+      "nome": "Mahabad",
+      "lat": 36.7704,
+      "lng": 45.72,
+      "rank": 2
+    },
+    {
+      "nome": "Nazran",
+      "lat": 43.233,
+      "lng": 44.783,
+      "rank": 2
+    },
+    {
+      "nome": "Amol",
+      "lat": 36.4713,
+      "lng": 52.3633,
+      "rank": 3
+    },
+    {
+      "nome": "Sari",
+      "lat": 36.5504,
+      "lng": 53.1,
+      "rank": 3
+    },
+    {
+      "nome": "Tskhinvali",
+      "lat": 42.2325,
+      "lng": 43.975,
+      "rank": 3
+    },
+    {
+      "nome": "Aktau",
+      "lat": 43.6905,
+      "lng": 51.1417,
+      "rank": 3
+    },
+    {
+      "nome": "Batmane",
+      "lat": 37.8904,
+      "lng": 41.14,
+      "rank": 3
+    },
+    {
+      "nome": "Batumi",
+      "lat": 41.6,
+      "lng": 41.63,
+      "rank": 3
+    },
+    {
+      "nome": "Kislovodsk",
+      "lat": 43.91,
+      "lng": 42.72,
+      "rank": 3
+    },
+    {
+      "nome": "Rize",
+      "lat": 41.0208,
+      "lng": 40.5219,
+      "rank": 3
+    },
+    {
+      "nome": "Piatigorsk",
+      "lat": 44.08,
+      "lng": 43.09,
+      "rank": 3
+    },
+    {
+      "nome": "Sirte",
+      "lat": 37.944,
+      "lng": 41.933,
+      "rank": 3
+    },
+    {
+      "nome": "Tal Afar",
+      "lat": 36.376,
+      "lng": 42.4498,
+      "rank": 3
+    },
+    {
+      "nome": "Gavar",
+      "lat": 40.3589,
+      "lng": 45.1267,
+      "rank": 3
+    },
+    {
+      "nome": "Gorgan",
+      "lat": 36.8303,
+      "lng": 54.48,
+      "rank": 3
+    },
+    {
+      "nome": "Artaxata",
+      "lat": 39.9539,
+      "lng": 44.5506,
+      "rank": 3
+    },
+    {
+      "nome": "Tatvan",
+      "lat": 38.5066,
+      "lng": 42.2816,
+      "rank": 3
+    },
+    {
+      "nome": "Nusaybin",
+      "lat": 37.075,
+      "lng": 41.2184,
+      "rank": 3
+    },
+    {
+      "nome": "Türkmenbaşy",
+      "lat": 40.023,
+      "lng": 52.9697,
+      "rank": 3
+    },
+    {
+      "nome": "Bitlis",
+      "lat": 38.394,
+      "lng": 42.123,
+      "rank": 3
+    },
+    {
+      "nome": "Ijevan",
+      "lat": 40.8756,
+      "lng": 45.1492,
+      "rank": 3
+    },
+    {
+      "nome": "Cherquésseque",
+      "lat": 44.2904,
+      "lng": 42.06,
+      "rank": 3
+    },
+    {
+      "nome": "Muxe",
+      "lat": 38.749,
+      "lng": 41.4969,
+      "rank": 3
+    },
+    {
+      "nome": "Nevinnomyssk",
+      "lat": 44.6201,
+      "lng": 41.95,
+      "rank": 3
+    },
+    {
+      "nome": "Georgiyevsk",
+      "lat": 44.1599,
+      "lng": 43.4699,
+      "rank": 3
+    },
+    {
+      "nome": "Mozdok",
+      "lat": 43.7543,
+      "lng": 44.6544,
+      "rank": 3
+    },
+    {
+      "nome": "Balkanabat",
+      "lat": 39.5124,
+      "lng": 54.3649,
+      "rank": 3
+    },
+    {
+      "nome": "Hasaca",
+      "lat": 36.4833,
+      "lng": 40.75,
+      "rank": 3
+    },
+    {
+      "nome": "Sokhumi",
+      "lat": 43.02,
+      "lng": 41.02,
+      "rank": 3
+    },
+    {
+      "nome": "Poti",
+      "lat": 42.1557,
+      "lng": 41.6716,
+      "rank": 3
+    },
+    {
+      "nome": "Yeghegnadzor",
+      "lat": 39.7611,
+      "lng": 45.3333,
+      "rank": 3
+    },
+    {
+      "nome": "Bingol",
+      "lat": 38.885,
+      "lng": 40.498,
+      "rank": 3
+    },
+    {
+      "nome": "Bījār",
+      "lat": 35.8741,
+      "lng": 47.5937,
+      "rank": 3
+    },
+    {
+      "nome": "Mardim",
+      "lat": 37.3115,
+      "lng": 40.7427,
+      "rank": 3
+    },
+    {
+      "nome": "Artvim",
+      "lat": 41.183,
+      "lng": 41.818,
+      "rank": 3
+    },
+    {
+      "nome": "Zelenokumsk",
+      "lat": 44.4091,
+      "lng": 43.8787,
+      "rank": 3
+    },
+    {
+      "nome": "Labinsk",
+      "lat": 44.6348,
+      "lng": 40.7443,
+      "rank": 3
+    },
+    {
+      "nome": "Marand",
+      "lat": 38.4329,
+      "lng": 45.7749,
+      "rank": 3
+    },
+    {
+      "nome": "Bandar-e Anzalī",
+      "lat": 37.4732,
+      "lng": 49.4579,
+      "rank": 3
+    },
+    {
+      "nome": "Pārsābād",
+      "lat": 39.6482,
+      "lng": 47.9174,
+      "rank": 3
+    },
+    {
+      "nome": "Iğdır",
+      "lat": 39.9237,
+      "lng": 44.045,
+      "rank": 3
+    },
+    {
+      "nome": "Erciş",
+      "lat": 39.0259,
+      "lng": 43.3596,
+      "rank": 3
+    },
+    {
+      "nome": "Mīāneh",
+      "lat": 37.421,
+      "lng": 47.715,
+      "rank": 3
+    },
+    {
+      "nome": "Sahand",
+      "lat": 37.951,
+      "lng": 46.1103,
+      "rank": 3
+    },
+    {
+      "nome": "Salmās",
+      "lat": 38.1973,
+      "lng": 44.7653,
+      "rank": 3
+    },
+    {
+      "nome": "Khasavyurt",
+      "lat": 43.2487,
+      "lng": 46.5857,
+      "rank": 3
+    },
+    {
+      "nome": "Bonāb",
+      "lat": 37.3404,
+      "lng": 46.0561,
+      "rank": 3
+    },
+    {
+      "nome": "Lāhījān",
+      "lat": 37.2042,
+      "lng": 50.0092,
+      "rank": 3
+    },
+    {
+      "nome": "Mīāndoāb",
+      "lat": 36.9667,
+      "lng": 46.1096,
+      "rank": 3
+    },
+    {
+      "nome": "Patnos",
+      "lat": 39.2249,
+      "lng": 42.8569,
+      "rank": 3
+    },
+    {
+      "nome": "Piranshahr",
+      "lat": 36.701,
+      "lng": 45.1413,
+      "rank": 3
+    },
+    {
+      "nome": "Sumayl",
+      "lat": 36.8582,
+      "lng": 42.8482,
+      "rank": 3
+    },
+    {
+      "nome": "Būkān",
+      "lat": 36.521,
+      "lng": 46.2089,
+      "rank": 3
+    },
+    {
+      "nome": "Bābol",
+      "lat": 36.551,
+      "lng": 52.6786,
+      "rank": 3
+    },
+    {
+      "nome": "Silopi",
+      "lat": 37.2438,
+      "lng": 42.4635,
+      "rank": 3
+    },
+    {
+      "nome": "Cizre",
+      "lat": 37.3302,
+      "lng": 42.1848,
+      "rank": 3
+    },
+    {
+      "nome": "Qā’em Shahr",
+      "lat": 36.4667,
+      "lng": 52.8676,
+      "rank": 3
+    },
+    {
+      "nome": "Naqadeh",
+      "lat": 36.9553,
+      "lng": 45.388,
+      "rank": 3
+    },
+    {
+      "nome": "'Ākra",
+      "lat": 36.7336,
+      "lng": 43.8804,
+      "rank": 3
+    },
+    {
+      "nome": "Saqqez",
+      "lat": 36.2499,
+      "lng": 46.2735,
+      "rank": 3
+    },
+    {
+      "nome": "Chālūs",
+      "lat": 36.655,
+      "lng": 51.4204,
+      "rank": 3
+    },
+    {
+      "nome": "Naz̧arābād",
+      "lat": 35.9541,
+      "lng": 50.6061,
+      "rank": 3
+    },
+    {
+      "nome": "Xebat",
+      "lat": 36.278,
+      "lng": 43.6707,
+      "rank": 3
+    },
+    {
+      "nome": "Soran",
+      "lat": 36.6556,
+      "lng": 44.5422,
+      "rank": 3
+    },
+    {
+      "nome": "Khasnahzān",
+      "lat": 36.2009,
+      "lng": 44.1424,
+      "rank": 3
+    },
+    {
+      "nome": "Baḥarkah",
+      "lat": 36.3156,
+      "lng": 44.0353,
+      "rank": 3
+    },
+    {
+      "nome": "Qeładizê",
+      "lat": 36.1825,
+      "lng": 45.1302,
+      "rank": 3
+    },
+    {
+      "nome": "Rānyah",
+      "lat": 36.2551,
+      "lng": 44.8824,
+      "rank": 3
+    },
+    {
+      "nome": "Kamālshahr",
+      "lat": 35.8619,
+      "lng": 50.8742,
+      "rank": 3
+    },
+    {
+      "nome": "Moḩammadīyeh",
+      "lat": 36.2237,
+      "lng": 50.1825,
+      "rank": 3
+    },
+    {
+      "nome": "Bāneh",
+      "lat": 35.9975,
+      "lng": 45.8853,
+      "rank": 3
+    },
+    {
+      "nome": "Alvand",
+      "lat": 36.1893,
+      "lng": 50.0643,
+      "rank": 3
+    },
+    {
+      "nome": "Yessentuki",
+      "lat": 44.0483,
+      "lng": 42.8564,
+      "rank": 3
+    },
+    {
+      "nome": "Pardīs",
+      "lat": 35.7469,
+      "lng": 51.8122,
+      "rank": 3
+    },
+    {
+      "nome": "Kızıltepe",
+      "lat": 37.1884,
+      "lng": 40.5772,
+      "rank": 3
+    },
+    {
+      "nome": "Shahre Jadide Andisheh",
+      "lat": 35.6803,
+      "lng": 51.0193,
+      "rank": 3
+    },
+    {
+      "nome": "Behshahr",
+      "lat": 36.6923,
+      "lng": 53.5526,
+      "rank": 3
+    }
+  ]
+}

@@ -13,7 +13,7 @@
 
     <!-- BANNER DE CONTEXTO (origem: liga ou país) -->
     <div *ngIf="filtroLiga || filtroPais"
-      class="bg-surface rounded-2xl border border-green-500/20 p-4 mb-6 flex items-center justify-between">
+      class="bg-surface rounded-2xl border border-accent/20 p-4 mb-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div *ngIf="filtroLiga"
           class="w-10 h-10 rounded-lg bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
@@ -46,9 +46,9 @@
     <!-- GRID DE TIMES -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div *ngFor="let time of times" (click)="abrirTime(time.id)"
-        class="rounded-2xl overflow-hidden border border-fg/5 hover:border-green-500/30 hover:scale-[1.01] transition-all cursor-pointer">
+        class="rounded-2xl overflow-hidden border border-fg/5 hover:border-accent/30 hover:scale-[1.01] transition-all cursor-pointer">
         <div class="p-4 flex items-center gap-3.5 relative"
-          style="background: linear-gradient(135deg, #00E676, #0B8A45)">
+          style="background: linear-gradient(135deg, #4FD11F, #2A7F12)">
           <span class="absolute top-3 right-3.5 bg-black/25 text-white text-[10px] font-bold px-2 py-1 rounded">
             {{ time.ligaNome?.toUpperCase() || 'SEM LIGA' }}
           </span>
@@ -66,7 +66,7 @@
         <div class="bg-surface p-4">
           <div class="grid grid-cols-2 gap-2.5 mb-3">
             <div class="bg-surface-2 rounded-xl p-2.5 text-center">
-              <p class="text-xl font-bold" style="color:#00E676">{{ time.overallMedio | number:'1.0-0' }}</p>
+              <p class="text-xl font-bold" style="color:#4FD11F">{{ time.overallMedio | number:'1.0-0' }}</p>
               <p class="text-[10px] text-fg-subtle uppercase tracking-wide mt-0.5">Overall médio</p>
             </div>
             <div class="bg-surface-2 rounded-xl p-2.5 text-center">
@@ -78,7 +78,7 @@
           <div class="flex items-end justify-between border-t border-fg/10 pt-3">
             <div>
               <p class="text-[11px] text-fg-subtle">Valor do elenco</p>
-              <p class="text-lg font-bold mt-0.5" style="color:#00E676">{{ formatarValorCompacto(time.valorElenco) }}
+              <p class="text-lg font-bold mt-0.5" style="color:#4FD11F">{{ formatarValorCompacto(time.valorElenco) }}
               </p>
             </div>
             <div class="flex gap-0.5">

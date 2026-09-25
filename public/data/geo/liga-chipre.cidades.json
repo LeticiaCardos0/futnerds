@@ -1,0 +1,123 @@
+{
+  "ligaId": "liga-chipre",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Limassol",
+      "lat": 34.6754,
+      "lng": 33.0333,
+      "rank": 1
+    },
+    {
+      "nome": "Larnaca",
+      "lat": 34.917,
+      "lng": 33.636,
+      "rank": 1
+    },
+    {
+      "nome": "Pafos",
+      "lat": 34.7559,
+      "lng": 32.4225,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Beirute",
+      "lat": 33.8739,
+      "lng": 35.5078,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Latakia",
+      "lat": 35.54,
+      "lng": 35.78,
+      "rank": 1
+    },
+    {
+      "nome": "Trípoli",
+      "lat": 34.422,
+      "lng": 35.868,
+      "rank": 1
+    },
+    {
+      "nome": "Famagusta",
+      "lat": 35.125,
+      "lng": 33.95,
+      "rank": 1
+    },
+    {
+      "nome": "Douma",
+      "lat": 33.5833,
+      "lng": 36.4,
+      "rank": 1
+    },
+    {
+      "nome": "Tartus",
+      "lat": 34.8846,
+      "lng": 35.8866,
+      "rank": 1
+    },
+    {
+      "nome": "İskenderun",
+      "lat": 36.5804,
+      "lng": 36.17,
+      "rank": 1
+    },
+    {
+      "nome": "Sídon",
+      "lat": 33.563,
+      "lng": 35.3688,
+      "rank": 1
+    },
+    {
+      "nome": "Antakya",
+      "lat": 36.2333,
+      "lng": 36.1167,
+      "rank": 1
+    },
+    {
+      "nome": "Samandağ",
+      "lat": 36.1171,
+      "lng": 35.9333,
+      "rank": 1
+    },
+    {
+      "nome": "Zahlé",
+      "lat": 33.8501,
+      "lng": 35.9042,
+      "rank": 1
+    },
+    {
+      "nome": "Alanya",
+      "lat": 36.5438,
+      "lng": 31.9998,
+      "rank": 3
+    },
+    {
+      "nome": "Silifke",
+      "lat": 36.3778,
+      "lng": 33.9344,
+      "rank": 3
+    },
+    {
+      "nome": "Aley",
+      "lat": 33.8053,
+      "lng": 35.6,
+      "rank": 3
+    },
+    {
+      "nome": "Jounieh",
+      "lat": 33.9808,
+      "lng": 35.6178,
+      "rank": 3
+    },
+    {
+      "nome": "Arsuz",
+      "lat": 36.413,
+      "lng": 35.8903,
+      "rank": 3
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+/* ============================================================================
+   Home — parte 4 de 4 (futebol do mundo: globo 3D, painel do país e tour).
+   Ver o cabecalho de home.scss sobre a divisao e a ordem dos arquivos.
+   ============================================================================ */
+
+@keyframes fnPainelEntra {
+  from { opacity: 0; transform: translateY(14px); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+@keyframes fnTourBarra {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes fnEsqueleto {
+  0%, 100% { opacity: .35; }
+  50% { opacity: .75; }
+}
+
+.fn-world {
+  position: relative;
+  padding: 40px 0;
+  overflow: hidden;
+
+  // brilho verde de fundo atrás do globo
+  &::before {
+    content: '';
+    position: absolute;
+    left: -8%;
+    top: 8%;
+    width: 68%;
+    height: 84%;
+    background: radial-gradient(closest-side, rgba(60, 176, 26, .12), transparent);
+    pointer-events: none;
+  }
+}
+
+.fn-world-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+  min-height: 680px;
+}
+
+.fn-world-globe {
+  position: relative;
+  height: 640px;
+
+  app-atlas-globe {
+    position: absolute;
+    z-index: 1;
+    inset: 20px 0;
+  }
+}
+
+.fn-world-glow {
+  position: absolute;
+  inset: 14% 16%;
+  border-radius: 50%;
+  background: rgba(60, 176, 26, .18);
+  filter: blur(110px);
+}
+
+.fn-world-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.fn-world-title {
+  max-width: 620px;
+  margin: 0;
+  font: 700 46px / 1.05 var(--titulo);
+  letter-spacing: -.025em;
+}
+
+.fn-world-desc {
+  max-width: 560px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--cinza);
+}
+
+/* ---------- painel do país ---------- */
+.fn-painel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  padding: 22px 24px 24px;
+  border: 1px solid rgba(79, 209, 31, .28);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(60, 176, 26, .1), rgba(10, 18, 13, .85) 45%), var(--painel);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .04);
+  overflow: hidden;
+}
+
+.fn-painel-in {
+  animation: fnPainelEntra .55s var(--ease) both;
+}
+
+.fn-painel-topo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.fn-painel-flag {
+  width: 56px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
+}
+
+.fn-painel-nome {
+  flex: 1;
+  min-width: 0;
+}
+
+.fn-painel-pais {
+  font: 700 30px / 1.05 var(--titulo);
+  letter-spacing: -.02em;
+}
+
+.fn-painel-liga {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--neon);
+}
+
+.fn-painel-logo {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 0 24px rgba(79, 209, 31, .25);
+
+  img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+  }
+}
+
+.fn-painel-nums {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 20px;
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+
+  > div {
+    padding: 14px 0 14px 16px;
+    border-left: 1px solid var(--borda);
+
+    &:first-child {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}
+
+.fn-painel-nums small,
+.fn-painel-clubes > small {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cinza);
+}
+
+.fn-painel-nums small {
+  margin-top: 4px;
+}
+
+.fn-painel-num {
+  display: block;
+  font: 700 30px / 1.1 var(--titulo);
+  letter-spacing: -.02em;
+}
+
+.fn-painel-clubes {
+  margin-top: 16px;
+}
+
+.fn-painel-escudos {
+  display: flex;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 10px;
+
+  .fn-crest {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    transition: transform .3s var(--ease), border-color .3s;
+
+    img {
+      width: 34px;
+      height: 34px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: rgba(79, 209, 31, .5);
+    }
+  }
+
+  .fn-crest--vazio {
+    animation: fnEsqueleto 1.2s ease-in-out infinite;
+  }
+}
+
+.fn-painel-vazio {
+  align-self: center;
+  font-size: 14px;
+  color: var(--cinza);
+}
+
+.fn-painel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--neon);
+
+  .ms {
+    font-size: 18px;
+    transition: transform .25s;
+  }
+
+  &:hover .ms {
+    transform: translateX(3px);
+  }
+}
+
+// progresso até o próximo país do tour
+.fn-tour-barra {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--verde), var(--neon));
+  box-shadow: 0 0 10px var(--neon);
+  transform-origin: left;
+  animation: fnTourBarra linear both;
+  transition: opacity .3s;
+
+  &.is-pausado {
+    opacity: 0;
+    animation-play-state: paused;
+  }
+}
+
+/* ---------- países ---------- */
+.fn-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 600px;
+}
+
+.fn-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 14px 0 12px;
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  background: var(--painel);
+  font: 500 14px var(--texto);
+  color: var(--branco);
+  cursor: pointer;
+  transition: border-color .25s, background .25s, box-shadow .3s, color .25s;
+
+  .fn-flag {
+    width: 20px;
+    height: 14px;
+  }
+
+  &:hover {
+    border-color: rgba(60, 176, 26, .6);
+  }
+
+  &.is-on {
+    border-color: var(--neon);
+    background: rgba(60, 176, 26, .16);
+    color: var(--neon);
+    box-shadow: 0 0 18px rgba(79, 209, 31, .3);
+  }
+
+  &--all {
+    border: 1px dashed rgba(60, 176, 26, .5);
+    background: none;
+    color: var(--neon);
+
+    .ms { font-size: 17px; }
+  }
+}
+
+.fn-world-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--cinza);
+
+  .ms {
+    font-size: 20px;
+    color: var(--neon);
+  }
+}
+
+/* ---------- responsivo ---------- */
+@media (max-width: 1100px) {
+  .fn-world-grid { grid-template-columns: minmax(0, 1fr); gap: 0; min-height: 0; }
+  .fn-world-globe { height: 480px; }
+  .fn-world-copy { padding-bottom: 20px; }
+}
+
+@media (max-width: 680px) {
+  .fn-world-globe { height: 380px; overflow: hidden; }
+  .fn-world-title { font-size: 30px; }
+  .fn-world-desc { font-size: 17px; }
+  .fn-painel { padding: 18px 16px 20px; }
+  .fn-painel-pais { font-size: 22px; }
+  .fn-painel-flag { width: 44px; height: 30px; }
+  .fn-painel-logo { width: 48px; height: 48px; border-radius: 12px; }
+  .fn-painel-logo img { width: 32px; height: 32px; }
+  .fn-painel-num { font-size: 22px; }
+  .fn-painel-nums > div { padding-left: 10px; }
+  .fn-painel-nums small { font-size: 10px; letter-spacing: .04em; }
+  .fn-painel-escudos { gap: 8px; }
+  .fn-painel-escudos .fn-crest { width: 44px; height: 44px; border-radius: 12px; }
+  .fn-painel-escudos .fn-crest img { width: 28px; height: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fn-painel-in,
+  .fn-painel-escudos .fn-crest--vazio { animation: none; }
+  .fn-tour-barra { display: none; }
+}

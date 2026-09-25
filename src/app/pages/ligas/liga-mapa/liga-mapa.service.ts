@@ -89,8 +89,8 @@ export interface DadosMapaLiga {
 }
 
 /** Verde do FutNerds, usado quando o clube não tem cor no JSON. */
-const COR_PADRAO = '#00D639';
-const COR_TEXTO_PADRAO = '#0B7F35';
+const COR_PADRAO = '#3CB01A';
+const COR_TEXTO_PADRAO = '#2A7F12';
 
 /**
  * Mesma normalização do script gerador: minúsculo, sem acento, sem sufixo de
@@ -139,6 +139,35 @@ function distanciaKm(a: { lat: number; lng: number }, b: { lat: number; lng: num
  */
 const KM_MESMA_CIDADE = 3;
 
+/**
+ * Raio em que uma cidade do JSON gerado é considerada a MESMA de uma da
+ * config. Maior que KM_MESMA_CIDADE: o ponto do Natural Earth e o conferido à
+ * mão no OpenStreetMap chegam a ficar a ~10 km (centro histórico x centro da
+ * mancha urbana), e os nomes vêm em idiomas diferentes (Köln x Colônia).
+ */
+const KM_COMPLEMENTO = 15;
+
+/**
+ * Lista curada da config primeiro; do arquivo gerado só entra quem não tem
+ * nome nem ponto repetido nela. A curadoria vence as disputas de espaço, já
+ * que criarRotulos desempata pela ordem.
+ *
+ * Com lista curada, as extras descem um rank: a vista inicial continua a que
+ * foi desenhada à mão, e o detalhe novo aparece conforme o zoom.
+ */
+function complementar(base: ArquivoCidades, extra: ArquivoCidades): ArquivoCidades {
+  const todas = [...base.cidadesSemTime, ...base.cidadesVizinhas];
+  const nomes = new Set(todas.map((c) => normalizar(c.nome)));
+  const nova = (c: CidadeSemTime) =>
+    !nomes.has(normalizar(c.nome)) && !todas.some((t) => distanciaKm(t, c) < KM_COMPLEMENTO);
+  const rebaixar = (c: CidadeSemTime): CidadeSemTime =>
+    todas.length ? { ...c, rank: c.rank === 1 ? 2 : 3 } : c;
+  return {
+    cidadesSemTime: [...base.cidadesSemTime, ...(extra.cidadesSemTime ?? []).filter(nova).map(rebaixar)],
+    cidadesVizinhas: [...base.cidadesVizinhas, ...(extra.cidadesVizinhas ?? []).filter(nova).map(rebaixar)],
+  };
+}
+
 @Injectable({ providedIn: 'root' })
 export class LigaMapaService {
   private readonly http = inject(HttpClient);
@@ -163,17 +192,22 @@ export class LigaMapaService {
       catchErrorVazio(config.clubesUrl),
     );
 
-    // Cidades de referência: da config, ou do JSON gerado quando a config
-    // aponta um (as ligas com config gerada). Falha vira lista vazia — o mapa
-    // sobe com os clubes, só sem os nomes em serifa.
+    // Cidades de referência: as da config mais as do JSON gerado, quando a
+    // config aponta um. Falha no JSON vira lista vazia — o mapa sobe com os
+    // clubes e as cidades da config, só com menos nomes em serifa.
+    const daConfig: ArquivoCidades = {
+      cidadesSemTime: config.cidadesSemTime,
+      cidadesVizinhas: config.cidadesVizinhas,
+    };
     const referencia$: Observable<ArquivoCidades> = config.cidadesUrl
       ? this.http.get<ArquivoCidades>(config.cidadesUrl).pipe(
+          map((arquivo) => complementar(daConfig, arquivo)),
           catchError(() => {
             console.warn(`FutNerds · não foi possível carregar ${config.cidadesUrl}. O mapa sobe sem as cidades de referência.`);
-            return of({ cidadesSemTime: [], cidadesVizinhas: [] });
+            return of(daConfig);
           }),
         )
-      : of({ cidadesSemTime: config.cidadesSemTime, cidadesVizinhas: config.cidadesVizinhas });
+      : of(daConfig);
 
     return forkJoin({ resp: times$, local: local$, ref: referencia$ }).pipe(
       map(({ resp, local, ref }) => this.cruzar(config, resp.times ?? [], local, ref)),

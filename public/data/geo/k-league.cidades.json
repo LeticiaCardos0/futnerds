@@ -6,13 +6,15 @@
       "nome": "Busan",
       "lat": 35.097,
       "lng": 129.0081,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Daegu",
       "lat": 35.8687,
       "lng": 128.605,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Changwon",
@@ -85,6 +87,366 @@
       "lat": 36.9353,
       "lng": 127.6897,
       "rank": 1
+    },
+    {
+      "nome": "Cheonan",
+      "lat": 36.8065,
+      "lng": 127.1522,
+      "rank": 3
+    },
+    {
+      "nome": "Hwaseong-si",
+      "lat": 37.2068,
+      "lng": 126.8169,
+      "rank": 3
+    },
+    {
+      "nome": "Gumi",
+      "lat": 36.1136,
+      "lng": 128.336,
+      "rank": 3
+    },
+    {
+      "nome": "Sejong",
+      "lat": 36.5924,
+      "lng": 127.2922,
+      "rank": 3
+    },
+    {
+      "nome": "Pyeongtaek",
+      "lat": 36.9947,
+      "lng": 127.0889,
+      "rank": 3
+    },
+    {
+      "nome": "Chinju",
+      "lat": 35.1928,
+      "lng": 128.0847,
+      "rank": 3
+    },
+    {
+      "nome": "Suncheon",
+      "lat": 34.9505,
+      "lng": 127.4878,
+      "rank": 3
+    },
+    {
+      "nome": "Gyeongsan-si",
+      "lat": 35.8233,
+      "lng": 128.7378,
+      "rank": 3
+    },
+    {
+      "nome": "Osan",
+      "lat": 37.1522,
+      "lng": 127.0706,
+      "rank": 3
+    },
+    {
+      "nome": "Geoje",
+      "lat": 34.8138,
+      "lng": 128.7056,
+      "rank": 3
+    },
+    {
+      "nome": "Chungju",
+      "lat": 36.9767,
+      "lng": 127.9287,
+      "rank": 3
+    },
+    {
+      "nome": "Icheon-si",
+      "lat": 37.2792,
+      "lng": 127.4425,
+      "rank": 3
+    },
+    {
+      "nome": "Seogwipo",
+      "lat": 33.2533,
+      "lng": 126.5618,
+      "rank": 3
+    },
+    {
+      "nome": "Gwangyang",
+      "lat": 34.9414,
+      "lng": 127.6957,
+      "rank": 3
+    },
+    {
+      "nome": "Jeongeup",
+      "lat": 35.6,
+      "lng": 126.917,
+      "rank": 3
+    },
+    {
+      "nome": "Yeoju",
+      "lat": 37.2958,
+      "lng": 127.6339,
+      "rank": 3
+    },
+    {
+      "nome": "Sangju",
+      "lat": 36.4153,
+      "lng": 128.1606,
+      "rank": 3
+    },
+    {
+      "nome": "Donghae",
+      "lat": 37.5439,
+      "lng": 129.1069,
+      "rank": 3
+    },
+    {
+      "nome": "Asan",
+      "lat": 36.7836,
+      "lng": 127.0042,
+      "rank": 3
+    },
+    {
+      "nome": "Boryeong",
+      "lat": 36.3493,
+      "lng": 126.5977,
+      "rank": 3
+    },
+    {
+      "nome": "Muan",
+      "lat": 34.9901,
+      "lng": 126.479,
+      "rank": 3
+    },
+    {
+      "nome": "Hongseong",
+      "lat": 36.6009,
+      "lng": 126.665,
+      "rank": 3
+    },
+    {
+      "nome": "Yeongju",
+      "lat": 36.8217,
+      "lng": 128.6308,
+      "rank": 3
+    },
+    {
+      "nome": "Yangp'yŏng",
+      "lat": 37.4897,
+      "lng": 127.4906,
+      "rank": 3
+    },
+    {
+      "nome": "Ungsang",
+      "lat": 35.4061,
+      "lng": 129.1686,
+      "rank": 3
+    },
+    {
+      "nome": "Sinhyeon",
+      "lat": 34.8825,
+      "lng": 128.6267,
+      "rank": 3
+    },
+    {
+      "nome": "Nangen",
+      "lat": 35.41,
+      "lng": 127.3858,
+      "rank": 3
+    },
+    {
+      "nome": "Mungyeong",
+      "lat": 36.5946,
+      "lng": 128.1995,
+      "rank": 3
+    },
+    {
+      "nome": "Hongch’ŏn",
+      "lat": 37.6918,
+      "lng": 127.8857,
+      "rank": 3
+    },
+    {
+      "nome": "Changnyeong",
+      "lat": 35.5414,
+      "lng": 128.4951,
+      "rank": 3
+    },
+    {
+      "nome": "Seosan",
+      "lat": 36.7817,
+      "lng": 126.4522,
+      "rank": 3
+    },
+    {
+      "nome": "Koch'ang",
+      "lat": 35.4333,
+      "lng": 126.7,
+      "rank": 3
+    },
+    {
+      "nome": "Gongju",
+      "lat": 36.4556,
+      "lng": 127.1247,
+      "rank": 3
+    },
+    {
+      "nome": "Tongyeong",
+      "lat": 34.8496,
+      "lng": 128.4278,
+      "rank": 3
+    },
+    {
+      "nome": "Anseong",
+      "lat": 37.0108,
+      "lng": 127.2703,
+      "rank": 3
+    },
+    {
+      "nome": "Hwawŏn",
+      "lat": 35.8017,
+      "lng": 128.5008,
+      "rank": 3
+    },
+    {
+      "nome": "Kosong",
+      "lat": 38.3788,
+      "lng": 128.4676,
+      "rank": 3
+    },
+    {
+      "nome": "Chinch'ŏn",
+      "lat": 36.8567,
+      "lng": 127.4433,
+      "rank": 3
+    },
+    {
+      "nome": "Hwasun",
+      "lat": 35.0613,
+      "lng": 126.9875,
+      "rank": 3
+    },
+    {
+      "nome": "Buyeo",
+      "lat": 36.2747,
+      "lng": 126.9091,
+      "rank": 3
+    },
+    {
+      "nome": "Okcheon",
+      "lat": 36.3012,
+      "lng": 127.568,
+      "rank": 3
+    },
+    {
+      "nome": "Eisen",
+      "lat": 35.9675,
+      "lng": 128.9308,
+      "rank": 3
+    },
+    {
+      "nome": "Gapyeong",
+      "lat": 37.831,
+      "lng": 127.5106,
+      "rank": 3
+    },
+    {
+      "nome": "Yecheon",
+      "lat": 36.6574,
+      "lng": 128.4551,
+      "rank": 3
+    },
+    {
+      "nome": "Sinan",
+      "lat": 34.8262,
+      "lng": 126.1086,
+      "rank": 3
+    },
+    {
+      "nome": "Miryang",
+      "lat": 35.4933,
+      "lng": 128.7489,
+      "rank": 3
+    },
+    {
+      "nome": "Yeonggwang",
+      "lat": 35.2781,
+      "lng": 126.5118,
+      "rank": 3
+    },
+    {
+      "nome": "Yeongam",
+      "lat": 34.8006,
+      "lng": 126.6967,
+      "rank": 3
+    },
+    {
+      "nome": "T’aebaek",
+      "lat": 37.1759,
+      "lng": 128.9889,
+      "rank": 3
+    },
+    {
+      "nome": "Kimje",
+      "lat": 35.8017,
+      "lng": 126.8889,
+      "rank": 3
+    },
+    {
+      "nome": "Damyang",
+      "lat": 35.3189,
+      "lng": 126.9839,
+      "rank": 3
+    },
+    {
+      "nome": "Koesan",
+      "lat": 36.8108,
+      "lng": 127.7947,
+      "rank": 3
+    },
+    {
+      "nome": "Nonsan",
+      "lat": 36.2039,
+      "lng": 127.0847,
+      "rank": 3
+    },
+    {
+      "nome": "Yeongdong",
+      "lat": 36.175,
+      "lng": 127.7764,
+      "rank": 3
+    },
+    {
+      "nome": "Munsan",
+      "lat": 37.8594,
+      "lng": 126.785,
+      "rank": 3
+    },
+    {
+      "nome": "Naju",
+      "lat": 35.0292,
+      "lng": 126.7175,
+      "rank": 3
+    },
+    {
+      "nome": "Santyoku",
+      "lat": 37.4406,
+      "lng": 129.1708,
+      "rank": 3
+    },
+    {
+      "nome": "Jangseong",
+      "lat": 35.2978,
+      "lng": 126.7844,
+      "rank": 3
+    },
+    {
+      "nome": "Hadong",
+      "lat": 35.068,
+      "lng": 127.7515,
+      "rank": 3
+    },
+    {
+      "nome": "Cheorwon",
+      "lat": 38.2092,
+      "lng": 127.2175,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -92,18 +454,26 @@
       "nome": "Pyongyang",
       "lat": 39.0214,
       "lng": 125.7527,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Fukuoka",
       "lat": 33.597,
       "lng": 130.4081,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Nampo",
       "lat": 38.7689,
       "lng": 125.4505,
+      "rank": 1
+    },
+    {
+      "nome": "Kitakyūshū",
+      "lat": 33.8704,
+      "lng": 130.82,
       "rank": 1
     },
     {
@@ -119,9 +489,28 @@
       "rank": 1
     },
     {
+      "nome": "Dandong",
+      "lat": 40.1456,
+      "lng": 124.3916,
+      "rank": 1
+    },
+    {
+      "nome": "Shenyang",
+      "lat": 41.8069,
+      "lng": 123.448,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Nagasaki",
       "lat": 32.765,
       "lng": 129.885,
+      "rank": 1
+    },
+    {
+      "nome": "Kagoshima",
+      "lat": 31.586,
+      "lng": 130.5611,
       "rank": 1
     },
     {
@@ -137,9 +526,29 @@
       "rank": 1
     },
     {
+      "nome": "Dalian",
+      "lat": 38.9248,
+      "lng": 121.6279,
+      "rank": 2,
+      "grande": true
+    },
+    {
       "nome": "Wonsan",
       "lat": 39.1605,
       "lng": 127.4308,
+      "rank": 2
+    },
+    {
+      "nome": "Hiroshima",
+      "lat": 34.3898,
+      "lng": 132.441,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Anshan",
+      "lat": 41.117,
+      "lng": 122.9381,
       "rank": 2
     },
     {
@@ -155,9 +564,27 @@
       "rank": 2
     },
     {
+      "nome": "Shimonoseki",
+      "lat": 33.9654,
+      "lng": 130.9454,
+      "rank": 2
+    },
+    {
+      "nome": "Benxi",
+      "lat": 41.3323,
+      "lng": 123.7481,
+      "rank": 2
+    },
+    {
       "nome": "Sariwon",
       "lat": 38.507,
       "lng": 125.762,
+      "rank": 2
+    },
+    {
+      "nome": "Fushun",
+      "lat": 41.8673,
+      "lng": 123.8681,
       "rank": 2
     },
     {
@@ -167,9 +594,57 @@
       "rank": 2
     },
     {
+      "nome": "Ōita",
+      "lat": 33.2432,
+      "lng": 131.5979,
+      "rank": 2
+    },
+    {
+      "nome": "Liaoyang",
+      "lat": 41.2819,
+      "lng": 123.1781,
+      "rank": 2
+    },
+    {
+      "nome": "Yingkou",
+      "lat": 40.6723,
+      "lng": 122.2781,
+      "rank": 2
+    },
+    {
+      "nome": "Miyazaki",
+      "lat": 31.9182,
+      "lng": 131.4184,
+      "rank": 2
+    },
+    {
+      "nome": "Ningbo",
+      "lat": 29.8819,
+      "lng": 121.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Zhuanghe",
+      "lat": 39.6823,
+      "lng": 122.9619,
+      "rank": 2
+    },
+    {
+      "nome": "Weihai",
+      "lat": 37.5,
+      "lng": 122.1,
+      "rank": 2
+    },
+    {
       "nome": "Munchon",
       "lat": 39.3813,
       "lng": 127.2517,
+      "rank": 2
+    },
+    {
+      "nome": "Chongjin",
+      "lat": 41.7846,
+      "lng": 129.79,
       "rank": 2
     },
     {
@@ -179,28 +654,430 @@
       "rank": 2
     },
     {
+      "nome": "Kanggye",
+      "lat": 40.9732,
+      "lng": 126.6032,
+      "rank": 2
+    },
+    {
       "nome": "Pyongyang",
       "lat": 38.3367,
       "lng": 126.3866,
       "rank": 2
     },
     {
+      "nome": "Kimchaek",
+      "lat": 40.6723,
+      "lng": 129.2027,
+      "rank": 3
+    },
+    {
+      "nome": "Matsuyama",
+      "lat": 33.8455,
+      "lng": 132.7658,
+      "rank": 3
+    },
+    {
       "nome": "Changyon",
       "lat": 38.2517,
       "lng": 125.1021,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Wafangdian",
+      "lat": 39.6259,
+      "lng": 121.996,
+      "rank": 3
+    },
+    {
+      "nome": "Fuxin",
+      "lat": 42.0124,
+      "lng": 121.6581,
+      "rank": 3
+    },
+    {
+      "nome": "Kanoya",
+      "lat": 31.3833,
+      "lng": 130.85,
+      "rank": 3
     },
     {
       "nome": "Anbyon",
       "lat": 39.0282,
       "lng": 127.5186,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Manpo",
+      "lat": 41.1454,
+      "lng": 126.2958,
+      "rank": 3
+    },
+    {
+      "nome": "Hyeson",
+      "lat": 41.3927,
+      "lng": 128.1927,
+      "rank": 3
+    },
+    {
+      "nome": "Baishan",
+      "lat": 41.9,
+      "lng": 126.43,
+      "rank": 3
+    },
+    {
+      "nome": "Liaoyuan",
+      "lat": 42.9,
+      "lng": 125.13,
+      "rank": 3
+    },
+    {
+      "nome": "Yanji",
+      "lat": 42.8823,
+      "lng": 129.5128,
+      "rank": 3
+    },
+    {
+      "nome": "Tieling",
+      "lat": 42.3004,
+      "lng": 123.82,
+      "rank": 3
+    },
+    {
+      "nome": "Kilchu",
+      "lat": 40.9604,
+      "lng": 129.3204,
+      "rank": 3
     },
     {
       "nome": "Sin-Ni",
       "lat": 39.488,
       "lng": 125.464,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Huanren",
+      "lat": 41.2563,
+      "lng": 125.346,
+      "rank": 3
+    },
+    {
+      "nome": "Matsue",
+      "lat": 35.467,
+      "lng": 133.0666,
+      "rank": 3
+    },
+    {
+      "nome": "Linjiang",
+      "lat": 41.8363,
+      "lng": 126.936,
+      "rank": 3
+    },
+    {
+      "nome": "Nakhodka",
+      "lat": 42.8374,
+      "lng": 132.8874,
+      "rank": 3
+    },
+    {
+      "nome": "Musan",
+      "lat": 42.2304,
+      "lng": 129.2304,
+      "rank": 3
+    },
+    {
+      "nome": "Helong",
+      "lat": 42.5348,
+      "lng": 129.0044,
+      "rank": 3
+    },
+    {
+      "nome": "Liuhe",
+      "lat": 42.2789,
+      "lng": 125.7173,
+      "rank": 3
+    },
+    {
+      "nome": "Rason",
+      "lat": 42.3377,
+      "lng": 130.4027,
+      "rank": 3
+    },
+    {
+      "nome": "Panshi",
+      "lat": 42.9426,
+      "lng": 126.0561,
+      "rank": 3
+    },
+    {
+      "nome": "Huinan",
+      "lat": 42.6229,
+      "lng": 126.2614,
+      "rank": 3
+    },
+    {
+      "nome": "Tonghua",
+      "lat": 41.68,
+      "lng": 125.75,
+      "rank": 3
+    },
+    {
+      "nome": "Chosan",
+      "lat": 40.8255,
+      "lng": 125.8008,
+      "rank": 3
+    },
+    {
+      "nome": "Kimhyonggwon",
+      "lat": 40.8175,
+      "lng": 128.1553,
+      "rank": 3
+    },
+    {
+      "nome": "Taedong",
+      "lat": 40.6171,
+      "lng": 125.4501,
+      "rank": 3
+    },
+    {
+      "nome": "Shanghai",
+      "lat": 31.2222,
+      "lng": 121.4581,
+      "rank": 3
+    },
+    {
+      "nome": "Yantai",
+      "lat": 37.4765,
+      "lng": 121.4408,
+      "rank": 3
+    },
+    {
+      "nome": "Hŭngnam",
+      "lat": 39.842,
+      "lng": 127.6321,
+      "rank": 3
+    },
+    {
+      "nome": "Kaech’ŏn",
+      "lat": 39.7006,
+      "lng": 125.8933,
+      "rank": 3
+    },
+    {
+      "nome": "Kurume",
+      "lat": 33.3167,
+      "lng": 130.5167,
+      "rank": 3
+    },
+    {
+      "nome": "Tŏkch’ŏn",
+      "lat": 39.7526,
+      "lng": 126.258,
+      "rank": 3
+    },
+    {
+      "nome": "Saga",
+      "lat": 33.2333,
+      "lng": 130.3,
+      "rank": 3
+    },
+    {
+      "nome": "Paech’ŏn-ŭp",
+      "lat": 37.9931,
+      "lng": 126.3014,
+      "rank": 3
+    },
+    {
+      "nome": "Sinp’o",
+      "lat": 40.0397,
+      "lng": 128.1943,
+      "rank": 3
+    },
+    {
+      "nome": "Ch’ŏngdan-ŭp",
+      "lat": 37.9703,
+      "lng": 125.9375,
+      "rank": 3
+    },
+    {
+      "nome": "Sinch’ŏn-ŭp",
+      "lat": 38.3532,
+      "lng": 125.4842,
+      "rank": 3
+    },
+    {
+      "nome": "Isahaya",
+      "lat": 32.8411,
+      "lng": 130.0431,
+      "rank": 3
+    },
+    {
+      "nome": "Ōmuta",
+      "lat": 33.0333,
+      "lng": 130.45,
+      "rank": 3
+    },
+    {
+      "nome": "Iizuka",
+      "lat": 33.6365,
+      "lng": 130.6868,
+      "rank": 3
+    },
+    {
+      "nome": "Paek'ak",
+      "lat": 39.4627,
+      "lng": 125.6059,
+      "rank": 3
+    },
+    {
+      "nome": "Chaeryŏng-ni",
+      "lat": 38.7358,
+      "lng": 125.2308,
+      "rank": 3
+    },
+    {
+      "nome": "Panjin",
+      "lat": 41.121,
+      "lng": 122.0739,
+      "rank": 3
+    },
+    {
+      "nome": "Honmachi",
+      "lat": 32.5044,
+      "lng": 130.5995,
+      "rank": 3
+    },
+    {
+      "nome": "Kirishima",
+      "lat": 31.7409,
+      "lng": 130.7629,
+      "rank": 3
+    },
+    {
+      "nome": "Karatsu",
+      "lat": 33.4425,
+      "lng": 129.9697,
+      "rank": 3
+    },
+    {
+      "nome": "Ŭllyul",
+      "lat": 38.5139,
+      "lng": 125.1897,
+      "rank": 3
+    },
+    {
+      "nome": "Kangnyŏng",
+      "lat": 37.9075,
+      "lng": 125.51,
+      "rank": 3
+    },
+    {
+      "nome": "Chikushino-shi",
+      "lat": 33.4963,
+      "lng": 130.5156,
+      "rank": 3
+    },
+    {
+      "nome": "Itoshima",
+      "lat": 33.5423,
+      "lng": 130.1842,
+      "rank": 3
+    },
+    {
+      "nome": "Munakata",
+      "lat": 33.7957,
+      "lng": 130.559,
+      "rank": 3
+    },
+    {
+      "nome": "Ŭnch’ŏn-ŭp",
+      "lat": 38.5656,
+      "lng": 125.4272,
+      "rank": 3
+    },
+    {
+      "nome": "Ōmura",
+      "lat": 32.9214,
+      "lng": 129.9539,
+      "rank": 3
+    },
+    {
+      "nome": "Sendai",
+      "lat": 31.8167,
+      "lng": 130.3,
+      "rank": 3
+    },
+    {
+      "nome": "Miyakonojō",
+      "lat": 31.7333,
+      "lng": 131.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Kwail-ŭp",
+      "lat": 38.4461,
+      "lng": 125.0186,
+      "rank": 3
+    },
+    {
+      "nome": "Fengcheng",
+      "lat": 40.4536,
+      "lng": 124.0717,
+      "rank": 3
+    },
+    {
+      "nome": "Samch’ŏn",
+      "lat": 38.3594,
+      "lng": 125.3259,
+      "rank": 3
+    },
+    {
+      "nome": "Fengxiang",
+      "lat": 30.8584,
+      "lng": 121.4678,
+      "rank": 3
+    },
+    {
+      "nome": "Sinwŏn-ŭp",
+      "lat": 38.2353,
+      "lng": 125.7624,
+      "rank": 3
+    },
+    {
+      "nome": "Amakusa",
+      "lat": 32.4586,
+      "lng": 130.1931,
+      "rank": 3
+    },
+    {
+      "nome": "Pongch’ŏn-ŭp",
+      "lat": 38.1239,
+      "lng": 126.2047,
+      "rank": 3
+    },
+    {
+      "nome": "Ube",
+      "lat": 33.9431,
+      "lng": 131.2511,
+      "rank": 3
+    },
+    {
+      "nome": "Aira",
+      "lat": 31.7743,
+      "lng": 130.5921,
+      "rank": 3
+    },
+    {
+      "nome": "Changam-ch’on",
+      "lat": 40.6061,
+      "lng": 128.7819,
+      "rank": 3
+    },
+    {
+      "nome": "Yamaguchi",
+      "lat": 34.1833,
+      "lng": 131.4667,
+      "rank": 3
     }
   ]
 }

@@ -148,7 +148,7 @@ export class TimesComponent implements OnInit {
     const pai = img.parentElement;
     if (pai && !pai.querySelector('.escudo-fallback')) {
       const icone = document.createElement('i');
-      icone.className = 'escudo-fallback fas fa-shield-alt text-green-700 text-xl';
+      icone.className = 'escudo-fallback fas fa-shield-alt text-accent-strong text-xl';
       pai.appendChild(icone);
     }
   }

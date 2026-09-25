@@ -1,0 +1,1458 @@
+{
+  "ligaId": "liga-colombia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Bogotá",
+      "lat": 4.5984,
+      "lng": -74.0853,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cali",
+      "lat": 3.4019,
+      "lng": -76.5019,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Barranquilla",
+      "lat": 10.9619,
+      "lng": -74.8019,
+      "rank": 1
+    },
+    {
+      "nome": "Bucaramanga",
+      "lat": 7.132,
+      "lng": -73.1278,
+      "rank": 1
+    },
+    {
+      "nome": "Cartagena",
+      "lat": 10.4017,
+      "lng": -75.5163,
+      "rank": 1
+    },
+    {
+      "nome": "Cúcuta",
+      "lat": 7.92,
+      "lng": -72.52,
+      "rank": 1
+    },
+    {
+      "nome": "Pereira",
+      "lat": 4.8104,
+      "lng": -75.68,
+      "rank": 1
+    },
+    {
+      "nome": "Santa Marta",
+      "lat": 11.2472,
+      "lng": -74.2017,
+      "rank": 1
+    },
+    {
+      "nome": "Ibagué",
+      "lat": 4.4389,
+      "lng": -75.2322,
+      "rank": 1
+    },
+    {
+      "nome": "Pasto",
+      "lat": 1.2136,
+      "lng": -77.2811,
+      "rank": 1
+    },
+    {
+      "nome": "Manizales",
+      "lat": 5.06,
+      "lng": -75.52,
+      "rank": 1
+    },
+    {
+      "nome": "Villavicencio",
+      "lat": 4.1533,
+      "lng": -73.635,
+      "rank": 1
+    },
+    {
+      "nome": "Neiva",
+      "lat": 2.931,
+      "lng": -75.3302,
+      "rank": 1
+    },
+    {
+      "nome": "Armenia",
+      "lat": 4.5343,
+      "lng": -75.6811,
+      "rank": 1
+    },
+    {
+      "nome": "Valledupar",
+      "lat": 10.48,
+      "lng": -73.25,
+      "rank": 1
+    },
+    {
+      "nome": "Montería",
+      "lat": 8.7575,
+      "lng": -75.89,
+      "rank": 2
+    },
+    {
+      "nome": "Sincelejo",
+      "lat": 9.2904,
+      "lng": -75.38,
+      "rank": 2
+    },
+    {
+      "nome": "Popayán",
+      "lat": 2.42,
+      "lng": -76.61,
+      "rank": 2
+    },
+    {
+      "nome": "Buenaventura",
+      "lat": 3.8724,
+      "lng": -77.0505,
+      "rank": 2
+    },
+    {
+      "nome": "Barrancabermeja",
+      "lat": 7.09,
+      "lng": -73.85,
+      "rank": 2
+    },
+    {
+      "nome": "Tuluá",
+      "lat": 4.0904,
+      "lng": -76.21,
+      "rank": 2
+    },
+    {
+      "nome": "Tunja",
+      "lat": 5.5504,
+      "lng": -73.37,
+      "rank": 2
+    },
+    {
+      "nome": "Cartago",
+      "lat": 4.75,
+      "lng": -75.91,
+      "rank": 2
+    },
+    {
+      "nome": "Riohacha",
+      "lat": 11.5403,
+      "lng": -72.91,
+      "rank": 2
+    },
+    {
+      "nome": "Ciénaga",
+      "lat": 11.0104,
+      "lng": -74.25,
+      "rank": 2
+    },
+    {
+      "nome": "Florencia",
+      "lat": 1.6104,
+      "lng": -75.62,
+      "rank": 2
+    },
+    {
+      "nome": "Girardot",
+      "lat": 4.31,
+      "lng": -74.81,
+      "rank": 2
+    },
+    {
+      "nome": "Sogamoso",
+      "lat": 5.72,
+      "lng": -72.94,
+      "rank": 2
+    },
+    {
+      "nome": "Ipiales",
+      "lat": 0.8304,
+      "lng": -77.65,
+      "rank": 2
+    },
+    {
+      "nome": "Duitama",
+      "lat": 5.8305,
+      "lng": -73.02,
+      "rank": 2
+    },
+    {
+      "nome": "Magangue",
+      "lat": 9.23,
+      "lng": -74.74,
+      "rank": 2
+    },
+    {
+      "nome": "Quibdó",
+      "lat": 5.6904,
+      "lng": -76.66,
+      "rank": 2
+    },
+    {
+      "nome": "Tumaco",
+      "lat": 1.81,
+      "lng": -78.81,
+      "rank": 2
+    },
+    {
+      "nome": "Ocaña",
+      "lat": 8.2404,
+      "lng": -73.35,
+      "rank": 2
+    },
+    {
+      "nome": "Arauca",
+      "lat": 7.0907,
+      "lng": -70.7616,
+      "rank": 2
+    },
+    {
+      "nome": "Sabanalarga",
+      "lat": 10.64,
+      "lng": -74.92,
+      "rank": 2
+    },
+    {
+      "nome": "Yopal",
+      "lat": 5.347,
+      "lng": -72.406,
+      "rank": 2
+    },
+    {
+      "nome": "El Carmen de Bolívar",
+      "lat": 9.7204,
+      "lng": -75.13,
+      "rank": 2
+    },
+    {
+      "nome": "Leticia",
+      "lat": -4.2012,
+      "lng": -69.9553,
+      "rank": 2
+    },
+    {
+      "nome": "San Andrés",
+      "lat": 12.5621,
+      "lng": -81.6903,
+      "rank": 2
+    },
+    {
+      "nome": "Garzón",
+      "lat": 2.2104,
+      "lng": -75.65,
+      "rank": 2
+    },
+    {
+      "nome": "El Banco",
+      "lat": 9.0003,
+      "lng": -73.98,
+      "rank": 2
+    },
+    {
+      "nome": "Chiquinquirá",
+      "lat": 5.6204,
+      "lng": -73.8199,
+      "rank": 2
+    },
+    {
+      "nome": "Pamplona",
+      "lat": 7.3904,
+      "lng": -72.66,
+      "rank": 2
+    },
+    {
+      "nome": "Santa Cruz de Lorica",
+      "lat": 9.2419,
+      "lng": -75.816,
+      "rank": 2
+    },
+    {
+      "nome": "Turbo",
+      "lat": 8.1004,
+      "lng": -76.74,
+      "rank": 3
+    },
+    {
+      "nome": "Arjona",
+      "lat": 10.26,
+      "lng": -75.35,
+      "rank": 3
+    },
+    {
+      "nome": "Honda",
+      "lat": 5.1903,
+      "lng": -74.75,
+      "rank": 3
+    },
+    {
+      "nome": "Yarumal",
+      "lat": 7.0306,
+      "lng": -75.5905,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Berrío",
+      "lat": 6.4804,
+      "lng": -74.42,
+      "rank": 3
+    },
+    {
+      "nome": "Tuquerres",
+      "lat": 1.09,
+      "lng": -77.62,
+      "rank": 3
+    },
+    {
+      "nome": "Tame",
+      "lat": 6.4603,
+      "lng": -71.74,
+      "rank": 3
+    },
+    {
+      "nome": "Tolú",
+      "lat": 9.5358,
+      "lng": -75.572,
+      "rank": 3
+    },
+    {
+      "nome": "Socorro",
+      "lat": 6.4603,
+      "lng": -73.27,
+      "rank": 3
+    },
+    {
+      "nome": "Ayapel",
+      "lat": 8.3304,
+      "lng": -75.15,
+      "rank": 3
+    },
+    {
+      "nome": "Campoalegre",
+      "lat": 2.69,
+      "lng": -75.33,
+      "rank": 3
+    },
+    {
+      "nome": "San José del Guaviare",
+      "lat": 2.57,
+      "lng": -72.64,
+      "rank": 3
+    },
+    {
+      "nome": "Mocoa",
+      "lat": 1.15,
+      "lng": -76.63,
+      "rank": 3
+    },
+    {
+      "nome": "Sonsón",
+      "lat": 5.7166,
+      "lng": -75.3166,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto López",
+      "lat": 4.09,
+      "lng": -72.96,
+      "rank": 3
+    },
+    {
+      "nome": "San Martín",
+      "lat": 3.6904,
+      "lng": -73.69,
+      "rank": 3
+    },
+    {
+      "nome": "Guapí",
+      "lat": 2.5604,
+      "lng": -77.86,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Carreño",
+      "lat": 6.185,
+      "lng": -67.493,
+      "rank": 3
+    },
+    {
+      "nome": "Inírida",
+      "lat": 3.854,
+      "lng": -67.9061,
+      "rank": 3
+    },
+    {
+      "nome": "Mitú",
+      "lat": 1.1983,
+      "lng": -70.1736,
+      "rank": 3
+    },
+    {
+      "nome": "Orocué",
+      "lat": 4.7946,
+      "lng": -71.34,
+      "rank": 3
+    },
+    {
+      "nome": "Nuquí",
+      "lat": 5.6852,
+      "lng": -77.2745,
+      "rank": 3
+    },
+    {
+      "nome": "Juradó",
+      "lat": 7.1217,
+      "lng": -77.7564,
+      "rank": 3
+    },
+    {
+      "nome": "San Vicente de Caguán",
+      "lat": 2.0704,
+      "lng": -74.64,
+      "rank": 3
+    },
+    {
+      "nome": "Palmira",
+      "lat": 3.5348,
+      "lng": -76.2977,
+      "rank": 3
+    },
+    {
+      "nome": "Maicao",
+      "lat": 11.3784,
+      "lng": -72.2395,
+      "rank": 3
+    },
+    {
+      "nome": "Piedecuesta",
+      "lat": 6.9879,
+      "lng": -73.0495,
+      "rank": 3
+    },
+    {
+      "nome": "Facatativá",
+      "lat": 4.8137,
+      "lng": -74.3545,
+      "rank": 3
+    },
+    {
+      "nome": "Pitalito",
+      "lat": 1.8537,
+      "lng": -76.0507,
+      "rank": 3
+    },
+    {
+      "nome": "Zipaquirá",
+      "lat": 5.0221,
+      "lng": -74.0048,
+      "rank": 3
+    },
+    {
+      "nome": "Malambo",
+      "lat": 10.8595,
+      "lng": -74.7739,
+      "rank": 3
+    },
+    {
+      "nome": "Guadalajara de Buga",
+      "lat": 3.901,
+      "lng": -76.2983,
+      "rank": 3
+    },
+    {
+      "nome": "Santander de Quilichao",
+      "lat": 3.0097,
+      "lng": -76.485,
+      "rank": 3
+    },
+    {
+      "nome": "Aguachica",
+      "lat": 8.3084,
+      "lng": -73.6166,
+      "rank": 3
+    },
+    {
+      "nome": "Cereté",
+      "lat": 8.8848,
+      "lng": -75.7905,
+      "rank": 3
+    },
+    {
+      "nome": "Montelíbano",
+      "lat": 7.9792,
+      "lng": -75.4202,
+      "rank": 3
+    },
+    {
+      "nome": "Fusagasugá",
+      "lat": 4.3365,
+      "lng": -74.3638,
+      "rank": 3
+    },
+    {
+      "nome": "Apartadó",
+      "lat": 7.883,
+      "lng": -76.6259,
+      "rank": 3
+    },
+    {
+      "nome": "Chigorodó",
+      "lat": 7.6664,
+      "lng": -76.6811,
+      "rank": 3
+    },
+    {
+      "nome": "La Dorada",
+      "lat": 5.4478,
+      "lng": -74.6631,
+      "rank": 3
+    },
+    {
+      "nome": "Yumbo",
+      "lat": 3.5824,
+      "lng": -76.4915,
+      "rank": 3
+    },
+    {
+      "nome": "Planeta Rica",
+      "lat": 8.4115,
+      "lng": -75.5851,
+      "rank": 3
+    },
+    {
+      "nome": "Chinchiná",
+      "lat": 4.9832,
+      "lng": -75.6049,
+      "rank": 3
+    },
+    {
+      "nome": "Baranoa",
+      "lat": 10.7941,
+      "lng": -74.9164,
+      "rank": 3
+    },
+    {
+      "nome": "Villa del Rosario",
+      "lat": 7.8339,
+      "lng": -72.4742,
+      "rank": 3
+    },
+    {
+      "nome": "San Marcos",
+      "lat": 8.6597,
+      "lng": -75.1281,
+      "rank": 3
+    },
+    {
+      "nome": "Sahagún",
+      "lat": 8.9462,
+      "lng": -75.4428,
+      "rank": 3
+    },
+    {
+      "nome": "Fundación",
+      "lat": 10.5207,
+      "lng": -74.185,
+      "rank": 3
+    },
+    {
+      "nome": "Caucasia",
+      "lat": 7.9865,
+      "lng": -75.1935,
+      "rank": 3
+    },
+    {
+      "nome": "Orito",
+      "lat": 0.6675,
+      "lng": -76.873,
+      "rank": 3
+    },
+    {
+      "nome": "Espinal",
+      "lat": 4.1492,
+      "lng": -74.8843,
+      "rank": 3
+    },
+    {
+      "nome": "Turbaco",
+      "lat": 10.3294,
+      "lng": -75.4114,
+      "rank": 3
+    },
+    {
+      "nome": "Cajicá",
+      "lat": 4.9186,
+      "lng": -74.028,
+      "rank": 3
+    },
+    {
+      "nome": "Agustín Codazzi",
+      "lat": 10.0367,
+      "lng": -73.2356,
+      "rank": 3
+    },
+    {
+      "nome": "El Bagre",
+      "lat": 7.6035,
+      "lng": -74.8095,
+      "rank": 3
+    },
+    {
+      "nome": "Cimitarra",
+      "lat": 6.3142,
+      "lng": -73.9497,
+      "rank": 3
+    },
+    {
+      "nome": "Chinú",
+      "lat": 9.1057,
+      "lng": -75.3981,
+      "rank": 3
+    },
+    {
+      "nome": "Samaniego",
+      "lat": 1.3385,
+      "lng": -77.5957,
+      "rank": 3
+    },
+    {
+      "nome": "Plato",
+      "lat": 9.7903,
+      "lng": -74.7824,
+      "rank": 3
+    },
+    {
+      "nome": "Florida",
+      "lat": 3.324,
+      "lng": -76.2344,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Tejada",
+      "lat": 3.2323,
+      "lng": -76.4178,
+      "rank": 3
+    },
+    {
+      "nome": "San Gil",
+      "lat": 6.5595,
+      "lng": -73.1364,
+      "rank": 3
+    },
+    {
+      "nome": "Jamundí",
+      "lat": 3.2618,
+      "lng": -76.5402,
+      "rank": 3
+    },
+    {
+      "nome": "Pradera",
+      "lat": 3.4197,
+      "lng": -76.2419,
+      "rank": 3
+    },
+    {
+      "nome": "Piendamo",
+      "lat": 2.6392,
+      "lng": -76.5306,
+      "rank": 3
+    },
+    {
+      "nome": "Sevilla",
+      "lat": 4.2655,
+      "lng": -75.9315,
+      "rank": 3
+    },
+    {
+      "nome": "Guaduas",
+      "lat": 5.0669,
+      "lng": -74.595,
+      "rank": 3
+    },
+    {
+      "nome": "Acacías",
+      "lat": 3.987,
+      "lng": -73.758,
+      "rank": 3
+    },
+    {
+      "nome": "Bosconia",
+      "lat": 9.9711,
+      "lng": -73.8882,
+      "rank": 3
+    },
+    {
+      "nome": "San Juan del Cesar",
+      "lat": 10.7711,
+      "lng": -73.0031,
+      "rank": 3
+    },
+    {
+      "nome": "Segovia",
+      "lat": 7.0799,
+      "lng": -74.6989,
+      "rank": 3
+    },
+    {
+      "nome": "Corozal",
+      "lat": 9.3185,
+      "lng": -75.2933,
+      "rank": 3
+    },
+    {
+      "nome": "Líbano",
+      "lat": 4.9218,
+      "lng": -75.0623,
+      "rank": 3
+    },
+    {
+      "nome": "El Cerrito",
+      "lat": 3.6853,
+      "lng": -76.312,
+      "rank": 3
+    },
+    {
+      "nome": "Barrancas",
+      "lat": 10.9567,
+      "lng": -72.7946,
+      "rank": 3
+    },
+    {
+      "nome": "Santa Rosa de Osos",
+      "lat": 6.6474,
+      "lng": -75.4603,
+      "rank": 3
+    },
+    {
+      "nome": "Patía",
+      "lat": 2.069,
+      "lng": -77.0527,
+      "rank": 3
+    },
+    {
+      "nome": "Payandé",
+      "lat": 4.2975,
+      "lng": -75.0967,
+      "rank": 3
+    },
+    {
+      "nome": "San Pablo",
+      "lat": 10.0515,
+      "lng": -75.2678,
+      "rank": 3
+    },
+    {
+      "nome": "Belalcázar",
+      "lat": 2.6464,
+      "lng": -75.9727,
+      "rank": 3
+    },
+    {
+      "nome": "Gigante",
+      "lat": 2.3868,
+      "lng": -75.5474,
+      "rank": 3
+    },
+    {
+      "nome": "Quimbaya",
+      "lat": 4.6241,
+      "lng": -75.7627,
+      "rank": 3
+    },
+    {
+      "nome": "Curumaní",
+      "lat": 9.1999,
+      "lng": -73.5427,
+      "rank": 3
+    },
+    {
+      "nome": "Paz de Ariporo",
+      "lat": 5.8815,
+      "lng": -71.8917,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Caracas",
+      "lat": 10.5029,
+      "lng": -66.919,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Quito",
+      "lat": -0.213,
+      "lng": -78.502,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Lima",
+      "lat": -12.0461,
+      "lng": -77.052,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cidade do Panamá",
+      "lat": 8.97,
+      "lng": -79.535,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Guaiaquil",
+      "lat": -2.2181,
+      "lng": -79.922,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Maracaibo",
+      "lat": 10.7319,
+      "lng": -71.6619,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Valencia",
+      "lat": 10.2319,
+      "lng": -67.982,
+      "rank": 1
+    },
+    {
+      "nome": "Santo Domingo",
+      "lat": 18.472,
+      "lng": -69.902,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Porto Príncipe",
+      "lat": 18.543,
+      "lng": -72.338,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Barquisimeto",
+      "lat": 10.0519,
+      "lng": -69.3019,
+      "rank": 1
+    },
+    {
+      "nome": "Maracay",
+      "lat": 10.2488,
+      "lng": -67.5978,
+      "rank": 1
+    },
+    {
+      "nome": "San Juan",
+      "lat": 18.44,
+      "lng": -66.13,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "San José",
+      "lat": 9.937,
+      "lng": -84.086,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Kingston",
+      "lat": 17.9771,
+      "lng": -76.7674,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Trujillo",
+      "lat": -8.12,
+      "lng": -79.02,
+      "rank": 2
+    },
+    {
+      "nome": "Barcelona",
+      "lat": 10.1304,
+      "lng": -64.72,
+      "rank": 2
+    },
+    {
+      "nome": "Chiclayo",
+      "lat": -6.7629,
+      "lng": -79.8366,
+      "rank": 2
+    },
+    {
+      "nome": "Iquitos",
+      "lat": -3.75,
+      "lng": -73.25,
+      "rank": 2
+    },
+    {
+      "nome": "Cabimas",
+      "lat": 10.43,
+      "lng": -71.45,
+      "rank": 2
+    },
+    {
+      "nome": "San Cristóbal",
+      "lat": 7.77,
+      "lng": -72.25,
+      "rank": 2
+    },
+    {
+      "nome": "Piúra",
+      "lat": -5.21,
+      "lng": -80.63,
+      "rank": 2
+    },
+    {
+      "nome": "Ciudad Guayana",
+      "lat": 8.37,
+      "lng": -62.62,
+      "rank": 2
+    },
+    {
+      "nome": "Santiago de los Caballeros",
+      "lat": 19.5,
+      "lng": -70.67,
+      "rank": 2
+    },
+    {
+      "nome": "Mérida",
+      "lat": 8.4,
+      "lng": -71.13,
+      "rank": 2
+    },
+    {
+      "nome": "Cumaná",
+      "lat": 10.45,
+      "lng": -64.18,
+      "rank": 2
+    },
+    {
+      "nome": "Pucallpa",
+      "lat": -8.3689,
+      "lng": -74.535,
+      "rank": 2
+    },
+    {
+      "nome": "Ciudad Bolívar",
+      "lat": 8.1,
+      "lng": -63.6,
+      "rank": 2
+    },
+    {
+      "nome": "Cuenca",
+      "lat": -2.9,
+      "lng": -79,
+      "rank": 2
+    },
+    {
+      "nome": "Manaus",
+      "lat": -3.0981,
+      "lng": -60.002,
+      "rank": 2
+    },
+    {
+      "nome": "Barinas",
+      "lat": 8.6,
+      "lng": -70.25,
+      "rank": 2
+    },
+    {
+      "nome": "Ambato",
+      "lat": -1.2696,
+      "lng": -78.62,
+      "rank": 2
+    },
+    {
+      "nome": "Maturín",
+      "lat": 9.75,
+      "lng": -63.17,
+      "rank": 2
+    },
+    {
+      "nome": "Managua",
+      "lat": 12.155,
+      "lng": -86.2704,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Acarigua",
+      "lat": 9.5804,
+      "lng": -69.2,
+      "rank": 2
+    },
+    {
+      "nome": "Porto Velho",
+      "lat": -8.75,
+      "lng": -63.9,
+      "rank": 2
+    },
+    {
+      "nome": "Punto Fijo",
+      "lat": 11.72,
+      "lng": -70.21,
+      "rank": 3
+    },
+    {
+      "nome": "Chimbote",
+      "lat": -9.07,
+      "lng": -78.57,
+      "rank": 3
+    },
+    {
+      "nome": "Tegucigalpa",
+      "lat": 14.104,
+      "lng": -87.2195,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Portoviejo",
+      "lat": -1.06,
+      "lng": -80.46,
+      "rank": 3
+    },
+    {
+      "nome": "Machala",
+      "lat": -3.26,
+      "lng": -79.96,
+      "rank": 3
+    },
+    {
+      "nome": "Colón",
+      "lat": 9.365,
+      "lng": -79.875,
+      "rank": 3
+    },
+    {
+      "nome": "El Tigre",
+      "lat": 8.8903,
+      "lng": -64.26,
+      "rank": 3
+    },
+    {
+      "nome": "Porlamar",
+      "lat": 10.9604,
+      "lng": -63.85,
+      "rank": 3
+    },
+    {
+      "nome": "Coro",
+      "lat": 11.42,
+      "lng": -69.68,
+      "rank": 3
+    },
+    {
+      "nome": "Valera",
+      "lat": 9.32,
+      "lng": -70.62,
+      "rank": 3
+    },
+    {
+      "nome": "Spanish Town",
+      "lat": 17.9833,
+      "lng": -76.95,
+      "rank": 3
+    },
+    {
+      "nome": "Manta",
+      "lat": -0.98,
+      "lng": -80.73,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Cabello",
+      "lat": 10.4704,
+      "lng": -68.17,
+      "rank": 3
+    },
+    {
+      "nome": "Esmeraldas",
+      "lat": 0.9304,
+      "lng": -79.67,
+      "rank": 3
+    },
+    {
+      "nome": "Riobamba",
+      "lat": -1.67,
+      "lng": -78.65,
+      "rank": 3
+    },
+    {
+      "nome": "Port of Spain",
+      "lat": 10.652,
+      "lng": -61.517,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Ocumare del Tuy",
+      "lat": 10.12,
+      "lng": -66.78,
+      "rank": 3
+    },
+    {
+      "nome": "Sullana",
+      "lat": -4.8896,
+      "lng": -80.68,
+      "rank": 3
+    },
+    {
+      "nome": "Guanare",
+      "lat": 9.05,
+      "lng": -69.75,
+      "rank": 3
+    },
+    {
+      "nome": "Carora",
+      "lat": 10.19,
+      "lng": -70.08,
+      "rank": 3
+    },
+    {
+      "nome": "Willemstad",
+      "lat": 12.2004,
+      "lng": -69.02,
+      "rank": 3
+    },
+    {
+      "nome": "Ibarra",
+      "lat": 0.3604,
+      "lng": -78.13,
+      "rank": 3
+    },
+    {
+      "nome": "Cajamarca",
+      "lat": -7.15,
+      "lng": -78.53,
+      "rank": 3
+    },
+    {
+      "nome": "Loja",
+      "lat": -3.99,
+      "lng": -79.21,
+      "rank": 3
+    },
+    {
+      "nome": "San Fernando de Apure",
+      "lat": 7.9,
+      "lng": -67.4699,
+      "rank": 3
+    },
+    {
+      "nome": "Anaco",
+      "lat": 9.44,
+      "lng": -64.46,
+      "rank": 3
+    },
+    {
+      "nome": "Calabozo",
+      "lat": 8.9304,
+      "lng": -67.44,
+      "rank": 3
+    },
+    {
+      "nome": "Mayagüez",
+      "lat": 18.2015,
+      "lng": -67.1397,
+      "rank": 3
+    },
+    {
+      "nome": "Milagro",
+      "lat": -2.1796,
+      "lng": -79.6,
+      "rank": 3
+    },
+    {
+      "nome": "Tumbes",
+      "lat": -3.57,
+      "lng": -80.46,
+      "rank": 3
+    },
+    {
+      "nome": "Santiago de Cuba",
+      "lat": 20.025,
+      "lng": -75.8213,
+      "rank": 3
+    },
+    {
+      "nome": "Rio Branco",
+      "lat": -9.9666,
+      "lng": -67.8,
+      "rank": 3
+    },
+    {
+      "nome": "Talara",
+      "lat": -4.58,
+      "lng": -81.28,
+      "rank": 3
+    },
+    {
+      "nome": "San Carlos del Zulia",
+      "lat": 9.0104,
+      "lng": -71.92,
+      "rank": 3
+    },
+    {
+      "nome": "Latacunga",
+      "lat": -0.9296,
+      "lng": -78.61,
+      "rank": 3
+    },
+    {
+      "nome": "Santo Domingo de los Colorados",
+      "lat": -0.2537,
+      "lng": -79.1763,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto La Cruz",
+      "lat": 10.2138,
+      "lng": -64.6328,
+      "rank": 3
+    },
+    {
+      "nome": "Petare",
+      "lat": 10.4768,
+      "lng": -66.8079,
+      "rank": 3
+    },
+    {
+      "nome": "Turmero",
+      "lat": 10.2286,
+      "lng": -67.4742,
+      "rank": 3
+    },
+    {
+      "nome": "San Miguelito",
+      "lat": 9.0503,
+      "lng": -79.4707,
+      "rank": 3
+    },
+    {
+      "nome": "Eloy Alfaro",
+      "lat": -2.1692,
+      "lng": -79.8399,
+      "rank": 3
+    },
+    {
+      "nome": "Santa Teresa del Tuy",
+      "lat": 10.2329,
+      "lng": -66.6647,
+      "rank": 3
+    },
+    {
+      "nome": "Los Teques",
+      "lat": 10.3495,
+      "lng": -67.0427,
+      "rank": 3
+    },
+    {
+      "nome": "Guarenas",
+      "lat": 10.4703,
+      "lng": -66.6193,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Ojeda",
+      "lat": 10.2016,
+      "lng": -71.3148,
+      "rank": 3
+    },
+    {
+      "nome": "Santo Domingo Oeste",
+      "lat": 18.5,
+      "lng": -70,
+      "rank": 3
+    },
+    {
+      "nome": "Quevedo",
+      "lat": -1.0288,
+      "lng": -79.4626,
+      "rank": 3
+    },
+    {
+      "nome": "Guacara",
+      "lat": 10.2261,
+      "lng": -67.877,
+      "rank": 3
+    },
+    {
+      "nome": "Cúa",
+      "lat": 10.1624,
+      "lng": -66.8825,
+      "rank": 3
+    },
+    {
+      "nome": "Daule",
+      "lat": -1.8603,
+      "lng": -79.9768,
+      "rank": 3
+    },
+    {
+      "nome": "El Vigía",
+      "lat": 8.6135,
+      "lng": -71.657,
+      "rank": 3
+    },
+    {
+      "nome": "La Victoria",
+      "lat": 10.2268,
+      "lng": -67.3312,
+      "rank": 3
+    },
+    {
+      "nome": "Ejido",
+      "lat": 8.5466,
+      "lng": -71.2409,
+      "rank": 3
+    },
+    {
+      "nome": "La Concepción",
+      "lat": 10.6192,
+      "lng": -71.8381,
+      "rank": 3
+    },
+    {
+      "nome": "Mariara",
+      "lat": 10.2953,
+      "lng": -67.7177,
+      "rank": 3
+    },
+    {
+      "nome": "Tinaquillo",
+      "lat": 9.9186,
+      "lng": -68.3047,
+      "rank": 3
+    },
+    {
+      "nome": "Yaritagua",
+      "lat": 10.0808,
+      "lng": -69.1242,
+      "rank": 3
+    },
+    {
+      "nome": "Catia La Mar",
+      "lat": 10.6054,
+      "lng": -67.0324,
+      "rank": 3
+    },
+    {
+      "nome": "Los Puertos de Altagracia",
+      "lat": 10.7149,
+      "lng": -71.5217,
+      "rank": 3
+    },
+    {
+      "nome": "Villa de Cura",
+      "lat": 10.0386,
+      "lng": -67.4894,
+      "rank": 3
+    },
+    {
+      "nome": "Rubio",
+      "lat": 7.7016,
+      "lng": -72.3555,
+      "rank": 3
+    },
+    {
+      "nome": "Concepción",
+      "lat": 10.4119,
+      "lng": -71.6892,
+      "rank": 3
+    },
+    {
+      "nome": "San Juan Bautista",
+      "lat": 11.0124,
+      "lng": -63.9441,
+      "rank": 3
+    },
+    {
+      "nome": "San José de Guanipa",
+      "lat": 8.8872,
+      "lng": -64.1651,
+      "rank": 3
+    },
+    {
+      "nome": "La Villa del Rosario",
+      "lat": 10.3258,
+      "lng": -72.3134,
+      "rank": 3
+    },
+    {
+      "nome": "San Timoteo",
+      "lat": 9.7901,
+      "lng": -71.0708,
+      "rank": 3
+    },
+    {
+      "nome": "Güigüe",
+      "lat": 10.0834,
+      "lng": -67.778,
+      "rank": 3
+    },
+    {
+      "nome": "Arraiján",
+      "lat": 8.9398,
+      "lng": -79.6404,
+      "rank": 3
+    },
+    {
+      "nome": "Croix-des-Bouquets",
+      "lat": 18.5768,
+      "lng": -72.2262,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Marc",
+      "lat": 19.1114,
+      "lng": -72.7008,
+      "rank": 3
+    },
+    {
+      "nome": "Carolina",
+      "lat": 18.3808,
+      "lng": -65.9574,
+      "rank": 3
+    },
+    {
+      "nome": "Léogâne",
+      "lat": 18.5111,
+      "lng": -72.6334,
+      "rank": 3
+    },
+    {
+      "nome": "Dessalines",
+      "lat": 19.2618,
+      "lng": -72.5161,
+      "rank": 3
+    },
+    {
+      "nome": "Tigwav",
+      "lat": 18.4312,
+      "lng": -72.8652,
+      "rank": 3
+    },
+    {
+      "nome": "Arcahaie",
+      "lat": 18.7702,
+      "lng": -72.5123,
+      "rank": 3
+    }
+  ]
+}

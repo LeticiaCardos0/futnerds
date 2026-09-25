@@ -127,6 +127,12 @@
       "lat": 61.1833,
       "lng": 6.85,
       "rank": 2
+    },
+    {
+      "nome": "Asker",
+      "lat": 59.8333,
+      "lng": 10.4372,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -134,55 +140,229 @@
       "nome": "Moscou",
       "lat": 55.7541,
       "lng": 37.6136,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Londres",
+      "lat": 51.5019,
+      "lng": -0.1187,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "São Petersburgo",
       "lat": 59.941,
       "lng": 30.3141,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Paris",
+      "lat": 48.8686,
+      "lng": 2.3314,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Minsk",
+      "lat": 53.9019,
+      "lng": 27.5647,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Estocolmo",
       "lat": 59.3527,
       "lng": 18.0954,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Helsinque",
       "lat": 60.1775,
       "lng": 24.9322,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Copenhague",
       "lat": 55.6805,
       "lng": 12.5615,
-      "rank": 1
-    },
-    {
-      "nome": "Newcastle upon Tyne",
-      "lat": 55.0023,
-      "lng": -1.6019,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Riga",
       "lat": 56.95,
       "lng": 24.1,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Manchester",
+      "lat": 53.5024,
+      "lng": -2.2499,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.2519,
+      "lng": 20.9981,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Kiev",
+      "lat": 50.4353,
+      "lng": 30.5147,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.552,
+      "lng": 9.9981,
+      "rank": 2
+    },
+    {
+      "nome": "Leeds",
+      "lat": 53.832,
+      "lng": -1.582,
+      "rank": 2
     },
     {
       "nome": "Vilnius",
       "lat": 54.6834,
       "lng": 25.3166,
-      "rank": 1
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Birmingham",
+      "lat": 52.4769,
+      "lng": -1.9219,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Bruxelas",
+      "lat": 50.8353,
+      "lng": 4.3314,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Newcastle",
+      "lat": 55.0023,
+      "lng": -1.6019,
+      "rank": 2
+    },
+    {
+      "nome": "Amsterdã",
+      "lat": 52.3519,
+      "lng": 4.9147,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Tallinn",
+      "lat": 59.4339,
+      "lng": 24.728,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Sheffield",
+      "lat": 53.3667,
+      "lng": -1.5,
+      "rank": 2
+    },
+    {
+      "nome": "Dublin",
+      "lat": 53.335,
+      "lng": -6.2509,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Glasgow",
+      "lat": 55.8764,
+      "lng": -4.2527,
+      "rank": 2
+    },
+    {
+      "nome": "Gdansk",
+      "lat": 54.36,
+      "lng": 18.64,
+      "rank": 2
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Essen",
+      "lat": 51.45,
+      "lng": 7.0166,
+      "rank": 2
     },
     {
       "nome": "Gotemburgo",
       "lat": 57.75,
       "lng": 12,
       "rank": 2
+    },
+    {
+      "nome": "Haia",
+      "lat": 52.08,
+      "lng": 4.27,
+      "rank": 2
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Liverpool",
+      "lat": 53.4179,
+      "lng": -2.9199,
+      "rank": 2
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Sunderland",
@@ -194,91 +374,451 @@
       "nome": "Caliningrado",
       "lat": 54.7,
       "lng": 20.4973,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Nottingham",
+      "lat": 52.9703,
+      "lng": -1.17,
+      "rank": 3
     },
     {
       "nome": "Middlesbrough",
       "lat": 54.5804,
       "lng": -1.23,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Tula",
+      "lat": 54.2,
+      "lng": 37.6299,
+      "rank": 3
     },
     {
       "nome": "Tver",
       "lat": 56.86,
       "lng": 35.89,
-      "rank": 2
+      "rank": 3
     },
     {
-      "nome": "Tallinn",
-      "lat": 59.4339,
-      "lng": 24.728,
-      "rank": 2
+      "nome": "Edimburgo",
+      "lat": 55.9483,
+      "lng": -3.2191,
+      "rank": 3
+    },
+    {
+      "nome": "Bremen",
+      "lat": 53.08,
+      "lng": 8.8,
+      "rank": 3
+    },
+    {
+      "nome": "Iaroslavl",
+      "lat": 57.62,
+      "lng": 39.87,
+      "rank": 3
     },
     {
       "nome": "Kaunas",
       "lat": 54.9504,
       "lng": 23.88,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Roterdã",
+      "lat": 51.9219,
+      "lng": 4.478,
+      "rank": 3
+    },
+    {
+      "nome": "Düsseldorf",
+      "lat": 51.2204,
+      "lng": 6.78,
+      "rank": 3
     },
     {
       "nome": "Vitebsk",
       "lat": 55.1887,
       "lng": 30.1853,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Kaluga",
+      "lat": 54.5204,
+      "lng": 36.27,
+      "rank": 3
+    },
+    {
+      "nome": "Riazan",
+      "lat": 54.62,
+      "lng": 39.72,
+      "rank": 3
     },
     {
       "nome": "Smolensk",
       "lat": 54.7827,
       "lng": 32.0473,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Podolsk",
       "lat": 55.3804,
       "lng": 37.5299,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Murmansk",
       "lat": 68.97,
       "lng": 33.1,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Kharkiv",
+      "lat": 50.0019,
+      "lng": 36.2481,
+      "rank": 3
+    },
+    {
+      "nome": "Cherepovets",
+      "lat": 59.1404,
+      "lng": 37.91,
+      "rank": 3
+    },
+    {
+      "nome": "Gdynia",
+      "lat": 54.5204,
+      "lng": 18.53,
+      "rank": 3
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 3
+    },
+    {
+      "nome": "Voronej",
+      "lat": 51.7319,
+      "lng": 39.2681,
+      "rank": 3
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.932,
+      "lng": 6.9481,
+      "rank": 3
+    },
+    {
+      "nome": "Antuérpia",
+      "lat": 51.2223,
+      "lng": 4.4131,
+      "rank": 3
+    },
+    {
+      "nome": "Cardiff",
+      "lat": 51.5,
+      "lng": -3.225,
+      "rank": 3
+    },
+    {
+      "nome": "Mahilou",
+      "lat": 53.8985,
+      "lng": 30.3246,
+      "rank": 3
     },
     {
       "nome": "Malmö",
       "lat": 55.5833,
       "lng": 13.0333,
-      "rank": 2
+      "rank": 3
     },
     {
-      "nome": "Petrozavódseque",
+      "nome": "Lille",
+      "lat": 50.6519,
+      "lng": 3.0781,
+      "rank": 3
+    },
+    {
+      "nome": "Petrozavodsk",
       "lat": 61.85,
       "lng": 34.28,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Łódź",
+      "lat": 51.7769,
+      "lng": 19.4494,
+      "rank": 3
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4058,
+      "lng": 16.8999,
+      "rank": 3
     },
     {
       "nome": "Tampere",
       "lat": 61.5,
       "lng": 23.75,
-      "rank": 2
+      "rank": 3
     },
     {
-      "nome": "Aarhus",
-      "lat": 56.1572,
-      "lng": 10.2107,
-      "rank": 2
+      "nome": "Szczecin",
+      "lat": 53.4204,
+      "lng": 14.53,
+      "rank": 3
     },
     {
-      "nome": "Veliky Novgorod",
-      "lat": 58.5,
-      "lng": 31.33,
-      "rank": 2
+      "nome": "Utrecht",
+      "lat": 52.1003,
+      "lng": 5.12,
+      "rank": 3
     },
     {
-      "nome": "Pskov",
-      "lat": 57.83,
-      "lng": 28.3299,
-      "rank": 2
+      "nome": "Briansk",
+      "lat": 53.26,
+      "lng": 34.43,
+      "rank": 3
+    },
+    {
+      "nome": "Espoo",
+      "lat": 60.2052,
+      "lng": 24.6522,
+      "rank": 3
+    },
+    {
+      "nome": "Bradford",
+      "lat": 53.7939,
+      "lng": -1.7521,
+      "rank": 3
+    },
+    {
+      "nome": "Vantaa",
+      "lat": 60.2941,
+      "lng": 25.041,
+      "rank": 3
+    },
+    {
+      "nome": "Zelenograd",
+      "lat": 55.9825,
+      "lng": 37.1814,
+      "rank": 3
+    },
+    {
+      "nome": "Preston",
+      "lat": 53.7628,
+      "lng": -2.7045,
+      "rank": 3
+    },
+    {
+      "nome": "Duisburg",
+      "lat": 51.4325,
+      "lng": 6.7652,
+      "rank": 3
+    },
+    {
+      "nome": "Sollentuna",
+      "lat": 59.428,
+      "lng": 17.9509,
+      "rank": 3
+    },
+    {
+      "nome": "Derby",
+      "lat": 52.9228,
+      "lng": -1.4766,
+      "rank": 3
+    },
+    {
+      "nome": "Bochum",
+      "lat": 51.4817,
+      "lng": 7.2165,
+      "rank": 3
+    },
+    {
+      "nome": "Wolverhampton",
+      "lat": 52.5855,
+      "lng": -2.123,
+      "rank": 3
+    },
+    {
+      "nome": "St Helens",
+      "lat": 53.45,
+      "lng": -2.7333,
+      "rank": 3
+    },
+    {
+      "nome": "Wigan",
+      "lat": 53.543,
+      "lng": -2.6371,
+      "rank": 3
+    },
+    {
+      "nome": "Burnley",
+      "lat": 53.8,
+      "lng": -2.2333,
+      "rank": 3
+    },
+    {
+      "nome": "Harburg",
+      "lat": 53.4606,
+      "lng": 9.9839,
+      "rank": 3
+    },
+    {
+      "nome": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5981,
+      "rank": 3
+    },
+    {
+      "nome": "Warrington",
+      "lat": 53.3925,
+      "lng": -2.5802,
+      "rank": 3
+    },
+    {
+      "nome": "Blackburn",
+      "lat": 53.75,
+      "lng": -2.4833,
+      "rank": 3
+    },
+    {
+      "nome": "Northampton",
+      "lat": 52.25,
+      "lng": -0.8833,
+      "rank": 3
+    },
+    {
+      "nome": "Huddersfield",
+      "lat": 53.649,
+      "lng": -1.7842,
+      "rank": 3
+    },
+    {
+      "nome": "Milton Keynes",
+      "lat": 52.0417,
+      "lng": -0.7558,
+      "rank": 3
+    },
+    {
+      "nome": "Novopolotsk",
+      "lat": 55.5262,
+      "lng": 28.5931,
+      "rank": 3
+    },
+    {
+      "nome": "Słupsk",
+      "lat": 54.4641,
+      "lng": 17.0287,
+      "rank": 3
+    },
+    {
+      "nome": "Mansfield",
+      "lat": 53.1333,
+      "lng": -1.2,
+      "rank": 3
+    },
+    {
+      "nome": "Zhukovsky",
+      "lat": 55.5953,
+      "lng": 38.1203,
+      "rank": 3
+    },
+    {
+      "nome": "Desna",
+      "lat": 50.5221,
+      "lng": 30.6823,
+      "rank": 3
+    },
+    {
+      "nome": "Huddinge",
+      "lat": 59.2371,
+      "lng": 17.9819,
+      "rank": 3
+    },
+    {
+      "nome": "Bolton",
+      "lat": 53.5833,
+      "lng": -2.4333,
+      "rank": 3
+    },
+    {
+      "nome": "Darlington",
+      "lat": 54.5243,
+      "lng": -1.5504,
+      "rank": 3
+    },
+    {
+      "nome": "Hartlepool",
+      "lat": 54.6855,
+      "lng": -1.2103,
+      "rank": 3
+    },
+    {
+      "nome": "Lund",
+      "lat": 55.7058,
+      "lng": 13.1932,
+      "rank": 3
+    },
+    {
+      "nome": "Stockport",
+      "lat": 53.4098,
+      "lng": -2.1576,
+      "rank": 3
+    },
+    {
+      "nome": "Darnytsya",
+      "lat": 50.416,
+      "lng": 30.6953,
+      "rank": 3
+    },
+    {
+      "nome": "Mönchengladbach",
+      "lat": 51.1854,
+      "lng": 6.4417,
+      "rank": 3
+    },
+    {
+      "nome": "Chekhov",
+      "lat": 55.1455,
+      "lng": 37.4619,
+      "rank": 3
+    },
+    {
+      "nome": "Halle",
+      "lat": 51.4816,
+      "lng": 11.9795,
+      "rank": 3
+    },
+    {
+      "nome": "Bergedorf",
+      "lat": 53.4846,
+      "lng": 10.229,
+      "rank": 3
+    },
+    {
+      "nome": "Wakefield",
+      "lat": 53.6833,
+      "lng": -1.4977,
+      "rank": 3
+    },
+    {
+      "nome": "Almere",
+      "lat": 52.3702,
+      "lng": 5.2141,
+      "rank": 3
+    },
+    {
+      "nome": "Krefeld",
+      "lat": 51.3364,
+      "lng": 6.5538,
+      "rank": 3
+    },
+    {
+      "nome": "Tilburg",
+      "lat": 51.5555,
+      "lng": 5.0913,
+      "rank": 3
     }
   ]
 }

@@ -1,0 +1,839 @@
+{
+  "ligaId": "liga-hungria",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Miskolc",
+      "lat": 48.1004,
+      "lng": 20.78,
+      "rank": 1
+    },
+    {
+      "nome": "Debrecen",
+      "lat": 47.5305,
+      "lng": 21.63,
+      "rank": 1
+    },
+    {
+      "nome": "Szeged",
+      "lat": 46.2504,
+      "lng": 20.15,
+      "rank": 1
+    },
+    {
+      "nome": "Pécs",
+      "lat": 46.0804,
+      "lng": 18.22,
+      "rank": 1
+    },
+    {
+      "nome": "Nyíregyháza",
+      "lat": 47.9653,
+      "lng": 21.7187,
+      "rank": 1
+    },
+    {
+      "nome": "Székesfehérvár",
+      "lat": 47.1947,
+      "lng": 18.4081,
+      "rank": 1
+    },
+    {
+      "nome": "Győr",
+      "lat": 47.7004,
+      "lng": 17.63,
+      "rank": 1
+    },
+    {
+      "nome": "Kecskemét",
+      "lat": 46.9,
+      "lng": 19.7,
+      "rank": 1
+    },
+    {
+      "nome": "Szombathely",
+      "lat": 47.2253,
+      "lng": 16.6287,
+      "rank": 1
+    },
+    {
+      "nome": "Szolnok",
+      "lat": 47.1864,
+      "lng": 20.1794,
+      "rank": 1
+    },
+    {
+      "nome": "Kaposvár",
+      "lat": 46.367,
+      "lng": 17.8,
+      "rank": 1
+    },
+    {
+      "nome": "Tatabánya",
+      "lat": 47.55,
+      "lng": 18.433,
+      "rank": 1
+    },
+    {
+      "nome": "Békéscsaba",
+      "lat": 46.672,
+      "lng": 21.101,
+      "rank": 1
+    },
+    {
+      "nome": "Veszprém",
+      "lat": 47.091,
+      "lng": 17.911,
+      "rank": 1
+    },
+    {
+      "nome": "Zalaegerszeg",
+      "lat": 46.844,
+      "lng": 16.84,
+      "rank": 1
+    },
+    {
+      "nome": "Eger",
+      "lat": 47.895,
+      "lng": 20.383,
+      "rank": 2
+    },
+    {
+      "nome": "Salgótarján",
+      "lat": 48.105,
+      "lng": 19.826,
+      "rank": 2
+    },
+    {
+      "nome": "Vác",
+      "lat": 47.7837,
+      "lng": 19.1332,
+      "rank": 2
+    },
+    {
+      "nome": "Szekszárd",
+      "lat": 46.344,
+      "lng": 18.713,
+      "rank": 2
+    },
+    {
+      "nome": "Budapest XVII. kerület",
+      "lat": 47.48,
+      "lng": 19.2539,
+      "rank": 3
+    },
+    {
+      "nome": "Érd",
+      "lat": 47.3949,
+      "lng": 18.9136,
+      "rank": 3
+    },
+    {
+      "nome": "Sopron",
+      "lat": 47.685,
+      "lng": 16.5905,
+      "rank": 3
+    },
+    {
+      "nome": "Dunaújváros",
+      "lat": 46.9648,
+      "lng": 18.9397,
+      "rank": 3
+    },
+    {
+      "nome": "Nagykanizsa",
+      "lat": 46.4535,
+      "lng": 16.991,
+      "rank": 3
+    },
+    {
+      "nome": "Hódmezővásárhely",
+      "lat": 46.4167,
+      "lng": 20.3333,
+      "rank": 3
+    },
+    {
+      "nome": "Cegléd",
+      "lat": 47.1727,
+      "lng": 19.7995,
+      "rank": 3
+    },
+    {
+      "nome": "Baja",
+      "lat": 46.183,
+      "lng": 18.9531,
+      "rank": 3
+    },
+    {
+      "nome": "Pápa",
+      "lat": 47.33,
+      "lng": 17.4674,
+      "rank": 3
+    },
+    {
+      "nome": "Gyöngyös",
+      "lat": 47.7826,
+      "lng": 19.928,
+      "rank": 3
+    },
+    {
+      "nome": "Kazincbarcika",
+      "lat": 48.25,
+      "lng": 20.6333,
+      "rank": 3
+    },
+    {
+      "nome": "Gödöllő",
+      "lat": 47.5966,
+      "lng": 19.3551,
+      "rank": 3
+    },
+    {
+      "nome": "Gyula",
+      "lat": 46.65,
+      "lng": 21.2833,
+      "rank": 3
+    },
+    {
+      "nome": "Hajdúböszörmény",
+      "lat": 47.6667,
+      "lng": 21.5167,
+      "rank": 3
+    },
+    {
+      "nome": "Kiskunfélegyháza",
+      "lat": 46.7121,
+      "lng": 19.8446,
+      "rank": 3
+    },
+    {
+      "nome": "Ajka",
+      "lat": 47.102,
+      "lng": 17.5589,
+      "rank": 3
+    },
+    {
+      "nome": "Orosháza",
+      "lat": 46.5667,
+      "lng": 20.6667,
+      "rank": 3
+    },
+    {
+      "nome": "Mosonmagyaróvár",
+      "lat": 47.8679,
+      "lng": 17.2699,
+      "rank": 3
+    },
+    {
+      "nome": "Dunakeszi",
+      "lat": 47.6364,
+      "lng": 19.1386,
+      "rank": 3
+    },
+    {
+      "nome": "Ózd",
+      "lat": 48.2167,
+      "lng": 20.3,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bucareste",
+      "lat": 44.4353,
+      "lng": 26.098,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Liubliana",
+      "lat": 46.0553,
+      "lng": 14.515,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Brno",
+      "lat": 49.2004,
+      "lng": 16.61,
+      "rank": 1
+    },
+    {
+      "nome": "Lviv",
+      "lat": 49.835,
+      "lng": 24.03,
+      "rank": 1
+    },
+    {
+      "nome": "Cluj-Napoca",
+      "lat": 46.7884,
+      "lng": 23.5984,
+      "rank": 1
+    },
+    {
+      "nome": "Timișoara",
+      "lat": 45.7588,
+      "lng": 21.2234,
+      "rank": 1
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Linz",
+      "lat": 48.3192,
+      "lng": 14.2888,
+      "rank": 2
+    },
+    {
+      "nome": "Graz",
+      "lat": 47.0778,
+      "lng": 15.41,
+      "rank": 2
+    },
+    {
+      "nome": "Cracóvia",
+      "lat": 50.0619,
+      "lng": 19.9581,
+      "rank": 2
+    },
+    {
+      "nome": "Košice",
+      "lat": 48.7304,
+      "lng": 21.25,
+      "rank": 2
+    },
+    {
+      "nome": "Novi Sad",
+      "lat": 45.2504,
+      "lng": 19.8499,
+      "rank": 2
+    },
+    {
+      "nome": "Ostrava",
+      "lat": 49.8304,
+      "lng": 18.25,
+      "rank": 2
+    },
+    {
+      "nome": "Oradea",
+      "lat": 47.05,
+      "lng": 21.92,
+      "rank": 2
+    },
+    {
+      "nome": "Ivano-Frankivsk",
+      "lat": 48.9348,
+      "lng": 24.7094,
+      "rank": 2
+    },
+    {
+      "nome": "Rijeka",
+      "lat": 45.33,
+      "lng": 14.45,
+      "rank": 2
+    },
+    {
+      "nome": "Arad",
+      "lat": 46.17,
+      "lng": 21.32,
+      "rank": 2
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 2
+    },
+    {
+      "nome": "Sibiu",
+      "lat": 45.7971,
+      "lng": 24.1371,
+      "rank": 2
+    },
+    {
+      "nome": "Banja Luka",
+      "lat": 44.7804,
+      "lng": 17.18,
+      "rank": 2
+    },
+    {
+      "nome": "Uzhhorod",
+      "lat": 48.63,
+      "lng": 22.25,
+      "rank": 2
+    },
+    {
+      "nome": "Târgu Mureș",
+      "lat": 46.5582,
+      "lng": 24.5578,
+      "rank": 2
+    },
+    {
+      "nome": "Baia Mare",
+      "lat": 47.6595,
+      "lng": 23.5791,
+      "rank": 2
+    },
+    {
+      "nome": "Gliwice",
+      "lat": 50.3304,
+      "lng": 18.67,
+      "rank": 2
+    },
+    {
+      "nome": "Zlín",
+      "lat": 49.2304,
+      "lng": 17.65,
+      "rank": 2
+    },
+    {
+      "nome": "Florença",
+      "lat": 43.78,
+      "lng": 11.25,
+      "rank": 2
+    },
+    {
+      "nome": "Drohobych",
+      "lat": 49.3444,
+      "lng": 23.4994,
+      "rank": 2
+    },
+    {
+      "nome": "Maribor",
+      "lat": 46.5405,
+      "lng": 15.65,
+      "rank": 2
+    },
+    {
+      "nome": "Pitești",
+      "lat": 44.8563,
+      "lng": 24.8758,
+      "rank": 2
+    },
+    {
+      "nome": "Craiova",
+      "lat": 44.3263,
+      "lng": 23.8259,
+      "rank": 3
+    },
+    {
+      "nome": "Satu Mare",
+      "lat": 47.792,
+      "lng": 22.885,
+      "rank": 3
+    },
+    {
+      "nome": "Brașov",
+      "lat": 45.6475,
+      "lng": 25.6072,
+      "rank": 3
+    },
+    {
+      "nome": "Trieste",
+      "lat": 45.6504,
+      "lng": 13.8,
+      "rank": 3
+    },
+    {
+      "nome": "Râmnicu Vâlcea",
+      "lat": 45.11,
+      "lng": 24.383,
+      "rank": 3
+    },
+    {
+      "nome": "Prijedor",
+      "lat": 44.9804,
+      "lng": 16.7,
+      "rank": 3
+    },
+    {
+      "nome": "Subotica",
+      "lat": 46.07,
+      "lng": 19.68,
+      "rank": 3
+    },
+    {
+      "nome": "České Budějovice",
+      "lat": 48.98,
+      "lng": 14.46,
+      "rank": 3
+    },
+    {
+      "nome": "Slavonski Brod",
+      "lat": 45.1603,
+      "lng": 18.0156,
+      "rank": 3
+    },
+    {
+      "nome": "Târgu Jiu",
+      "lat": 45.045,
+      "lng": 23.274,
+      "rank": 3
+    },
+    {
+      "nome": "Osijek",
+      "lat": 45.5504,
+      "lng": 18.68,
+      "rank": 3
+    },
+    {
+      "nome": "Prešov",
+      "lat": 48.9997,
+      "lng": 21.2394,
+      "rank": 3
+    },
+    {
+      "nome": "Ternopil",
+      "lat": 49.536,
+      "lng": 25.5821,
+      "rank": 3
+    },
+    {
+      "nome": "Žilina",
+      "lat": 49.2198,
+      "lng": 18.7494,
+      "rank": 3
+    },
+    {
+      "nome": "Chernivtsi",
+      "lat": 48.3053,
+      "lng": 25.9216,
+      "rank": 3
+    },
+    {
+      "nome": "Reșița",
+      "lat": 45.297,
+      "lng": 21.8865,
+      "rank": 3
+    },
+    {
+      "nome": "Wiener Neustadt",
+      "lat": 47.816,
+      "lng": 16.25,
+      "rank": 3
+    },
+    {
+      "nome": "Rzeszów",
+      "lat": 50.0705,
+      "lng": 22,
+      "rank": 3
+    },
+    {
+      "nome": "Banská Bystrica",
+      "lat": 48.7333,
+      "lng": 19.15,
+      "rank": 3
+    },
+    {
+      "nome": "Bistrița",
+      "lat": 47.138,
+      "lng": 24.513,
+      "rank": 3
+    },
+    {
+      "nome": "Klagenfurt",
+      "lat": 46.6203,
+      "lng": 14.31,
+      "rank": 3
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 3
+    },
+    {
+      "nome": "Tuzla",
+      "lat": 44.5505,
+      "lng": 18.68,
+      "rank": 3
+    },
+    {
+      "nome": "Trnava",
+      "lat": 48.3666,
+      "lng": 17.6,
+      "rank": 3
+    },
+    {
+      "nome": "Deva",
+      "lat": 45.8833,
+      "lng": 22.9167,
+      "rank": 3
+    },
+    {
+      "nome": "Alba Iulia",
+      "lat": 46.077,
+      "lng": 23.58,
+      "rank": 3
+    },
+    {
+      "nome": "Zrenjanin",
+      "lat": 45.3786,
+      "lng": 20.3995,
+      "rank": 3
+    },
+    {
+      "nome": "Zalău",
+      "lat": 47.175,
+      "lng": 23.063,
+      "rank": 3
+    },
+    {
+      "nome": "Khmelnytskyi",
+      "lat": 49.4249,
+      "lng": 27.0015,
+      "rank": 3
+    },
+    {
+      "nome": "Drobeta-Turnu Severin",
+      "lat": 44.6459,
+      "lng": 22.6659,
+      "rank": 3
+    },
+    {
+      "nome": "Olomouc",
+      "lat": 49.63,
+      "lng": 17.25,
+      "rank": 3
+    },
+    {
+      "nome": "Ploiești",
+      "lat": 44.9469,
+      "lng": 26.0365,
+      "rank": 3
+    },
+    {
+      "nome": "Salzburgo",
+      "lat": 47.8105,
+      "lng": 13.04,
+      "rank": 3
+    },
+    {
+      "nome": "Karlovac",
+      "lat": 45.4872,
+      "lng": 15.5478,
+      "rank": 3
+    },
+    {
+      "nome": "Zenica",
+      "lat": 44.22,
+      "lng": 17.92,
+      "rank": 3
+    },
+    {
+      "nome": "Nitra",
+      "lat": 48.3076,
+      "lng": 18.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Mukachevo",
+      "lat": 48.4425,
+      "lng": 22.718,
+      "rank": 3
+    },
+    {
+      "nome": "Bielsko-Biala",
+      "lat": 49.8225,
+      "lng": 19.0469,
+      "rank": 3
+    },
+    {
+      "nome": "Pančevo",
+      "lat": 44.8718,
+      "lng": 20.6417,
+      "rank": 3
+    },
+    {
+      "nome": "Bihać",
+      "lat": 44.8169,
+      "lng": 15.8708,
+      "rank": 3
+    },
+    {
+      "nome": "Nowy Sącz",
+      "lat": 49.6218,
+      "lng": 20.6971,
+      "rank": 3
+    },
+    {
+      "nome": "Bytom",
+      "lat": 50.348,
+      "lng": 18.9328,
+      "rank": 3
+    },
+    {
+      "nome": "Rybnik",
+      "lat": 50.0971,
+      "lng": 18.5418,
+      "rank": 3
+    },
+    {
+      "nome": "Tarnów",
+      "lat": 50.0138,
+      "lng": 20.987,
+      "rank": 3
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.7965,
+      "lng": 19.1241,
+      "rank": 3
+    },
+    {
+      "nome": "Tychy",
+      "lat": 50.1372,
+      "lng": 18.9664,
+      "rank": 3
+    },
+    {
+      "nome": "Ruda Śląska",
+      "lat": 50.2584,
+      "lng": 18.8563,
+      "rank": 3
+    },
+    {
+      "nome": "Havířov",
+      "lat": 49.7798,
+      "lng": 18.4369,
+      "rank": 3
+    },
+    {
+      "nome": "Jastrzębie Zdrój",
+      "lat": 49.9554,
+      "lng": 18.5748,
+      "rank": 3
+    },
+    {
+      "nome": "Dąbrowa Górnicza",
+      "lat": 50.3339,
+      "lng": 19.2048,
+      "rank": 3
+    },
+    {
+      "nome": "Jaworzno",
+      "lat": 50.2053,
+      "lng": 19.275,
+      "rank": 3
+    },
+    {
+      "nome": "Padua",
+      "lat": 45.408,
+      "lng": 11.8859,
+      "rank": 3
+    },
+    {
+      "nome": "Rimini",
+      "lat": 44.0575,
+      "lng": 12.5653,
+      "rank": 3
+    },
+    {
+      "nome": "Wałbrzych",
+      "lat": 50.7714,
+      "lng": 16.2843,
+      "rank": 3
+    },
+    {
+      "nome": "Kraljevo",
+      "lat": 43.7258,
+      "lng": 20.6894,
+      "rank": 3
+    },
+    {
+      "nome": "Prato",
+      "lat": 43.8805,
+      "lng": 11.097,
+      "rank": 3
+    },
+    {
+      "nome": "Forlì",
+      "lat": 44.2218,
+      "lng": 12.0414,
+      "rank": 3
+    },
+    {
+      "nome": "Kruševac",
+      "lat": 43.58,
+      "lng": 21.3339,
+      "rank": 3
+    },
+    {
+      "nome": "Cesena",
+      "lat": 44.1391,
+      "lng": 12.2431,
+      "rank": 3
+    },
+    {
+      "nome": "Vicenza",
+      "lat": 45.5467,
+      "lng": 11.5475,
+      "rank": 3
+    },
+    {
+      "nome": "Pesaro",
+      "lat": 43.9092,
+      "lng": 12.9164,
+      "rank": 3
+    },
+    {
+      "nome": "Zwickau",
+      "lat": 50.7272,
+      "lng": 12.4884,
+      "rank": 3
+    },
+    {
+      "nome": "Erlangen",
+      "lat": 49.591,
+      "lng": 11.0078,
+      "rank": 3
+    }
+  ]
+}

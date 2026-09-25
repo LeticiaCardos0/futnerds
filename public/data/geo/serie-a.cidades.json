@@ -1,0 +1,1302 @@
+{
+  "ligaId": "serie-a",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Salerno",
+      "lat": 40.6804,
+      "lng": 14.7699,
+      "rank": 1
+    },
+    {
+      "nome": "Palermo",
+      "lat": 38.127,
+      "lng": 13.3481,
+      "rank": 1
+    },
+    {
+      "nome": "Catânia",
+      "lat": 37.5,
+      "lng": 15.08,
+      "rank": 1
+    },
+    {
+      "nome": "Bari",
+      "lat": 41.1142,
+      "lng": 16.8728,
+      "rank": 1
+    },
+    {
+      "nome": "Verona",
+      "lat": 45.4404,
+      "lng": 10.99,
+      "rank": 1
+    },
+    {
+      "nome": "Pescara",
+      "lat": 42.4554,
+      "lng": 14.2187,
+      "rank": 1
+    },
+    {
+      "nome": "Messina",
+      "lat": 38.2005,
+      "lng": 15.55,
+      "rank": 1
+    },
+    {
+      "nome": "Caserta",
+      "lat": 41.06,
+      "lng": 14.3374,
+      "rank": 1
+    },
+    {
+      "nome": "Trieste",
+      "lat": 45.6504,
+      "lng": 13.8,
+      "rank": 1
+    },
+    {
+      "nome": "Pisa",
+      "lat": 43.7205,
+      "lng": 10.4,
+      "rank": 1
+    },
+    {
+      "nome": "Tarento",
+      "lat": 40.5084,
+      "lng": 17.23,
+      "rank": 1
+    },
+    {
+      "nome": "Reggio di Calabria",
+      "lat": 38.115,
+      "lng": 15.6414,
+      "rank": 1
+    },
+    {
+      "nome": "Treviso",
+      "lat": 45.67,
+      "lng": 12.24,
+      "rank": 1
+    },
+    {
+      "nome": "Módena",
+      "lat": 44.65,
+      "lng": 10.92,
+      "rank": 1
+    },
+    {
+      "nome": "Livorno",
+      "lat": 43.5511,
+      "lng": 10.3023,
+      "rank": 1
+    },
+    {
+      "nome": "Foggia",
+      "lat": 41.4605,
+      "lng": 15.56,
+      "rank": 2
+    },
+    {
+      "nome": "Perúgia",
+      "lat": 43.1104,
+      "lng": 12.39,
+      "rank": 2
+    },
+    {
+      "nome": "Ravena",
+      "lat": 44.4204,
+      "lng": 12.22,
+      "rank": 2
+    },
+    {
+      "nome": "Ferrara",
+      "lat": 44.8504,
+      "lng": 11.6099,
+      "rank": 2
+    },
+    {
+      "nome": "Siracusa",
+      "lat": 37.0704,
+      "lng": 15.29,
+      "rank": 2
+    },
+    {
+      "nome": "Sassari",
+      "lat": 40.73,
+      "lng": 8.57,
+      "rank": 2
+    },
+    {
+      "nome": "Barletta",
+      "lat": 41.32,
+      "lng": 16.27,
+      "rank": 2
+    },
+    {
+      "nome": "Trento",
+      "lat": 46.0804,
+      "lng": 11.12,
+      "rank": 2
+    },
+    {
+      "nome": "Brindisi",
+      "lat": 40.6403,
+      "lng": 17.93,
+      "rank": 2
+    },
+    {
+      "nome": "Novara",
+      "lat": 45.45,
+      "lng": 8.62,
+      "rank": 2
+    },
+    {
+      "nome": "Ancona",
+      "lat": 43.6004,
+      "lng": 13.4999,
+      "rank": 2
+    },
+    {
+      "nome": "Bolzano",
+      "lat": 46.5004,
+      "lng": 11.36,
+      "rank": 2
+    },
+    {
+      "nome": "Catanzaro",
+      "lat": 38.9004,
+      "lng": 16.6,
+      "rank": 2
+    },
+    {
+      "nome": "Arezzo",
+      "lat": 43.4617,
+      "lng": 11.875,
+      "rank": 2
+    },
+    {
+      "nome": "Marsala",
+      "lat": 37.8054,
+      "lng": 12.4387,
+      "rank": 2
+    },
+    {
+      "nome": "Asti",
+      "lat": 44.93,
+      "lng": 8.21,
+      "rank": 2
+    },
+    {
+      "nome": "Potenza",
+      "lat": 40.642,
+      "lng": 15.799,
+      "rank": 2
+    },
+    {
+      "nome": "Ragusa",
+      "lat": 36.93,
+      "lng": 14.73,
+      "rank": 2
+    },
+    {
+      "nome": "Áquila",
+      "lat": 42.3504,
+      "lng": 13.39,
+      "rank": 2
+    },
+    {
+      "nome": "Benevento",
+      "lat": 41.1337,
+      "lng": 14.75,
+      "rank": 2
+    },
+    {
+      "nome": "Civitavecchia",
+      "lat": 42.1004,
+      "lng": 11.8,
+      "rank": 2
+    },
+    {
+      "nome": "Crotone",
+      "lat": 39.0833,
+      "lng": 17.1233,
+      "rank": 2
+    },
+    {
+      "nome": "Siena",
+      "lat": 43.317,
+      "lng": 11.35,
+      "rank": 2
+    },
+    {
+      "nome": "Campobasso",
+      "lat": 41.563,
+      "lng": 14.656,
+      "rank": 2
+    },
+    {
+      "nome": "Olbia",
+      "lat": 40.9143,
+      "lng": 9.5151,
+      "rank": 2
+    },
+    {
+      "nome": "Aosta",
+      "lat": 45.737,
+      "lng": 7.315,
+      "rank": 2
+    },
+    {
+      "nome": "Vibo Valentia",
+      "lat": 38.6666,
+      "lng": 16.1,
+      "rank": 2
+    },
+    {
+      "nome": "Padua",
+      "lat": 45.408,
+      "lng": 11.8859,
+      "rank": 3
+    },
+    {
+      "nome": "Brescia",
+      "lat": 45.5356,
+      "lng": 10.2147,
+      "rank": 3
+    },
+    {
+      "nome": "Prato",
+      "lat": 43.8805,
+      "lng": 11.097,
+      "rank": 3
+    },
+    {
+      "nome": "Rimini",
+      "lat": 44.0575,
+      "lng": 12.5653,
+      "rank": 3
+    },
+    {
+      "nome": "Forlì",
+      "lat": 44.2218,
+      "lng": 12.0414,
+      "rank": 3
+    },
+    {
+      "nome": "Vicenza",
+      "lat": 45.5467,
+      "lng": 11.5475,
+      "rank": 3
+    },
+    {
+      "nome": "Terni",
+      "lat": 42.5633,
+      "lng": 12.6433,
+      "rank": 3
+    },
+    {
+      "nome": "Piacenza",
+      "lat": 45.0524,
+      "lng": 9.6934,
+      "rank": 3
+    },
+    {
+      "nome": "Andria",
+      "lat": 41.2312,
+      "lng": 16.298,
+      "rank": 3
+    },
+    {
+      "nome": "Cesena",
+      "lat": 44.1391,
+      "lng": 12.2431,
+      "rank": 3
+    },
+    {
+      "nome": "La Spezia",
+      "lat": 44.103,
+      "lng": 9.8238,
+      "rank": 3
+    },
+    {
+      "nome": "Alessandria",
+      "lat": 44.9092,
+      "lng": 8.6101,
+      "rank": 3
+    },
+    {
+      "nome": "Torre del Greco",
+      "lat": 40.7893,
+      "lng": 14.3681,
+      "rank": 3
+    },
+    {
+      "nome": "Busto Arsizio",
+      "lat": 45.6113,
+      "lng": 8.8491,
+      "rank": 3
+    },
+    {
+      "nome": "Lucca",
+      "lat": 43.8437,
+      "lng": 10.5045,
+      "rank": 3
+    },
+    {
+      "nome": "Pozzuoli",
+      "lat": 40.8439,
+      "lng": 14.0952,
+      "rank": 3
+    },
+    {
+      "nome": "Varese",
+      "lat": 45.8206,
+      "lng": 8.8251,
+      "rank": 3
+    },
+    {
+      "nome": "Giugliano in Campania",
+      "lat": 40.9285,
+      "lng": 14.202,
+      "rank": 3
+    },
+    {
+      "nome": "Pesaro",
+      "lat": 43.9092,
+      "lng": 12.9164,
+      "rank": 3
+    },
+    {
+      "nome": "Latina",
+      "lat": 41.4661,
+      "lng": 12.9043,
+      "rank": 3
+    },
+    {
+      "nome": "Gela",
+      "lat": 37.0738,
+      "lng": 14.2404,
+      "rank": 3
+    },
+    {
+      "nome": "Aprilia",
+      "lat": 41.5945,
+      "lng": 12.6542,
+      "rank": 3
+    },
+    {
+      "nome": "Pistoia",
+      "lat": 43.9306,
+      "lng": 10.9237,
+      "rank": 3
+    },
+    {
+      "nome": "Cremona",
+      "lat": 45.1332,
+      "lng": 10.0213,
+      "rank": 3
+    },
+    {
+      "nome": "Carpi",
+      "lat": 44.7824,
+      "lng": 10.8777,
+      "rank": 3
+    },
+    {
+      "nome": "Altamura",
+      "lat": 40.8266,
+      "lng": 16.5495,
+      "rank": 3
+    },
+    {
+      "nome": "Lamezia Terme",
+      "lat": 38.9626,
+      "lng": 16.3094,
+      "rank": 3
+    },
+    {
+      "nome": "Imola",
+      "lat": 44.3592,
+      "lng": 11.7132,
+      "rank": 3
+    },
+    {
+      "nome": "Trapani",
+      "lat": 38.0176,
+      "lng": 12.5362,
+      "rank": 3
+    },
+    {
+      "nome": "Quartu Sant'Elena",
+      "lat": 39.2293,
+      "lng": 9.25,
+      "rank": 3
+    },
+    {
+      "nome": "Castellammare di Stabia",
+      "lat": 40.7021,
+      "lng": 14.4869,
+      "rank": 3
+    },
+    {
+      "nome": "Pavia",
+      "lat": 45.1921,
+      "lng": 9.1592,
+      "rank": 3
+    },
+    {
+      "nome": "Massa",
+      "lat": 44.0354,
+      "lng": 10.1393,
+      "rank": 3
+    },
+    {
+      "nome": "Cosenza",
+      "lat": 39.2989,
+      "lng": 16.2531,
+      "rank": 3
+    },
+    {
+      "nome": "Caltanissetta",
+      "lat": 37.4903,
+      "lng": 14.0622,
+      "rank": 3
+    },
+    {
+      "nome": "Viareggio",
+      "lat": 43.8669,
+      "lng": 10.2502,
+      "rank": 3
+    },
+    {
+      "nome": "Savona",
+      "lat": 44.309,
+      "lng": 8.4771,
+      "rank": 3
+    },
+    {
+      "nome": "Fano",
+      "lat": 43.8405,
+      "lng": 13.0167,
+      "rank": 3
+    },
+    {
+      "nome": "Grosseto",
+      "lat": 42.763,
+      "lng": 11.1094,
+      "rank": 3
+    },
+    {
+      "nome": "Matera",
+      "lat": 40.666,
+      "lng": 16.6046,
+      "rank": 3
+    },
+    {
+      "nome": "Acerra",
+      "lat": 40.9448,
+      "lng": 14.3714,
+      "rank": 3
+    },
+    {
+      "nome": "Molfetta",
+      "lat": 41.2004,
+      "lng": 16.599,
+      "rank": 3
+    },
+    {
+      "nome": "Vigevano",
+      "lat": 45.3141,
+      "lng": 8.8544,
+      "rank": 3
+    },
+    {
+      "nome": "Manfredonia",
+      "lat": 41.6307,
+      "lng": 15.9188,
+      "rank": 3
+    },
+    {
+      "nome": "Foligno",
+      "lat": 42.9549,
+      "lng": 12.7027,
+      "rank": 3
+    },
+    {
+      "nome": "Cuneo",
+      "lat": 44.3907,
+      "lng": 7.5483,
+      "rank": 3
+    },
+    {
+      "nome": "Teramo",
+      "lat": 42.6612,
+      "lng": 13.699,
+      "rank": 3
+    },
+    {
+      "nome": "Cerignola",
+      "lat": 41.2652,
+      "lng": 15.8956,
+      "rank": 3
+    },
+    {
+      "nome": "Trani",
+      "lat": 41.2773,
+      "lng": 16.4101,
+      "rank": 3
+    },
+    {
+      "nome": "Bagheria",
+      "lat": 38.0789,
+      "lng": 13.5124,
+      "rank": 3
+    },
+    {
+      "nome": "San Severo",
+      "lat": 41.6856,
+      "lng": 15.3815,
+      "rank": 3
+    },
+    {
+      "nome": "Bitonto",
+      "lat": 41.1101,
+      "lng": 16.6909,
+      "rank": 3
+    },
+    {
+      "nome": "Mazara del Vallo",
+      "lat": 37.6553,
+      "lng": 12.5899,
+      "rank": 3
+    },
+    {
+      "nome": "Vittoria",
+      "lat": 36.9515,
+      "lng": 14.5279,
+      "rank": 3
+    },
+    {
+      "nome": "Rovigo",
+      "lat": 45.0698,
+      "lng": 11.7902,
+      "rank": 3
+    },
+    {
+      "nome": "Pordenone",
+      "lat": 45.9569,
+      "lng": 12.6605,
+      "rank": 3
+    },
+    {
+      "nome": "Nettuno",
+      "lat": 41.4579,
+      "lng": 12.6639,
+      "rank": 3
+    },
+    {
+      "nome": "Acireale",
+      "lat": 37.6089,
+      "lng": 15.1658,
+      "rank": 3
+    },
+    {
+      "nome": "Rivoli",
+      "lat": 45.0707,
+      "lng": 7.5146,
+      "rank": 3
+    },
+    {
+      "nome": "Avellino",
+      "lat": 40.9149,
+      "lng": 14.791,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Túnis",
+      "lat": 36.8028,
+      "lng": 10.1797,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Paris",
+      "lat": 48.8686,
+      "lng": 2.3314,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Nice",
+      "lat": 43.717,
+      "lng": 7.2631,
+      "rank": 1
+    },
+    {
+      "nome": "Genebra",
+      "lat": 46.21,
+      "lng": 6.14,
+      "rank": 1
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3819,
+      "lng": 8.5481,
+      "rank": 1
+    },
+    {
+      "nome": "Liubliana",
+      "lat": 46.0553,
+      "lng": 14.515,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Argel",
+      "lat": 36.765,
+      "lng": 3.0486,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8189,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Berna",
+      "lat": 46.9167,
+      "lng": 7.467,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Annaba",
+      "lat": 36.92,
+      "lng": 7.76,
+      "rank": 2
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Marselha",
+      "lat": 43.2919,
+      "lng": 5.3731,
+      "rank": 2
+    },
+    {
+      "nome": "Constantina",
+      "lat": 36.36,
+      "lng": 6.5999,
+      "rank": 2
+    },
+    {
+      "nome": "Basileia",
+      "lat": 47.5804,
+      "lng": 7.59,
+      "rank": 2
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 2
+    },
+    {
+      "nome": "Lyon",
+      "lat": 45.772,
+      "lng": 4.8281,
+      "rank": 2
+    },
+    {
+      "nome": "Valeta",
+      "lat": 35.8997,
+      "lng": 14.5147,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Trípoli",
+      "lat": 32.8925,
+      "lng": 13.18,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Lausanne",
+      "lat": 46.5304,
+      "lng": 6.65,
+      "rank": 2
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Graz",
+      "lat": 47.0778,
+      "lng": 15.41,
+      "rank": 2
+    },
+    {
+      "nome": "Lucerna",
+      "lat": 47.0504,
+      "lng": 8.28,
+      "rank": 2
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Skikda",
+      "lat": 36.8804,
+      "lng": 6.9,
+      "rank": 2
+    },
+    {
+      "nome": "Banja Luka",
+      "lat": 44.7804,
+      "lng": 17.18,
+      "rank": 2
+    },
+    {
+      "nome": "Split",
+      "lat": 43.5204,
+      "lng": 16.47,
+      "rank": 2
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Toulon",
+      "lat": 43.1342,
+      "lng": 5.9188,
+      "rank": 2
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Pécs",
+      "lat": 46.0804,
+      "lng": 18.22,
+      "rank": 3
+    },
+    {
+      "nome": "Grenoble",
+      "lat": 45.1804,
+      "lng": 5.72,
+      "rank": 3
+    },
+    {
+      "nome": "Rijeka",
+      "lat": 45.33,
+      "lng": 14.45,
+      "rank": 3
+    },
+    {
+      "nome": "Zenica",
+      "lat": 44.22,
+      "lng": 17.92,
+      "rank": 3
+    },
+    {
+      "nome": "Mostar",
+      "lat": 43.3505,
+      "lng": 17.82,
+      "rank": 3
+    },
+    {
+      "nome": "Podgorica",
+      "lat": 42.466,
+      "lng": 19.2663,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Bizerta",
+      "lat": 37.2904,
+      "lng": 9.855,
+      "rank": 3
+    },
+    {
+      "nome": "Susa",
+      "lat": 35.83,
+      "lng": 10.625,
+      "rank": 3
+    },
+    {
+      "nome": "Tuzla",
+      "lat": 44.5505,
+      "lng": 18.68,
+      "rank": 3
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Székesfehérvár",
+      "lat": 47.1947,
+      "lng": 18.4081,
+      "rank": 3
+    },
+    {
+      "nome": "Innsbruck",
+      "lat": 47.2804,
+      "lng": 11.41,
+      "rank": 3
+    },
+    {
+      "nome": "Guelma",
+      "lat": 36.466,
+      "lng": 7.428,
+      "rank": 3
+    },
+    {
+      "nome": "Maribor",
+      "lat": 46.5405,
+      "lng": 15.65,
+      "rank": 3
+    },
+    {
+      "nome": "Kaposvár",
+      "lat": 46.367,
+      "lng": 17.8,
+      "rank": 3
+    },
+    {
+      "nome": "Nabeul",
+      "lat": 36.4603,
+      "lng": 10.73,
+      "rank": 3
+    },
+    {
+      "nome": "Lugano",
+      "lat": 46.0004,
+      "lng": 8.9667,
+      "rank": 3
+    },
+    {
+      "nome": "Prijedor",
+      "lat": 44.9804,
+      "lng": 16.7,
+      "rank": 3
+    },
+    {
+      "nome": "Béjaïa",
+      "lat": 36.7604,
+      "lng": 5.07,
+      "rank": 3
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 3
+    },
+    {
+      "nome": "Souk Ahras",
+      "lat": 36.2904,
+      "lng": 7.95,
+      "rank": 3
+    },
+    {
+      "nome": "Slavonski Brod",
+      "lat": 45.1603,
+      "lng": 18.0156,
+      "rank": 3
+    },
+    {
+      "nome": "Mulhouse",
+      "lat": 47.7504,
+      "lng": 7.35,
+      "rank": 3
+    },
+    {
+      "nome": "Klagenfurt",
+      "lat": 46.6203,
+      "lng": 14.31,
+      "rank": 3
+    },
+    {
+      "nome": "Szombathely",
+      "lat": 47.2253,
+      "lng": 16.6287,
+      "rank": 3
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
+      "rank": 3
+    },
+    {
+      "nome": "Augsburgo",
+      "lat": 48.35,
+      "lng": 10.9,
+      "rank": 3
+    },
+    {
+      "nome": "Osijek",
+      "lat": 45.5504,
+      "lng": 18.68,
+      "rank": 3
+    },
+    {
+      "nome": "Setif",
+      "lat": 36.18,
+      "lng": 5.4,
+      "rank": 3
+    },
+    {
+      "nome": "Batna",
+      "lat": 35.57,
+      "lng": 6.17,
+      "rank": 3
+    },
+    {
+      "nome": "Linz",
+      "lat": 48.3192,
+      "lng": 14.2888,
+      "rank": 3
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 3
+    },
+    {
+      "nome": "Freiburg",
+      "lat": 48.0004,
+      "lng": 7.8699,
+      "rank": 3
+    },
+    {
+      "nome": "Salzburgo",
+      "lat": 47.8105,
+      "lng": 13.04,
+      "rank": 3
+    },
+    {
+      "nome": "Sukrah",
+      "lat": 36.8774,
+      "lng": 10.2468,
+      "rank": 3
+    },
+    {
+      "nome": "El Mourouj",
+      "lat": 36.7136,
+      "lng": 10.2096,
+      "rank": 3
+    },
+    {
+      "nome": "Hammamet",
+      "lat": 36.4,
+      "lng": 10.6167,
+      "rank": 3
+    },
+    {
+      "nome": "Antibes",
+      "lat": 43.5813,
+      "lng": 7.1249,
+      "rank": 3
+    },
+    {
+      "nome": "Bihać",
+      "lat": 44.8169,
+      "lng": 15.8708,
+      "rank": 3
+    },
+    {
+      "nome": "El Khroub",
+      "lat": 36.2633,
+      "lng": 6.6936,
+      "rank": 3
+    },
+    {
+      "nome": "Winterthur",
+      "lat": 47.5056,
+      "lng": 8.7241,
+      "rank": 3
+    },
+    {
+      "nome": "El Eulma",
+      "lat": 36.1528,
+      "lng": 5.6902,
+      "rank": 3
+    },
+    {
+      "nome": "Aïn Beïda",
+      "lat": 35.7964,
+      "lng": 7.3928,
+      "rank": 3
+    },
+    {
+      "nome": "Konstanz",
+      "lat": 47.6603,
+      "lng": 9.1758,
+      "rank": 3
+    },
+    {
+      "nome": "Budapest XVII. kerület",
+      "lat": 47.48,
+      "lng": 19.2539,
+      "rank": 3
+    },
+    {
+      "nome": "Msaken",
+      "lat": 35.7292,
+      "lng": 10.5808,
+      "rank": 3
+    },
+    {
+      "nome": "Khenchela",
+      "lat": 35.4358,
+      "lng": 7.1433,
+      "rank": 3
+    },
+    {
+      "nome": "El Achir",
+      "lat": 36.0639,
+      "lng": 4.6274,
+      "rank": 3
+    },
+    {
+      "nome": "Villingen-Schwenningen",
+      "lat": 48.0623,
+      "lng": 8.4936,
+      "rank": 3
+    },
+    {
+      "nome": "Reutlingen",
+      "lat": 48.4914,
+      "lng": 9.2043,
+      "rank": 3
+    },
+    {
+      "nome": "Avignon",
+      "lat": 43.9483,
+      "lng": 4.8089,
+      "rank": 3
+    },
+    {
+      "nome": "Nitra",
+      "lat": 48.3076,
+      "lng": 18.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Gjakovë",
+      "lat": 42.3803,
+      "lng": 20.4308,
+      "rank": 3
+    },
+    {
+      "nome": "Barika",
+      "lat": 35.389,
+      "lng": 5.3658,
+      "rank": 3
+    },
+    {
+      "nome": "Tübingen",
+      "lat": 48.5227,
+      "lng": 9.0522,
+      "rank": 3
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9819,
+      "lng": 8.2801,
+      "rank": 3
+    },
+    {
+      "nome": "Pforzheim",
+      "lat": 48.8844,
+      "lng": 8.6989,
+      "rank": 3
+    },
+    {
+      "nome": "Mitrovicë",
+      "lat": 42.8833,
+      "lng": 20.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Pazar",
+      "lat": 43.1367,
+      "lng": 20.5122,
+      "rank": 3
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.4077,
+      "lng": 8.6908,
+      "rank": 3
+    },
+    {
+      "nome": "Heilbronn",
+      "lat": 49.1399,
+      "lng": 9.2205,
+      "rank": 3
+    },
+    {
+      "nome": "Bielsko-Biala",
+      "lat": 49.8225,
+      "lng": 19.0469,
+      "rank": 3
+    },
+    {
+      "nome": "Kraljevo",
+      "lat": 43.7258,
+      "lng": 20.6894,
+      "rank": 3
+    },
+    {
+      "nome": "Aachen",
+      "lat": 50.7766,
+      "lng": 6.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Pančevo",
+      "lat": 44.8718,
+      "lng": 20.6417,
+      "rank": 3
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8717,
+      "lng": 8.6503,
+      "rank": 3
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.7965,
+      "lng": 19.1241,
+      "rank": 3
+    },
+    {
+      "nome": "Feriana",
+      "lat": 34.9453,
+      "lng": 8.5679,
+      "rank": 3
+    },
+    {
+      "nome": "Ludwigsburg",
+      "lat": 48.8973,
+      "lng": 9.1916,
+      "rank": 3
+    },
+    {
+      "nome": "Bytom",
+      "lat": 50.348,
+      "lng": 18.9328,
+      "rank": 3
+    },
+    {
+      "nome": "Bou Saâda",
+      "lat": 35.2086,
+      "lng": 4.174,
+      "rank": 3
+    },
+    {
+      "nome": "Rybnik",
+      "lat": 50.0971,
+      "lng": 18.5418,
+      "rank": 3
+    },
+    {
+      "nome": "Kaiserslautern",
+      "lat": 49.443,
+      "lng": 7.7716,
+      "rank": 3
+    },
+    {
+      "nome": "Ruda Śląska",
+      "lat": 50.2584,
+      "lng": 18.8563,
+      "rank": 3
+    }
+  ]
+}

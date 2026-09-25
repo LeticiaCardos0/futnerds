@@ -1,0 +1,243 @@
+{
+  "ligaId": "scottish-premiership",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Newcastle",
+      "lat": 55.0023,
+      "lng": -1.6019,
+      "rank": 1
+    },
+    {
+      "nome": "Sunderland",
+      "lat": 54.92,
+      "lng": -1.38,
+      "rank": 1
+    },
+    {
+      "nome": "Belfast",
+      "lat": 54.6,
+      "lng": -5.96,
+      "rank": 1
+    },
+    {
+      "nome": "Middlesbrough",
+      "lat": 54.5804,
+      "lng": -1.23,
+      "rank": 1
+    },
+    {
+      "nome": "Derry",
+      "lat": 55.0004,
+      "lng": -7.3333,
+      "rank": 1
+    },
+    {
+      "nome": "Greenock",
+      "lat": 55.9333,
+      "lng": -4.75,
+      "rank": 1
+    },
+    {
+      "nome": "Carlisle",
+      "lat": 54.88,
+      "lng": -2.93,
+      "rank": 1
+    },
+    {
+      "nome": "Inverness",
+      "lat": 57.4671,
+      "lng": -4.2333,
+      "rank": 1
+    },
+    {
+      "nome": "Dumfries",
+      "lat": 55.0671,
+      "lng": -3.55,
+      "rank": 1
+    },
+    {
+      "nome": "Omagh",
+      "lat": 54.6,
+      "lng": -7.3,
+      "rank": 1
+    },
+    {
+      "nome": "Lisburn",
+      "lat": 54.5204,
+      "lng": -6.67,
+      "rank": 1
+    },
+    {
+      "nome": "Fort William",
+      "lat": 56.8165,
+      "lng": -5.1121,
+      "rank": 1
+    },
+    {
+      "nome": "Kirkwall",
+      "lat": 58.967,
+      "lng": -2.95,
+      "rank": 1
+    },
+    {
+      "nome": "Wick",
+      "lat": 58.4333,
+      "lng": -3.0834,
+      "rank": 1
+    },
+    {
+      "nome": "Darlington",
+      "lat": 54.5243,
+      "lng": -1.5504,
+      "rank": 3
+    },
+    {
+      "nome": "Hartlepool",
+      "lat": 54.6855,
+      "lng": -1.2103,
+      "rank": 3
+    },
+    {
+      "nome": "East Kilbride",
+      "lat": 55.7641,
+      "lng": -4.1767,
+      "rank": 3
+    },
+    {
+      "nome": "Bangor",
+      "lat": 54.6608,
+      "lng": -5.668,
+      "rank": 3
+    },
+    {
+      "nome": "Tynemouth",
+      "lat": 55.0179,
+      "lng": -1.4256,
+      "rank": 3
+    },
+    {
+      "nome": "Livingston",
+      "lat": 55.9029,
+      "lng": -3.5226,
+      "rank": 3
+    },
+    {
+      "nome": "Dunfermline",
+      "lat": 56.0716,
+      "lng": -3.4589,
+      "rank": 3
+    },
+    {
+      "nome": "Cumbernauld",
+      "lat": 55.9468,
+      "lng": -3.9905,
+      "rank": 3
+    },
+    {
+      "nome": "Kirkcaldy",
+      "lat": 56.1168,
+      "lng": -3.16,
+      "rank": 3
+    },
+    {
+      "nome": "Durham",
+      "lat": 54.7768,
+      "lng": -1.5757,
+      "rank": 3
+    },
+    {
+      "nome": "Stirling",
+      "lat": 56.119,
+      "lng": -3.9368,
+      "rank": 3
+    },
+    {
+      "nome": "Blyth",
+      "lat": 55.1271,
+      "lng": -1.5086,
+      "rank": 3
+    },
+    {
+      "nome": "Redcar",
+      "lat": 54.6166,
+      "lng": -1.06,
+      "rank": 3
+    },
+    {
+      "nome": "Houghton-Le-Spring",
+      "lat": 54.8403,
+      "lng": -1.4643,
+      "rank": 3
+    },
+    {
+      "nome": "Irvine",
+      "lat": 55.6194,
+      "lng": -4.6551,
+      "rank": 3
+    },
+    {
+      "nome": "Stanley",
+      "lat": 54.868,
+      "lng": -1.6985,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Dublin",
+      "lat": 53.335,
+      "lng": -6.2509,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Douglas",
+      "lat": 54.1504,
+      "lng": -4.48,
+      "rank": 1
+    },
+    {
+      "nome": "Dundalk",
+      "lat": 54.0004,
+      "lng": -6.4167,
+      "rank": 1
+    },
+    {
+      "nome": "Galway",
+      "lat": 53.2724,
+      "lng": -9.0488,
+      "rank": 1
+    },
+    {
+      "nome": "Drogheda",
+      "lat": 53.7193,
+      "lng": -6.3478,
+      "rank": 1
+    },
+    {
+      "nome": "Sligo",
+      "lat": 54.2671,
+      "lng": -8.4833,
+      "rank": 1
+    },
+    {
+      "nome": "Monaghan",
+      "lat": 54.25,
+      "lng": -6.9667,
+      "rank": 1
+    },
+    {
+      "nome": "Donegal",
+      "lat": 54.65,
+      "lng": -8.1167,
+      "rank": 1
+    },
+    {
+      "nome": "Roscommon",
+      "lat": 53.6333,
+      "lng": -8.1833,
+      "rank": 1
+    }
+  ]
+}

@@ -1,0 +1,1293 @@
+{
+  "ligaId": "ligue-1",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Bordeaux",
+      "lat": 44.852,
+      "lng": -0.597,
+      "rank": 1
+    },
+    {
+      "nome": "Rouen",
+      "lat": 49.4304,
+      "lng": 1.08,
+      "rank": 1
+    },
+    {
+      "nome": "Nantes",
+      "lat": 47.2104,
+      "lng": -1.59,
+      "rank": 1
+    },
+    {
+      "nome": "Metz",
+      "lat": 49.1203,
+      "lng": 6.18,
+      "rank": 1
+    },
+    {
+      "nome": "Grenoble",
+      "lat": 45.1804,
+      "lng": 5.72,
+      "rank": 1
+    },
+    {
+      "nome": "Toulon",
+      "lat": 43.1342,
+      "lng": 5.9188,
+      "rank": 1
+    },
+    {
+      "nome": "Montpellier",
+      "lat": 43.6104,
+      "lng": 3.87,
+      "rank": 1
+    },
+    {
+      "nome": "Nancy",
+      "lat": 48.6837,
+      "lng": 6.2,
+      "rank": 1
+    },
+    {
+      "nome": "Saint-Étienne",
+      "lat": 45.4304,
+      "lng": 4.38,
+      "rank": 1
+    },
+    {
+      "nome": "Melun",
+      "lat": 48.5333,
+      "lng": 2.6666,
+      "rank": 1
+    },
+    {
+      "nome": "Tours",
+      "lat": 47.3804,
+      "lng": 0.6999,
+      "rank": 1
+    },
+    {
+      "nome": "Clermont-Ferrand",
+      "lat": 45.78,
+      "lng": 3.08,
+      "rank": 1
+    },
+    {
+      "nome": "Orléans",
+      "lat": 47.9004,
+      "lng": 1.9,
+      "rank": 1
+    },
+    {
+      "nome": "Mulhouse",
+      "lat": 47.7504,
+      "lng": 7.35,
+      "rank": 1
+    },
+    {
+      "nome": "Reims",
+      "lat": 49.2504,
+      "lng": 4.03,
+      "rank": 1
+    },
+    {
+      "nome": "Caen",
+      "lat": 49.1838,
+      "lng": -0.35,
+      "rank": 2
+    },
+    {
+      "nome": "Dijon",
+      "lat": 47.3304,
+      "lng": 5.03,
+      "rank": 2
+    },
+    {
+      "nome": "Nîmes",
+      "lat": 43.8304,
+      "lng": 4.35,
+      "rank": 2
+    },
+    {
+      "nome": "Limoges",
+      "lat": 45.83,
+      "lng": 1.25,
+      "rank": 2
+    },
+    {
+      "nome": "Aix-en-Provence",
+      "lat": 43.52,
+      "lng": 5.45,
+      "rank": 2
+    },
+    {
+      "nome": "Perpignan",
+      "lat": 42.7,
+      "lng": 2.9,
+      "rank": 2
+    },
+    {
+      "nome": "Biarritz",
+      "lat": 43.4733,
+      "lng": -1.5616,
+      "rank": 2
+    },
+    {
+      "nome": "Amiens",
+      "lat": 49.9004,
+      "lng": 2.3,
+      "rank": 2
+    },
+    {
+      "nome": "Besançon",
+      "lat": 47.23,
+      "lng": 6.03,
+      "rank": 2
+    },
+    {
+      "nome": "Annecy",
+      "lat": 45.9,
+      "lng": 6.1167,
+      "rank": 2
+    },
+    {
+      "nome": "Calais",
+      "lat": 50.9504,
+      "lng": 1.8333,
+      "rank": 2
+    },
+    {
+      "nome": "Poitiers",
+      "lat": 46.5833,
+      "lng": 0.3333,
+      "rank": 2
+    },
+    {
+      "nome": "Béziers",
+      "lat": 43.3505,
+      "lng": 3.21,
+      "rank": 2
+    },
+    {
+      "nome": "La Rochelle",
+      "lat": 46.1667,
+      "lng": -1.15,
+      "rank": 2
+    },
+    {
+      "nome": "Roanne",
+      "lat": 46.0333,
+      "lng": 4.0667,
+      "rank": 2
+    },
+    {
+      "nome": "Bourges",
+      "lat": 47.0837,
+      "lng": 2.4,
+      "rank": 2
+    },
+    {
+      "nome": "Cherbourg",
+      "lat": 49.6504,
+      "lng": -1.65,
+      "rank": 2
+    },
+    {
+      "nome": "Agen",
+      "lat": 44.2004,
+      "lng": 0.6333,
+      "rank": 2
+    },
+    {
+      "nome": "Brive-la-Gaillarde",
+      "lat": 45.1504,
+      "lng": 1.5333,
+      "rank": 2
+    },
+    {
+      "nome": "Tarbes",
+      "lat": 43.2333,
+      "lng": 0.0833,
+      "rank": 2
+    },
+    {
+      "nome": "Ajaccio",
+      "lat": 41.9271,
+      "lng": 8.7283,
+      "rank": 2
+    },
+    {
+      "nome": "Saint-Brieuc",
+      "lat": 48.5167,
+      "lng": -2.7833,
+      "rank": 2
+    },
+    {
+      "nome": "Nevers",
+      "lat": 46.9837,
+      "lng": 3.1667,
+      "rank": 2
+    },
+    {
+      "nome": "Vichy",
+      "lat": 46.1171,
+      "lng": 3.4167,
+      "rank": 2
+    },
+    {
+      "nome": "Dieppe",
+      "lat": 49.9337,
+      "lng": 1.0833,
+      "rank": 2
+    },
+    {
+      "nome": "Bastia",
+      "lat": 42.7032,
+      "lng": 9.45,
+      "rank": 2
+    },
+    {
+      "nome": "Avignon",
+      "lat": 43.9483,
+      "lng": 4.8089,
+      "rank": 3
+    },
+    {
+      "nome": "Dunkerque",
+      "lat": 51.0344,
+      "lng": 2.3768,
+      "rank": 3
+    },
+    {
+      "nome": "Pau",
+      "lat": 43.3112,
+      "lng": -0.3558,
+      "rank": 3
+    },
+    {
+      "nome": "Antibes",
+      "lat": 43.5813,
+      "lng": 7.1249,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Nazaire",
+      "lat": 47.2751,
+      "lng": -2.2179,
+      "rank": 3
+    },
+    {
+      "nome": "Colmar",
+      "lat": 48.0808,
+      "lng": 7.3558,
+      "rank": 3
+    },
+    {
+      "nome": "Valence",
+      "lat": 44.9256,
+      "lng": 4.9096,
+      "rank": 3
+    },
+    {
+      "nome": "Quimper",
+      "lat": 47.996,
+      "lng": -4.0979,
+      "rank": 3
+    },
+    {
+      "nome": "Chambéry",
+      "lat": 45.5663,
+      "lng": 5.9208,
+      "rank": 3
+    },
+    {
+      "nome": "La Roche-sur-Yon",
+      "lat": 46.6697,
+      "lng": -1.4276,
+      "rank": 3
+    },
+    {
+      "nome": "Évreux",
+      "lat": 49.0241,
+      "lng": 1.1508,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Quentin",
+      "lat": 49.8489,
+      "lng": 3.2876,
+      "rank": 3
+    },
+    {
+      "nome": "Niort",
+      "lat": 46.3231,
+      "lng": -0.4588,
+      "rank": 3
+    },
+    {
+      "nome": "Belfort",
+      "lat": 47.6422,
+      "lng": 6.8539,
+      "rank": 3
+    },
+    {
+      "nome": "Vannes",
+      "lat": 47.6569,
+      "lng": -2.762,
+      "rank": 3
+    },
+    {
+      "nome": "Meaux",
+      "lat": 48.9601,
+      "lng": 2.8788,
+      "rank": 3
+    },
+    {
+      "nome": "Blois",
+      "lat": 47.5943,
+      "lng": 1.3291,
+      "rank": 3
+    },
+    {
+      "nome": "Arles",
+      "lat": 43.6768,
+      "lng": 4.6303,
+      "rank": 3
+    },
+    {
+      "nome": "Beauvais",
+      "lat": 49.4333,
+      "lng": 2.0833,
+      "rank": 3
+    },
+    {
+      "nome": "Châteauroux",
+      "lat": 46.8125,
+      "lng": 1.6936,
+      "rank": 3
+    },
+    {
+      "nome": "Cholet",
+      "lat": 47.0589,
+      "lng": -0.8797,
+      "rank": 3
+    },
+    {
+      "nome": "Fréjus",
+      "lat": 43.4333,
+      "lng": 6.7355,
+      "rank": 3
+    },
+    {
+      "nome": "Montauban",
+      "lat": 44.0176,
+      "lng": 1.3542,
+      "rank": 3
+    },
+    {
+      "nome": "Charleville-Mézières",
+      "lat": 49.7685,
+      "lng": 4.7249,
+      "rank": 3
+    },
+    {
+      "nome": "Albi",
+      "lat": 43.9298,
+      "lng": 2.148,
+      "rank": 3
+    },
+    {
+      "nome": "Châlons-en-Champagne",
+      "lat": 48.9539,
+      "lng": 4.3672,
+      "rank": 3
+    },
+    {
+      "nome": "Narbonne",
+      "lat": 43.184,
+      "lng": 3.0014,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Malo",
+      "lat": 48.6474,
+      "lng": -2.0088,
+      "rank": 3
+    },
+    {
+      "nome": "Laval",
+      "lat": 48.0725,
+      "lng": -0.7702,
+      "rank": 3
+    },
+    {
+      "nome": "Hyères",
+      "lat": 43.1204,
+      "lng": 6.1286,
+      "rank": 3
+    },
+    {
+      "nome": "Carcassonne",
+      "lat": 43.2165,
+      "lng": 2.3486,
+      "rank": 3
+    },
+    {
+      "nome": "Angoulême",
+      "lat": 45.65,
+      "lng": 0.1535,
+      "rank": 3
+    },
+    {
+      "nome": "Grasse",
+      "lat": 43.6578,
+      "lng": 6.9254,
+      "rank": 3
+    },
+    {
+      "nome": "Castres",
+      "lat": 43.6053,
+      "lng": 2.2409,
+      "rank": 3
+    },
+    {
+      "nome": "Chalon-sur-Saône",
+      "lat": 46.7811,
+      "lng": 4.8537,
+      "rank": 3
+    },
+    {
+      "nome": "Boulogne-sur-Mer",
+      "lat": 50.7249,
+      "lng": 1.6137,
+      "rank": 3
+    },
+    {
+      "nome": "Douai",
+      "lat": 50.3707,
+      "lng": 3.0792,
+      "rank": 3
+    },
+    {
+      "nome": "Martigues",
+      "lat": 43.4074,
+      "lng": 5.0553,
+      "rank": 3
+    },
+    {
+      "nome": "Bourg-en-Bresse",
+      "lat": 46.2057,
+      "lng": 5.2258,
+      "rank": 3
+    },
+    {
+      "nome": "Montluçon",
+      "lat": 46.3402,
+      "lng": 2.6025,
+      "rank": 3
+    },
+    {
+      "nome": "Aubagne",
+      "lat": 43.2928,
+      "lng": 5.5707,
+      "rank": 3
+    },
+    {
+      "nome": "Valenciennes",
+      "lat": 50.3591,
+      "lng": 3.5251,
+      "rank": 3
+    },
+    {
+      "nome": "Istres",
+      "lat": 43.5134,
+      "lng": 4.9875,
+      "rank": 3
+    },
+    {
+      "nome": "Thionville",
+      "lat": 49.3599,
+      "lng": 6.1604,
+      "rank": 3
+    },
+    {
+      "nome": "Mantes-la-Jolie",
+      "lat": 48.9905,
+      "lng": 1.7167,
+      "rank": 3
+    },
+    {
+      "nome": "Compiègne",
+      "lat": 49.4179,
+      "lng": 2.8261,
+      "rank": 3
+    },
+    {
+      "nome": "Chartres",
+      "lat": 48.4468,
+      "lng": 1.4892,
+      "rank": 3
+    },
+    {
+      "nome": "Wattrelos",
+      "lat": 50.7012,
+      "lng": 3.2181,
+      "rank": 3
+    },
+    {
+      "nome": "Gap",
+      "lat": 44.5586,
+      "lng": 6.0787,
+      "rank": 3
+    },
+    {
+      "nome": "Alès",
+      "lat": 44.1249,
+      "lng": 4.0808,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Priest",
+      "lat": 45.6965,
+      "lng": 4.9439,
+      "rank": 3
+    },
+    {
+      "nome": "Salon-de-Provence",
+      "lat": 43.6423,
+      "lng": 5.0948,
+      "rank": 3
+    },
+    {
+      "nome": "Sète",
+      "lat": 43.4028,
+      "lng": 3.6928,
+      "rank": 3
+    },
+    {
+      "nome": "Épinal",
+      "lat": 48.1832,
+      "lng": 6.453,
+      "rank": 3
+    },
+    {
+      "nome": "Haguenau",
+      "lat": 48.8156,
+      "lng": 7.7905,
+      "rank": 3
+    },
+    {
+      "nome": "Vitrolles",
+      "lat": 43.46,
+      "lng": 5.2486,
+      "rank": 3
+    },
+    {
+      "nome": "Draguignan",
+      "lat": 43.5369,
+      "lng": 6.4646,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Chamond",
+      "lat": 45.4759,
+      "lng": 4.5129,
+      "rank": 3
+    },
+    {
+      "nome": "Châtellerault",
+      "lat": 46.8171,
+      "lng": 0.5452,
+      "rank": 3
+    },
+    {
+      "nome": "Cambrai",
+      "lat": 50.176,
+      "lng": 3.2347,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Londres",
+      "lat": 51.5019,
+      "lng": -0.1187,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Barcelona",
+      "lat": 41.3852,
+      "lng": 2.1814,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Madri",
+      "lat": 40.402,
+      "lng": -3.6853,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bruxelas",
+      "lat": 50.8353,
+      "lng": 4.3314,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Milão",
+      "lat": 45.4719,
+      "lng": 9.2031,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Turim",
+      "lat": 45.0723,
+      "lng": 7.668,
+      "rank": 1
+    },
+    {
+      "nome": "Genebra",
+      "lat": 46.21,
+      "lng": 6.14,
+      "rank": 1
+    },
+    {
+      "nome": "Essen",
+      "lat": 51.45,
+      "lng": 7.0166,
+      "rank": 1
+    },
+    {
+      "nome": "Roma",
+      "lat": 41.8979,
+      "lng": 12.4813,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3819,
+      "lng": 8.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Düsseldorf",
+      "lat": 51.2204,
+      "lng": 6.78,
+      "rank": 2
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.932,
+      "lng": 6.9481,
+      "rank": 2
+    },
+    {
+      "nome": "Bilbao",
+      "lat": 43.25,
+      "lng": -2.93,
+      "rank": 2
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Basileia",
+      "lat": 47.5804,
+      "lng": 7.59,
+      "rank": 2
+    },
+    {
+      "nome": "Antuérpia",
+      "lat": 51.2223,
+      "lng": 4.4131,
+      "rank": 2
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Liège",
+      "lat": 50.63,
+      "lng": 5.58,
+      "rank": 2
+    },
+    {
+      "nome": "Bonn",
+      "lat": 50.7205,
+      "lng": 7.08,
+      "rank": 2
+    },
+    {
+      "nome": "Zaragoza",
+      "lat": 41.65,
+      "lng": -0.89,
+      "rank": 2
+    },
+    {
+      "nome": "Gênova",
+      "lat": 44.41,
+      "lng": 8.93,
+      "rank": 2
+    },
+    {
+      "nome": "Wuppertal",
+      "lat": 51.25,
+      "lng": 7.17,
+      "rank": 2
+    },
+    {
+      "nome": "Wiesbaden",
+      "lat": 50.0804,
+      "lng": 8.25,
+      "rank": 2
+    },
+    {
+      "nome": "Birmingham",
+      "lat": 52.4769,
+      "lng": -1.9219,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Amsterdã",
+      "lat": 52.3519,
+      "lng": 4.9147,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Berna",
+      "lat": 46.9167,
+      "lng": 7.467,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Cardiff",
+      "lat": 51.5,
+      "lng": -3.225,
+      "rank": 2
+    },
+    {
+      "nome": "Haia",
+      "lat": 52.08,
+      "lng": 4.27,
+      "rank": 2
+    },
+    {
+      "nome": "Brighton",
+      "lat": 50.8303,
+      "lng": -0.17,
+      "rank": 2
+    },
+    {
+      "nome": "Florença",
+      "lat": 43.78,
+      "lng": 11.25,
+      "rank": 2
+    },
+    {
+      "nome": "Gante",
+      "lat": 51.03,
+      "lng": 3.7,
+      "rank": 2
+    },
+    {
+      "nome": "Portsmouth",
+      "lat": 50.8003,
+      "lng": -1.08,
+      "rank": 2
+    },
+    {
+      "nome": "Bournemouth",
+      "lat": 50.73,
+      "lng": -1.9001,
+      "rank": 3
+    },
+    {
+      "nome": "Roterdã",
+      "lat": 51.9219,
+      "lng": 4.478,
+      "rank": 3
+    },
+    {
+      "nome": "Lisboa",
+      "lat": 38.7247,
+      "lng": -9.1468,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Southampton",
+      "lat": 50.9,
+      "lng": -1.4,
+      "rank": 3
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49,
+      "lng": 8.4,
+      "rank": 3
+    },
+    {
+      "nome": "Southend-on-Sea",
+      "lat": 51.55,
+      "lng": 0.72,
+      "rank": 3
+    },
+    {
+      "nome": "Bristol",
+      "lat": 51.45,
+      "lng": -2.5833,
+      "rank": 3
+    },
+    {
+      "nome": "San Sebastián",
+      "lat": 43.3204,
+      "lng": -1.98,
+      "rank": 3
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 3
+    },
+    {
+      "nome": "Dortmund",
+      "lat": 51.53,
+      "lng": 7.45,
+      "rank": 3
+    },
+    {
+      "nome": "Charleroi",
+      "lat": 50.4204,
+      "lng": 4.45,
+      "rank": 3
+    },
+    {
+      "nome": "Manchester",
+      "lat": 53.5024,
+      "lng": -2.2499,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Valladolid",
+      "lat": 41.65,
+      "lng": -4.75,
+      "rank": 3
+    },
+    {
+      "nome": "Dublin",
+      "lat": 53.335,
+      "lng": -6.2509,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Koblenz",
+      "lat": 50.3505,
+      "lng": 7.6,
+      "rank": 3
+    },
+    {
+      "nome": "Pamplona",
+      "lat": 42.82,
+      "lng": -1.65,
+      "rank": 3
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 3
+    },
+    {
+      "nome": "Eindhoven",
+      "lat": 51.43,
+      "lng": 5.5,
+      "rank": 3
+    },
+    {
+      "nome": "Lausanne",
+      "lat": 46.5304,
+      "lng": 6.65,
+      "rank": 3
+    },
+    {
+      "nome": "Freiburg",
+      "lat": 48.0004,
+      "lng": 7.8699,
+      "rank": 3
+    },
+    {
+      "nome": "Como",
+      "lat": 45.81,
+      "lng": 9.08,
+      "rank": 3
+    },
+    {
+      "nome": "Lucerna",
+      "lat": 47.0504,
+      "lng": 8.28,
+      "rank": 3
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.552,
+      "lng": 9.9981,
+      "rank": 3
+    },
+    {
+      "nome": "Plymouth",
+      "lat": 50.3854,
+      "lng": -4.16,
+      "rank": 3
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Reading",
+      "lat": 51.47,
+      "lng": -0.98,
+      "rank": 3
+    },
+    {
+      "nome": "Utrecht",
+      "lat": 52.1003,
+      "lng": 5.12,
+      "rank": 3
+    },
+    {
+      "nome": "Kassel",
+      "lat": 51.3,
+      "lng": 9.5,
+      "rank": 3
+    },
+    {
+      "nome": "Vitoria-Gasteiz",
+      "lat": 42.85,
+      "lng": -2.67,
+      "rank": 3
+    },
+    {
+      "nome": "Gijón",
+      "lat": 43.53,
+      "lng": -5.67,
+      "rank": 3
+    },
+    {
+      "nome": "Luxemburgo",
+      "lat": 49.6117,
+      "lng": 6.13,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 3
+    },
+    {
+      "nome": "Santander",
+      "lat": 43.3805,
+      "lng": -3.8,
+      "rank": 3
+    },
+    {
+      "nome": "Sheffield",
+      "lat": 53.3667,
+      "lng": -1.5,
+      "rank": 3
+    },
+    {
+      "nome": "Nápoles",
+      "lat": 40.842,
+      "lng": 14.2431,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Duisburg",
+      "lat": 51.4325,
+      "lng": 6.7652,
+      "rank": 3
+    },
+    {
+      "nome": "Aachen",
+      "lat": 50.7766,
+      "lng": 6.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Bochum",
+      "lat": 51.4817,
+      "lng": 7.2165,
+      "rank": 3
+    },
+    {
+      "nome": "Mönchengladbach",
+      "lat": 51.1854,
+      "lng": 6.4417,
+      "rank": 3
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9819,
+      "lng": 8.2801,
+      "rank": 3
+    },
+    {
+      "nome": "Krefeld",
+      "lat": 51.3364,
+      "lng": 6.5538,
+      "rank": 3
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8717,
+      "lng": 8.6503,
+      "rank": 3
+    },
+    {
+      "nome": "Leverkusen",
+      "lat": 51.0303,
+      "lng": 6.9843,
+      "rank": 3
+    },
+    {
+      "nome": "Solingen",
+      "lat": 51.1734,
+      "lng": 7.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Hagen",
+      "lat": 51.3608,
+      "lng": 7.4717,
+      "rank": 3
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.4077,
+      "lng": 8.6908,
+      "rank": 3
+    },
+    {
+      "nome": "Lleida",
+      "lat": 41.6167,
+      "lng": 0.6222,
+      "rank": 3
+    },
+    {
+      "nome": "Tilburg",
+      "lat": 51.5555,
+      "lng": 5.0913,
+      "rank": 3
+    },
+    {
+      "nome": "Monza",
+      "lat": 45.58,
+      "lng": 9.2725,
+      "rank": 3
+    },
+    {
+      "nome": "Crawley",
+      "lat": 51.113,
+      "lng": -0.1831,
+      "rank": 3
+    },
+    {
+      "nome": "Heilbronn",
+      "lat": 49.1399,
+      "lng": 9.2205,
+      "rank": 3
+    },
+    {
+      "nome": "Brescia",
+      "lat": 45.5356,
+      "lng": 10.2147,
+      "rank": 3
+    },
+    {
+      "nome": "Pforzheim",
+      "lat": 48.8844,
+      "lng": 8.6989,
+      "rank": 3
+    },
+    {
+      "nome": "Swindon",
+      "lat": 51.558,
+      "lng": -1.7812,
+      "rank": 3
+    },
+    {
+      "nome": "Worthing",
+      "lat": 50.818,
+      "lng": -0.3754,
+      "rank": 3
+    },
+    {
+      "nome": "Reutlingen",
+      "lat": 48.4914,
+      "lng": 9.2043,
+      "rank": 3
+    },
+    {
+      "nome": "Winterthur",
+      "lat": 47.5056,
+      "lng": 8.7241,
+      "rank": 3
+    },
+    {
+      "nome": "Siegen",
+      "lat": 50.8748,
+      "lng": 8.0243,
+      "rank": 3
+    },
+    {
+      "nome": "Bergisch Gladbach",
+      "lat": 50.9856,
+      "lng": 7.133,
+      "rank": 3
+    },
+    {
+      "nome": "Breda",
+      "lat": 51.5866,
+      "lng": 4.776,
+      "rank": 3
+    },
+    {
+      "nome": "Eastbourne",
+      "lat": 50.7687,
+      "lng": 0.2845,
+      "rank": 3
+    },
+    {
+      "nome": "Leuven",
+      "lat": 50.8796,
+      "lng": 4.7009,
+      "rank": 3
+    },
+    {
+      "nome": "Girona",
+      "lat": 41.9831,
+      "lng": 2.8249,
+      "rank": 3
+    },
+    {
+      "nome": "Trier",
+      "lat": 49.7557,
+      "lng": 6.6394,
+      "rank": 3
+    },
+    {
+      "nome": "Kaiserslautern",
+      "lat": 49.443,
+      "lng": 7.7716,
+      "rank": 3
+    },
+    {
+      "nome": "Milton Keynes",
+      "lat": 52.0417,
+      "lng": -0.7558,
+      "rank": 3
+    },
+    {
+      "nome": "Piacenza",
+      "lat": 45.0524,
+      "lng": 9.6934,
+      "rank": 3
+    },
+    {
+      "nome": "Düren",
+      "lat": 50.8043,
+      "lng": 6.493,
+      "rank": 3
+    },
+    {
+      "nome": "Heerlen",
+      "lat": 50.8837,
+      "lng": 5.9815,
+      "rank": 3
+    },
+    {
+      "nome": "Hastings",
+      "lat": 50.8557,
+      "lng": 0.5801,
+      "rank": 3
+    },
+    {
+      "nome": "Hamm",
+      "lat": 51.6803,
+      "lng": 7.8209,
+      "rank": 3
+    },
+    {
+      "nome": "Tübingen",
+      "lat": 48.5227,
+      "lng": 9.0522,
+      "rank": 3
+    },
+    {
+      "nome": "Mendip",
+      "lat": 51.2372,
+      "lng": -2.6266,
+      "rank": 3
+    },
+    {
+      "nome": "Alessandria",
+      "lat": 44.9092,
+      "lng": 8.6101,
+      "rank": 3
+    },
+    {
+      "nome": "Newport",
+      "lat": 51.5877,
+      "lng": -2.9983,
+      "rank": 3
+    }
+  ]
+}

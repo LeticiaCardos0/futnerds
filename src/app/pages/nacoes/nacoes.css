@@ -9,7 +9,7 @@
 
 .pagina-nacoes{
   --nacoes-verde: var(--color-accent);
-  --nacoes-verde-claro: #5effa2;
+  --nacoes-verde-claro: #8BE86A;
   --nacoes-superficie: var(--color-surface);
   --nacoes-superficie-2: var(--color-surface-2);
   --nacoes-borda: var(--color-border-c);
@@ -64,7 +64,7 @@
 .area-globo{
   position:relative; min-width:0;
   /* o canvas do Three.js tem fundo transparente: o brilho verde fica por trás do planeta */
-  background: radial-gradient(circle at 50% 48%, rgba(25,212,90,0.07), transparent 58%);
+  background: radial-gradient(circle at 50% 48%, rgba(60,176,26,0.07), transparent 58%);
 }
 /* no tema claro o "espaço" atrás do globo continua escuro */
 html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
@@ -89,7 +89,7 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   transition: background 0.18s ease, color 0.18s ease;
 }
 .controle-botao + .controle-botao{ border-left: 1px solid rgba(255,255,255,0.14); }
-.controle-botao:hover{ background: rgba(25,212,90,0.14); color: var(--nacoes-verde-claro) !important; }
+.controle-botao:hover{ background: rgba(60,176,26,0.14); color: var(--nacoes-verde-claro) !important; }
 .globo-dica{
   margin:0; display:flex; align-items:center; gap:8px;
   font-size:12px; color:#9aa7ad; pointer-events:none;
@@ -103,10 +103,10 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   padding: 14px 14px 14px 16px;
   color:#f2f6f4;
   background: rgba(8,14,12,0.88);
-  border: 1px solid rgba(25,212,90,0.55);
+  border: 1px solid rgba(60,176,26,0.55);
   border-radius: 12px;
   backdrop-filter: blur(14px);
-  box-shadow: 0 18px 44px -14px rgba(0,0,0,0.7), 0 0 26px -6px rgba(25,212,90,0.45);
+  box-shadow: 0 18px 44px -14px rgba(0,0,0,0.7), 0 0 26px -6px rgba(60,176,26,0.45);
   pointer-events:none;
   opacity:0;
   transform: translate(-9999px,-9999px);
@@ -133,7 +133,7 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   background: linear-gradient(180deg, var(--nacoes-superficie) 0%, color-mix(in srgb, var(--nacoes-superficie-2) 70%, var(--nacoes-superficie)) 100%);
   border: 1px solid var(--nacoes-borda-verde);
   border-radius: 18px;
-  box-shadow: 0 0 40px -18px rgba(25,212,90,0.35);
+  box-shadow: 0 0 40px -18px rgba(60,176,26,0.35);
 }
 .painel::-webkit-scrollbar{ width:6px; }
 .painel::-webkit-scrollbar-thumb{ background: var(--nacoes-borda); border-radius:99px; }
@@ -263,7 +263,7 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   flex-basis: 158px;
   border: 2px solid var(--nacoes-verde);
   background: color-mix(in srgb, var(--color-accent) 7%, transparent);
-  box-shadow: 0 0 26px -10px rgba(25,212,90,0.6);
+  box-shadow: 0 0 26px -10px rgba(60,176,26,0.6);
 }
 .destaque-bandeira{ width:34px; height:24px; object-fit:cover; border-radius:4px; margin-bottom:8px; }
 .destaque-card--ativo .destaque-bandeira{ outline: 2px solid var(--nacoes-verde); outline-offset: 3px; }
@@ -337,7 +337,7 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
       color-mix(in srgb, var(--nacoes-superficie) 86%, transparent) 0%,
       color-mix(in srgb, var(--nacoes-superficie-2) 86%, transparent) 100%);
     backdrop-filter: blur(12px);
-    box-shadow: 0 18px 50px -20px rgba(0,0,0,0.75), 0 0 40px -18px rgba(25,212,90,0.35);
+    box-shadow: 0 18px 50px -20px rgba(0,0,0,0.75), 0 0 40px -18px rgba(60,176,26,0.35);
   }
 
   @keyframes nacoes-sobe-no-globo{

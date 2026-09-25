@@ -1,5 +1,5 @@
 /* ============================================================================
-   Home — parte 2 de 3 (cabeçalhos, cards do universo, jogador em destaque).
+   Home — parte 2 de 4 (cabeçalhos, cards do universo, jogador em destaque).
    Ver o cabecalho de home.scss sobre a divisao e a ordem dos arquivos.
    ============================================================================ */
 
@@ -37,7 +37,7 @@
   padding: 4px 10px;
   border: 1px solid var(--verde);
   border-radius: 4px;
-  background: rgba(22, 196, 73, .1);
+  background: rgba(60, 176, 26, .1);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .1em;
@@ -165,11 +165,11 @@ video.fn-card-img {
   align-items: center;
   gap: 10px;
   padding: 5px 14px 5px 5px;
-  border: 1px solid rgba(0, 230, 95, .5);
+  border: 1px solid rgba(79, 209, 31, .5);
   border-radius: 999px;
   background: rgba(5, 8, 7, .8);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 24px rgba(0, 230, 95, .25);
+  box-shadow: 0 0 24px rgba(79, 209, 31, .25);
   white-space: nowrap;
   opacity: 0;
   transform: translate(-50%, 10px) scale(.9);
@@ -265,9 +265,9 @@ video.fn-card-img {
 }
 
 a.fn-card:hover .fn-crest {
-  border-color: rgba(0, 230, 95, .45);
+  border-color: rgba(79, 209, 31, .45);
   background: rgba(10, 30, 18, .8);
-  box-shadow: 0 0 16px rgba(0, 230, 95, .2);
+  box-shadow: 0 0 16px rgba(79, 209, 31, .2);
 }
 
 .fn-card-body {
@@ -302,7 +302,7 @@ a.fn-card:hover .fn-crest {
 a.fn-card:hover {
   transform: translateY(-6px);
   border-color: var(--neon);
-  box-shadow: 0 0 36px rgba(0, 230, 95, .35);
+  box-shadow: 0 0 36px rgba(79, 209, 31, .35);
 
   .fn-card-img { transform: scale(1.08); }
   .fn-card-link { gap: 10px; color: var(--neon); }
@@ -326,7 +326,7 @@ a.fn-card:hover {
   // linha travada na altura do painel: a foto (520 px) vaza e é cortada, sem esticar a grade
   grid-template-rows: minmax(0, 1fr);
   height: 360px;
-  border: 1px solid rgba(22, 196, 73, .45);
+  border: 1px solid rgba(60, 176, 26, .45);
   border-radius: 18px;
   background: linear-gradient(90deg, #07130c, var(--preto) 45%, #07130c);
   overflow: hidden;
@@ -338,7 +338,7 @@ a.fn-card:hover {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: repeating-linear-gradient(180deg, transparent 0 59px, rgba(22, 196, 73, .05) 59px 60px);
+  background: repeating-linear-gradient(180deg, transparent 0 59px, rgba(60, 176, 26, .05) 59px 60px);
 }
 
 .fn-wk-light {
@@ -350,30 +350,8 @@ a.fn-card:hover {
   height: 460px;
   margin-left: -230px;
   border-radius: 50%;
-  background: rgba(22, 196, 73, .22);
+  background: rgba(60, 176, 26, .22);
   filter: blur(90px);
-}
-
-// mira tracejada girando devagar atrás do jogador
-.fn-wk-aim {
-  position: absolute;
-  z-index: -1;
-  left: 50%;
-  top: 30px;
-  width: 360px;
-  height: 360px;
-  margin-left: -180px;
-  border: 1px dashed rgba(22, 196, 73, .3);
-  border-radius: 50%;
-  animation: fnGiro 60s linear infinite;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 50px;
-    border: 1px solid rgba(22, 196, 73, .15);
-    border-radius: 50%;
-  }
 }
 
 .fn-wk-info {
@@ -452,19 +430,17 @@ a.fn-card:hover {
 
   &:hover {
     transform: scale(1.1);
-    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .6)) drop-shadow(0 0 26px rgba(0, 230, 95, .45));
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .6)) drop-shadow(0 0 26px rgba(79, 209, 31, .45));
   }
 }
 
-// com o mouse no jogador, a luz e a mira atrás dele acendem
-.fn-wk-light,
-.fn-wk-aim {
-  transition: opacity .45s, border-color .45s, filter .45s;
+// com o mouse no jogador, a luz atrás dele acende
+.fn-wk-light {
+  transition: opacity .45s, filter .45s;
 }
 
 .fn-wk:has(.fn-wk-photo:hover) {
   .fn-wk-light { filter: blur(70px) brightness(1.6); }
-  .fn-wk-aim { border-color: rgba(0, 230, 95, .6); }
 }
 
 .fn-wk-radar {
@@ -478,23 +454,23 @@ a.fn-card:hover {
 }
 
 .fn-radar-grid {
-  fill: rgba(22, 196, 73, .03);
-  stroke: rgba(22, 196, 73, .3);
+  fill: rgba(60, 176, 26, .03);
+  stroke: rgba(60, 176, 26, .3);
   transition: stroke .35s, fill .35s;
 }
 
 .fn-radar-axis {
-  stroke: rgba(22, 196, 73, .2);
+  stroke: rgba(60, 176, 26, .2);
   stroke-width: 1;
   transition: stroke .25s, stroke-width .25s;
 }
 
 .fn-radar-shape {
-  fill: rgba(22, 196, 73, .5);
+  fill: rgba(60, 176, 26, .5);
   stroke: var(--neon);
   stroke-width: 2;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 8px rgba(0, 230, 95, .5));
+  filter: drop-shadow(0 0 8px rgba(79, 209, 31, .5));
   transform-box: view-box;
   transform-origin: 50% 50%;
   // sem transform aqui: ele é da animação de entrada (fnRadar)
@@ -545,13 +521,13 @@ a.fn-card:hover {
 // mouse no gráfico: o hexágono acende
 .fn-radar:hover {
   .fn-radar-shape {
-    fill: rgba(22, 196, 73, .62);
-    filter: drop-shadow(0 0 16px rgba(0, 230, 95, .75));
+    fill: rgba(60, 176, 26, .62);
+    filter: drop-shadow(0 0 16px rgba(79, 209, 31, .75));
   }
 
   .fn-radar-grid {
-    stroke: rgba(22, 196, 73, .45);
-    fill: rgba(22, 196, 73, .05);
+    stroke: rgba(60, 176, 26, .45);
+    fill: rgba(60, 176, 26, .05);
   }
 }
 

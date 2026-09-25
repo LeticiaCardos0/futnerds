@@ -33,7 +33,7 @@
       "rank": 1
     },
     {
-      "nome": "San Salvador de Jujuy",
+      "nome": "Jujuy",
       "lat": -24.1833,
       "lng": -65.3,
       "rank": 1
@@ -57,7 +57,7 @@
       "rank": 1
     },
     {
-      "nome": "San Fernando del Valle de Catamarca",
+      "nome": "Catamarca",
       "lat": -28.47,
       "lng": -65.78,
       "rank": 1
@@ -165,7 +165,7 @@
       "rank": 2
     },
     {
-      "nome": "Presidencia Roque Sáenz Peña",
+      "nome": "Sáenz Peña",
       "lat": -26.79,
       "lng": -60.45,
       "rank": 2
@@ -189,7 +189,7 @@
       "rank": 2
     },
     {
-      "nome": "San Ramón de la Nueva Orán",
+      "nome": "Orán",
       "lat": -23.14,
       "lng": -64.32,
       "rank": 2
@@ -271,6 +271,534 @@
       "lat": -34.9,
       "lng": -60.04,
       "rank": 2
+    },
+    {
+      "nome": "Azul",
+      "lat": -36.7796,
+      "lng": -59.87,
+      "rank": 3
+    },
+    {
+      "nome": "Río Tercero",
+      "lat": -32.1796,
+      "lng": -64.12,
+      "rank": 3
+    },
+    {
+      "nome": "Mercedes",
+      "lat": -34.66,
+      "lng": -59.44,
+      "rank": 3
+    },
+    {
+      "nome": "Villa Mercedes",
+      "lat": -33.6896,
+      "lng": -65.47,
+      "rank": 3
+    },
+    {
+      "nome": "Libertador General San Martín",
+      "lat": -23.8195,
+      "lng": -64.79,
+      "rank": 3
+    },
+    {
+      "nome": "Cutral Có",
+      "lat": -38.94,
+      "lng": -69.24,
+      "rank": 3
+    },
+    {
+      "nome": "San-Lorenzo",
+      "lat": -28.12,
+      "lng": -58.77,
+      "rank": 3
+    },
+    {
+      "nome": "Tres Arroyos",
+      "lat": -38.37,
+      "lng": -60.2699,
+      "rank": 3
+    },
+    {
+      "nome": "Villa Constitución",
+      "lat": -33.23,
+      "lng": -60.35,
+      "rank": 3
+    },
+    {
+      "nome": "Alta Gracia",
+      "lat": -31.66,
+      "lng": -64.43,
+      "rank": 3
+    },
+    {
+      "nome": "Bell Ville",
+      "lat": -32.6,
+      "lng": -62.68,
+      "rank": 3
+    },
+    {
+      "nome": "Nueve de Julio",
+      "lat": -35.446,
+      "lng": -60.89,
+      "rank": 3
+    },
+    {
+      "nome": "Chacabuco",
+      "lat": -34.65,
+      "lng": -60.49,
+      "rank": 3
+    },
+    {
+      "nome": "Gualeguay",
+      "lat": -33.15,
+      "lng": -59.34,
+      "rank": 3
+    },
+    {
+      "nome": "Villa Ángela",
+      "lat": -27.5833,
+      "lng": -60.7167,
+      "rank": 3
+    },
+    {
+      "nome": "Coronel Suárez",
+      "lat": -37.4666,
+      "lng": -61.9166,
+      "rank": 3
+    },
+    {
+      "nome": "Rawson",
+      "lat": -43.3,
+      "lng": -65.1,
+      "rank": 3
+    },
+    {
+      "nome": "Dolores",
+      "lat": -36.33,
+      "lng": -57.69,
+      "rank": 3
+    },
+    {
+      "nome": "Victoria",
+      "lat": -32.61,
+      "lng": -60.18,
+      "rank": 3
+    },
+    {
+      "nome": "Lincoln",
+      "lat": -34.88,
+      "lng": -61.5399,
+      "rank": 3
+    },
+    {
+      "nome": "Veinticinco de Mayo",
+      "lat": -35.43,
+      "lng": -60.18,
+      "rank": 3
+    },
+    {
+      "nome": "Tunuyán",
+      "lat": -33.5662,
+      "lng": -69.0167,
+      "rank": 3
+    },
+    {
+      "nome": "Chascomús",
+      "lat": -35.5662,
+      "lng": -58.0166,
+      "rank": 3
+    },
+    {
+      "nome": "Chilecito",
+      "lat": -29.1655,
+      "lng": -67.5,
+      "rank": 3
+    },
+    {
+      "nome": "Esquel",
+      "lat": -42.9,
+      "lng": -71.3166,
+      "rank": 3
+    },
+    {
+      "nome": "General Güemes",
+      "lat": -24.6666,
+      "lng": -65.05,
+      "rank": 3
+    },
+    {
+      "nome": "Zapala",
+      "lat": -38.9,
+      "lng": -70.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Balcarce",
+      "lat": -37.8333,
+      "lng": -58.25,
+      "rank": 3
+    },
+    {
+      "nome": "Charata",
+      "lat": -27.2163,
+      "lng": -61.2,
+      "rank": 3
+    },
+    {
+      "nome": "Lobos",
+      "lat": -35.1849,
+      "lng": -59.0947,
+      "rank": 3
+    },
+    {
+      "nome": "Eldorado",
+      "lat": -26.2,
+      "lng": -54.6,
+      "rank": 3
+    },
+    {
+      "nome": "Añatuya",
+      "lat": -28.4661,
+      "lng": -62.8333,
+      "rank": 3
+    },
+    {
+      "nome": "Mar de Ajó",
+      "lat": -36.7162,
+      "lng": -56.6766,
+      "rank": 3
+    },
+    {
+      "nome": "Frías",
+      "lat": -28.6496,
+      "lng": -65.15,
+      "rank": 3
+    },
+    {
+      "nome": "Joaquín Víctor González",
+      "lat": -25.0833,
+      "lng": -64.1834,
+      "rank": 3
+    },
+    {
+      "nome": "Sunchales",
+      "lat": -30.9329,
+      "lng": -61.5666,
+      "rank": 3
+    },
+    {
+      "nome": "Malargüe",
+      "lat": -35.4661,
+      "lng": -69.5833,
+      "rank": 3
+    },
+    {
+      "nome": "Cafayate",
+      "lat": -26.0829,
+      "lng": -65.9666,
+      "rank": 3
+    },
+    {
+      "nome": "Río Colorado",
+      "lat": -38.9666,
+      "lng": -64.0833,
+      "rank": 3
+    },
+    {
+      "nome": "Cerrillos",
+      "lat": -24.8996,
+      "lng": -65.4833,
+      "rank": 3
+    },
+    {
+      "nome": "Monte Quemado",
+      "lat": -25.7996,
+      "lng": -62.8666,
+      "rank": 3
+    },
+    {
+      "nome": "Humahuaca",
+      "lat": -23.2,
+      "lng": -65.3499,
+      "rank": 3
+    },
+    {
+      "nome": "Benito Juarez",
+      "lat": -37.6655,
+      "lng": -59.8,
+      "rank": 3
+    },
+    {
+      "nome": "Choele Choel",
+      "lat": -39.2666,
+      "lng": -65.6833,
+      "rank": 3
+    },
+    {
+      "nome": "Vera",
+      "lat": -29.4662,
+      "lng": -60.2166,
+      "rank": 3
+    },
+    {
+      "nome": "José C. Paz",
+      "lat": -34.5154,
+      "lng": -58.7681,
+      "rank": 3
+    },
+    {
+      "nome": "Ituzaingó",
+      "lat": -27.585,
+      "lng": -56.6871,
+      "rank": 3
+    },
+    {
+      "nome": "Moreno",
+      "lat": -34.634,
+      "lng": -58.7914,
+      "rank": 3
+    },
+    {
+      "nome": "San Vicente",
+      "lat": -35.0249,
+      "lng": -58.4241,
+      "rank": 3
+    },
+    {
+      "nome": "Campana",
+      "lat": -34.1633,
+      "lng": -58.9592,
+      "rank": 3
+    },
+    {
+      "nome": "Mar del Tuyú",
+      "lat": -36.5743,
+      "lng": -56.6939,
+      "rank": 3
+    },
+    {
+      "nome": "Colón",
+      "lat": -32.2231,
+      "lng": -58.1443,
+      "rank": 3
+    },
+    {
+      "nome": "Oberá",
+      "lat": -27.4868,
+      "lng": -55.1199,
+      "rank": 3
+    },
+    {
+      "nome": "Plottier",
+      "lat": -38.9667,
+      "lng": -68.2333,
+      "rank": 3
+    },
+    {
+      "nome": "Palpalá",
+      "lat": -24.258,
+      "lng": -65.2136,
+      "rank": 3
+    },
+    {
+      "nome": "Centenario",
+      "lat": -38.8295,
+      "lng": -68.1318,
+      "rank": 3
+    },
+    {
+      "nome": "San Pedro",
+      "lat": -33.6792,
+      "lng": -59.6663,
+      "rank": 3
+    },
+    {
+      "nome": "Nogoyá",
+      "lat": -32.3937,
+      "lng": -59.7895,
+      "rank": 3
+    },
+    {
+      "nome": "Cañuelas",
+      "lat": -35.0538,
+      "lng": -58.7621,
+      "rank": 3
+    },
+    {
+      "nome": "Pocito",
+      "lat": -31.6833,
+      "lng": -68.5833,
+      "rank": 3
+    },
+    {
+      "nome": "Trenque Lauquen",
+      "lat": -35.9733,
+      "lng": -62.7328,
+      "rank": 3
+    },
+    {
+      "nome": "Pinamar",
+      "lat": -37.1111,
+      "lng": -56.8652,
+      "rank": 3
+    },
+    {
+      "nome": "Bragado",
+      "lat": -35.1156,
+      "lng": -60.4896,
+      "rank": 3
+    },
+    {
+      "nome": "Pehuajó",
+      "lat": -35.8108,
+      "lng": -61.899,
+      "rank": 3
+    },
+    {
+      "nome": "Curuzú Cuatiá",
+      "lat": -29.7915,
+      "lng": -58.0499,
+      "rank": 3
+    },
+    {
+      "nome": "Jesús María",
+      "lat": -30.9815,
+      "lng": -64.0942,
+      "rank": 3
+    },
+    {
+      "nome": "Cañada de Gómez",
+      "lat": -32.8203,
+      "lng": -61.3951,
+      "rank": 3
+    },
+    {
+      "nome": "Esperanza",
+      "lat": -31.4496,
+      "lng": -60.9315,
+      "rank": 3
+    },
+    {
+      "nome": "General Alvear",
+      "lat": -34.9775,
+      "lng": -67.6962,
+      "rank": 3
+    },
+    {
+      "nome": "Baradero",
+      "lat": -33.812,
+      "lng": -59.5047,
+      "rank": 3
+    },
+    {
+      "nome": "Rivadavia",
+      "lat": -33.191,
+      "lng": -68.4622,
+      "rank": 3
+    },
+    {
+      "nome": "San José de Metán",
+      "lat": -25.4971,
+      "lng": -64.9711,
+      "rank": 3
+    },
+    {
+      "nome": "Miramar",
+      "lat": -38.2716,
+      "lng": -57.8389,
+      "rank": 3
+    },
+    {
+      "nome": "Salto",
+      "lat": -34.2918,
+      "lng": -60.2545,
+      "rank": 3
+    },
+    {
+      "nome": "Aguilares",
+      "lat": -27.4315,
+      "lng": -65.6146,
+      "rank": 3
+    },
+    {
+      "nome": "Caucete",
+      "lat": -31.6515,
+      "lng": -68.2822,
+      "rank": 3
+    },
+    {
+      "nome": "Granadero Baigorria",
+      "lat": -32.8568,
+      "lng": -60.7175,
+      "rank": 3
+    },
+    {
+      "nome": "Quitilipi",
+      "lat": -26.8708,
+      "lng": -60.2154,
+      "rank": 3
+    },
+    {
+      "nome": "Villaguay",
+      "lat": -31.8677,
+      "lng": -59.027,
+      "rank": 3
+    },
+    {
+      "nome": "Casilda",
+      "lat": -33.0446,
+      "lng": -61.1642,
+      "rank": 3
+    },
+    {
+      "nome": "General José de San Martín",
+      "lat": -26.5364,
+      "lng": -59.3414,
+      "rank": 3
+    },
+    {
+      "nome": "San Carlos de Bolívar",
+      "lat": -36.2307,
+      "lng": -61.1157,
+      "rank": 3
+    },
+    {
+      "nome": "Villa Regina",
+      "lat": -39.0963,
+      "lng": -67.0837,
+      "rank": 3
+    },
+    {
+      "nome": "Famaillá",
+      "lat": -27.0545,
+      "lng": -65.4019,
+      "rank": 3
+    },
+    {
+      "nome": "Chajarí",
+      "lat": -30.7548,
+      "lng": -57.982,
+      "rank": 3
+    },
+    {
+      "nome": "Arrecifes",
+      "lat": -34.0631,
+      "lng": -60.1026,
+      "rank": 3
+    },
+    {
+      "nome": "Saladillo",
+      "lat": -35.6388,
+      "lng": -59.7794,
+      "rank": 3
+    },
+    {
+      "nome": "Apóstoles",
+      "lat": -27.9142,
+      "lng": -55.7535,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -278,49 +806,110 @@
       "nome": "Santiago",
       "lat": -33.4481,
       "lng": -70.669,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "São Paulo",
+      "lat": -23.5567,
+      "lng": -46.627,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Porto Alegre",
       "lat": -30.0481,
       "lng": -51.202,
-      "rank": 1
-    },
-    {
-      "nome": "Curitiba",
-      "lat": -25.4181,
-      "lng": -49.3219,
-      "rank": 1
-    },
-    {
-      "nome": "Santa Cruz de la Sierra",
-      "lat": -17.752,
-      "lng": -63.2279,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Assunção",
       "lat": -25.2945,
       "lng": -57.6435,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Brasília",
+      "lat": -15.7814,
+      "lng": -47.918,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Curitiba",
+      "lat": -25.4181,
+      "lng": -49.3219,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Montevidéu",
       "lat": -34.8561,
       "lng": -56.173,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "La Paz",
+      "lat": -16.496,
+      "lng": -68.1519,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Lima",
+      "lat": -12.0461,
+      "lng": -77.052,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Santa Cruz de la Sierra",
+      "lat": -17.752,
+      "lng": -63.2279,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Goiânia",
+      "lat": -16.7181,
+      "lng": -49.302,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Rio de Janeiro",
+      "lat": -22.9231,
+      "lng": -43.227,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Campinas",
+      "lat": -22.8981,
+      "lng": -47.102,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Cochabamba",
       "lat": -17.41,
       "lng": -66.17,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Joinville",
+      "lat": -26.318,
+      "lng": -48.8419,
+      "rank": 2
     },
     {
       "nome": "Concepción",
       "lat": -36.83,
       "lng": -73.05,
-      "rank": 1
+      "rank": 2
     },
     {
       "nome": "Novo Hamburgo",
@@ -335,9 +924,34 @@
       "rank": 2
     },
     {
+      "nome": "Belo Horizonte",
+      "lat": -19.9131,
+      "lng": -43.9169,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Florianópolis",
+      "lat": -27.578,
+      "lng": -48.522,
+      "rank": 2
+    },
+    {
       "nome": "Campo Grande",
       "lat": -20.4481,
       "lng": -54.6186,
+      "rank": 2
+    },
+    {
+      "nome": "Arequipa",
+      "lat": -16.418,
+      "lng": -71.532,
+      "rank": 2
+    },
+    {
+      "nome": "Santos",
+      "lat": -23.9518,
+      "lng": -46.3349,
       "rank": 2
     },
     {
@@ -347,9 +961,28 @@
       "rank": 2
     },
     {
+      "nome": "Sucre",
+      "lat": -19.041,
+      "lng": -65.2595,
+      "rank": 2,
+      "grande": true
+    },
+    {
       "nome": "Foz do Iguaçu",
       "lat": -25.5235,
       "lng": -54.53,
+      "rank": 2
+    },
+    {
+      "nome": "Uberlândia",
+      "lat": -18.9,
+      "lng": -48.28,
+      "rank": 2
+    },
+    {
+      "nome": "Cuiabá",
+      "lat": -15.5677,
+      "lng": -56.0869,
       "rank": 2
     },
     {
@@ -389,40 +1022,460 @@
       "rank": 2
     },
     {
+      "nome": "Ribeirão Preto",
+      "lat": -21.17,
+      "lng": -47.83,
+      "rank": 2
+    },
+    {
       "nome": "Antofagasta",
       "lat": -23.65,
       "lng": -70.4,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Blumenau",
       "lat": -26.92,
       "lng": -49.09,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Itajaí",
+      "lat": -26.8996,
+      "lng": -48.68,
+      "rank": 3
     },
     {
       "nome": "Ponta Grossa",
       "lat": -25.09,
       "lng": -50.16,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Talcahuano",
       "lat": -36.7167,
       "lng": -73.1167,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Tacna",
       "lat": -18,
       "lng": -70.25,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Sorocaba",
+      "lat": -23.49,
+      "lng": -47.47,
+      "rank": 3
     },
     {
       "nome": "Temuco",
       "lat": -38.73,
       "lng": -72.58,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Cascavel",
+      "lat": -24.9596,
+      "lng": -53.46,
+      "rank": 3
+    },
+    {
+      "nome": "Santa Maria",
+      "lat": -29.6833,
+      "lng": -53.8,
+      "rank": 3
+    },
+    {
+      "nome": "Oruro",
+      "lat": -17.9799,
+      "lng": -67.13,
+      "rank": 3
+    },
+    {
+      "nome": "Rancagua",
+      "lat": -34.17,
+      "lng": -70.74,
+      "rank": 3
+    },
+    {
+      "nome": "Iquique",
+      "lat": -20.25,
+      "lng": -70.13,
+      "rank": 3
+    },
+    {
+      "nome": "Anápolis",
+      "lat": -16.3196,
+      "lng": -48.96,
+      "rank": 3
+    },
+    {
+      "nome": "Americana",
+      "lat": -22.7499,
+      "lng": -47.33,
+      "rank": 3
+    },
+    {
+      "nome": "Marília",
+      "lat": -22.21,
+      "lng": -49.95,
+      "rank": 3
+    },
+    {
+      "nome": "Presidente Prudente",
+      "lat": -22.12,
+      "lng": -51.39,
+      "rank": 3
+    },
+    {
+      "nome": "Criciúma",
+      "lat": -28.68,
+      "lng": -49.39,
+      "rank": 3
+    },
+    {
+      "nome": "São José dos Campos",
+      "lat": -23.2,
+      "lng": -45.8799,
+      "rank": 3
+    },
+    {
+      "nome": "Rivera",
+      "lat": -30.8996,
+      "lng": -55.56,
+      "rank": 3
+    },
+    {
+      "nome": "Talca",
+      "lat": -35.455,
+      "lng": -71.67,
+      "rank": 3
+    },
+    {
+      "nome": "Jundiaí",
+      "lat": -23.2,
+      "lng": -46.88,
+      "rank": 3
+    },
+    {
+      "nome": "Rio Grande",
+      "lat": -32.0495,
+      "lng": -52.12,
+      "rank": 3
+    },
+    {
+      "nome": "Arica",
+      "lat": -18.5,
+      "lng": -70.29,
+      "rank": 3
+    },
+    {
+      "nome": "Potosí",
+      "lat": -19.5696,
+      "lng": -65.75,
+      "rank": 3
+    },
+    {
+      "nome": "Passo Fundo",
+      "lat": -28.25,
+      "lng": -52.42,
+      "rank": 3
+    },
+    {
+      "nome": "Piracicaba",
+      "lat": -22.71,
+      "lng": -47.64,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Montt",
+      "lat": -41.47,
+      "lng": -72.93,
+      "rank": 3
+    },
+    {
+      "nome": "Araçatuba",
+      "lat": -21.21,
+      "lng": -50.45,
+      "rank": 3
+    },
+    {
+      "nome": "Lages",
+      "lat": -27.8096,
+      "lng": -50.31,
+      "rank": 3
+    },
+    {
+      "nome": "Dourados",
+      "lat": -22.23,
+      "lng": -54.81,
+      "rank": 3
+    },
+    {
+      "nome": "Coquimbo",
+      "lat": -29.9529,
+      "lng": -71.3436,
+      "rank": 3
+    },
+    {
+      "nome": "Chapecó",
+      "lat": -27.1,
+      "lng": -52.64,
+      "rank": 3
+    },
+    {
+      "nome": "Valdivia",
+      "lat": -39.795,
+      "lng": -73.245,
+      "rank": 3
+    },
+    {
+      "nome": "Tarija",
+      "lat": -21.5167,
+      "lng": -64.75,
+      "rank": 3
+    },
+    {
+      "nome": "Aparecida de Goiânia",
+      "lat": -16.8233,
+      "lng": -49.2439,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad del Este",
+      "lat": -25.5036,
+      "lng": -54.6507,
+      "rank": 3
+    },
+    {
+      "nome": "São José",
+      "lat": -27.6153,
+      "lng": -48.6275,
+      "rank": 3
+    },
+    {
+      "nome": "San Lorenzo",
+      "lat": -25.3397,
+      "lng": -57.5088,
+      "rank": 3
+    },
+    {
+      "nome": "Sacaba",
+      "lat": -17.398,
+      "lng": -66.0383,
+      "rank": 3
+    },
+    {
+      "nome": "Quillacollo",
+      "lat": -17.3923,
+      "lng": -66.2784,
+      "rank": 3
+    },
+    {
+      "nome": "Toledo",
+      "lat": -24.7136,
+      "lng": -53.7431,
+      "rank": 3
+    },
+    {
+      "nome": "Senador Canedo",
+      "lat": -16.7081,
+      "lng": -49.0931,
+      "rank": 3
+    },
+    {
+      "nome": "La Serena",
+      "lat": -29.9059,
+      "lng": -71.2501,
+      "rank": 3
+    },
+    {
+      "nome": "Várzea Grande",
+      "lat": -15.6467,
+      "lng": -56.1325,
+      "rank": 3
+    },
+    {
+      "nome": "Quilpué",
+      "lat": -33.0475,
+      "lng": -71.4425,
+      "rank": 3
+    },
+    {
+      "nome": "Sumaré",
+      "lat": -22.8219,
+      "lng": -47.2669,
+      "rank": 3
+    },
+    {
+      "nome": "Birigui",
+      "lat": -21.2886,
+      "lng": -50.34,
+      "rank": 3
+    },
+    {
+      "nome": "Umuarama",
+      "lat": -23.7664,
+      "lng": -53.325,
+      "rank": 3
+    },
+    {
+      "nome": "Águas Lindas de Goiás",
+      "lat": -15.7619,
+      "lng": -48.2817,
+      "rank": 3
+    },
+    {
+      "nome": "Balneário Camboriú",
+      "lat": -26.9906,
+      "lng": -48.6347,
+      "rank": 3
+    },
+    {
+      "nome": "Luziânia",
+      "lat": -16.2525,
+      "lng": -47.9503,
+      "rank": 3
+    },
+    {
+      "nome": "Araraquara",
+      "lat": -21.7944,
+      "lng": -48.1756,
+      "rank": 3
+    },
+    {
+      "nome": "Indaiatuba",
+      "lat": -23.0884,
+      "lng": -47.2119,
+      "rank": 3
+    },
+    {
+      "nome": "Cambé",
+      "lat": -23.2758,
+      "lng": -51.2783,
+      "rank": 3
+    },
+    {
+      "nome": "Francisco Beltrão",
+      "lat": -26.0811,
+      "lng": -53.055,
+      "rank": 3
+    },
+    {
+      "nome": "Votuporanga",
+      "lat": -20.4228,
+      "lng": -49.9728,
+      "rank": 3
+    },
+    {
+      "nome": "Mogi das Cruzes",
+      "lat": -23.5228,
+      "lng": -46.1883,
+      "rank": 3
+    },
+    {
+      "nome": "Paranavaí",
+      "lat": -23.0731,
+      "lng": -52.4653,
+      "rank": 3
+    },
+    {
+      "nome": "Lajeado",
+      "lat": -29.4669,
+      "lng": -51.9614,
+      "rank": 3
+    },
+    {
+      "nome": "Caldas Novas",
+      "lat": -17.7443,
+      "lng": -48.6279,
+      "rank": 3
+    },
+    {
+      "nome": "Pato Branco",
+      "lat": -26.2286,
+      "lng": -52.6706,
+      "rank": 3
+    },
+    {
+      "nome": "Chiguayante",
+      "lat": -36.9256,
+      "lng": -73.0284,
+      "rank": 3
+    },
+    {
+      "nome": "Cianorte",
+      "lat": -23.6633,
+      "lng": -52.605,
+      "rank": 3
+    },
+    {
+      "nome": "São Bento do Sul",
+      "lat": -26.2503,
+      "lng": -49.3786,
+      "rank": 3
+    },
+    {
+      "nome": "Lins",
+      "lat": -21.6786,
+      "lng": -49.7425,
+      "rank": 3
+    },
+    {
+      "nome": "Sertãozinho",
+      "lat": -21.1378,
+      "lng": -47.9903,
+      "rank": 3
+    },
+    {
+      "nome": "Rolândia",
+      "lat": -23.3097,
+      "lng": -51.3692,
+      "rank": 3
+    },
+    {
+      "nome": "Sapiranga",
+      "lat": -29.6381,
+      "lng": -51.0069,
+      "rank": 3
+    },
+    {
+      "nome": "Jacareí",
+      "lat": -23.3053,
+      "lng": -45.9658,
+      "rank": 3
+    },
+    {
+      "nome": "Itapema",
+      "lat": -27.0903,
+      "lng": -48.6114,
+      "rank": 3
+    },
+    {
+      "nome": "Araras",
+      "lat": -22.3569,
+      "lng": -47.3842,
+      "rank": 3
+    },
+    {
+      "nome": "Mogi Guaçu",
+      "lat": -22.3677,
+      "lng": -46.9455,
+      "rank": 3
+    },
+    {
+      "nome": "Bebedouro",
+      "lat": -20.9494,
+      "lng": -48.4792,
+      "rank": 3
+    },
+    {
+      "nome": "Matão",
+      "lat": -21.6033,
+      "lng": -48.3658,
+      "rank": 3
     }
   ]
 }

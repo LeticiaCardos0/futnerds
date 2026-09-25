@@ -1,155 +1,208 @@
 /* ============================================================================
-   Home — parte 3 de 3 (futebol do mundo, desafios, CTA, responsivo).
+   Home — parte 3 de 4 (desafios, CTA, responsivo).
    Ver o cabecalho de home.scss sobre a divisao e a ordem dos arquivos.
    ============================================================================ */
 
-/* ---------- futebol do mundo (650) ---------- */
-.fn-world-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
-  height: 650px;
+/* ---------- jogador em destaque: HUD e animações ---------- */
+@keyframes fnGiroVolta {
+  to { transform: rotate(-360deg); }
 }
 
-.fn-world-globe {
-  position: relative;
-  height: 100%;
+@keyframes fnSonar {
+  from { transform: scale(.55); opacity: .8; }
+  to { transform: scale(2.2); opacity: 0; }
+}
 
-  app-atlas-globe {
+@keyframes fnMiras {
+  0%, 100% { opacity: .55; }
+  50% { opacity: 1; }
+}
+
+@keyframes fnLinhas {
+  to { background-position: 0 60px; }
+}
+
+@keyframes fnReflexo {
+  0% { transform: translateX(-100%); }
+  35%, 100% { transform: translateX(100%); }
+}
+
+@keyframes fnJogadorEntra {
+  from { translate: 0 44px; opacity: 0; }
+  to { translate: 0 0; opacity: 1; }
+}
+
+// usa a propriedade `translate` (e não transform) para somar com o zoom do hover
+@keyframes fnFlutua {
+  from { translate: 0 0; }
+  to { translate: 0 -8px; }
+}
+
+@keyframes fnOnda {
+  from { transform: scale(1); opacity: .9; }
+  to { transform: scale(4); opacity: 0; }
+}
+
+@keyframes fnRadarBrilho {
+  from { filter: drop-shadow(0 0 6px rgba(79, 209, 31, .4)); }
+  to { filter: drop-shadow(0 0 16px rgba(79, 209, 31, .85)); }
+}
+
+.fn-wk-hud {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -20px;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+  transition: filter .45s;
+
+  svg {
     position: absolute;
-    inset: 40px 20px;
+    inset: 0;
+    overflow: visible;
+  }
+
+  line {
+    stroke: rgba(79, 209, 31, .28);
+    stroke-width: 1;
+
+    &.longo {
+      stroke: rgba(79, 209, 31, .7);
+      stroke-width: 2;
+    }
   }
 }
 
-.fn-world-glow {
-  position: absolute;
-  inset: 12% 14%;
-  border-radius: 50%;
-  background: rgba(22, 196, 73, .14);
-  filter: blur(120px);
+// giram em volta do centro do viewBox
+.hud-escala,
+.hud-arcos,
+.hud-interno,
+.hud-miras {
+  transform-origin: 50% 50%;
 }
 
-.fn-world-orbit {
+.hud-escala {
+  animation: fnGiro 70s linear infinite;
+}
+
+.hud-trilho {
+  fill: none;
+  stroke: rgba(79, 209, 31, .22);
+}
+
+// quatro arcos (circunferência 1005 = 4 × 251)
+.hud-arcos {
+  fill: none;
+  stroke: var(--neon);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 150 101.3;
+  filter: drop-shadow(0 0 4px rgba(79, 209, 31, 1)) drop-shadow(0 0 12px rgba(79, 209, 31, .7));
+  animation: fnGiroVolta 22s linear infinite;
+
+  // segundo anel: três arcos curtos, mais finos, girando no sentido contrário (circunferência 917)
+  &--fino {
+    stroke-width: 2;
+    stroke-dasharray: 60 245.7;
+    opacity: .7;
+    animation: fnGiro 14s linear infinite;
+  }
+}
+
+.hud-interno {
+  fill: none;
+  stroke: rgba(79, 209, 31, .3);
+  stroke-dasharray: 2 7;
+  animation: fnGiro 36s linear infinite;
+}
+
+.hud-miras {
+  fill: none;
+  stroke: var(--neon);
+  stroke-width: 2;
+  animation: fnMiras 2.4s ease-in-out infinite;
+  transition: transform .45s var(--ease);
+}
+
+// varredura de radar no anel entre os raios 124 e 160
+.fn-wk-sweep {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 640px;
-  height: 640px;
-  margin: -320px 0 0 -320px;
-  border: 1px dashed rgba(22, 196, 73, .18);
+  inset: 0;
   border-radius: 50%;
-  animation: fnGiro 90s linear infinite;
+  background: conic-gradient(from 0deg, transparent 0 72%, rgba(79, 209, 31, .06) 84%, rgba(79, 209, 31, .38) 100%);
+  -webkit-mask: radial-gradient(circle, transparent 0 30.5%, #000 31% 40%, transparent 40.5%);
+  mask: radial-gradient(circle, transparent 0 30.5%, #000 31% 40%, transparent 40.5%);
+  animation: fnGiro 4.5s linear infinite;
+}
+
+.fn-wk-sonar {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  width: 40%;
+  height: 40%;
+  border: 1px solid rgba(79, 209, 31, .5);
+  border-radius: 50%;
+  animation: fnSonar 3.6s ease-out infinite;
+
+  & + & { animation-delay: 1.8s; }
+}
+
+// mouse no jogador: o HUD acende e as miras se fecham nele
+.fn-wk:has(.fn-wk-photo:hover) {
+  .fn-wk-hud { filter: brightness(1.5) drop-shadow(0 0 10px rgba(79, 209, 31, .4)); }
+  .hud-miras { transform: scale(.86); }
+}
+
+// linhas de análise deslizando e um reflexo de luz atravessando o painel de tempos em tempos
+.fn-wk-lines {
+  animation: fnLinhas 6s linear infinite;
+}
+
+.fn-wk::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(79, 209, 31, .07) 50%, transparent 60%);
+  transform: translateX(-100%);
+  animation: fnReflexo 8s ease-in-out 2s infinite;
   pointer-events: none;
 }
 
-.fn-callout {
-  position: absolute;
-  z-index: 3;
-  left: 6%;
-  bottom: 70px;
-  padding: 12px 16px;
-  border: 1px solid rgba(22, 196, 73, .5);
-  border-radius: 10px;
-  background: rgba(5, 8, 7, .78);
-  backdrop-filter: blur(12px);
+// entrada: textos em sequência e o jogador subindo; depois ele flutua de leve
+.fn-wk.is-visto {
+  .fn-wk-info > * { animation: fnEntrada .7s var(--ease) both; }
+  .fn-wk-info > :nth-child(2) { animation-delay: .1s; }
+  .fn-wk-info > :nth-child(3) { animation-delay: .2s; }
+  .fn-wk-info > :nth-child(4) { animation-delay: .3s; }
+  .fn-wk-photo { animation: fnJogadorEntra 1s .15s var(--ease) both, fnFlutua 4.5s 1.2s ease-in-out infinite alternate; }
 }
 
-.fn-callout-name {
-  font: 700 17px / 1.1 var(--titulo);
-  text-transform: uppercase;
-}
+// radar: varredura por trás, ondas nos pontos e o hexágono respirando
+.fn-radar-sweep {
+  transform-origin: 50% 50%;
+  animation: fnGiro 5s linear infinite;
 
-.fn-callout-info {
-  margin-top: 4px;
-  font-size: 14px;
-  color: var(--cinza);
-}
-
-.fn-callout-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 6px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--neon);
-
-  .ms { font-size: 18px; }
-}
-
-.fn-world-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding-left: 40px;
-}
-
-.fn-world-title {
-  max-width: 620px;
-  margin: 0;
-  font: 700 46px / 1.05 var(--titulo);
-  letter-spacing: -.025em;
-}
-
-.fn-world-desc {
-  max-width: 600px;
-  margin: 0;
-  font-size: 20px;
-  line-height: 1.5;
-  color: var(--cinza);
-}
-
-.fn-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 640px;
-}
-
-.fn-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  height: 44px;
-  padding: 0 16px 0 14px;
-  border: 1px solid var(--borda);
-  border-radius: 8px;
-  background: var(--painel);
-  font: 500 15px var(--texto);
-  color: var(--branco);
-  cursor: pointer;
-  transition: border-color .25s, background .25s, box-shadow .3s, color .25s;
-
-  &:hover {
-    border-color: rgba(22, 196, 73, .6);
-  }
-
-  &.is-on {
-    border-color: var(--neon);
-    background: rgba(22, 196, 73, .16);
-    color: var(--neon);
-    box-shadow: 0 0 18px rgba(0, 230, 95, .3);
-  }
-
-  &--all {
-    border: 1px dashed rgba(22, 196, 73, .5);
-    background: none;
-    color: var(--neon);
-
-    .ms { font-size: 18px; }
+  path {
+    fill: rgba(79, 209, 31, .12);
+    stroke: none;
   }
 }
 
-.fn-world-hint {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
-  font-size: 14px;
-  color: var(--cinza);
+.fn-radar-onda {
+  fill: none;
+  stroke: var(--neon);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fnOnda 3.6s ease-out infinite;
+  pointer-events: none;
+}
 
-  .ms { font-size: 20px; }
+.is-visto .fn-radar-shape {
+  animation: fnRadar 1.1s .35s var(--ease) both, fnRadarBrilho 2.6s 1.6s ease-in-out infinite alternate;
 }
 
 /* ---------- desafios (580) ---------- */
@@ -177,7 +230,7 @@
 
   &:hover {
     border-color: var(--neon);
-    box-shadow: 0 0 30px rgba(0, 230, 95, .3);
+    box-shadow: 0 0 30px rgba(79, 209, 31, .3);
 
     .fn-des-media img { transform: scale(1.07); opacity: 1; }
   }
@@ -231,7 +284,7 @@
   align-items: center;
   gap: 8px;
   padding: 7px 12px 7px 14px;
-  border: 1px solid rgba(22, 196, 73, .6);
+  border: 1px solid rgba(60, 176, 26, .6);
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
@@ -301,9 +354,6 @@
   .fn-hero-img { background-size: cover; background-position: 72% center; }
   .fn-wk { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .fn-wk-photo { display: none; }
-  .fn-world-grid { grid-template-columns: minmax(0, 1fr); height: auto; }
-  .fn-world-globe { height: 480px; }
-  .fn-world-copy { padding: 0 0 20px; }
   .fn-des-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -328,11 +378,6 @@
   .fn-wk-value { font-size: 24px; }
   .fn-wk-radar { padding: 36px 0 44px; }
   .fn-wk-radar svg { width: 240px; }
-  .fn-world-globe { height: 380px; overflow: hidden; }
-  .fn-world-orbit { width: 360px; height: 360px; margin: -180px 0 0 -180px; }
-  .fn-world-copy { padding: 0; }
-  .fn-world-title { font-size: 30px; }
-  .fn-world-desc { font-size: 17px; }
   .fn-des { grid-template-columns: 110px minmax(0, 1fr); height: auto; min-height: 170px; }
   .fn-des-body { padding: 18px 16px; }
   .fn-des-title { font-size: 18px; }
@@ -344,11 +389,16 @@
 @media (prefers-reduced-motion: reduce) {
   .fn-in,
   .fn-crests-col,
+  .fn-wk-hud *,
+  .fn-wk-lines,
+  .fn-wk::after,
+  .fn-wk.is-visto .fn-wk-info > *,
+  .fn-wk.is-visto .fn-wk-photo,
+  .fn-radar-sweep,
+  .fn-radar-onda,
   .fn-hero-img,
   .fn-hero-cam,
   .fn-fog i,
-  .fn-wk-aim,
-  .fn-world-orbit,
   .fn-scroll-cue .ms,
   .is-visto .fn-radar-shape { animation: none; }
   .fn-card,

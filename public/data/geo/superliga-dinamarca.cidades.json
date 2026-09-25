@@ -43,9 +43,76 @@
       "lat": 55.433,
       "lng": 11.5667,
       "rank": 1
+    },
+    {
+      "nome": "Kolding",
+      "lat": 55.4904,
+      "lng": 9.4722,
+      "rank": 3
+    },
+    {
+      "nome": "Klinteby Frihed",
+      "lat": 55.197,
+      "lng": 11.596,
+      "rank": 3
+    },
+    {
+      "nome": "Hørsholm",
+      "lat": 55.881,
+      "lng": 12.5011,
+      "rank": 3
+    },
+    {
+      "nome": "Hedensted",
+      "lat": 55.7704,
+      "lng": 9.7011,
+      "rank": 3
+    },
+    {
+      "nome": "Næstved",
+      "lat": 55.2299,
+      "lng": 11.7609,
+      "rank": 3
+    },
+    {
+      "nome": "Fredericia",
+      "lat": 55.5657,
+      "lng": 9.7526,
+      "rank": 3
+    },
+    {
+      "nome": "Køge",
+      "lat": 55.458,
+      "lng": 12.1821,
+      "rank": 3
+    },
+    {
+      "nome": "Holstebro",
+      "lat": 56.3601,
+      "lng": 8.6161,
+      "rank": 3
+    },
+    {
+      "nome": "Slagelse",
+      "lat": 55.4028,
+      "lng": 11.3546,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
+    {
+      "nome": "Hamburgo",
+      "lat": 53.552,
+      "lng": 9.9981,
+      "rank": 1
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1,
+      "grande": true
+    },
     {
       "nome": "Gotemburgo",
       "lat": 57.75,
@@ -71,28 +138,78 @@
       "rank": 1
     },
     {
+      "nome": "Bremen",
+      "lat": 53.08,
+      "lng": 8.8,
+      "rank": 1
+    },
+    {
+      "nome": "Oslo",
+      "lat": 59.9186,
+      "lng": 10.748,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Rostock",
       "lat": 54.0704,
       "lng": 12.15,
       "rank": 1
     },
     {
+      "nome": "Amsterdã",
+      "lat": 52.3519,
+      "lng": 4.9147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Szczecin",
+      "lat": 53.4204,
+      "lng": 14.53,
+      "rank": 1
+    },
+    {
+      "nome": "Bremerhaven",
+      "lat": 53.5504,
+      "lng": 8.58,
+      "rank": 1
+    },
+    {
       "nome": "Flensburg",
       "lat": 54.7837,
       "lng": 9.4333,
-      "rank": 1
+      "rank": 2
     },
     {
       "nome": "Helsingborg",
       "lat": 56.0505,
       "lng": 12.7,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 2
+    },
+    {
+      "nome": "Schwerin",
+      "lat": 53.6333,
+      "lng": 11.4167,
+      "rank": 2
+    },
+    {
+      "nome": "Groningen",
+      "lat": 53.2204,
+      "lng": 6.58,
+      "rank": 2
     },
     {
       "nome": "Borås",
       "lat": 57.7304,
       "lng": 12.92,
-      "rank": 1
+      "rank": 2
     },
     {
       "nome": "Kristiansand",
@@ -107,9 +224,33 @@
       "rank": 2
     },
     {
+      "nome": "Jönköping",
+      "lat": 57.7713,
+      "lng": 14.165,
+      "rank": 2
+    },
+    {
       "nome": "Halmstad",
       "lat": 56.6718,
       "lng": 12.8556,
+      "rank": 2
+    },
+    {
+      "nome": "Oldenburg",
+      "lat": 53.13,
+      "lng": 8.22,
+      "rank": 2
+    },
+    {
+      "nome": "Utrecht",
+      "lat": 52.1003,
+      "lng": 5.12,
+      "rank": 2
+    },
+    {
+      "nome": "Stavanger",
+      "lat": 58.97,
+      "lng": 5.68,
       "rank": 2
     },
     {
@@ -123,6 +264,342 @@
       "lat": 58.4648,
       "lng": 8.766,
       "rank": 2
+    },
+    {
+      "nome": "Bielefeld",
+      "lat": 52.03,
+      "lng": 8.53,
+      "rank": 2
+    },
+    {
+      "nome": "Leeuwarden",
+      "lat": 53.2504,
+      "lng": 5.7834,
+      "rank": 2
+    },
+    {
+      "nome": "Braunschweig",
+      "lat": 52.25,
+      "lng": 10.5,
+      "rank": 2
+    },
+    {
+      "nome": "Osnabrück",
+      "lat": 52.2804,
+      "lng": 8.05,
+      "rank": 2
+    },
+    {
+      "nome": "Emden",
+      "lat": 53.3667,
+      "lng": 7.2167,
+      "rank": 2
+    },
+    {
+      "nome": "Münster",
+      "lat": 51.9704,
+      "lng": 7.62,
+      "rank": 2
+    },
+    {
+      "nome": "Magdeburg",
+      "lat": 52.1304,
+      "lng": 11.62,
+      "rank": 2
+    },
+    {
+      "nome": "Skien",
+      "lat": 59.2,
+      "lng": 9.6,
+      "rank": 2
+    },
+    {
+      "nome": "Kristianstad",
+      "lat": 56.0337,
+      "lng": 14.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Växjö",
+      "lat": 56.8837,
+      "lng": 14.8167,
+      "rank": 3
+    },
+    {
+      "nome": "Linköping",
+      "lat": 58.41,
+      "lng": 15.6299,
+      "rank": 3
+    },
+    {
+      "nome": "Örebro",
+      "lat": 59.2803,
+      "lng": 15.22,
+      "rank": 3
+    },
+    {
+      "nome": "Karlstad",
+      "lat": 59.3671,
+      "lng": 13.4999,
+      "rank": 3
+    },
+    {
+      "nome": "Assen",
+      "lat": 53,
+      "lng": 6.55,
+      "rank": 3
+    },
+    {
+      "nome": "Zwolle",
+      "lat": 52.524,
+      "lng": 6.097,
+      "rank": 3
+    },
+    {
+      "nome": "Bærum",
+      "lat": 59.9135,
+      "lng": 11.3472,
+      "rank": 3
+    },
+    {
+      "nome": "Drammen",
+      "lat": 59.7572,
+      "lng": 10.1907,
+      "rank": 3
+    },
+    {
+      "nome": "Sandnes",
+      "lat": 58.8454,
+      "lng": 5.69,
+      "rank": 3
+    },
+    {
+      "nome": "Koszalin",
+      "lat": 54.2,
+      "lng": 16.1833,
+      "rank": 3
+    },
+    {
+      "nome": "Norrköping",
+      "lat": 58.5954,
+      "lng": 16.1787,
+      "rank": 3
+    },
+    {
+      "nome": "Mariestad",
+      "lat": 58.705,
+      "lng": 13.828,
+      "rank": 3
+    },
+    {
+      "nome": "Arnhem",
+      "lat": 51.988,
+      "lng": 5.923,
+      "rank": 3
+    },
+    {
+      "nome": "Tønsberg",
+      "lat": 59.264,
+      "lng": 10.421,
+      "rank": 3
+    },
+    {
+      "nome": "Zielona Góra",
+      "lat": 51.9504,
+      "lng": 15.5,
+      "rank": 3
+    },
+    {
+      "nome": "Moss",
+      "lat": 59.437,
+      "lng": 10.6692,
+      "rank": 3
+    },
+    {
+      "nome": "Karlskrona",
+      "lat": 56.203,
+      "lng": 15.296,
+      "rank": 3
+    },
+    {
+      "nome": "Haugesund",
+      "lat": 59.4119,
+      "lng": 5.2775,
+      "rank": 3
+    },
+    {
+      "nome": "Harburg",
+      "lat": 53.4606,
+      "lng": 9.9839,
+      "rank": 3
+    },
+    {
+      "nome": "Lund",
+      "lat": 55.7058,
+      "lng": 13.1932,
+      "rank": 3
+    },
+    {
+      "nome": "Norderstedt",
+      "lat": 53.7018,
+      "lng": 9.9933,
+      "rank": 3
+    },
+    {
+      "nome": "Neumünster",
+      "lat": 54.074,
+      "lng": 9.9846,
+      "rank": 3
+    },
+    {
+      "nome": "Rahlstedt",
+      "lat": 53.6019,
+      "lng": 10.1567,
+      "rank": 3
+    },
+    {
+      "nome": "Bergedorf",
+      "lat": 53.4846,
+      "lng": 10.229,
+      "rank": 3
+    },
+    {
+      "nome": "Wilhelmshaven",
+      "lat": 53.5476,
+      "lng": 8.1039,
+      "rank": 3
+    },
+    {
+      "nome": "Fredrikstad",
+      "lat": 59.2181,
+      "lng": 10.9298,
+      "rank": 3
+    },
+    {
+      "nome": "Delmenhorst",
+      "lat": 53.0511,
+      "lng": 8.6309,
+      "rank": 3
+    },
+    {
+      "nome": "Enschede",
+      "lat": 52.2183,
+      "lng": 6.8958,
+      "rank": 3
+    },
+    {
+      "nome": "Almere",
+      "lat": 52.3702,
+      "lng": 5.2141,
+      "rank": 3
+    },
+    {
+      "nome": "Wolfsburg",
+      "lat": 52.4236,
+      "lng": 10.776,
+      "rank": 3
+    },
+    {
+      "nome": "Gorzów Wielkopolski",
+      "lat": 52.7337,
+      "lng": 15.225,
+      "rank": 3
+    },
+    {
+      "nome": "Apeldoorn",
+      "lat": 52.21,
+      "lng": 5.9694,
+      "rank": 3
+    },
+    {
+      "nome": "Haarlem",
+      "lat": 52.3808,
+      "lng": 4.6368,
+      "rank": 3
+    },
+    {
+      "nome": "Zaanstad",
+      "lat": 52.4531,
+      "lng": 4.8136,
+      "rank": 3
+    },
+    {
+      "nome": "Amersfoort",
+      "lat": 52.155,
+      "lng": 5.3875,
+      "rank": 3
+    },
+    {
+      "nome": "Lillestrøm",
+      "lat": 59.956,
+      "lng": 11.0492,
+      "rank": 3
+    },
+    {
+      "nome": "Salzgitter",
+      "lat": 52.157,
+      "lng": 10.4154,
+      "rank": 3
+    },
+    {
+      "nome": "Hildesheim",
+      "lat": 52.1508,
+      "lng": 9.9511,
+      "rank": 3
+    },
+    {
+      "nome": "Deventer",
+      "lat": 52.255,
+      "lng": 6.1639,
+      "rank": 3
+    },
+    {
+      "nome": "Minden",
+      "lat": 52.2895,
+      "lng": 8.9146,
+      "rank": 3
+    },
+    {
+      "nome": "Lelystad",
+      "lat": 52.5083,
+      "lng": 5.475,
+      "rank": 3
+    },
+    {
+      "nome": "Rheine",
+      "lat": 52.2851,
+      "lng": 7.4405,
+      "rank": 3
+    },
+    {
+      "nome": "Alkmaar",
+      "lat": 52.6317,
+      "lng": 4.7486,
+      "rank": 3
+    },
+    {
+      "nome": "Leiden",
+      "lat": 52.1583,
+      "lng": 4.4931,
+      "rank": 3
+    },
+    {
+      "nome": "Purmerend",
+      "lat": 52.505,
+      "lng": 4.9597,
+      "rank": 3
+    },
+    {
+      "nome": "Zoetermeer",
+      "lat": 52.0575,
+      "lng": 4.4931,
+      "rank": 3
+    },
+    {
+      "nome": "Hilversum",
+      "lat": 52.2233,
+      "lng": 5.1764,
+      "rank": 3
     }
   ]
 }

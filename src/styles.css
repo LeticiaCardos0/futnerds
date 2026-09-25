@@ -22,8 +22,8 @@
   --color-fg-subtle: #9ca3af;
 
   /* Accent (verde) */
-  --color-accent: #19D45A;
-  --color-accent-strong: #19D45A;
+  --color-accent: #3CB01A;
+  --color-accent-strong: #3CB01A;
   --color-accent-fg: #030609;
 
   /* Semantic */
@@ -68,8 +68,8 @@
     --color-fg-muted: #4b5563;
     --color-fg-subtle: #6b7280;
 
-    --color-accent: #19D45A;
-    --color-accent-strong: #15803d;
+    --color-accent: #3CB01A;
+    --color-accent-strong: #2A7F12;
     --color-accent-fg: #ffffff;
 
     --color-danger: #dc2626;
@@ -88,8 +88,8 @@
     --color-fg-muted: #d1d5db;
     --color-fg-subtle: #9ca3af;
 
-    --color-accent: #19D45A;
-    --color-accent-strong: #19D45A;
+    --color-accent: #3CB01A;
+    --color-accent-strong: #3CB01A;
     --color-accent-fg: #030609;
 
     --color-danger: #f87171;

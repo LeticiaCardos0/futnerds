@@ -8,7 +8,7 @@ import {
   output,
   viewChild,
 } from '@angular/core';
-import { LngLat, Map as MapLibreMap, Marker } from 'maplibre-gl';
+import { Map as MapLibreMap, Marker } from 'maplibre-gl';
 import {
   BIG_TOWNS,
   CidadeSemTime,
@@ -17,13 +17,13 @@ import {
   COR_TEXTO_PADRAO,
   ESCALA_WP_MIN,
   MIN_GAP,
-  RANK2_ZOOM,
   TAM_CIDADE_MAX,
   TAM_CIDADE_MIN,
   WP_ALTURA,
   WP_LARGURA,
   ZOOM_AO_SELECIONAR,
   ZOOM_ESCALA_CHEIA,
+  zoomDoRank,
 } from './config-liga';
 
 /** Clube já pronto para o mapa (a página monta isto via LigaMapaService). */
@@ -127,7 +127,6 @@ export class MapaLigaComponent implements OnDestroy {
   private mapaPronto = false;
   private rotulos: RotuloRuntime[] = [];
   private waypoints: WaypointRuntime[] = [];
-  private centroEnquadramento: LngLat | null = null;
 
   private observador?: ResizeObserver;
   private enquadrou = false;
@@ -342,46 +341,42 @@ export class MapaLigaComponent implements OnDestroy {
     const cam = this.mapa.cameraForBounds(cfg.enquadramento.bounds, { padding });
     if (!cam || cam.zoom == null) return;
     this.mapa.setMinZoom(Math.min(cam.zoom - 0.25, cfg.maxZoom - 1));
-    this.centroEnquadramento = LngLat.convert(cam.center as any);
   }
 
   /**
-   * Mantém a parte VISÍVEL do mapa dentro do `limite`. Devolve o centro
-   * corrigido, ou null se já estiver dentro.
+   * Mantém o MEIO DA ÁREA ÚTIL (entre os painéis) dentro do `limite`. Devolve
+   * o centro corrigido da câmera, ou null se já estiver dentro.
    *
-   * Quando o viewport é mais largo que o limite (tela grande, zoom mínimo), não
-   * há posição válida: volta para o centro do enquadramento.
+   * Prender o ponto, e não a tela inteira, é o que deixa o zoom em paz. A
+   * versão anterior exigia a tela dentro do limite (ou o limite inteiro na
+   * tela, quando ela era maior): o zoom do scroll aproxima em volta do cursor,
+   * e bastava aproximar perto de uma borda para a outra sair da tela e a
+   * correção jogar a câmera de lado. Com o ponto, aproximar em qualquer lugar
+   * dentro do limite nunca dispara correção; só arrastar o país para fora.
+   *
+   * O meio da área útil, e não o centro da câmera: com 360px de painel à
+   * esquerda e 420 à direita eles diferem, e o enquadramento inicial põe o
+   * meio dos bounds no meio da área útil — que assim nunca é corrigido.
    */
   private calcularCorrecao(): [number, number] | null {
     if (!this.mapa) return null;
     const l = this.config().limite;
-    const b = this.mapa.getBounds();
-    const c = this.mapa.getCenter();
-    const meioLng = (b.getEast() - b.getWest()) / 2;
-    const meioLat = (b.getNorth() - b.getSouth()) / 2;
-    const minLng = l.w + meioLng;
-    const maxLng = l.e - meioLng;
-    const minLat = l.s + meioLat;
-    const maxLat = l.n - meioLat;
+    const p = this.paddingEfetivo();
+    const cont = this.mapa.getContainer();
+    const cw = cont.clientWidth;
+    const ch = cont.clientHeight;
 
-    // Dois regimes, um por eixo:
-    //
-    //  - viewport CABE dentro do limite  -> prende a viewport ao limite,
-    //    faixa valida [min, max];
-    //  - viewport MAIOR que o limite     -> nao existe centro que caiba, mas a
-    //    exigencia razoavel passa a ser o contrario: o limite tem que ficar
-    //    inteiro visivel. Essa faixa e [max, min], invertida e sempre valida.
-    //
-    // Antes o segundo caso caia no centro do enquadramento, um ponto unico —
-    // por isso todo zoom com a Inglaterra inteira na tela jogava a camera de
-    // volta para o meio, de lado.
-    const prender = (v: number, min: number, max: number) =>
-      min <= max ? Math.min(max, Math.max(min, v)) : Math.min(min, Math.max(max, v));
+    const meio = { x: (p.left + cw - p.right) / 2, y: (p.top + ch - p.bottom) / 2 };
+    const util = this.mapa.unproject([meio.x, meio.y]);
+    const lng = Math.min(l.e, Math.max(l.w, util.lng));
+    const lat = Math.min(l.n, Math.max(l.s, util.lat));
+    if (Math.abs(lng - util.lng) < 1e-5 && Math.abs(lat - util.lat) < 1e-5) return null;
 
-    const lng = prender(c.lng, minLng, maxLng);
-    const lat = prender(c.lat, minLat, maxLat);
-
-    return Math.abs(lng - c.lng) > 1e-5 || Math.abs(lat - c.lat) > 1e-5 ? [lng, lat] : null;
+    // O deslocamento em pixels, e não em graus: no Mercator um grau de
+    // latitude não tem o mesmo tamanho no meio da tela e no centro da câmera.
+    const alvo = this.mapa.project([lng, lat]);
+    const c = this.mapa.unproject([cw / 2 + alvo.x - meio.x, ch / 2 + alvo.y - meio.y]);
+    return [c.lng, c.lat];
   }
 
   // --- desenho ------------------------------------------------------------
@@ -417,10 +412,11 @@ export class MapaLigaComponent implements OnDestroy {
       comTime: boolean,
       rank: number,
       vizinha = false,
+      grande = false,
     ) => {
       const classes = comTime
         ? 'ml-lbl ml-club'
-        : `ml-lbl ml-minor ml-r${rank}${BIG_TOWNS.includes(nome) ? ' ml-big' : ''}`;
+        : `ml-lbl ml-minor ml-r${rank}${grande || BIG_TOWNS.includes(nome) ? ' ml-big' : ''}`;
       const w = el('div', classes);
       const s = el('span');
       s.textContent = nome;
@@ -450,7 +446,7 @@ export class MapaLigaComponent implements OnDestroy {
     };
 
     for (const c of cidades) add(c.nome, c.lat, c.lng, true, 0);
-    for (const t of semTime) add(t.nome, t.lat, t.lng, false, t.rank, t.vizinha);
+    for (const t of semTime) add(t.nome, t.lat, t.lng, false, t.rank, t.vizinha, t.grande);
 
     // Ordem de colocacao: quem tem mais clubes escolhe primeiro. Londres (6)
     // pega a melhor posicao, depois Liverpool e Manchester (2), e assim por
@@ -692,7 +688,7 @@ export class MapaLigaComponent implements OnDestroy {
    * Cidade COM time fica centrada no ponto da cidade e sempre aparece — quem
    * sai da frente sao os pinos. Cidade SEM time procura lugar livre em 4
    * direcoes e 2 distancias, e some quando nao cabe.
-   * Rank 2 so a partir de RANK2_ZOOM.
+   * Rank 2 e 3 so a partir de zoomDoRank.
    *
    * Cidades de paises vizinhos cedem lugar as do pais. Com Bristol escrito por
    * cima do ponto de Cardiff, o leitor ligava o ponto ao nome errado; entao os
@@ -705,6 +701,8 @@ export class MapaLigaComponent implements OnDestroy {
     if (!this.mapa) return;
     const postas = caixasPinos.slice();
     const z = this.mapa.getZoom();
+    const zMin = this.mapa.getMinZoom();
+    const rankVisivel = (rank: number) => z >= zoomDoRank(rank, zMin);
     const cw = this.mapa.getContainer().clientWidth;
     const ch = this.mapa.getContainer().clientHeight;
     const pad = 4;
@@ -715,7 +713,7 @@ export class MapaLigaComponent implements OnDestroy {
     // elas sao posicionadas por ultimo, depois dos nomes que as cobririam.
     const pontosVizinhas = new Map<RotuloRuntime, Caixa>();
     for (const l of this.rotulos) {
-      if (!l.vizinha || !(l.rank === 1 || z >= RANK2_ZOOM)) continue;
+      if (!l.vizinha || !rankVisivel(l.rank)) continue;
       const p = this.mapa.project([l.lng, l.lat]);
       if (naTela(p)) pontosVizinhas.set(l, { x1: p.x - 5, x2: p.x + 5, y1: p.y - 5, y2: p.y + 5 });
     }
@@ -733,7 +731,7 @@ export class MapaLigaComponent implements OnDestroy {
     // `this.rotulos` ja vem ordenado por numero de clubes (ver criarRotulos):
     // quem tem mais clubes escolhe posicao primeiro.
     for (const l of this.rotulos) {
-      const mostrar = l.comTime || l.rank === 1 || z >= RANK2_ZOOM;
+      const mostrar = l.comTime || rankVisivel(l.rank);
       const p = this.mapa.project([l.lng, l.lat]);
       if (!mostrar || !naTela(p)) {
         l.el.style.display = 'none';

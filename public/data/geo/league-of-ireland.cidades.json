@@ -55,6 +55,24 @@
       "lat": 54.65,
       "lng": -8.1167,
       "rank": 1
+    },
+    {
+      "nome": "Swords",
+      "lat": 53.4597,
+      "lng": -6.2181,
+      "rank": 3
+    },
+    {
+      "nome": "Navan",
+      "lat": 53.6528,
+      "lng": -6.6814,
+      "rank": 3
+    },
+    {
+      "nome": "Bray",
+      "lat": 53.2028,
+      "lng": -6.0983,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -71,34 +89,468 @@
       "rank": 1
     },
     {
+      "nome": "Manchester",
+      "lat": 53.5024,
+      "lng": -2.2499,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Birmingham",
+      "lat": 52.4769,
+      "lng": -1.9219,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cardiff",
+      "lat": 51.5,
+      "lng": -3.225,
+      "rank": 1
+    },
+    {
+      "nome": "Plymouth",
+      "lat": 50.3854,
+      "lng": -4.16,
+      "rank": 1
+    },
+    {
+      "nome": "Swansea",
+      "lat": 51.63,
+      "lng": -3.95,
+      "rank": 1
+    },
+    {
+      "nome": "Liverpool",
+      "lat": 53.4179,
+      "lng": -2.9199,
+      "rank": 1
+    },
+    {
+      "nome": "Edimburgo",
+      "lat": 55.9483,
+      "lng": -3.2191,
+      "rank": 1
+    },
+    {
+      "nome": "Leeds",
+      "lat": 53.832,
+      "lng": -1.582,
+      "rank": 1
+    },
+    {
+      "nome": "Sheffield",
+      "lat": 53.3667,
+      "lng": -1.5,
+      "rank": 1
+    },
+    {
+      "nome": "Bristol",
+      "lat": 51.45,
+      "lng": -2.5833,
+      "rank": 1
+    },
+    {
+      "nome": "Newcastle",
+      "lat": 55.0023,
+      "lng": -1.6019,
+      "rank": 2
+    },
+    {
+      "nome": "Blackpool",
+      "lat": 53.8304,
+      "lng": -3.05,
+      "rank": 2
+    },
+    {
       "nome": "Greenock",
       "lat": 55.9333,
       "lng": -4.75,
-      "rank": 1
+      "rank": 2
     },
     {
       "nome": "Ayr",
       "lat": 55.4504,
       "lng": -4.6167,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Stoke-on-Trent",
+      "lat": 53.0004,
+      "lng": -2.18,
+      "rank": 2
+    },
+    {
+      "nome": "Bournemouth",
+      "lat": 50.73,
+      "lng": -1.9001,
+      "rank": 2
+    },
+    {
+      "nome": "Exeter",
+      "lat": 50.7004,
+      "lng": -3.5299,
+      "rank": 2
+    },
+    {
+      "nome": "Sunderland",
+      "lat": 54.92,
+      "lng": -1.38,
+      "rank": 2
+    },
+    {
+      "nome": "Dundee",
+      "lat": 56.4704,
+      "lng": -3,
+      "rank": 2
+    },
+    {
+      "nome": "Coventry",
+      "lat": 52.4204,
+      "lng": -1.5,
+      "rank": 2
+    },
+    {
+      "nome": "Southampton",
+      "lat": 50.9,
+      "lng": -1.4,
+      "rank": 2
     },
     {
       "nome": "Douglas",
       "lat": 54.1504,
       "lng": -4.48,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Aberdeen",
+      "lat": 57.1704,
+      "lng": -2.08,
+      "rank": 2
+    },
+    {
+      "nome": "Chester",
+      "lat": 53.2,
+      "lng": -2.92,
+      "rank": 2
+    },
+    {
+      "nome": "Carlisle",
+      "lat": 54.88,
+      "lng": -2.93,
+      "rank": 2
     },
     {
       "nome": "Omagh",
       "lat": 54.6,
       "lng": -7.3,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Perth",
+      "lat": 56.4003,
+      "lng": -3.47,
+      "rank": 2
+    },
+    {
+      "nome": "Bath",
+      "lat": 51.3837,
+      "lng": -2.35,
+      "rank": 2
+    },
+    {
+      "nome": "Dumfries",
+      "lat": 55.0671,
+      "lng": -3.55,
+      "rank": 2
     },
     {
       "nome": "Lisburn",
       "lat": 54.5204,
       "lng": -6.67,
-      "rank": 1
+      "rank": 2
+    },
+    {
+      "nome": "Penzance",
+      "lat": 50.1337,
+      "lng": -5.55,
+      "rank": 2
+    },
+    {
+      "nome": "Brest",
+      "lat": 48.3904,
+      "lng": -4.495,
+      "rank": 2
+    },
+    {
+      "nome": "Inverness",
+      "lat": 57.4671,
+      "lng": -4.2333,
+      "rank": 2
+    },
+    {
+      "nome": "Cherbourg",
+      "lat": 49.6504,
+      "lng": -1.65,
+      "rank": 3
+    },
+    {
+      "nome": "Fort William",
+      "lat": 56.8165,
+      "lng": -5.1121,
+      "rank": 3
+    },
+    {
+      "nome": "Saint-Brieuc",
+      "lat": 48.5167,
+      "lng": -2.7833,
+      "rank": 3
+    },
+    {
+      "nome": "Wick",
+      "lat": 58.4333,
+      "lng": -3.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Paisley",
+      "lat": 55.8317,
+      "lng": -4.4325,
+      "rank": 3
+    },
+    {
+      "nome": "Preston",
+      "lat": 53.7628,
+      "lng": -2.7045,
+      "rank": 3
+    },
+    {
+      "nome": "East Kilbride",
+      "lat": 55.7641,
+      "lng": -4.1767,
+      "rank": 3
+    },
+    {
+      "nome": "Bradford",
+      "lat": 53.7939,
+      "lng": -1.7521,
+      "rank": 3
+    },
+    {
+      "nome": "Newport",
+      "lat": 51.5877,
+      "lng": -2.9983,
+      "rank": 3
+    },
+    {
+      "nome": "St Helens",
+      "lat": 53.45,
+      "lng": -2.7333,
+      "rank": 3
+    },
+    {
+      "nome": "Wolverhampton",
+      "lat": 52.5855,
+      "lng": -2.123,
+      "rank": 3
+    },
+    {
+      "nome": "Wigan",
+      "lat": 53.543,
+      "lng": -2.6371,
+      "rank": 3
+    },
+    {
+      "nome": "Warrington",
+      "lat": 53.3925,
+      "lng": -2.5802,
+      "rank": 3
+    },
+    {
+      "nome": "Telford",
+      "lat": 52.6766,
+      "lng": -2.4493,
+      "rank": 3
+    },
+    {
+      "nome": "Blackburn",
+      "lat": 53.75,
+      "lng": -2.4833,
+      "rank": 3
+    },
+    {
+      "nome": "Derby",
+      "lat": 52.9228,
+      "lng": -1.4766,
+      "rank": 3
+    },
+    {
+      "nome": "Bolton",
+      "lat": 53.5833,
+      "lng": -2.4333,
+      "rank": 3
+    },
+    {
+      "nome": "Southport",
+      "lat": 53.6458,
+      "lng": -3.0101,
+      "rank": 3
+    },
+    {
+      "nome": "Burnley",
+      "lat": 53.8,
+      "lng": -2.2333,
+      "rank": 3
+    },
+    {
+      "nome": "Swindon",
+      "lat": 51.558,
+      "lng": -1.7812,
+      "rank": 3
+    },
+    {
+      "nome": "Mendip",
+      "lat": 51.2372,
+      "lng": -2.6266,
+      "rank": 3
+    },
+    {
+      "nome": "Weston-super-Mare",
+      "lat": 51.346,
+      "lng": -2.9766,
+      "rank": 3
+    },
+    {
+      "nome": "Stockport",
+      "lat": 53.4098,
+      "lng": -2.1576,
+      "rank": 3
+    },
+    {
+      "nome": "Gloucester",
+      "lat": 51.8657,
+      "lng": -2.2431,
+      "rank": 3
+    },
+    {
+      "nome": "Huddersfield",
+      "lat": 53.649,
+      "lng": -1.7842,
+      "rank": 3
+    },
+    {
+      "nome": "Shrewsbury",
+      "lat": 52.7101,
+      "lng": -2.7521,
+      "rank": 3
+    },
+    {
+      "nome": "Cheltenham",
+      "lat": 51.9001,
+      "lng": -2.0797,
+      "rank": 3
+    },
+    {
+      "nome": "Worcester",
+      "lat": 52.1893,
+      "lng": -2.22,
+      "rank": 3
+    },
+    {
+      "nome": "Solihull",
+      "lat": 52.4143,
+      "lng": -1.7809,
+      "rank": 3
+    },
+    {
+      "nome": "Rochdale",
+      "lat": 53.6177,
+      "lng": -2.1552,
+      "rank": 3
+    },
+    {
+      "nome": "Crewe",
+      "lat": 53.0979,
+      "lng": -2.4416,
+      "rank": 3
+    },
+    {
+      "nome": "Burton upon Trent",
+      "lat": 52.8073,
+      "lng": -1.6426,
+      "rank": 3
+    },
+    {
+      "nome": "Sutton Coldfield",
+      "lat": 52.5667,
+      "lng": -1.8167,
+      "rank": 3
+    },
+    {
+      "nome": "Cannock",
+      "lat": 52.6904,
+      "lng": -2.0309,
+      "rank": 3
+    },
+    {
+      "nome": "High Peak",
+      "lat": 53.368,
+      "lng": -1.8454,
+      "rank": 3
+    },
+    {
+      "nome": "Wakefield",
+      "lat": 53.6833,
+      "lng": -1.4977,
+      "rank": 3
+    },
+    {
+      "nome": "Rotherham",
+      "lat": 53.4301,
+      "lng": -1.3568,
+      "rank": 3
+    },
+    {
+      "nome": "Redditch",
+      "lat": 52.3065,
+      "lng": -1.9457,
+      "rank": 3
+    },
+    {
+      "nome": "Chesterfield",
+      "lat": 53.25,
+      "lng": -1.4167,
+      "rank": 3
+    },
+    {
+      "nome": "Darlington",
+      "lat": 54.5243,
+      "lng": -1.5504,
+      "rank": 3
+    },
+    {
+      "nome": "Harrogate",
+      "lat": 53.9908,
+      "lng": -1.5373,
+      "rank": 3
+    },
+    {
+      "nome": "Tamworth",
+      "lat": 52.634,
+      "lng": -1.6959,
+      "rank": 3
+    },
+    {
+      "nome": "Nuneaton",
+      "lat": 52.5232,
+      "lng": -1.4652,
+      "rank": 3
+    },
+    {
+      "nome": "Stockton-on-Tees",
+      "lat": 54.5685,
+      "lng": -1.3187,
+      "rank": 3
     }
   ]
 }

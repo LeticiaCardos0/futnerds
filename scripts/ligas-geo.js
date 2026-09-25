@@ -13,8 +13,10 @@
  *   limite        caixa que o clube precisa respeitar para entrar no JSON
  *   bounds        (ligas novas) o enquadramento do TypeScript; o limite sai
  *                 dele por limiteDe(), com a MESMA regra do config-liga.ts
- *   incompleta    a base só tem alguns clubes da liga (sem licença no EA FC):
- *                 o mapa mostra só a cidade deles, sem cidades de referência
+ *   incompleta    a base só tem alguns clubes da liga (sem licença no EA FC).
+ *                 Só informativo: o mapa tem cidades de referência como as outras
+ *   capitaisEstaduais  capitais de estado entram no rank 1 (as do Brasil são
+ *                 referência para qualquer leitor, mesmo as menores)
  */
 
 /**
@@ -76,7 +78,7 @@ const MANUAIS = {
     pais: 'Q145', // Reino Unido: é o P17 dos clubes escoceses
     limite: { w: -7.8, s: 54.5, e: -0.6, n: 59.4 },
   },
-  brasileirao: { ligaNomeBase: 'Liga do Brasil', pais: 'Q155', limite: { w: -76, s: -35, e: -33, n: 6 }, incompleta: true },
+  brasileirao: { ligaNomeBase: 'Liga do Brasil', pais: 'Q155', limite: { w: -76, s: -35, e: -33, n: 6 }, incompleta: true, capitaisEstaduais: true },
 };
 
 // --- ligas com config gerada por configGerada() em config-liga.ts ----------
@@ -98,7 +100,8 @@ const GERADAS = {
   '3-liga': { ligaNomeBase: '3. Liga', pais: 'Q183', bounds: [[5.6, 47.1], [15.3, 55.1]] },
   'ligue-2': { ligaNomeBase: 'Ligue 2 BKT', pais: 'Q142', bounds: [[-4.9, 41.3], [9.6, 51.1]] },
   // rotuloPt: false — o "pt" do Wikidata tem grafias arcaicas para estas cidades.
-  'super-lig': { rotuloPt: false, ligaNomeBase: 'Trendyol Süper Lig', pais: 'Q43', bounds: [[25.6, 35.8], [44.8, 42.1]] },
+  // As vizinhas (Europa, Oriente Médio) ficam em português: Milão, Atenas.
+  'super-lig': { rotuloPt: false, rotuloPtVizinhas: true, ligaNomeBase: 'Trendyol Süper Lig', pais: 'Q43', bounds: [[25.6, 35.8], [44.8, 42.1]] },
   eredivisie: { ligaNomeBase: 'Eredivisie', pais: 'Q55', bounds: [[3.3, 50.75], [7.25, 53.6]] },
   'liga-mx': { ligaNomeBase: 'Liga BBVA MX', pais: 'Q96', bounds: [[-117.2, 14.5], [-86.7, 32.8]] },
   ekstraklasa: { ligaNomeBase: 'Ekstraklasa', pais: 'Q36', bounds: [[14.1, 49.0], [24.2, 54.9]] },

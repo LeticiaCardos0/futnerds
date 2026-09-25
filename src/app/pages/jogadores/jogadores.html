@@ -14,7 +14,7 @@
     </header>
 
     <!-- BANNER DE CONTEXTO (origem: filtro rápido vindo de outra tela, ex. card "Wonderkids" da Home) -->
-    <div *ngIf="filtroIdadeMax || filtroPotencialMin" class="bg-surface rounded-2xl border border-green-500/20 p-4 mb-6 flex items-center justify-between">
+    <div *ngIf="filtroIdadeMax || filtroPotencialMin" class="bg-surface rounded-2xl border border-accent/20 p-4 mb-6 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
           <i class="fas fa-bolt text-accent"></i>
@@ -119,7 +119,7 @@
           <div class="min-w-0">
             <div class="flex items-center gap-1.5">
               <p class="text-fg font-bold text-sm truncate">{{ jogador.nome }}</p>
-              <span class="text-[10px] font-bold uppercase bg-green-500/10 text-green-400 px-1.5 py-0.5 rounded whitespace-nowrap">{{ traduzirPosicao(jogador.posicao) }}</span>
+              <span class="text-[10px] font-bold uppercase bg-accent/10 text-accent px-1.5 py-0.5 rounded whitespace-nowrap">{{ traduzirPosicao(jogador.posicao) }}</span>
             </div>
             <div class="flex items-center gap-1.5 mt-0.5">
               <img
@@ -243,7 +243,7 @@
     <div class="grid grid-cols-4 gap-2 mb-3">
       <div class="bg-surface-2 rounded-xl p-2 text-center">
         <p class="text-[10px] text-fg-subtle">Overall</p>
-        <p class="text-lg font-bold text-green-400">{{ jogadorParaResumo?.overall }}</p>
+        <p class="text-lg font-bold text-accent">{{ jogadorParaResumo?.overall }}</p>
       </div>
       <div class="bg-surface-2 rounded-xl p-2 text-center">
         <p class="text-[10px] text-fg-subtle">Potencial</p>
@@ -265,14 +265,14 @@
       <div class="flex items-center gap-2">
         <span class="text-fg-subtle text-xs w-20">Velocidade</span>
         <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
-          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.velocidade || 0"></div>
+          <div class="h-full bg-accent" [style.width.%]="jogadorParaResumo?.velocidade || 0"></div>
         </div>
         <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.velocidade || '—' }}</span>
       </div>
       <div class="flex items-center gap-2">
         <span class="text-fg-subtle text-xs w-20">Drible</span>
         <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
-          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.drible || 0"></div>
+          <div class="h-full bg-accent" [style.width.%]="jogadorParaResumo?.drible || 0"></div>
         </div>
         <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.drible || '—' }}</span>
       </div>
@@ -286,7 +286,7 @@
       <div class="flex items-center gap-2">
         <span class="text-fg-subtle text-xs w-20">Finalização</span>
         <div class="flex-1 h-1.5 bg-surface-2 rounded-full overflow-hidden">
-          <div class="h-full bg-green-400" [style.width.%]="jogadorParaResumo?.finalizacao || 0"></div>
+          <div class="h-full bg-accent" [style.width.%]="jogadorParaResumo?.finalizacao || 0"></div>
         </div>
         <span class="text-xs font-bold w-6">{{ jogadorParaResumo?.finalizacao || '—' }}</span>
       </div>

@@ -97,7 +97,25 @@
     <div data-reveal class="fn-wk">
       <div class="fn-wk-lines" aria-hidden="true"></div>
       <div class="fn-wk-light" aria-hidden="true"></div>
-      <div class="fn-wk-aim" aria-hidden="true"></div>
+      <!-- HUD de análise em volta do jogador: escala girando, arcos, varredura, sonar e miras -->
+      <div class="fn-wk-hud" aria-hidden="true">
+        <span class="fn-wk-sonar"></span><span class="fn-wk-sonar"></span>
+        <span class="fn-wk-sweep"></span>
+        <svg viewBox="-200 -200 400 400">
+          <g class="hud-escala">
+            <line *ngFor="let t of hudTicks" x1="0" x2="0" y2="-184" [attr.y1]="t.longo ? -197 : -191"
+              [attr.transform]="'rotate(' + t.a + ')'" [class.longo]="t.longo" />
+          </g>
+          <circle r="160" class="hud-trilho" />
+          <circle r="160" class="hud-arcos" />
+          <circle r="146" class="hud-arcos hud-arcos--fino" />
+          <circle r="124" class="hud-interno" />
+          <g class="hud-miras">
+            <path d="M-128,-92 v-30 h30" /><path d="M128,-92 v-30 h-30" />
+            <path d="M-128,92 v30 h30" /><path d="M128,92 v30 h-30" />
+          </g>
+        </svg>
+      </div>
       <canvas class="fn-particles" data-particles="40" aria-hidden="true"></canvas>
 
       <div class="fn-wk-info">
@@ -112,11 +130,11 @@
         <div class="fn-wk-stats">
           <div>
             <div class="fn-wk-label">Overall</div>
-            <div class="fn-wk-value">{{ wonderkid().ovr }}</div>
+            <div class="fn-wk-value" [attr.data-conta]="wonderkid().ovr"></div>
           </div>
           <div>
             <div class="fn-wk-label">Potencial</div>
-            <div class="fn-wk-value fn-wk-value--neon">{{ wonderkid().pot ?? '—' }}</div>
+            <div class="fn-wk-value fn-wk-value--neon" [attr.data-conta]="wonderkid().pot"></div>
           </div>
           <div>
             <div class="fn-wk-label">Valor de mercado</div>
@@ -133,12 +151,15 @@
       <div class="fn-wk-radar">
         <svg viewBox="0 0 300 300" class="fn-radar" role="group" [attr.aria-label]="'Atributos de ' + wonderkid().nome">
           <polygon *ngFor="let g of radarGrade" [attr.points]="g" class="fn-radar-grid" />
+          <g class="fn-radar-sweep"><path d="M150,150 L150,50 A100,100 0 0,1 214.3,73.4 Z" /></g>
           <polygon [attr.points]="radarForma()" class="fn-radar-shape" />
           <!-- cada atributo é um grupo: passar o mouse (ou focar com Tab) destaca eixo, ponto e rótulo -->
-          <g *ngFor="let r of radarRotulos()" class="fn-radar-attr" tabindex="0" [attr.aria-label]="r.sigla + ' ' + r.valor">
+          <g *ngFor="let r of radarRotulos(); let i = index" class="fn-radar-attr" tabindex="0" [attr.aria-label]="r.sigla + ' ' + r.valor">
             <line x1="150" y1="150" [attr.x2]="r.ex" [attr.y2]="r.ey" class="fn-radar-axis" />
             <circle [attr.cx]="r.x" [attr.cy]="r.y + 4" r="26" class="fn-radar-hit" />
             <circle [attr.cx]="r.px" [attr.cy]="r.py" r="14" class="fn-radar-hit" />
+            <!-- onda saindo de cada ponto, uma de cada vez -->
+            <circle [attr.cx]="r.px" [attr.cy]="r.py" r="3.5" class="fn-radar-onda" [style.animation-delay.s]="i * 0.6" />
             <circle [attr.cx]="r.px" [attr.cy]="r.py" r="3.5" class="fn-radar-dot" />
             <text [attr.x]="r.x" [attr.y]="r.y - 5" text-anchor="middle" class="fn-radar-sigla">{{ r.sigla }}</text>
             <text [attr.x]="r.x" [attr.y]="r.y + 14" text-anchor="middle" class="fn-radar-num">{{ r.valor }}</text>
@@ -148,33 +169,78 @@
     </div>
   </div>
 
-  <!-- FUTEBOL DO MUNDO -->
+  <!-- FUTEBOL DO MUNDO: globo 3D + painel do país. Sem interação, um tour passeia pelos
+       países (home.ts → tourDoMundo); arrastar o globo ou escolher um país pausa o tour. -->
   <div class="fn-world">
     <div class="fn-wrap fn-world-grid">
       <div class="fn-world-globe">
         <div class="fn-world-glow" aria-hidden="true"></div>
-        <div class="fn-world-orbit" aria-hidden="true"></div>
-        <app-atlas-globe (countrySelect)="onCountrySelect($event)"></app-atlas-globe>
-        <div class="fn-callout">
-          <div class="fn-callout-name">{{ paisSelecionado().nome }}</div>
-          <div class="fn-callout-info">{{ paisSelecionado().ligas }} ligas · {{ paisSelecionado().jogadores.toLocaleString('pt-BR') }} jogadores</div>
-          <a routerLink="/ligas" class="fn-callout-link">Ver ligas no mapa <span class="ms">zoom_in</span></a>
-        </div>
+        <canvas class="fn-particles" data-particles="50" aria-hidden="true"></canvas>
+        <app-atlas-globe (countrySelect)="onCountrySelect($event)" (interagiu)="pausarTour()"></app-atlas-globe>
       </div>
 
       <div data-reveal class="fn-world-copy">
-        <div class="fn-tag">Ligas e seleções</div>
+        <div class="fn-tag">Ligas pelo mundo</div>
         <h2 class="fn-world-title">Explore o futebol do mundo</h2>
-        <p class="fn-world-desc">Gire o globo, escolha um país e aproxime até o mapa de satélite com as ligas e a localização de cada clube.</p>
-        <div class="fn-chips">
-          <button *ngFor="let p of paises" type="button" class="fn-chip"
-            [class.is-on]="p.id === paisSelecionado().id" [attr.aria-pressed]="p.id === paisSelecionado().id"
-            (click)="selecionarPais(p.id)">
-            <img [src]="'https://flagcdn.com/w40/' + p.bandeira + '.png'" alt="" class="fn-flag" />{{ p.nome }}
-          </button>
-          <a routerLink="/nacoes" class="fn-chip fn-chip--all"><span class="ms">public</span>Ver todos os países <span class="ms">arrow_forward</span></a>
+        <p class="fn-world-desc">Gire o globo ou escolha um país para ver as ligas, os clubes e os jogadores que ele tem na base.</p>
+
+        <div class="fn-painel" aria-live="polite">
+          <!-- track pelo id: trocar de país recria o bloco e dispara a animação de entrada -->
+          @for (p of [painel()]; track p.id) {
+            <div class="fn-painel-in">
+              <div class="fn-painel-topo">
+                <img class="fn-painel-flag" [src]="'https://flagcdn.com/w80/' + p.bandeira + '.png'" alt="" />
+                <div class="fn-painel-nome">
+                  <div class="fn-painel-pais">{{ p.nome }}</div>
+                  <div class="fn-painel-liga">{{ p.liga }}</div>
+                </div>
+                @if (p.logo) {
+                  <span class="fn-painel-logo"><img [src]="p.logo" [alt]="p.liga" /></span>
+                }
+              </div>
+
+              <div class="fn-painel-nums">
+                <div><span class="fn-painel-num" [attr.data-conta]="p.ligas"></span><small>Ligas</small></div>
+                <div><span class="fn-painel-num" [attr.data-conta]="p.clubes"></span><small>Clubes</small></div>
+                <div><span class="fn-painel-num" [attr.data-conta]="p.jogadores"></span><small>Jogadores nativos</small></div>
+              </div>
+
+              <div class="fn-painel-clubes">
+                <small>Principais clubes</small>
+                <div class="fn-painel-escudos">
+                  @if (p.escudos === null) {
+                    @for (n of [1, 2, 3, 4, 5]; track n) { <span class="fn-crest fn-crest--vazio"></span> }
+                  } @else {
+                    @for (e of p.escudos; track e.url) {
+                      <span class="fn-crest" [title]="e.nome"><img [src]="e.url" [alt]="e.nome" loading="lazy" /></span>
+                    } @empty {
+                      <span class="fn-painel-vazio">Nenhum clube cadastrado ainda.</span>
+                    }
+                  }
+                </div>
+              </div>
+
+              <a routerLink="/ligas" class="fn-painel-link">Ver ligas no mapa <span class="ms">arrow_forward</span></a>
+            </div>
+          }
+          <!-- barra do tour: enche até o próximo país; some quando o usuário assume -->
+          @for (n of [tourPasso()]; track n) {
+            <span class="fn-tour-barra" [class.is-pausado]="tourPausado()" [style.animation-duration.ms]="intervaloTour"></span>
+          }
         </div>
-        <p class="fn-world-hint"><span class="ms">touch_app</span>Arraste o globo para girar e clique em um país para ver os detalhes.</p>
+
+        <div class="fn-chips">
+          <button *ngFor="let c of paises" type="button" class="fn-chip"
+            [class.is-on]="c.id === paisSelecionado().id" [attr.aria-pressed]="c.id === paisSelecionado().id"
+            (click)="selecionarPais(c.id)">
+            <img [src]="'https://flagcdn.com/w40/' + c.bandeira + '.png'" alt="" class="fn-flag" />{{ c.nome }}
+          </button>
+          <a routerLink="/nacoes" class="fn-chip fn-chip--all"><span class="ms">public</span>Todos os países <span class="ms">arrow_forward</span></a>
+        </div>
+        <p class="fn-world-hint">
+          <span class="ms">{{ tourPausado() ? 'pan_tool' : 'autoplay' }}</span>
+          {{ tourPausado() ? 'Você está no controle: arraste o globo ou escolha um país.' : 'O globo passeia sozinho pelos países. Arraste ou escolha um para assumir o controle.' }}
+        </p>
       </div>
     </div>
   </div>

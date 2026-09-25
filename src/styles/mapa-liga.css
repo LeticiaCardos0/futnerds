@@ -38,8 +38,8 @@
 }
 
 :root {
-  --ml-verde: #00d639;
-  --ml-verde-escuro: #0b7f35;
+  --ml-verde: #3CB01A;
+  --ml-verde-escuro: #2A7F12;
 }
 
 /* --- nomes das cidades ---------------------------------------------------
@@ -89,6 +89,7 @@
 }
 .ml-lbl.ml-minor.ml-r1 span { font-size: 14px; }                                /* médias */
 .ml-lbl.ml-minor.ml-r2 span { font-size: 13px; color: rgba(242, 234, 214, 0.86); } /* menores, só com zoom */
+.ml-lbl.ml-minor.ml-r3 span { font-size: 12px; color: rgba(242, 234, 214, 0.78); } /* pequenas, só com mais zoom */
 .ml-lbl.ml-minor.ml-big span { font-size: 15px; color: rgba(250, 244, 228, 0.98); } /* grandes */
 
 .ml-lbl .ml-cdot {
@@ -119,7 +120,7 @@
   left: 23px;
   top: 58px;
   height: 1.5px;
-  background: rgba(0, 214, 57, 0.75);
+  background: rgba(60, 176, 26, 0.75);
   transform-origin: 0 50%;
   pointer-events: none;
 }
@@ -130,7 +131,7 @@
   height: 7px;
   border-radius: 50%;
   background: var(--ml-verde);
-  box-shadow: 0 0 8px rgba(0, 214, 57, 0.9);
+  box-shadow: 0 0 8px rgba(60, 176, 26, 0.9);
   pointer-events: none;
 }
 
@@ -156,8 +157,8 @@
   height: 46px;
   border-radius: 50%;
   background: #0b1012;
-  border: 2px solid rgba(0, 214, 57, 0.6);
-  box-shadow: 0 0 10px rgba(0, 214, 57, 0.5), 0 4px 10px rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(60, 176, 26, 0.6);
+  box-shadow: 0 0 10px rgba(60, 176, 26, 0.5), 0 4px 10px rgba(0, 0, 0, 0.6);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -188,14 +189,14 @@
   height: 13px;
   background: var(--ml-verde);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
-  filter: drop-shadow(0 0 4px rgba(0, 214, 57, 0.8));
+  filter: drop-shadow(0 0 4px rgba(60, 176, 26, 0.8));
 }
 .ml-wp:hover,
 .ml-wp:focus-visible { transform: scale(calc(var(--ml-escala, 1) * 1.12)); }
 .ml-wp.ml-sel { transform: scale(calc(var(--ml-escala, 1) * 1.15)); }
 .ml-wp.ml-sel .ml-head {
   border: 3px solid var(--ml-verde);
-  box-shadow: 0 0 0 3px rgba(0, 214, 57, 0.25), 0 0 24px rgba(0, 214, 57, 0.95);
+  box-shadow: 0 0 0 3px rgba(60, 176, 26, 0.25), 0 0 24px rgba(60, 176, 26, 0.95);
 }
 
 /* ============================================================================
@@ -233,7 +234,7 @@
   color: var(--ml-verde); font-size: 16px; font-weight: 600;
   text-decoration: none;
 }
-.ml-voltar:hover { background: rgba(0, 214, 57, 0.08); }
+.ml-voltar:hover { background: rgba(60, 176, 26, 0.08); }
 
 .ml-pais {
   display: flex; align-items: center; gap: 14px;
@@ -266,8 +267,8 @@
 }
 .ml-chip img { width: 20px; height: 20px; object-fit: contain; flex: none; }
 .ml-chip span { overflow: hidden; text-overflow: ellipsis; }
-.ml-chip:hover { border-color: rgba(0, 214, 57, 0.5); }
-.ml-chip[aria-pressed='true'] { border-color: var(--ml-verde); background: rgba(0, 214, 57, 0.12); }
+.ml-chip:hover { border-color: rgba(60, 176, 26, 0.5); }
+.ml-chip[aria-pressed='true'] { border-color: var(--ml-verde); background: rgba(60, 176, 26, 0.12); }
 
 /* --- painel direito --- */
 /* A foto do estadio entra por `background` inline (ver PainelClubeComponent);
@@ -340,4 +341,4 @@
 .ml-led { width: 8px; height: 8px; border-radius: 50%; background: #3a4442; }
 .ml-v3d[aria-pressed='true'] .ml-led { background: var(--ml-verde); box-shadow: 0 0 8px var(--ml-verde); }
 
-.ml-btn-redondo:hover, .ml-zoom button:hover, .ml-v3d:hover { border-color: rgba(0, 214, 57, 0.6); }
+.ml-btn-redondo:hover, .ml-zoom button:hover, .ml-v3d:hover { border-color: rgba(60, 176, 26, 0.6); }

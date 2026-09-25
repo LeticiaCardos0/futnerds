@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { API_URL } from '../../shared/api.util';
 import { AtlasGlobe, PAISES_ATLAS, PaisAtlas } from '../../shared/atlas-globe/atlas-globe';
@@ -53,6 +53,30 @@ interface Particula {
   brilho: boolean;
 }
 
+// nomes (em inglês) que a API usa para cada país do globo; alguns vêm duplicados e são somados
+const NOME_API: Record<string, string[]> = {
+  br: ['Brazil'], en: ['England'], es: ['Spain'], ar: ['Argentina'], de: ['Germany'], fr: ['France'],
+  it: ['Italy'], us: ['United States'], pt: ['Portugal'], nl: ['Netherlands', 'Holland'], jp: ['Japan'],
+  sa: ['Saudi Arabia'], mx: ['Mexico'], tr: ['Türkiye', 'Turkey'], eg: ['Egypt'], au: ['Australia'],
+};
+
+// logo da liga principal de cada país (arquivos de public/ligas)
+const LOGO_LIGA: Record<string, string> = {
+  en: 'Premier League', es: 'La Liga', de: 'Bundesliga', it: 'Serie A', fr: 'Ligue 1', br: 'Brasileirao',
+  ar: 'Liga Profesional de Fútbol', us: 'Major League Soccer', pt: 'Primeira Liga', nl: 'Eredivisie',
+  sa: 'Pro League - Arabia Saudita', tr: 'Süper Lig', au: 'A-League Men',
+};
+
+interface ResumoPais {
+  ligas: number;
+  clubes: number;
+  jogadores: number;
+  // nome usado no filtro de times (o que tem mais clubes, quando o país vem duplicado)
+  paisApi: string;
+}
+
+type Escudo = { nome: string; url: string };
+
 // ordem do radar, no sentido horário a partir do topo
 const RADAR = ['RIT', 'FIN', 'PAS', 'CON', 'DEF', 'FÍS'];
 
@@ -61,8 +85,8 @@ const RADAR = ['RIT', 'FIN', 'PAS', 'CON', 'DEF', 'FÍS'];
   standalone: true,
   imports: [CommonModule, RouterLink, AtlasGlobe],
   templateUrl: './home.html',
-  // Três arquivos por causa do budget anyComponentStyle; a ordem importa.
-  styleUrls: ['./home.scss', './home-2.scss', './home-3.scss'],
+  // Quatro arquivos por causa do budget anyComponentStyle; a ordem importa.
+  styleUrls: ['./home.scss', './home-2.scss', './home-3.scss', './home-4.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly img = '/home';
@@ -119,6 +143,38 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly ligaAtual = signal<{ nome: string; pais: string; logo: string } | null>(null);
   readonly paisSelecionado = signal<PaisAtlas>(PAISES_ATLAS[0]);
 
+  // --- painel do país e tour automático do globo ---
+  @ViewChild(AtlasGlobe) private globo?: AtlasGlobe;
+  readonly intervaloTour = 6500;
+  private readonly ordemTour = ['br', 'en', 'es', 'de', 'it', 'fr', 'ar', 'pt'];
+  readonly tourPausado = signal(false);
+  readonly tourPasso = signal(0); // muda a cada país do tour: recria a barra de progresso
+  private readonly resumo = signal<Record<string, ResumoPais>>({});
+  // null = carregando; [] = país sem clubes cadastrados
+  private readonly clubesPorPais = signal<Record<string, Escudo[] | null>>({});
+  private tourIniciado = false;
+  private tourTimer: ReturnType<typeof setTimeout> | undefined;
+  private retomarTimer: ReturnType<typeof setTimeout> | undefined;
+  private mundoVisivel = false;
+
+  readonly painel = computed(() => {
+    const p = this.paisSelecionado();
+    const r = this.resumo()[p.id];
+    const logo = LOGO_LIGA[p.id];
+    return {
+      id: p.id,
+      nome: p.nome,
+      bandeira: p.id === 'en' ? 'gb-eng' : p.id,
+      liga: p.top,
+      logo: logo ? encodeURI(`/ligas/${logo}.png`) : null,
+      // sem resumo da API: os números de exemplo do globo (clubes não tem exemplo)
+      ligas: r ? r.ligas : p.ligas,
+      clubes: r ? r.clubes : null,
+      jogadores: r ? r.jogadores : p.jogadores,
+      escudos: this.clubesPorPais()[p.id] ?? null,
+    };
+  });
+
   // valores de exemplo, trocados pelos da base assim que a API responde
   readonly wonderkid = signal<Wonderkid>({
     id: null,
@@ -148,6 +204,29 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       next: (res) => {
         const j = res.jogadores?.[0];
         if (j) this.wonderkid.set(this.montarWonderkid(j));
+        if (this.jogadorVisto) this.contarDepois('.fn-wk');
+      },
+      error: () => {},
+    });
+
+    // resumo por país (ligas, clubes, jogadores por nacionalidade) para o painel do globo
+    this.http.get<Array<{ nome: string; quantidadeLigas: number; quantidadeClubes: number; quantidadeJogadores: number }>>(`${API_URL}/nacoes/resumo`).subscribe({
+      next: (lista) => {
+        const porNome = new Map(lista.map((n) => [n.nome, n]));
+        const resumo: Record<string, ResumoPais> = {};
+        for (const [id, nomes] of Object.entries(NOME_API)) {
+          const achados = nomes.map((n) => porNome.get(n)).filter((n): n is NonNullable<typeof n> => !!n);
+          if (!achados.length) continue;
+          resumo[id] = {
+            ligas: achados.reduce((t, n) => t + n.quantidadeLigas, 0),
+            clubes: achados.reduce((t, n) => t + n.quantidadeClubes, 0),
+            jogadores: achados.reduce((t, n) => t + n.quantidadeJogadores, 0),
+            paisApi: [...achados].sort((x, y) => y.quantidadeClubes - x.quantidadeClubes)[0].nome,
+          };
+        }
+        this.resumo.set(resumo);
+        this.carregarClubes(this.paisSelecionado().id);
+        this.contarDepois();
       },
       error: () => {},
     });
@@ -179,23 +258,156 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (palco) this.palco(palco);
     this.videosDosCards();
     this.globoLigas();
+    this.tourDoMundo();
+    this.contagemDoJogador();
+  }
+
+  // OVR/POT contam de 0 quando o painel do jogador aparece na tela
+  private contagemDoJogador(): void {
+    const wk = this.host.querySelector<HTMLElement>('.fn-wk');
+    if (!wk) return;
+    const io = new IntersectionObserver(
+      (e) => {
+        if (!e[0].isIntersecting) return;
+        this.jogadorVisto = true;
+        this.contarDepois('.fn-wk');
+        io.disconnect();
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(wk);
+    this.cleanupFns.push(() => io.disconnect());
   }
 
   ngOnDestroy(): void {
     this.cleanupFns.forEach((fn) => fn());
   }
 
+  // clique num marcador do globo (o globo também emite o país inicial ao montar: aí não pausa)
   onCountrySelect(pais: PaisAtlas): void {
-    this.paisSelecionado.set(pais);
+    if (this.tourIniciado) {
+      this.pausarTour();
+      this.globo?.focar(pais.id);
+    }
+    this.mostrarPais(pais.id);
   }
 
+  // chip de país
   selecionarPais(id: string): void {
+    this.pausarTour();
+    this.globo?.focar(id);
+    this.mostrarPais(id);
+  }
+
+  // o usuário assumiu: para o tour e retoma sozinho depois de um tempo sem mexer
+  pausarTour(): void {
+    this.tourPausado.set(true);
+    clearTimeout(this.tourTimer);
+    clearTimeout(this.retomarTimer);
+    this.retomarTimer = setTimeout(() => {
+      this.tourPausado.set(false);
+      this.agendarTour();
+    }, 15000);
+  }
+
+  private mostrarPais(id: string): void {
     const pais = PAISES_ATLAS.find((p) => p.id === id);
-    if (pais) this.paisSelecionado.set(pais);
+    if (!pais) return;
+    this.paisSelecionado.set(pais);
+    this.carregarClubes(id);
+    this.contarDepois();
+  }
+
+  private carregarClubes(id: string): void {
+    if (id in this.clubesPorPais()) return;
+    const nome = this.resumo()[id]?.paisApi ?? NOME_API[id]?.[0];
+    if (!nome) return;
+    this.clubesPorPais.update((c) => ({ ...c, [id]: null }));
+    this.http
+      .get<{ times: Array<{ nome: string; escudoUrl?: string }> }>(`${API_URL}/times`, { params: { page: 0, size: 5, pais: nome } })
+      .subscribe({
+        next: (res) => {
+          const escudos = (res.times ?? []).filter((t) => t.escudoUrl).map((t) => ({ nome: t.nome, url: t.escudoUrl! }));
+          this.clubesPorPais.update((c) => ({ ...c, [id]: escudos }));
+        },
+        error: () => this.clubesPorPais.update((c) => ({ ...c, [id]: [] })),
+      });
+  }
+
+  // tour: começa quando a seção aparece, avança a cada intervaloTour e para fora da tela
+  private tourDoMundo(): void {
+    const secao = this.host.querySelector<HTMLElement>('.fn-world');
+    if (!secao) return;
+    this.tourIniciado = true;
+    const io = new IntersectionObserver(
+      (e) => {
+        this.mundoVisivel = e[0].isIntersecting;
+        if (!this.mundoVisivel) {
+          clearTimeout(this.tourTimer);
+          return;
+        }
+        this.globo?.focar(this.paisSelecionado().id);
+        this.contarDepois();
+        this.agendarTour();
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(secao);
+    this.cleanupFns.push(() => {
+      io.disconnect();
+      clearTimeout(this.tourTimer);
+      clearTimeout(this.retomarTimer);
+    });
+  }
+
+  private agendarTour(): void {
+    clearTimeout(this.tourTimer);
+    if (!this.mundoVisivel || this.tourPausado() || this.reduced) return;
+    this.tourPasso.update((n) => n + 1);
+    this.tourTimer = setTimeout(() => {
+      const i = this.ordemTour.indexOf(this.paisSelecionado().id);
+      const proximo = this.ordemTour[(i + 1) % this.ordemTour.length];
+      this.globo?.focar(proximo);
+      this.mostrarPais(proximo);
+      this.agendarTour();
+    }, this.intervaloTour);
+  }
+
+  // contagem animada dos números do painel (o texto é todo do JS: o template só passa data-conta)
+  private contarDepois(escopo = '.fn-painel'): void {
+    requestAnimationFrame(() => requestAnimationFrame(() => this.contarEm(escopo)));
+  }
+
+  // anima os [data-conta] do escopo (e os números do painel do país, que podem vir sem valor)
+  private contarEm(escopo: string): void {
+    this.host.querySelectorAll<HTMLElement>(`${escopo} [data-conta], ${escopo} .fn-painel-num`).forEach((el) => {
+      const bruto = el.dataset['conta'];
+      if (bruto === undefined || bruto === '') {
+        el.textContent = '—';
+        return;
+      }
+      const alvo = Number(bruto);
+      if (el.dataset['feito'] === bruto) return;
+      el.dataset['feito'] = bruto;
+      if (this.reduced) {
+        el.textContent = alvo.toLocaleString('pt-BR');
+        return;
+      }
+      const t0 = performance.now();
+      const passo = (agora: number) => {
+        const p = Math.min(1, (agora - t0) / 900);
+        el.textContent = Math.round(alvo * (1 - Math.pow(1 - p, 3))).toLocaleString('pt-BR');
+        if (p < 1) requestAnimationFrame(passo);
+      };
+      requestAnimationFrame(passo);
+    });
   }
 
   // --- radar hexagonal do wonderkid (viewBox 300 × 300, centro 150,150) ------------------------
   readonly radarRaio = 100;
+  // marcações da escala do HUD em volta do jogador (a cada 5°; a cada 30° uma mais longa)
+  readonly hudTicks = Array.from({ length: 72 }, (_, i) => ({ a: i * 5, longo: i % 6 === 0 }));
+  private jogadorVisto = false;
 
   private ponto(i: number, raio: number): [number, number] {
     const ang = ((-90 + i * 60) * Math.PI) / 180;
@@ -340,12 +552,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         const y = p.y * H;
         const a = p.a * (0.55 + 0.45 * Math.sin(p.fase * 1.7));
         if (p.brilho) {
-          ctx.fillStyle = `rgba(0,230,95,${(a * 0.18).toFixed(3)})`;
+          ctx.fillStyle = `rgba(79,209,31,${(a * 0.18).toFixed(3)})`;
           ctx.beginPath();
           ctx.arc(x, y, p.r * 5, 0, Math.PI * 2);
           ctx.fill();
         }
-        ctx.fillStyle = p.brilho ? `rgba(190,255,215,${a.toFixed(3)})` : `rgba(0,230,95,${a.toFixed(3)})`;
+        ctx.fillStyle = p.brilho ? `rgba(190,255,215,${a.toFixed(3)})` : `rgba(79,209,31,${a.toFixed(3)})`;
         ctx.beginPath();
         ctx.arc(x, y, p.r, 0, Math.PI * 2);
         ctx.fill();
@@ -409,7 +621,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         return [r, g, b, Math.exp(-x * x * 5) * Math.exp(-v * v * 9)];
       });
     const riscoBranco = risco(225, 240, 255);
-    const riscoVerde = risco(0, 230, 95);
+    const riscoVerde = risco(79, 209, 31);
 
     // o = refletor de origem (y < 0: no teto, fora do quadro); busca = onde mira enquanto
     // procura; mira = pequeno desvio em volta do jogador para os feixes não se sobreporem
@@ -571,7 +783,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           const a = 0.9 * pisca * pisca * energia * onda;
           if (a < 0.02) continue;
           const [x, y] = p(l.x, l.y);
-          ctx.fillStyle = l.verde ? `rgba(0,230,95,${a.toFixed(3)})` : `rgba(232,242,237,${(a * 0.8).toFixed(3)})`;
+          ctx.fillStyle = l.verde ? `rgba(79,209,31,${a.toFixed(3)})` : `rgba(232,242,237,${(a * 0.8).toFixed(3)})`;
           ctx.fillRect(x, y, l.r, l.r);
         }
 

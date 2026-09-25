@@ -1,0 +1,283 @@
+{
+  "ligaId": "liga-emirados",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Dubai",
+      "lat": 25.2319,
+      "lng": 55.278,
+      "rank": 1
+    },
+    {
+      "nome": "Abu Dhabi",
+      "lat": 24.4667,
+      "lng": 54.3666,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Ras al-Khaimah",
+      "lat": 25.7915,
+      "lng": 55.9428,
+      "rank": 1
+    },
+    {
+      "nome": "Fujeira",
+      "lat": 25.1234,
+      "lng": 56.3375,
+      "rank": 1
+    },
+    {
+      "nome": "Jebel Ali",
+      "lat": 24.9762,
+      "lng": 55.0107,
+      "rank": 1
+    },
+    {
+      "nome": "Umm al-Quwain",
+      "lat": 25.5653,
+      "lng": 55.5533,
+      "rank": 1
+    },
+    {
+      "nome": "Sharjah",
+      "lat": 25.3342,
+      "lng": 55.4122,
+      "rank": 3
+    },
+    {
+      "nome": "Ajman",
+      "lat": 25.4018,
+      "lng": 55.4788,
+      "rank": 3
+    },
+    {
+      "nome": "Musaffah",
+      "lat": 24.3589,
+      "lng": 54.4827,
+      "rank": 3
+    },
+    {
+      "nome": "Dubai Investments Park",
+      "lat": 25.0083,
+      "lng": 55.1568,
+      "rank": 3
+    },
+    {
+      "nome": "Khalifah A City",
+      "lat": 24.4259,
+      "lng": 54.605,
+      "rank": 3
+    },
+    {
+      "nome": "Bani Yas City",
+      "lat": 24.3098,
+      "lng": 54.6294,
+      "rank": 3
+    },
+    {
+      "nome": "Zayed City",
+      "lat": 23.6542,
+      "lng": 53.7052,
+      "rank": 3
+    },
+    {
+      "nome": "Al Shamkhah City",
+      "lat": 24.3927,
+      "lng": 54.7078,
+      "rank": 3
+    },
+    {
+      "nome": "Al Sajaah",
+      "lat": 25.3153,
+      "lng": 55.6321,
+      "rank": 3
+    },
+    {
+      "nome": "Lahbab",
+      "lat": 25.0376,
+      "lng": 55.5913,
+      "rank": 3
+    },
+    {
+      "nome": "Khawr Fakkān",
+      "lat": 25.3313,
+      "lng": 56.342,
+      "rank": 3
+    },
+    {
+      "nome": "Dibba Al-Fujairah",
+      "lat": 25.5925,
+      "lng": 56.2618,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Doha",
+      "lat": 25.2866,
+      "lng": 51.533,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Dammam",
+      "lat": 26.4301,
+      "lng": 50.0977,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Manama",
+      "lat": 26.2361,
+      "lng": 50.5831,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Mascate",
+      "lat": 23.6133,
+      "lng": 58.5933,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bandar Abbas",
+      "lat": 27.2041,
+      "lng": 56.2721,
+      "rank": 1
+    },
+    {
+      "nome": "Al Hufuf",
+      "lat": 25.3487,
+      "lng": 49.5856,
+      "rank": 1
+    },
+    {
+      "nome": "Soar",
+      "lat": 24.362,
+      "lng": 56.7344,
+      "rank": 1
+    },
+    {
+      "nome": "Ibri",
+      "lat": 23.2254,
+      "lng": 56.517,
+      "rank": 1
+    },
+    {
+      "nome": "Al-Seeb",
+      "lat": 23.6802,
+      "lng": 58.1825,
+      "rank": 1
+    },
+    {
+      "nome": "Jubail",
+      "lat": 27.0046,
+      "lng": 49.646,
+      "rank": 1
+    },
+    {
+      "nome": "Nizwa",
+      "lat": 22.9264,
+      "lng": 57.5314,
+      "rank": 1
+    },
+    {
+      "nome": "Alayat Samail",
+      "lat": 23.3032,
+      "lng": 57.9782,
+      "rank": 1
+    },
+    {
+      "nome": "Sur",
+      "lat": 22.5758,
+      "lng": 59.5348,
+      "rank": 2
+    },
+    {
+      "nome": "Hilf",
+      "lat": 20.6562,
+      "lng": 58.8768,
+      "rank": 2
+    },
+    {
+      "nome": "Ar Rayyān",
+      "lat": 25.2919,
+      "lng": 51.4244,
+      "rank": 3
+    },
+    {
+      "nome": "Thuqbah",
+      "lat": 26.2602,
+      "lng": 50.2049,
+      "rank": 3
+    },
+    {
+      "nome": "Muscat",
+      "lat": 23.5841,
+      "lng": 58.4078,
+      "rank": 3
+    },
+    {
+      "nome": "Lusail",
+      "lat": 25.4175,
+      "lng": 51.5075,
+      "rank": 3
+    },
+    {
+      "nome": "Şaḩam",
+      "lat": 24.1722,
+      "lng": 56.8886,
+      "rank": 3
+    },
+    {
+      "nome": "Madīnat Ḩamad",
+      "lat": 26.1153,
+      "lng": 50.5069,
+      "rank": 3
+    },
+    {
+      "nome": "Rustaq",
+      "lat": 23.3908,
+      "lng": 57.4244,
+      "rank": 3
+    },
+    {
+      "nome": "As Suwayq",
+      "lat": 23.8494,
+      "lng": 57.4386,
+      "rank": 3
+    },
+    {
+      "nome": "Mīnāb",
+      "lat": 27.131,
+      "lng": 57.0872,
+      "rank": 3
+    },
+    {
+      "nome": "Al Qaţīf",
+      "lat": 26.5654,
+      "lng": 50.0089,
+      "rank": 3
+    },
+    {
+      "nome": "Barkā’",
+      "lat": 23.6787,
+      "lng": 57.886,
+      "rank": 3
+    },
+    {
+      "nome": "Jahrom",
+      "lat": 28.5,
+      "lng": 53.5605,
+      "rank": 3
+    },
+    {
+      "nome": "Jīroft",
+      "lat": 28.6781,
+      "lng": 57.7406,
+      "rank": 3
+    }
+  ]
+}

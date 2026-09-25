@@ -1,0 +1,1327 @@
+{
+  "ligaId": "liga-ucrania",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Kharkiv",
+      "lat": 50.0019,
+      "lng": 36.2481,
+      "rank": 1
+    },
+    {
+      "nome": "Dnipro",
+      "lat": 48.4819,
+      "lng": 34.9981,
+      "rank": 1
+    },
+    {
+      "nome": "Odessa",
+      "lat": 46.492,
+      "lng": 30.7081,
+      "rank": 1
+    },
+    {
+      "nome": "Lviv",
+      "lat": 49.835,
+      "lng": 24.03,
+      "rank": 1
+    },
+    {
+      "nome": "Zaporizhzhia",
+      "lat": 47.8592,
+      "lng": 35.1749,
+      "rank": 1
+    },
+    {
+      "nome": "Kryvyi Rih",
+      "lat": 47.9283,
+      "lng": 33.345,
+      "rank": 1
+    },
+    {
+      "nome": "Mykolaiv",
+      "lat": 46.9677,
+      "lng": 31.9843,
+      "rank": 1
+    },
+    {
+      "nome": "Mariupol",
+      "lat": 47.0962,
+      "lng": 37.5562,
+      "rank": 1
+    },
+    {
+      "nome": "Luhansk",
+      "lat": 48.5698,
+      "lng": 39.3344,
+      "rank": 1
+    },
+    {
+      "nome": "Khmelnytskyi",
+      "lat": 49.4249,
+      "lng": 27.0015,
+      "rank": 1
+    },
+    {
+      "nome": "Horlivka",
+      "lat": 48.2996,
+      "lng": 38.0547,
+      "rank": 1
+    },
+    {
+      "nome": "Vinnytsia",
+      "lat": 49.2254,
+      "lng": 28.4816,
+      "rank": 1
+    },
+    {
+      "nome": "Kherson",
+      "lat": 46.6325,
+      "lng": 32.6007,
+      "rank": 1
+    },
+    {
+      "nome": "Poltava",
+      "lat": 49.574,
+      "lng": 34.5703,
+      "rank": 1
+    },
+    {
+      "nome": "Chernihiv",
+      "lat": 51.5049,
+      "lng": 31.3015,
+      "rank": 1
+    },
+    {
+      "nome": "Chernivtsi",
+      "lat": 48.3053,
+      "lng": 25.9216,
+      "rank": 2
+    },
+    {
+      "nome": "Cherkasy",
+      "lat": 49.4347,
+      "lng": 32.0709,
+      "rank": 2
+    },
+    {
+      "nome": "Sumy",
+      "lat": 50.9243,
+      "lng": 34.7809,
+      "rank": 2
+    },
+    {
+      "nome": "Zhytomyr",
+      "lat": 50.2456,
+      "lng": 28.6622,
+      "rank": 2
+    },
+    {
+      "nome": "Rivne",
+      "lat": 50.6166,
+      "lng": 26.2528,
+      "rank": 2
+    },
+    {
+      "nome": "Kropyvnytskyi",
+      "lat": 48.5041,
+      "lng": 32.2603,
+      "rank": 2
+    },
+    {
+      "nome": "Ternopil",
+      "lat": 49.536,
+      "lng": 25.5821,
+      "rank": 2
+    },
+    {
+      "nome": "Ivano-Frankivsk",
+      "lat": 48.9348,
+      "lng": 24.7094,
+      "rank": 2
+    },
+    {
+      "nome": "Kremenchuk",
+      "lat": 49.0835,
+      "lng": 33.4296,
+      "rank": 2
+    },
+    {
+      "nome": "Lutsk",
+      "lat": 50.7472,
+      "lng": 25.3334,
+      "rank": 2
+    },
+    {
+      "nome": "Bila Tserkva",
+      "lat": 49.7743,
+      "lng": 30.1309,
+      "rank": 2
+    },
+    {
+      "nome": "Kramatorsk",
+      "lat": 48.7194,
+      "lng": 37.5344,
+      "rank": 2
+    },
+    {
+      "nome": "Melitópol",
+      "lat": 46.8378,
+      "lng": 35.3775,
+      "rank": 2
+    },
+    {
+      "nome": "Uzhhorod",
+      "lat": 48.63,
+      "lng": 22.25,
+      "rank": 2
+    },
+    {
+      "nome": "Nikopol",
+      "lat": 47.5666,
+      "lng": 34.4062,
+      "rank": 2
+    },
+    {
+      "nome": "Lysychansk",
+      "lat": 48.9204,
+      "lng": 38.4274,
+      "rank": 2
+    },
+    {
+      "nome": "Drohobych",
+      "lat": 49.3444,
+      "lng": 23.4994,
+      "rank": 2
+    },
+    {
+      "nome": "Berdyansk",
+      "lat": 46.7568,
+      "lng": 36.7868,
+      "rank": 2
+    },
+    {
+      "nome": "Nizhyn",
+      "lat": 51.0541,
+      "lng": 31.8903,
+      "rank": 2
+    },
+    {
+      "nome": "Kamianets-Podilskyi",
+      "lat": 48.6843,
+      "lng": 26.5809,
+      "rank": 2
+    },
+    {
+      "nome": "Konotop",
+      "lat": 51.2424,
+      "lng": 33.209,
+      "rank": 2
+    },
+    {
+      "nome": "Shostka",
+      "lat": 51.8734,
+      "lng": 33.4797,
+      "rank": 2
+    },
+    {
+      "nome": "Uman",
+      "lat": 48.7543,
+      "lng": 30.2109,
+      "rank": 2
+    },
+    {
+      "nome": "Izmail",
+      "lat": 45.3503,
+      "lng": 28.8374,
+      "rank": 2
+    },
+    {
+      "nome": "Kupiansk",
+      "lat": 49.7218,
+      "lng": 37.5981,
+      "rank": 2
+    },
+    {
+      "nome": "Korosten",
+      "lat": 50.9504,
+      "lng": 28.65,
+      "rank": 2
+    },
+    {
+      "nome": "Kovel",
+      "lat": 51.2171,
+      "lng": 24.7166,
+      "rank": 2
+    },
+    {
+      "nome": "Chornomorsk",
+      "lat": 46.3,
+      "lng": 30.6666,
+      "rank": 2
+    },
+    {
+      "nome": "Voznesensk",
+      "lat": 47.5504,
+      "lng": 31.3333,
+      "rank": 2
+    },
+    {
+      "nome": "Chernobyl",
+      "lat": 51.3894,
+      "lng": 30.0989,
+      "rank": 2
+    },
+    {
+      "nome": "Darnytsya",
+      "lat": 50.416,
+      "lng": 30.6953,
+      "rank": 3
+    },
+    {
+      "nome": "Kamyanske",
+      "lat": 48.5172,
+      "lng": 34.6062,
+      "rank": 3
+    },
+    {
+      "nome": "Industrialnyi",
+      "lat": 49.9546,
+      "lng": 36.3691,
+      "rank": 3
+    },
+    {
+      "nome": "Alchevsk",
+      "lat": 48.4691,
+      "lng": 38.7974,
+      "rank": 3
+    },
+    {
+      "nome": "Slovyansk",
+      "lat": 48.8497,
+      "lng": 37.5974,
+      "rank": 3
+    },
+    {
+      "nome": "Pavlohrad",
+      "lat": 48.5321,
+      "lng": 35.8688,
+      "rank": 3
+    },
+    {
+      "nome": "Mukachevo",
+      "lat": 48.4425,
+      "lng": 22.718,
+      "rank": 3
+    },
+    {
+      "nome": "Voznesenskyi",
+      "lat": 47.9316,
+      "lng": 37.6297,
+      "rank": 3
+    },
+    {
+      "nome": "Bakhmut",
+      "lat": 48.5942,
+      "lng": 37.9989,
+      "rank": 3
+    },
+    {
+      "nome": "Khrustalnyi",
+      "lat": 48.1424,
+      "lng": 38.9237,
+      "rank": 3
+    },
+    {
+      "nome": "Yenakiyeve",
+      "lat": 48.2386,
+      "lng": 38.204,
+      "rank": 3
+    },
+    {
+      "nome": "Oleksandriya",
+      "lat": 48.6747,
+      "lng": 33.1176,
+      "rank": 3
+    },
+    {
+      "nome": "Kadiyivka",
+      "lat": 48.5682,
+      "lng": 38.6435,
+      "rank": 3
+    },
+    {
+      "nome": "Berdychiv",
+      "lat": 49.8942,
+      "lng": 28.5824,
+      "rank": 3
+    },
+    {
+      "nome": "Shakhtarsk",
+      "lat": 48.0566,
+      "lng": 38.4383,
+      "rank": 3
+    },
+    {
+      "nome": "Samar",
+      "lat": 48.6289,
+      "lng": 35.2589,
+      "rank": 3
+    },
+    {
+      "nome": "Feodosiya",
+      "lat": 45.032,
+      "lng": 35.3815,
+      "rank": 3
+    },
+    {
+      "nome": "Kostyantynivka",
+      "lat": 48.5273,
+      "lng": 37.7059,
+      "rank": 3
+    },
+    {
+      "nome": "Smila",
+      "lat": 49.233,
+      "lng": 31.8843,
+      "rank": 3
+    },
+    {
+      "nome": "Irpin",
+      "lat": 50.522,
+      "lng": 30.2404,
+      "rank": 3
+    },
+    {
+      "nome": "Kalush",
+      "lat": 49.024,
+      "lng": 24.3721,
+      "rank": 3
+    },
+    {
+      "nome": "Sheptytskyi",
+      "lat": 50.394,
+      "lng": 24.2394,
+      "rank": 3
+    },
+    {
+      "nome": "Boryspil",
+      "lat": 50.3505,
+      "lng": 30.9526,
+      "rank": 3
+    },
+    {
+      "nome": "Dovzhansk",
+      "lat": 48.0761,
+      "lng": 39.6474,
+      "rank": 3
+    },
+    {
+      "nome": "Pervomaysk",
+      "lat": 48.0448,
+      "lng": 30.8478,
+      "rank": 3
+    },
+    {
+      "nome": "Holosiyiv",
+      "lat": 50.3443,
+      "lng": 30.5518,
+      "rank": 3
+    },
+    {
+      "nome": "Inhulets",
+      "lat": 47.7301,
+      "lng": 33.2519,
+      "rank": 3
+    },
+    {
+      "nome": "Stryi",
+      "lat": 49.261,
+      "lng": 23.8484,
+      "rank": 3
+    },
+    {
+      "nome": "Kolomyia",
+      "lat": 48.525,
+      "lng": 25.0371,
+      "rank": 3
+    },
+    {
+      "nome": "Pokrovsk",
+      "lat": 48.2801,
+      "lng": 37.1771,
+      "rank": 3
+    },
+    {
+      "nome": "Vynohradar",
+      "lat": 50.5143,
+      "lng": 30.4245,
+      "rank": 3
+    },
+    {
+      "nome": "Khartsyzk",
+      "lat": 48.0428,
+      "lng": 38.1403,
+      "rank": 3
+    },
+    {
+      "nome": "Zvyahel",
+      "lat": 50.5914,
+      "lng": 27.6088,
+      "rank": 3
+    },
+    {
+      "nome": "Snizhne",
+      "lat": 48.0233,
+      "lng": 38.7621,
+      "rank": 3
+    },
+    {
+      "nome": "Rubizhne",
+      "lat": 49.0085,
+      "lng": 38.3797,
+      "rank": 3
+    },
+    {
+      "nome": "Lozova",
+      "lat": 48.8907,
+      "lng": 36.3141,
+      "rank": 3
+    },
+    {
+      "nome": "Druzhkivka",
+      "lat": 48.62,
+      "lng": 37.5254,
+      "rank": 3
+    },
+    {
+      "nome": "Chystyakove",
+      "lat": 48.0388,
+      "lng": 38.5969,
+      "rank": 3
+    },
+    {
+      "nome": "Enerhodar",
+      "lat": 47.4905,
+      "lng": 34.662,
+      "rank": 3
+    },
+    {
+      "nome": "Pryluky",
+      "lat": 50.5953,
+      "lng": 32.3838,
+      "rank": 3
+    },
+    {
+      "nome": "Antratsyt",
+      "lat": 48.1164,
+      "lng": 39.0886,
+      "rank": 3
+    },
+    {
+      "nome": "Horishni Plavni",
+      "lat": 49.0084,
+      "lng": 33.6293,
+      "rank": 3
+    },
+    {
+      "nome": "Novovolynsk",
+      "lat": 50.7295,
+      "lng": 24.1598,
+      "rank": 3
+    },
+    {
+      "nome": "Sorokyne",
+      "lat": 48.2933,
+      "lng": 39.7332,
+      "rank": 3
+    },
+    {
+      "nome": "Bilhorod-Dnistrovskyi",
+      "lat": 46.1948,
+      "lng": 30.3483,
+      "rank": 3
+    },
+    {
+      "nome": "Okhtyrka",
+      "lat": 50.3085,
+      "lng": 34.8947,
+      "rank": 3
+    },
+    {
+      "nome": "Izyum",
+      "lat": 49.207,
+      "lng": 37.2768,
+      "rank": 3
+    },
+    {
+      "nome": "Rovenky",
+      "lat": 48.0828,
+      "lng": 39.377,
+      "rank": 3
+    },
+    {
+      "nome": "Marhanets",
+      "lat": 47.6309,
+      "lng": 34.6245,
+      "rank": 3
+    },
+    {
+      "nome": "Lubny",
+      "lat": 50.0141,
+      "lng": 32.9997,
+      "rank": 3
+    },
+    {
+      "nome": "Nova Kakhovka",
+      "lat": 46.7597,
+      "lng": 33.3559,
+      "rank": 3
+    },
+    {
+      "nome": "Fastiv",
+      "lat": 50.078,
+      "lng": 29.9196,
+      "rank": 3
+    },
+    {
+      "nome": "Svitlovodsk",
+      "lat": 49.0629,
+      "lng": 33.2458,
+      "rank": 3
+    },
+    {
+      "nome": "Vyshneve",
+      "lat": 50.3883,
+      "lng": 30.3681,
+      "rank": 3
+    },
+    {
+      "nome": "Zhovti Vody",
+      "lat": 48.3452,
+      "lng": 33.4974,
+      "rank": 3
+    },
+    {
+      "nome": "Varash",
+      "lat": 51.3404,
+      "lng": 25.8555,
+      "rank": 3
+    },
+    {
+      "nome": "Shepetivka",
+      "lat": 50.1812,
+      "lng": 27.0652,
+      "rank": 3
+    },
+    {
+      "nome": "Myrhorod",
+      "lat": 49.9646,
+      "lng": 33.6086,
+      "rank": 3
+    },
+    {
+      "nome": "Podilsk",
+      "lat": 47.7499,
+      "lng": 29.5307,
+      "rank": 3
+    },
+    {
+      "nome": "Pivdennoukrainsk",
+      "lat": 47.8288,
+      "lng": 31.1751,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Moscou",
+      "lat": 55.7541,
+      "lng": 37.6136,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Istambul",
+      "lat": 41.1069,
+      "lng": 29.0081,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bucareste",
+      "lat": 44.4353,
+      "lng": 26.098,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Minsk",
+      "lat": 53.9019,
+      "lng": 27.5647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.2519,
+      "lng": 20.9981,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sófia",
+      "lat": 42.6853,
+      "lng": 23.3147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Ancara",
+      "lat": 39.9292,
+      "lng": 32.8624,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tbilisi",
+      "lat": 41.727,
+      "lng": 44.7888,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Chişinău",
+      "lat": 47.005,
+      "lng": 28.8577,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Roma",
+      "lat": 41.8979,
+      "lng": 12.4813,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Rostov",
+      "lat": 47.2366,
+      "lng": 39.7107,
+      "rank": 2
+    },
+    {
+      "nome": "Volgogrado",
+      "lat": 48.712,
+      "lng": 44.498,
+      "rank": 2
+    },
+    {
+      "nome": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8189,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Vilnius",
+      "lat": 54.6834,
+      "lng": 25.3166,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Voronej",
+      "lat": 51.7319,
+      "lng": 39.2681,
+      "rank": 2
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Łódź",
+      "lat": 51.7769,
+      "lng": 19.4494,
+      "rank": 2
+    },
+    {
+      "nome": "Cracóvia",
+      "lat": 50.0619,
+      "lng": 19.9581,
+      "rank": 2
+    },
+    {
+      "nome": "Gdansk",
+      "lat": 54.36,
+      "lng": 18.64,
+      "rank": 2
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Erevan",
+      "lat": 40.1831,
+      "lng": 44.5116,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Krasnodar",
+      "lat": 45.02,
+      "lng": 39,
+      "rank": 2
+    },
+    {
+      "nome": "Baku",
+      "lat": 40.3972,
+      "lng": 49.8603,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Nápoles",
+      "lat": 40.842,
+      "lng": 14.2431,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Lipetsk",
+      "lat": 52.62,
+      "lng": 39.64,
+      "rank": 2
+    },
+    {
+      "nome": "Gliwice",
+      "lat": 50.3304,
+      "lng": 18.67,
+      "rank": 2
+    },
+    {
+      "nome": "Saratov",
+      "lat": 51.5819,
+      "lng": 46.0281,
+      "rank": 3
+    },
+    {
+      "nome": "Wrocław",
+      "lat": 51.1104,
+      "lng": 17.03,
+      "rank": 3
+    },
+    {
+      "nome": "Tula",
+      "lat": 54.2,
+      "lng": 37.6299,
+      "rank": 3
+    },
+    {
+      "nome": "Gomel",
+      "lat": 52.43,
+      "lng": 31,
+      "rank": 3
+    },
+    {
+      "nome": "Ostrava",
+      "lat": 49.8304,
+      "lng": 18.25,
+      "rank": 3
+    },
+    {
+      "nome": "Bursa",
+      "lat": 40.2019,
+      "lng": 29.0681,
+      "rank": 3
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6805,
+      "lng": 12.5615,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4058,
+      "lng": 16.8999,
+      "rank": 3
+    },
+    {
+      "nome": "Penza",
+      "lat": 53.18,
+      "lng": 45,
+      "rank": 3
+    },
+    {
+      "nome": "Riazan",
+      "lat": 54.62,
+      "lng": 39.72,
+      "rank": 3
+    },
+    {
+      "nome": "Esmirna",
+      "lat": 38.4381,
+      "lng": 27.1498,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Níjni Novgorod",
+      "lat": 56.335,
+      "lng": 43.9981,
+      "rank": 3
+    },
+    {
+      "nome": "Briansk",
+      "lat": 53.26,
+      "lng": 34.43,
+      "rank": 3
+    },
+    {
+      "nome": "Kursk",
+      "lat": 51.74,
+      "lng": 36.19,
+      "rank": 3
+    },
+    {
+      "nome": "Riga",
+      "lat": 56.95,
+      "lng": 24.1,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Sebastopol",
+      "lat": 44.6,
+      "lng": 33.465,
+      "rank": 3
+    },
+    {
+      "nome": "Mahilou",
+      "lat": 53.8985,
+      "lng": 30.3246,
+      "rank": 3
+    },
+    {
+      "nome": "Bydgoszcz",
+      "lat": 53.1204,
+      "lng": 18.01,
+      "rank": 3
+    },
+    {
+      "nome": "Vladikavkaz",
+      "lat": 43.0504,
+      "lng": 44.67,
+      "rank": 3
+    },
+    {
+      "nome": "Stavropol",
+      "lat": 45.05,
+      "lng": 41.98,
+      "rank": 3
+    },
+    {
+      "nome": "Lublin",
+      "lat": 51.2504,
+      "lng": 22.5727,
+      "rank": 3
+    },
+    {
+      "nome": "Caliningrado",
+      "lat": 54.7,
+      "lng": 20.4973,
+      "rank": 3
+    },
+    {
+      "nome": "Simferopol",
+      "lat": 44.9492,
+      "lng": 34.0987,
+      "rank": 3
+    },
+    {
+      "nome": "Trebizonda",
+      "lat": 40.98,
+      "lng": 39.72,
+      "rank": 3
+    },
+    {
+      "nome": "Belgorod",
+      "lat": 50.63,
+      "lng": 36.5999,
+      "rank": 3
+    },
+    {
+      "nome": "Oriol",
+      "lat": 52.97,
+      "lng": 36.07,
+      "rank": 3
+    },
+    {
+      "nome": "Salônica",
+      "lat": 40.6981,
+      "lng": 22.8831,
+      "rank": 3
+    },
+    {
+      "nome": "Sóchi",
+      "lat": 43.59,
+      "lng": 39.73,
+      "rank": 3
+    },
+    {
+      "nome": "Iași",
+      "lat": 47.1683,
+      "lng": 27.5749,
+      "rank": 3
+    },
+    {
+      "nome": "Samsun",
+      "lat": 41.28,
+      "lng": 36.3437,
+      "rank": 3
+    },
+    {
+      "nome": "Kaluga",
+      "lat": 54.5204,
+      "lng": 36.27,
+      "rank": 3
+    },
+    {
+      "nome": "Hrodna",
+      "lat": 53.6779,
+      "lng": 23.8341,
+      "rank": 3
+    },
+    {
+      "nome": "Cluj-Napoca",
+      "lat": 46.7884,
+      "lng": 23.5984,
+      "rank": 3
+    },
+    {
+      "nome": "Volzhsky",
+      "lat": 48.7948,
+      "lng": 44.7744,
+      "rank": 3
+    },
+    {
+      "nome": "Timișoara",
+      "lat": 45.7588,
+      "lng": 21.2234,
+      "rank": 3
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.7965,
+      "lng": 19.1241,
+      "rank": 3
+    },
+    {
+      "nome": "Radom",
+      "lat": 51.4025,
+      "lng": 21.1471,
+      "rank": 3
+    },
+    {
+      "nome": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5981,
+      "rank": 3
+    },
+    {
+      "nome": "Bytom",
+      "lat": 50.348,
+      "lng": 18.9328,
+      "rank": 3
+    },
+    {
+      "nome": "Bielsko-Biala",
+      "lat": 49.8225,
+      "lng": 19.0469,
+      "rank": 3
+    },
+    {
+      "nome": "Tolyatti",
+      "lat": 53.5303,
+      "lng": 49.3461,
+      "rank": 3
+    },
+    {
+      "nome": "Nilüfer",
+      "lat": 40.214,
+      "lng": 28.9157,
+      "rank": 3
+    },
+    {
+      "nome": "Ursynów",
+      "lat": 52.1505,
+      "lng": 21.0504,
+      "rank": 3
+    },
+    {
+      "nome": "Ruda Śląska",
+      "lat": 50.2584,
+      "lng": 18.8563,
+      "rank": 3
+    },
+    {
+      "nome": "Rybnik",
+      "lat": 50.0971,
+      "lng": 18.5418,
+      "rank": 3
+    },
+    {
+      "nome": "Tychy",
+      "lat": 50.1372,
+      "lng": 18.9664,
+      "rank": 3
+    },
+    {
+      "nome": "Płock",
+      "lat": 52.5468,
+      "lng": 19.7064,
+      "rank": 3
+    },
+    {
+      "nome": "Włocławek",
+      "lat": 52.6482,
+      "lng": 19.0678,
+      "rank": 3
+    },
+    {
+      "nome": "Gebze",
+      "lat": 40.8028,
+      "lng": 29.4307,
+      "rank": 3
+    },
+    {
+      "nome": "Tarnów",
+      "lat": 50.0138,
+      "lng": 20.987,
+      "rank": 3
+    },
+    {
+      "nome": "Dąbrowa Górnicza",
+      "lat": 50.3339,
+      "lng": 19.2048,
+      "rank": 3
+    },
+    {
+      "nome": "Engels",
+      "lat": 51.4839,
+      "lng": 46.1053,
+      "rank": 3
+    },
+    {
+      "nome": "Bender",
+      "lat": 46.8316,
+      "lng": 29.4767,
+      "rank": 3
+    },
+    {
+      "nome": "Bataysk",
+      "lat": 47.1375,
+      "lng": 39.7571,
+      "rank": 3
+    },
+    {
+      "nome": "Kalisz",
+      "lat": 51.7611,
+      "lng": 18.091,
+      "rank": 3
+    },
+    {
+      "nome": "Mitrovicë",
+      "lat": 42.8833,
+      "lng": 20.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Çorlu",
+      "lat": 41.1607,
+      "lng": 27.8009,
+      "rank": 3
+    },
+    {
+      "nome": "Jaworzno",
+      "lat": 50.2053,
+      "lng": 19.275,
+      "rank": 3
+    },
+    {
+      "nome": "Soligorsk",
+      "lat": 52.7898,
+      "lng": 27.5358,
+      "rank": 3
+    },
+    {
+      "nome": "Jastrzębie Zdrój",
+      "lat": 49.9554,
+      "lng": 18.5748,
+      "rank": 3
+    },
+    {
+      "nome": "Leskovac",
+      "lat": 42.9981,
+      "lng": 21.9461,
+      "rank": 3
+    },
+    {
+      "nome": "Gjakovë",
+      "lat": 42.3803,
+      "lng": 20.4308,
+      "rank": 3
+    },
+    {
+      "nome": "Zelenograd",
+      "lat": 55.9825,
+      "lng": 37.1814,
+      "rank": 3
+    },
+    {
+      "nome": "Nitra",
+      "lat": 48.3076,
+      "lng": 18.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Pazar",
+      "lat": 43.1367,
+      "lng": 20.5122,
+      "rank": 3
+    },
+    {
+      "nome": "Nowy Sącz",
+      "lat": 49.6218,
+      "lng": 20.6971,
+      "rank": 3
+    },
+    {
+      "nome": "Kraljevo",
+      "lat": 43.7258,
+      "lng": 20.6894,
+      "rank": 3
+    },
+    {
+      "nome": "Düzce",
+      "lat": 40.8389,
+      "lng": 31.1639,
+      "rank": 3
+    },
+    {
+      "nome": "Havířov",
+      "lat": 49.7798,
+      "lng": 18.4369,
+      "rank": 3
+    },
+    {
+      "nome": "Azov",
+      "lat": 47.1069,
+      "lng": 39.4149,
+      "rank": 3
+    },
+    {
+      "nome": "Konin",
+      "lat": 52.2234,
+      "lng": 18.2512,
+      "rank": 3
+    },
+    {
+      "nome": "Yessentuki",
+      "lat": 44.0483,
+      "lng": 42.8564,
+      "rank": 3
+    },
+    {
+      "nome": "Piotrków Trybunalski",
+      "lat": 51.4055,
+      "lng": 19.7032,
+      "rank": 3
+    },
+    {
+      "nome": "Słupsk",
+      "lat": 54.4641,
+      "lng": 17.0287,
+      "rank": 3
+    },
+    {
+      "nome": "Budapest XVII. kerület",
+      "lat": 47.48,
+      "lng": 19.2539,
+      "rank": 3
+    }
+  ]
+}

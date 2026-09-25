@@ -1,0 +1,774 @@
+{
+  "ligaId": "liga-finlandia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Tampere",
+      "lat": 61.5,
+      "lng": 23.75,
+      "rank": 1
+    },
+    {
+      "nome": "Turku",
+      "lat": 60.4539,
+      "lng": 22.255,
+      "rank": 1
+    },
+    {
+      "nome": "Oulu",
+      "lat": 65,
+      "lng": 25.47,
+      "rank": 1
+    },
+    {
+      "nome": "Lahti",
+      "lat": 60.9939,
+      "lng": 25.6649,
+      "rank": 1
+    },
+    {
+      "nome": "Jyväskylä",
+      "lat": 62.2603,
+      "lng": 25.75,
+      "rank": 1
+    },
+    {
+      "nome": "Kuopio",
+      "lat": 62.8943,
+      "lng": 27.6949,
+      "rank": 1
+    },
+    {
+      "nome": "Pori",
+      "lat": 61.4789,
+      "lng": 21.7749,
+      "rank": 1
+    },
+    {
+      "nome": "Lappeenranta",
+      "lat": 61.0671,
+      "lng": 28.1833,
+      "rank": 1
+    },
+    {
+      "nome": "Vaasa",
+      "lat": 63.1,
+      "lng": 21.6,
+      "rank": 1
+    },
+    {
+      "nome": "Joensuu",
+      "lat": 62.6,
+      "lng": 29.7666,
+      "rank": 1
+    },
+    {
+      "nome": "Hämeenlinna",
+      "lat": 60.997,
+      "lng": 24.472,
+      "rank": 1
+    },
+    {
+      "nome": "Kokkola",
+      "lat": 63.8333,
+      "lng": 23.1167,
+      "rank": 1
+    },
+    {
+      "nome": "Mikkeli",
+      "lat": 61.69,
+      "lng": 27.285,
+      "rank": 1
+    },
+    {
+      "nome": "Rovaniemi",
+      "lat": 66.5,
+      "lng": 25.7159,
+      "rank": 1
+    },
+    {
+      "nome": "Kouvola",
+      "lat": 60.876,
+      "lng": 26.709,
+      "rank": 1
+    },
+    {
+      "nome": "Savonlinna",
+      "lat": 61.8666,
+      "lng": 28.8833,
+      "rank": 2
+    },
+    {
+      "nome": "Kemi",
+      "lat": 65.7333,
+      "lng": 24.5817,
+      "rank": 2
+    },
+    {
+      "nome": "Porvoo",
+      "lat": 60.4004,
+      "lng": 25.666,
+      "rank": 2
+    },
+    {
+      "nome": "Sodankylä",
+      "lat": 67.4171,
+      "lng": 26.6,
+      "rank": 2
+    },
+    {
+      "nome": "Kemijärvi",
+      "lat": 66.6667,
+      "lng": 27.4167,
+      "rank": 2
+    },
+    {
+      "nome": "Espoo",
+      "lat": 60.2052,
+      "lng": 24.6522,
+      "rank": 3
+    },
+    {
+      "nome": "Vantaa",
+      "lat": 60.2941,
+      "lng": 25.041,
+      "rank": 3
+    },
+    {
+      "nome": "Seinäjoki",
+      "lat": 62.7945,
+      "lng": 22.8282,
+      "rank": 3
+    },
+    {
+      "nome": "Salo",
+      "lat": 60.3833,
+      "lng": 23.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Kotka",
+      "lat": 60.4664,
+      "lng": 26.9458,
+      "rank": 3
+    },
+    {
+      "nome": "Järvenpää",
+      "lat": 60.4737,
+      "lng": 25.0899,
+      "rank": 3
+    },
+    {
+      "nome": "Lohja",
+      "lat": 60.2486,
+      "lng": 24.0653,
+      "rank": 3
+    },
+    {
+      "nome": "Nurmijärvi",
+      "lat": 60.4641,
+      "lng": 24.8073,
+      "rank": 3
+    },
+    {
+      "nome": "Hyvinge",
+      "lat": 60.6333,
+      "lng": 24.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Kirkkonummi",
+      "lat": 60.1238,
+      "lng": 24.4385,
+      "rank": 3
+    },
+    {
+      "nome": "Vuosaari",
+      "lat": 60.2096,
+      "lng": 25.142,
+      "rank": 3
+    },
+    {
+      "nome": "Rauma",
+      "lat": 61.1272,
+      "lng": 21.5113,
+      "rank": 3
+    },
+    {
+      "nome": "Nokia",
+      "lat": 61.4667,
+      "lng": 23.5,
+      "rank": 3
+    },
+    {
+      "nome": "Kajaani",
+      "lat": 64.2273,
+      "lng": 27.7285,
+      "rank": 3
+    },
+    {
+      "nome": "Kangasala",
+      "lat": 61.4638,
+      "lng": 24.076,
+      "rank": 3
+    },
+    {
+      "nome": "Ylöjärvi",
+      "lat": 61.5563,
+      "lng": 23.5961,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "São Petersburgo",
+      "lat": 59.941,
+      "lng": 30.3141,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Moscou",
+      "lat": 55.7541,
+      "lng": 37.6136,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Estocolmo",
+      "lat": 59.3527,
+      "lng": 18.0954,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Riga",
+      "lat": 56.95,
+      "lng": 24.1,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tallinn",
+      "lat": 59.4339,
+      "lng": 24.728,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Minsk",
+      "lat": 53.9019,
+      "lng": 27.5647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Murmansk",
+      "lat": 68.97,
+      "lng": 33.1,
+      "rank": 1
+    },
+    {
+      "nome": "Petrozavodsk",
+      "lat": 61.85,
+      "lng": 34.28,
+      "rank": 1
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6805,
+      "lng": 12.5615,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Veliky Novgorod",
+      "lat": 58.5,
+      "lng": 31.33,
+      "rank": 1
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.2519,
+      "lng": 20.9981,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Pskov",
+      "lat": 57.83,
+      "lng": 28.3299,
+      "rank": 2
+    },
+    {
+      "nome": "Vilnius",
+      "lat": 54.6834,
+      "lng": 25.3166,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Tver",
+      "lat": 56.86,
+      "lng": 35.89,
+      "rank": 2
+    },
+    {
+      "nome": "Uppsala",
+      "lat": 59.8601,
+      "lng": 17.64,
+      "rank": 2
+    },
+    {
+      "nome": "Vyborg",
+      "lat": 60.7039,
+      "lng": 28.7549,
+      "rank": 2
+    },
+    {
+      "nome": "Tartu",
+      "lat": 58.3839,
+      "lng": 26.7099,
+      "rank": 2
+    },
+    {
+      "nome": "Gdansk",
+      "lat": 54.36,
+      "lng": 18.64,
+      "rank": 2
+    },
+    {
+      "nome": "Gatchina",
+      "lat": 59.5707,
+      "lng": 30.1333,
+      "rank": 2
+    },
+    {
+      "nome": "Iaroslavl",
+      "lat": 57.62,
+      "lng": 39.87,
+      "rank": 2
+    },
+    {
+      "nome": "Umeå",
+      "lat": 63.83,
+      "lng": 20.24,
+      "rank": 2
+    },
+    {
+      "nome": "Cherepovets",
+      "lat": 59.1404,
+      "lng": 37.91,
+      "rank": 2
+    },
+    {
+      "nome": "Vitebsk",
+      "lat": 55.1887,
+      "lng": 30.1853,
+      "rank": 2
+    },
+    {
+      "nome": "Caliningrado",
+      "lat": 54.7,
+      "lng": 20.4973,
+      "rank": 2
+    },
+    {
+      "nome": "Kaunas",
+      "lat": 54.9504,
+      "lng": 23.88,
+      "rank": 2
+    },
+    {
+      "nome": "Narva",
+      "lat": 59.3776,
+      "lng": 28.1603,
+      "rank": 2
+    },
+    {
+      "nome": "Apatity",
+      "lat": 67.5731,
+      "lng": 33.393,
+      "rank": 2
+    },
+    {
+      "nome": "Gotemburgo",
+      "lat": 57.75,
+      "lng": 12,
+      "rank": 2
+    },
+    {
+      "nome": "Tikhvin",
+      "lat": 59.6448,
+      "lng": 33.5144,
+      "rank": 2
+    },
+    {
+      "nome": "Sundsvall",
+      "lat": 62.4001,
+      "lng": 17.3167,
+      "rank": 2
+    },
+    {
+      "nome": "Borovichi",
+      "lat": 58.3978,
+      "lng": 33.8974,
+      "rank": 2
+    },
+    {
+      "nome": "Västerås",
+      "lat": 59.63,
+      "lng": 16.54,
+      "rank": 2
+    },
+    {
+      "nome": "Severomorsk",
+      "lat": 69.0731,
+      "lng": 33.4231,
+      "rank": 2
+    },
+    {
+      "nome": "Klaipėda",
+      "lat": 55.7204,
+      "lng": 21.1199,
+      "rank": 2
+    },
+    {
+      "nome": "Smolensk",
+      "lat": 54.7827,
+      "lng": 32.0473,
+      "rank": 3
+    },
+    {
+      "nome": "Tromsø",
+      "lat": 69.6351,
+      "lng": 18.992,
+      "rank": 3
+    },
+    {
+      "nome": "Gävle",
+      "lat": 60.667,
+      "lng": 17.1666,
+      "rank": 3
+    },
+    {
+      "nome": "Monchegorsk",
+      "lat": 67.9291,
+      "lng": 32.8287,
+      "rank": 3
+    },
+    {
+      "nome": "Podolsk",
+      "lat": 55.3804,
+      "lng": 37.5299,
+      "rank": 3
+    },
+    {
+      "nome": "Tula",
+      "lat": 54.2,
+      "lng": 37.6299,
+      "rank": 3
+    },
+    {
+      "nome": "Luleå",
+      "lat": 65.5966,
+      "lng": 22.1584,
+      "rank": 3
+    },
+    {
+      "nome": "Vyshny Volochyok",
+      "lat": 57.583,
+      "lng": 34.5631,
+      "rank": 3
+    },
+    {
+      "nome": "Kohtla-Järve",
+      "lat": 59.4,
+      "lng": 27.2833,
+      "rank": 3
+    },
+    {
+      "nome": "Gdynia",
+      "lat": 54.5204,
+      "lng": 18.53,
+      "rank": 3
+    },
+    {
+      "nome": "Volkhov",
+      "lat": 59.9291,
+      "lng": 32.3387,
+      "rank": 3
+    },
+    {
+      "nome": "Kaluga",
+      "lat": 54.5204,
+      "lng": 36.27,
+      "rank": 3
+    },
+    {
+      "nome": "Riazan",
+      "lat": 54.62,
+      "lng": 39.72,
+      "rank": 3
+    },
+    {
+      "nome": "Pärnu",
+      "lat": 58.3747,
+      "lng": 24.5136,
+      "rank": 3
+    },
+    {
+      "nome": "Velikiye Luki",
+      "lat": 56.32,
+      "lng": 30.52,
+      "rank": 3
+    },
+    {
+      "nome": "Ventspils",
+      "lat": 57.3899,
+      "lng": 21.5606,
+      "rank": 3
+    },
+    {
+      "nome": "Šiauliai",
+      "lat": 55.9386,
+      "lng": 23.325,
+      "rank": 3
+    },
+    {
+      "nome": "Liepāja",
+      "lat": 56.51,
+      "lng": 21.01,
+      "rank": 3
+    },
+    {
+      "nome": "Mahilou",
+      "lat": 53.8985,
+      "lng": 30.3246,
+      "rank": 3
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4058,
+      "lng": 16.8999,
+      "rank": 3
+    },
+    {
+      "nome": "Vologda",
+      "lat": 59.21,
+      "lng": 39.92,
+      "rank": 3
+    },
+    {
+      "nome": "Norrköping",
+      "lat": 58.5954,
+      "lng": 16.1787,
+      "rank": 3
+    },
+    {
+      "nome": "Luga",
+      "lat": 58.7363,
+      "lng": 29.839,
+      "rank": 3
+    },
+    {
+      "nome": "Kandalaksha",
+      "lat": 67.1643,
+      "lng": 32.4144,
+      "rank": 3
+    },
+    {
+      "nome": "Briansk",
+      "lat": 53.26,
+      "lng": 34.43,
+      "rank": 3
+    },
+    {
+      "nome": "Jelgava",
+      "lat": 56.6527,
+      "lng": 23.7128,
+      "rank": 3
+    },
+    {
+      "nome": "Rybinsk",
+      "lat": 58.0503,
+      "lng": 38.82,
+      "rank": 3
+    },
+    {
+      "nome": "Slantsy",
+      "lat": 59.1116,
+      "lng": 28.0747,
+      "rank": 3
+    },
+    {
+      "nome": "Panevėžys",
+      "lat": 55.74,
+      "lng": 24.37,
+      "rank": 3
+    },
+    {
+      "nome": "Linköping",
+      "lat": 58.41,
+      "lng": 15.6299,
+      "rank": 3
+    },
+    {
+      "nome": "Kondopoga",
+      "lat": 62.2087,
+      "lng": 34.2887,
+      "rank": 3
+    },
+    {
+      "nome": "Staraya Russa",
+      "lat": 57.9948,
+      "lng": 31.3544,
+      "rank": 3
+    },
+    {
+      "nome": "Daugavpils",
+      "lat": 55.88,
+      "lng": 26.51,
+      "rank": 3
+    },
+    {
+      "nome": "Noguinsk",
+      "lat": 55.8704,
+      "lng": 38.48,
+      "rank": 3
+    },
+    {
+      "nome": "Severodvinsk",
+      "lat": 64.57,
+      "lng": 39.83,
+      "rank": 3
+    },
+    {
+      "nome": "Sollentuna",
+      "lat": 59.428,
+      "lng": 17.9509,
+      "rank": 3
+    },
+    {
+      "nome": "Huddinge",
+      "lat": 59.2371,
+      "lng": 17.9819,
+      "rank": 3
+    },
+    {
+      "nome": "Zelenograd",
+      "lat": 55.9825,
+      "lng": 37.1814,
+      "rank": 3
+    },
+    {
+      "nome": "Novopolotsk",
+      "lat": 55.5262,
+      "lng": 28.5931,
+      "rank": 3
+    },
+    {
+      "nome": "Toruń",
+      "lat": 53.0138,
+      "lng": 18.5981,
+      "rank": 3
+    },
+    {
+      "nome": "Zhukovsky",
+      "lat": 55.5953,
+      "lng": 38.1203,
+      "rank": 3
+    },
+    {
+      "nome": "Słupsk",
+      "lat": 54.4641,
+      "lng": 17.0287,
+      "rank": 3
+    },
+    {
+      "nome": "Lund",
+      "lat": 55.7058,
+      "lng": 13.1932,
+      "rank": 3
+    },
+    {
+      "nome": "Chekhov",
+      "lat": 55.1455,
+      "lng": 37.4619,
+      "rank": 3
+    },
+    {
+      "nome": "Voskresensk",
+      "lat": 55.313,
+      "lng": 38.691,
+      "rank": 3
+    },
+    {
+      "nome": "Ursynów",
+      "lat": 52.1505,
+      "lng": 21.0504,
+      "rank": 3
+    },
+    {
+      "nome": "Płock",
+      "lat": 52.5468,
+      "lng": 19.7064,
+      "rank": 3
+    },
+    {
+      "nome": "Włocławek",
+      "lat": 52.6482,
+      "lng": 19.0678,
+      "rank": 3
+    },
+    {
+      "nome": "Gorzów Wielkopolski",
+      "lat": 52.7337,
+      "lng": 15.225,
+      "rank": 3
+    },
+    {
+      "nome": "Soligorsk",
+      "lat": 52.7898,
+      "lng": 27.5358,
+      "rank": 3
+    },
+    {
+      "nome": "Piła",
+      "lat": 53.1514,
+      "lng": 16.7378,
+      "rank": 3
+    },
+    {
+      "nome": "Zhlobin",
+      "lat": 52.8926,
+      "lng": 30.024,
+      "rank": 3
+    },
+    {
+      "nome": "Konin",
+      "lat": 52.2234,
+      "lng": 18.2512,
+      "rank": 3
+    },
+    {
+      "nome": "Wawer",
+      "lat": 52.1966,
+      "lng": 21.1775,
+      "rank": 3
+    },
+    {
+      "nome": "Siedlce",
+      "lat": 52.1677,
+      "lng": 22.2901,
+      "rank": 3
+    }
+  ]
+}

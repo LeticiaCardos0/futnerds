@@ -1,0 +1,876 @@
+{
+  "ligaId": "liga-tchequia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Ostrava",
+      "lat": 49.8304,
+      "lng": 18.25,
+      "rank": 1
+    },
+    {
+      "nome": "Brno",
+      "lat": 49.2004,
+      "lng": 16.61,
+      "rank": 1
+    },
+    {
+      "nome": "Zlín",
+      "lat": 49.2304,
+      "lng": 17.65,
+      "rank": 1
+    },
+    {
+      "nome": "Pardubice",
+      "lat": 50.0404,
+      "lng": 15.76,
+      "rank": 1
+    },
+    {
+      "nome": "Liberec",
+      "lat": 50.8,
+      "lng": 15.08,
+      "rank": 1
+    },
+    {
+      "nome": "Olomouc",
+      "lat": 49.63,
+      "lng": 17.25,
+      "rank": 1
+    },
+    {
+      "nome": "České Budějovice",
+      "lat": 48.98,
+      "lng": 14.46,
+      "rank": 1
+    },
+    {
+      "nome": "Hradec Králové",
+      "lat": 50.206,
+      "lng": 15.812,
+      "rank": 1
+    },
+    {
+      "nome": "Ústí nad Labem",
+      "lat": 50.663,
+      "lng": 14.081,
+      "rank": 1
+    },
+    {
+      "nome": "Jihlava",
+      "lat": 49.4004,
+      "lng": 15.5833,
+      "rank": 1
+    },
+    {
+      "nome": "Havířov",
+      "lat": 49.7798,
+      "lng": 18.4369,
+      "rank": 3
+    },
+    {
+      "nome": "Kladno",
+      "lat": 50.1473,
+      "lng": 14.1029,
+      "rank": 3
+    },
+    {
+      "nome": "Most",
+      "lat": 50.503,
+      "lng": 13.6362,
+      "rank": 3
+    },
+    {
+      "nome": "Opava",
+      "lat": 49.9387,
+      "lng": 17.9026,
+      "rank": 3
+    },
+    {
+      "nome": "Frýdek-Místek",
+      "lat": 49.6833,
+      "lng": 18.35,
+      "rank": 3
+    },
+    {
+      "nome": "Teplice",
+      "lat": 50.6404,
+      "lng": 13.8245,
+      "rank": 3
+    },
+    {
+      "nome": "Karviná",
+      "lat": 49.854,
+      "lng": 18.5417,
+      "rank": 3
+    },
+    {
+      "nome": "Mladá Boleslav",
+      "lat": 50.4113,
+      "lng": 14.9032,
+      "rank": 3
+    },
+    {
+      "nome": "Chomutov",
+      "lat": 50.4605,
+      "lng": 13.4178,
+      "rank": 3
+    },
+    {
+      "nome": "Děčín",
+      "lat": 50.7822,
+      "lng": 14.2148,
+      "rank": 3
+    },
+    {
+      "nome": "Jablonec nad Nisou",
+      "lat": 50.7243,
+      "lng": 15.1711,
+      "rank": 3
+    },
+    {
+      "nome": "Karlovy Vary",
+      "lat": 50.2327,
+      "lng": 12.8712,
+      "rank": 3
+    },
+    {
+      "nome": "Prostějov",
+      "lat": 49.4719,
+      "lng": 17.1118,
+      "rank": 3
+    },
+    {
+      "nome": "Přerov",
+      "lat": 49.4551,
+      "lng": 17.4509,
+      "rank": 3
+    },
+    {
+      "nome": "Česká Lípa",
+      "lat": 50.6855,
+      "lng": 14.5376,
+      "rank": 3
+    },
+    {
+      "nome": "Znojmo",
+      "lat": 48.8555,
+      "lng": 16.0488,
+      "rank": 3
+    },
+    {
+      "nome": "Třebíč",
+      "lat": 49.2149,
+      "lng": 15.8817,
+      "rank": 3
+    },
+    {
+      "nome": "Tábor",
+      "lat": 49.4144,
+      "lng": 14.6578,
+      "rank": 3
+    },
+    {
+      "nome": "Třinec",
+      "lat": 49.6776,
+      "lng": 18.6708,
+      "rank": 3
+    },
+    {
+      "nome": "Kolín",
+      "lat": 50.0281,
+      "lng": 15.1998,
+      "rank": 3
+    },
+    {
+      "nome": "Cheb",
+      "lat": 50.0796,
+      "lng": 12.3739,
+      "rank": 3
+    },
+    {
+      "nome": "Příbram",
+      "lat": 49.6899,
+      "lng": 14.0104,
+      "rank": 3
+    },
+    {
+      "nome": "Písek",
+      "lat": 49.3088,
+      "lng": 14.1475,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.2519,
+      "lng": 20.9981,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 1
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cracóvia",
+      "lat": 50.0619,
+      "lng": 19.9581,
+      "rank": 1
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 1
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Łódź",
+      "lat": 51.7769,
+      "lng": 19.4494,
+      "rank": 1
+    },
+    {
+      "nome": "Wrocław",
+      "lat": 51.1104,
+      "lng": 17.03,
+      "rank": 2
+    },
+    {
+      "nome": "Dresden",
+      "lat": 51.05,
+      "lng": 13.75,
+      "rank": 2
+    },
+    {
+      "nome": "Leipzig",
+      "lat": 51.3354,
+      "lng": 12.41,
+      "rank": 2
+    },
+    {
+      "nome": "Gliwice",
+      "lat": 50.3304,
+      "lng": 18.67,
+      "rank": 2
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Augsburgo",
+      "lat": 48.35,
+      "lng": 10.9,
+      "rank": 2
+    },
+    {
+      "nome": "Linz",
+      "lat": 48.3192,
+      "lng": 14.2888,
+      "rank": 2
+    },
+    {
+      "nome": "Chemnitz",
+      "lat": 50.83,
+      "lng": 12.92,
+      "rank": 2
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 2
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4058,
+      "lng": 16.8999,
+      "rank": 2
+    },
+    {
+      "nome": "Erfurt",
+      "lat": 50.9701,
+      "lng": 11.03,
+      "rank": 2
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3819,
+      "lng": 8.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Kielce",
+      "lat": 50.8904,
+      "lng": 20.66,
+      "rank": 2
+    },
+    {
+      "nome": "Miskolc",
+      "lat": 48.1004,
+      "lng": 20.78,
+      "rank": 2
+    },
+    {
+      "nome": "Essen",
+      "lat": 51.45,
+      "lng": 7.0166,
+      "rank": 2
+    },
+    {
+      "nome": "Salzburgo",
+      "lat": 47.8105,
+      "lng": 13.04,
+      "rank": 2
+    },
+    {
+      "nome": "Regensburg",
+      "lat": 49.0204,
+      "lng": 12.12,
+      "rank": 2
+    },
+    {
+      "nome": "Ingolstadt",
+      "lat": 48.7704,
+      "lng": 11.45,
+      "rank": 2
+    },
+    {
+      "nome": "Opole",
+      "lat": 50.685,
+      "lng": 17.9313,
+      "rank": 2
+    },
+    {
+      "nome": "Kassel",
+      "lat": 51.3,
+      "lng": 9.5,
+      "rank": 2
+    },
+    {
+      "nome": "Košice",
+      "lat": 48.7304,
+      "lng": 21.25,
+      "rank": 2
+    },
+    {
+      "nome": "Magdeburg",
+      "lat": 52.1304,
+      "lng": 11.62,
+      "rank": 2
+    },
+    {
+      "nome": "Wiesbaden",
+      "lat": 50.0804,
+      "lng": 8.25,
+      "rank": 2
+    },
+    {
+      "nome": "Ulm",
+      "lat": 48.4004,
+      "lng": 10,
+      "rank": 3
+    },
+    {
+      "nome": "Jena",
+      "lat": 50.9304,
+      "lng": 11.58,
+      "rank": 3
+    },
+    {
+      "nome": "Gera",
+      "lat": 50.8704,
+      "lng": 12.07,
+      "rank": 3
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.932,
+      "lng": 6.9481,
+      "rank": 3
+    },
+    {
+      "nome": "Würzburg",
+      "lat": 49.8004,
+      "lng": 9.95,
+      "rank": 3
+    },
+    {
+      "nome": "Braunschweig",
+      "lat": 52.25,
+      "lng": 10.5,
+      "rank": 3
+    },
+    {
+      "nome": "Basileia",
+      "lat": 47.5804,
+      "lng": 7.59,
+      "rank": 3
+    },
+    {
+      "nome": "Győr",
+      "lat": 47.7004,
+      "lng": 17.63,
+      "rank": 3
+    },
+    {
+      "nome": "Cottbus",
+      "lat": 51.7704,
+      "lng": 14.33,
+      "rank": 3
+    },
+    {
+      "nome": "Žilina",
+      "lat": 49.2198,
+      "lng": 18.7494,
+      "rank": 3
+    },
+    {
+      "nome": "Wuppertal",
+      "lat": 51.25,
+      "lng": 7.17,
+      "rank": 3
+    },
+    {
+      "nome": "Göttingen",
+      "lat": 51.5204,
+      "lng": 9.92,
+      "rank": 3
+    },
+    {
+      "nome": "Banská Bystrica",
+      "lat": 48.7333,
+      "lng": 19.15,
+      "rank": 3
+    },
+    {
+      "nome": "Rosenheim",
+      "lat": 47.8503,
+      "lng": 12.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Lviv",
+      "lat": 49.835,
+      "lng": 24.03,
+      "rank": 3
+    },
+    {
+      "nome": "Graz",
+      "lat": 47.0778,
+      "lng": 15.41,
+      "rank": 3
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 3
+    },
+    {
+      "nome": "Zielona Góra",
+      "lat": 51.9504,
+      "lng": 15.5,
+      "rank": 3
+    },
+    {
+      "nome": "Dortmund",
+      "lat": 51.53,
+      "lng": 7.45,
+      "rank": 3
+    },
+    {
+      "nome": "Lublin",
+      "lat": 51.2504,
+      "lng": 22.5727,
+      "rank": 3
+    },
+    {
+      "nome": "Debrecen",
+      "lat": 47.5305,
+      "lng": 21.63,
+      "rank": 3
+    },
+    {
+      "nome": "Bonn",
+      "lat": 50.7205,
+      "lng": 7.08,
+      "rank": 3
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49,
+      "lng": 8.4,
+      "rank": 3
+    },
+    {
+      "nome": "Bielefeld",
+      "lat": 52.03,
+      "lng": 8.53,
+      "rank": 3
+    },
+    {
+      "nome": "Trnava",
+      "lat": 48.3666,
+      "lng": 17.6,
+      "rank": 3
+    },
+    {
+      "nome": "Rzeszów",
+      "lat": 50.0705,
+      "lng": 22,
+      "rank": 3
+    },
+    {
+      "nome": "Wiener Neustadt",
+      "lat": 47.816,
+      "lng": 16.25,
+      "rank": 3
+    },
+    {
+      "nome": "Coburg",
+      "lat": 50.2666,
+      "lng": 10.9666,
+      "rank": 3
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
+      "rank": 3
+    },
+    {
+      "nome": "Nyíregyháza",
+      "lat": 47.9653,
+      "lng": 21.7187,
+      "rank": 3
+    },
+    {
+      "nome": "Innsbruck",
+      "lat": 47.2804,
+      "lng": 11.41,
+      "rank": 3
+    },
+    {
+      "nome": "Hof",
+      "lat": 50.317,
+      "lng": 11.9167,
+      "rank": 3
+    },
+    {
+      "nome": "Eger",
+      "lat": 47.895,
+      "lng": 20.383,
+      "rank": 3
+    },
+    {
+      "nome": "Berna",
+      "lat": 46.9167,
+      "lng": 7.467,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Passau",
+      "lat": 48.5755,
+      "lng": 13.4412,
+      "rank": 3
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.7965,
+      "lng": 19.1241,
+      "rank": 3
+    },
+    {
+      "nome": "Halle",
+      "lat": 51.4816,
+      "lng": 11.9795,
+      "rank": 3
+    },
+    {
+      "nome": "Bytom",
+      "lat": 50.348,
+      "lng": 18.9328,
+      "rank": 3
+    },
+    {
+      "nome": "Bielsko-Biala",
+      "lat": 49.8225,
+      "lng": 19.0469,
+      "rank": 3
+    },
+    {
+      "nome": "Ruda Śląska",
+      "lat": 50.2584,
+      "lng": 18.8563,
+      "rank": 3
+    },
+    {
+      "nome": "Rybnik",
+      "lat": 50.0971,
+      "lng": 18.5418,
+      "rank": 3
+    },
+    {
+      "nome": "Tychy",
+      "lat": 50.1372,
+      "lng": 18.9664,
+      "rank": 3
+    },
+    {
+      "nome": "Wałbrzych",
+      "lat": 50.7714,
+      "lng": 16.2843,
+      "rank": 3
+    },
+    {
+      "nome": "Radom",
+      "lat": 51.4025,
+      "lng": 21.1471,
+      "rank": 3
+    },
+    {
+      "nome": "Dąbrowa Górnicza",
+      "lat": 50.3339,
+      "lng": 19.2048,
+      "rank": 3
+    },
+    {
+      "nome": "Legnica",
+      "lat": 51.2101,
+      "lng": 16.1619,
+      "rank": 3
+    },
+    {
+      "nome": "Erlangen",
+      "lat": 49.591,
+      "lng": 11.0078,
+      "rank": 3
+    },
+    {
+      "nome": "Zwickau",
+      "lat": 50.7272,
+      "lng": 12.4884,
+      "rank": 3
+    },
+    {
+      "nome": "Jaworzno",
+      "lat": 50.2053,
+      "lng": 19.275,
+      "rank": 3
+    },
+    {
+      "nome": "Jastrzębie Zdrój",
+      "lat": 49.9554,
+      "lng": 18.5748,
+      "rank": 3
+    },
+    {
+      "nome": "Kalisz",
+      "lat": 51.7611,
+      "lng": 18.091,
+      "rank": 3
+    },
+    {
+      "nome": "Nitra",
+      "lat": 48.3076,
+      "lng": 18.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Piotrków Trybunalski",
+      "lat": 51.4055,
+      "lng": 19.7032,
+      "rank": 3
+    },
+    {
+      "nome": "Lubin",
+      "lat": 51.4009,
+      "lng": 16.2015,
+      "rank": 3
+    },
+    {
+      "nome": "Jelenia Góra",
+      "lat": 50.8997,
+      "lng": 15.729,
+      "rank": 3
+    },
+    {
+      "nome": "Tarnów",
+      "lat": 50.0138,
+      "lng": 20.987,
+      "rank": 3
+    },
+    {
+      "nome": "Nowy Sącz",
+      "lat": 49.6218,
+      "lng": 20.6971,
+      "rank": 3
+    },
+    {
+      "nome": "Ursynów",
+      "lat": 52.1505,
+      "lng": 21.0504,
+      "rank": 3
+    },
+    {
+      "nome": "Salzgitter",
+      "lat": 52.157,
+      "lng": 10.4154,
+      "rank": 3
+    },
+    {
+      "nome": "Bochum",
+      "lat": 51.4817,
+      "lng": 7.2165,
+      "rank": 3
+    },
+    {
+      "nome": "Hildesheim",
+      "lat": 52.1508,
+      "lng": 9.9511,
+      "rank": 3
+    },
+    {
+      "nome": "Wolfsburg",
+      "lat": 52.4236,
+      "lng": 10.776,
+      "rank": 3
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9819,
+      "lng": 8.2801,
+      "rank": 3
+    },
+    {
+      "nome": "Heilbronn",
+      "lat": 49.1399,
+      "lng": 9.2205,
+      "rank": 3
+    },
+    {
+      "nome": "Budapest XVII. kerület",
+      "lat": 47.48,
+      "lng": 19.2539,
+      "rank": 3
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8717,
+      "lng": 8.6503,
+      "rank": 3
+    },
+    {
+      "nome": "Płock",
+      "lat": 52.5468,
+      "lng": 19.7064,
+      "rank": 3
+    },
+    {
+      "nome": "Reutlingen",
+      "lat": 48.4914,
+      "lng": 9.2043,
+      "rank": 3
+    },
+    {
+      "nome": "Paderborn",
+      "lat": 51.7191,
+      "lng": 8.7544,
+      "rank": 3
+    },
+    {
+      "nome": "Konin",
+      "lat": 52.2234,
+      "lng": 18.2512,
+      "rank": 3
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.4077,
+      "lng": 8.6908,
+      "rank": 3
+    },
+    {
+      "nome": "Włocławek",
+      "lat": 52.6482,
+      "lng": 19.0678,
+      "rank": 3
+    },
+    {
+      "nome": "Wawer",
+      "lat": 52.1966,
+      "lng": 21.1775,
+      "rank": 3
+    },
+    {
+      "nome": "Gorzów Wielkopolski",
+      "lat": 52.7337,
+      "lng": 15.225,
+      "rank": 3
+    },
+    {
+      "nome": "Ludwigsburg",
+      "lat": 48.8973,
+      "lng": 9.1916,
+      "rank": 3
+    }
+  ]
+}

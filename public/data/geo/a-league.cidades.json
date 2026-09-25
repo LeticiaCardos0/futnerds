@@ -24,7 +24,8 @@
       "nome": "Camberra",
       "lat": -35.283,
       "lng": 149.129,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Wollongong",
@@ -271,6 +272,324 @@
       "lat": -36.3746,
       "lng": 145.3914,
       "rank": 2
+    },
+    {
+      "nome": "Mount Isa",
+      "lat": -20.7239,
+      "lng": 139.49,
+      "rank": 3
+    },
+    {
+      "nome": "Tweed Heads",
+      "lat": -28.1826,
+      "lng": 153.5466,
+      "rank": 3
+    },
+    {
+      "nome": "Melton",
+      "lat": -37.6895,
+      "lng": 144.57,
+      "rank": 3
+    },
+    {
+      "nome": "Dubbo",
+      "lat": -32.26,
+      "lng": 148.5973,
+      "rank": 3
+    },
+    {
+      "nome": "Caboolture",
+      "lat": -27.083,
+      "lng": 152.95,
+      "rank": 3
+    },
+    {
+      "nome": "Lismore",
+      "lat": -28.8167,
+      "lng": 153.2931,
+      "rank": 3
+    },
+    {
+      "nome": "Gladstone",
+      "lat": -23.8533,
+      "lng": 151.2467,
+      "rank": 3
+    },
+    {
+      "nome": "Blenheim",
+      "lat": -41.5135,
+      "lng": 173.955,
+      "rank": 3
+    },
+    {
+      "nome": "Warrnambool",
+      "lat": -38.38,
+      "lng": 142.47,
+      "rank": 3
+    },
+    {
+      "nome": "Sunbury",
+      "lat": -37.5696,
+      "lng": 144.71,
+      "rank": 3
+    },
+    {
+      "nome": "Alice Springs",
+      "lat": -23.701,
+      "lng": 133.88,
+      "rank": 3
+    },
+    {
+      "nome": "Geraldton",
+      "lat": -28.7666,
+      "lng": 114.6,
+      "rank": 3
+    },
+    {
+      "nome": "Timaru",
+      "lat": -44.3972,
+      "lng": 171.2425,
+      "rank": 3
+    },
+    {
+      "nome": "Bunbury",
+      "lat": -33.3443,
+      "lng": 115.6502,
+      "rank": 3
+    },
+    {
+      "nome": "Albany",
+      "lat": -35.0169,
+      "lng": 117.8916,
+      "rank": 3
+    },
+    {
+      "nome": "Pukekohe",
+      "lat": -37.2015,
+      "lng": 174.9033,
+      "rank": 3
+    },
+    {
+      "nome": "Paraparaumu",
+      "lat": -40.9034,
+      "lng": 174.9989,
+      "rank": 3
+    },
+    {
+      "nome": "Hervey Bay",
+      "lat": -25.2887,
+      "lng": 152.8409,
+      "rank": 3
+    },
+    {
+      "nome": "Mount Gambier",
+      "lat": -37.8313,
+      "lng": 140.765,
+      "rank": 3
+    },
+    {
+      "nome": "Armidale",
+      "lat": -30.5123,
+      "lng": 151.6675,
+      "rank": 3
+    },
+    {
+      "nome": "Taupo",
+      "lat": -38.693,
+      "lng": 176.0771,
+      "rank": 3
+    },
+    {
+      "nome": "Whyalla",
+      "lat": -33.025,
+      "lng": 137.5614,
+      "rank": 3
+    },
+    {
+      "nome": "Sale",
+      "lat": -38.1096,
+      "lng": 147.06,
+      "rank": 3
+    },
+    {
+      "nome": "Katoomba",
+      "lat": -33.7069,
+      "lng": 150.32,
+      "rank": 3
+    },
+    {
+      "nome": "Goulburn",
+      "lat": -34.7496,
+      "lng": 149.7102,
+      "rank": 3
+    },
+    {
+      "nome": "Maryborough",
+      "lat": -25.5491,
+      "lng": 152.7209,
+      "rank": 3
+    },
+    {
+      "nome": "Masterton",
+      "lat": -40.9439,
+      "lng": 175.6456,
+      "rank": 3
+    },
+    {
+      "nome": "Kwinana",
+      "lat": -32.2394,
+      "lng": 115.7702,
+      "rank": 3
+    },
+    {
+      "nome": "Burnie",
+      "lat": -41.0666,
+      "lng": 145.9167,
+      "rank": 3
+    },
+    {
+      "nome": "Levin",
+      "lat": -40.6124,
+      "lng": 175.2772,
+      "rank": 3
+    },
+    {
+      "nome": "Echuca",
+      "lat": -36.1296,
+      "lng": 144.75,
+      "rank": 3
+    },
+    {
+      "nome": "Devonport",
+      "lat": -41.1927,
+      "lng": 146.3311,
+      "rank": 3
+    },
+    {
+      "nome": "Roebourne",
+      "lat": -20.7829,
+      "lng": 117.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Whakatane",
+      "lat": -37.9574,
+      "lng": 176.9828,
+      "rank": 3
+    },
+    {
+      "nome": "Maitland",
+      "lat": -32.721,
+      "lng": 151.555,
+      "rank": 3
+    },
+    {
+      "nome": "Traralgon",
+      "lat": -38.1996,
+      "lng": 146.53,
+      "rank": 3
+    },
+    {
+      "nome": "Murray Bridge",
+      "lat": -35.1296,
+      "lng": 139.26,
+      "rank": 3
+    },
+    {
+      "nome": "Ashburton",
+      "lat": -43.8983,
+      "lng": 171.7486,
+      "rank": 3
+    },
+    {
+      "nome": "Forster-Tuncurry",
+      "lat": -32.1931,
+      "lng": 152.5266,
+      "rank": 3
+    },
+    {
+      "nome": "Broken Hill",
+      "lat": -31.95,
+      "lng": 141.4331,
+      "rank": 3
+    },
+    {
+      "nome": "Karratha",
+      "lat": -20.7304,
+      "lng": 116.87,
+      "rank": 3
+    },
+    {
+      "nome": "Queenstown",
+      "lat": -45.0227,
+      "lng": 168.7251,
+      "rank": 3
+    },
+    {
+      "nome": "Gawler",
+      "lat": -34.6074,
+      "lng": 138.7264,
+      "rank": 3
+    },
+    {
+      "nome": "Griffith",
+      "lat": -34.29,
+      "lng": 146.04,
+      "rank": 3
+    },
+    {
+      "nome": "Cambridge",
+      "lat": -37.8894,
+      "lng": 175.4703,
+      "rank": 3
+    },
+    {
+      "nome": "Logan",
+      "lat": -27.6392,
+      "lng": 153.1094,
+      "rank": 3
+    },
+    {
+      "nome": "Tuggeranong",
+      "lat": -35.4165,
+      "lng": 149.0695,
+      "rank": 3
+    },
+    {
+      "nome": "Pakenham",
+      "lat": -38.0702,
+      "lng": 145.4741,
+      "rank": 3
+    },
+    {
+      "nome": "Baldivis",
+      "lat": -32.3289,
+      "lng": 115.8305,
+      "rank": 3
+    },
+    {
+      "nome": "Frankston",
+      "lat": -38.1446,
+      "lng": 145.1229,
+      "rank": 3
+    },
+    {
+      "nome": "Canning Vale",
+      "lat": -32.058,
+      "lng": 115.9181,
+      "rank": 3
+    },
+    {
+      "nome": "Rolleston",
+      "lat": -43.5833,
+      "lng": 172.3833,
+      "rank": 3
+    },
+    {
+      "nome": "Southport",
+      "lat": -27.9672,
+      "lng": 153.398,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -278,19 +597,29 @@
       "nome": "Jacarta",
       "lat": -6.1725,
       "lng": 106.8275,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Singapura",
+      "lat": 1.295,
+      "lng": 103.8539,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Surabaya",
       "lat": -7.2473,
       "lng": 112.7489,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Bandung",
       "lat": -6.9481,
       "lng": 107.5681,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Palembang",
@@ -305,6 +634,13 @@
       "rank": 1
     },
     {
+      "nome": "Kuala Lumpur",
+      "lat": 3.1686,
+      "lng": 101.698,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Makassar",
       "lat": -5.138,
       "lng": 119.4301,
@@ -317,6 +653,13 @@
       "rank": 1
     },
     {
+      "nome": "Medan",
+      "lat": 3.5819,
+      "lng": 98.6481,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Bogor",
       "lat": -6.5681,
       "lng": 106.7481,
@@ -326,12 +669,18 @@
       "nome": "Bandar Lampung",
       "lat": -5.4496,
       "lng": 105.3,
-      "rank": 2
+      "rank": 1
     },
     {
       "nome": "Malang",
       "lat": -7.978,
       "lng": 112.6081,
+      "rank": 2
+    },
+    {
+      "nome": "Padang",
+      "lat": -0.9581,
+      "lng": 100.3581,
       "rank": 2
     },
     {
@@ -353,9 +702,28 @@
       "rank": 2
     },
     {
+      "nome": "Port Moresby",
+      "lat": -9.4647,
+      "lng": 147.1925,
+      "rank": 2,
+      "grande": true
+    },
+    {
       "nome": "Surakarta",
       "lat": -7.565,
       "lng": 110.825,
+      "rank": 2
+    },
+    {
+      "nome": "Pekanbaru",
+      "lat": 0.5669,
+      "lng": 101.4231,
+      "rank": 2
+    },
+    {
+      "nome": "Palu",
+      "lat": -0.907,
+      "lng": 119.833,
       "rank": 2
     },
     {
@@ -371,9 +739,40 @@
       "rank": 2
     },
     {
+      "nome": "Samarinda",
+      "lat": -0.5,
+      "lng": 117.15,
+      "rank": 2
+    },
+    {
+      "nome": "Díli",
+      "lat": -8.5594,
+      "lng": 125.5795,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Pontianak",
+      "lat": -0.03,
+      "lng": 109.32,
+      "rank": 2
+    },
+    {
       "nome": "Jambi",
       "lat": -1.59,
       "lng": 103.61,
+      "rank": 2
+    },
+    {
+      "nome": "Kelang",
+      "lat": 3.0223,
+      "lng": 101.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Balikpapan",
+      "lat": -1.25,
+      "lng": 116.83,
       "rank": 2
     },
     {
@@ -383,46 +782,486 @@
       "rank": 2
     },
     {
+      "nome": "Malacca",
+      "lat": 2.2064,
+      "lng": 102.2465,
+      "rank": 2
+    },
+    {
+      "nome": "Bukittinggi",
+      "lat": -0.3031,
+      "lng": 100.3615,
+      "rank": 2
+    },
+    {
       "nome": "Ambon",
       "lat": -3.7167,
       "lng": 128.2,
       "rank": 2
     },
     {
-      "nome": "Jember",
-      "lat": -8.1727,
-      "lng": 113.6873,
+      "nome": "Suva",
+      "lat": -18.133,
+      "lng": 178.4417,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Kuching",
+      "lat": 1.53,
+      "lng": 110.33,
       "rank": 2
     },
     {
-      "nome": "Port Moresby",
-      "lat": -9.4647,
-      "lng": 147.1925,
-      "rank": 2
+      "nome": "Jember",
+      "lat": -8.1727,
+      "lng": 113.6873,
+      "rank": 3
     },
     {
       "nome": "Kupang",
       "lat": -10.1787,
       "lng": 123.583,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Sukabumi",
       "lat": -6.9096,
       "lng": 106.9,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Majene",
       "lat": -3.5336,
       "lng": 118.966,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Pakalongan",
       "lat": -6.8796,
       "lng": 109.67,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Tasikmalaya",
+      "lat": -7.3254,
+      "lng": 108.2147,
+      "rank": 3
+    },
+    {
+      "nome": "Manado",
+      "lat": 1.48,
+      "lng": 124.85,
+      "rank": 3
+    },
+    {
+      "nome": "Cirebon",
+      "lat": -6.7333,
+      "lng": 108.5666,
+      "rank": 3
+    },
+    {
+      "nome": "Gorontalo",
+      "lat": 0.55,
+      "lng": 123.07,
+      "rank": 3
+    },
+    {
+      "nome": "Tegal",
+      "lat": -6.8696,
+      "lng": 109.12,
+      "rank": 3
+    },
+    {
+      "nome": "Kediri",
+      "lat": -7.7896,
+      "lng": 112,
+      "rank": 3
+    },
+    {
+      "nome": "Singaraja",
+      "lat": -8.1152,
+      "lng": 115.0944,
+      "rank": 3
+    },
+    {
+      "nome": "Martapura",
+      "lat": -3.4135,
+      "lng": 114.8365,
+      "rank": 3
+    },
+    {
+      "nome": "Madiun",
+      "lat": -7.6346,
+      "lng": 111.515,
+      "rank": 3
+    },
+    {
+      "nome": "Seremban",
+      "lat": 2.7105,
+      "lng": 101.94,
+      "rank": 3
+    },
+    {
+      "nome": "Pinrang",
+      "lat": -3.7857,
+      "lng": 119.6522,
+      "rank": 3
+    },
+    {
+      "nome": "Probolinggo",
+      "lat": -7.7496,
+      "lng": 113.15,
+      "rank": 3
+    },
+    {
+      "nome": "Salatiga",
+      "lat": -7.3095,
+      "lng": 110.4901,
+      "rank": 3
+    },
+    {
+      "nome": "Banyuwangi",
+      "lat": -8.195,
+      "lng": 114.3696,
+      "rank": 3
+    },
+    {
+      "nome": "Jayapura",
+      "lat": -2.533,
+      "lng": 140.7,
+      "rank": 3
+    },
+    {
+      "nome": "Kendari",
+      "lat": -3.9553,
+      "lng": 122.5973,
+      "rank": 3
+    },
+    {
+      "nome": "Serang",
+      "lat": -6.11,
+      "lng": 106.1496,
+      "rank": 3
+    },
+    {
+      "nome": "Pematangsiantar",
+      "lat": 2.9614,
+      "lng": 99.0615,
+      "rank": 3
+    },
+    {
+      "nome": "Singkawang",
+      "lat": 0.912,
+      "lng": 108.9655,
+      "rank": 3
+    },
+    {
+      "nome": "Padangsidempuan",
+      "lat": 1.3887,
+      "lng": 99.2734,
+      "rank": 3
+    },
+    {
+      "nome": "Kuantan",
+      "lat": 3.83,
+      "lng": 103.32,
+      "rank": 3
+    },
+    {
+      "nome": "Honiara",
+      "lat": -9.438,
+      "lng": 159.9498,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Palangkaraya",
+      "lat": -2.2096,
+      "lng": 113.91,
+      "rank": 3
+    },
+    {
+      "nome": "Tanjungpinang",
+      "lat": 0.9168,
+      "lng": 104.4714,
+      "rank": 3
+    },
+    {
+      "nome": "Blitar",
+      "lat": -8.0696,
+      "lng": 112.15,
+      "rank": 3
+    },
+    {
+      "nome": "Lae",
+      "lat": -6.733,
+      "lng": 146.99,
+      "rank": 3
+    },
+    {
+      "nome": "Pangkalpinang",
+      "lat": -2.08,
+      "lng": 106.15,
+      "rank": 3
+    },
+    {
+      "nome": "Ternate",
+      "lat": 0.793,
+      "lng": 127.363,
+      "rank": 3
+    },
+    {
+      "nome": "Sibolga",
+      "lat": 1.75,
+      "lng": 98.8,
+      "rank": 3
+    },
+    {
+      "nome": "Indramayu",
+      "lat": -6.3356,
+      "lng": 108.319,
+      "rank": 3
+    },
+    {
+      "nome": "Jepara",
+      "lat": -6.5924,
+      "lng": 110.671,
+      "rank": 3
+    },
+    {
+      "nome": "Situbondo",
+      "lat": -7.7062,
+      "lng": 114.0098,
+      "rank": 3
+    },
+    {
+      "nome": "Cilegon",
+      "lat": -6.0144,
+      "lng": 106.0542,
+      "rank": 3
+    },
+    {
+      "nome": "Kampung Baru Subang",
+      "lat": 3.15,
+      "lng": 101.5333,
+      "rank": 3
+    },
+    {
+      "nome": "Karawang",
+      "lat": -6.3053,
+      "lng": 107.3197,
+      "rank": 3
+    },
+    {
+      "nome": "Selayang Baru Utara",
+      "lat": 3.2549,
+      "lng": 101.6668,
+      "rank": 3
+    },
+    {
+      "nome": "Lubuklinggau",
+      "lat": -3.2945,
+      "lng": 102.8614,
+      "rank": 3
+    },
+    {
+      "nome": "Purwokerto",
+      "lat": -7.4214,
+      "lng": 109.2344,
+      "rank": 3
+    },
+    {
+      "nome": "Batu",
+      "lat": -7.87,
+      "lng": 112.5283,
+      "rank": 3
+    },
+    {
+      "nome": "Klungkung",
+      "lat": -8.5333,
+      "lng": 115.4,
+      "rank": 3
+    },
+    {
+      "nome": "Citeureup",
+      "lat": -6.4856,
+      "lng": 106.8819,
+      "rank": 3
+    },
+    {
+      "nome": "Banjar",
+      "lat": -7.1955,
+      "lng": 107.4313,
+      "rank": 3
+    },
+    {
+      "nome": "Dumai",
+      "lat": 1.6671,
+      "lng": 101.4432,
+      "rank": 3
+    },
+    {
+      "nome": "Rengasdengklok",
+      "lat": -6.1592,
+      "lng": 107.2981,
+      "rank": 3
+    },
+    {
+      "nome": "Sumedang",
+      "lat": -6.8586,
+      "lng": 107.9164,
+      "rank": 3
+    },
+    {
+      "nome": "Padalarang",
+      "lat": -6.8378,
+      "lng": 107.4728,
+      "rank": 3
+    },
+    {
+      "nome": "Labuan Bajo",
+      "lat": -8.4964,
+      "lng": 119.8877,
+      "rank": 3
+    },
+    {
+      "nome": "Pemalang",
+      "lat": -6.8919,
+      "lng": 109.3826,
+      "rank": 3
+    },
+    {
+      "nome": "Lembang",
+      "lat": -6.8117,
+      "lng": 107.6175,
+      "rank": 3
+    },
+    {
+      "nome": "Singosari",
+      "lat": -7.8924,
+      "lng": 112.6658,
+      "rank": 3
+    },
+    {
+      "nome": "Metro",
+      "lat": -5.1131,
+      "lng": 105.3067,
+      "rank": 3
+    },
+    {
+      "nome": "Loa Janan",
+      "lat": -0.5829,
+      "lng": 117.095,
+      "rank": 3
+    },
+    {
+      "nome": "Purwakarta",
+      "lat": -6.5569,
+      "lng": 107.4433,
+      "rank": 3
+    },
+    {
+      "nome": "Cianjur",
+      "lat": -6.8222,
+      "lng": 107.1394,
+      "rank": 3
+    },
+    {
+      "nome": "Cikupa",
+      "lat": -6.2364,
+      "lng": 106.5083,
+      "rank": 3
+    },
+    {
+      "nome": "Ungaran",
+      "lat": -7.1397,
+      "lng": 110.405,
+      "rank": 3
+    },
+    {
+      "nome": "Plumbon",
+      "lat": -6.705,
+      "lng": 108.4728,
+      "rank": 3
+    },
+    {
+      "nome": "Banjaran",
+      "lat": -7.0453,
+      "lng": 107.5878,
+      "rank": 3
+    },
+    {
+      "nome": "Toli-Toli",
+      "lat": 1.0402,
+      "lng": 120.8176,
+      "rank": 3
+    },
+    {
+      "nome": "Astanajapura",
+      "lat": -6.8017,
+      "lng": 108.6311,
+      "rank": 3
+    },
+    {
+      "nome": "Batang",
+      "lat": -6.4846,
+      "lng": 110.7083,
+      "rank": 3
+    },
+    {
+      "nome": "Purwodadi",
+      "lat": -7.0868,
+      "lng": 110.9158,
+      "rank": 3
+    },
+    {
+      "nome": "Sidoarjo",
+      "lat": -7.4478,
+      "lng": 112.7183,
+      "rank": 3
+    },
+    {
+      "nome": "Subang",
+      "lat": -6.57,
+      "lng": 107.7567,
+      "rank": 3
+    },
+    {
+      "nome": "Rangkasbitung",
+      "lat": -6.3591,
+      "lng": 106.2494,
+      "rank": 3
+    },
+    {
+      "nome": "Percut",
+      "lat": 3.6253,
+      "lng": 98.864,
+      "rank": 3
+    },
+    {
+      "nome": "Bitung",
+      "lat": 1.4406,
+      "lng": 125.1282,
+      "rank": 3
+    },
+    {
+      "nome": "Baturaja",
+      "lat": -4.1289,
+      "lng": 104.1669,
+      "rank": 3
+    },
+    {
+      "nome": "Nusantara",
+      "lat": -0.9731,
+      "lng": 116.7086,
+      "rank": 3
+    },
+    {
+      "nome": "Garut",
+      "lat": -7.245,
+      "lng": 107.921,
+      "rank": 3
     }
   ]
 }

@@ -1,5 +1,5 @@
 /* ============================================================================
-   Home — parte 1 de 3 (tokens, base, animações de entrada, hero).
+   Home — parte 1 de 4 (tokens, base, animações de entrada, hero).
 
    Layout vindo do Figma "FUTNERDS — Home Full HD" (1920 px, conteúdo 1440 px).
 
@@ -10,8 +10,8 @@
 
 :host {
   --preto: #050807;
-  --verde: #16c449;
-  --neon: #00e65f;
+  --verde: #3CB01A;
+  --neon: #4FD11F;
   --branco: #ffffff;
   --cinza: #9ca3af;
   --painel: #0a120d;
@@ -137,21 +137,21 @@ button:focus-visible {
   &--solid {
     background: linear-gradient(135deg, var(--neon), var(--verde));
     color: #04120a;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 30px rgba(0, 230, 95, .3);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 30px rgba(79, 209, 31, .3);
 
     &:hover {
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 0 44px rgba(0, 230, 95, .55);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 0 44px rgba(79, 209, 31, .55);
     }
   }
 
   &--line {
-    border: 1px solid rgba(0, 230, 95, .45);
-    background: rgba(0, 230, 95, .06);
+    border: 1px solid rgba(79, 209, 31, .45);
+    background: rgba(79, 209, 31, .06);
     color: var(--neon);
 
     &:hover {
       border-color: var(--neon);
-      background: rgba(0, 230, 95, .12);
+      background: rgba(79, 209, 31, .12);
     }
   }
 }
@@ -232,7 +232,7 @@ button:focus-visible {
     width: 200%;
     background:
       radial-gradient(ellipse 22% 34% at 25% 74%, rgba(113, 135, 120, .3), transparent 70%),
-      radial-gradient(ellipse 16% 26% at 70% 84%, rgba(22, 196, 73, .14), transparent 70%);
+      radial-gradient(ellipse 16% 26% at 70% 84%, rgba(60, 176, 26, .14), transparent 70%);
     background-size: 50% 100%;
     background-repeat: repeat-x;
     filter: blur(26px);
@@ -264,7 +264,7 @@ button:focus-visible {
   width: 720px;
   height: 520px;
   border-radius: 50%;
-  background: rgba(22, 196, 73, .14);
+  background: rgba(60, 176, 26, .14);
   filter: blur(120px);
   pointer-events: none;
 }
@@ -308,7 +308,7 @@ button:focus-visible {
     height: 8px;
     border-radius: 50%;
     background: var(--neon);
-    box-shadow: 0 0 0 4px rgba(0, 230, 95, .18), 0 0 12px var(--neon);
+    box-shadow: 0 0 0 4px rgba(79, 209, 31, .18), 0 0 12px var(--neon);
   }
 }
 
@@ -319,7 +319,7 @@ button:focus-visible {
 
   span {
     color: var(--neon);
-    text-shadow: 0 0 28px rgba(0, 230, 95, .45);
+    text-shadow: 0 0 28px rgba(79, 209, 31, .45);
   }
 }
 

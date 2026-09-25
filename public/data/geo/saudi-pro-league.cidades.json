@@ -1,0 +1,982 @@
+{
+  "ligaId": "saudi-pro-league",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Meca",
+      "lat": 21.432,
+      "lng": 39.8181,
+      "rank": 1
+    },
+    {
+      "nome": "Medina",
+      "lat": 24.5019,
+      "lng": 39.5781,
+      "rank": 1
+    },
+    {
+      "nome": "Taif",
+      "lat": 21.2622,
+      "lng": 40.3823,
+      "rank": 1
+    },
+    {
+      "nome": "Al-Hillah",
+      "lat": 23.4895,
+      "lng": 46.7564,
+      "rank": 1
+    },
+    {
+      "nome": "Ha'il",
+      "lat": 27.5236,
+      "lng": 41.7001,
+      "rank": 1
+    },
+    {
+      "nome": "Najran",
+      "lat": 17.5065,
+      "lng": 44.1316,
+      "rank": 1
+    },
+    {
+      "nome": "Al-Kharj",
+      "lat": 24.1556,
+      "lng": 47.312,
+      "rank": 1
+    },
+    {
+      "nome": "Yanbu",
+      "lat": 24.0943,
+      "lng": 38.0493,
+      "rank": 1
+    },
+    {
+      "nome": "Hafar al-Batin",
+      "lat": 28.4337,
+      "lng": 45.9601,
+      "rank": 1
+    },
+    {
+      "nome": "Jubail",
+      "lat": 27.0046,
+      "lng": 49.646,
+      "rank": 1
+    },
+    {
+      "nome": "Arar",
+      "lat": 30.99,
+      "lng": 41.0207,
+      "rank": 1
+    },
+    {
+      "nome": "Sakakah",
+      "lat": 30,
+      "lng": 40.1333,
+      "rank": 1
+    },
+    {
+      "nome": "Jizan",
+      "lat": 16.9066,
+      "lng": 42.5566,
+      "rank": 1
+    },
+    {
+      "nome": "Bisha",
+      "lat": 20.0087,
+      "lng": 42.5987,
+      "rank": 1
+    },
+    {
+      "nome": "Rafha",
+      "lat": 29.6202,
+      "lng": 43.4948,
+      "rank": 1
+    },
+    {
+      "nome": "Al Wajh",
+      "lat": 26.2324,
+      "lng": 36.4636,
+      "rank": 2
+    },
+    {
+      "nome": "As Sulayyil",
+      "lat": 20.4623,
+      "lng": 45.5722,
+      "rank": 2
+    },
+    {
+      "nome": "Dumat al-Jandal",
+      "lat": 29.8153,
+      "lng": 39.8664,
+      "rank": 2
+    },
+    {
+      "nome": "An Nabk",
+      "lat": 31.3333,
+      "lng": 37.3333,
+      "rank": 2
+    },
+    {
+      "nome": "al-Quwayʿiyah",
+      "lat": 24.0737,
+      "lng": 45.2806,
+      "rank": 2
+    },
+    {
+      "nome": "Al Qunfudhah",
+      "lat": 19.1264,
+      "lng": 41.0789,
+      "rank": 2
+    },
+    {
+      "nome": "Khamis Mushait",
+      "lat": 18.3,
+      "lng": 42.7333,
+      "rank": 3
+    },
+    {
+      "nome": "Şabyā",
+      "lat": 17.1495,
+      "lng": 42.6254,
+      "rank": 3
+    },
+    {
+      "nome": "Unaizah",
+      "lat": 26.1,
+      "lng": 44,
+      "rank": 3
+    },
+    {
+      "nome": "Az Zulfī",
+      "lat": 26.2995,
+      "lng": 44.8154,
+      "rank": 3
+    },
+    {
+      "nome": "Sabt Alalayah",
+      "lat": 19.5773,
+      "lng": 41.9636,
+      "rank": 3
+    },
+    {
+      "nome": "Al Bahah",
+      "lat": 20.0129,
+      "lng": 41.4677,
+      "rank": 3
+    },
+    {
+      "nome": "Ad Dawādimī",
+      "lat": 24.5077,
+      "lng": 44.3924,
+      "rank": 3
+    },
+    {
+      "nome": "Bariq",
+      "lat": 18.9297,
+      "lng": 41.9295,
+      "rank": 3
+    },
+    {
+      "nome": "Rābigh",
+      "lat": 22.7986,
+      "lng": 39.0349,
+      "rank": 3
+    },
+    {
+      "nome": "Ash Shafā",
+      "lat": 21.0727,
+      "lng": 40.3184,
+      "rank": 3
+    },
+    {
+      "nome": "Al Līth",
+      "lat": 20.148,
+      "lng": 40.2722,
+      "rank": 3
+    },
+    {
+      "nome": "Abū ‘Arīsh",
+      "lat": 16.9689,
+      "lng": 42.8325,
+      "rank": 3
+    },
+    {
+      "nome": "Ţurayf",
+      "lat": 31.672,
+      "lng": 38.663,
+      "rank": 3
+    },
+    {
+      "nome": "Ras Tanura",
+      "lat": 26.7074,
+      "lng": 50.0673,
+      "rank": 3
+    },
+    {
+      "nome": "Al Khafjī",
+      "lat": 28.4391,
+      "lng": 48.4913,
+      "rank": 3
+    },
+    {
+      "nome": "Baljurashi",
+      "lat": 19.8594,
+      "lng": 41.5572,
+      "rank": 3
+    },
+    {
+      "nome": "Al Badā’i‘ al Wusţá",
+      "lat": 25.9855,
+      "lng": 43.7366,
+      "rank": 3
+    },
+    {
+      "nome": "Ranyah",
+      "lat": 21.2504,
+      "lng": 42.8475,
+      "rank": 3
+    },
+    {
+      "nome": "Şafwá",
+      "lat": 26.6497,
+      "lng": 49.9552,
+      "rank": 3
+    },
+    {
+      "nome": "Afif",
+      "lat": 23.9065,
+      "lng": 42.9172,
+      "rank": 3
+    },
+    {
+      "nome": "Al Bukayrīyah",
+      "lat": 26.1392,
+      "lng": 43.6578,
+      "rank": 3
+    },
+    {
+      "nome": "Ţubarjal",
+      "lat": 30.4999,
+      "lng": 38.216,
+      "rank": 3
+    },
+    {
+      "nome": "Taymā’",
+      "lat": 27.6223,
+      "lng": 38.5388,
+      "rank": 3
+    },
+    {
+      "nome": "Ad Dilam",
+      "lat": 23.991,
+      "lng": 47.1618,
+      "rank": 3
+    },
+    {
+      "nome": "Umluj",
+      "lat": 25.0213,
+      "lng": 37.2685,
+      "rank": 3
+    },
+    {
+      "nome": "Al Mithnab",
+      "lat": 25.8601,
+      "lng": 44.2223,
+      "rank": 3
+    },
+    {
+      "nome": "Al-`Ula",
+      "lat": 26.6085,
+      "lng": 37.9232,
+      "rank": 3
+    },
+    {
+      "nome": "Shaqra",
+      "lat": 25.2402,
+      "lng": 45.251,
+      "rank": 3
+    },
+    {
+      "nome": "Ḥawṭah Banī Tamīm",
+      "lat": 23.496,
+      "lng": 46.878,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Cairo",
+      "lat": 30.0519,
+      "lng": 31.248,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bagdá",
+      "lat": 33.3406,
+      "lng": 44.3919,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Kuwait",
+      "lat": 29.3717,
+      "lng": 47.9764,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cartum",
+      "lat": 15.59,
+      "lng": 32.5322,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tel Aviv",
+      "lat": 32.0819,
+      "lng": 34.7681,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Doha",
+      "lat": 25.2866,
+      "lng": 51.533,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Teerã",
+      "lat": 35.6739,
+      "lng": 51.4224,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sana",
+      "lat": 15.3567,
+      "lng": 44.2046,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Damasco",
+      "lat": 33.502,
+      "lng": 36.2981,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Amã",
+      "lat": 31.952,
+      "lng": 35.9314,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Jerusalém",
+      "lat": 31.7784,
+      "lng": 35.2066,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Beirute",
+      "lat": 33.8739,
+      "lng": 35.5078,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Dubai",
+      "lat": 25.2319,
+      "lng": 55.278,
+      "rank": 2
+    },
+    {
+      "nome": "Isfahan",
+      "lat": 32.702,
+      "lng": 51.6981,
+      "rank": 2
+    },
+    {
+      "nome": "Shiraz",
+      "lat": 29.6319,
+      "lng": 52.5681,
+      "rank": 2
+    },
+    {
+      "nome": "Abu Dhabi",
+      "lat": 24.4667,
+      "lng": 54.3666,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Manama",
+      "lat": 26.2361,
+      "lng": 50.5831,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Ahvaz",
+      "lat": 31.2819,
+      "lng": 48.7181,
+      "rank": 2
+    },
+    {
+      "nome": "Basra",
+      "lat": 30.5155,
+      "lng": 47.8116,
+      "rank": 2
+    },
+    {
+      "nome": "Haifa",
+      "lat": 32.8224,
+      "lng": 34.9781,
+      "rank": 2
+    },
+    {
+      "nome": "Asmara",
+      "lat": 15.3333,
+      "lng": 38.9333,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "An-Najaf",
+      "lat": 32.0003,
+      "lng": 44.3354,
+      "rank": 2
+    },
+    {
+      "nome": "Alexandria",
+      "lat": 31.202,
+      "lng": 29.948,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Irbid",
+      "lat": 32.55,
+      "lng": 35.85,
+      "rank": 2
+    },
+    {
+      "nome": "Gaza",
+      "lat": 31.53,
+      "lng": 34.445,
+      "rank": 2
+    },
+    {
+      "nome": "Porto Sudão",
+      "lat": 19.6158,
+      "lng": 37.2164,
+      "rank": 2
+    },
+    {
+      "nome": "Yazd",
+      "lat": 31.9201,
+      "lng": 54.37,
+      "rank": 2
+    },
+    {
+      "nome": "Carbala",
+      "lat": 32.6149,
+      "lng": 44.0245,
+      "rank": 2
+    },
+    {
+      "nome": "Nassíria",
+      "lat": 31.0429,
+      "lng": 46.2676,
+      "rank": 2
+    },
+    {
+      "nome": "Al Ain",
+      "lat": 24.2305,
+      "lng": 55.74,
+      "rank": 2
+    },
+    {
+      "nome": "Alepo",
+      "lat": 36.2319,
+      "lng": 37.1681,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Bandar Abbas",
+      "lat": 27.2041,
+      "lng": 56.2721,
+      "rank": 2
+    },
+    {
+      "nome": "Abadan",
+      "lat": 30.3307,
+      "lng": 48.2797,
+      "rank": 2
+    },
+    {
+      "nome": "Diwaniya",
+      "lat": 31.9889,
+      "lng": 44.924,
+      "rank": 2
+    },
+    {
+      "nome": "Amara",
+      "lat": 31.8416,
+      "lng": 47.1512,
+      "rank": 2
+    },
+    {
+      "nome": "Mascate",
+      "lat": 23.6133,
+      "lng": 58.5933,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Hodeida",
+      "lat": 14.7999,
+      "lng": 42.951,
+      "rank": 3
+    },
+    {
+      "nome": "Kut",
+      "lat": 32.4907,
+      "lng": 45.8304,
+      "rank": 3
+    },
+    {
+      "nome": "Dezful",
+      "lat": 32.3804,
+      "lng": 48.47,
+      "rank": 3
+    },
+    {
+      "nome": "Kerman",
+      "lat": 30.3,
+      "lng": 57.08,
+      "rank": 3
+    },
+    {
+      "nome": "Hebrom",
+      "lat": 31.5406,
+      "lng": 35.0956,
+      "rank": 3
+    },
+    {
+      "nome": "Az Zubayr",
+      "lat": 30.3892,
+      "lng": 47.708,
+      "rank": 3
+    },
+    {
+      "nome": "Kassala",
+      "lat": 15.46,
+      "lng": 36.39,
+      "rank": 3
+    },
+    {
+      "nome": "Luxor",
+      "lat": 25.7,
+      "lng": 32.65,
+      "rank": 3
+    },
+    {
+      "nome": "Qom",
+      "lat": 34.652,
+      "lng": 50.9481,
+      "rank": 3
+    },
+    {
+      "nome": "Mashhad",
+      "lat": 36.272,
+      "lng": 59.5681,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Homs",
+      "lat": 34.7319,
+      "lng": 36.7181,
+      "rank": 3
+    },
+    {
+      "nome": "Kermanshah",
+      "lat": 34.382,
+      "lng": 47.0581,
+      "rank": 3
+    },
+    {
+      "nome": "Ismaília",
+      "lat": 30.5903,
+      "lng": 32.26,
+      "rank": 3
+    },
+    {
+      "nome": "Karaj",
+      "lat": 35.8023,
+      "lng": 50.9681,
+      "rank": 3
+    },
+    {
+      "nome": "Porto Said",
+      "lat": 31.26,
+      "lng": 32.29,
+      "rank": 3
+    },
+    {
+      "nome": "Nablus",
+      "lat": 32.2215,
+      "lng": 35.2544,
+      "rank": 3
+    },
+    {
+      "nome": "Bersebá",
+      "lat": 31.25,
+      "lng": 34.83,
+      "rank": 3
+    },
+    {
+      "nome": "Suez",
+      "lat": 30.005,
+      "lng": 32.5499,
+      "rank": 3
+    },
+    {
+      "nome": "Djibuti",
+      "lat": 11.595,
+      "lng": 43.148,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Salalah",
+      "lat": 17.0255,
+      "lng": 54.0852,
+      "rank": 3
+    },
+    {
+      "nome": "Al Jahra",
+      "lat": 29.3375,
+      "lng": 47.6581,
+      "rank": 3
+    },
+    {
+      "nome": "Corramabade",
+      "lat": 33.4804,
+      "lng": 48.35,
+      "rank": 3
+    },
+    {
+      "nome": "Sirjan",
+      "lat": 29.47,
+      "lng": 55.73,
+      "rank": 3
+    },
+    {
+      "nome": "Samawa",
+      "lat": 31.3099,
+      "lng": 45.2803,
+      "rank": 3
+    },
+    {
+      "nome": "Mossul",
+      "lat": 36.3469,
+      "lng": 43.1431,
+      "rank": 3
+    },
+    {
+      "nome": "Ta'izz",
+      "lat": 13.6064,
+      "lng": 44.0375,
+      "rank": 3
+    },
+    {
+      "nome": "Arak",
+      "lat": 34.0804,
+      "lng": 49.7,
+      "rank": 3
+    },
+    {
+      "nome": "Bushehr",
+      "lat": 28.92,
+      "lng": 50.83,
+      "rank": 3
+    },
+    {
+      "nome": "Atbara",
+      "lat": 17.71,
+      "lng": 33.98,
+      "rank": 3
+    },
+    {
+      "nome": "Áden",
+      "lat": 12.7797,
+      "lng": 45.0095,
+      "rank": 3
+    },
+    {
+      "nome": "Ash Shatrah",
+      "lat": 31.4175,
+      "lng": 46.1772,
+      "rank": 3
+    },
+    {
+      "nome": "Ras al-Khaimah",
+      "lat": 25.7915,
+      "lng": 55.9428,
+      "rank": 3
+    },
+    {
+      "nome": "Hajjah",
+      "lat": 15.6917,
+      "lng": 43.6021,
+      "rank": 3
+    },
+    {
+      "nome": "Sohag",
+      "lat": 26.5504,
+      "lng": 31.7,
+      "rank": 3
+    },
+    {
+      "nome": "Sharjah",
+      "lat": 25.3342,
+      "lng": 55.4122,
+      "rank": 3
+    },
+    {
+      "nome": "Zarqa",
+      "lat": 32.0727,
+      "lng": 36.088,
+      "rank": 3
+    },
+    {
+      "nome": "Ajman",
+      "lat": 25.4018,
+      "lng": 55.4788,
+      "rank": 3
+    },
+    {
+      "nome": "Al Hillah",
+      "lat": 32.4637,
+      "lng": 44.4196,
+      "rank": 3
+    },
+    {
+      "nome": "Abū al-Kahṣīb",
+      "lat": 30.4431,
+      "lng": 47.878,
+      "rank": 3
+    },
+    {
+      "nome": "Khorramshahr",
+      "lat": 30.4408,
+      "lng": 48.1843,
+      "rank": 3
+    },
+    {
+      "nome": "Ar Rayyān",
+      "lat": 25.2919,
+      "lng": 51.4244,
+      "rank": 3
+    },
+    {
+      "nome": "Al Madīnah",
+      "lat": 30.9632,
+      "lng": 47.27,
+      "rank": 3
+    },
+    {
+      "nome": "Musaffah",
+      "lat": 24.3589,
+      "lng": 54.4827,
+      "rank": 3
+    },
+    {
+      "nome": "Khomeynī Shahr",
+      "lat": 32.6856,
+      "lng": 51.5361,
+      "rank": 3
+    },
+    {
+      "nome": "Najafābād",
+      "lat": 32.6346,
+      "lng": 51.3653,
+      "rank": 3
+    },
+    {
+      "nome": "Muscat",
+      "lat": 23.5841,
+      "lng": 58.4078,
+      "rank": 3
+    },
+    {
+      "nome": "Lusail",
+      "lat": 25.4175,
+      "lng": 51.5075,
+      "rank": 3
+    },
+    {
+      "nome": "Wādī as Sīr",
+      "lat": 31.9545,
+      "lng": 35.8183,
+      "rank": 3
+    },
+    {
+      "nome": "Khān Yūnis",
+      "lat": 31.3402,
+      "lng": 34.3063,
+      "rank": 3
+    },
+    {
+      "nome": "Bandar-e Māhshahr",
+      "lat": 30.5566,
+      "lng": 49.1885,
+      "rank": 3
+    },
+    {
+      "nome": "Dubai Investments Park",
+      "lat": 25.0083,
+      "lng": 55.1568,
+      "rank": 3
+    },
+    {
+      "nome": "Mostafa",
+      "lat": 31.55,
+      "lng": 47.0333,
+      "rank": 3
+    },
+    {
+      "nome": "Ar Ramthā",
+      "lat": 32.5587,
+      "lng": 36.0082,
+      "rank": 3
+    },
+    {
+      "nome": "Rafsanjān",
+      "lat": 30.4067,
+      "lng": 55.9939,
+      "rank": 3
+    },
+    {
+      "nome": "As Sālimīyah",
+      "lat": 29.3339,
+      "lng": 48.0761,
+      "rank": 3
+    },
+    {
+      "nome": "Ashkelon",
+      "lat": 31.6693,
+      "lng": 34.5715,
+      "rank": 3
+    },
+    {
+      "nome": "Jahrom",
+      "lat": 28.5,
+      "lng": 53.5605,
+      "rank": 3
+    },
+    {
+      "nome": "Andīmeshk",
+      "lat": 32.4615,
+      "lng": 48.3537,
+      "rank": 3
+    },
+    {
+      "nome": "Al Hindīyah",
+      "lat": 32.5419,
+      "lng": 44.2247,
+      "rank": 3
+    },
+    {
+      "nome": "Al Qurnah",
+      "lat": 31.0155,
+      "lng": 47.4336,
+      "rank": 3
+    },
+    {
+      "nome": "Al Maḩallah al Kubrá",
+      "lat": 30.9706,
+      "lng": 31.1669,
+      "rank": 3
+    },
+    {
+      "nome": "Madīnat Ḩamad",
+      "lat": 26.1153,
+      "lng": 50.5069,
+      "rank": 3
+    },
+    {
+      "nome": "Shāhīn Shahr",
+      "lat": 32.8579,
+      "lng": 51.5529,
+      "rank": 3
+    },
+    {
+      "nome": "‘Ajlūn",
+      "lat": 32.3333,
+      "lng": 35.7528,
+      "rank": 3
+    },
+    {
+      "nome": "Bet Shemesh",
+      "lat": 31.7307,
+      "lng": 34.9929,
+      "rank": 3
+    },
+    {
+      "nome": "Shahr-e Ṣadrā",
+      "lat": 29.7997,
+      "lng": 52.5022,
+      "rank": 3
+    },
+    {
+      "nome": "Īz̄eh",
+      "lat": 31.8303,
+      "lng": 49.8676,
+      "rank": 3
+    },
+    {
+      "nome": "Kāzerūn",
+      "lat": 29.6192,
+      "lng": 51.6535,
+      "rank": 3
+    },
+    {
+      "nome": "Borāzjān",
+      "lat": 29.2699,
+      "lng": 51.2188,
+      "rank": 3
+    },
+    {
+      "nome": "Qal‘at Sukkar",
+      "lat": 31.8632,
+      "lng": 46.0732,
+      "rank": 3
+    },
+    {
+      "nome": "Kufa",
+      "lat": 32.0511,
+      "lng": 44.4402,
+      "rank": 3
+    },
+    {
+      "nome": "As Salţ",
+      "lat": 32.0392,
+      "lng": 35.7272,
+      "rank": 3
+    },
+    {
+      "nome": "Umm Qaşr",
+      "lat": 30.0362,
+      "lng": 47.9195,
+      "rank": 3
+    }
+  ]
+}

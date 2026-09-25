@@ -1,0 +1,916 @@
+{
+  "ligaId": "liga-grecia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Patras",
+      "lat": 38.23,
+      "lng": 21.73,
+      "rank": 1
+    },
+    {
+      "nome": "Heraklion",
+      "lat": 35.325,
+      "lng": 25.1305,
+      "rank": 1
+    },
+    {
+      "nome": "Lárissa",
+      "lat": 39.6304,
+      "lng": 22.42,
+      "rank": 1
+    },
+    {
+      "nome": "Vólos",
+      "lat": 39.37,
+      "lng": 22.95,
+      "rank": 1
+    },
+    {
+      "nome": "Ioannina",
+      "lat": 39.6679,
+      "lng": 20.8509,
+      "rank": 1
+    },
+    {
+      "nome": "Chania",
+      "lat": 35.5122,
+      "lng": 24.0156,
+      "rank": 1
+    },
+    {
+      "nome": "Agrinio",
+      "lat": 38.6218,
+      "lng": 21.4077,
+      "rank": 1
+    },
+    {
+      "nome": "Chalkida",
+      "lat": 38.464,
+      "lng": 23.6124,
+      "rank": 1
+    },
+    {
+      "nome": "Kalamata",
+      "lat": 37.0389,
+      "lng": 22.1142,
+      "rank": 1
+    },
+    {
+      "nome": "Kavala",
+      "lat": 40.9412,
+      "lng": 24.4018,
+      "rank": 1
+    },
+    {
+      "nome": "Rodes",
+      "lat": 36.4412,
+      "lng": 28.2225,
+      "rank": 1
+    },
+    {
+      "nome": "Serres",
+      "lat": 41.086,
+      "lng": 23.5497,
+      "rank": 1
+    },
+    {
+      "nome": "Katerini",
+      "lat": 40.2723,
+      "lng": 22.5025,
+      "rank": 1
+    },
+    {
+      "nome": "Alexandrópolis",
+      "lat": 40.8486,
+      "lng": 25.8744,
+      "rank": 1
+    },
+    {
+      "nome": "Xanthi",
+      "lat": 41.1418,
+      "lng": 24.8836,
+      "rank": 1
+    },
+    {
+      "nome": "Lamía",
+      "lat": 38.899,
+      "lng": 22.434,
+      "rank": 2
+    },
+    {
+      "nome": "Komotini",
+      "lat": 41.1333,
+      "lng": 25.4167,
+      "rank": 2
+    },
+    {
+      "nome": "Corfu",
+      "lat": 39.6154,
+      "lng": 19.9147,
+      "rank": 2
+    },
+    {
+      "nome": "Mitilene",
+      "lat": 39.1104,
+      "lng": 26.5546,
+      "rank": 2
+    },
+    {
+      "nome": "Chios",
+      "lat": 38.3681,
+      "lng": 26.1358,
+      "rank": 2
+    },
+    {
+      "nome": "Pyrgos",
+      "lat": 37.6837,
+      "lng": 21.45,
+      "rank": 2
+    },
+    {
+      "nome": "Kos",
+      "lat": 36.8937,
+      "lng": 27.2888,
+      "rank": 2
+    },
+    {
+      "nome": "Esparta",
+      "lat": 37.0737,
+      "lng": 22.4297,
+      "rank": 2
+    },
+    {
+      "nome": "Ermoupoli",
+      "lat": 37.4504,
+      "lng": 24.9333,
+      "rank": 2
+    },
+    {
+      "nome": "Siteia",
+      "lat": 35.2004,
+      "lng": 26.0986,
+      "rank": 2
+    },
+    {
+      "nome": "Polygyros",
+      "lat": 40.381,
+      "lng": 23.453,
+      "rank": 2
+    },
+    {
+      "nome": "Tríkala",
+      "lat": 39.5549,
+      "lng": 21.7684,
+      "rank": 3
+    },
+    {
+      "nome": "Dráma",
+      "lat": 41.1528,
+      "lng": 24.1473,
+      "rank": 3
+    },
+    {
+      "nome": "Véroia",
+      "lat": 40.5244,
+      "lng": 22.2024,
+      "rank": 3
+    },
+    {
+      "nome": "Lagkadás",
+      "lat": 40.75,
+      "lng": 23.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Kozáni",
+      "lat": 40.2993,
+      "lng": 21.7898,
+      "rank": 3
+    },
+    {
+      "nome": "Kardítsa",
+      "lat": 39.3648,
+      "lng": 21.9219,
+      "rank": 3
+    },
+    {
+      "nome": "Rethymno",
+      "lat": 35.3655,
+      "lng": 24.4823,
+      "rank": 3
+    },
+    {
+      "nome": "Thívai",
+      "lat": 38.325,
+      "lng": 23.3189,
+      "rank": 3
+    },
+    {
+      "nome": "Kórinthos",
+      "lat": 37.9401,
+      "lng": 22.9513,
+      "rank": 3
+    },
+    {
+      "nome": "Ptolemaḯda",
+      "lat": 40.5147,
+      "lng": 21.6786,
+      "rank": 3
+    },
+    {
+      "nome": "Chalkidóna",
+      "lat": 40.7318,
+      "lng": 22.5999,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Istambul",
+      "lat": 41.1069,
+      "lng": 29.0081,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Ancara",
+      "lat": 39.9292,
+      "lng": 32.8624,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Cairo",
+      "lat": 30.0519,
+      "lng": 31.248,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Esmirna",
+      "lat": 38.4381,
+      "lng": 27.1498,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sófia",
+      "lat": 42.6853,
+      "lng": 23.3147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8189,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bucareste",
+      "lat": 44.4353,
+      "lng": 26.098,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bursa",
+      "lat": 40.2019,
+      "lng": 29.0681,
+      "rank": 1
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Alexandria",
+      "lat": 31.202,
+      "lng": 29.948,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Antalya",
+      "lat": 36.8919,
+      "lng": 30.698,
+      "rank": 2
+    },
+    {
+      "nome": "Konya",
+      "lat": 37.877,
+      "lng": 32.4731,
+      "rank": 2
+    },
+    {
+      "nome": "Roma",
+      "lat": 41.8979,
+      "lng": 12.4813,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Trípoli",
+      "lat": 32.8925,
+      "lng": 13.18,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Eskişehir",
+      "lat": 39.795,
+      "lng": 30.53,
+      "rank": 2
+    },
+    {
+      "nome": "Tel Aviv",
+      "lat": 32.0819,
+      "lng": 34.7681,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Beirute",
+      "lat": 33.8739,
+      "lng": 35.5078,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Damasco",
+      "lat": 33.502,
+      "lng": 36.2981,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Bari",
+      "lat": 41.1142,
+      "lng": 16.8728,
+      "rank": 2
+    },
+    {
+      "nome": "Nápoles",
+      "lat": 40.842,
+      "lng": 14.2431,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "İzmit",
+      "lat": 40.776,
+      "lng": 29.9306,
+      "rank": 2
+    },
+    {
+      "nome": "Bengasi",
+      "lat": 32.1187,
+      "lng": 20.0648,
+      "rank": 2
+    },
+    {
+      "nome": "Denizli",
+      "lat": 37.7704,
+      "lng": 29.08,
+      "rank": 2
+    },
+    {
+      "nome": "Plovdiv",
+      "lat": 42.154,
+      "lng": 24.754,
+      "rank": 2
+    },
+    {
+      "nome": "Varna",
+      "lat": 43.2156,
+      "lng": 27.8953,
+      "rank": 2
+    },
+    {
+      "nome": "Podgorica",
+      "lat": 42.466,
+      "lng": 19.2663,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Adapazarı",
+      "lat": 40.7667,
+      "lng": 30.4,
+      "rank": 2
+    },
+    {
+      "nome": "Jerusalém",
+      "lat": 31.7784,
+      "lng": 35.2066,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Balıkesir",
+      "lat": 39.6504,
+      "lng": 27.89,
+      "rank": 2
+    },
+    {
+      "nome": "Salerno",
+      "lat": 40.6804,
+      "lng": 14.7699,
+      "rank": 2
+    },
+    {
+      "nome": "Niš",
+      "lat": 43.3304,
+      "lng": 21.9,
+      "rank": 2
+    },
+    {
+      "nome": "Manisa",
+      "lat": 38.6304,
+      "lng": 27.44,
+      "rank": 2
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Alepo",
+      "lat": 36.2319,
+      "lng": 37.1681,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Amã",
+      "lat": 31.952,
+      "lng": 35.9314,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Catânia",
+      "lat": 37.5,
+      "lng": 15.08,
+      "rank": 3
+    },
+    {
+      "nome": "Tarento",
+      "lat": 40.5084,
+      "lng": 17.23,
+      "rank": 3
+    },
+    {
+      "nome": "Adana",
+      "lat": 36.9969,
+      "lng": 35.3181,
+      "rank": 3
+    },
+    {
+      "nome": "Aydın",
+      "lat": 37.85,
+      "lng": 27.85,
+      "rank": 3
+    },
+    {
+      "nome": "Burgas",
+      "lat": 42.5146,
+      "lng": 27.4746,
+      "rank": 3
+    },
+    {
+      "nome": "Cutáquia",
+      "lat": 39.42,
+      "lng": 29.93,
+      "rank": 3
+    },
+    {
+      "nome": "Nicósia",
+      "lat": 35.1667,
+      "lng": 33.3666,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Split",
+      "lat": 43.5204,
+      "lng": 16.47,
+      "rank": 3
+    },
+    {
+      "nome": "Esparta",
+      "lat": 37.77,
+      "lng": 30.53,
+      "rank": 3
+    },
+    {
+      "nome": "Prizren",
+      "lat": 42.2293,
+      "lng": 20.7501,
+      "rank": 3
+    },
+    {
+      "nome": "Haifa",
+      "lat": 32.8224,
+      "lng": 34.9781,
+      "rank": 3
+    },
+    {
+      "nome": "Tarsus",
+      "lat": 36.9204,
+      "lng": 34.88,
+      "rank": 3
+    },
+    {
+      "nome": "Elbasani",
+      "lat": 41.1215,
+      "lng": 20.0838,
+      "rank": 3
+    },
+    {
+      "nome": "Mostar",
+      "lat": 43.3505,
+      "lng": 17.82,
+      "rank": 3
+    },
+    {
+      "nome": "Lecce",
+      "lat": 40.3604,
+      "lng": 18.15,
+      "rank": 3
+    },
+    {
+      "nome": "Valeta",
+      "lat": 35.8997,
+      "lng": 14.5147,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Afioncaraquissar",
+      "lat": 38.7504,
+      "lng": 30.55,
+      "rank": 3
+    },
+    {
+      "nome": "Zonguldaque",
+      "lat": 41.4304,
+      "lng": 31.78,
+      "rank": 3
+    },
+    {
+      "nome": "Escodra",
+      "lat": 42.0685,
+      "lng": 19.5189,
+      "rank": 3
+    },
+    {
+      "nome": "Uxaque",
+      "lat": 38.6804,
+      "lng": 29.42,
+      "rank": 3
+    },
+    {
+      "nome": "Constanța",
+      "lat": 44.2027,
+      "lng": 28.61,
+      "rank": 3
+    },
+    {
+      "nome": "Stara Zagora",
+      "lat": 42.4231,
+      "lng": 25.6227,
+      "rank": 3
+    },
+    {
+      "nome": "Durrës",
+      "lat": 41.3178,
+      "lng": 19.4482,
+      "rank": 3
+    },
+    {
+      "nome": "Craiova",
+      "lat": 44.3263,
+      "lng": 23.8259,
+      "rank": 3
+    },
+    {
+      "nome": "Porto Said",
+      "lat": 31.26,
+      "lng": 32.29,
+      "rank": 3
+    },
+    {
+      "nome": "Chişinău",
+      "lat": 47.005,
+      "lng": 28.8577,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Ruse",
+      "lat": 43.8537,
+      "lng": 25.9733,
+      "rank": 3
+    },
+    {
+      "nome": "Mersin",
+      "lat": 36.8,
+      "lng": 34.62,
+      "rank": 3
+    },
+    {
+      "nome": "Edirne",
+      "lat": 41.6704,
+      "lng": 26.57,
+      "rank": 3
+    },
+    {
+      "nome": "Tekirdağ",
+      "lat": 40.9909,
+      "lng": 27.51,
+      "rank": 3
+    },
+    {
+      "nome": "Florença",
+      "lat": 43.78,
+      "lng": 11.25,
+      "rank": 3
+    },
+    {
+      "nome": "Palermo",
+      "lat": 38.127,
+      "lng": 13.3481,
+      "rank": 3
+    },
+    {
+      "nome": "Nilüfer",
+      "lat": 40.214,
+      "lng": 28.9157,
+      "rank": 3
+    },
+    {
+      "nome": "Alanya",
+      "lat": 36.5438,
+      "lng": 31.9998,
+      "rank": 3
+    },
+    {
+      "nome": "Gebze",
+      "lat": 40.8028,
+      "lng": 29.4307,
+      "rank": 3
+    },
+    {
+      "nome": "Çorlu",
+      "lat": 41.1607,
+      "lng": 27.8009,
+      "rank": 3
+    },
+    {
+      "nome": "Düzce",
+      "lat": 40.8389,
+      "lng": 31.1639,
+      "rank": 3
+    },
+    {
+      "nome": "Büyükçekmece",
+      "lat": 41.0207,
+      "lng": 28.585,
+      "rank": 3
+    },
+    {
+      "nome": "İnegol",
+      "lat": 40.0781,
+      "lng": 29.5133,
+      "rank": 3
+    },
+    {
+      "nome": "Nazilli",
+      "lat": 37.9163,
+      "lng": 28.3223,
+      "rank": 3
+    },
+    {
+      "nome": "Salihli",
+      "lat": 38.4826,
+      "lng": 28.1477,
+      "rank": 3
+    },
+    {
+      "nome": "Al Maḩallah al Kubrá",
+      "lat": 30.9706,
+      "lng": 31.1669,
+      "rank": 3
+    },
+    {
+      "nome": "Bandırma",
+      "lat": 40.3522,
+      "lng": 27.9767,
+      "rank": 3
+    },
+    {
+      "nome": "Mitrovicë",
+      "lat": 42.8833,
+      "lng": 20.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Turgutlu",
+      "lat": 38.4953,
+      "lng": 27.6997,
+      "rank": 3
+    },
+    {
+      "nome": "Mustafakemalpaşa",
+      "lat": 40.0382,
+      "lng": 28.4087,
+      "rank": 3
+    },
+    {
+      "nome": "Manavgat",
+      "lat": 36.7867,
+      "lng": 31.4409,
+      "rank": 3
+    },
+    {
+      "nome": "Soma",
+      "lat": 39.1855,
+      "lng": 27.6094,
+      "rank": 3
+    },
+    {
+      "nome": "Leskovac",
+      "lat": 42.9981,
+      "lng": 21.9461,
+      "rank": 3
+    },
+    {
+      "nome": "Gjakovë",
+      "lat": 42.3803,
+      "lng": 20.4308,
+      "rank": 3
+    },
+    {
+      "nome": "Aksaray",
+      "lat": 38.3725,
+      "lng": 34.0254,
+      "rank": 3
+    },
+    {
+      "nome": "Al Bayḑā’",
+      "lat": 32.7627,
+      "lng": 21.7551,
+      "rank": 3
+    },
+    {
+      "nome": "Körfez",
+      "lat": 40.767,
+      "lng": 29.7828,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Pazar",
+      "lat": 43.1367,
+      "lng": 20.5122,
+      "rank": 3
+    },
+    {
+      "nome": "Akhisar",
+      "lat": 38.9185,
+      "lng": 27.8401,
+      "rank": 3
+    },
+    {
+      "nome": "Çerkezköy",
+      "lat": 41.2863,
+      "lng": 27.9994,
+      "rank": 3
+    },
+    {
+      "nome": "Zarqa",
+      "lat": 32.0727,
+      "lng": 36.088,
+      "rank": 3
+    },
+    {
+      "nome": "Bartın",
+      "lat": 41.6358,
+      "lng": 32.3375,
+      "rank": 3
+    },
+    {
+      "nome": "Kumanovo",
+      "lat": 42.1328,
+      "lng": 21.7158,
+      "rank": 3
+    },
+    {
+      "nome": "Kruševac",
+      "lat": 43.58,
+      "lng": 21.3339,
+      "rank": 3
+    },
+    {
+      "nome": "Andria",
+      "lat": 41.2312,
+      "lng": 16.298,
+      "rank": 3
+    },
+    {
+      "nome": "Kraljevo",
+      "lat": 43.7258,
+      "lng": 20.6894,
+      "rank": 3
+    },
+    {
+      "nome": "Zliten",
+      "lat": 32.4674,
+      "lng": 14.5687,
+      "rank": 3
+    },
+    {
+      "nome": "Shibīn al Kawm",
+      "lat": 30.5526,
+      "lng": 31.009,
+      "rank": 3
+    },
+    {
+      "nome": "Idkū",
+      "lat": 31.3073,
+      "lng": 30.2981,
+      "rank": 3
+    },
+    {
+      "nome": "Silifke",
+      "lat": 36.3778,
+      "lng": 33.9344,
+      "rank": 3
+    },
+    {
+      "nome": "Al Maţarīyah",
+      "lat": 31.1829,
+      "lng": 32.0311,
+      "rank": 3
+    },
+    {
+      "nome": "Al ‘Āshir min Ramaḑān",
+      "lat": 30.2964,
+      "lng": 31.7463,
+      "rank": 3
+    },
+    {
+      "nome": "Disūq",
+      "lat": 31.1326,
+      "lng": 30.6478,
+      "rank": 3
+    },
+    {
+      "nome": "Bilqās",
+      "lat": 31.2145,
+      "lng": 31.358,
+      "rank": 3
+    },
+    {
+      "nome": "Tripoli",
+      "lat": 34.4335,
+      "lng": 35.8441,
+      "rank": 3
+    },
+    {
+      "nome": "Khān Yūnis",
+      "lat": 31.3402,
+      "lng": 34.3063,
+      "rank": 3
+    }
+  ]
+}

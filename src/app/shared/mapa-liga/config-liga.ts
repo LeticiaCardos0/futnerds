@@ -11,8 +11,10 @@ export interface CidadeSemTime {
   nome: string;
   lat: number;
   lng: number;
-  /** 1 aparece desde o enquadramento inicial; 2 só com mais zoom. */
-  rank: 1 | 2;
+  /** 1 aparece desde o enquadramento inicial; 2 e 3 só com mais zoom (ver zoomDoRank). */
+  rank: 1 | 2 | 3;
+  /** Capital ou metrópole: corpo maior, como BIG_TOWNS. */
+  grande?: boolean;
   /** Posta pelo LigaMapaService nas cidades de `cidadesVizinhas`. */
   vizinha?: boolean;
 }
@@ -32,11 +34,13 @@ export interface ConfigPaisLiga {
   };
 
   /**
-   * Retângulo que a parte VISÍVEL do mapa nunca ultrapassa.
+   * Retângulo de onde o MEIO da área útil (entre os painéis) não sai: dá para
+   * arrastar até meia tela além dele, nunca perder o país de vista.
    *
    * Não é `maxBounds` de propósito: em tela larga o maxBounds força um zoom
    * alto e corta o país. A correção é feita à mão no `moveend` com easeTo
-   * (nunca no `move`, senão o MapLibre cancela o zoom do scroll).
+   * (nunca no `move`, senão o MapLibre cancela o zoom do scroll). Ver
+   * calcularCorrecao em mapa-liga.ts.
    */
   limite: { w: number; s: number; e: number; n: number };
 
@@ -55,8 +59,10 @@ export interface ConfigPaisLiga {
 
   /**
    * JSON com cidadesSemTime e cidadesVizinhas (scripts/gerar-cidades-
-   * referencia.js). Quando presente, substitui as duas listas desta config —
-   * é o caso das ligas com config gerada por configGerada().
+   * referencia.js). Nas ligas com config gerada por configGerada() ele é a
+   * única fonte. Nas de config escrita à mão ele COMPLEMENTA as duas listas
+   * daqui: as cidades curadas vêm primeiro, e do arquivo só entram as que não
+   * estão perto de nenhuma delas (ver LigaMapaService.cruzar).
    */
   cidadesUrl?: string;
 
@@ -69,8 +75,23 @@ export interface ConfigPaisLiga {
   cidadesVizinhas: CidadeSemTime[];
 }
 
-/** A partir deste zoom aparecem as cidades de rank 2. */
+/** A partir deste zoom aparecem as cidades de rank 2 (ou antes, ver zoomDoRank). */
 export const RANK2_ZOOM = 7;
+/** A partir deste zoom aparecem as cidades de rank 3 (ou antes, ver zoomDoRank). */
+export const RANK3_ZOOM = 8;
+
+/**
+ * Zoom em que as cidades de um rank passam a aparecer.
+ *
+ * O valor fixo servia à Inglaterra, cujo zoom mínimo é ~6. Nos EUA ou no
+ * Brasil o mínimo é ~3, e o rank 2 só surgia depois de quatro níveis de zoom.
+ * Por isso também vale um passo fixo acima do mínimo, o que vier primeiro.
+ */
+export function zoomDoRank(rank: number, zoomMinimo: number): number {
+  if (rank <= 1) return -Infinity;
+  if (rank === 2) return Math.min(RANK2_ZOOM, zoomMinimo + 1.25);
+  return Math.min(RANK3_ZOOM, zoomMinimo + 2);
+}
 
 /**
  * Geometria do waypoint, em px no tamanho cheio.
@@ -108,8 +129,8 @@ export const TAM_CIDADE_MAX = 19; // px a partir de ZOOM_ESCALA_CHEIA (igual ao 
 export const BIG_TOWNS = ['Leeds', 'Sheffield', 'Bristol', 'Leicester'];
 
 /** Verde do FutNerds, usado quando o clube nao tem cor no JSON. */
-export const COR_PADRAO = '#00D639';
-export const COR_TEXTO_PADRAO = '#0B7F35';
+export const COR_PADRAO = '#3CB01A';
+export const COR_TEXTO_PADRAO = '#2A7F12';
 
 export const CONFIG_INGLATERRA: ConfigPaisLiga = {
   ligaId: 'premier-league',
@@ -141,6 +162,7 @@ export const CONFIG_INGLATERRA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/inglaterra-mascara.json',
   clubesUrl: '/data/geo/premier-league.clubes.json',
+  cidadesUrl: '/data/geo/premier-league.cidades.json',
 
   // Copiadas da demo (TOWNS). Cidades COM clube da liga não entram aqui —
   // elas vêm da lista `cidades` do JSON de localização.
@@ -243,6 +265,7 @@ export const CONFIG_ESPANHA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/espanha-mascara.json',
   clubesUrl: '/data/geo/la-liga.clubes.json',
+  cidadesUrl: '/data/geo/la-liga.cidades.json',
 
   /*
    * Municipios espanhois com mais de 80 mil habitantes que NAO tem clube nesta
@@ -334,6 +357,7 @@ export const CONFIG_ALEMANHA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/alemanha-mascara.json',
   clubesUrl: '/data/geo/bundesliga.clubes.json',
+  cidadesUrl: '/data/geo/bundesliga.cidades.json',
 
   /*
    * Municipios urbanos alemaes com mais de 90 mil habitantes, do Wikidata.
@@ -450,6 +474,7 @@ export const CONFIG_ITALIA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/italia-mascara.json',
   clubesUrl: '/data/geo/serie-a.clubes.json',
+  cidadesUrl: '/data/geo/serie-a.cidades.json',
 
   /*
    * Comuni italianos com mais de 90 mil habitantes que NAO tem clube nesta
@@ -550,6 +575,7 @@ export const CONFIG_FRANCA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/franca-mascara.json',
   clubesUrl: '/data/geo/ligue-1.clubes.json',
+  cidadesUrl: '/data/geo/ligue-1.cidades.json',
 
   /*
    * Comunas francesas com mais de 90 mil habitantes que NAO tem clube nesta
@@ -654,6 +680,7 @@ function configEfl(ligaId: string, ligaNomeBase: string): ConfigPaisLiga {
     ligaNomeBase,
     mascaraUrl: '/geo/inglaterra-gales-mascara.json',
     clubesUrl: `/data/geo/${ligaId}.clubes.json`,
+    cidadesUrl: `/data/geo/${ligaId}.cidades.json`,
     cidadesSemTime: [
       ...CIDADES_GRANDES_INGLATERRA,
       ...CONFIG_INGLATERRA.cidadesSemTime,
@@ -675,10 +702,7 @@ export const CONFIG_LEAGUE_TWO = configEfl('league-two', 'EFL League Two');
  * O enquadramento fica no continente — com os Açores ou as Canárias dentro
  * dele, o continente viraria um ponto. As ilhas entram na máscara e no
  * `limite`, e clicar no clube do painel leva a câmera até lá (voarPara).
- *
- * O limite precisa CONTER a vista inicial inteira. Se ele fosse só um pouco
- * maior que o continente, calcularCorrecao prenderia a borda da tela nele e
- * empurraria o país para trás do painel direito. Daí a folga larga.
+ * O limite vai até as ilhas para o meio da tela poder chegar nelas.
  */
 
 export const CONFIG_PORTUGAL: ConfigPaisLiga = {
@@ -701,6 +725,7 @@ export const CONFIG_PORTUGAL: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/portugal-mascara.json',
   clubesUrl: '/data/geo/liga-portugal.clubes.json',
+  cidadesUrl: '/data/geo/liga-portugal.cidades.json',
 
   /*
    * Municípios portugueses com mais de 50 mil habitantes que NÃO têm clube
@@ -767,6 +792,7 @@ export const CONFIG_BELGICA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/belgica-mascara.json',
   clubesUrl: '/data/geo/pro-league.clubes.json',
+  cidadesUrl: '/data/geo/pro-league.cidades.json',
 
   /*
    * Municípios belgas com mais de 55 mil habitantes que NÃO têm clube nesta
@@ -836,6 +862,7 @@ export const CONFIG_LALIGA_2: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/espanha-canarias-mascara.json',
   clubesUrl: '/data/geo/laliga-2.clubes.json',
+  cidadesUrl: '/data/geo/laliga-2.cidades.json',
 
   cidadesSemTime: [
     ...CIDADES_LALIGA,
@@ -863,6 +890,7 @@ export const CONFIG_ARABIA_SAUDITA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/arabia-saudita-mascara.json',
   clubesUrl: '/data/geo/saudi-pro-league.clubes.json',
+  cidadesUrl: '/data/geo/saudi-pro-league.cidades.json',
 
   /*
    * Cidades sauditas com mais de 90 mil habitantes que NÃO têm clube nesta
@@ -927,6 +955,7 @@ export const CONFIG_ESCOCIA: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/escocia-mascara.json',
   clubesUrl: '/data/geo/scottish-premiership.clubes.json',
+  cidadesUrl: '/data/geo/scottish-premiership.cidades.json',
 
   /*
    * Não há corte por população aqui: a Escócia tem poucas cidades grandes, e
@@ -1000,13 +1029,13 @@ export const CONFIG_BRASIL: ConfigPaisLiga = {
 
   mascaraUrl: '/geo/brasil-mascara.json',
   clubesUrl: '/data/geo/brasileirao.clubes.json',
-
   /*
-   * Liga INCOMPLETA: sem licença do Brasileirão, o EA FC só tem o Bahia. Com a
-   * lista de cidades de sempre, o mapa pareceria o de uma liga inteira com um
-   * clube só; então ele mostra apenas a cidade do clube licenciado, que vem do
-   * JSON de clubes. Nenhuma cidade sem time, nenhuma vizinha.
+   * Sem licença do Brasileirão, o EA FC só tem o Bahia. As cidades vêm todas
+   * do arquivo gerado, com as capitais estaduais no rank 1 (capitaisEstaduais
+   * em scripts/ligas-geo.js).
    */
+  cidadesUrl: '/data/geo/brasileirao.cidades.json',
+
   cidadesSemTime: [],
   cidadesVizinhas: [],
 };
@@ -1025,12 +1054,8 @@ export const CONFIG_BRASIL: ConfigPaisLiga = {
 /**
  * Limite = enquadramento com 25% de folga para cada lado.
  *
- * Folga larga de propósito (as configs manuais usam ~0,2°): calcularCorrecao
- * prende a tela dentro do limite quando ela cabe nele, e o limite dentro da
- * tela quando não cabe. Com 25%, a vista inicial cai sempre num dos dois
- * casos sem ser empurrada — em tela larga a tela é maior que o limite; em tela
- * estreita, menor. Com uma folga intermediária o país podia ir parar atrás do
- * painel direito.
+ * calcularCorrecao prende só o meio da área útil no limite; a folga deixa
+ * levar a borda do país até o meio da tela, e um pouco além.
  */
 export function limiteDoEnquadramento(bounds: [[number, number], [number, number]]) {
   const [[w, s], [e, n]] = bounds;
@@ -1048,12 +1073,6 @@ interface DefinicaoLiga {
   /** Nome do arquivo em public/geo/, sem o sufixo -mascara.json. */
   mascara: string;
   bounds: [[number, number], [number, number]];
-  /**
-   * A base só tem os clubes licenciados no EA FC. O mapa mostra apenas a
-   * cidade deles, sem cidades de referência: com a lista de sempre, pareceria
-   * o mapa de uma liga inteira com dois ou três clubes.
-   */
-  incompleta?: boolean;
 }
 
 function configGerada(d: DefinicaoLiga): ConfigPaisLiga {
@@ -1070,7 +1089,7 @@ function configGerada(d: DefinicaoLiga): ConfigPaisLiga {
     maxZoom: 19,
     mascaraUrl: `/geo/${d.mascara}-mascara.json`,
     clubesUrl: `/data/geo/${d.ligaId}.clubes.json`,
-    cidadesUrl: d.incompleta ? undefined : `/data/geo/${d.ligaId}.cidades.json`,
+    cidadesUrl: `/data/geo/${d.ligaId}.cidades.json`,
     cidadesSemTime: [],
     cidadesVizinhas: [],
   };
@@ -1104,18 +1123,18 @@ const LIGAS_GERADAS: ConfigPaisLiga[] = [
   configGerada({ ligaId: 'isl', ligaNomeBase: 'ISL', paisNome: 'Índia', paisCodigo: 'in', mascara: 'india', bounds: [[68.1, 6.7], [97.4, 35.5]] }),
   // Com a Irlanda do Norte: o Derry City joga a liga irlandesa.
   configGerada({ ligaId: 'league-of-ireland', ligaNomeBase: "SSE Airtricity Men's Premier Division", paisNome: 'Irlanda', paisCodigo: 'ie', mascara: 'irlanda', bounds: [[-10.7, 51.4], [-5.4, 55.45]] }),
-  configGerada({ ligaId: 'liga-grecia', ligaNomeBase: 'Hellas Liga', paisNome: 'Grécia', paisCodigo: 'gr', mascara: 'grecia', bounds: [[19.3, 34.8], [29.7, 41.8]], incompleta: true }),
-  configGerada({ ligaId: 'liga-tchequia', ligaNomeBase: 'Česká Liga', paisNome: 'Tchéquia', paisCodigo: 'cz', mascara: 'tchequia', bounds: [[12.1, 48.55], [18.9, 51.06]], incompleta: true }),
-  configGerada({ ligaId: 'liga-ucrania', ligaNomeBase: 'Ukrayina Liha', paisNome: 'Ucrânia', paisCodigo: 'ua', mascara: 'ucrania', bounds: [[22.1, 44.3], [40.2, 52.4]], incompleta: true }),
-  configGerada({ ligaId: 'liga-croacia', ligaNomeBase: 'Liga Hrvatska', paisNome: 'Croácia', paisCodigo: 'hr', mascara: 'croacia', bounds: [[13.4, 42.4], [19.5, 46.6]], incompleta: true }),
-  configGerada({ ligaId: 'liga-chipre', ligaNomeBase: 'Liga Cyprus', paisNome: 'Chipre', paisCodigo: 'cy', mascara: 'chipre', bounds: [[32.2, 34.5], [34.65, 35.75]], incompleta: true }),
-  configGerada({ ligaId: 'liga-emirados', ligaNomeBase: 'United Emirates League', paisNome: 'Emirados Árabes Unidos', paisCodigo: 'ae', mascara: 'emirados', bounds: [[51.5, 22.6], [56.4, 26.1]], incompleta: true }),
-  configGerada({ ligaId: 'liga-hungria', ligaNomeBase: 'Magyar Liga', paisNome: 'Hungria', paisCodigo: 'hu', mascara: 'hungria', bounds: [[16.1, 45.7], [22.9, 48.6]], incompleta: true }),
-  configGerada({ ligaId: 'liga-colombia', ligaNomeBase: 'Liga Colombia', paisNome: 'Colômbia', paisCodigo: 'co', mascara: 'colombia', bounds: [[-79.1, -4.3], [-66.8, 12.5]], incompleta: true }),
-  configGerada({ ligaId: 'liga-bulgaria', ligaNomeBase: 'Liga Bulgaria', paisNome: 'Bulgária', paisCodigo: 'bg', mascara: 'bulgaria', bounds: [[22.3, 41.2], [28.7, 44.25]], incompleta: true }),
-  configGerada({ ligaId: 'liga-azerbaijao', ligaNomeBase: 'Liga Azerbaijan', paisNome: 'Azerbaijão', paisCodigo: 'az', mascara: 'azerbaijao', bounds: [[44.7, 38.4], [50.4, 41.95]], incompleta: true }),
-  configGerada({ ligaId: 'liga-tailandia', ligaNomeBase: 'Thailand League', paisNome: 'Tailândia', paisCodigo: 'th', mascara: 'tailandia', bounds: [[97.3, 5.6], [105.7, 20.5]], incompleta: true }),
-  configGerada({ ligaId: 'liga-finlandia', ligaNomeBase: 'Finnliiga', paisNome: 'Finlândia', paisCodigo: 'fi', mascara: 'finlandia', bounds: [[20.5, 59.8], [31.6, 70.1]], incompleta: true }),
+  configGerada({ ligaId: 'liga-grecia', ligaNomeBase: 'Hellas Liga', paisNome: 'Grécia', paisCodigo: 'gr', mascara: 'grecia', bounds: [[19.3, 34.8], [29.7, 41.8]] }),
+  configGerada({ ligaId: 'liga-tchequia', ligaNomeBase: 'Česká Liga', paisNome: 'Tchéquia', paisCodigo: 'cz', mascara: 'tchequia', bounds: [[12.1, 48.55], [18.9, 51.06]] }),
+  configGerada({ ligaId: 'liga-ucrania', ligaNomeBase: 'Ukrayina Liha', paisNome: 'Ucrânia', paisCodigo: 'ua', mascara: 'ucrania', bounds: [[22.1, 44.3], [40.2, 52.4]] }),
+  configGerada({ ligaId: 'liga-croacia', ligaNomeBase: 'Liga Hrvatska', paisNome: 'Croácia', paisCodigo: 'hr', mascara: 'croacia', bounds: [[13.4, 42.4], [19.5, 46.6]] }),
+  configGerada({ ligaId: 'liga-chipre', ligaNomeBase: 'Liga Cyprus', paisNome: 'Chipre', paisCodigo: 'cy', mascara: 'chipre', bounds: [[32.2, 34.5], [34.65, 35.75]] }),
+  configGerada({ ligaId: 'liga-emirados', ligaNomeBase: 'United Emirates League', paisNome: 'Emirados Árabes Unidos', paisCodigo: 'ae', mascara: 'emirados', bounds: [[51.5, 22.6], [56.4, 26.1]] }),
+  configGerada({ ligaId: 'liga-hungria', ligaNomeBase: 'Magyar Liga', paisNome: 'Hungria', paisCodigo: 'hu', mascara: 'hungria', bounds: [[16.1, 45.7], [22.9, 48.6]] }),
+  configGerada({ ligaId: 'liga-colombia', ligaNomeBase: 'Liga Colombia', paisNome: 'Colômbia', paisCodigo: 'co', mascara: 'colombia', bounds: [[-79.1, -4.3], [-66.8, 12.5]] }),
+  configGerada({ ligaId: 'liga-bulgaria', ligaNomeBase: 'Liga Bulgaria', paisNome: 'Bulgária', paisCodigo: 'bg', mascara: 'bulgaria', bounds: [[22.3, 41.2], [28.7, 44.25]] }),
+  configGerada({ ligaId: 'liga-azerbaijao', ligaNomeBase: 'Liga Azerbaijan', paisNome: 'Azerbaijão', paisCodigo: 'az', mascara: 'azerbaijao', bounds: [[44.7, 38.4], [50.4, 41.95]] }),
+  configGerada({ ligaId: 'liga-tailandia', ligaNomeBase: 'Thailand League', paisNome: 'Tailândia', paisCodigo: 'th', mascara: 'tailandia', bounds: [[97.3, 5.6], [105.7, 20.5]] }),
+  configGerada({ ligaId: 'liga-finlandia', ligaNomeBase: 'Finnliiga', paisNome: 'Finlândia', paisCodigo: 'fi', mascara: 'finlandia', bounds: [[20.5, 59.8], [31.6, 70.1]] }),
 ];
 
 export const CONFIG_POR_LIGA: Record<string, ConfigPaisLiga> = {

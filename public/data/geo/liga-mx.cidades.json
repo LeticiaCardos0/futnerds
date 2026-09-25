@@ -81,13 +81,13 @@
       "rank": 1
     },
     {
-      "nome": "Heroica Matamoros",
+      "nome": "Matamoros",
       "lat": 25.88,
       "lng": -97.5,
       "rank": 1
     },
     {
-      "nome": "Oaxaca de Juárez",
+      "nome": "Oaxaca",
       "lat": 17.0827,
       "lng": -96.67,
       "rank": 1
@@ -117,7 +117,7 @@
       "rank": 2
     },
     {
-      "nome": "Victoria de Durango",
+      "nome": "Durango",
       "lat": 24.0311,
       "lng": -104.67,
       "rank": 2
@@ -271,6 +271,636 @@
       "lat": 20.5704,
       "lng": -101.2,
       "rank": 2
+    },
+    {
+      "nome": "La Paz",
+      "lat": 24.14,
+      "lng": -110.32,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Vallarta",
+      "lat": 20.6771,
+      "lng": -105.245,
+      "rank": 3
+    },
+    {
+      "nome": "San Cristóbal de las Casas",
+      "lat": 16.75,
+      "lng": -92.6334,
+      "rank": 3
+    },
+    {
+      "nome": "Chilpancingo",
+      "lat": 17.55,
+      "lng": -99.5,
+      "rank": 3
+    },
+    {
+      "nome": "Nogales",
+      "lat": 31.305,
+      "lng": -110.945,
+      "rank": 3
+    },
+    {
+      "nome": "Teziutlán",
+      "lat": 19.8204,
+      "lng": -97.36,
+      "rank": 3
+    },
+    {
+      "nome": "Lázaro Cárdenas",
+      "lat": 17.9587,
+      "lng": -102.2,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad del Carmen",
+      "lat": 18.6537,
+      "lng": -91.8245,
+      "rank": 3
+    },
+    {
+      "nome": "Chetumal",
+      "lat": 18.5,
+      "lng": -88.3,
+      "rank": 3
+    },
+    {
+      "nome": "San Juan del Río",
+      "lat": 20.38,
+      "lng": -100,
+      "rank": 3
+    },
+    {
+      "nome": "Piedras Negras",
+      "lat": 28.7076,
+      "lng": -100.5317,
+      "rank": 3
+    },
+    {
+      "nome": "Navojoa",
+      "lat": 27.0819,
+      "lng": -109.4546,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Valles",
+      "lat": 21.98,
+      "lng": -99.02,
+      "rank": 3
+    },
+    {
+      "nome": "Delicias",
+      "lat": 28.2,
+      "lng": -105.5,
+      "rank": 3
+    },
+    {
+      "nome": "Guanajuato",
+      "lat": 21.0204,
+      "lng": -101.28,
+      "rank": 3
+    },
+    {
+      "nome": "Iguala",
+      "lat": 18.37,
+      "lng": -99.54,
+      "rank": 3
+    },
+    {
+      "nome": "Tuxpan",
+      "lat": 20.9604,
+      "lng": -97.41,
+      "rank": 3
+    },
+    {
+      "nome": "Escuintla",
+      "lat": 15.33,
+      "lng": -92.63,
+      "rank": 3
+    },
+    {
+      "nome": "Fresnillo",
+      "lat": 23.1704,
+      "lng": -102.86,
+      "rank": 3
+    },
+    {
+      "nome": "Guaymas",
+      "lat": 27.93,
+      "lng": -110.89,
+      "rank": 3
+    },
+    {
+      "nome": "Parral",
+      "lat": 26.9334,
+      "lng": -105.6666,
+      "rank": 3
+    },
+    {
+      "nome": "Apatzingán",
+      "lat": 19.08,
+      "lng": -102.35,
+      "rank": 3
+    },
+    {
+      "nome": "Atlixco",
+      "lat": 18.9,
+      "lng": -98.45,
+      "rank": 3
+    },
+    {
+      "nome": "Guasave",
+      "lat": 25.5705,
+      "lng": -108.47,
+      "rank": 3
+    },
+    {
+      "nome": "Lagos de Moreno",
+      "lat": 21.3704,
+      "lng": -101.93,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Guzmán",
+      "lat": 19.7104,
+      "lng": -103.46,
+      "rank": 3
+    },
+    {
+      "nome": "Tecomán",
+      "lat": 18.9204,
+      "lng": -103.88,
+      "rank": 3
+    },
+    {
+      "nome": "Cuauhtémoc",
+      "lat": 28.4257,
+      "lng": -106.8696,
+      "rank": 3
+    },
+    {
+      "nome": "Agua Prieta",
+      "lat": 31.3223,
+      "lng": -109.563,
+      "rank": 3
+    },
+    {
+      "nome": "Salina Cruz",
+      "lat": 16.1671,
+      "lng": -95.2,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Mante",
+      "lat": 22.7334,
+      "lng": -98.95,
+      "rank": 3
+    },
+    {
+      "nome": "San Miguel de Cozumel",
+      "lat": 20.51,
+      "lng": -86.95,
+      "rank": 3
+    },
+    {
+      "nome": "Tamazunchale",
+      "lat": 21.2704,
+      "lng": -98.7799,
+      "rank": 3
+    },
+    {
+      "nome": "Ríoverde",
+      "lat": 21.93,
+      "lng": -99.98,
+      "rank": 3
+    },
+    {
+      "nome": "Matehuala",
+      "lat": 23.6604,
+      "lng": -100.65,
+      "rank": 3
+    },
+    {
+      "nome": "Juchitán",
+      "lat": 16.43,
+      "lng": -95.02,
+      "rank": 3
+    },
+    {
+      "nome": "Jáltipan",
+      "lat": 17.94,
+      "lng": -94.74,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Hidalgo",
+      "lat": 19.68,
+      "lng": -100.57,
+      "rank": 3
+    },
+    {
+      "nome": "Guamúchil",
+      "lat": 25.4704,
+      "lng": -108.09,
+      "rank": 3
+    },
+    {
+      "nome": "Linares",
+      "lat": 24.8604,
+      "lng": -99.57,
+      "rank": 3
+    },
+    {
+      "nome": "Caborca",
+      "lat": 30.7161,
+      "lng": -112.1642,
+      "rank": 3
+    },
+    {
+      "nome": "Nuevo Casas Grandes",
+      "lat": 30.4185,
+      "lng": -107.9119,
+      "rank": 3
+    },
+    {
+      "nome": "San Pedro",
+      "lat": 25.7592,
+      "lng": -102.9827,
+      "rank": 3
+    },
+    {
+      "nome": "Taxco",
+      "lat": 18.5704,
+      "lng": -99.62,
+      "rank": 3
+    },
+    {
+      "nome": "Valladolid",
+      "lat": 20.6704,
+      "lng": -88.2,
+      "rank": 3
+    },
+    {
+      "nome": "Cholula",
+      "lat": 19.0641,
+      "lng": -98.3035,
+      "rank": 3
+    },
+    {
+      "nome": "San Luis Río Colorado",
+      "lat": 32.4555,
+      "lng": -114.7704,
+      "rank": 3
+    },
+    {
+      "nome": "San Miguel de Allende",
+      "lat": 20.9153,
+      "lng": -100.7439,
+      "rank": 3
+    },
+    {
+      "nome": "Comitán",
+      "lat": 16.24,
+      "lng": -92.1367,
+      "rank": 3
+    },
+    {
+      "nome": "Tuxtepec",
+      "lat": 18.0883,
+      "lng": -96.1253,
+      "rank": 3
+    },
+    {
+      "nome": "Cuautla",
+      "lat": 18.813,
+      "lng": -98.9551,
+      "rank": 3
+    },
+    {
+      "nome": "San Martín Texmelucan",
+      "lat": 19.2843,
+      "lng": -98.4389,
+      "rank": 3
+    },
+    {
+      "nome": "Playa del Carmen",
+      "lat": 20.6274,
+      "lng": -87.0799,
+      "rank": 3
+    },
+    {
+      "nome": "San José del Cabo",
+      "lat": 23.0541,
+      "lng": -109.7037,
+      "rank": 3
+    },
+    {
+      "nome": "Yautepec",
+      "lat": 18.8819,
+      "lng": -99.0671,
+      "rank": 3
+    },
+    {
+      "nome": "Tulancingo",
+      "lat": 20.0805,
+      "lng": -98.3683,
+      "rank": 3
+    },
+    {
+      "nome": "Rosarito",
+      "lat": 32.3604,
+      "lng": -117.0464,
+      "rank": 3
+    },
+    {
+      "nome": "Ciudad Río Bravo",
+      "lat": 25.9851,
+      "lng": -98.0896,
+      "rank": 3
+    },
+    {
+      "nome": "Amozoc de Mota",
+      "lat": 19.0461,
+      "lng": -98.045,
+      "rank": 3
+    },
+    {
+      "nome": "Tepatitlán de Morelos",
+      "lat": 20.8169,
+      "lng": -102.7635,
+      "rank": 3
+    },
+    {
+      "nome": "Heróica Zitácuaro",
+      "lat": 19.4366,
+      "lng": -100.3564,
+      "rank": 3
+    },
+    {
+      "nome": "Ocotlán",
+      "lat": 20.3512,
+      "lng": -102.7683,
+      "rank": 3
+    },
+    {
+      "nome": "La Piedad de Cabadas",
+      "lat": 20.3411,
+      "lng": -102.0225,
+      "rank": 3
+    },
+    {
+      "nome": "Tepeji del Río",
+      "lat": 19.9055,
+      "lng": -99.3423,
+      "rank": 3
+    },
+    {
+      "nome": "Lerdo",
+      "lat": 25.5361,
+      "lng": -103.5249,
+      "rank": 3
+    },
+    {
+      "nome": "Silao",
+      "lat": 20.9436,
+      "lng": -101.427,
+      "rank": 3
+    },
+    {
+      "nome": "San Francisco del Rincón",
+      "lat": 21.0189,
+      "lng": -101.8584,
+      "rank": 3
+    },
+    {
+      "nome": "Valle de Santiago",
+      "lat": 20.3915,
+      "lng": -101.191,
+      "rank": 3
+    },
+    {
+      "nome": "Cadereyta",
+      "lat": 25.5833,
+      "lng": -99.9833,
+      "rank": 3
+    },
+    {
+      "nome": "San Mateo Atenco",
+      "lat": 19.2676,
+      "lng": -99.5321,
+      "rank": 3
+    },
+    {
+      "nome": "Ixtapa-Zihuatanejo",
+      "lat": 17.6434,
+      "lng": -101.5521,
+      "rank": 3
+    },
+    {
+      "nome": "Dolores Hidalgo",
+      "lat": 21.1561,
+      "lng": -100.9325,
+      "rank": 3
+    },
+    {
+      "nome": "Ramos Arizpe",
+      "lat": 25.5393,
+      "lng": -100.9474,
+      "rank": 3
+    },
+    {
+      "nome": "Tecate",
+      "lat": 32.566,
+      "lng": -116.6319,
+      "rank": 3
+    },
+    {
+      "nome": "Sahuayo de Morelos",
+      "lat": 20.057,
+      "lng": -102.7164,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Peñasco",
+      "lat": 31.3172,
+      "lng": -113.538,
+      "rank": 3
+    },
+    {
+      "nome": "Cortazar",
+      "lat": 20.483,
+      "lng": -100.9635,
+      "rank": 3
+    },
+    {
+      "nome": "Martínez de la Torre",
+      "lat": 20.0708,
+      "lng": -97.0608,
+      "rank": 3
+    },
+    {
+      "nome": "Altamira",
+      "lat": 22.3931,
+      "lng": -97.9386,
+      "rank": 3
+    },
+    {
+      "nome": "Acámbaro",
+      "lat": 20.0325,
+      "lng": -100.7243,
+      "rank": 3
+    },
+    {
+      "nome": "Huauchinango",
+      "lat": 20.1738,
+      "lng": -98.0549,
+      "rank": 3
+    },
+    {
+      "nome": "Pátzcuaro",
+      "lat": 19.5132,
+      "lng": -101.6099,
+      "rank": 3
+    },
+    {
+      "nome": "Sabinas",
+      "lat": 27.8559,
+      "lng": -101.1174,
+      "rank": 3
+    },
+    {
+      "nome": "Papantla de Olarte",
+      "lat": 20.4465,
+      "lng": -97.3249,
+      "rank": 3
+    },
+    {
+      "nome": "Matamoros",
+      "lat": 25.527,
+      "lng": -103.2285,
+      "rank": 3
+    },
+    {
+      "nome": "Arandas",
+      "lat": 20.7055,
+      "lng": -102.3451,
+      "rank": 3
+    },
+    {
+      "nome": "Huamantla",
+      "lat": 19.3145,
+      "lng": -97.9252,
+      "rank": 3
+    },
+    {
+      "nome": "Uriangato",
+      "lat": 20.1416,
+      "lng": -101.1787,
+      "rank": 3
+    },
+    {
+      "nome": "Acayucan",
+      "lat": 17.9498,
+      "lng": -94.9139,
+      "rank": 3
+    },
+    {
+      "nome": "Zacapu",
+      "lat": 19.8152,
+      "lng": -101.792,
+      "rank": 3
+    },
+    {
+      "nome": "San Luis de la Paz",
+      "lat": 21.2984,
+      "lng": -100.5148,
+      "rank": 3
+    },
+    {
+      "nome": "Apizaco",
+      "lat": 19.4133,
+      "lng": -98.1436,
+      "rank": 3
+    },
+    {
+      "nome": "Emiliano Zapata",
+      "lat": 18.841,
+      "lng": -99.1837,
+      "rank": 3
+    },
+    {
+      "nome": "Valle Hermoso",
+      "lat": 25.6732,
+      "lng": -97.8127,
+      "rank": 3
+    },
+    {
+      "nome": "San Juan de los Lagos",
+      "lat": 21.2489,
+      "lng": -102.3304,
+      "rank": 3
+    },
+    {
+      "nome": "Tierra Blanca",
+      "lat": 18.4477,
+      "lng": -96.3591,
+      "rank": 3
+    },
+    {
+      "nome": "Tlapa de Comonfort",
+      "lat": 17.5463,
+      "lng": -98.5824,
+      "rank": 3
+    },
+    {
+      "nome": "Chiapa de Corzo",
+      "lat": 16.7075,
+      "lng": -93.0122,
+      "rank": 3
+    },
+    {
+      "nome": "Tizayuca",
+      "lat": 19.8419,
+      "lng": -98.981,
+      "rank": 3
+    },
+    {
+      "nome": "Jerez de García Salinas",
+      "lat": 22.6497,
+      "lng": -102.9898,
+      "rank": 3
+    },
+    {
+      "nome": "Jesús María",
+      "lat": 21.9611,
+      "lng": -102.3433,
+      "rank": 3
+    },
+    {
+      "nome": "Palenque",
+      "lat": 17.5091,
+      "lng": -91.9813,
+      "rank": 3
+    },
+    {
+      "nome": "Izúcar de Matamoros",
+      "lat": 18.6016,
+      "lng": -98.4615,
+      "rank": 3
+    },
+    {
+      "nome": "Las Choapas",
+      "lat": 17.9118,
+      "lng": -94.0965,
+      "rank": 3
+    },
+    {
+      "nome": "Cintalapa de Figueroa",
+      "lat": 16.6839,
+      "lng": -93.7181,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
@@ -278,73 +908,161 @@
       "nome": "Los Angeles",
       "lat": 33.9919,
       "lng": -118.1819,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Miami",
       "lat": 25.7896,
       "lng": -80.2261,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Dallas",
       "lat": 32.822,
       "lng": -96.842,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Atlanta",
       "lat": 33.832,
       "lng": -84.4019,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Houston",
       "lat": 29.8219,
       "lng": -95.3419,
-      "rank": 1
-    },
-    {
-      "nome": "Phoenix",
-      "lat": 33.5419,
-      "lng": -112.0719,
-      "rank": 1
-    },
-    {
-      "nome": "Irvine",
-      "lat": 33.6804,
-      "lng": -117.8299,
-      "rank": 1
-    },
-    {
-      "nome": "San Diego",
-      "lat": 32.822,
-      "lng": -117.1819,
-      "rank": 1
-    },
-    {
-      "nome": "Tampa",
-      "lat": 27.9489,
-      "lng": -82.4606,
-      "rank": 2
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Havana",
       "lat": 23.1339,
       "lng": -82.3661,
-      "rank": 2
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Nova Iorque",
+      "lat": 40.7519,
+      "lng": -73.982,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Washington",
+      "lat": 38.9015,
+      "lng": -77.0114,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Phoenix",
+      "lat": 33.5419,
+      "lng": -112.0719,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Irvine",
+      "lat": 33.6804,
+      "lng": -117.8299,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "São Francisco",
+      "lat": 37.7692,
+      "lng": -122.4172,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "San Diego",
+      "lat": 32.822,
+      "lng": -117.1819,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "San Salvador",
+      "lat": 13.7119,
+      "lng": -89.205,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "San José",
+      "lat": 9.937,
+      "lng": -84.086,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Tampa",
+      "lat": 27.9489,
+      "lng": -82.4606,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Bogotá",
+      "lat": 4.5984,
+      "lng": -74.0853,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Chicago",
+      "lat": 41.8319,
+      "lng": -87.752,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Cidade da Guatemala",
+      "lat": 14.6231,
+      "lng": -90.5289,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Fort Lauderdale",
       "lat": 26.1361,
       "lng": -80.1418,
-      "rank": 2
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Tegucigalpa",
+      "lat": 14.104,
+      "lng": -87.2195,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Managua",
+      "lat": 12.155,
+      "lng": -86.2704,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Las Vegas",
       "lat": 36.2119,
       "lng": -115.222,
       "rank": 2
+    },
+    {
+      "nome": "Cidade do Panamá",
+      "lat": 8.97,
+      "lng": -79.535,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "San Bernardino",
@@ -359,6 +1077,13 @@
       "rank": 2
     },
     {
+      "nome": "Filadélfia",
+      "lat": 40.0019,
+      "lng": -75.1719,
+      "rank": 2,
+      "grande": true
+    },
+    {
       "nome": "San Antonio",
       "lat": 29.4893,
       "lng": -98.5093,
@@ -371,21 +1096,16 @@
       "rank": 2
     },
     {
-      "nome": "San Salvador",
-      "lat": 13.7119,
-      "lng": -89.205,
-      "rank": 2
+      "nome": "St. Louis",
+      "lat": 38.637,
+      "lng": -90.2419,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Orlando",
       "lat": 28.5119,
       "lng": -81.382,
-      "rank": 2
-    },
-    {
-      "nome": "San José",
-      "lat": 9.937,
-      "lng": -84.086,
       "rank": 2
     },
     {
@@ -413,16 +1133,465 @@
       "rank": 2
     },
     {
-      "nome": "Cidade da Guatemala",
-      "lat": 14.6231,
-      "lng": -90.5289,
+      "nome": "Sacramento",
+      "lat": 38.577,
+      "lng": -121.472,
       "rank": 2
+    },
+    {
+      "nome": "Denver",
+      "lat": 39.7411,
+      "lng": -104.986,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Raleigh",
+      "lat": 35.8188,
+      "lng": -78.6447,
+      "rank": 3
     },
     {
       "nome": "Charlotte",
       "lat": 35.2069,
       "lng": -80.832,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Jacksonville",
+      "lat": 30.332,
+      "lng": -81.6719,
+      "rank": 3
+    },
+    {
+      "nome": "Tulsa",
+      "lat": 36.12,
+      "lng": -95.93,
+      "rank": 3
+    },
+    {
+      "nome": "Detroit",
+      "lat": 42.3319,
+      "lng": -83.082,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Albuquerque",
+      "lat": 35.105,
+      "lng": -106.6413,
+      "rank": 3
+    },
+    {
+      "nome": "Baltimore",
+      "lat": 39.3019,
+      "lng": -76.6219,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Nashville",
+      "lat": 36.1719,
+      "lng": -86.7819,
+      "rank": 3
+    },
+    {
+      "nome": "Kingston",
+      "lat": 17.9771,
+      "lng": -76.7674,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Cincinnati",
+      "lat": 39.1638,
+      "lng": -84.4589,
+      "rank": 3
+    },
+    {
+      "nome": "Tucson",
+      "lat": 32.2069,
+      "lng": -110.8919,
+      "rank": 3
+    },
+    {
+      "nome": "St. Petersburg",
+      "lat": 27.7705,
+      "lng": -82.6794,
+      "rank": 3
+    },
+    {
+      "nome": "Oklahoma City",
+      "lat": 35.472,
+      "lng": -97.5206,
+      "rank": 3
+    },
+    {
+      "nome": "Nova Orleans",
+      "lat": 29.9969,
+      "lng": -90.0419,
+      "rank": 3
+    },
+    {
+      "nome": "Kansas City",
+      "lat": 39.109,
+      "lng": -94.606,
+      "rank": 3
+    },
+    {
+      "nome": "Medellín",
+      "lat": 6.2769,
+      "lng": -75.577,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "San Pedro Sula",
+      "lat": 15.5,
+      "lng": -88.03,
+      "rank": 3
+    },
+    {
+      "nome": "Louisville",
+      "lat": 38.227,
+      "lng": -85.7506,
+      "rank": 3
+    },
+    {
+      "nome": "Pittsburgh",
+      "lat": 40.4319,
+      "lng": -80.0019,
+      "rank": 3
+    },
+    {
+      "nome": "Knoxville",
+      "lat": 35.97,
+      "lng": -83.92,
+      "rank": 3
+    },
+    {
+      "nome": "Virginia Beach",
+      "lat": 36.8552,
+      "lng": -75.9803,
+      "rank": 3
+    },
+    {
+      "nome": "Indianápolis",
+      "lat": 39.7519,
+      "lng": -86.172,
+      "rank": 3
+    },
+    {
+      "nome": "Fresno",
+      "lat": 36.7477,
+      "lng": -119.773,
+      "rank": 3
+    },
+    {
+      "nome": "Oceanside",
+      "lat": 33.2205,
+      "lng": -117.335,
+      "rank": 3
+    },
+    {
+      "nome": "Sarasota",
+      "lat": 27.3361,
+      "lng": -82.5308,
+      "rank": 3
+    },
+    {
+      "nome": "Quetzaltenango",
+      "lat": 14.83,
+      "lng": -91.52,
+      "rank": 3
+    },
+    {
+      "nome": "Richmond",
+      "lat": 37.552,
+      "lng": -77.4519,
+      "rank": 3
+    },
+    {
+      "nome": "Stockton",
+      "lat": 37.9581,
+      "lng": -121.2897,
+      "rank": 3
+    },
+    {
+      "nome": "Cleveland",
+      "lat": 41.4719,
+      "lng": -81.6969,
+      "rank": 3
+    },
+    {
+      "nome": "Columbus",
+      "lat": 39.9819,
+      "lng": -82.992,
+      "rank": 3
+    },
+    {
+      "nome": "Barranquilla",
+      "lat": 10.9619,
+      "lng": -74.8019,
+      "rank": 3
+    },
+    {
+      "nome": "Norfolk",
+      "lat": 36.85,
+      "lng": -76.28,
+      "rank": 3
+    },
+    {
+      "nome": "Bakersfield",
+      "lat": 35.37,
+      "lng": -119.02,
+      "rank": 3
+    },
+    {
+      "nome": "Laredo",
+      "lat": 27.5061,
+      "lng": -99.5072,
+      "rank": 3
+    },
+    {
+      "nome": "Villa Nueva",
+      "lat": 14.5251,
+      "lng": -90.5854,
+      "rank": 3
+    },
+    {
+      "nome": "Riverside",
+      "lat": 33.9534,
+      "lng": -117.3962,
+      "rank": 3
+    },
+    {
+      "nome": "Henderson",
+      "lat": 36.0397,
+      "lng": -114.9819,
+      "rank": 3
+    },
+    {
+      "nome": "Danlí",
+      "lat": 14.0333,
+      "lng": -86.5833,
+      "rank": 3
+    },
+    {
+      "nome": "San Miguelito",
+      "lat": 9.0503,
+      "lng": -79.4707,
+      "rank": 3
+    },
+    {
+      "nome": "Paradise",
+      "lat": 36.0972,
+      "lng": -115.1467,
+      "rank": 3
+    },
+    {
+      "nome": "Fremont",
+      "lat": 37.5483,
+      "lng": -121.9886,
+      "rank": 3
+    },
+    {
+      "nome": "Fontana",
+      "lat": 34.0922,
+      "lng": -117.4351,
+      "rank": 3
+    },
+    {
+      "nome": "Arroyo Naranjo",
+      "lat": 23.0381,
+      "lng": -82.377,
+      "rank": 3
+    },
+    {
+      "nome": "Oxnard",
+      "lat": 34.1975,
+      "lng": -119.177,
+      "rank": 3
+    },
+    {
+      "nome": "Moreno Valley",
+      "lat": 33.9375,
+      "lng": -117.2306,
+      "rank": 3
+    },
+    {
+      "nome": "Cypress",
+      "lat": 29.9691,
+      "lng": -95.6972,
+      "rank": 3
+    },
+    {
+      "nome": "Meads",
+      "lat": 38.4126,
+      "lng": -82.7091,
+      "rank": 3
+    },
+    {
+      "nome": "Sunrise Manor",
+      "lat": 36.2111,
+      "lng": -115.0731,
+      "rank": 3
+    },
+    {
+      "nome": "Santa Clarita",
+      "lat": 34.3917,
+      "lng": -118.5426,
+      "rank": 3
+    },
+    {
+      "nome": "Rancho Cucamonga",
+      "lat": 34.1064,
+      "lng": -117.5931,
+      "rank": 3
+    },
+    {
+      "nome": "Port Saint Lucie",
+      "lat": 27.2939,
+      "lng": -80.3503,
+      "rank": 3
+    },
+    {
+      "nome": "McKinney",
+      "lat": 33.1976,
+      "lng": -96.6153,
+      "rank": 3
+    },
+    {
+      "nome": "Palmdale",
+      "lat": 34.5794,
+      "lng": -118.1165,
+      "rank": 3
+    },
+    {
+      "nome": "Sunnyvale",
+      "lat": 37.3688,
+      "lng": -122.0363,
+      "rank": 3
+    },
+    {
+      "nome": "Frisco",
+      "lat": 33.1507,
+      "lng": -96.8236,
+      "rank": 3
+    },
+    {
+      "nome": "Pomona",
+      "lat": 34.0553,
+      "lng": -117.7523,
+      "rank": 3
+    },
+    {
+      "nome": "Escondido",
+      "lat": 33.1192,
+      "lng": -117.0864,
+      "rank": 3
+    },
+    {
+      "nome": "Cary",
+      "lat": 35.7915,
+      "lng": -78.7811,
+      "rank": 3
+    },
+    {
+      "nome": "Metairie Terrace",
+      "lat": 29.9785,
+      "lng": -90.164,
+      "rank": 3
+    },
+    {
+      "nome": "Puerto Cortez",
+      "lat": 15.8256,
+      "lng": -87.9297,
+      "rank": 3
+    },
+    {
+      "nome": "Chichicastenango",
+      "lat": 14.9433,
+      "lng": -91.1112,
+      "rank": 3
+    },
+    {
+      "nome": "Catacamas",
+      "lat": 14.8511,
+      "lng": -85.8941,
+      "rank": 3
+    },
+    {
+      "nome": "Choloma",
+      "lat": 15.6144,
+      "lng": -87.953,
+      "rank": 3
+    },
+    {
+      "nome": "San Juan Sacatepéquez",
+      "lat": 14.7189,
+      "lng": -90.6442,
+      "rank": 3
+    },
+    {
+      "nome": "Coral Springs",
+      "lat": 26.2712,
+      "lng": -80.2706,
+      "rank": 3
+    },
+    {
+      "nome": "Thousand Oaks",
+      "lat": 34.1706,
+      "lng": -118.8376,
+      "rank": 3
+    },
+    {
+      "nome": "Siguatepeque",
+      "lat": 14.5969,
+      "lng": -87.831,
+      "rank": 3
+    },
+    {
+      "nome": "Simi Valley",
+      "lat": 34.2694,
+      "lng": -118.7815,
+      "rank": 3
+    },
+    {
+      "nome": "Olanchito",
+      "lat": 15.4813,
+      "lng": -86.5742,
+      "rank": 3
+    },
+    {
+      "nome": "Clearwater",
+      "lat": 27.9658,
+      "lng": -82.8001,
+      "rank": 3
+    },
+    {
+      "nome": "Round Rock",
+      "lat": 30.5083,
+      "lng": -97.6789,
+      "rank": 3
+    },
+    {
+      "nome": "Santa Lucía Cotzumalguapa",
+      "lat": 14.3351,
+      "lng": -91.0234,
+      "rank": 3
+    },
+    {
+      "nome": "Apopa",
+      "lat": 13.8072,
+      "lng": -89.1792,
+      "rank": 3
+    },
+    {
+      "nome": "Tocoa",
+      "lat": 15.6833,
+      "lng": -86,
+      "rank": 3
     }
   ]
 }

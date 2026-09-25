@@ -21,24 +21,351 @@
       "rank": 1
     },
     {
-      "nome": "Midelburgo",
+      "nome": "Middelburg",
       "lat": 51.502,
       "lng": 3.61,
       "rank": 1
+    },
+    {
+      "nome": "Breda",
+      "lat": 51.5866,
+      "lng": 4.776,
+      "rank": 3
+    },
+    {
+      "nome": "Almere",
+      "lat": 52.3702,
+      "lng": 5.2141,
+      "rank": 3
+    },
+    {
+      "nome": "Zaanstad",
+      "lat": 52.4531,
+      "lng": 4.8136,
+      "rank": 3
+    },
+    {
+      "nome": "Amersfoort",
+      "lat": 52.155,
+      "lng": 5.3875,
+      "rank": 3
+    },
+    {
+      "nome": "Apeldoorn",
+      "lat": 52.21,
+      "lng": 5.9694,
+      "rank": 3
+    },
+    {
+      "nome": "Leiden",
+      "lat": 52.1583,
+      "lng": 4.4931,
+      "rank": 3
+    },
+    {
+      "nome": "Dordrecht",
+      "lat": 51.81,
+      "lng": 4.6736,
+      "rank": 3
+    },
+    {
+      "nome": "Zoetermeer",
+      "lat": 52.0575,
+      "lng": 4.4931,
+      "rank": 3
+    },
+    {
+      "nome": "Venlo",
+      "lat": 51.37,
+      "lng": 6.1681,
+      "rank": 3
+    },
+    {
+      "nome": "Heerlen",
+      "lat": 50.8837,
+      "lng": 5.9815,
+      "rank": 3
+    },
+    {
+      "nome": "Hilversum",
+      "lat": 52.2233,
+      "lng": 5.1764,
+      "rank": 3
+    },
+    {
+      "nome": "Purmerend",
+      "lat": 52.505,
+      "lng": 4.9597,
+      "rank": 3
+    },
+    {
+      "nome": "Lelystad",
+      "lat": 52.5083,
+      "lng": 5.475,
+      "rank": 3
+    },
+    {
+      "nome": "Roosendaal",
+      "lat": 51.5308,
+      "lng": 4.4653,
+      "rank": 3
+    },
+    {
+      "nome": "Oss",
+      "lat": 51.765,
+      "lng": 5.5181,
+      "rank": 3
+    },
+    {
+      "nome": "Spijkenisse",
+      "lat": 51.845,
+      "lng": 4.3292,
+      "rank": 3
+    },
+    {
+      "nome": "Helmond",
+      "lat": 51.4817,
+      "lng": 5.6611,
+      "rank": 3
+    },
+    {
+      "nome": "Almelo",
+      "lat": 52.3567,
+      "lng": 6.6625,
+      "rank": 3
+    },
+    {
+      "nome": "Gouda",
+      "lat": 52.0167,
+      "lng": 4.7083,
+      "rank": 3
+    },
+    {
+      "nome": "Alphen aan den Rijn",
+      "lat": 52.1292,
+      "lng": 4.6555,
+      "rank": 3
+    },
+    {
+      "nome": "Hoorn",
+      "lat": 52.6425,
+      "lng": 5.0597,
+      "rank": 3
+    },
+    {
+      "nome": "Ede",
+      "lat": 52.0333,
+      "lng": 5.6583,
+      "rank": 3
+    },
+    {
+      "nome": "Bergen op Zoom",
+      "lat": 51.495,
+      "lng": 4.2917,
+      "rank": 3
+    },
+    {
+      "nome": "Den Helder",
+      "lat": 52.9599,
+      "lng": 4.7593,
+      "rank": 3
+    },
+    {
+      "nome": "Hardenberg",
+      "lat": 52.5758,
+      "lng": 6.6194,
+      "rank": 3
+    },
+    {
+      "nome": "Emmen",
+      "lat": 52.7792,
+      "lng": 6.9069,
+      "rank": 3
+    },
+    {
+      "nome": "Doetinchem",
+      "lat": 51.965,
+      "lng": 6.2889,
+      "rank": 3
+    },
+    {
+      "nome": "Kampen",
+      "lat": 52.555,
+      "lng": 5.9111,
+      "rank": 3
+    },
+    {
+      "nome": "Weert",
+      "lat": 51.2517,
+      "lng": 5.7069,
+      "rank": 3
+    },
+    {
+      "nome": "Woerden",
+      "lat": 52.085,
+      "lng": 4.8833,
+      "rank": 3
+    },
+    {
+      "nome": "Emmeloord",
+      "lat": 52.7108,
+      "lng": 5.7486,
+      "rank": 3
+    },
+    {
+      "nome": "Waalwijk",
+      "lat": 51.6825,
+      "lng": 5.0708,
+      "rank": 3
+    },
+    {
+      "nome": "Drachten",
+      "lat": 53.1125,
+      "lng": 6.0989,
+      "rank": 3
+    },
+    {
+      "nome": "Roermond",
+      "lat": 51.1942,
+      "lng": 5.9875,
+      "rank": 3
+    },
+    {
+      "nome": "Medemblik",
+      "lat": 52.7717,
+      "lng": 5.1056,
+      "rank": 3
+    },
+    {
+      "nome": "Tiel",
+      "lat": 51.8867,
+      "lng": 5.4292,
+      "rank": 3
+    },
+    {
+      "nome": "Harderwijk",
+      "lat": 52.3417,
+      "lng": 5.6208,
+      "rank": 3
+    },
+    {
+      "nome": "Venray",
+      "lat": 51.525,
+      "lng": 5.975,
+      "rank": 3
+    },
+    {
+      "nome": "Hoogeveen",
+      "lat": 52.7225,
+      "lng": 6.4764,
+      "rank": 3
+    },
+    {
+      "nome": "Goes",
+      "lat": 51.5042,
+      "lng": 3.8889,
+      "rank": 3
+    },
+    {
+      "nome": "Zutphen",
+      "lat": 52.1383,
+      "lng": 6.2014,
+      "rank": 3
+    },
+    {
+      "nome": "Castricum",
+      "lat": 52.5483,
+      "lng": 4.6694,
+      "rank": 3
+    },
+    {
+      "nome": "Barneveld",
+      "lat": 52.14,
+      "lng": 5.5847,
+      "rank": 3
+    },
+    {
+      "nome": "Gorinchem",
+      "lat": 51.8365,
+      "lng": 4.9724,
+      "rank": 3
+    },
+    {
+      "nome": "Uden",
+      "lat": 51.6608,
+      "lng": 5.6194,
+      "rank": 3
+    },
+    {
+      "nome": "Epe",
+      "lat": 52.3475,
+      "lng": 5.9833,
+      "rank": 3
+    },
+    {
+      "nome": "Sneek",
+      "lat": 53.033,
+      "lng": 5.6589,
+      "rank": 3
+    },
+    {
+      "nome": "Maassluis",
+      "lat": 51.9233,
+      "lng": 4.25,
+      "rank": 3
+    },
+    {
+      "nome": "Wijchen",
+      "lat": 51.8092,
+      "lng": 5.725,
+      "rank": 3
+    },
+    {
+      "nome": "Nieuw-Vennep",
+      "lat": 52.2642,
+      "lng": 4.6306,
+      "rank": 3
+    },
+    {
+      "nome": "Oldenzaal",
+      "lat": 52.3133,
+      "lng": 6.9292,
+      "rank": 3
+    },
+    {
+      "nome": "Meppel",
+      "lat": 52.6958,
+      "lng": 6.1944,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
     {
-      "nome": "Cidade de Bruxelas",
+      "nome": "Bruxelas",
       "lat": 50.8353,
       "lng": 4.3314,
-      "rank": 1
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Paris",
+      "lat": 48.8686,
+      "lng": 2.3314,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Essen",
       "lat": 51.45,
       "lng": 7.0166,
       "rank": 1
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Düsseldorf",
@@ -80,6 +407,19 @@
       "nome": "Bonn",
       "lat": 50.7205,
       "lng": 7.08,
+      "rank": 1
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Wiesbaden",
+      "lat": 50.0804,
+      "lng": 8.25,
       "rank": 2
     },
     {
@@ -101,9 +441,15 @@
       "rank": 2
     },
     {
-      "nome": "Coblença",
+      "nome": "Koblenz",
       "lat": 50.3505,
       "lng": 7.6,
+      "rank": 2
+    },
+    {
+      "nome": "Bremen",
+      "lat": 53.08,
+      "lng": 8.8,
       "rank": 2
     },
     {
@@ -113,9 +459,28 @@
       "rank": 2
     },
     {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 2,
+      "grande": true
+    },
+    {
       "nome": "Osnabrück",
       "lat": 52.2804,
       "lng": 8.05,
+      "rank": 2
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.552,
+      "lng": 9.9981,
+      "rank": 2
+    },
+    {
+      "nome": "Bielefeld",
+      "lat": 52.03,
+      "lng": 8.53,
       "rank": 2
     },
     {
@@ -131,9 +496,27 @@
       "rank": 2
     },
     {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 2
+    },
+    {
       "nome": "Namur",
       "lat": 50.4704,
       "lng": 4.87,
+      "rank": 2
+    },
+    {
+      "nome": "Amiens",
+      "lat": 49.9004,
+      "lng": 2.3,
       "rank": 2
     },
     {
@@ -141,6 +524,31 @@
       "lat": 50.446,
       "lng": 3.939,
       "rank": 2
+    },
+    {
+      "nome": "Southend-on-Sea",
+      "lat": 51.55,
+      "lng": 0.72,
+      "rank": 2
+    },
+    {
+      "nome": "Bremerhaven",
+      "lat": 53.5504,
+      "lng": 8.58,
+      "rank": 2
+    },
+    {
+      "nome": "Rouen",
+      "lat": 49.4304,
+      "lng": 1.08,
+      "rank": 2
+    },
+    {
+      "nome": "Luxemburgo",
+      "lat": 49.6117,
+      "lng": 6.13,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Hasselt",
@@ -152,13 +560,373 @@
       "nome": "Arras",
       "lat": 50.2833,
       "lng": 2.7833,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Metz",
+      "lat": 49.1203,
+      "lng": 6.18,
+      "rank": 3
+    },
+    {
+      "nome": "Kassel",
+      "lat": 51.3,
+      "lng": 9.5,
+      "rank": 3
     },
     {
       "nome": "Emden",
       "lat": 53.3667,
       "lng": 7.2167,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49,
+      "lng": 8.4,
+      "rank": 3
+    },
+    {
+      "nome": "Norwich",
+      "lat": 52.6304,
+      "lng": 1.3,
+      "rank": 3
+    },
+    {
+      "nome": "Calais",
+      "lat": 50.9504,
+      "lng": 1.8333,
+      "rank": 3
+    },
+    {
+      "nome": "Gießen",
+      "lat": 50.5837,
+      "lng": 8.65,
+      "rank": 3
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
+      "rank": 3
+    },
+    {
+      "nome": "Reims",
+      "lat": 49.2504,
+      "lng": 4.03,
+      "rank": 3
+    },
+    {
+      "nome": "Kiel",
+      "lat": 54.3304,
+      "lng": 10.13,
+      "rank": 3
+    },
+    {
+      "nome": "Ipswich",
+      "lat": 52.0703,
+      "lng": 1.17,
+      "rank": 3
+    },
+    {
+      "nome": "Nancy",
+      "lat": 48.6837,
+      "lng": 6.2,
+      "rank": 3
+    },
+    {
+      "nome": "Würzburg",
+      "lat": 49.8004,
+      "lng": 9.95,
+      "rank": 3
+    },
+    {
+      "nome": "Göttingen",
+      "lat": 51.5204,
+      "lng": 9.92,
+      "rank": 3
+    },
+    {
+      "nome": "Flensburg",
+      "lat": 54.7837,
+      "lng": 9.4333,
+      "rank": 3
+    },
+    {
+      "nome": "Arlon",
+      "lat": 49.6833,
+      "lng": 5.8167,
+      "rank": 3
+    },
+    {
+      "nome": "Dover",
+      "lat": 51.1337,
+      "lng": 1.3,
+      "rank": 3
+    },
+    {
+      "nome": "Esbjerg",
+      "lat": 55.467,
+      "lng": 8.45,
+      "rank": 3
+    },
+    {
+      "nome": "Dieppe",
+      "lat": 49.9337,
+      "lng": 1.0833,
+      "rank": 3
+    },
+    {
+      "nome": "Diekirch",
+      "lat": 49.8833,
+      "lng": 6.1667,
+      "rank": 3
+    },
+    {
+      "nome": "Vejle",
+      "lat": 55.709,
+      "lng": 9.535,
+      "rank": 3
+    },
+    {
+      "nome": "Grevenmacher",
+      "lat": 49.7,
+      "lng": 6.3333,
+      "rank": 3
+    },
+    {
+      "nome": "Duisburg",
+      "lat": 51.4325,
+      "lng": 6.7652,
+      "rank": 3
+    },
+    {
+      "nome": "Bochum",
+      "lat": 51.4817,
+      "lng": 7.2165,
+      "rank": 3
+    },
+    {
+      "nome": "Aachen",
+      "lat": 50.7766,
+      "lng": 6.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Mönchengladbach",
+      "lat": 51.1854,
+      "lng": 6.4417,
+      "rank": 3
+    },
+    {
+      "nome": "Krefeld",
+      "lat": 51.3364,
+      "lng": 6.5538,
+      "rank": 3
+    },
+    {
+      "nome": "Hagen",
+      "lat": 51.3608,
+      "lng": 7.4717,
+      "rank": 3
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9819,
+      "lng": 8.2801,
+      "rank": 3
+    },
+    {
+      "nome": "Hamm",
+      "lat": 51.6803,
+      "lng": 7.8209,
+      "rank": 3
+    },
+    {
+      "nome": "Solingen",
+      "lat": 51.1734,
+      "lng": 7.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Leverkusen",
+      "lat": 51.0303,
+      "lng": 6.9843,
+      "rank": 3
+    },
+    {
+      "nome": "Recklinghausen",
+      "lat": 51.6138,
+      "lng": 7.1974,
+      "rank": 3
+    },
+    {
+      "nome": "Bottrop",
+      "lat": 51.5239,
+      "lng": 6.9285,
+      "rank": 3
+    },
+    {
+      "nome": "Siegen",
+      "lat": 50.8748,
+      "lng": 8.0243,
+      "rank": 3
+    },
+    {
+      "nome": "Bergisch Gladbach",
+      "lat": 50.9856,
+      "lng": 7.133,
+      "rank": 3
+    },
+    {
+      "nome": "Leuven",
+      "lat": 50.8796,
+      "lng": 4.7009,
+      "rank": 3
+    },
+    {
+      "nome": "Düren",
+      "lat": 50.8043,
+      "lng": 6.493,
+      "rank": 3
+    },
+    {
+      "nome": "Iserlohn",
+      "lat": 51.3755,
+      "lng": 7.7028,
+      "rank": 3
+    },
+    {
+      "nome": "Witten",
+      "lat": 51.4436,
+      "lng": 7.3526,
+      "rank": 3
+    },
+    {
+      "nome": "Lünen",
+      "lat": 51.6163,
+      "lng": 7.5287,
+      "rank": 3
+    },
+    {
+      "nome": "Velbert",
+      "lat": 51.3354,
+      "lng": 7.0435,
+      "rank": 3
+    },
+    {
+      "nome": "Dunkerque",
+      "lat": 51.0344,
+      "lng": 2.3768,
+      "rank": 3
+    },
+    {
+      "nome": "Wilhelmshaven",
+      "lat": 53.5476,
+      "lng": 8.1039,
+      "rank": 3
+    },
+    {
+      "nome": "Dorsten",
+      "lat": 51.6617,
+      "lng": 6.9651,
+      "rank": 3
+    },
+    {
+      "nome": "Lüdenscheid",
+      "lat": 51.2198,
+      "lng": 7.6273,
+      "rank": 3
+    },
+    {
+      "nome": "Castrop-Rauxel",
+      "lat": 51.5566,
+      "lng": 7.3116,
+      "rank": 3
+    },
+    {
+      "nome": "Aalst",
+      "lat": 50.936,
+      "lng": 4.0355,
+      "rank": 3
+    },
+    {
+      "nome": "Mechelen",
+      "lat": 51.0257,
+      "lng": 4.4776,
+      "rank": 3
+    },
+    {
+      "nome": "La Louvière",
+      "lat": 50.4866,
+      "lng": 4.1879,
+      "rank": 3
+    },
+    {
+      "nome": "Rheine",
+      "lat": 52.2851,
+      "lng": 7.4405,
+      "rank": 3
+    },
+    {
+      "nome": "Gütersloh",
+      "lat": 51.9069,
+      "lng": 8.3785,
+      "rank": 3
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8717,
+      "lng": 8.6503,
+      "rank": 3
+    },
+    {
+      "nome": "Paderborn",
+      "lat": 51.7191,
+      "lng": 8.7544,
+      "rank": 3
+    },
+    {
+      "nome": "Trier",
+      "lat": 49.7557,
+      "lng": 6.6394,
+      "rank": 3
+    },
+    {
+      "nome": "Delmenhorst",
+      "lat": 53.0511,
+      "lng": 8.6309,
+      "rank": 3
+    },
+    {
+      "nome": "Marburg",
+      "lat": 50.809,
+      "lng": 8.7707,
+      "rank": 3
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.4077,
+      "lng": 8.6908,
+      "rank": 3
+    },
+    {
+      "nome": "Hanau",
+      "lat": 50.1342,
+      "lng": 8.9142,
+      "rank": 3
+    },
+    {
+      "nome": "Minden",
+      "lat": 52.2895,
+      "lng": 8.9146,
+      "rank": 3
+    },
+    {
+      "nome": "Worms",
+      "lat": 49.6328,
+      "lng": 8.3592,
+      "rank": 3
     }
   ]
 }

@@ -114,7 +114,7 @@ interface CountryRuntime {
 let DADOS_MOCK: Record<string, PaisMock> = {};
 
 /** Paleta cíclica usada para colorir os cards de liga (a API não retorna cor). */
-const PALETA_LIGAS = ['#00E676', '#5EFFA2', '#3ED598', '#2BB673', '#1F9C5F', '#17824C'];
+const PALETA_LIGAS = ['#4FD11F', '#8BE86A', '#6BDC3F', '#3CB01A', '#2F9414', '#237410'];
 
 function normalizarNomePais(nome: string): string {
   return nome.trim().toLowerCase();
@@ -326,8 +326,8 @@ const RAIO_GLOBO = 5;
 const RAIO_CONTORNO = RAIO_GLOBO * 1.0038;
 
 const COR_BORDA_NORMAL = 0x5c7880;      // cinza-azulado discreto ~ rgba(120,160,170,0.25)
-const COR_BORDA_HOVER = 0x19d45a;       // verde principal
-const COR_BORDA_SELECIONADO = 0x7dffb0; // verde claro (contorno neon do selecionado)
+const COR_BORDA_HOVER = 0x3cb01a;       // verde principal
+const COR_BORDA_SELECIONADO = 0xb6f59a; // verde claro (contorno neon do selecionado)
 const OPACIDADE_BORDA_NORMAL = 0.32;
 const OPACIDADE_BORDA_HOVER = 0.95;
 const OPACIDADE_BORDA_SELECIONADO = 1.0;
@@ -998,7 +998,7 @@ const texturaAlfinete = criarTexturaAlfinete();
  */
 const ALFINETE_ANCORA_Y = (ALFINETE_ALTURA - ALFINETE_PONTA_Y) / ALFINETE_ALTURA;
 
-const COR_ALFINETE = 0x00e676;
+const COR_ALFINETE = 0x4fd11f;
 
 function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const paisAssociado = paisesRuntime.find((p) => p.data.iso2 === def.iso2) || null;
@@ -1046,7 +1046,7 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const anelSelecao = new THREE.Mesh(
     new THREE.RingGeometry(escala * 0.22, escala * 0.3, 32),
     new THREE.MeshBasicMaterial({
-      color: 0x5effa2,
+      color: 0x8be86a,
       transparent: true,
       opacity: 0,
       side: THREE.DoubleSide,

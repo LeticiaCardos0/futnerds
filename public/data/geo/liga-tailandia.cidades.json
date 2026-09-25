@@ -1,0 +1,1394 @@
+{
+  "ligaId": "liga-tailandia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Bancoque",
+      "lat": 13.7519,
+      "lng": 100.5147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Chiang Mai",
+      "lat": 18.8,
+      "lng": 98.98,
+      "rank": 1
+    },
+    {
+      "nome": "Nakhon Ratchasima",
+      "lat": 15,
+      "lng": 102.1,
+      "rank": 1
+    },
+    {
+      "nome": "Hat Yai",
+      "lat": 6.9964,
+      "lng": 100.4714,
+      "rank": 1
+    },
+    {
+      "nome": "Ubon Ratchathani",
+      "lat": 15.25,
+      "lng": 104.83,
+      "rank": 1
+    },
+    {
+      "nome": "Khon Kaen",
+      "lat": 16.42,
+      "lng": 102.83,
+      "rank": 1
+    },
+    {
+      "nome": "Udon Thani",
+      "lat": 17.4048,
+      "lng": 102.7893,
+      "rank": 1
+    },
+    {
+      "nome": "Nakhon Si Thammarat",
+      "lat": 8.4,
+      "lng": 99.97,
+      "rank": 1
+    },
+    {
+      "nome": "Chonburi",
+      "lat": 13.4004,
+      "lng": 101,
+      "rank": 1
+    },
+    {
+      "nome": "Lampang",
+      "lat": 18.2916,
+      "lng": 99.4813,
+      "rank": 1
+    },
+    {
+      "nome": "Si Racha",
+      "lat": 13.159,
+      "lng": 100.9287,
+      "rank": 1
+    },
+    {
+      "nome": "Phitsanulok",
+      "lat": 16.8283,
+      "lng": 100.2729,
+      "rank": 1
+    },
+    {
+      "nome": "Surat Thani",
+      "lat": 9.1501,
+      "lng": 99.3401,
+      "rank": 1
+    },
+    {
+      "nome": "Pattani",
+      "lat": 6.864,
+      "lng": 101.25,
+      "rank": 1
+    },
+    {
+      "nome": "Yala",
+      "lat": 6.5505,
+      "lng": 101.2851,
+      "rank": 1
+    },
+    {
+      "nome": "Trang",
+      "lat": 7.5634,
+      "lng": 99.608,
+      "rank": 2
+    },
+    {
+      "nome": "Ayutthaya",
+      "lat": 14.3588,
+      "lng": 100.5684,
+      "rank": 2
+    },
+    {
+      "nome": "Phuket",
+      "lat": 7.8765,
+      "lng": 98.3815,
+      "rank": 2
+    },
+    {
+      "nome": "Nakhon Pathom",
+      "lat": 13.818,
+      "lng": 100.064,
+      "rank": 2
+    },
+    {
+      "nome": "Chiang Rai",
+      "lat": 19.9119,
+      "lng": 99.8265,
+      "rank": 2
+    },
+    {
+      "nome": "Nakhon Sawan",
+      "lat": 15.7,
+      "lng": 100.07,
+      "rank": 2
+    },
+    {
+      "nome": "Ratchaburi",
+      "lat": 13.5419,
+      "lng": 99.8215,
+      "rank": 2
+    },
+    {
+      "nome": "Nong Khai",
+      "lat": 17.8733,
+      "lng": 102.7479,
+      "rank": 2
+    },
+    {
+      "nome": "Chanthaburi",
+      "lat": 12.6133,
+      "lng": 102.0979,
+      "rank": 2
+    },
+    {
+      "nome": "Phetchaburi",
+      "lat": 13.1133,
+      "lng": 99.9412,
+      "rank": 2
+    },
+    {
+      "nome": "Chumphon",
+      "lat": 10.5127,
+      "lng": 99.1872,
+      "rank": 2
+    },
+    {
+      "nome": "Nan",
+      "lat": 18.7868,
+      "lng": 100.7715,
+      "rank": 2
+    },
+    {
+      "nome": "Prachin Buri",
+      "lat": 14.0572,
+      "lng": 101.3768,
+      "rank": 2
+    },
+    {
+      "nome": "Uttaradit",
+      "lat": 17.6316,
+      "lng": 100.0972,
+      "rank": 2
+    },
+    {
+      "nome": "Sakon Nakhon",
+      "lat": 17.1679,
+      "lng": 104.1479,
+      "rank": 2
+    },
+    {
+      "nome": "Saraburi",
+      "lat": 14.5304,
+      "lng": 100.88,
+      "rank": 2
+    },
+    {
+      "nome": "Narathiwat",
+      "lat": 6.4318,
+      "lng": 101.8214,
+      "rank": 2
+    },
+    {
+      "nome": "Kanchanaburi",
+      "lat": 14.0174,
+      "lng": 99.522,
+      "rank": 2
+    },
+    {
+      "nome": "Samut Sakhon",
+      "lat": 13.536,
+      "lng": 100.274,
+      "rank": 2
+    },
+    {
+      "nome": "Surin",
+      "lat": 14.8868,
+      "lng": 103.4915,
+      "rank": 2
+    },
+    {
+      "nome": "Kamphaeng Phet",
+      "lat": 16.473,
+      "lng": 99.529,
+      "rank": 2
+    },
+    {
+      "nome": "Chaiyaphum",
+      "lat": 15.804,
+      "lng": 102.0386,
+      "rank": 2
+    },
+    {
+      "nome": "Lopburi",
+      "lat": 14.804,
+      "lng": 100.6186,
+      "rank": 2
+    },
+    {
+      "nome": "Kalasin",
+      "lat": 16.428,
+      "lng": 103.509,
+      "rank": 2
+    },
+    {
+      "nome": "Suphanburi",
+      "lat": 14.471,
+      "lng": 100.129,
+      "rank": 2
+    },
+    {
+      "nome": "Maha Sarakham",
+      "lat": 16.184,
+      "lng": 103.298,
+      "rank": 2
+    },
+    {
+      "nome": "Phetchabun",
+      "lat": 16.419,
+      "lng": 101.159,
+      "rank": 2
+    },
+    {
+      "nome": "Hua Hin",
+      "lat": 12.5697,
+      "lng": 99.9443,
+      "rank": 2
+    },
+    {
+      "nome": "Chachoengsao",
+      "lat": 13.679,
+      "lng": 101.076,
+      "rank": 2
+    },
+    {
+      "nome": "Songkhla",
+      "lat": 7.21,
+      "lng": 100.56,
+      "rank": 2
+    },
+    {
+      "nome": "Mae Sot",
+      "lat": 16.7162,
+      "lng": 98.5708,
+      "rank": 3
+    },
+    {
+      "nome": "Si Sa Ket",
+      "lat": 15.1203,
+      "lng": 104.3298,
+      "rank": 3
+    },
+    {
+      "nome": "Phatthalung",
+      "lat": 7.615,
+      "lng": 100.081,
+      "rank": 3
+    },
+    {
+      "nome": "Roi Et",
+      "lat": 16.051,
+      "lng": 103.655,
+      "rank": 3
+    },
+    {
+      "nome": "Phrae",
+      "lat": 18.1533,
+      "lng": 100.1629,
+      "rank": 3
+    },
+    {
+      "nome": "Rayong",
+      "lat": 12.6718,
+      "lng": 101.2815,
+      "rank": 3
+    },
+    {
+      "nome": "Phichit",
+      "lat": 16.439,
+      "lng": 100.349,
+      "rank": 3
+    },
+    {
+      "nome": "Loei",
+      "lat": 17.4919,
+      "lng": 101.7315,
+      "rank": 3
+    },
+    {
+      "nome": "Samut Songkhram",
+      "lat": 13.413,
+      "lng": 100.001,
+      "rank": 3
+    },
+    {
+      "nome": "Satun",
+      "lat": 6.6167,
+      "lng": 100.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Prachuap Khiri Khan",
+      "lat": 11.803,
+      "lng": 99.8,
+      "rank": 3
+    },
+    {
+      "nome": "Tak",
+      "lat": 16.8847,
+      "lng": 99.1293,
+      "rank": 3
+    },
+    {
+      "nome": "Krabi",
+      "lat": 8.052,
+      "lng": 98.912,
+      "rank": 3
+    },
+    {
+      "nome": "Thung Song",
+      "lat": 8.154,
+      "lng": 99.7286,
+      "rank": 3
+    },
+    {
+      "nome": "Ranong",
+      "lat": 9.962,
+      "lng": 98.638,
+      "rank": 3
+    },
+    {
+      "nome": "Aranyaprathet",
+      "lat": 13.6824,
+      "lng": 102.4969,
+      "rank": 3
+    },
+    {
+      "nome": "Uthai Thani",
+      "lat": 15.3819,
+      "lng": 100.0264,
+      "rank": 3
+    },
+    {
+      "nome": "Yasothon",
+      "lat": 15.788,
+      "lng": 104.151,
+      "rank": 3
+    },
+    {
+      "nome": "Trat",
+      "lat": 12.237,
+      "lng": 102.509,
+      "rank": 3
+    },
+    {
+      "nome": "Nakhon Nayok",
+      "lat": 14.2,
+      "lng": 101.216,
+      "rank": 3
+    },
+    {
+      "nome": "Phayao",
+      "lat": 19.1707,
+      "lng": 99.9083,
+      "rank": 3
+    },
+    {
+      "nome": "Sing Buri",
+      "lat": 14.887,
+      "lng": 100.401,
+      "rank": 3
+    },
+    {
+      "nome": "Bua Yai",
+      "lat": 15.584,
+      "lng": 102.4186,
+      "rank": 3
+    },
+    {
+      "nome": "Chai Nat",
+      "lat": 15.179,
+      "lng": 100.126,
+      "rank": 3
+    },
+    {
+      "nome": "Lamphun",
+      "lat": 18.503,
+      "lng": 99.074,
+      "rank": 3
+    },
+    {
+      "nome": "cidade de Ántom",
+      "lat": 14.5833,
+      "lng": 100.45,
+      "rank": 3
+    },
+    {
+      "nome": "Sukhothai Thani",
+      "lat": 17.0119,
+      "lng": 99.7515,
+      "rank": 3
+    },
+    {
+      "nome": "Phang Nga",
+      "lat": 8.451,
+      "lng": 98.534,
+      "rank": 3
+    },
+    {
+      "nome": "Mae Hong Son",
+      "lat": 19.301,
+      "lng": 97.969,
+      "rank": 3
+    },
+    {
+      "nome": "Nong Chok",
+      "lat": 13.8559,
+      "lng": 100.8622,
+      "rank": 3
+    },
+    {
+      "nome": "Kabin Buri",
+      "lat": 13.9513,
+      "lng": 101.7174,
+      "rank": 3
+    },
+    {
+      "nome": "Ban I Chang",
+      "lat": 13.7106,
+      "lng": 99.8962,
+      "rank": 3
+    },
+    {
+      "nome": "Khlong Luang",
+      "lat": 14.0647,
+      "lng": 100.6458,
+      "rank": 3
+    },
+    {
+      "nome": "Pattaya",
+      "lat": 12.9333,
+      "lng": 100.8833,
+      "rank": 3
+    },
+    {
+      "nome": "Si Maha Phot",
+      "lat": 13.9656,
+      "lng": 101.5135,
+      "rank": 3
+    },
+    {
+      "nome": "Nong Prue",
+      "lat": 14.6078,
+      "lng": 99.4578,
+      "rank": 3
+    },
+    {
+      "nome": "Sattahip",
+      "lat": 12.6663,
+      "lng": 100.9018,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Lam Luk Ka",
+      "lat": 13.9774,
+      "lng": 100.7778,
+      "rank": 3
+    },
+    {
+      "nome": "Prachantakham",
+      "lat": 14.0637,
+      "lng": 101.5155,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Pong",
+      "lat": 13.8163,
+      "lng": 99.8774,
+      "rank": 3
+    },
+    {
+      "nome": "Na Di",
+      "lat": 14.1157,
+      "lng": 101.7821,
+      "rank": 3
+    },
+    {
+      "nome": "Phra Phutthabat",
+      "lat": 14.7261,
+      "lng": 100.7958,
+      "rank": 3
+    },
+    {
+      "nome": "Klaeng",
+      "lat": 12.78,
+      "lng": 101.6491,
+      "rank": 3
+    },
+    {
+      "nome": "Tha Maka",
+      "lat": 13.9,
+      "lng": 99.7667,
+      "rank": 3
+    },
+    {
+      "nome": "Ko Samui",
+      "lat": 9.5357,
+      "lng": 99.9357,
+      "rank": 3
+    },
+    {
+      "nome": "Cha-am",
+      "lat": 12.8,
+      "lng": 99.9667,
+      "rank": 3
+    },
+    {
+      "nome": "Pak Chong",
+      "lat": 14.708,
+      "lng": 101.4161,
+      "rank": 3
+    },
+    {
+      "nome": "Takua Pa",
+      "lat": 8.8705,
+      "lng": 98.3438,
+      "rank": 3
+    },
+    {
+      "nome": "Pran Buri",
+      "lat": 12.3849,
+      "lng": 99.9016,
+      "rank": 3
+    },
+    {
+      "nome": "Chum Phae",
+      "lat": 16.5443,
+      "lng": 102.0992,
+      "rank": 3
+    },
+    {
+      "nome": "Sadao",
+      "lat": 6.6388,
+      "lng": 100.4234,
+      "rank": 3
+    },
+    {
+      "nome": "Su-ngai Kolok",
+      "lat": 6.0298,
+      "lng": 101.9659,
+      "rank": 3
+    },
+    {
+      "nome": "Tha Yang",
+      "lat": 12.9577,
+      "lng": 99.9056,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Phaeo",
+      "lat": 13.5907,
+      "lng": 100.1075,
+      "rank": 3
+    },
+    {
+      "nome": "Nong Khae",
+      "lat": 14.3405,
+      "lng": 100.8669,
+      "rank": 3
+    },
+    {
+      "nome": "Bang Lamung",
+      "lat": 13.047,
+      "lng": 100.9289,
+      "rank": 3
+    },
+    {
+      "nome": "Wichian Buri",
+      "lat": 15.6578,
+      "lng": 101.106,
+      "rank": 3
+    },
+    {
+      "nome": "Khao Saming",
+      "lat": 12.3537,
+      "lng": 102.4343,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Sang",
+      "lat": 13.9955,
+      "lng": 101.2208,
+      "rank": 3
+    },
+    {
+      "nome": "Khlong Yai",
+      "lat": 11.7765,
+      "lng": 102.8873,
+      "rank": 3
+    },
+    {
+      "nome": "Mae Chan",
+      "lat": 20.1468,
+      "lng": 99.8526,
+      "rank": 3
+    },
+    {
+      "nome": "Kantharalak",
+      "lat": 14.6406,
+      "lng": 104.6499,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Ang Sila",
+      "lat": 13.3396,
+      "lng": 100.9296,
+      "rank": 3
+    },
+    {
+      "nome": "Det Udom",
+      "lat": 14.906,
+      "lng": 105.0784,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Phai",
+      "lat": 16.06,
+      "lng": 102.731,
+      "rank": 3
+    },
+    {
+      "nome": "Tha Bo",
+      "lat": 17.85,
+      "lng": 102.5814,
+      "rank": 3
+    },
+    {
+      "nome": "Amnat Charoen",
+      "lat": 15.8585,
+      "lng": 104.6288,
+      "rank": 3
+    },
+    {
+      "nome": "Nong Bua Lamphu",
+      "lat": 17.2041,
+      "lng": 102.4407,
+      "rank": 3
+    },
+    {
+      "nome": "San Kamphaeng",
+      "lat": 18.7449,
+      "lng": 99.1195,
+      "rank": 3
+    },
+    {
+      "nome": "Ban Khlong Bang Sao Thong",
+      "lat": 13.6417,
+      "lng": 100.8327,
+      "rank": 3
+    },
+    {
+      "nome": "Yaring",
+      "lat": 6.8662,
+      "lng": 101.3689,
+      "rank": 3
+    },
+    {
+      "nome": "Na Klang",
+      "lat": 17.3072,
+      "lng": 102.1889,
+      "rank": 3
+    },
+    {
+      "nome": "Kaeng Khoi",
+      "lat": 14.5862,
+      "lng": 100.9976,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Hanói",
+      "lat": 21.0353,
+      "lng": 105.8481,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Singapura",
+      "lat": 1.295,
+      "lng": 103.8539,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Ho Chi Minh",
+      "lat": 10.782,
+      "lng": 106.6931,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Yangon",
+      "lat": 16.7853,
+      "lng": 96.1647,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Phnom Penh",
+      "lat": 11.552,
+      "lng": 104.9147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Kuala Lumpur",
+      "lat": 3.1686,
+      "lng": 101.698,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Hechi",
+      "lat": 24.6953,
+      "lng": 108.083,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "George Town",
+      "lat": 5.4136,
+      "lng": 100.3294,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Medan",
+      "lat": 3.5819,
+      "lng": 98.6481,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Haiphong",
+      "lat": 20.832,
+      "lng": 106.6781,
+      "rank": 1
+    },
+    {
+      "nome": "Naypyidaw",
+      "lat": 19.7685,
+      "lng": 96.1167,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Kunming",
+      "lat": 25.0719,
+      "lng": 102.678,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Vientiane",
+      "lat": 17.9667,
+      "lng": 102.6,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Nanning",
+      "lat": 22.8219,
+      "lng": 108.3181,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Mandalay",
+      "lat": 21.9719,
+      "lng": 96.0831,
+      "rank": 2
+    },
+    {
+      "nome": "Can Tho",
+      "lat": 10.05,
+      "lng": 105.77,
+      "rank": 2
+    },
+    {
+      "nome": "Klang",
+      "lat": 3.0223,
+      "lng": 101.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Huế",
+      "lat": 16.47,
+      "lng": 107.58,
+      "rank": 2
+    },
+    {
+      "nome": "Guiyang",
+      "lat": 26.582,
+      "lng": 106.7181,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Malaca",
+      "lat": 2.2064,
+      "lng": 102.2465,
+      "rank": 2
+    },
+    {
+      "nome": "Chattogram",
+      "lat": 22.3319,
+      "lng": 91.798,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Da Nang",
+      "lat": 16.06,
+      "lng": 108.25,
+      "rank": 2
+    },
+    {
+      "nome": "Ipoh",
+      "lat": 4.6,
+      "lng": 101.065,
+      "rank": 2
+    },
+    {
+      "nome": "Vinh",
+      "lat": 18.7,
+      "lng": 105.68,
+      "rank": 2
+    },
+    {
+      "nome": "Liuzhou",
+      "lat": 24.2819,
+      "lng": 109.2481,
+      "rank": 2
+    },
+    {
+      "nome": "Chongqing",
+      "lat": 29.5669,
+      "lng": 106.593,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Banda Aceh",
+      "lat": 5.55,
+      "lng": 95.32,
+      "rank": 2
+    },
+    {
+      "nome": "Baoshan",
+      "lat": 25.12,
+      "lng": 99.15,
+      "rank": 2
+    },
+    {
+      "nome": "Kota Bharu",
+      "lat": 6.12,
+      "lng": 102.23,
+      "rank": 2
+    },
+    {
+      "nome": "Thái Nguyên",
+      "lat": 21.6,
+      "lng": 105.83,
+      "rank": 2
+    },
+    {
+      "nome": "Haikou",
+      "lat": 20.05,
+      "lng": 110.32,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Moulmein",
+      "lat": 16.5004,
+      "lng": 97.67,
+      "rank": 2
+    },
+    {
+      "nome": "Xingyi",
+      "lat": 25.0924,
+      "lng": 104.8881,
+      "rank": 2
+    },
+    {
+      "nome": "Seremban",
+      "lat": 2.7105,
+      "lng": 101.94,
+      "rank": 2
+    },
+    {
+      "nome": "Zhanjiang",
+      "lat": 21.2019,
+      "lng": 110.3781,
+      "rank": 2
+    },
+    {
+      "nome": "Kuantan",
+      "lat": 3.83,
+      "lng": 103.32,
+      "rank": 3
+    },
+    {
+      "nome": "Sungai Petani",
+      "lat": 5.6497,
+      "lng": 100.4793,
+      "rank": 3
+    },
+    {
+      "nome": "Cà Mau",
+      "lat": 9.1774,
+      "lng": 105.15,
+      "rank": 3
+    },
+    {
+      "nome": "Kuala Terenggan",
+      "lat": 5.3304,
+      "lng": 103.12,
+      "rank": 3
+    },
+    {
+      "nome": "Viet Tri",
+      "lat": 21.3304,
+      "lng": 105.43,
+      "rank": 3
+    },
+    {
+      "nome": "Long Xuyen",
+      "lat": 10.3804,
+      "lng": 105.42,
+      "rank": 3
+    },
+    {
+      "nome": "Yuxi",
+      "lat": 24.38,
+      "lng": 102.57,
+      "rank": 3
+    },
+    {
+      "nome": "Pematangsiantar",
+      "lat": 2.9614,
+      "lng": 99.0615,
+      "rank": 3
+    },
+    {
+      "nome": "Alor Setar",
+      "lat": 6.1133,
+      "lng": 100.3729,
+      "rank": 3
+    },
+    {
+      "nome": "Pekanbaru",
+      "lat": 0.5669,
+      "lng": 101.4231,
+      "rank": 3
+    },
+    {
+      "nome": "Qui Nhơn",
+      "lat": 13.78,
+      "lng": 109.18,
+      "rank": 3
+    },
+    {
+      "nome": "Beihai",
+      "lat": 21.4804,
+      "lng": 109.1,
+      "rank": 3
+    },
+    {
+      "nome": "Mengzi City",
+      "lat": 23.3619,
+      "lng": 103.4061,
+      "rank": 3
+    },
+    {
+      "nome": "Rạch Giá",
+      "lat": 10.0154,
+      "lng": 105.0914,
+      "rank": 3
+    },
+    {
+      "nome": "Sóc Trăng",
+      "lat": 9.6037,
+      "lng": 105.98,
+      "rank": 3
+    },
+    {
+      "nome": "Yulin",
+      "lat": 22.6319,
+      "lng": 110.1481,
+      "rank": 3
+    },
+    {
+      "nome": "Liupanshui",
+      "lat": 26.5964,
+      "lng": 104.8314,
+      "rank": 3
+    },
+    {
+      "nome": "Buon Ma Thuot",
+      "lat": 12.667,
+      "lng": 108.05,
+      "rank": 3
+    },
+    {
+      "nome": "Pegu",
+      "lat": 17.32,
+      "lng": 96.515,
+      "rank": 3
+    },
+    {
+      "nome": "Tebing Tingi",
+      "lat": 3.3304,
+      "lng": 99.13,
+      "rank": 3
+    },
+    {
+      "nome": "Myeik",
+      "lat": 12.4541,
+      "lng": 98.6115,
+      "rank": 3
+    },
+    {
+      "nome": "Phan Thiet",
+      "lat": 10.9337,
+      "lng": 108.1001,
+      "rank": 3
+    },
+    {
+      "nome": "Zhanyi",
+      "lat": 25.6005,
+      "lng": 103.8166,
+      "rank": 3
+    },
+    {
+      "nome": "Vũng Tàu",
+      "lat": 10.3554,
+      "lng": 107.085,
+      "rank": 3
+    },
+    {
+      "nome": "Nam Định",
+      "lat": 20.42,
+      "lng": 106.2,
+      "rank": 3
+    },
+    {
+      "nome": "Taiping",
+      "lat": 4.865,
+      "lng": 100.72,
+      "rank": 3
+    },
+    {
+      "nome": "Chaozhou",
+      "lat": 21.9204,
+      "lng": 110.87,
+      "rank": 3
+    },
+    {
+      "nome": "Anshun",
+      "lat": 26.2523,
+      "lng": 105.9281,
+      "rank": 3
+    },
+    {
+      "nome": "Bac Lieu",
+      "lat": 9.2804,
+      "lng": 105.72,
+      "rank": 3
+    },
+    {
+      "nome": "Guilin",
+      "lat": 25.2819,
+      "lng": 110.2781,
+      "rank": 3
+    },
+    {
+      "nome": "Monywa",
+      "lat": 22.105,
+      "lng": 95.15,
+      "rank": 3
+    },
+    {
+      "nome": "Thái Bình",
+      "lat": 20.4503,
+      "lng": 106.333,
+      "rank": 3
+    },
+    {
+      "nome": "Thanh Hoa",
+      "lat": 19.82,
+      "lng": 105.8,
+      "rank": 3
+    },
+    {
+      "nome": "Batu Pahat",
+      "lat": 1.8504,
+      "lng": 102.9333,
+      "rank": 3
+    },
+    {
+      "nome": "Sibolga",
+      "lat": 1.75,
+      "lng": 98.8,
+      "rank": 3
+    },
+    {
+      "nome": "Kampung Baru Subang",
+      "lat": 3.15,
+      "lng": 101.5333,
+      "rank": 3
+    },
+    {
+      "nome": "Qujing",
+      "lat": 25.4833,
+      "lng": 103.7833,
+      "rank": 3
+    },
+    {
+      "nome": "Kota Kuala Muda",
+      "lat": 5.5882,
+      "lng": 100.3709,
+      "rank": 3
+    },
+    {
+      "nome": "Selayang Baru Utara",
+      "lat": 3.2549,
+      "lng": 101.6668,
+      "rank": 3
+    },
+    {
+      "nome": "Jianshui",
+      "lat": 24.2774,
+      "lng": 101.224,
+      "rank": 3
+    },
+    {
+      "nome": "Chongzuo",
+      "lat": 22.3816,
+      "lng": 107.3683,
+      "rank": 3
+    },
+    {
+      "nome": "Bến Cát",
+      "lat": 11.15,
+      "lng": 106.6,
+      "rank": 3
+    },
+    {
+      "nome": "Laibin",
+      "lat": 23.7474,
+      "lng": 109.2222,
+      "rank": 3
+    },
+    {
+      "nome": "Guigang",
+      "lat": 23.116,
+      "lng": 109.5947,
+      "rank": 3
+    },
+    {
+      "nome": "Yunfu",
+      "lat": 22.9279,
+      "lng": 112.0381,
+      "rank": 3
+    },
+    {
+      "nome": "Lianjiang",
+      "lat": 21.6467,
+      "lng": 110.2817,
+      "rank": 3
+    },
+    {
+      "nome": "Lincang",
+      "lat": 23.8797,
+      "lng": 100.0945,
+      "rank": 3
+    },
+    {
+      "nome": "Percut",
+      "lat": 3.6253,
+      "lng": 98.864,
+      "rank": 3
+    },
+    {
+      "nome": "Nghi Sơn",
+      "lat": 19.3275,
+      "lng": 105.8214,
+      "rank": 3
+    },
+    {
+      "nome": "Phu Quoc",
+      "lat": 10.2241,
+      "lng": 103.9716,
+      "rank": 3
+    },
+    {
+      "nome": "Dumai",
+      "lat": 1.6671,
+      "lng": 101.4432,
+      "rank": 3
+    },
+    {
+      "nome": "Phú Mỹ",
+      "lat": 10.6333,
+      "lng": 107.0667,
+      "rank": 3
+    },
+    {
+      "nome": "Ba Vì",
+      "lat": 21.0833,
+      "lng": 105.3833,
+      "rank": 3
+    },
+    {
+      "nome": "Binjai",
+      "lat": 3.6001,
+      "lng": 98.4854,
+      "rank": 3
+    },
+    {
+      "nome": "Kapar",
+      "lat": 3.1333,
+      "lng": 101.3833,
+      "rank": 3
+    },
+    {
+      "nome": "Xuân Lộc",
+      "lat": 10.9333,
+      "lng": 107.2333,
+      "rank": 3
+    },
+    {
+      "nome": "Thị Trấn Đông Triều",
+      "lat": 21.0824,
+      "lng": 106.5138,
+      "rank": 3
+    },
+    {
+      "nome": "Maoming",
+      "lat": 21.6663,
+      "lng": 110.9136,
+      "rank": 3
+    },
+    {
+      "nome": "Basuo",
+      "lat": 19.1027,
+      "lng": 108.6656,
+      "rank": 3
+    },
+    {
+      "nome": "Kajang",
+      "lat": 2.9942,
+      "lng": 101.7887,
+      "rank": 3
+    },
+    {
+      "nome": "Thành Phố Bà Rịa",
+      "lat": 10.4963,
+      "lng": 107.1685,
+      "rank": 3
+    },
+    {
+      "nome": "Phổ Yên",
+      "lat": 21.4198,
+      "lng": 105.8899,
+      "rank": 3
+    },
+    {
+      "nome": "Pasir Mas",
+      "lat": 6.0493,
+      "lng": 102.1399,
+      "rank": 3
+    },
+    {
+      "nome": "Chí Linh",
+      "lat": 21.0667,
+      "lng": 106.3167,
+      "rank": 3
+    },
+    {
+      "nome": "Sa Dec",
+      "lat": 10.2909,
+      "lng": 105.7563,
+      "rank": 3
+    },
+    {
+      "nome": "Bukit Mertajam",
+      "lat": 5.363,
+      "lng": 100.4667,
+      "rank": 3
+    },
+    {
+      "nome": "Sepang",
+      "lat": 2.6931,
+      "lng": 101.7498,
+      "rank": 3
+    },
+    {
+      "nome": "Yunjinghong",
+      "lat": 22.0148,
+      "lng": 100.7984,
+      "rank": 3
+    },
+    {
+      "nome": "Bijie",
+      "lat": 27.3019,
+      "lng": 105.2863,
+      "rank": 3
+    },
+    {
+      "nome": "Longling County",
+      "lat": 24.5866,
+      "lng": 98.6893,
+      "rank": 3
+    },
+    {
+      "nome": "Bukit Jalil",
+      "lat": 3.0491,
+      "lng": 101.6804,
+      "rank": 3
+    },
+    {
+      "nome": "Rawang",
+      "lat": 3.3213,
+      "lng": 101.5767,
+      "rank": 3
+    },
+    {
+      "nome": "Kaiyuan",
+      "lat": 23.6977,
+      "lng": 103.3037,
+      "rank": 3
+    },
+    {
+      "nome": "Kuala Kubu Baharu",
+      "lat": 3.5638,
+      "lng": 101.6581,
+      "rank": 3
+    },
+    {
+      "nome": "Xinyi",
+      "lat": 22.373,
+      "lng": 110.9475,
+      "rank": 3
+    }
+  ]
+}

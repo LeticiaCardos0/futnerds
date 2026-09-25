@@ -1,0 +1,839 @@
+{
+  "ligaId": "liga-portugal",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Setúbal",
+      "lat": 38.53,
+      "lng": -8.9,
+      "rank": 1
+    },
+    {
+      "nome": "Coimbra",
+      "lat": 40.2004,
+      "lng": -8.4167,
+      "rank": 1
+    },
+    {
+      "nome": "Portimão",
+      "lat": 37.1337,
+      "lng": -8.5333,
+      "rank": 1
+    },
+    {
+      "nome": "Évora",
+      "lat": 38.56,
+      "lng": -7.906,
+      "rank": 1
+    },
+    {
+      "nome": "Aveiro",
+      "lat": 40.641,
+      "lng": -8.651,
+      "rank": 1
+    },
+    {
+      "nome": "Leiria",
+      "lat": 39.739,
+      "lng": -8.805,
+      "rank": 1
+    },
+    {
+      "nome": "Faro",
+      "lat": 37.0171,
+      "lng": -7.9333,
+      "rank": 1
+    },
+    {
+      "nome": "Beja",
+      "lat": 38.014,
+      "lng": -7.863,
+      "rank": 1
+    },
+    {
+      "nome": "Bragança",
+      "lat": 41.808,
+      "lng": -6.755,
+      "rank": 1
+    },
+    {
+      "nome": "Castelo Branco",
+      "lat": 39.811,
+      "lng": -7.488,
+      "rank": 1
+    },
+    {
+      "nome": "Guarda",
+      "lat": 40.541,
+      "lng": -7.262,
+      "rank": 1
+    },
+    {
+      "nome": "Santarém",
+      "lat": 39.231,
+      "lng": -8.682,
+      "rank": 1
+    },
+    {
+      "nome": "Covilhã",
+      "lat": 40.2833,
+      "lng": -7.5,
+      "rank": 1
+    },
+    {
+      "nome": "Vila Real",
+      "lat": 41.294,
+      "lng": -7.737,
+      "rank": 1
+    },
+    {
+      "nome": "Portalegre",
+      "lat": 39.29,
+      "lng": -7.423,
+      "rank": 1
+    },
+    {
+      "nome": "Viana do Castelo",
+      "lat": 41.6962,
+      "lng": -8.8441,
+      "rank": 2
+    },
+    {
+      "nome": "Angra do Heroísmo",
+      "lat": 38.6504,
+      "lng": -27.2167,
+      "rank": 2
+    },
+    {
+      "nome": "Horta",
+      "lat": 38.5347,
+      "lng": -28.6448,
+      "rank": 2
+    },
+    {
+      "nome": "Algueirão",
+      "lat": 38.7976,
+      "lng": -9.3437,
+      "rank": 3
+    },
+    {
+      "nome": "Felgueiras",
+      "lat": 41.3681,
+      "lng": -8.194,
+      "rank": 3
+    },
+    {
+      "nome": "Monsanto",
+      "lat": 39.462,
+      "lng": -8.7118,
+      "rank": 3
+    },
+    {
+      "nome": "Figueira da Foz",
+      "lat": 40.1508,
+      "lng": -8.8618,
+      "rank": 3
+    },
+    {
+      "nome": "Ponte de Lima",
+      "lat": 41.7672,
+      "lng": -8.5839,
+      "rank": 3
+    },
+    {
+      "nome": "Sesimbra",
+      "lat": 38.4445,
+      "lng": -9.1015,
+      "rank": 3
+    },
+    {
+      "nome": "Esposende",
+      "lat": 41.5361,
+      "lng": -8.782,
+      "rank": 3
+    },
+    {
+      "nome": "Lagos",
+      "lat": 37.102,
+      "lng": -8.6742,
+      "rank": 3
+    },
+    {
+      "nome": "Espinho",
+      "lat": 41.0076,
+      "lng": -8.6412,
+      "rank": 3
+    },
+    {
+      "nome": "Montijo",
+      "lat": 38.7067,
+      "lng": -8.9739,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Madri",
+      "lat": 40.402,
+      "lng": -3.6853,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Rabat",
+      "lat": 34.0253,
+      "lng": -6.8364,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Casablanca",
+      "lat": 33.6019,
+      "lng": -7.6183,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Sevilha",
+      "lat": 37.405,
+      "lng": -5.98,
+      "rank": 1
+    },
+    {
+      "nome": "Tânger",
+      "lat": 35.7473,
+      "lng": -5.8327,
+      "rank": 1
+    },
+    {
+      "nome": "Fez",
+      "lat": 34.0565,
+      "lng": -5.0023,
+      "rank": 1
+    },
+    {
+      "nome": "Kenitra",
+      "lat": 34.2704,
+      "lng": -6.58,
+      "rank": 1
+    },
+    {
+      "nome": "Marraquexe",
+      "lat": 31.6319,
+      "lng": -8.0019,
+      "rank": 1
+    },
+    {
+      "nome": "Meknès",
+      "lat": 33.9004,
+      "lng": -5.56,
+      "rank": 1
+    },
+    {
+      "nome": "Vigo",
+      "lat": 42.22,
+      "lng": -8.73,
+      "rank": 1
+    },
+    {
+      "nome": "Safi",
+      "lat": 32.32,
+      "lng": -9.24,
+      "rank": 1
+    },
+    {
+      "nome": "Ksar el-Kebir",
+      "lat": 35.0204,
+      "lng": -5.91,
+      "rank": 1
+    },
+    {
+      "nome": "Cádiz",
+      "lat": 36.535,
+      "lng": -6.225,
+      "rank": 2
+    },
+    {
+      "nome": "Agadir",
+      "lat": 30.44,
+      "lng": -9.62,
+      "rank": 2
+    },
+    {
+      "nome": "Málaga",
+      "lat": 36.7204,
+      "lng": -4.42,
+      "rank": 2
+    },
+    {
+      "nome": "Bilbao",
+      "lat": 43.25,
+      "lng": -2.93,
+      "rank": 2
+    },
+    {
+      "nome": "El Jadida",
+      "lat": 33.2604,
+      "lng": -8.51,
+      "rank": 2
+    },
+    {
+      "nome": "A Coruña",
+      "lat": 43.33,
+      "lng": -8.42,
+      "rank": 2
+    },
+    {
+      "nome": "Valladolid",
+      "lat": 41.65,
+      "lng": -4.75,
+      "rank": 2
+    },
+    {
+      "nome": "Córdoba",
+      "lat": 37.88,
+      "lng": -4.77,
+      "rank": 2
+    },
+    {
+      "nome": "Settat",
+      "lat": 33.0104,
+      "lng": -7.62,
+      "rank": 2
+    },
+    {
+      "nome": "Huelva",
+      "lat": 37.2504,
+      "lng": -6.9299,
+      "rank": 2
+    },
+    {
+      "nome": "Gijón",
+      "lat": 43.53,
+      "lng": -5.67,
+      "rank": 2
+    },
+    {
+      "nome": "Badajoz",
+      "lat": 38.8804,
+      "lng": -6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Salamanca",
+      "lat": 40.9704,
+      "lng": -5.67,
+      "rank": 2
+    },
+    {
+      "nome": "Gibraltar",
+      "lat": 36.1324,
+      "lng": -5.3781,
+      "rank": 2
+    },
+    {
+      "nome": "Granada",
+      "lat": 37.165,
+      "lng": -3.585,
+      "rank": 2
+    },
+    {
+      "nome": "Larache",
+      "lat": 35.2004,
+      "lng": -6.16,
+      "rank": 2
+    },
+    {
+      "nome": "Oviedo",
+      "lat": 43.3505,
+      "lng": -5.83,
+      "rank": 2
+    },
+    {
+      "nome": "Valência",
+      "lat": 39.487,
+      "lng": -0.402,
+      "rank": 2
+    },
+    {
+      "nome": "Orã",
+      "lat": 35.7119,
+      "lng": -0.6219,
+      "rank": 2
+    },
+    {
+      "nome": "Ourense",
+      "lat": 42.33,
+      "lng": -7.87,
+      "rank": 2
+    },
+    {
+      "nome": "Zaragoza",
+      "lat": 41.65,
+      "lng": -0.89,
+      "rank": 2
+    },
+    {
+      "nome": "Marbella",
+      "lat": 36.5166,
+      "lng": -4.8833,
+      "rank": 2
+    },
+    {
+      "nome": "Bordeaux",
+      "lat": 44.852,
+      "lng": -0.597,
+      "rank": 2
+    },
+    {
+      "nome": "Errachidia",
+      "lat": 31.9404,
+      "lng": -4.45,
+      "rank": 3
+    },
+    {
+      "nome": "León",
+      "lat": 42.58,
+      "lng": -5.57,
+      "rank": 3
+    },
+    {
+      "nome": "Oujda",
+      "lat": 34.69,
+      "lng": -1.91,
+      "rank": 3
+    },
+    {
+      "nome": "Taza",
+      "lat": 34.2204,
+      "lng": -4.02,
+      "rank": 3
+    },
+    {
+      "nome": "San Sebastián",
+      "lat": 43.3204,
+      "lng": -1.98,
+      "rank": 3
+    },
+    {
+      "nome": "Santander",
+      "lat": 43.3805,
+      "lng": -3.8,
+      "rank": 3
+    },
+    {
+      "nome": "Múrcia",
+      "lat": 37.98,
+      "lng": -1.13,
+      "rank": 3
+    },
+    {
+      "nome": "Burgos",
+      "lat": 42.3504,
+      "lng": -3.68,
+      "rank": 3
+    },
+    {
+      "nome": "Santiago de Compostela",
+      "lat": 42.8829,
+      "lng": -8.5411,
+      "rank": 3
+    },
+    {
+      "nome": "Vitoria-Gasteiz",
+      "lat": 42.85,
+      "lng": -2.67,
+      "rank": 3
+    },
+    {
+      "nome": "Ouezzane",
+      "lat": 34.8103,
+      "lng": -5.57,
+      "rank": 3
+    },
+    {
+      "nome": "Pamplona",
+      "lat": 42.82,
+      "lng": -1.65,
+      "rank": 3
+    },
+    {
+      "nome": "Ceuta",
+      "lat": 35.889,
+      "lng": -5.307,
+      "rank": 3
+    },
+    {
+      "nome": "Mérida",
+      "lat": 38.912,
+      "lng": -6.338,
+      "rank": 3
+    },
+    {
+      "nome": "Alicante",
+      "lat": 38.3512,
+      "lng": -0.4836,
+      "rank": 3
+    },
+    {
+      "nome": "Jaén",
+      "lat": 37.7704,
+      "lng": -3.8,
+      "rank": 3
+    },
+    {
+      "nome": "Almeria",
+      "lat": 36.8303,
+      "lng": -2.43,
+      "rank": 3
+    },
+    {
+      "nome": "Tlemcen",
+      "lat": 34.8904,
+      "lng": -1.32,
+      "rank": 3
+    },
+    {
+      "nome": "Melilla",
+      "lat": 35.3,
+      "lng": -2.95,
+      "rank": 3
+    },
+    {
+      "nome": "Logroño",
+      "lat": 42.4704,
+      "lng": -2.43,
+      "rank": 3
+    },
+    {
+      "nome": "Albacete",
+      "lat": 39.0003,
+      "lng": -1.87,
+      "rank": 3
+    },
+    {
+      "nome": "Cartagena",
+      "lat": 37.6004,
+      "lng": -0.98,
+      "rank": 3
+    },
+    {
+      "nome": "Toledo",
+      "lat": 39.867,
+      "lng": -4.0167,
+      "rank": 3
+    },
+    {
+      "nome": "Sidi Bel Abbès",
+      "lat": 35.1903,
+      "lng": -0.64,
+      "rank": 3
+    },
+    {
+      "nome": "Béchar",
+      "lat": 31.6111,
+      "lng": -2.23,
+      "rank": 3
+    },
+    {
+      "nome": "Biarritz",
+      "lat": 43.4733,
+      "lng": -1.5616,
+      "rank": 3
+    },
+    {
+      "nome": "Castelló de la Plana",
+      "lat": 39.9704,
+      "lng": -0.05,
+      "rank": 3
+    },
+    {
+      "nome": "Guelmim",
+      "lat": 28.98,
+      "lng": -10.07,
+      "rank": 3
+    },
+    {
+      "nome": "Guadalajara",
+      "lat": 40.6337,
+      "lng": -3.1666,
+      "rank": 3
+    },
+    {
+      "nome": "Linares",
+      "lat": 38.0833,
+      "lng": -3.6334,
+      "rank": 3
+    },
+    {
+      "nome": "Lorca",
+      "lat": 37.6886,
+      "lng": -1.6985,
+      "rank": 3
+    },
+    {
+      "nome": "Tiznit",
+      "lat": 29.7104,
+      "lng": -9.74,
+      "rank": 3
+    },
+    {
+      "nome": "Arrecife",
+      "lat": 28.969,
+      "lng": -13.5378,
+      "rank": 3
+    },
+    {
+      "nome": "Aïn Séfra",
+      "lat": 32.7604,
+      "lng": -0.5799,
+      "rank": 3
+    },
+    {
+      "nome": "Abadla",
+      "lat": 31.0171,
+      "lng": -2.7333,
+      "rank": 3
+    },
+    {
+      "nome": "Temara",
+      "lat": 33.9287,
+      "lng": -6.9066,
+      "rank": 3
+    },
+    {
+      "nome": "Tétouan",
+      "lat": 35.5784,
+      "lng": -5.3684,
+      "rank": 3
+    },
+    {
+      "nome": "Khouribga",
+      "lat": 32.8811,
+      "lng": -6.9063,
+      "rank": 3
+    },
+    {
+      "nome": "Jerez de la Frontera",
+      "lat": 36.6865,
+      "lng": -6.1361,
+      "rank": 3
+    },
+    {
+      "nome": "Beni Mellal",
+      "lat": 32.3372,
+      "lng": -6.3498,
+      "rank": 3
+    },
+    {
+      "nome": "Berrechid",
+      "lat": 33.2655,
+      "lng": -7.5875,
+      "rank": 3
+    },
+    {
+      "nome": "Khemisset",
+      "lat": 33.824,
+      "lng": -6.0663,
+      "rank": 3
+    },
+    {
+      "nome": "Al Hoceïma",
+      "lat": 35.2516,
+      "lng": -3.9372,
+      "rank": 3
+    },
+    {
+      "nome": "Dos Hermanas",
+      "lat": 37.2829,
+      "lng": -5.9209,
+      "rank": 3
+    },
+    {
+      "nome": "Al Fqih Ben Çalah",
+      "lat": 32.5021,
+      "lng": -6.6877,
+      "rank": 3
+    },
+    {
+      "nome": "Oued Zem",
+      "lat": 32.8627,
+      "lng": -6.5736,
+      "rank": 3
+    },
+    {
+      "nome": "Khenifra",
+      "lat": 32.9349,
+      "lng": -5.6617,
+      "rank": 3
+    },
+    {
+      "nome": "Sidi Slimane",
+      "lat": 34.2648,
+      "lng": -5.926,
+      "rank": 3
+    },
+    {
+      "nome": "Cáceres",
+      "lat": 39.4765,
+      "lng": -6.3722,
+      "rank": 3
+    },
+    {
+      "nome": "Tiflet",
+      "lat": 33.8947,
+      "lng": -6.3065,
+      "rank": 3
+    },
+    {
+      "nome": "Ben Guerir",
+      "lat": 32.2409,
+      "lng": -7.954,
+      "rank": 3
+    },
+    {
+      "nome": "El Kelaa des Srarhna",
+      "lat": 32.0512,
+      "lng": -7.4108,
+      "rank": 3
+    },
+    {
+      "nome": "Chiclana de la Frontera",
+      "lat": 36.4198,
+      "lng": -6.1437,
+      "rank": 3
+    },
+    {
+      "nome": "Souk El Arbaa",
+      "lat": 34.6847,
+      "lng": -6.0034,
+      "rank": 3
+    },
+    {
+      "nome": "Pontevedra",
+      "lat": 42.431,
+      "lng": -8.6443,
+      "rank": 3
+    },
+    {
+      "nome": "Sidi Kacem",
+      "lat": 34.2215,
+      "lng": -5.7077,
+      "rank": 3
+    },
+    {
+      "nome": "Ait Melloul",
+      "lat": 30.3416,
+      "lng": -9.5036,
+      "rank": 3
+    },
+    {
+      "nome": "Lugo",
+      "lat": 43.0099,
+      "lng": -7.556,
+      "rank": 3
+    },
+    {
+      "nome": "Essaouira",
+      "lat": 31.5125,
+      "lng": -9.77,
+      "rank": 3
+    },
+    {
+      "nome": "Talavera de la Reina",
+      "lat": 39.9635,
+      "lng": -4.8308,
+      "rank": 3
+    },
+    {
+      "nome": "Sefrou",
+      "lat": 33.8319,
+      "lng": -4.828,
+      "rank": 3
+    },
+    {
+      "nome": "Nador",
+      "lat": 35.1681,
+      "lng": -2.9335,
+      "rank": 3
+    },
+    {
+      "nome": "Mijas",
+      "lat": 36.5958,
+      "lng": -4.6373,
+      "rank": 3
+    },
+    {
+      "nome": "Palencia",
+      "lat": 42.0095,
+      "lng": -4.5241,
+      "rank": 3
+    },
+    {
+      "nome": "Elche",
+      "lat": 38.2622,
+      "lng": -0.7011,
+      "rank": 3
+    },
+    {
+      "nome": "Avilés",
+      "lat": 43.5547,
+      "lng": -5.9248,
+      "rank": 3
+    },
+    {
+      "nome": "Ouarzazate",
+      "lat": 30.9189,
+      "lng": -6.8934,
+      "rank": 3
+    },
+    {
+      "nome": "Oulad Teïma",
+      "lat": 30.3947,
+      "lng": -9.209,
+      "rank": 3
+    },
+    {
+      "nome": "Taroudant",
+      "lat": 30.4703,
+      "lng": -8.877,
+      "rank": 3
+    },
+    {
+      "nome": "Guercif",
+      "lat": 34.2257,
+      "lng": -3.3536,
+      "rank": 3
+    },
+    {
+      "nome": "Taourirt",
+      "lat": 34.4073,
+      "lng": -2.8973,
+      "rank": 3
+    },
+    {
+      "nome": "Berkane",
+      "lat": 34.92,
+      "lng": -2.32,
+      "rank": 3
+    },
+    {
+      "nome": "Roquetas de Mar",
+      "lat": 36.7642,
+      "lng": -2.6147,
+      "rank": 3
+    },
+    {
+      "nome": "Algorta",
+      "lat": 43.3493,
+      "lng": -3.0094,
+      "rank": 3
+    },
+    {
+      "nome": "El Ejido",
+      "lat": 36.7763,
+      "lng": -2.8146,
+      "rank": 3
+    }
+  ]
+}

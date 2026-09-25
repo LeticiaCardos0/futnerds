@@ -39,7 +39,7 @@
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: var(--fn-accent, #53f59a);
+  background: var(--fn-accent, #8BE86A);
   opacity: 0.5;
   animation: holoFloat 8s ease-in-out infinite;
 }
@@ -134,16 +134,16 @@
   height: 52px;
   border-radius: 14px;
   background: conic-gradient(from 0deg,
-      #1f8f5d,
-      #34d399,
-      #53f59a,
-      #7fffb8,
-      #34d399,
-      #1f8f5d);
+      #2A7F12,
+      #3CB01A,
+      #8BE86A,
+      #B6F59A,
+      #3CB01A,
+      #2A7F12);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 24px rgba(83, 245, 154, 0.35);
+  box-shadow: 0 0 24px rgba(139, 232, 106, 0.35);
 }
 
 @keyframes holoRot {
@@ -179,7 +179,7 @@
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--fn-accent, #53f59a);
+  color: var(--fn-accent, #8BE86A);
   margin-bottom: 4px;
 }
 
@@ -231,7 +231,7 @@
 .holo-pot b {
   font-size: 22px;
   font-weight: 900;
-  background: linear-gradient(90deg, #53f59a, #85e9c8);
+  background: linear-gradient(90deg, #8BE86A, #B6F59A);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -264,9 +264,9 @@
 }
 
 .holo-tab.active {
-  background: rgba(83, 245, 154, 0.14);
-  color: var(--fn-accent, #53f59a);
-  box-shadow: inset 0 0 0 1px rgba(83, 245, 154, 0.3);
+  background: rgba(139, 232, 106, 0.14);
+  color: var(--fn-accent, #8BE86A);
+  box-shadow: inset 0 0 0 1px rgba(139, 232, 106, 0.3);
 }
 
 .panel {
@@ -353,7 +353,7 @@
 
 .holo-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #53f59a, #85e9c8);
+  background: linear-gradient(90deg, #8BE86A, #B6F59A);
   width: 0%;
   transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 2px;
@@ -372,7 +372,7 @@
 }
 
 .holo-style-card:hover {
-  background: rgba(83, 245, 154, 0.06);
+  background: rgba(139, 232, 106, 0.06);
   transform: translateY(-2px);
 }
 
@@ -380,8 +380,8 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(160deg, rgba(83, 245, 154, 0.2), rgba(83, 245, 154, 0.02));
-  border: 1px solid rgba(83, 245, 154, 0.25);
+  background: linear-gradient(160deg, rgba(139, 232, 106, 0.2), rgba(139, 232, 106, 0.02));
+  border: 1px solid rgba(139, 232, 106, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -419,7 +419,7 @@
   aspect-ratio: 1;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(83, 245, 154, 0.16);
+  border: 1px solid rgba(139, 232, 106, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,9 +428,9 @@
 }
 
 .holo-mini-icon:hover {
-  border-color: rgba(83, 245, 154, 0.5);
+  border-color: rgba(139, 232, 106, 0.5);
   transform: translateY(-2px);
-  background: rgba(83, 245, 154, 0.06);
+  background: rgba(139, 232, 106, 0.06);
 }
 
 .holo-field-wrap {
@@ -443,8 +443,8 @@
   position: relative;
   height: 360px;
   border-radius: 10px;
-  background: radial-gradient(ellipse at 50% 30%, rgba(83, 245, 154, 0.05), transparent 70%), rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(83, 245, 154, 0.14);
+  background: radial-gradient(ellipse at 50% 30%, rgba(139, 232, 106, 0.05), transparent 70%), rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(139, 232, 106, 0.14);
   transform: rotateX(38deg);
   transform-style: preserve-3d;
   animation: holoFieldIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -467,7 +467,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  color: rgba(83, 245, 154, 0.16);
+  color: rgba(139, 232, 106, 0.16);
   pointer-events: none;
 }
 
@@ -503,12 +503,12 @@
 
 .holo-orb--vazio .holo-orb__circle {
   background: rgba(255, 255, 255, 0.03);
-  border: 1.5px solid rgba(83, 245, 154, 0.28);
+  border: 1.5px solid rgba(139, 232, 106, 0.28);
 }
 
 .holo-orb--ativo .holo-orb__circle {
-  background: radial-gradient(circle at 35% 30%, #baffdc, #53f59a 55%, #1f9e63 100%);
-  box-shadow: 0 0 18px 4px rgba(83, 245, 154, 0.55), 0 0 40px 10px rgba(83, 245, 154, 0.25);
+  background: radial-gradient(circle at 35% 30%, #DDFBD0, #8BE86A 55%, #3CB01A 100%);
+  box-shadow: 0 0 18px 4px rgba(139, 232, 106, 0.55), 0 0 40px 10px rgba(139, 232, 106, 0.25);
   animation: holoOrbPulse 2.6s ease-in-out infinite;
 }
 
@@ -516,11 +516,11 @@
 
   0%,
   100% {
-    box-shadow: 0 0 18px 4px rgba(83, 245, 154, 0.55), 0 0 40px 10px rgba(83, 245, 154, 0.25);
+    box-shadow: 0 0 18px 4px rgba(139, 232, 106, 0.55), 0 0 40px 10px rgba(139, 232, 106, 0.25);
   }
 
   50% {
-    box-shadow: 0 0 24px 6px rgba(83, 245, 154, 0.75), 0 0 54px 14px rgba(83, 245, 154, 0.35);
+    box-shadow: 0 0 24px 6px rgba(139, 232, 106, 0.75), 0 0 54px 14px rgba(139, 232, 106, 0.35);
   }
 }
 
@@ -581,8 +581,8 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border: 2.5px solid rgba(83, 245, 154, 0.18);
-  border-top-color: var(--fn-accent, #53f59a);
+  border: 2.5px solid rgba(139, 232, 106, 0.18);
+  border-top-color: var(--fn-accent, #8BE86A);
   animation: jd-spin 800ms linear infinite;
 }
 

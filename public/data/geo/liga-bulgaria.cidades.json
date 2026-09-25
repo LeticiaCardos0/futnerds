@@ -1,0 +1,768 @@
+{
+  "ligaId": "liga-bulgaria",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Sófia",
+      "lat": 42.6853,
+      "lng": 23.3147,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Plovdiv",
+      "lat": 42.154,
+      "lng": 24.754,
+      "rank": 1
+    },
+    {
+      "nome": "Varna",
+      "lat": 43.2156,
+      "lng": 27.8953,
+      "rank": 1
+    },
+    {
+      "nome": "Burgas",
+      "lat": 42.5146,
+      "lng": 27.4746,
+      "rank": 1
+    },
+    {
+      "nome": "Ruse",
+      "lat": 43.8537,
+      "lng": 25.9733,
+      "rank": 1
+    },
+    {
+      "nome": "Stara Zagora",
+      "lat": 42.4231,
+      "lng": 25.6227,
+      "rank": 1
+    },
+    {
+      "nome": "Pleven",
+      "lat": 43.4238,
+      "lng": 24.6134,
+      "rank": 1
+    },
+    {
+      "nome": "Sliven",
+      "lat": 42.6794,
+      "lng": 26.33,
+      "rank": 1
+    },
+    {
+      "nome": "Dobrich",
+      "lat": 43.5851,
+      "lng": 27.84,
+      "rank": 1
+    },
+    {
+      "nome": "Shumen",
+      "lat": 43.27,
+      "lng": 26.9294,
+      "rank": 1
+    },
+    {
+      "nome": "Pernik",
+      "lat": 42.61,
+      "lng": 23.0227,
+      "rank": 1
+    },
+    {
+      "nome": "Haskovo",
+      "lat": 41.9438,
+      "lng": 25.5633,
+      "rank": 1
+    },
+    {
+      "nome": "Vratsa",
+      "lat": 43.21,
+      "lng": 23.5625,
+      "rank": 1
+    },
+    {
+      "nome": "Veliko Tarnovo",
+      "lat": 43.0862,
+      "lng": 25.6555,
+      "rank": 1
+    },
+    {
+      "nome": "Kyustendil",
+      "lat": 42.2843,
+      "lng": 22.6911,
+      "rank": 1
+    },
+    {
+      "nome": "Montana",
+      "lat": 43.414,
+      "lng": 23.237,
+      "rank": 2
+    },
+    {
+      "nome": "Lovech",
+      "lat": 43.138,
+      "lng": 24.719,
+      "rank": 2
+    },
+    {
+      "nome": "Blagoevgrad",
+      "lat": 42.0146,
+      "lng": 23.098,
+      "rank": 3
+    },
+    {
+      "nome": "Yambol",
+      "lat": 42.4824,
+      "lng": 26.5001,
+      "rank": 3
+    },
+    {
+      "nome": "Pazardzhik",
+      "lat": 42.1993,
+      "lng": 24.3332,
+      "rank": 3
+    },
+    {
+      "nome": "Asenovgrad",
+      "lat": 42.0167,
+      "lng": 24.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Gabrovo",
+      "lat": 42.8742,
+      "lng": 25.3182,
+      "rank": 3
+    },
+    {
+      "nome": "Kazanlak",
+      "lat": 42.6167,
+      "lng": 25.4,
+      "rank": 3
+    },
+    {
+      "nome": "Kardzhali",
+      "lat": 41.645,
+      "lng": 25.3658,
+      "rank": 3
+    },
+    {
+      "nome": "Dimitrovgrad",
+      "lat": 42.05,
+      "lng": 25.6,
+      "rank": 3
+    },
+    {
+      "nome": "Vidin",
+      "lat": 43.9916,
+      "lng": 22.8824,
+      "rank": 3
+    },
+    {
+      "nome": "Targovishte",
+      "lat": 43.2512,
+      "lng": 26.5722,
+      "rank": 3
+    },
+    {
+      "nome": "Dupnitsa",
+      "lat": 42.2648,
+      "lng": 23.1172,
+      "rank": 3
+    },
+    {
+      "nome": "Petrich",
+      "lat": 41.3985,
+      "lng": 23.207,
+      "rank": 3
+    },
+    {
+      "nome": "Smolyan",
+      "lat": 41.5744,
+      "lng": 24.712,
+      "rank": 3
+    },
+    {
+      "nome": "Karlovo",
+      "lat": 42.6333,
+      "lng": 24.8,
+      "rank": 3
+    },
+    {
+      "nome": "Svishtov",
+      "lat": 43.6187,
+      "lng": 25.3503,
+      "rank": 3
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Istambul",
+      "lat": 41.1069,
+      "lng": 29.0081,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bucareste",
+      "lat": 44.4353,
+      "lng": 26.098,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Bursa",
+      "lat": 40.2019,
+      "lng": 29.0681,
+      "rank": 1
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Salônica",
+      "lat": 40.6981,
+      "lng": 22.8831,
+      "rank": 1
+    },
+    {
+      "nome": "Ancara",
+      "lat": 39.9292,
+      "lng": 32.8624,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8189,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "İzmit",
+      "lat": 40.776,
+      "lng": 29.9306,
+      "rank": 1
+    },
+    {
+      "nome": "Craiova",
+      "lat": 44.3263,
+      "lng": 23.8259,
+      "rank": 1
+    },
+    {
+      "nome": "Constanța",
+      "lat": 44.2027,
+      "lng": 28.61,
+      "rank": 1
+    },
+    {
+      "nome": "Niš",
+      "lat": 43.3304,
+      "lng": 21.9,
+      "rank": 2
+    },
+    {
+      "nome": "Adapazarı",
+      "lat": 40.7667,
+      "lng": 30.4,
+      "rank": 2
+    },
+    {
+      "nome": "Ploiești",
+      "lat": 44.9469,
+      "lng": 26.0365,
+      "rank": 2
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Eskişehir",
+      "lat": 39.795,
+      "lng": 30.53,
+      "rank": 2
+    },
+    {
+      "nome": "Prizren",
+      "lat": 42.2293,
+      "lng": 20.7501,
+      "rank": 2
+    },
+    {
+      "nome": "Kragujevac",
+      "lat": 44.02,
+      "lng": 20.92,
+      "rank": 2
+    },
+    {
+      "nome": "Pitești",
+      "lat": 44.8563,
+      "lng": 24.8758,
+      "rank": 2
+    },
+    {
+      "nome": "Odessa",
+      "lat": 46.492,
+      "lng": 30.7081,
+      "rank": 2
+    },
+    {
+      "nome": "Galați",
+      "lat": 45.4559,
+      "lng": 28.0459,
+      "rank": 2
+    },
+    {
+      "nome": "Brăila",
+      "lat": 45.292,
+      "lng": 27.969,
+      "rank": 2
+    },
+    {
+      "nome": "Edirne",
+      "lat": 41.6704,
+      "lng": 26.57,
+      "rank": 2
+    },
+    {
+      "nome": "Tekirdağ",
+      "lat": 40.9909,
+      "lng": 27.51,
+      "rank": 2
+    },
+    {
+      "nome": "Tetovo",
+      "lat": 42.0092,
+      "lng": 20.9701,
+      "rank": 2
+    },
+    {
+      "nome": "Brașov",
+      "lat": 45.6475,
+      "lng": 25.6072,
+      "rank": 2
+    },
+    {
+      "nome": "Drobeta-Turnu Severin",
+      "lat": 44.6459,
+      "lng": 22.6659,
+      "rank": 2
+    },
+    {
+      "nome": "Čačak",
+      "lat": 43.8897,
+      "lng": 20.3301,
+      "rank": 2
+    },
+    {
+      "nome": "Timișoara",
+      "lat": 45.7588,
+      "lng": 21.2234,
+      "rank": 2
+    },
+    {
+      "nome": "Buzău",
+      "lat": 45.1565,
+      "lng": 26.8065,
+      "rank": 2
+    },
+    {
+      "nome": "Lüleburgaz",
+      "lat": 41.4067,
+      "lng": 27.3552,
+      "rank": 2
+    },
+    {
+      "nome": "Târgu Jiu",
+      "lat": 45.045,
+      "lng": 23.274,
+      "rank": 2
+    },
+    {
+      "nome": "Târgoviște",
+      "lat": 44.938,
+      "lng": 25.459,
+      "rank": 2
+    },
+    {
+      "nome": "Râmnicu Vâlcea",
+      "lat": 45.11,
+      "lng": 24.383,
+      "rank": 2
+    },
+    {
+      "nome": "Bitola",
+      "lat": 41.0391,
+      "lng": 21.3395,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Sad",
+      "lat": 45.2504,
+      "lng": 19.8499,
+      "rank": 3
+    },
+    {
+      "nome": "Slatina",
+      "lat": 44.435,
+      "lng": 24.371,
+      "rank": 3
+    },
+    {
+      "nome": "Balıkesir",
+      "lat": 39.6504,
+      "lng": 27.89,
+      "rank": 3
+    },
+    {
+      "nome": "Elbasani",
+      "lat": 41.1215,
+      "lng": 20.0838,
+      "rank": 3
+    },
+    {
+      "nome": "Călărași",
+      "lat": 44.2063,
+      "lng": 27.3259,
+      "rank": 3
+    },
+    {
+      "nome": "Giurgiu",
+      "lat": 43.93,
+      "lng": 25.84,
+      "rank": 3
+    },
+    {
+      "nome": "Podgorica",
+      "lat": 42.466,
+      "lng": 19.2663,
+      "rank": 3,
+      "grande": true
+    },
+    {
+      "nome": "Tulcea",
+      "lat": 45.1993,
+      "lng": 28.7967,
+      "rank": 3
+    },
+    {
+      "nome": "Peć",
+      "lat": 42.6603,
+      "lng": 20.3107,
+      "rank": 3
+    },
+    {
+      "nome": "Kavala",
+      "lat": 40.9412,
+      "lng": 24.4018,
+      "rank": 3
+    },
+    {
+      "nome": "Korçë",
+      "lat": 40.6167,
+      "lng": 20.7667,
+      "rank": 3
+    },
+    {
+      "nome": "Querclareli",
+      "lat": 41.743,
+      "lng": 27.226,
+      "rank": 3
+    },
+    {
+      "nome": "Serres",
+      "lat": 41.086,
+      "lng": 23.5497,
+      "rank": 3
+    },
+    {
+      "nome": "Alexandrópolis",
+      "lat": 40.8486,
+      "lng": 25.8744,
+      "rank": 3
+    },
+    {
+      "nome": "Slobozia",
+      "lat": 44.57,
+      "lng": 27.382,
+      "rank": 3
+    },
+    {
+      "nome": "Chanacale",
+      "lat": 40.1459,
+      "lng": 26.4064,
+      "rank": 3
+    },
+    {
+      "nome": "Xanthi",
+      "lat": 41.1418,
+      "lng": 24.8836,
+      "rank": 3
+    },
+    {
+      "nome": "Reșița",
+      "lat": 45.297,
+      "lng": 21.8865,
+      "rank": 3
+    },
+    {
+      "nome": "Alexandria",
+      "lat": 43.9016,
+      "lng": 25.2867,
+      "rank": 3
+    },
+    {
+      "nome": "Sibiu",
+      "lat": 45.7971,
+      "lng": 24.1371,
+      "rank": 3
+    },
+    {
+      "nome": "Komotini",
+      "lat": 41.1333,
+      "lng": 25.4167,
+      "rank": 3
+    },
+    {
+      "nome": "Izmail",
+      "lat": 45.3503,
+      "lng": 28.8374,
+      "rank": 3
+    },
+    {
+      "nome": "Cutáquia",
+      "lat": 39.42,
+      "lng": 29.93,
+      "rank": 3
+    },
+    {
+      "nome": "Escodra",
+      "lat": 42.0685,
+      "lng": 19.5189,
+      "rank": 3
+    },
+    {
+      "nome": "Katerini",
+      "lat": 40.2723,
+      "lng": 22.5025,
+      "rank": 3
+    },
+    {
+      "nome": "Lárissa",
+      "lat": 39.6304,
+      "lng": 22.42,
+      "rank": 3
+    },
+    {
+      "nome": "Pogradec",
+      "lat": 40.9,
+      "lng": 20.664,
+      "rank": 3
+    },
+    {
+      "nome": "Durrës",
+      "lat": 41.3178,
+      "lng": 19.4482,
+      "rank": 3
+    },
+    {
+      "nome": "Focșani",
+      "lat": 45.6966,
+      "lng": 27.1865,
+      "rank": 3
+    },
+    {
+      "nome": "Arad",
+      "lat": 46.17,
+      "lng": 21.32,
+      "rank": 3
+    },
+    {
+      "nome": "Szeged",
+      "lat": 46.2504,
+      "lng": 20.15,
+      "rank": 3
+    },
+    {
+      "nome": "Sebastopol",
+      "lat": 44.6,
+      "lng": 33.465,
+      "rank": 3
+    },
+    {
+      "nome": "Zonguldaque",
+      "lat": 41.4304,
+      "lng": 31.78,
+      "rank": 3
+    },
+    {
+      "nome": "Zrenjanin",
+      "lat": 45.3786,
+      "lng": 20.3995,
+      "rank": 3
+    },
+    {
+      "nome": "Nilüfer",
+      "lat": 40.214,
+      "lng": 28.9157,
+      "rank": 3
+    },
+    {
+      "nome": "Gebze",
+      "lat": 40.8028,
+      "lng": 29.4307,
+      "rank": 3
+    },
+    {
+      "nome": "Çorlu",
+      "lat": 41.1607,
+      "lng": 27.8009,
+      "rank": 3
+    },
+    {
+      "nome": "Büyükçekmece",
+      "lat": 41.0207,
+      "lng": 28.585,
+      "rank": 3
+    },
+    {
+      "nome": "Mitrovicë",
+      "lat": 42.8833,
+      "lng": 20.8667,
+      "rank": 3
+    },
+    {
+      "nome": "Leskovac",
+      "lat": 42.9981,
+      "lng": 21.9461,
+      "rank": 3
+    },
+    {
+      "nome": "Kalamariá",
+      "lat": 40.5825,
+      "lng": 22.9503,
+      "rank": 3
+    },
+    {
+      "nome": "Körfez",
+      "lat": 40.767,
+      "lng": 29.7828,
+      "rank": 3
+    },
+    {
+      "nome": "Bandırma",
+      "lat": 40.3522,
+      "lng": 27.9767,
+      "rank": 3
+    },
+    {
+      "nome": "Çerkezköy",
+      "lat": 41.2863,
+      "lng": 27.9994,
+      "rank": 3
+    },
+    {
+      "nome": "Kraljevo",
+      "lat": 43.7258,
+      "lng": 20.6894,
+      "rank": 3
+    },
+    {
+      "nome": "Kruševac",
+      "lat": 43.58,
+      "lng": 21.3339,
+      "rank": 3
+    },
+    {
+      "nome": "Kumanovo",
+      "lat": 42.1328,
+      "lng": 21.7158,
+      "rank": 3
+    },
+    {
+      "nome": "İnegol",
+      "lat": 40.0781,
+      "lng": 29.5133,
+      "rank": 3
+    },
+    {
+      "nome": "Pančevo",
+      "lat": 44.8718,
+      "lng": 20.6417,
+      "rank": 3
+    },
+    {
+      "nome": "Düzce",
+      "lat": 40.8389,
+      "lng": 31.1639,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Pazar",
+      "lat": 43.1367,
+      "lng": 20.5122,
+      "rank": 3
+    },
+    {
+      "nome": "Gjakovë",
+      "lat": 42.3803,
+      "lng": 20.4308,
+      "rank": 3
+    },
+    {
+      "nome": "Mustafakemalpaşa",
+      "lat": 40.0382,
+      "lng": 28.4087,
+      "rank": 3
+    },
+    {
+      "nome": "Ereğli",
+      "lat": 41.2826,
+      "lng": 31.4181,
+      "rank": 3
+    },
+    {
+      "nome": "Soma",
+      "lat": 39.1855,
+      "lng": 27.6094,
+      "rank": 3
+    },
+    {
+      "nome": "Akhisar",
+      "lat": 38.9185,
+      "lng": 27.8401,
+      "rank": 3
+    },
+    {
+      "nome": "Bartın",
+      "lat": 41.6358,
+      "lng": 32.3375,
+      "rank": 3
+    }
+  ]
+}

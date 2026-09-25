@@ -19,26 +19,81 @@
       "lat": 47.8333,
       "lng": 16.5333,
       "rank": 1
+    },
+    {
+      "nome": "Villach",
+      "lat": 46.6103,
+      "lng": 13.8558,
+      "rank": 3
+    },
+    {
+      "nome": "Eisenzicken",
+      "lat": 47.276,
+      "lng": 16.2591,
+      "rank": 3
+    },
+    {
+      "nome": "Steyr",
+      "lat": 48.0427,
+      "lng": 14.4213,
+      "rank": 3
+    },
+    {
+      "nome": "Feldkirch",
+      "lat": 47.2364,
+      "lng": 9.5973,
+      "rank": 3
     }
   ],
   "cidadesVizinhas": [
     {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Stuttgart",
       "lat": 48.78,
       "lng": 9.2,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Mannheim",
       "lat": 49.5004,
       "lng": 8.47,
-      "rank": 1
+      "rank": 1,
+      "grande": true
     },
     {
-      "nome": "Budapeste",
-      "lat": 47.502,
-      "lng": 19.0814,
-      "rank": 1
+      "nome": "Milão",
+      "lat": 45.4719,
+      "lng": 9.2031,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Frankfurt",
+      "lat": 50.1,
+      "lng": 8.675,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 1,
+      "grande": true
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Munique",
@@ -47,10 +102,24 @@
       "rank": 1
     },
     {
+      "nome": "Katowice",
+      "lat": 50.2604,
+      "lng": 19.02,
+      "rank": 1,
+      "grande": true
+    },
+    {
       "nome": "Zurique",
       "lat": 47.3819,
       "lng": 8.5481,
       "rank": 1
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 1,
+      "grande": true
     },
     {
       "nome": "Basileia",
@@ -62,13 +131,34 @@
       "nome": "Nuremberg",
       "lat": 49.45,
       "lng": 11.08,
-      "rank": 1
+      "rank": 2
     },
     {
-      "nome": "Zagreb",
-      "lat": 45.8,
-      "lng": 16,
-      "rank": 1
+      "nome": "Turim",
+      "lat": 45.0723,
+      "lng": 7.668,
+      "rank": 2
+    },
+    {
+      "nome": "Liubliana",
+      "lat": 46.0553,
+      "lng": 14.515,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 2,
+      "grande": true
+    },
+    {
+      "nome": "Berna",
+      "lat": 46.9167,
+      "lng": 7.467,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Estrasburgo",
@@ -77,9 +167,15 @@
       "rank": 2
     },
     {
-      "nome": "Bratislava",
-      "lat": 48.15,
-      "lng": 17.117,
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Ostrava",
+      "lat": 49.8304,
+      "lng": 18.25,
       "rank": 2
     },
     {
@@ -87,6 +183,13 @@
       "lat": 49.2004,
       "lng": 16.61,
       "rank": 2
+    },
+    {
+      "nome": "Bruxelas",
+      "lat": 50.8353,
+      "lng": 4.3314,
+      "rank": 2,
+      "grande": true
     },
     {
       "nome": "Karlsruhe",
@@ -101,13 +204,25 @@
       "rank": 2
     },
     {
-      "nome": "Liubliana",
-      "lat": 46.0553,
-      "lng": 14.515,
+      "nome": "Wiesbaden",
+      "lat": 50.0804,
+      "lng": 8.25,
       "rank": 2
     },
     {
-      "nome": "Freiburg im Breisgau",
+      "nome": "Genebra",
+      "lat": 46.21,
+      "lng": 6.14,
+      "rank": 2
+    },
+    {
+      "nome": "Cracóvia",
+      "lat": 50.0619,
+      "lng": 19.9581,
+      "rank": 2
+    },
+    {
+      "nome": "Freiburg",
       "lat": 48.0004,
       "lng": 7.8699,
       "rank": 2
@@ -125,52 +240,484 @@
       "rank": 2
     },
     {
+      "nome": "Verona",
+      "lat": 45.4404,
+      "lng": 10.99,
+      "rank": 2
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.932,
+      "lng": 6.9481,
+      "rank": 2
+    },
+    {
+      "nome": "Gliwice",
+      "lat": 50.3304,
+      "lng": 18.67,
+      "rank": 2
+    },
+    {
+      "nome": "Trieste",
+      "lat": 45.6504,
+      "lng": 13.8,
+      "rank": 2
+    },
+    {
+      "nome": "Lyon",
+      "lat": 45.772,
+      "lng": 4.8281,
+      "rank": 2
+    },
+    {
       "nome": "Bérgamo",
       "lat": 45.7004,
       "lng": 9.67,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Bonn",
+      "lat": 50.7205,
+      "lng": 7.08,
+      "rank": 3
     },
     {
       "nome": "Pécs",
       "lat": 46.0804,
       "lng": 18.22,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Veneza",
+      "lat": 45.4387,
+      "lng": 12.335,
+      "rank": 3
+    },
+    {
+      "nome": "Treviso",
+      "lat": 45.67,
+      "lng": 12.24,
+      "rank": 3
     },
     {
       "nome": "Ulm",
       "lat": 48.4004,
       "lng": 10,
-      "rank": 2
+      "rank": 3
     },
     {
-      "nome": "Ratisbona",
+      "nome": "Mulhouse",
+      "lat": 47.7504,
+      "lng": 7.35,
+      "rank": 3
+    },
+    {
+      "nome": "Regensburg",
       "lat": 49.0204,
       "lng": 12.12,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Ingolstadt",
       "lat": 48.7704,
       "lng": 11.45,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Plzeň",
+      "lat": 49.7404,
+      "lng": 13.36,
+      "rank": 3
+    },
+    {
+      "nome": "Würzburg",
+      "lat": 49.8004,
+      "lng": 9.95,
+      "rank": 3
+    },
+    {
+      "nome": "Gênova",
+      "lat": 44.41,
+      "lng": 8.93,
+      "rank": 3
     },
     {
       "nome": "Székesfehérvár",
       "lat": 47.1947,
       "lng": 18.4081,
-      "rank": 2
+      "rank": 3
     },
     {
       "nome": "Győr",
       "lat": 47.7004,
       "lng": 17.63,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Liège",
+      "lat": 50.63,
+      "lng": 5.58,
+      "rank": 3
+    },
+    {
+      "nome": "Dresden",
+      "lat": 51.05,
+      "lng": 13.75,
+      "rank": 3
+    },
+    {
+      "nome": "Koblenz",
+      "lat": 50.3505,
+      "lng": 7.6,
+      "rank": 3
+    },
+    {
+      "nome": "Wrocław",
+      "lat": 51.1104,
+      "lng": 17.03,
+      "rank": 3
+    },
+    {
+      "nome": "Metz",
+      "lat": 49.1203,
+      "lng": 6.18,
+      "rank": 3
     },
     {
       "nome": "Zlín",
       "lat": 49.2304,
       "lng": 17.65,
-      "rank": 2
+      "rank": 3
+    },
+    {
+      "nome": "Bolonha",
+      "lat": 44.5004,
+      "lng": 11.34,
+      "rank": 3
+    },
+    {
+      "nome": "Udine",
+      "lat": 46.07,
+      "lng": 13.24,
+      "rank": 3
+    },
+    {
+      "nome": "Maribor",
+      "lat": 46.5405,
+      "lng": 15.65,
+      "rank": 3
+    },
+    {
+      "nome": "Lausanne",
+      "lat": 46.5304,
+      "lng": 6.65,
+      "rank": 3
+    },
+    {
+      "nome": "Szombathely",
+      "lat": 47.2253,
+      "lng": 16.6287,
+      "rank": 3
+    },
+    {
+      "nome": "Kaposvár",
+      "lat": 46.367,
+      "lng": 17.8,
+      "rank": 3
+    },
+    {
+      "nome": "Trento",
+      "lat": 46.0804,
+      "lng": 11.12,
+      "rank": 3
+    },
+    {
+      "nome": "Lugano",
+      "lat": 46.0004,
+      "lng": 8.9667,
+      "rank": 3
+    },
+    {
+      "nome": "Olomouc",
+      "lat": 49.63,
+      "lng": 17.25,
+      "rank": 3
+    },
+    {
+      "nome": "Rijeka",
+      "lat": 45.33,
+      "lng": 14.45,
+      "rank": 3
+    },
+    {
+      "nome": "České Budějovice",
+      "lat": 48.98,
+      "lng": 14.46,
+      "rank": 3
+    },
+    {
+      "nome": "Bolzano",
+      "lat": 46.5004,
+      "lng": 11.36,
+      "rank": 3
+    },
+    {
+      "nome": "Rosenheim",
+      "lat": 47.8503,
+      "lng": 12.1333,
+      "rank": 3
+    },
+    {
+      "nome": "Novi Sad",
+      "lat": 45.2504,
+      "lng": 19.8499,
+      "rank": 3
+    },
+    {
+      "nome": "Žilina",
+      "lat": 49.2198,
+      "lng": 18.7494,
+      "rank": 3
+    },
+    {
+      "nome": "Brescia",
+      "lat": 45.5356,
+      "lng": 10.2147,
+      "rank": 3
+    },
+    {
+      "nome": "Bielsko-Biala",
+      "lat": 49.8225,
+      "lng": 19.0469,
+      "rank": 3
+    },
+    {
+      "nome": "Mainz",
+      "lat": 49.9819,
+      "lng": 8.2801,
+      "rank": 3
+    },
+    {
+      "nome": "Heidelberg",
+      "lat": 49.4077,
+      "lng": 8.6908,
+      "rank": 3
+    },
+    {
+      "nome": "Padua",
+      "lat": 45.408,
+      "lng": 11.8859,
+      "rank": 3
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8717,
+      "lng": 8.6503,
+      "rank": 3
+    },
+    {
+      "nome": "Heilbronn",
+      "lat": 49.1399,
+      "lng": 9.2205,
+      "rank": 3
+    },
+    {
+      "nome": "Pforzheim",
+      "lat": 48.8844,
+      "lng": 8.6989,
+      "rank": 3
+    },
+    {
+      "nome": "Reutlingen",
+      "lat": 48.4914,
+      "lng": 9.2043,
+      "rank": 3
+    },
+    {
+      "nome": "Winterthur",
+      "lat": 47.5056,
+      "lng": 8.7241,
+      "rank": 3
+    },
+    {
+      "nome": "Monza",
+      "lat": 45.58,
+      "lng": 9.2725,
+      "rank": 3
+    },
+    {
+      "nome": "Erlangen",
+      "lat": 49.591,
+      "lng": 11.0078,
+      "rank": 3
+    },
+    {
+      "nome": "Kaiserslautern",
+      "lat": 49.443,
+      "lng": 7.7716,
+      "rank": 3
+    },
+    {
+      "nome": "Tübingen",
+      "lat": 48.5227,
+      "lng": 9.0522,
+      "rank": 3
+    },
+    {
+      "nome": "Vicenza",
+      "lat": 45.5467,
+      "lng": 11.5475,
+      "rank": 3
+    },
+    {
+      "nome": "Ludwigsburg",
+      "lat": 48.8973,
+      "lng": 9.1916,
+      "rank": 3
+    },
+    {
+      "nome": "Nitra",
+      "lat": 48.3076,
+      "lng": 18.0845,
+      "rank": 3
+    },
+    {
+      "nome": "Villingen-Schwenningen",
+      "lat": 48.0623,
+      "lng": 8.4936,
+      "rank": 3
+    },
+    {
+      "nome": "Konstanz",
+      "lat": 47.6603,
+      "lng": 9.1758,
+      "rank": 3
+    },
+    {
+      "nome": "Worms",
+      "lat": 49.6328,
+      "lng": 8.3592,
+      "rank": 3
+    },
+    {
+      "nome": "Rybnik",
+      "lat": 50.0971,
+      "lng": 18.5418,
+      "rank": 3
+    },
+    {
+      "nome": "Varese",
+      "lat": 45.8206,
+      "lng": 8.8251,
+      "rank": 3
+    },
+    {
+      "nome": "Bytom",
+      "lat": 50.348,
+      "lng": 18.9328,
+      "rank": 3
+    },
+    {
+      "nome": "Havířov",
+      "lat": 49.7798,
+      "lng": 18.4369,
+      "rank": 3
+    },
+    {
+      "nome": "Busto Arsizio",
+      "lat": 45.6113,
+      "lng": 8.8491,
+      "rank": 3
+    },
+    {
+      "nome": "Tychy",
+      "lat": 50.1372,
+      "lng": 18.9664,
+      "rank": 3
+    },
+    {
+      "nome": "Budapest XVII. kerület",
+      "lat": 47.48,
+      "lng": 19.2539,
+      "rank": 3
+    },
+    {
+      "nome": "Ruda Śląska",
+      "lat": 50.2584,
+      "lng": 18.8563,
+      "rank": 3
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.7965,
+      "lng": 19.1241,
+      "rank": 3
+    },
+    {
+      "nome": "Jastrzębie Zdrój",
+      "lat": 49.9554,
+      "lng": 18.5748,
+      "rank": 3
+    },
+    {
+      "nome": "Aachen",
+      "lat": 50.7766,
+      "lng": 6.0834,
+      "rank": 3
+    },
+    {
+      "nome": "Reggio nell'Emilia",
+      "lat": 44.6983,
+      "lng": 10.6312,
+      "rank": 3
+    },
+    {
+      "nome": "Dąbrowa Górnicza",
+      "lat": 50.3339,
+      "lng": 19.2048,
+      "rank": 3
+    },
+    {
+      "nome": "Hanau",
+      "lat": 50.1342,
+      "lng": 8.9142,
+      "rank": 3
+    },
+    {
+      "nome": "Jaworzno",
+      "lat": 50.2053,
+      "lng": 19.275,
+      "rank": 3
+    },
+    {
+      "nome": "Piacenza",
+      "lat": 45.0524,
+      "lng": 9.6934,
+      "rank": 3
+    },
+    {
+      "nome": "Trier",
+      "lat": 49.7557,
+      "lng": 6.6394,
+      "rank": 3
+    },
+    {
+      "nome": "Wałbrzych",
+      "lat": 50.7714,
+      "lng": 16.2843,
+      "rank": 3
+    },
+    {
+      "nome": "Leverkusen",
+      "lat": 51.0303,
+      "lng": 6.9843,
+      "rank": 3
+    },
+    {
+      "nome": "Alessandria",
+      "lat": 44.9092,
+      "lng": 8.6101,
+      "rank": 3
     }
   ]
 }
