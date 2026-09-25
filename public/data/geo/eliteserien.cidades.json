@@ -1,0 +1,284 @@
+{
+  "ligaId": "eliteserien",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Drammen",
+      "lat": 59.7572,
+      "lng": 10.1907,
+      "rank": 1
+    },
+    {
+      "nome": "Skien",
+      "lat": 59.2,
+      "lng": 9.6,
+      "rank": 1
+    },
+    {
+      "nome": "Haugesund",
+      "lat": 59.4119,
+      "lng": 5.2775,
+      "rank": 1
+    },
+    {
+      "nome": "Moss",
+      "lat": 59.437,
+      "lng": 10.6692,
+      "rank": 1
+    },
+    {
+      "nome": "Arendal",
+      "lat": 58.4648,
+      "lng": 8.766,
+      "rank": 1
+    },
+    {
+      "nome": "Gjøvik",
+      "lat": 60.8,
+      "lng": 10.7,
+      "rank": 1
+    },
+    {
+      "nome": "Mo i Rana",
+      "lat": 66.3166,
+      "lng": 14.1667,
+      "rank": 1
+    },
+    {
+      "nome": "Narvik",
+      "lat": 68.3832,
+      "lng": 17.29,
+      "rank": 1
+    },
+    {
+      "nome": "Lillehammer",
+      "lat": 61.1333,
+      "lng": 10.5,
+      "rank": 1
+    },
+    {
+      "nome": "Harstad",
+      "lat": 68.7879,
+      "lng": 16.5156,
+      "rank": 1
+    },
+    {
+      "nome": "Alta",
+      "lat": 69.9666,
+      "lng": 23.2417,
+      "rank": 1
+    },
+    {
+      "nome": "Steinkjer",
+      "lat": 64.0171,
+      "lng": 11.5,
+      "rank": 1
+    },
+    {
+      "nome": "Hammerfest",
+      "lat": 70.6613,
+      "lng": 23.688,
+      "rank": 1
+    },
+    {
+      "nome": "Namsos",
+      "lat": 64.4833,
+      "lng": 11.5,
+      "rank": 1
+    },
+    {
+      "nome": "Vossevangen",
+      "lat": 60.63,
+      "lng": 6.441,
+      "rank": 1
+    },
+    {
+      "nome": "Vadsø",
+      "lat": 70.0966,
+      "lng": 29.7657,
+      "rank": 2
+    },
+    {
+      "nome": "Svolvær",
+      "lat": 68.2333,
+      "lng": 14.5667,
+      "rank": 2
+    },
+    {
+      "nome": "Finnsnes",
+      "lat": 69.2406,
+      "lng": 18.0086,
+      "rank": 2
+    },
+    {
+      "nome": "Kirkenes",
+      "lat": 69.725,
+      "lng": 30.0516,
+      "rank": 2
+    },
+    {
+      "nome": "Rørvik",
+      "lat": 64.868,
+      "lng": 11.2053,
+      "rank": 2
+    },
+    {
+      "nome": "Leikanger",
+      "lat": 61.1833,
+      "lng": 6.85,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Moscou",
+      "lat": 55.7541,
+      "lng": 37.6136,
+      "rank": 1
+    },
+    {
+      "nome": "São Petersburgo",
+      "lat": 59.941,
+      "lng": 30.3141,
+      "rank": 1
+    },
+    {
+      "nome": "Estocolmo",
+      "lat": 59.3527,
+      "lng": 18.0954,
+      "rank": 1
+    },
+    {
+      "nome": "Helsinque",
+      "lat": 60.1775,
+      "lng": 24.9322,
+      "rank": 1
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6805,
+      "lng": 12.5615,
+      "rank": 1
+    },
+    {
+      "nome": "Newcastle upon Tyne",
+      "lat": 55.0023,
+      "lng": -1.6019,
+      "rank": 1
+    },
+    {
+      "nome": "Riga",
+      "lat": 56.95,
+      "lng": 24.1,
+      "rank": 1
+    },
+    {
+      "nome": "Vilnius",
+      "lat": 54.6834,
+      "lng": 25.3166,
+      "rank": 1
+    },
+    {
+      "nome": "Gotemburgo",
+      "lat": 57.75,
+      "lng": 12,
+      "rank": 2
+    },
+    {
+      "nome": "Sunderland",
+      "lat": 54.92,
+      "lng": -1.38,
+      "rank": 2
+    },
+    {
+      "nome": "Caliningrado",
+      "lat": 54.7,
+      "lng": 20.4973,
+      "rank": 2
+    },
+    {
+      "nome": "Middlesbrough",
+      "lat": 54.5804,
+      "lng": -1.23,
+      "rank": 2
+    },
+    {
+      "nome": "Tver",
+      "lat": 56.86,
+      "lng": 35.89,
+      "rank": 2
+    },
+    {
+      "nome": "Tallinn",
+      "lat": 59.4339,
+      "lng": 24.728,
+      "rank": 2
+    },
+    {
+      "nome": "Kaunas",
+      "lat": 54.9504,
+      "lng": 23.88,
+      "rank": 2
+    },
+    {
+      "nome": "Vitebsk",
+      "lat": 55.1887,
+      "lng": 30.1853,
+      "rank": 2
+    },
+    {
+      "nome": "Smolensk",
+      "lat": 54.7827,
+      "lng": 32.0473,
+      "rank": 2
+    },
+    {
+      "nome": "Podolsk",
+      "lat": 55.3804,
+      "lng": 37.5299,
+      "rank": 2
+    },
+    {
+      "nome": "Murmansk",
+      "lat": 68.97,
+      "lng": 33.1,
+      "rank": 2
+    },
+    {
+      "nome": "Malmö",
+      "lat": 55.5833,
+      "lng": 13.0333,
+      "rank": 2
+    },
+    {
+      "nome": "Petrozavódseque",
+      "lat": 61.85,
+      "lng": 34.28,
+      "rank": 2
+    },
+    {
+      "nome": "Tampere",
+      "lat": 61.5,
+      "lng": 23.75,
+      "rank": 2
+    },
+    {
+      "nome": "Aarhus",
+      "lat": 56.1572,
+      "lng": 10.2107,
+      "rank": 2
+    },
+    {
+      "nome": "Veliky Novgorod",
+      "lat": 58.5,
+      "lng": 31.33,
+      "rank": 2
+    },
+    {
+      "nome": "Pskov",
+      "lat": 57.83,
+      "lng": 28.3299,
+      "rank": 2
+    }
+  ]
+}

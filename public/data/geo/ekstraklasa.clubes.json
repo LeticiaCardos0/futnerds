@@ -1,0 +1,340 @@
+{
+  "ligaId": "ekstraklasa",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Białystok",
+      "lat": 53.1324,
+      "lng": 23.1687,
+      "_wikidata": "Q761"
+    },
+    {
+      "nome": "Cracóvia",
+      "lat": 50.0614,
+      "lng": 19.9372,
+      "_wikidata": "Q31487"
+    },
+    {
+      "nome": "Częstochowa",
+      "lat": 50.8096,
+      "lng": 19.1222,
+      "_wikidata": "Q103217"
+    },
+    {
+      "nome": "Gliwice",
+      "lat": 50.2942,
+      "lng": 18.6658,
+      "_wikidata": "Q105084"
+    },
+    {
+      "nome": "Katowice",
+      "lat": 50.25,
+      "lng": 19,
+      "_wikidata": "Q588"
+    },
+    {
+      "nome": "Kielce",
+      "lat": 50.8725,
+      "lng": 20.6319,
+      "_wikidata": "Q102317"
+    },
+    {
+      "nome": "Łódź",
+      "lat": 51.75,
+      "lng": 19.4667,
+      "_wikidata": "Q580",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Lubin",
+      "lat": 51.4,
+      "lng": 16.2,
+      "_wikidata": "Q237512",
+      "_homonimos": 6
+    },
+    {
+      "nome": "Lublin",
+      "lat": 51.25,
+      "lng": 22.5667,
+      "_wikidata": "Q37333"
+    },
+    {
+      "nome": "Płock",
+      "lat": 52.55,
+      "lng": 19.7,
+      "_wikidata": "Q104725"
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4083,
+      "lng": 16.9336,
+      "_wikidata": "Q268"
+    },
+    {
+      "nome": "Radom",
+      "lat": 51.4167,
+      "lng": 21.15,
+      "_wikidata": "Q104740"
+    },
+    {
+      "nome": "Szczecin",
+      "lat": 53.4247,
+      "lng": 14.5553,
+      "_wikidata": "Q393"
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.23,
+      "lng": 21.0111,
+      "_wikidata": "Q270"
+    },
+    {
+      "nome": "Wrocław",
+      "lat": 51.11,
+      "lng": 17.0325,
+      "_wikidata": "Q1799"
+    },
+    {
+      "nome": "Zabrze",
+      "lat": 50.3,
+      "lng": 18.7833,
+      "_wikidata": "Q103892"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "cracovia",
+      "nomesBase": [
+        "Cracovia"
+      ],
+      "cidade": "Cracóvia",
+      "estadio": "Marshal Józef Piłsudski Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20J%C3%B3zef%20Pi%C5%82sudski.jpg?width=800",
+      "lat": 50.0581,
+      "lng": 19.9197,
+      "_wikidata": "Q24074158",
+      "_wikidataLabel": "Cracovia"
+    },
+    {
+      "slug": "gks-katowice",
+      "nomesBase": [
+        "GKS Katowice"
+      ],
+      "cidade": "Katowice",
+      "estadio": "Arena Katowice",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2025-04%20Katowice%20stadion%20Arena%20Katowice%20%2846%29.jpg?width=800",
+      "lat": 50.2512,
+      "lng": 18.9744,
+      "_wikidata": "Q925935",
+      "_wikidataLabel": "GKS Katowice"
+    },
+    {
+      "slug": "gornik-zabrze",
+      "nomesBase": [
+        "Górnik Zabrze"
+      ],
+      "cidade": "Zabrze",
+      "estadio": "Ernest Pohl Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ernest%20Pohl%20Stadium%20-%20Zabrze%202.jpg?width=800",
+      "lat": 50.2963,
+      "lng": 18.7686,
+      "_wikidata": "Q134255",
+      "_wikidataLabel": "Górnik Zabrze"
+    },
+    {
+      "slug": "jagiellonia-bia-ystok",
+      "nomesBase": [
+        "Jagiellonia"
+      ],
+      "cidade": "Białystok",
+      "estadio": "Białystok City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Miejski%20-%20Bia%C5%82ystok1.jpg?width=800",
+      "lat": 53.1056,
+      "lng": 23.1489,
+      "_wikidata": "Q189170",
+      "_wikidataLabel": "Jagiellonia Białystok"
+    },
+    {
+      "slug": "korona-kielce",
+      "nomesBase": [
+        "Korona Kielce"
+      ],
+      "cidade": "Kielce",
+      "estadio": "Kielce City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Korona%20Kielce%20Super%20Stadion%201.jpg?width=800",
+      "lat": 50.8614,
+      "lng": 20.6247,
+      "_wikidata": "Q730219",
+      "_wikidataLabel": "Korona Kielce"
+    },
+    {
+      "slug": "lech-poznan",
+      "nomesBase": [
+        "Lech Poznań"
+      ],
+      "cidade": "Poznań",
+      "estadio": "Enea Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Miejski%20Poznan%2C%202011-08-23.jpg?width=800",
+      "lat": 52.3972,
+      "lng": 16.8581,
+      "_wikidata": "Q52942",
+      "_wikidataLabel": "Lech Poznań"
+    },
+    {
+      "slug": "legia-warsaw",
+      "nomesBase": [
+        "Legia Warszawa"
+      ],
+      "cidade": "Varsóvia",
+      "estadio": "Polish Army Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Warsaw%20Polish%20Army%20Stadium%209.jpg?width=800",
+      "lat": 52.2205,
+      "lng": 21.0406,
+      "_wikidata": "Q193749",
+      "_wikidataLabel": "Legia Warsaw"
+    },
+    {
+      "slug": "motor-lublin",
+      "nomesBase": [
+        "Motor Lublin"
+      ],
+      "cidade": "Lublin",
+      "estadio": "Arena Lublin",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Arena%20Lublin%20z%20lotu%20ptaka.jpg?width=800",
+      "lat": 51.2319,
+      "lng": 22.5575,
+      "_wikidata": "Q727918",
+      "_wikidataLabel": "Motor Lublin"
+    },
+    {
+      "slug": "piast-gliwice",
+      "nomesBase": [
+        "Piast Gliwice"
+      ],
+      "cidade": "Gliwice",
+      "estadio": "Stadion Piast",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Piasta%20Gliwice%2005.JPG?width=800",
+      "lat": 50.3066,
+      "lng": 18.6959,
+      "_wikidata": "Q668112",
+      "_wikidataLabel": "Piast Gliwice"
+    },
+    {
+      "slug": "pogon-szczecin",
+      "nomesBase": [
+        "Pogoń Szczecin"
+      ],
+      "cidade": "Szczecin",
+      "estadio": "Stadion Florian Kryger",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Miejski%20im.%20Floriana%20Krygiera%20w%20Szczecinie.jpg?width=800",
+      "lat": 53.4366,
+      "lng": 14.5187,
+      "_wikidata": "Q836991",
+      "_wikidataLabel": "Pogoń Szczecin"
+    },
+    {
+      "slug": "radomiak-radom",
+      "nomesBase": [
+        "Radomiak Radom"
+      ],
+      "cidade": "Radom",
+      "estadio": "Stadion RKS Radomiak",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Radomiaka.jpg?width=800",
+      "lat": 51.4094,
+      "lng": 21.1714,
+      "_wikidata": "Q2000763",
+      "_wikidataLabel": "Radomiak Radom"
+    },
+    {
+      "slug": "rakow-czestochowa",
+      "nomesBase": [
+        "Raków"
+      ],
+      "cidade": "Częstochowa",
+      "estadio": "Stadion Miejski",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Rak%C3%B3w%20otwarcie.jpg?width=800",
+      "lat": 50.7767,
+      "lng": 19.1592,
+      "_wikidata": "Q287236",
+      "_wikidataLabel": "Raków Częstochowa"
+    },
+    {
+      "slug": "rts-widzew-odz",
+      "nomesBase": [
+        "Widzew Łódź"
+      ],
+      "cidade": "Łódź",
+      "estadio": "Stadion Widzewa",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Widzewa%2029-07-2017.jpg?width=800",
+      "lat": 51.765,
+      "lng": 19.5117,
+      "_wikidata": "Q244981",
+      "_wikidataLabel": "RTS Widzew Łódź"
+    },
+    {
+      "slug": "slask-wroc-aw",
+      "nomesBase": [
+        "Śląsk Wrocław"
+      ],
+      "cidade": "Wrocław",
+      "estadio": "Tarczyński Arena Wrocław",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wroclaw%20Munincipal%20Stadium%202019.jpg?width=800",
+      "lat": 51.1411,
+      "lng": 16.9436,
+      "_wikidata": "Q328655",
+      "_wikidataLabel": "Śląsk Wrocław"
+    },
+    {
+      "slug": "wieczysta-krakow",
+      "nomesBase": [
+        "KS Wieczysta Kraków"
+      ],
+      "cidade": "Cracóvia",
+      "estadio": "Henryk Reyman Municipal Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20przed%20meczem%20z%20APOELEM.jpg?width=800",
+      "lat": 50.0636,
+      "lng": 19.9119,
+      "_wikidata": "Q86677609",
+      "_wikidataLabel": "Wieczysta Kraków"
+    },
+    {
+      "slug": "wis-a-krakow",
+      "nomesBase": [
+        "Wisła Kraków"
+      ],
+      "cidade": "Cracóvia",
+      "estadio": "Henryk Reyman Municipal Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20przed%20meczem%20z%20APOELEM.jpg?width=800",
+      "lat": 50.0636,
+      "lng": 19.9119,
+      "_wikidata": "Q190943",
+      "_wikidataLabel": "Wisła Kraków"
+    },
+    {
+      "slug": "wis-a-p-ock",
+      "nomesBase": [
+        "Wisła Płock"
+      ],
+      "cidade": "Płock",
+      "estadio": "Kazimierz Górski Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Orlen%20Stadion%202025.jpg?width=800",
+      "lat": 52.562,
+      "lng": 19.6841,
+      "_wikidata": "Q1475269",
+      "_wikidataLabel": "Wisła Płock"
+    },
+    {
+      "slug": "zag-ebie-lubin",
+      "nomesBase": [
+        "Zagłębie Lubin"
+      ],
+      "cidade": "Lubin",
+      "estadio": "Stadion Zagłębia Lubin",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Dialog%20Arena.jpg?width=800",
+      "lat": 51.4133,
+      "lng": 16.1975,
+      "_wikidata": "Q140497",
+      "_wikidataLabel": "Zagłębie Lubin"
+    }
+  ]
+}

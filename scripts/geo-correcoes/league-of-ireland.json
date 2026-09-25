@@ -1,0 +1,22 @@
+{
+  "ligaId": "league-of-ireland",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "Bohemians": {
+      "_nota": "Bohemian F.C.",
+      "clubeWikidata": "Q212708"
+    },
+    "Galway United": {
+      "_nota": "Colide com o Galway FC e com o feminino.",
+      "clubeWikidata": "Q945043"
+    },
+    "Waterford": {
+      "_nota": "No Wikidata ainda como Waterford United.",
+      "clubeWikidata": "Q394466"
+    }
+  }
+}

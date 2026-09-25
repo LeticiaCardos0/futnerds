@@ -1,0 +1,107 @@
+{
+  "ligaId": "ligue-1",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Padrão desta liga: quase todo clube tem um time feminino com o mesmo rótulo",
+    "no Wikidata, e o P159 (sede) de vários aponta para o CT, não para a cidade.",
+    "Daí os clubeWikidata e cidadeWikidata.",
+    "Rennes, Lens, Lorient e Troyes nao resolvem o centro pelo nome (a busca nao os acha como assentamento), dai o cidadeWikidata."
+  ],
+  "clubes": {
+    "AJ Auxerre": {
+      "_nota": "Colide com o feminino (Q134693288); a cidade não resolveu pelo nome.",
+      "clubeWikidata": "Q182876",
+      "cidade": "Auxerre",
+      "cidadeWikidata": "Q167600"
+    },
+    "Angers SCO": { "cidade": "Angers" },
+    "AS Monaco": {
+      "_nota": "O Stade Louis II fica em Mônaco, fora da França — por isso o pin da cidade (a busca de centro filtra pelo país da liga).",
+      "clubeWikidata": "Q180305",
+      "cidade": "Mônaco",
+      "cidadeWikidata": "Q235"
+    },
+    "ESTAC Troyes": {
+      "clubeWikidata": "Q501693",
+      "cidade": "Troyes",
+      "cidadeWikidata": "Q5489"
+    },
+    "FC Lorient": {
+      "_nota": "Colide com o feminino (Q104531607).",
+      "clubeWikidata": "Q48911",
+      "cidade": "Lorient",
+      "cidadeWikidata": "Q71724"
+    },
+    "Havre AC": {
+      "_nota": "Colide com o feminino (Q90842662).",
+      "clubeWikidata": "Q328658",
+      "cidade": "Le Havre"
+    },
+    "Le Mans FC": { "cidade": "Le Mans" },
+    "LOSC Lille": {
+      "_nota": "Sem o pin casa com um Q-id que só tem o Stadium Lille Métropole, antigo. O Pierre-Mauroy fica em Villeneuve-d'Ascq; o rótulo fica Lille.",
+      "clubeWikidata": "Q19516",
+      "estadio": "Stade Pierre-Mauroy",
+      "cidade": "Lille",
+      "cidadeWikidata": "Q648"
+    },
+    "OGC Nice": { "cidade": "Nice" },
+    "OL": {
+      "_nota": "A base abrevia Olympique Lyonnais. O Groupama Stadium fica em Décines-Charpieu; o rótulo fica Lyon.",
+      "clubeWikidata": "Q704",
+      "estadio": "Groupama Stadium",
+      "cidade": "Lyon",
+      "cidadeWikidata": "Q456"
+    },
+    "OM": {
+      "_nota": "A base abrevia Olympique de Marseille; P159 aponta para o CT.",
+      "clubeWikidata": "Q132885",
+      "estadio": "Stade Vélodrome",
+      "cidade": "Marselha",
+      "cidadeWikidata": "Q23482"
+    },
+    "Paris FC": {
+      "_nota": "Colide com o feminino (Q48834322). Trocou o Charléty pelo Jean-Bouin em 2025; o Wikidata ainda não.",
+      "clubeWikidata": "Q1051013",
+      "estadioWikidata": "Q670499",
+      "estadio": "Stade Jean-Bouin",
+      "cidade": "Paris"
+    },
+    "Paris SG": {
+      "_nota": "A base abrevia Paris Saint-Germain.",
+      "clubeWikidata": "Q483020",
+      "cidade": "Paris"
+    },
+    "RC Lens": {
+      "_nota": "P159 aponta para Avion, onde fica o CT.",
+      "clubeWikidata": "Q191843",
+      "estadioWikidata": "Q854122",
+      "estadio": "Stade Bollaert-Delelis",
+      "cidade": "Lens",
+      "cidadeWikidata": "Q165271"
+    },
+    "Stade Brestois 29": {
+      "_nota": "Colide com o feminino.",
+      "clubeWikidata": "Q218372",
+      "cidade": "Brest"
+    },
+    "Stade Rennais FC": {
+      "_nota": "P159 aponta para o CT (Centre Henri-Guérin).",
+      "clubeWikidata": "Q19509",
+      "cidade": "Rennes",
+      "cidadeWikidata": "Q647"
+    },
+    "Strasbourg": {
+      "cidade": "Estrasburgo",
+      "cidadeWikidata": "Q6602"
+    },
+    "Toulouse FC": {
+      "_nota": "Nome exato casa com 3 clubes.",
+      "clubeWikidata": "Q19518",
+      "cidade": "Toulouse"
+    }
+  }
+}

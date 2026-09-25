@@ -1,0 +1,181 @@
+{
+  "ligaId": "league-of-ireland",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Derry",
+      "lat": 54.9917,
+      "lng": -7.3417,
+      "_wikidata": "Q163584",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Drogheda",
+      "lat": 53.715,
+      "lng": -6.3525,
+      "_wikidata": "Q207223"
+    },
+    {
+      "nome": "Dublin",
+      "lat": 53.3497,
+      "lng": -6.2603,
+      "_wikidata": "Q1761"
+    },
+    {
+      "nome": "Dundalk",
+      "lat": 54.0044,
+      "lng": -6.4003,
+      "_wikidata": "Q204956"
+    },
+    {
+      "nome": "Galway",
+      "lat": 53.2719,
+      "lng": -9.0488,
+      "_wikidata": "Q129610"
+    },
+    {
+      "nome": "Sligo",
+      "lat": 54.2667,
+      "lng": -8.4833,
+      "_wikidata": "Q190002"
+    },
+    {
+      "nome": "Waterford",
+      "lat": 52.2583,
+      "lng": -7.119,
+      "_wikidata": "Q183551"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "bohemian",
+      "nomesBase": [
+        "Bohemians"
+      ],
+      "cidade": "Dublin",
+      "estadio": "Dalymount Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bohemians-Football-Club-Dalymount-Park-Entrance-2012.JPG?width=800",
+      "lat": 53.3617,
+      "lng": -6.275,
+      "_wikidata": "Q212708",
+      "_wikidataLabel": "Bohemian F.C."
+    },
+    {
+      "slug": "derry-city",
+      "nomesBase": [
+        "Derry City"
+      ],
+      "cidade": "Derry",
+      "estadio": "Brandywell Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Derrycity2.jpg?width=800",
+      "lat": 54.9906,
+      "lng": -7.336,
+      "_wikidata": "Q459622",
+      "_wikidataLabel": "Derry City F.C."
+    },
+    {
+      "slug": "drogheda-united",
+      "nomesBase": [
+        "Drogheda United"
+      ],
+      "cidade": "Drogheda",
+      "estadio": "United Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hanaphy%20DUFC%20Huskie.jpg?width=800",
+      "lat": 53.7233,
+      "lng": -6.3572,
+      "_wikidata": "Q761498",
+      "_wikidataLabel": "Drogheda United F.C."
+    },
+    {
+      "slug": "dundalk",
+      "nomesBase": [
+        "Dundalk"
+      ],
+      "cidade": "Dundalk",
+      "estadio": "Oriel Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Oriel%20Park%2C%20Dundalk%20%28cropped%29.JPG?width=800",
+      "lat": 53.9989,
+      "lng": -6.4169,
+      "_wikidata": "Q338557",
+      "_wikidataLabel": "Dundalk F.C."
+    },
+    {
+      "slug": "galway-united",
+      "nomesBase": [
+        "Galway United"
+      ],
+      "cidade": "Galway",
+      "estadio": "Eamonn Deacy Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Terryland%20park.jpg?width=800",
+      "lat": 53.2847,
+      "lng": -9.0563,
+      "_wikidata": "Q945043",
+      "_wikidataLabel": "Galway United F.C."
+    },
+    {
+      "slug": "shamrock-rovers",
+      "nomesBase": [
+        "Shamrock Rovers"
+      ],
+      "cidade": "Dublin",
+      "estadio": "Tallaght Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tallaght%20Stadium%201.jpg?width=800",
+      "lat": 53.2835,
+      "lng": -6.3737,
+      "_wikidata": "Q203976",
+      "_wikidataLabel": "Shamrock Rovers F.C."
+    },
+    {
+      "slug": "shelbourne",
+      "nomesBase": [
+        "Shelbourne"
+      ],
+      "cidade": "Dublin",
+      "estadio": "Tolka Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tolka%20Park%20Dublin.jpg?width=800",
+      "lat": 53.3675,
+      "lng": -6.252,
+      "_wikidata": "Q394474",
+      "_wikidataLabel": "Shelbourne F.C."
+    },
+    {
+      "slug": "sligo-rovers",
+      "nomesBase": [
+        "Sligo Rovers"
+      ],
+      "cidade": "Sligo",
+      "estadio": "The Showgrounds",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sligo%20Rovers%20FC%20stadium%20and%20Knappagh%20Road%20-%20geograph.org.uk%20-%203669800.jpg?width=800",
+      "lat": 54.27,
+      "lng": -8.4872,
+      "_wikidata": "Q244874",
+      "_wikidataLabel": "Sligo Rovers F.C."
+    },
+    {
+      "slug": "st-patrick-s-athletic",
+      "nomesBase": [
+        "St. Pats"
+      ],
+      "cidade": "Dublin",
+      "estadio": "Richmond Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/RichmondParkDublin.JPG?width=800",
+      "lat": 53.3409,
+      "lng": -6.3166,
+      "_wikidata": "Q394452",
+      "_wikidataLabel": "St Patrick's Athletic F.C."
+    },
+    {
+      "slug": "waterford-united",
+      "nomesBase": [
+        "Waterford"
+      ],
+      "cidade": "Waterford",
+      "estadio": "Waterford Regional Sports Centre",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/01-waterford-united-v-limerick-25-july-2009-00.jpg?width=800",
+      "lat": 52.2447,
+      "lng": -7.1328,
+      "_wikidata": "Q394466",
+      "_wikidataLabel": "Waterford United F.C."
+    }
+  ]
+}

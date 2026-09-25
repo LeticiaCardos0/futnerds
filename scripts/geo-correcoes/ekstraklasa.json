@@ -1,0 +1,46 @@
+{
+  "ligaId": "ekstraklasa",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Jagiellonia": {
+      "_nota": "Jagiellonia Białystok.",
+      "clubeWikidata": "Q189170"
+    },
+    "KS Wieczysta Kraków": {
+      "clubeWikidata": "Q86677609"
+    },
+    "Lech Poznań": {
+      "_nota": "Sem P159 no Wikidata.",
+      "cidade": "Poznań",
+      "cidadeWikidata": "Q268"
+    },
+    "Legia Warszawa": {
+      "clubeWikidata": "Q193749"
+    },
+    "Pogoń Szczecin": {
+      "cidade": "Szczecin",
+      "cidadeWikidata": "Q393"
+    },
+    "Raków": {
+      "_nota": "Raków Częstochowa.",
+      "clubeWikidata": "Q287236"
+    },
+    "Śląsk Wrocław": {
+      "cidade": "Wrocław",
+      "cidadeWikidata": "Q1799"
+    },
+    "Widzew Łódź": {
+      "clubeWikidata": "Q244981"
+    },
+    "Zagłębie Lubin": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q140497"
+    }
+  }
+}

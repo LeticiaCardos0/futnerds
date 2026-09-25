@@ -1,0 +1,19 @@
+{
+  "ligaId": "brasileirao",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Sem licença do Brasileirão, o EA FC só tem o Bahia (do City Football Group).",
+    "Quando a base ganhar clubes, eles entram por aqui como em qualquer liga."
+  ],
+  "clubes": {
+    "Bahia": {
+      "clubeWikidata": "Q198032",
+      "estadio": "Arena Fonte Nova",
+      "cidade": "Salvador",
+      "cidadeWikidata": "Q36947"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ligaId": "liga-ucrania",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Liga incompleta: a base só tem Shakhtar e Dynamo Kyiv."
+  ],
+  "clubes": {
+    "Shakhtar Donetsk": {
+      "_nota": "O Wikidata dá a Donbass Arena, sem jogos desde 2014 (guerra). O clube já mandou jogos em Lviv, Kharkiv e Kiev; sem um estádio atual confirmável, o pino fica em Donetsk, a cidade do clube.",
+      "semEstadio": true,
+      "cidade": "Donetsk"
+    }
+  }
+}

@@ -54,6 +54,13 @@ export interface ConfigPaisLiga {
   cidadesSemTime: CidadeSemTime[];
 
   /**
+   * JSON com cidadesSemTime e cidadesVizinhas (scripts/gerar-cidades-
+   * referencia.js). Quando presente, substitui as duas listas desta config —
+   * é o caso das ligas com config gerada por configGerada().
+   */
+  cidadesUrl?: string;
+
+  /**
    * Cidades dos países vizinhos que aparecem em volta do país, só como
    * referência geográfica. Mesmo estilo das cidades sem time; entram depois
    * delas e perdem as disputas de espaço (ver LigaMapaService.cruzar).
@@ -419,10 +426,714 @@ export const CONFIG_ALEMANHA: ConfigPaisLiga = {
   ],
 };
 
+export const CONFIG_ITALIA: ConfigPaisLiga = {
+  ligaId: 'serie-a',
+  ligaNomeBase: 'Serie A Enilive',
+  paisNome: 'Itália',
+  paisCodigo: 'it',
+
+  enquadramento: {
+    /*
+     * Continente, Sicília e Sardenha: o Cagliari joga na Sardenha, e clubes
+     * sicilianos (Palermo, Catania) sobem e descem. Lampedusa fica de fora —
+     * sozinha ela empurraria o enquadramento para o sul.
+     */
+    bounds: [
+      [6.6, 36.6],
+      [18.6, 47.1],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: 6.4, s: 36.4, e: 18.8, n: 47.2 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/italia-mascara.json',
+  clubesUrl: '/data/geo/serie-a.clubes.json',
+
+  /*
+   * Comuni italianos com mais de 90 mil habitantes que NAO tem clube nesta
+   * liga, do Wikidata (rank 1 a partir de 150 mil). Nomes em italiano, como
+   * na Espanha e na Alemanha; Giugliano ficou de fora por ser periferia de
+   * Napoles.
+   */
+  cidadesSemTime: [
+  { nome: 'Palermo', lat: 38.1157, lng: 13.3613, rank: 1 },
+  { nome: 'Bari', lat: 41.1253, lng: 16.8667, rank: 1 },
+  { nome: 'Catania', lat: 37.5027, lng: 15.0873, rank: 1 },
+  { nome: 'Verona', lat: 45.4386, lng: 10.9928, rank: 1 },
+  { nome: 'Messina', lat: 38.1936, lng: 15.5542, rank: 1 },
+  { nome: 'Padova', lat: 45.4078, lng: 11.8733, rank: 1 },
+  { nome: 'Trieste', lat: 45.6503, lng: 13.7703, rank: 1 },
+  { nome: 'Brescia', lat: 45.5389, lng: 10.2203, rank: 1 },
+  { nome: 'Prato', lat: 43.8808, lng: 11.0966, rank: 1 },
+  { nome: 'Taranto', lat: 40.4711, lng: 17.2431, rank: 1 },
+  { nome: 'Modena', lat: 44.6458, lng: 10.9257, rank: 1 },
+  { nome: 'Reggio Calabria', lat: 38.1144, lng: 15.6500, rank: 1 },
+  { nome: 'Perugia', lat: 43.1119, lng: 12.3885, rank: 1 },
+  { nome: 'Ravenna', lat: 44.4161, lng: 12.2017, rank: 1 },
+  { nome: 'Livorno', lat: 43.5500, lng: 10.3167, rank: 1 },
+  { nome: 'Rimini', lat: 44.0594, lng: 12.5683, rank: 2 },
+  { nome: 'Foggia', lat: 41.4585, lng: 15.5519, rank: 2 },
+  { nome: 'Ferrara', lat: 44.8392, lng: 11.6175, rank: 2 },
+  { nome: 'Latina', lat: 41.4672, lng: 12.9036, rank: 2 },
+  { nome: 'Salerno', lat: 40.6806, lng: 14.7594, rank: 2 },
+  { nome: 'Sassari', lat: 40.7267, lng: 8.5592, rank: 2 },
+  { nome: 'Trento', lat: 46.0667, lng: 11.1167, rank: 2 },
+  { nome: 'Pescara', lat: 42.4643, lng: 14.2142, rank: 2 },
+  { nome: 'Forlì', lat: 44.2228, lng: 12.0414, rank: 2 },
+  { nome: 'Siracusa', lat: 37.0692, lng: 15.2875, rank: 2 },
+  { nome: 'Vicenza', lat: 45.5500, lng: 11.5500, rank: 2 },
+  { nome: 'Terni', lat: 42.5608, lng: 12.6468, rank: 2 },
+  { nome: 'Bolzano', lat: 46.4981, lng: 11.3548, rank: 2 },
+  { nome: 'Piacenza', lat: 45.0500, lng: 9.7000, rank: 2 },
+  { nome: 'Novara', lat: 45.4500, lng: 8.6200, rank: 2 },
+  { nome: 'Ancona', lat: 43.6167, lng: 13.5167, rank: 2 },
+  { nome: 'Andria', lat: 41.2317, lng: 16.3083, rank: 2 },
+  { nome: 'Arezzo', lat: 43.4631, lng: 11.8781, rank: 2 },
+  { nome: 'Cesena', lat: 44.1333, lng: 12.2333, rank: 2 },
+  { nome: 'Pesaro', lat: 43.9102, lng: 12.9133, rank: 2 },
+  { nome: 'Barletta', lat: 41.3167, lng: 16.2833, rank: 2 },
+  { nome: 'La Spezia', lat: 44.1080, lng: 9.8289, rank: 2 },
+  { nome: 'Alessandria', lat: 44.9133, lng: 8.6200, rank: 2 },
+  ],
+
+  // Sudeste da França e Córsega, Suíça, Áustria, Eslovênia, Croácia, os
+  // Bálcãs do outro lado do Adriático, Malta e Tunísia.
+  cidadesVizinhas: [
+  { nome: 'Nice', lat: 43.7102, lng: 7.2620, rank: 1 },
+  { nome: 'Lyon', lat: 45.7640, lng: 4.8357, rank: 1 },
+  { nome: 'Ajaccio', lat: 41.9192, lng: 8.7386, rank: 1 },
+  { nome: 'Genebra', lat: 46.2044, lng: 6.1432, rank: 1 },
+  { nome: 'Zurique', lat: 47.3769, lng: 8.5417, rank: 1 },
+  { nome: 'Innsbruck', lat: 47.2692, lng: 11.4041, rank: 1 },
+  { nome: 'Liubliana', lat: 46.0569, lng: 14.5058, rank: 1 },
+  { nome: 'Zagreb', lat: 45.8150, lng: 15.9819, rank: 1 },
+  { nome: 'Split', lat: 43.5081, lng: 16.4402, rank: 1 },
+  { nome: 'Sarajevo', lat: 43.8563, lng: 18.4131, rank: 1 },
+  { nome: 'Tirana', lat: 41.3275, lng: 19.8187, rank: 1 },
+  { nome: 'Valletta', lat: 35.8989, lng: 14.5146, rank: 1 },
+  { nome: 'Túnis', lat: 36.8065, lng: 10.1815, rank: 1 },
+  { nome: 'Grenoble', lat: 45.1885, lng: 5.7245, rank: 2 },
+  { nome: 'Bastia', lat: 42.6977, lng: 9.4508, rank: 2 },
+  { nome: 'Mônaco', lat: 43.7384, lng: 7.4246, rank: 2 },
+  { nome: 'Lugano', lat: 46.0037, lng: 8.9511, rank: 2 },
+  { nome: 'Klagenfurt', lat: 46.6247, lng: 14.3053, rank: 2 },
+  { nome: 'Graz', lat: 47.0707, lng: 15.4395, rank: 2 },
+  { nome: 'Rijeka', lat: 45.3271, lng: 14.4422, rank: 2 },
+  { nome: 'San Marino', lat: 43.9424, lng: 12.4578, rank: 2 },
+  { nome: 'Dubrovnik', lat: 42.6507, lng: 18.0944, rank: 2 },
+  { nome: 'Podgorica', lat: 42.4304, lng: 19.2594, rank: 2 },
+  { nome: 'Durrës', lat: 41.3246, lng: 19.4565, rank: 2 },
+  { nome: 'Bizerta', lat: 37.2744, lng: 9.8739, rank: 2 },
+  ],
+};
+
+export const CONFIG_FRANCA: ConfigPaisLiga = {
+  ligaId: 'ligue-1',
+  ligaNomeBase: "Ligue 1 McDonald's",
+  paisNome: 'França',
+  paisCodigo: 'fr',
+
+  enquadramento: {
+    // França metropolitana + Córsega. Os territórios ultramarinos ficam fora
+    // da máscara e dos bounds.
+    bounds: [
+      [-4.9, 41.3],
+      [9.6, 51.1],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: -5.2, s: 41.2, e: 9.7, n: 51.2 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/franca-mascara.json',
+  clubesUrl: '/data/geo/ligue-1.clubes.json',
+
+  /*
+   * Comunas francesas com mais de 90 mil habitantes que NAO tem clube nesta
+   * liga, do Wikidata (rank 1 a partir de 150 mil). Fora da lista: as comunas
+   * da periferia de Paris, Lyon e Lille (Villeurbanne, Saint-Denis, Roubaix...)
+   * e as ultramarinas. Ajaccio e Bastia entram abaixo do corte para a Córsega
+   * nao ficar vazia.
+   */
+  cidadesSemTime: [
+  { nome: 'Nantes', lat: 47.2172, lng: -1.5539, rank: 1 },
+  { nome: 'Montpellier', lat: 43.6109, lng: 3.8772, rank: 1 },
+  { nome: 'Bordeaux', lat: 44.8378, lng: -0.5794, rank: 1 },
+  { nome: 'Toulon', lat: 43.1250, lng: 5.9306, rank: 1 },
+  { nome: 'Reims', lat: 49.2653, lng: 4.0286, rank: 1 },
+  { nome: 'Saint-Étienne', lat: 45.4339, lng: 4.3897, rank: 1 },
+  { nome: 'Dijon', lat: 47.3231, lng: 5.0419, rank: 1 },
+  { nome: 'Grenoble', lat: 45.1869, lng: 5.7264, rank: 1 },
+  { nome: 'Nîmes', lat: 43.8383, lng: 4.3597, rank: 1 },
+  { nome: 'Aix-en-Provence', lat: 43.5278, lng: 5.4456, rank: 2 },
+  { nome: 'Clermont-Ferrand', lat: 45.7797, lng: 3.0869, rank: 2 },
+  { nome: 'Tours', lat: 47.3928, lng: 0.6883, rank: 2 },
+  { nome: 'Amiens', lat: 49.8919, lng: 2.2978, rank: 2 },
+  { nome: 'Annecy', lat: 45.8992, lng: 6.1294, rank: 2 },
+  { nome: 'Limoges', lat: 45.8344, lng: 1.2617, rank: 2 },
+  { nome: 'Metz', lat: 49.1197, lng: 6.1769, rank: 2 },
+  { nome: 'Perpignan', lat: 42.6975, lng: 2.8947, rank: 2 },
+  { nome: 'Besançon', lat: 47.2422, lng: 6.0214, rank: 2 },
+  { nome: 'Rouen', lat: 49.4431, lng: 1.1025, rank: 2 },
+  { nome: 'Orléans', lat: 47.9022, lng: 1.9042, rank: 2 },
+  { nome: 'Caen', lat: 49.1814, lng: -0.3636, rank: 2 },
+  { nome: 'Mulhouse', lat: 47.7486, lng: 7.3392, rank: 2 },
+  { nome: 'Nancy', lat: 48.6928, lng: 6.1836, rank: 2 },
+  { nome: 'Avignon', lat: 43.9486, lng: 4.8083, rank: 2 },
+  { nome: 'Ajaccio', lat: 41.9192, lng: 8.7386, rank: 2 },
+  { nome: 'Bastia', lat: 42.6977, lng: 9.4508, rank: 2 },
+  ],
+
+  // Sul da Inglaterra, Bélgica, Luxemburgo, oeste da Alemanha, Suíça, noroeste
+  // da Itália e norte da Espanha, com Andorra.
+  cidadesVizinhas: [
+  { nome: 'Londres', lat: 51.5074, lng: -0.1278, rank: 1 },
+  { nome: 'Bruxelas', lat: 50.8503, lng: 4.3517, rank: 1 },
+  { nome: 'Luxemburgo', lat: 49.6116, lng: 6.1319, rank: 1 },
+  { nome: 'Genebra', lat: 46.2044, lng: 6.1432, rank: 1 },
+  { nome: 'Basileia', lat: 47.5596, lng: 7.5886, rank: 1 },
+  { nome: 'Turim', lat: 45.0703, lng: 7.6869, rank: 1 },
+  { nome: 'Barcelona', lat: 41.3874, lng: 2.1686, rank: 1 },
+  { nome: 'Bilbao', lat: 43.2630, lng: -2.9350, rank: 1 },
+  { nome: 'Milão', lat: 45.4642, lng: 9.1900, rank: 2 },
+  { nome: 'Gênova', lat: 44.4056, lng: 8.9463, rank: 2 },
+  { nome: 'Lausanne', lat: 46.5197, lng: 6.6323, rank: 2 },
+  { nome: 'Zurique', lat: 47.3769, lng: 8.5417, rank: 2 },
+  { nome: 'Freiburg', lat: 47.9990, lng: 7.8421, rank: 2 },
+  { nome: 'Karlsruhe', lat: 49.0069, lng: 8.4037, rank: 2 },
+  { nome: 'Saarbrücken', lat: 49.2402, lng: 6.9969, rank: 2 },
+  { nome: 'Colônia', lat: 50.9375, lng: 6.9603, rank: 2 },
+  { nome: 'Liège', lat: 50.6326, lng: 5.5797, rank: 2 },
+  { nome: 'Gante', lat: 51.0543, lng: 3.7174, rank: 2 },
+  { nome: 'Southampton', lat: 50.9097, lng: -1.4044, rank: 2 },
+  { nome: 'Plymouth', lat: 50.3755, lng: -4.1427, rank: 2 },
+  { nome: 'Saint Helier', lat: 49.1868, lng: -2.1071, rank: 2 },
+  { nome: 'San Sebastián', lat: 43.3183, lng: -1.9812, rank: 2 },
+  { nome: 'Zaragoza', lat: 41.6500, lng: -0.8833, rank: 2 },
+  { nome: 'Girona', lat: 41.9794, lng: 2.8214, rank: 2 },
+  { nome: 'Andorra la Vella', lat: 42.5063, lng: 1.5218, rank: 2 },
+  ],
+};
+
+/*
+ * EFL (Championship, League One, League Two).
+ *
+ * Mesmo enquadramento da Premier League, mas com máscara Inglaterra + Gales:
+ * Cardiff, Swansea, Wrexham e Newport jogam no sistema inglês, e com a máscara
+ * só da Inglaterra ficariam na área escurecida, como se estivessem fora da liga.
+ */
+
+/** Gales, que nas divisões da EFL é parte do "país" e não vizinho. */
+const CIDADES_GALES = ['Cardiff', 'Swansea', 'Newport', 'Wrexham'];
+
+/**
+ * As cidades da Premier League com clube. Na Premier elas vêm do JSON de
+ * clubes; nas divisões de baixo quase nenhuma tem time, mas continuam sendo a
+ * referência para achar o resto. O LigaMapaService tira as que tiverem clube
+ * na liga (por nome e distância), então Londres não aparece duas vezes.
+ */
+const CIDADES_GRANDES_INGLATERRA: CidadeSemTime[] = [
+  { nome: 'Londres', lat: 51.5072, lng: -0.1275, rank: 1 },
+  { nome: 'Manchester', lat: 53.4794, lng: -2.2453, rank: 1 },
+  { nome: 'Liverpool', lat: 53.4072, lng: -2.9917, rank: 1 },
+  { nome: 'Birmingham', lat: 52.4800, lng: -1.9025, rank: 1 },
+  { nome: 'Newcastle', lat: 54.9778, lng: -1.6133, rank: 1 },
+  { nome: 'Nottingham', lat: 52.9550, lng: -1.1492, rank: 1 },
+  { nome: 'Brighton', lat: 50.8208, lng: -0.1375, rank: 1 },
+  { nome: 'Bournemouth', lat: 50.7200, lng: -1.8800, rank: 1 },
+];
+
+function configEfl(ligaId: string, ligaNomeBase: string): ConfigPaisLiga {
+  const gales = CONFIG_INGLATERRA.cidadesVizinhas.filter((c) => CIDADES_GALES.includes(c.nome));
+  return {
+    ...CONFIG_INGLATERRA,
+    ligaId,
+    ligaNomeBase,
+    mascaraUrl: '/geo/inglaterra-gales-mascara.json',
+    clubesUrl: `/data/geo/${ligaId}.clubes.json`,
+    cidadesSemTime: [
+      ...CIDADES_GRANDES_INGLATERRA,
+      ...CONFIG_INGLATERRA.cidadesSemTime,
+      ...gales,
+    ],
+    cidadesVizinhas: CONFIG_INGLATERRA.cidadesVizinhas.filter(
+      (c) => !CIDADES_GALES.includes(c.nome),
+    ),
+  };
+}
+
+export const CONFIG_CHAMPIONSHIP = configEfl('championship', 'EFL Championship');
+export const CONFIG_LEAGUE_ONE = configEfl('league-one', 'EFL League One');
+export const CONFIG_LEAGUE_TWO = configEfl('league-two', 'EFL League Two');
+
+/*
+ * Ligas com clube em ilha distante (Portugal, LaLiga 2).
+ *
+ * O enquadramento fica no continente — com os Açores ou as Canárias dentro
+ * dele, o continente viraria um ponto. As ilhas entram na máscara e no
+ * `limite`, e clicar no clube do painel leva a câmera até lá (voarPara).
+ *
+ * O limite precisa CONTER a vista inicial inteira. Se ele fosse só um pouco
+ * maior que o continente, calcularCorrecao prenderia a borda da tela nele e
+ * empurraria o país para trás do painel direito. Daí a folga larga.
+ */
+
+export const CONFIG_PORTUGAL: ConfigPaisLiga = {
+  ligaId: 'liga-portugal',
+  ligaNomeBase: 'Liga Portugal',
+  paisNome: 'Portugal',
+  paisCodigo: 'pt',
+
+  enquadramento: {
+    // Continente. Madeira (Marítimo) e Açores (Santa Clara) ficam fora.
+    bounds: [
+      [-9.6, 36.9],
+      [-6.1, 42.2],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: -32, s: 30, e: 3, n: 46 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/portugal-mascara.json',
+  clubesUrl: '/data/geo/liga-portugal.clubes.json',
+
+  /*
+   * Municípios portugueses com mais de 50 mil habitantes que NÃO têm clube
+   * nesta liga, do Wikidata (rank 1 a partir de 75 mil). Fora da lista: a
+   * periferia de Lisboa e do Porto (Sintra, Gaia, Almada, Matosinhos...).
+   * Bragança, Guarda, Beja, Portalegre e Angra entram abaixo do corte para o
+   * interior e os Açores não ficarem vazios.
+   */
+  cidadesSemTime: [
+  { nome: 'Coimbra', lat: 40.2111, lng: -8.4289, rank: 1 },
+  { nome: 'Leiria', lat: 39.7431, lng: -8.8069, rank: 1 },
+  { nome: 'Setúbal', lat: 38.5243, lng: -8.8926, rank: 1 },
+  { nome: 'Aveiro', lat: 40.6389, lng: -8.6553, rank: 1 },
+  { nome: 'Viana do Castelo', lat: 41.7000, lng: -8.8333, rank: 1 },
+  { nome: 'Faro', lat: 37.0161, lng: -7.9350, rank: 1 },
+  { nome: 'Évora', lat: 38.5725, lng: -7.9072, rank: 1 },
+  { nome: 'Santarém', lat: 39.2392, lng: -8.6869, rank: 2 },
+  { nome: 'Castelo Branco', lat: 39.8228, lng: -7.4931, rank: 2 },
+  { nome: 'Vila Real', lat: 41.2953, lng: -7.7461, rank: 2 },
+  { nome: 'Covilhã', lat: 40.2833, lng: -7.5000, rank: 2 },
+  { nome: 'Figueira da Foz', lat: 40.1509, lng: -8.8618, rank: 2 },
+  { nome: 'Portimão', lat: 37.1333, lng: -8.5333, rank: 2 },
+  { nome: 'Póvoa de Varzim', lat: 41.3916, lng: -8.7571, rank: 2 },
+  { nome: 'Caldas da Rainha', lat: 39.4069, lng: -9.1363, rank: 2 },
+  { nome: 'Bragança', lat: 41.8058, lng: -6.7572, rank: 2 },
+  { nome: 'Guarda', lat: 40.5373, lng: -7.2676, rank: 2 },
+  { nome: 'Beja', lat: 38.0151, lng: -7.8632, rank: 2 },
+  { nome: 'Portalegre', lat: 39.2967, lng: -7.4285, rank: 2 },
+  { nome: 'Angra do Heroísmo', lat: 38.6552, lng: -27.2186, rank: 2 },
+  ],
+
+  // Galiza, Castela e Leão, Extremadura e Andaluzia ocidental.
+  cidadesVizinhas: [
+  { nome: 'Vigo', lat: 42.2358, lng: -8.7267, rank: 1 },
+  { nome: 'Badajoz', lat: 38.8779, lng: -6.9706, rank: 1 },
+  { nome: 'Sevilha', lat: 37.3886, lng: -5.9950, rank: 1 },
+  { nome: 'Madri', lat: 40.4169, lng: -3.7033, rank: 1 },
+  { nome: 'Salamanca', lat: 40.9650, lng: -5.6642, rank: 1 },
+  { nome: 'Huelva', lat: 37.2614, lng: -6.9447, rank: 2 },
+  { nome: 'Ourense', lat: 42.3358, lng: -7.8639, rank: 2 },
+  { nome: 'Santiago de Compostela', lat: 42.8782, lng: -8.5448, rank: 2 },
+  { nome: 'Cáceres', lat: 39.4753, lng: -6.3724, rank: 2 },
+  { nome: 'Mérida', lat: 38.9161, lng: -6.3437, rank: 2 },
+  { nome: 'Zamora', lat: 41.5035, lng: -5.7446, rank: 2 },
+  ],
+};
+
+export const CONFIG_BELGICA: ConfigPaisLiga = {
+  ligaId: 'pro-league',
+  ligaNomeBase: '1A Pro League',
+  paisNome: 'Bélgica',
+  paisCodigo: 'be',
+
+  enquadramento: {
+    bounds: [
+      [2.5, 49.45],
+      [6.45, 51.55],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: 2.3, s: 49.3, e: 6.6, n: 51.7 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/belgica-mascara.json',
+  clubesUrl: '/data/geo/pro-league.clubes.json',
+
+  /*
+   * Municípios belgas com mais de 55 mil habitantes que NÃO têm clube nesta
+   * liga, do Wikidata (rank 1 a partir de 80 mil). Fora: as comunas da região
+   * de Bruxelas e Seraing, colada em Liège. Arlon e Bastogne entram abaixo do
+   * corte para as Ardenas não ficarem vazias.
+   */
+  cidadesSemTime: [
+  { nome: 'Namur', lat: 50.4667, lng: 4.8667, rank: 1 },
+  { nome: 'Mons', lat: 50.4547, lng: 3.9525, rank: 1 },
+  { nome: 'Hasselt', lat: 50.9305, lng: 5.3385, rank: 1 },
+  { nome: 'Aalst', lat: 50.9383, lng: 4.0392, rank: 1 },
+  { nome: 'Sint-Niklaas', lat: 51.1644, lng: 4.1392, rank: 1 },
+  { nome: 'Ostende', lat: 51.2258, lng: 2.9194, rank: 2 },
+  { nome: 'Tournai', lat: 50.6056, lng: 3.3881, rank: 2 },
+  { nome: 'Roeselare', lat: 50.9447, lng: 3.1233, rank: 2 },
+  { nome: 'Mouscron', lat: 50.7444, lng: 3.2156, rank: 2 },
+  { nome: 'Verviers', lat: 50.5833, lng: 5.8500, rank: 2 },
+  { nome: 'Arlon', lat: 49.6833, lng: 5.8167, rank: 2 },
+  { nome: 'Bastogne', lat: 50.0000, lng: 5.7167, rank: 2 },
+  ],
+
+  // Norte da França, sul da Holanda, Aachen e Luxemburgo.
+  cidadesVizinhas: [
+  { nome: 'Lille', lat: 50.6292, lng: 3.0573, rank: 1 },
+  { nome: 'Maastricht', lat: 50.8514, lng: 5.6910, rank: 1 },
+  { nome: 'Eindhoven', lat: 51.4416, lng: 5.4697, rank: 1 },
+  { nome: 'Aachen', lat: 50.7762, lng: 6.0838, rank: 1 },
+  { nome: 'Luxemburgo', lat: 49.6116, lng: 6.1319, rank: 1 },
+  { nome: 'Breda', lat: 51.5719, lng: 4.7683, rank: 2 },
+  { nome: 'Tilburg', lat: 51.5555, lng: 5.0913, rank: 2 },
+  { nome: 'Middelburg', lat: 51.4988, lng: 3.6136, rank: 2 },
+  { nome: 'Dunquerque', lat: 51.0343, lng: 2.3768, rank: 2 },
+  { nome: 'Valenciennes', lat: 50.3570, lng: 3.5235, rank: 2 },
+  { nome: 'Charleville-Mézières', lat: 49.7719, lng: 4.7161, rank: 2 },
+  ],
+};
+
+/** As cidades com clube na primeira divisão, com o nome de exibição dela. */
+const CIDADES_LALIGA: CidadeSemTime[] = [
+  { nome: 'A Corunha', lat: 43.3739, lng: -8.4000, rank: 1 },
+  { nome: 'Barcelona', lat: 41.3825, lng: 2.1769, rank: 1 },
+  { nome: 'Bilbao', lat: 43.2604, lng: -2.9334, rank: 1 },
+  { nome: 'Elche', lat: 38.2654, lng: -0.6989, rank: 1 },
+  { nome: 'Getafe', lat: 40.3040, lng: -3.7294, rank: 1 },
+  { nome: 'Madri', lat: 40.4169, lng: -3.7033, rank: 1 },
+  { nome: 'Málaga', lat: 36.7167, lng: -4.4167, rank: 1 },
+  { nome: 'Pamplona', lat: 42.8128, lng: -1.6443, rank: 1 },
+  { nome: 'Santander', lat: 43.4647, lng: -3.8044, rank: 1 },
+  { nome: 'Sevilha', lat: 37.3886, lng: -5.9950, rank: 1 },
+  { nome: 'Valência', lat: 39.4700, lng: -0.3764, rank: 1 },
+  { nome: 'Villarreal', lat: 39.9378, lng: -0.1014, rank: 1 },
+  { nome: 'Vitoria-Gasteiz', lat: 42.8467, lng: -2.6731, rank: 1 },
+];
+
+/** Grafias locais da lista da Espanha que já estão em CIDADES_LALIGA. */
+const DUPLICADAS_ESPANHA = ['Madrid', 'Sevilla', 'Vitoria'];
+
+export const CONFIG_LALIGA_2: ConfigPaisLiga = {
+  ...CONFIG_ESPANHA,
+  ligaId: 'laliga-2',
+  ligaNomeBase: 'LALIGA HYPERMOTION',
+
+  // Enquadramento da primeira divisão (continente); as Canárias (Las Palmas,
+  // Tenerife) ficam na máscara e no limite.
+  limite: { w: -19.5, s: 26, e: 14, n: 47 },
+
+  mascaraUrl: '/geo/espanha-canarias-mascara.json',
+  clubesUrl: '/data/geo/laliga-2.clubes.json',
+
+  cidadesSemTime: [
+    ...CIDADES_LALIGA,
+    ...CONFIG_ESPANHA.cidadesSemTime.filter((c) => !DUPLICADAS_ESPANHA.includes(c.nome)),
+  ],
+};
+
+export const CONFIG_ARABIA_SAUDITA: ConfigPaisLiga = {
+  ligaId: 'saudi-pro-league',
+  ligaNomeBase: 'ROSHN Saudi League',
+  paisNome: 'Arábia Saudita',
+  paisCodigo: 'sa',
+
+  enquadramento: {
+    // O país inteiro: de Neom/Tabuk (noroeste) a Abha e Jizan (sudoeste).
+    bounds: [
+      [34.5, 16.3],
+      [55.7, 32.2],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: 34, s: 16, e: 56, n: 32.5 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/arabia-saudita-mascara.json',
+  clubesUrl: '/data/geo/saudi-pro-league.clubes.json',
+
+  /*
+   * Cidades sauditas com mais de 90 mil habitantes que NÃO têm clube nesta
+   * liga, do Wikidata (rank 1 a partir de 250 mil). Meca entra à mão: no
+   * Wikidata ela não é classificada como cidade (Q515) e ficava de fora.
+   */
+  cidadesSemTime: [
+  { nome: 'Meca', lat: 21.4225, lng: 39.8262, rank: 1 },
+  { nome: 'Medina', lat: 24.4700, lng: 39.6100, rank: 1 },
+  { nome: 'Taif', lat: 21.2667, lng: 40.4167, rank: 1 },
+  { nome: 'Khamis Mushait', lat: 18.3000, lng: 42.7333, rank: 1 },
+  { nome: 'Hafar Al-Batin', lat: 28.4342, lng: 45.9636, rank: 1 },
+  { nome: 'Jubail', lat: 27.0000, lng: 49.6667, rank: 1 },
+  { nome: "Ha'il", lat: 27.5167, lng: 41.6833, rank: 1 },
+  { nome: 'Yanbu', lat: 24.0894, lng: 38.0619, rank: 1 },
+  { nome: 'Najran', lat: 17.4917, lng: 44.1322, rank: 1 },
+  { nome: 'Al-Kharj', lat: 24.1483, lng: 47.3050, rank: 1 },
+  { nome: 'Unaizah', lat: 26.0840, lng: 43.9940, rank: 2 },
+  { nome: 'Arar', lat: 30.9833, lng: 41.0167, rank: 2 },
+  { nome: 'Sakakah', lat: 29.9697, lng: 40.2000, rank: 2 },
+  { nome: 'Dhahran', lat: 26.2667, lng: 50.1500, rank: 2 },
+  { nome: 'Jizan', lat: 16.8892, lng: 42.5611, rank: 2 },
+  { nome: 'Qatif', lat: 26.5752, lng: 49.9969, rank: 2 },
+  { nome: 'Qurayyat', lat: 31.3318, lng: 37.3428, rank: 2 },
+  { nome: 'Al Bahah', lat: 20.0129, lng: 41.4677, rank: 2 },
+  ],
+
+  // Jordânia, Iraque, Kuwait, Golfo (Bahrein, Catar, Emirados) e o outro lado
+  // do Mar Vermelho.
+  cidadesVizinhas: [
+  { nome: 'Amã', lat: 31.9454, lng: 35.9284, rank: 1 },
+  { nome: 'Kuwait', lat: 29.3759, lng: 47.9774, rank: 1 },
+  { nome: 'Manama', lat: 26.2285, lng: 50.5860, rank: 1 },
+  { nome: 'Doha', lat: 25.2854, lng: 51.5310, rank: 1 },
+  { nome: 'Abu Dhabi', lat: 24.4539, lng: 54.3773, rank: 1 },
+  { nome: 'Dubai', lat: 25.2048, lng: 55.2708, rank: 1 },
+  { nome: 'Basra', lat: 30.5085, lng: 47.7804, rank: 1 },
+  { nome: 'Port Sudan', lat: 19.6158, lng: 37.2164, rank: 1 },
+  { nome: 'Aqaba', lat: 29.5321, lng: 35.0063, rank: 2 },
+  { nome: 'Sharm el-Sheikh', lat: 27.9158, lng: 34.3300, rank: 2 },
+  { nome: 'Al Ain', lat: 24.2075, lng: 55.7447, rank: 2 },
+  ],
+};
+
+export const CONFIG_ESCOCIA: ConfigPaisLiga = {
+  ligaId: 'scottish-premiership',
+  ligaNomeBase: 'Scottish Premiership',
+  paisNome: 'Escócia',
+  paisCodigo: 'gb-sct',
+
+  enquadramento: {
+    // Continente, Hébridas e Órcadas. As Shetland ficam fora.
+    bounds: [
+      [-7.6, 54.6],
+      [-1.7, 58.7],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: -7.8, s: 54.5, e: -0.6, n: 59.4 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/escocia-mascara.json',
+  clubesUrl: '/data/geo/scottish-premiership.clubes.json',
+
+  /*
+   * Não há corte por população aqui: a Escócia tem poucas cidades grandes, e
+   * as Highlands e as ilhas ficariam vazias. A lista mistura as maiores
+   * cidades sem clube na liga com as referências de cada região (Fort William,
+   * Oban, Stornoway, Kirkwall...). Coordenadas do Wikidata.
+   */
+  cidadesSemTime: [
+  { nome: 'Inverness', lat: 57.4839, lng: -4.2258, rank: 1 },
+  { nome: 'Stirling', lat: 56.1166, lng: -3.9369, rank: 1 },
+  { nome: 'Ayr', lat: 55.4639, lng: -4.6278, rank: 1 },
+  { nome: 'Dumfries', lat: 55.0667, lng: -3.6167, rank: 1 },
+  { nome: 'Dunfermline', lat: 56.0714, lng: -3.4617, rank: 1 },
+  { nome: 'Kirkcaldy', lat: 56.1107, lng: -3.1674, rank: 1 },
+  { nome: 'Livingston', lat: 55.8834, lng: -3.5157, rank: 1 },
+  { nome: 'Elgin', lat: 57.6464, lng: -3.3153, rank: 1 },
+  { nome: 'Fort William', lat: 56.8169, lng: -5.1097, rank: 1 },
+  { nome: 'Oban', lat: 56.4097, lng: -5.4725, rank: 1 },
+  { nome: 'Stornoway', lat: 58.2090, lng: -6.3870, rank: 1 },
+  { nome: 'Kirkwall', lat: 58.9811, lng: -2.9600, rank: 1 },
+  { nome: 'Wick', lat: 58.4432, lng: -3.0917, rank: 1 },
+  { nome: 'Stranraer', lat: 54.9014, lng: -5.0350, rank: 1 },
+  { nome: 'Hamilton', lat: 55.7770, lng: -4.0390, rank: 2 },
+  { nome: 'East Kilbride', lat: 55.7667, lng: -4.1833, rank: 2 },
+  { nome: 'Cumbernauld', lat: 55.9400, lng: -3.9800, rank: 2 },
+  { nome: 'Greenock', lat: 55.9500, lng: -4.7667, rank: 2 },
+  { nome: 'Irvine', lat: 55.6194, lng: -4.6611, rank: 2 },
+  { nome: 'St Andrews', lat: 56.3389, lng: -2.7989, rank: 2 },
+  { nome: 'Arbroath', lat: 56.5614, lng: -2.5857, rank: 2 },
+  { nome: 'Montrose', lat: 56.7080, lng: -2.4670, rank: 2 },
+  { nome: 'Fraserburgh', lat: 57.6930, lng: -2.0050, rank: 2 },
+  { nome: 'Peterhead', lat: 57.5091, lng: -1.7832, rank: 2 },
+  { nome: 'Thurso', lat: 58.5961, lng: -3.5211, rank: 2 },
+  { nome: 'Portree', lat: 57.4131, lng: -6.1936, rank: 2 },
+  { nome: 'Ullapool', lat: 57.8973, lng: -5.1614, rank: 2 },
+  { nome: 'Aviemore', lat: 57.1940, lng: -3.8230, rank: 2 },
+  { nome: 'Pitlochry', lat: 56.7033, lng: -3.7332, rank: 2 },
+  { nome: 'Galashiels', lat: 55.6206, lng: -2.8189, rank: 2 },
+  { nome: 'Hawick', lat: 55.4247, lng: -2.7844, rank: 2 },
+  { nome: 'Campbeltown', lat: 55.4233, lng: -5.6061, rank: 2 },
+  ],
+
+  // Irlanda do Norte e o norte da Inglaterra.
+  cidadesVizinhas: [
+  { nome: 'Belfast', lat: 54.5973, lng: -5.9301, rank: 1 },
+  { nome: 'Derry', lat: 54.9966, lng: -7.3086, rank: 1 },
+  { nome: 'Newcastle', lat: 54.9783, lng: -1.6178, rank: 1 },
+  { nome: 'Carlisle', lat: 54.8925, lng: -2.9329, rank: 1 },
+  { nome: 'Sunderland', lat: 54.9069, lng: -1.3838, rank: 2 },
+  { nome: 'Middlesbrough', lat: 54.5742, lng: -1.2350, rank: 2 },
+  { nome: 'Coleraine', lat: 55.1325, lng: -6.6646, rank: 2 },
+  ],
+};
+
+export const CONFIG_BRASIL: ConfigPaisLiga = {
+  ligaId: 'brasileirao',
+  ligaNomeBase: 'Liga do Brasil',
+  paisNome: 'Brasil',
+  paisCodigo: 'br',
+
+  enquadramento: {
+    bounds: [
+      [-74.0, -33.8],
+      [-34.8, 5.3],
+    ],
+    padding: { top: 60, bottom: 60, left: 360, right: 420 },
+  },
+
+  limite: { w: -76, s: -35, e: -33, n: 6 },
+  maxZoom: 19,
+
+  mascaraUrl: '/geo/brasil-mascara.json',
+  clubesUrl: '/data/geo/brasileirao.clubes.json',
+
+  /*
+   * Liga INCOMPLETA: sem licença do Brasileirão, o EA FC só tem o Bahia. Com a
+   * lista de cidades de sempre, o mapa pareceria o de uma liga inteira com um
+   * clube só; então ele mostra apenas a cidade do clube licenciado, que vem do
+   * JSON de clubes. Nenhuma cidade sem time, nenhuma vizinha.
+   */
+  cidadesSemTime: [],
+  cidadesVizinhas: [],
+};
+
+
+/*
+ * Ligas com config GERADA.
+ *
+ * As ligas acima têm config escrita à mão. Para as outras, a config sai do
+ * enquadramento e da máscara, e as cidades de referência vêm de um JSON gerado
+ * a partir do Wikidata (scripts/gerar-cidades-referencia.js), em vez de listas
+ * aqui. Os mesmos bounds estão em scripts/ligas-geo.js — mudar um exige mudar
+ * o outro.
+ */
+
+/**
+ * Limite = enquadramento com 25% de folga para cada lado.
+ *
+ * Folga larga de propósito (as configs manuais usam ~0,2°): calcularCorrecao
+ * prende a tela dentro do limite quando ela cabe nele, e o limite dentro da
+ * tela quando não cabe. Com 25%, a vista inicial cai sempre num dos dois
+ * casos sem ser empurrada — em tela larga a tela é maior que o limite; em tela
+ * estreita, menor. Com uma folga intermediária o país podia ir parar atrás do
+ * painel direito.
+ */
+export function limiteDoEnquadramento(bounds: [[number, number], [number, number]]) {
+  const [[w, s], [e, n]] = bounds;
+  const fx = (e - w) * 0.25;
+  const fy = (n - s) * 0.25;
+  const r = (v: number) => Math.round(v * 100) / 100;
+  return { w: r(w - fx), s: r(s - fy), e: r(e + fx), n: r(n + fy) };
+}
+
+interface DefinicaoLiga {
+  ligaId: string;
+  ligaNomeBase: string;
+  paisNome: string;
+  paisCodigo: string;
+  /** Nome do arquivo em public/geo/, sem o sufixo -mascara.json. */
+  mascara: string;
+  bounds: [[number, number], [number, number]];
+  /**
+   * A base só tem os clubes licenciados no EA FC. O mapa mostra apenas a
+   * cidade deles, sem cidades de referência: com a lista de sempre, pareceria
+   * o mapa de uma liga inteira com dois ou três clubes.
+   */
+  incompleta?: boolean;
+}
+
+function configGerada(d: DefinicaoLiga): ConfigPaisLiga {
+  return {
+    ligaId: d.ligaId,
+    ligaNomeBase: d.ligaNomeBase,
+    paisNome: d.paisNome,
+    paisCodigo: d.paisCodigo,
+    enquadramento: {
+      bounds: d.bounds,
+      padding: { top: 60, bottom: 60, left: 360, right: 420 },
+    },
+    limite: limiteDoEnquadramento(d.bounds),
+    maxZoom: 19,
+    mascaraUrl: `/geo/${d.mascara}-mascara.json`,
+    clubesUrl: `/data/geo/${d.ligaId}.clubes.json`,
+    cidadesUrl: d.incompleta ? undefined : `/data/geo/${d.ligaId}.cidades.json`,
+    cidadesSemTime: [],
+    cidadesVizinhas: [],
+  };
+}
+
+const LIGAS_GERADAS: ConfigPaisLiga[] = [
+  // EUA e Canadá: Toronto, Vancouver e Montréal jogam a MLS.
+  configGerada({ ligaId: 'mls', ligaNomeBase: 'MLS', paisNome: 'Estados Unidos', paisCodigo: 'us', mascara: 'eua-canada', bounds: [[-127.5, 24.5], [-67.0, 50.5]] }),
+  // Até o Rio Negro: nenhum clube fica na Patagônia, e ela inteira deixaria Buenos Aires minúscula.
+  configGerada({ ligaId: 'liga-argentina', ligaNomeBase: 'LPF', paisNome: 'Argentina', paisCodigo: 'ar', mascara: 'argentina', bounds: [[-72.5, -41.5], [-53.6, -21.8]] }),
+  configGerada({ ligaId: 'serie-b', ligaNomeBase: 'Serie BKT', paisNome: 'Itália', paisCodigo: 'it', mascara: 'italia', bounds: [[6.6, 36.6], [18.6, 47.1]] }),
+  configGerada({ ligaId: '2-bundesliga', ligaNomeBase: 'Bundesliga 2', paisNome: 'Alemanha', paisCodigo: 'de', mascara: 'alemanha', bounds: [[5.6, 47.1], [15.3, 55.1]] }),
+  configGerada({ ligaId: '3-liga', ligaNomeBase: '3. Liga', paisNome: 'Alemanha', paisCodigo: 'de', mascara: 'alemanha', bounds: [[5.6, 47.1], [15.3, 55.1]] }),
+  configGerada({ ligaId: 'ligue-2', ligaNomeBase: 'Ligue 2 BKT', paisNome: 'França', paisCodigo: 'fr', mascara: 'franca', bounds: [[-4.9, 41.3], [9.6, 51.1]] }),
+  configGerada({ ligaId: 'super-lig', ligaNomeBase: 'Trendyol Süper Lig', paisNome: 'Turquia', paisCodigo: 'tr', mascara: 'turquia', bounds: [[25.6, 35.8], [44.8, 42.1]] }),
+  configGerada({ ligaId: 'eredivisie', ligaNomeBase: 'Eredivisie', paisNome: 'Holanda', paisCodigo: 'nl', mascara: 'holanda', bounds: [[3.3, 50.75], [7.25, 53.6]] }),
+  configGerada({ ligaId: 'liga-mx', ligaNomeBase: 'Liga BBVA MX', paisNome: 'México', paisCodigo: 'mx', mascara: 'mexico', bounds: [[-117.2, 14.5], [-86.7, 32.8]] }),
+  configGerada({ ligaId: 'ekstraklasa', ligaNomeBase: 'Ekstraklasa', paisNome: 'Polônia', paisCodigo: 'pl', mascara: 'polonia', bounds: [[14.1, 49], [24.2, 54.9]] }),
+  configGerada({ ligaId: 'eliteserien', ligaNomeBase: 'Eliteserien', paisNome: 'Noruega', paisCodigo: 'no', mascara: 'noruega', bounds: [[4.5, 57.9], [31.2, 71.2]] }),
+  configGerada({ ligaId: 'superliga-china', ligaNomeBase: 'CSL', paisNome: 'China', paisCodigo: 'cn', mascara: 'china', bounds: [[73.5, 18.1], [134.8, 53.6]] }),
+  configGerada({ ligaId: 'allsvenskan', ligaNomeBase: 'Allsvenskan', paisNome: 'Suécia', paisCodigo: 'se', mascara: 'suecia', bounds: [[11, 55.3], [24.2, 69.1]] }),
+  // Na base esta liga está cadastrada como da Dinamarca, mas os clubes são romenos.
+  configGerada({ ligaId: 'superliga-romenia', ligaNomeBase: 'SUPERLIGA', paisNome: 'Romênia', paisCodigo: 'ro', mascara: 'romenia', bounds: [[20.2, 43.6], [29.7, 48.3]] }),
+  // Na base esta liga está cadastrada como dos Estados Unidos, mas os clubes são dinamarqueses. Bornholm fica na máscara, fora do enquadramento.
+  configGerada({ ligaId: 'superliga-dinamarca', ligaNomeBase: 'Metropolitan Division', paisNome: 'Dinamarca', paisCodigo: 'dk', mascara: 'dinamarca', bounds: [[8, 54.5], [12.7, 57.8]] }),
+  configGerada({ ligaId: 'super-league-suica', ligaNomeBase: 'Brack Super League', paisNome: 'Suíça', paisCodigo: 'ch', mascara: 'suica', bounds: [[5.9, 45.8], [10.5, 47.85]] }),
+  configGerada({ ligaId: 'bundesliga-austria', ligaNomeBase: 'Ö. Bundesliga', paisNome: 'Áustria', paisCodigo: 'at', mascara: 'austria', bounds: [[9.5, 46.35], [17.2, 49.05]] }),
+  configGerada({ ligaId: 'k-league', ligaNomeBase: 'K League 1', paisNome: 'Coreia do Sul', paisCodigo: 'kr', mascara: 'coreia-do-sul', bounds: [[125, 33.1], [129.6, 38.65]] }),
+  // Austrália e Nova Zelândia: Auckland e Wellington jogam a A-League.
+  configGerada({ ligaId: 'a-league', ligaNomeBase: 'Isuzu UTE A League', paisNome: 'Austrália', paisCodigo: 'au', mascara: 'australia-nz', bounds: [[112.9, -47.3], [178.6, -10.6]] }),
+  configGerada({ ligaId: 'isl', ligaNomeBase: 'ISL', paisNome: 'Índia', paisCodigo: 'in', mascara: 'india', bounds: [[68.1, 6.7], [97.4, 35.5]] }),
+  // Com a Irlanda do Norte: o Derry City joga a liga irlandesa.
+  configGerada({ ligaId: 'league-of-ireland', ligaNomeBase: "SSE Airtricity Men's Premier Division", paisNome: 'Irlanda', paisCodigo: 'ie', mascara: 'irlanda', bounds: [[-10.7, 51.4], [-5.4, 55.45]] }),
+  configGerada({ ligaId: 'liga-grecia', ligaNomeBase: 'Hellas Liga', paisNome: 'Grécia', paisCodigo: 'gr', mascara: 'grecia', bounds: [[19.3, 34.8], [29.7, 41.8]], incompleta: true }),
+  configGerada({ ligaId: 'liga-tchequia', ligaNomeBase: 'Česká Liga', paisNome: 'Tchéquia', paisCodigo: 'cz', mascara: 'tchequia', bounds: [[12.1, 48.55], [18.9, 51.06]], incompleta: true }),
+  configGerada({ ligaId: 'liga-ucrania', ligaNomeBase: 'Ukrayina Liha', paisNome: 'Ucrânia', paisCodigo: 'ua', mascara: 'ucrania', bounds: [[22.1, 44.3], [40.2, 52.4]], incompleta: true }),
+  configGerada({ ligaId: 'liga-croacia', ligaNomeBase: 'Liga Hrvatska', paisNome: 'Croácia', paisCodigo: 'hr', mascara: 'croacia', bounds: [[13.4, 42.4], [19.5, 46.6]], incompleta: true }),
+  configGerada({ ligaId: 'liga-chipre', ligaNomeBase: 'Liga Cyprus', paisNome: 'Chipre', paisCodigo: 'cy', mascara: 'chipre', bounds: [[32.2, 34.5], [34.65, 35.75]], incompleta: true }),
+  configGerada({ ligaId: 'liga-emirados', ligaNomeBase: 'United Emirates League', paisNome: 'Emirados Árabes Unidos', paisCodigo: 'ae', mascara: 'emirados', bounds: [[51.5, 22.6], [56.4, 26.1]], incompleta: true }),
+  configGerada({ ligaId: 'liga-hungria', ligaNomeBase: 'Magyar Liga', paisNome: 'Hungria', paisCodigo: 'hu', mascara: 'hungria', bounds: [[16.1, 45.7], [22.9, 48.6]], incompleta: true }),
+  configGerada({ ligaId: 'liga-colombia', ligaNomeBase: 'Liga Colombia', paisNome: 'Colômbia', paisCodigo: 'co', mascara: 'colombia', bounds: [[-79.1, -4.3], [-66.8, 12.5]], incompleta: true }),
+  configGerada({ ligaId: 'liga-bulgaria', ligaNomeBase: 'Liga Bulgaria', paisNome: 'Bulgária', paisCodigo: 'bg', mascara: 'bulgaria', bounds: [[22.3, 41.2], [28.7, 44.25]], incompleta: true }),
+  configGerada({ ligaId: 'liga-azerbaijao', ligaNomeBase: 'Liga Azerbaijan', paisNome: 'Azerbaijão', paisCodigo: 'az', mascara: 'azerbaijao', bounds: [[44.7, 38.4], [50.4, 41.95]], incompleta: true }),
+  configGerada({ ligaId: 'liga-tailandia', ligaNomeBase: 'Thailand League', paisNome: 'Tailândia', paisCodigo: 'th', mascara: 'tailandia', bounds: [[97.3, 5.6], [105.7, 20.5]], incompleta: true }),
+  configGerada({ ligaId: 'liga-finlandia', ligaNomeBase: 'Finnliiga', paisNome: 'Finlândia', paisCodigo: 'fi', mascara: 'finlandia', bounds: [[20.5, 59.8], [31.6, 70.1]], incompleta: true }),
+];
+
 export const CONFIG_POR_LIGA: Record<string, ConfigPaisLiga> = {
   [CONFIG_INGLATERRA.ligaId]: CONFIG_INGLATERRA,
   [CONFIG_ESPANHA.ligaId]: CONFIG_ESPANHA,
   [CONFIG_ALEMANHA.ligaId]: CONFIG_ALEMANHA,
+  [CONFIG_ITALIA.ligaId]: CONFIG_ITALIA,
+  [CONFIG_FRANCA.ligaId]: CONFIG_FRANCA,
+  [CONFIG_CHAMPIONSHIP.ligaId]: CONFIG_CHAMPIONSHIP,
+  [CONFIG_LEAGUE_ONE.ligaId]: CONFIG_LEAGUE_ONE,
+  [CONFIG_LEAGUE_TWO.ligaId]: CONFIG_LEAGUE_TWO,
+  [CONFIG_PORTUGAL.ligaId]: CONFIG_PORTUGAL,
+  [CONFIG_BELGICA.ligaId]: CONFIG_BELGICA,
+  [CONFIG_LALIGA_2.ligaId]: CONFIG_LALIGA_2,
+  [CONFIG_ARABIA_SAUDITA.ligaId]: CONFIG_ARABIA_SAUDITA,
+  [CONFIG_ESCOCIA.ligaId]: CONFIG_ESCOCIA,
+  [CONFIG_BRASIL.ligaId]: CONFIG_BRASIL,
+  ...Object.fromEntries(LIGAS_GERADAS.map((c) => [c.ligaId, c])),
 };
 
 export function configDaLiga(ligaId: string): ConfigPaisLiga | null {

@@ -1,0 +1,506 @@
+{
+  "ligaId": "liga-argentina",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Avellaneda",
+      "lat": -34.6667,
+      "lng": -58.35,
+      "_wikidata": "Q1882267",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Banfield",
+      "lat": -34.75,
+      "lng": -58.3833,
+      "_wikidata": "Q591791"
+    },
+    {
+      "nome": "Buenos Aires",
+      "lat": -34.5997,
+      "lng": -58.3819,
+      "_wikidata": "Q1486"
+    },
+    {
+      "nome": "Córdoba",
+      "lat": -31.4167,
+      "lng": -64.1833,
+      "_wikidata": "Q44210"
+    },
+    {
+      "nome": "Florencio Varela",
+      "lat": -34.8167,
+      "lng": -58.2833,
+      "_wikidata": "Q2621603",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Junín",
+      "lat": -34.5833,
+      "lng": -60.95,
+      "_wikidata": "Q1038802",
+      "_homonimos": 3
+    },
+    {
+      "nome": "La Plata",
+      "lat": -34.9167,
+      "lng": -57.95,
+      "_wikidata": "Q260600",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Lanús",
+      "lat": -34.7,
+      "lng": -58.4,
+      "_wikidata": "Q730109",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Mar del Plata",
+      "lat": -38,
+      "lng": -57.55,
+      "_wikidata": "Q52607"
+    },
+    {
+      "nome": "Mendoza",
+      "lat": -32.8897,
+      "lng": -68.8444,
+      "_wikidata": "Q44237"
+    },
+    {
+      "nome": "Río Cuarto",
+      "lat": -33.123,
+      "lng": -64.3478,
+      "_wikidata": "Q983451"
+    },
+    {
+      "nome": "Rosário",
+      "lat": -32.9575,
+      "lng": -60.6394,
+      "_wikidata": "Q52535"
+    },
+    {
+      "nome": "San Miguel de Tucumán",
+      "lat": -26.8167,
+      "lng": -65.2167,
+      "_wikidata": "Q44255"
+    },
+    {
+      "nome": "Santa Fe",
+      "lat": -31.6333,
+      "lng": -60.7,
+      "_wikidata": "Q44244"
+    },
+    {
+      "nome": "Santiago del Estero",
+      "lat": -27.7844,
+      "lng": -64.2669,
+      "_wikidata": "Q44253"
+    },
+    {
+      "nome": "Tigre",
+      "lat": -34.4167,
+      "lng": -58.5833,
+      "_wikidata": "Q1906802",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Vicente López",
+      "lat": -34.5167,
+      "lng": -58.4833,
+      "_wikidata": "Q2099330",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "argentinos-juniors",
+      "nomesBase": [
+        "Argentinos Jrs."
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Diego Armando Maradona Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20diego%20maradona%20gcba.jpg?width=800",
+      "lat": -34.606,
+      "lng": -58.4726,
+      "_wikidata": "Q220621",
+      "_wikidataLabel": "Argentinos Juniors"
+    },
+    {
+      "slug": "atletico-tucuman",
+      "nomesBase": [
+        "Atlético Tucumán"
+      ],
+      "cidade": "San Miguel de Tucumán",
+      "estadio": "Estadio Monumental José Fierro",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Monumental%20Jos%C3%A9%20Fierro%2001.jpg?width=800",
+      "lat": -26.8128,
+      "lng": -65.1992,
+      "_wikidata": "Q757470",
+      "_wikidataLabel": "Atlético Tucumán"
+    },
+    {
+      "slug": "boca-juniors",
+      "nomesBase": [
+        "Boca Juniors"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "La Bombonera",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Bombonera%202.jpg?width=800",
+      "lat": -34.6356,
+      "lng": -58.3646,
+      "_wikidata": "Q170703",
+      "_wikidataLabel": "Boca Juniors"
+    },
+    {
+      "slug": "central-cordoba-de-santiago-del-estero",
+      "nomesBase": [
+        "Central Córdoba"
+      ],
+      "cidade": "Santiago del Estero",
+      "estadio": "Alfredo Terrera Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Alfredo%20Terrera.jpg?width=800",
+      "lat": -27.7938,
+      "lng": -64.2642,
+      "_wikidata": "Q5060684",
+      "_wikidataLabel": "Central Córdoba de Santiago del Estero"
+    },
+    {
+      "slug": "club-atletico-aldosivi",
+      "nomesBase": [
+        "Aldosivi"
+      ],
+      "cidade": "Mar del Plata",
+      "estadio": "José María Minella Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20minella%20vista%20aerea.jpg?width=800",
+      "lat": -38.0179,
+      "lng": -57.5823,
+      "_wikidata": "Q971490",
+      "_wikidataLabel": "Club Atlético Aldosivi"
+    },
+    {
+      "slug": "club-atletico-banfield",
+      "nomesBase": [
+        "Banfield"
+      ],
+      "cidade": "Banfield",
+      "estadio": "Estadio Florencio Sola",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Estadio%20Florencio%20Sola%20during%20a%20match%20between%20Banfield%20and%20Platense%20%282023%29.jpg?width=800",
+      "lat": -34.7508,
+      "lng": -58.3875,
+      "_wikidata": "Q692646",
+      "_wikidataLabel": "Club Atlético Banfield"
+    },
+    {
+      "slug": "club-atletico-belgrano",
+      "nomesBase": [
+        "Belgrano"
+      ],
+      "cidade": "Córdoba",
+      "estadio": "Estadio Julio César Villagra",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Belgrano%20vs%20San%20Miguel%202022%2023.jpg?width=800",
+      "lat": -31.4035,
+      "lng": -64.2063,
+      "_wikidata": "Q59962",
+      "_wikidataLabel": "Club Atlético Belgrano"
+    },
+    {
+      "slug": "club-atletico-huracan",
+      "nomesBase": [
+        "Huracán"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Estadio Tomás Adolfo Ducó",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Huracan%20palacio%20duco.jpg?width=800",
+      "lat": -34.6435,
+      "lng": -58.3965,
+      "_wikidata": "Q327172",
+      "_wikidataLabel": "Club Atlético Huracán"
+    },
+    {
+      "slug": "club-atletico-independiente",
+      "nomesBase": [
+        "Independiente"
+      ],
+      "cidade": "Avellaneda",
+      "estadio": "Libertadores de América Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Libertadores%20de%20America%20Campo%20y%20Norte%20desde%20palco.JPG?width=800",
+      "lat": -34.6703,
+      "lng": -58.371,
+      "_wikidata": "Q214978",
+      "_wikidataLabel": "Club Atlético Independiente"
+    },
+    {
+      "slug": "club-atletico-lanus",
+      "nomesBase": [
+        "Lanús"
+      ],
+      "cidade": "Lanús",
+      "estadio": "Estadio Ciudad de Lanús Néstor Díaz Pérez",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hinchada%20del%20Club%20Lan%C3%BAs.jpg?width=800",
+      "lat": -34.7177,
+      "lng": -58.3838,
+      "_wikidata": "Q324589",
+      "_wikidataLabel": "Club Atlético Lanús"
+    },
+    {
+      "slug": "club-atletico-platense",
+      "nomesBase": [
+        "Platense"
+      ],
+      "cidade": "Vicente López",
+      "estadio": "City of Vicente López Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20ciudad%20de%20vicente%20lopez%2003.jpg?width=800",
+      "lat": -34.5402,
+      "lng": -58.4816,
+      "_wikidata": "Q151907",
+      "_wikidataLabel": "Club Atlético Platense"
+    },
+    {
+      "slug": "club-atletico-river-plate",
+      "nomesBase": [
+        "River Plate"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Monumental Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/RiverPlateStadium.jpg?width=800",
+      "lat": -34.5453,
+      "lng": -58.4497,
+      "_wikidata": "Q15799",
+      "_wikidataLabel": "Club Atlético River Plate"
+    },
+    {
+      "slug": "club-atletico-rosario-central",
+      "nomesBase": [
+        "Rosario Central"
+      ],
+      "cidade": "Rosário",
+      "estadio": "Gigante de Arroyito Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2009%20Argentina-Brasil%20en%20el%20Gigante.jpg?width=800",
+      "lat": -32.914,
+      "lng": -60.6746,
+      "_wikidata": "Q318307",
+      "_wikidataLabel": "Club Atlético Rosario Central"
+    },
+    {
+      "slug": "club-atletico-sarmiento",
+      "nomesBase": [
+        "Sarmiento"
+      ],
+      "cidade": "Junín",
+      "estadio": "Estadio Eva Perón",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cancha%20de%20sarmiento.jpg?width=800",
+      "lat": -34.5854,
+      "lng": -60.9293,
+      "_wikidata": "Q519966",
+      "_wikidataLabel": "Club Atlético Sarmiento"
+    },
+    {
+      "slug": "club-atletico-tigre",
+      "nomesBase": [
+        "Tigre"
+      ],
+      "cidade": "Tigre",
+      "estadio": "Estadio José Dellagiovanna",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tigre%20estadio%20tribuna%20peron.jpg?width=800",
+      "lat": -34.4493,
+      "lng": -58.5422,
+      "_wikidata": "Q80886",
+      "_wikidataLabel": "Club Atlético Tigre"
+    },
+    {
+      "slug": "club-atletico-velez-sarsfield",
+      "nomesBase": [
+        "Vélez Sarsfield"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "José Amalfitani Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Argentina%20A%20vs%20Inglaterra%20A%2002.JPG?width=800",
+      "lat": -34.6354,
+      "lng": -58.5207,
+      "_wikidata": "Q215163",
+      "_wikidataLabel": "Club Atlético Vélez Sarsfield"
+    },
+    {
+      "slug": "club-de-gimnasia-y-esgrima-la-plata",
+      "nomesBase": [
+        "Gimnasia"
+      ],
+      "cidade": "La Plata",
+      "estadio": "Juan Carmelo Zerillo Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo%20Tripero%20-%20Estadio%20Juan%20Carmelo%20Zerillo.%2014.JPG?width=800",
+      "lat": -34.911,
+      "lng": -57.9326,
+      "_wikidata": "Q18640",
+      "_wikidataLabel": "Club de Gimnasia y Esgrima La Plata"
+    },
+    {
+      "slug": "defensa-y-justicia",
+      "nomesBase": [
+        "Defensa"
+      ],
+      "cidade": "Florencio Varela",
+      "estadio": "Norberto Tomaghello Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio.JPG?width=800",
+      "lat": -34.8218,
+      "lng": -58.2865,
+      "_wikidata": "Q1024338",
+      "_wikidataLabel": "Defensa y Justicia"
+    },
+    {
+      "slug": "deportivo-riestra",
+      "nomesBase": [
+        "Dep. Riestra"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Guillermo Laza stadium",
+      "lat": -34.6533,
+      "lng": -58.4436,
+      "_wikidata": "Q4382304",
+      "_wikidataLabel": "Deportivo Riestra"
+    },
+    {
+      "slug": "estudiantes-de-la-plata",
+      "nomesBase": [
+        "Estudiantes"
+      ],
+      "cidade": "La Plata",
+      "estadio": "Estadio Jorge Luis Hirschi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio-Jorge-Luis-Hirschi-Reinauguraci%C3%B3n-2019-Vista-Platea-Oficial.jpg?width=800",
+      "lat": -34.912,
+      "lng": -57.9389,
+      "_wikidata": "Q214940",
+      "_wikidataLabel": "Estudiantes de La Plata"
+    },
+    {
+      "slug": "estudiantes-de-rio-cuarto",
+      "nomesBase": [
+        "Asociación Atlética Estudiantes"
+      ],
+      "cidade": "Río Cuarto",
+      "estadio": "City of Río Cuarto Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20r4.jpg?width=800",
+      "lat": -33.1153,
+      "lng": -64.3478,
+      "_wikidata": "Q8206935",
+      "_wikidataLabel": "Estudiantes de Río Cuarto"
+    },
+    {
+      "slug": "gimnasia-y-esgrima-de-mendoza",
+      "nomesBase": [
+        "Club Atlético Gimnasia y Esgrima"
+      ],
+      "cidade": "Mendoza",
+      "estadio": "Víctor Legrotaglie Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20V%C3%ADctor%20Legrotaglie%20-%20Panor%C3%A1mica%20%282017%29.jpg?width=800",
+      "lat": -32.8843,
+      "lng": -68.8636,
+      "_wikidata": "Q2707037",
+      "_wikidataLabel": "Gimnasia y Esgrima de Mendoza"
+    },
+    {
+      "slug": "independiente-rivadavia",
+      "nomesBase": [
+        "Ind. Rivadavia"
+      ],
+      "cidade": "Mendoza",
+      "estadio": "autista Tragantini Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/UNCUECO%2024.JPG?width=800",
+      "lat": -32.8908,
+      "lng": -68.8628,
+      "_wikidata": "Q2454482",
+      "_wikidataLabel": "Independiente Rivadavia"
+    },
+    {
+      "slug": "instituto-atletico-central-cordoba",
+      "nomesBase": [
+        "Instituto"
+      ],
+      "cidade": "Córdoba",
+      "estadio": "Juan Domingo Perón Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20alta%20cordoba%20cropped.jpg?width=800",
+      "lat": -31.3837,
+      "lng": -64.1803,
+      "_wikidata": "Q1421829",
+      "_wikidataLabel": "Instituto Atlético Central Córdoba"
+    },
+    {
+      "slug": "newell-s-old-boys",
+      "nomesBase": [
+        "Newell's"
+      ],
+      "cidade": "Rosário",
+      "estadio": "Marcelo Bielsa Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Marcelo%20Bielsa.jpg?width=800",
+      "lat": -32.9561,
+      "lng": -60.6614,
+      "_wikidata": "Q221882",
+      "_wikidataLabel": "Newell's Old Boys"
+    },
+    {
+      "slug": "racing-club",
+      "nomesBase": [
+        "Racing Club"
+      ],
+      "cidade": "Avellaneda",
+      "estadio": "El Cilindro",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Presidente%20Peron.jpg?width=800",
+      "lat": -34.6675,
+      "lng": -58.3686,
+      "_wikidata": "Q276533",
+      "_wikidataLabel": "Racing Club"
+    },
+    {
+      "slug": "real-madrid",
+      "nomesBase": [
+        "Barracas Central"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Claudio Chiqui Tapia Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20barracas%20central%201922.jpg?width=800",
+      "lat": -34.6469,
+      "lng": -58.3963,
+      "_wikidata": "Q2469894",
+      "_wikidataLabel": "Real Madrid"
+    },
+    {
+      "slug": "san-lorenzo-de-almagro",
+      "nomesBase": [
+        "San Lorenzo"
+      ],
+      "cidade": "Buenos Aires",
+      "estadio": "Estadio Pedro Bidegain",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Platea%20Este%20Nuevo%20Gasometro%201.jpg?width=800",
+      "lat": -34.6521,
+      "lng": -58.4401,
+      "_wikidata": "Q218282",
+      "_wikidataLabel": "San Lorenzo de Almagro"
+    },
+    {
+      "slug": "talleres-de-cordoba",
+      "nomesBase": [
+        "Talleres"
+      ],
+      "cidade": "Córdoba",
+      "estadio": "Mario Alberto Kempes Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20a%C3%A9rea%20del%20Estadio%20Mario%20Alberto%20Kempes%2C%20C%C3%B3rdoba.jpg?width=800",
+      "lat": -31.369,
+      "lng": -64.2462,
+      "_wikidata": "Q1022939",
+      "_wikidataLabel": "Talleres de Córdoba"
+    },
+    {
+      "slug": "union-de-santa-fe",
+      "nomesBase": [
+        "Unión"
+      ],
+      "cidade": "Santa Fe",
+      "estadio": "Estadio 15 de Abril",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%2015%20de%20Abril%20-%20Club%20Atl%C3%A9tico%20Uni%C3%B3n%20de%20Santa%20Fe%202021.jpg?width=800",
+      "lat": -31.6319,
+      "lng": -60.7159,
+      "_wikidata": "Q80899",
+      "_wikidataLabel": "Unión de Santa Fe"
+    }
+  ]
+}

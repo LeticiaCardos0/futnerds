@@ -1,0 +1,206 @@
+{
+  "ligaId": "k-league",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Busan",
+      "lat": 35.097,
+      "lng": 129.0081,
+      "rank": 1
+    },
+    {
+      "nome": "Daegu",
+      "lat": 35.8687,
+      "lng": 128.605,
+      "rank": 1
+    },
+    {
+      "nome": "Changwon",
+      "lat": 35.2191,
+      "lng": 128.5836,
+      "rank": 1
+    },
+    {
+      "nome": "Cheongju",
+      "lat": 36.6439,
+      "lng": 127.5012,
+      "rank": 1
+    },
+    {
+      "nome": "Yeosu",
+      "lat": 34.7368,
+      "lng": 127.7458,
+      "rank": 1
+    },
+    {
+      "nome": "Iksan",
+      "lat": 35.941,
+      "lng": 126.9454,
+      "rank": 1
+    },
+    {
+      "nome": "Mokpo",
+      "lat": 34.8068,
+      "lng": 126.3958,
+      "rank": 1
+    },
+    {
+      "nome": "Gunsan",
+      "lat": 35.9818,
+      "lng": 126.716,
+      "rank": 1
+    },
+    {
+      "nome": "Wonju",
+      "lat": 37.3551,
+      "lng": 127.9396,
+      "rank": 1
+    },
+    {
+      "nome": "Chuncheon",
+      "lat": 37.8747,
+      "lng": 127.7342,
+      "rank": 1
+    },
+    {
+      "nome": "Gyeongju",
+      "lat": 35.8428,
+      "lng": 129.2117,
+      "rank": 1
+    },
+    {
+      "nome": "Andong",
+      "lat": 36.5659,
+      "lng": 128.725,
+      "rank": 1
+    },
+    {
+      "nome": "Sokcho",
+      "lat": 38.2087,
+      "lng": 128.5912,
+      "rank": 1
+    },
+    {
+      "nome": "Eumseong",
+      "lat": 36.9353,
+      "lng": 127.6897,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Pyongyang",
+      "lat": 39.0214,
+      "lng": 125.7527,
+      "rank": 1
+    },
+    {
+      "nome": "Fukuoka",
+      "lat": 33.597,
+      "lng": 130.4081,
+      "rank": 1
+    },
+    {
+      "nome": "Nampo",
+      "lat": 38.7689,
+      "lng": 125.4505,
+      "rank": 1
+    },
+    {
+      "nome": "Hamhung",
+      "lat": 39.912,
+      "lng": 127.5435,
+      "rank": 1
+    },
+    {
+      "nome": "Kumamoto",
+      "lat": 32.8009,
+      "lng": 130.7006,
+      "rank": 1
+    },
+    {
+      "nome": "Nagasaki",
+      "lat": 32.765,
+      "lng": 129.885,
+      "rank": 1
+    },
+    {
+      "nome": "Sunchon",
+      "lat": 39.4236,
+      "lng": 125.939,
+      "rank": 1
+    },
+    {
+      "nome": "Kaesong",
+      "lat": 37.964,
+      "lng": 126.5644,
+      "rank": 1
+    },
+    {
+      "nome": "Wonsan",
+      "lat": 39.1605,
+      "lng": 127.4308,
+      "rank": 2
+    },
+    {
+      "nome": "Sasebo",
+      "lat": 33.1631,
+      "lng": 129.7177,
+      "rank": 2
+    },
+    {
+      "nome": "Haeju",
+      "lat": 38.0394,
+      "lng": 125.7144,
+      "rank": 2
+    },
+    {
+      "nome": "Sariwon",
+      "lat": 38.507,
+      "lng": 125.762,
+      "rank": 2
+    },
+    {
+      "nome": "Chongju",
+      "lat": 39.6813,
+      "lng": 125.2163,
+      "rank": 2
+    },
+    {
+      "nome": "Munchon",
+      "lat": 39.3813,
+      "lng": 127.2517,
+      "rank": 2
+    },
+    {
+      "nome": "Ongjin",
+      "lat": 37.9371,
+      "lng": 125.3571,
+      "rank": 2
+    },
+    {
+      "nome": "Pyongyang",
+      "lat": 38.3367,
+      "lng": 126.3866,
+      "rank": 2
+    },
+    {
+      "nome": "Changyon",
+      "lat": 38.2517,
+      "lng": 125.1021,
+      "rank": 2
+    },
+    {
+      "nome": "Anbyon",
+      "lat": 39.0282,
+      "lng": 127.5186,
+      "rank": 2
+    },
+    {
+      "nome": "Sin-Ni",
+      "lat": 39.488,
+      "lng": 125.464,
+      "rank": 2
+    }
+  ]
+}

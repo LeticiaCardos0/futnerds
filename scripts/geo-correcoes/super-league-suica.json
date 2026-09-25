@@ -1,0 +1,36 @@
+{
+  "ligaId": "super-league-suica",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "O FC Vaduz é de Liechtenstein e joga o sistema suíço; a máscara inclui Liechtenstein.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "FC St. Gallen": {
+      "cidade": "St. Gallen",
+      "cidadeWikidata": "Q25607"
+    },
+    "FC Thun": {
+      "cidade": "Thun",
+      "cidadeWikidata": "Q68978"
+    },
+    "FC Vaduz": {
+      "clubeWikidata": "Q216773",
+      "cidade": "Vaduz",
+      "cidadeWikidata": "Q1844"
+    },
+    "GC Zürich": {
+      "_nota": "Grasshopper Club Zürich.",
+      "clubeWikidata": "Q201360"
+    },
+    "Lausanne-Sport": {
+      "_nota": "O Wikidata traz a Pontaise; o clube joga na Tuilière desde 2020.",
+      "estadioWikidata": "Q53843608",
+      "estadio": "Stade de la Tuilière"
+    }
+  }
+}

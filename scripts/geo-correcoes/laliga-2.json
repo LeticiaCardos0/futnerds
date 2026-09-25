@@ -1,0 +1,84 @@
+{
+  "ligaId": "laliga-2",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Mesmo padrão de nomes da primeira divisão (scripts/geo-correcoes/la-liga.json).",
+    "FC Andorra joga em Andorra la Vella, fora da Espanha: só resolve por pin."
+  ],
+  "clubes": {
+    "AD Ceuta FC": {
+      "clubeWikidata": "Q5773365",
+      "cidade": "Ceuta"
+    },
+    "Albacete BP": {
+      "clubeWikidata": "Q576285",
+      "cidade": "Albacete"
+    },
+    "Burgos CF": {
+      "_nota": "Colide com o Burgos CF extinto em 1983.",
+      "clubeWikidata": "Q852079",
+      "cidade": "Burgos"
+    },
+    "CD Castellón": {
+      "cidade": "Castellón",
+      "cidadeWikidata": "Q15092"
+    },
+    "CE Sabadell FC": {
+      "clubeWikidata": "Q12260",
+      "cidade": "Sabadell"
+    },
+    "Celta Fortuna": {
+      "_nota": "O time B do Celta.",
+      "clubeWikidata": "Q2311865",
+      "cidade": "Vigo",
+      "cidadeWikidata": "Q8745"
+    },
+    "Córdoba CF": {
+      "_nota": "Colide com o feminino.",
+      "clubeWikidata": "Q10499",
+      "cidade": "Córdoba"
+    },
+    "FC Andorra": {
+      "clubeWikidata": "Q1386854",
+      "estadio": "Estadi Nacional",
+      "cidade": "Andorra la Vella",
+      "cidadeWikidata": "Q1863"
+    },
+    "Granada CF": {
+      "_nota": "Corrige o rótulo do Wikidata (Cármeness).",
+      "estadio": "Estadio Nuevo Los Cármenes",
+      "cidade": "Granada"
+    },
+    "R. Oviedo": {
+      "clubeWikidata": "Q271574",
+      "cidade": "Oviedo"
+    },
+    "R. Sporting": {
+      "_nota": "Sporting de Gijón.",
+      "clubeWikidata": "Q12278",
+      "cidade": "Gijón"
+    },
+    "R. Valladolid CF": {
+      "clubeWikidata": "Q10319",
+      "cidade": "Valladolid"
+    },
+    "RCD Mallorca": { "cidade": "Palma" },
+    "Real Sociedad B": {
+      "clubeWikidata": "Q1067750",
+      "cidade": "San Sebastián",
+      "cidadeWikidata": "Q24013530"
+    },
+    "UD Almería": {
+      "clubeWikidata": "Q10407",
+      "cidade": "Almería"
+    },
+    "UD Las Palmas": {
+      "estadio": "Estadio de Gran Canaria",
+      "cidade": "Las Palmas",
+      "cidadeWikidata": "Q11974"
+    }
+  }
+}

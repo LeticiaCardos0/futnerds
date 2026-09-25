@@ -1,0 +1,27 @@
+{
+  "ligaId": "liga-azerbaijao",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Baku",
+      "lat": 40.3667,
+      "lng": 49.8352,
+      "_wikidata": "Q9248"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "qarabag-fk",
+      "nomesBase": [
+        "Qarabağ FK"
+      ],
+      "cidade": "Baku",
+      "estadio": "Tofiq Bahramov Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Qarabagh%20-%20Young%20Boys%2C%2027.08.2015%20%281%29.JPG?width=800",
+      "lat": 40.3973,
+      "lng": 49.8524,
+      "_wikidata": "Q723476",
+      "_wikidataLabel": "Qarabağ FK"
+    }
+  ]
+}

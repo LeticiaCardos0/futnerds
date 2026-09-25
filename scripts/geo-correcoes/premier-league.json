@@ -8,7 +8,8 @@
     "  estadioWikidata Q-id do estádio. Sobrepõe o P115 — use quando o Wikidata estiver desatualizado.",
     "  cidade          Nome do rótulo no mapa. É o que vai para a lista `cidades` e para a busca do centro.",
     "  estadio         Nome de exibição do estádio.",
-    "  lat, lng        Último recurso. Preferir estadioWikidata, que mantém a coordenada vindo da fonte."
+    "  lat, lng        Último recurso. Preferir estadioWikidata, que mantém a coordenada vindo da fonte.",
+    "  semEstadio      true quando não há estádio confirmável: o pino fica no centro da cidade e o painel mostra \"—\"."
   ],
   "clubes": {
     "AFC Bournemouth": {

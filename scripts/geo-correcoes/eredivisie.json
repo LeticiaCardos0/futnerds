@@ -1,0 +1,37 @@
+{
+  "ligaId": "eredivisie",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Excelsior": {
+      "_nota": "Excelsior Rotterdam.",
+      "clubeWikidata": "Q370712"
+    },
+    "FC Groningen": {
+      "cidade": "Groningen",
+      "cidadeWikidata": "Q749"
+    },
+    "FC Twente": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q19603"
+    },
+    "N.E.C. Nijmegen": {
+      "clubeWikidata": "Q318348",
+      "cidade": "Nijmegen",
+      "cidadeWikidata": "Q47887"
+    },
+    "SC Telstar": {
+      "_nota": "P159 devolve o município (Velsen); o estádio fica em Velsen-Zuid.",
+      "cidade": "IJmuiden"
+    },
+    "Willem II": {
+      "cidade": "Tilburg",
+      "cidadeWikidata": "Q26430"
+    }
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "ligaId": "superliga-china",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Chengdu",
+      "lat": 30.66,
+      "lng": 104.0633,
+      "_wikidata": "Q30002"
+    },
+    {
+      "nome": "Chongqing",
+      "lat": 29.55,
+      "lng": 106.5069,
+      "_wikidata": "Q11725",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Dalian",
+      "lat": 38.9,
+      "lng": 121.6,
+      "_wikidata": "Q74881"
+    },
+    {
+      "nome": "Hangzhou",
+      "lat": 30.25,
+      "lng": 120.1675,
+      "_wikidata": "Q4970"
+    },
+    {
+      "nome": "Jinan",
+      "lat": 36.6667,
+      "lng": 116.9833,
+      "_wikidata": "Q170247"
+    },
+    {
+      "nome": "Pequim",
+      "lat": 39.904,
+      "lng": 116.4075,
+      "_wikidata": "Q956"
+    },
+    {
+      "nome": "Qingdao",
+      "lat": 36.1167,
+      "lng": 120.4,
+      "_wikidata": "Q170322"
+    },
+    {
+      "nome": "Shenyang",
+      "lat": 41.8025,
+      "lng": 123.4281,
+      "_wikidata": "Q11720",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Tianjin",
+      "lat": 39.1467,
+      "lng": 117.2056,
+      "_wikidata": "Q11736"
+    },
+    {
+      "nome": "Wuhan",
+      "lat": 30.595,
+      "lng": 114.2975,
+      "_wikidata": "Q11746"
+    },
+    {
+      "nome": "Xangai",
+      "lat": 31.2325,
+      "lng": 121.4692,
+      "_wikidata": "Q8686"
+    },
+    {
+      "nome": "Yuxi",
+      "lat": 24.3495,
+      "lng": 102.5432,
+      "_wikidata": "Q496496"
+    },
+    {
+      "nome": "Zhengzhou",
+      "lat": 34.7492,
+      "lng": 113.6605,
+      "_wikidata": "Q30340"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "beijing-guoan",
+      "nomesBase": [
+        "Beijing FC"
+      ],
+      "cidade": "Pequim",
+      "estadio": "Workers Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Workers%20Stadium.jpg?width=800",
+      "lat": 39.9295,
+      "lng": 116.4411,
+      "_wikidata": "Q814738",
+      "_wikidataLabel": "Beijing Guoan F.C."
+    },
+    {
+      "slug": "chengdu-rongcheng",
+      "nomesBase": [
+        "Chengdu FC"
+      ],
+      "cidade": "Chengdu",
+      "estadio": "Shuangliu Sports Centre",
+      "lat": 30.5732,
+      "lng": 103.894,
+      "_wikidata": "Q19840468",
+      "_wikidataLabel": "Chengdu Rongcheng F.C."
+    },
+    {
+      "slug": "chongqing-tongliang-long",
+      "nomesBase": [
+        "Chongqing FC"
+      ],
+      "cidade": "Chongqing",
+      "estadio": "—",
+      "lat": 29.55,
+      "lng": 106.5069,
+      "_wikidata": "Q123253436",
+      "_wikidataLabel": "Chongqing Tongliang Long F.C."
+    },
+    {
+      "slug": "dalian-yingbo",
+      "nomesBase": [
+        "Dalian Yingbo"
+      ],
+      "cidade": "Dalian",
+      "estadio": "Dalian Suoyuwan Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Dalian%20Suoyuwan%20Football%20Stadium.jpg?width=800",
+      "lat": 38.9513,
+      "lng": 121.6198,
+      "_wikidata": "Q118904181",
+      "_wikidataLabel": "Dalian Yingbo F.C."
+    },
+    {
+      "slug": "henan",
+      "nomesBase": [
+        "Henan FC"
+      ],
+      "cidade": "Zhengzhou",
+      "estadio": "Zhengzhou Hanghai Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/20220818%20Hanghai%20Stadium%2001.jpg?width=800",
+      "lat": 34.7167,
+      "lng": 113.7253,
+      "_wikidata": "Q507444",
+      "_wikidataLabel": "Henan F.C."
+    },
+    {
+      "slug": "liaoning-tieren",
+      "nomesBase": [
+        "Liaoning FC"
+      ],
+      "cidade": "Shenyang",
+      "estadio": "Shenyang Tiexi Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Shenyang%20Tiexi%20Stadium%20%2820240503163627%29.jpg?width=800",
+      "lat": 41.8097,
+      "lng": 123.3206,
+      "_wikidata": "Q22662512",
+      "_wikidataLabel": "Liaoning Tieren F.C."
+    },
+    {
+      "slug": "qingdao",
+      "nomesBase": [
+        "Qingdao Hainiu"
+      ],
+      "cidade": "Qingdao",
+      "estadio": "Qingdao Conson Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Guoxin%20Stadium%20PANO.jpg?width=800",
+      "lat": 36.1033,
+      "lng": 120.44,
+      "_wikidata": "Q3866968",
+      "_wikidataLabel": "Qingdao F.C."
+    },
+    {
+      "slug": "qingdao-qingchundao",
+      "nomesBase": [
+        "Qingdao W. Coast"
+      ],
+      "cidade": "Qingdao",
+      "estadio": "Qingdao Youth Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Youth%20Stadium%27s%20interior%20view.jpg?width=800",
+      "lat": 36.2815,
+      "lng": 120.4098,
+      "_wikidata": "Q97276157",
+      "_wikidataLabel": "Qingdao Qingchundao F.C."
+    },
+    {
+      "slug": "shandong-taishan",
+      "nomesBase": [
+        "Shandong Taishan"
+      ],
+      "cidade": "Jinan",
+      "estadio": "Jinan Olympic Sports Center Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/JinanOlympic.JPG?width=800",
+      "lat": 36.6566,
+      "lng": 117.1101,
+      "_wikidata": "Q1046367",
+      "_wikidataLabel": "Shandong Taishan F.C."
+    },
+    {
+      "slug": "shanghai-port",
+      "nomesBase": [
+        "Shanghai Port FC"
+      ],
+      "cidade": "Xangai",
+      "estadio": "Shanghai Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Shanghai%20Stadium%202008.JPG?width=800",
+      "lat": 31.1835,
+      "lng": 121.4373,
+      "_wikidata": "Q564216",
+      "_wikidataLabel": "Shanghai Port F.C."
+    },
+    {
+      "slug": "shanghai-shenhua",
+      "nomesBase": [
+        "Shanghai Shenhua"
+      ],
+      "cidade": "Xangai",
+      "estadio": "Hongkou Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%8A%E6%B5%B7%E8%99%B9%E5%8F%A3%E8%B6%B3%E7%90%83%E5%9C%BA%E5%85%A8%E8%B2%8C.jpg?width=800",
+      "lat": 31.2733,
+      "lng": 121.4762,
+      "_wikidata": "Q725367",
+      "_wikidataLabel": "Shanghai Shenhua F.C."
+    },
+    {
+      "slug": "shenzhen-peng-city",
+      "nomesBase": [
+        "SZ Peng City"
+      ],
+      "cidade": "Chengdu",
+      "estadio": "Chengdu Longquanyi Football Stadium",
+      "lat": 30.6158,
+      "lng": 104.3078,
+      "_wikidata": "Q7507434",
+      "_wikidataLabel": "Shenzhen Peng City F.C."
+    },
+    {
+      "slug": "tianjin-jinmen-tiger",
+      "nomesBase": [
+        "Tianjin JMT FC"
+      ],
+      "cidade": "Tianjin",
+      "estadio": "TEDA Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tianjin%20TEDA%20Soccer%20Stadium.jpg?width=800",
+      "lat": 39.0305,
+      "lng": 117.719,
+      "_wikidata": "Q537552",
+      "_wikidataLabel": "Tianjin Jinmen Tiger F.C."
+    },
+    {
+      "slug": "wuhan-three-towns",
+      "nomesBase": [
+        "Wuhan Three Towns"
+      ],
+      "cidade": "Wuhan",
+      "estadio": "Wuhan Sports Center",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wuhan%20Sport%20Centre%2001.jpg?width=800",
+      "lat": 30.5023,
+      "lng": 114.1663,
+      "_wikidata": "Q65062245",
+      "_wikidataLabel": "Wuhan Three Towns F.C."
+    },
+    {
+      "slug": "yunnan-yukun",
+      "nomesBase": [
+        "Yunnan Yukun"
+      ],
+      "cidade": "Yuxi",
+      "estadio": "Yuxi Plateau Sports Center Stadium",
+      "lat": 24.3945,
+      "lng": 102.5812,
+      "_wikidata": "Q123376316",
+      "_wikidataLabel": "Yunnan Yukun F.C."
+    },
+    {
+      "slug": "zhejiang-professional",
+      "nomesBase": [
+        "Zhejiang Pro"
+      ],
+      "cidade": "Hangzhou",
+      "estadio": "Huanglong Sports Center",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hangzhou-yellow-dragon-stad.jpg?width=800",
+      "lat": 30.2683,
+      "lng": 120.129,
+      "_wikidata": "Q79380",
+      "_wikidataLabel": "Zhejiang Professional F.C."
+    }
+  ]
+}

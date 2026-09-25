@@ -1,0 +1,35 @@
+{
+  "ligaId": "2-bundesliga",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Braunschweig": {
+      "_nota": "A base abrevia Eintracht Braunschweig.",
+      "clubeWikidata": "Q154053",
+      "cidade": "Braunschweig",
+      "cidadeWikidata": "Q2773"
+    },
+    "Fürth": {
+      "_nota": "A base abrevia SpVgg Greuther Fürth.",
+      "clubeWikidata": "Q153539"
+    },
+    "Hannover 96": {
+      "cidade": "Hannover",
+      "cidadeWikidata": "Q1715"
+    },
+    "Heidenheim": { "cidade": "Heidenheim" },
+    "Karlsruher SC": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q105853"
+    },
+    "VfL Wolfsburg": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q101859"
+    }
+  }
+}

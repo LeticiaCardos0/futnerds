@@ -1,0 +1,357 @@
+{
+  "ligaId": "2-bundesliga",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Berlim",
+      "lat": 52.5167,
+      "lng": 13.3833,
+      "_wikidata": "Q64",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Bielefeld",
+      "lat": 52.0167,
+      "lng": 8.5333,
+      "_wikidata": "Q2112"
+    },
+    {
+      "nome": "Bochum",
+      "lat": 51.4833,
+      "lng": 7.2167,
+      "_wikidata": "Q2103"
+    },
+    {
+      "nome": "Braunschweig",
+      "lat": 52.2692,
+      "lng": 10.5211,
+      "_wikidata": "Q2773"
+    },
+    {
+      "nome": "Cottbus",
+      "lat": 51.7608,
+      "lng": 14.3319,
+      "_wikidata": "Q3214"
+    },
+    {
+      "nome": "Darmstadt",
+      "lat": 49.8667,
+      "lng": 8.65,
+      "_wikidata": "Q2973"
+    },
+    {
+      "nome": "Dresden",
+      "lat": 51.0493,
+      "lng": 13.7381,
+      "_wikidata": "Q1731"
+    },
+    {
+      "nome": "Fürth",
+      "lat": 49.4783,
+      "lng": 10.9903,
+      "_wikidata": "Q3075",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.55,
+      "lng": 10,
+      "_wikidata": "Q1055"
+    },
+    {
+      "nome": "Hannover",
+      "lat": 52.3744,
+      "lng": 9.7386,
+      "_wikidata": "Q1715"
+    },
+    {
+      "nome": "Heidenheim",
+      "lat": 48.6761,
+      "lng": 10.1544,
+      "_wikidata": "Q6869",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kaiserslautern",
+      "lat": 49.4447,
+      "lng": 7.7689,
+      "_wikidata": "Q3758"
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49.0167,
+      "lng": 8.4,
+      "_wikidata": "Q1040",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kiel",
+      "lat": 54.3233,
+      "lng": 10.1394,
+      "_wikidata": "Q1707",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Magdeburgo",
+      "lat": 52.1316,
+      "lng": 11.64,
+      "_wikidata": "Q1733"
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.4539,
+      "lng": 11.0775,
+      "_wikidata": "Q2090",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Osnabrück",
+      "lat": 52.2789,
+      "lng": 8.0431,
+      "_wikidata": "Q2916",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Wolfsburg",
+      "lat": 52.4231,
+      "lng": 10.7872,
+      "_wikidata": "Q3014"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "1-fc-heidenheim-1846",
+      "nomesBase": [
+        "Heidenheim"
+      ],
+      "cidade": "Heidenheim",
+      "estadio": "Voith-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Voith-Arena.jpg?width=800",
+      "lat": 48.6685,
+      "lng": 10.1393,
+      "_wikidata": "Q162251",
+      "_wikidataLabel": "1. FC Heidenheim 1846"
+    },
+    {
+      "slug": "1-fc-kaiserslautern",
+      "nomesBase": [
+        "Kaiserslautern"
+      ],
+      "cidade": "Kaiserslautern",
+      "estadio": "Fritz Walter Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2025-03-07%20FCK-SVE%20%2802%29.jpg?width=800",
+      "lat": 49.4344,
+      "lng": 7.7758,
+      "_wikidata": "Q8466",
+      "_wikidataLabel": "1. FC Kaiserslautern"
+    },
+    {
+      "slug": "1-fc-magdeburg",
+      "nomesBase": [
+        "1. FC Magdeburg"
+      ],
+      "cidade": "Magdeburgo",
+      "estadio": "Avnet Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Magdeburg%20Luftbild.JPG?width=800",
+      "lat": 52.1256,
+      "lng": 11.6708,
+      "_wikidata": "Q155730",
+      "_wikidataLabel": "1. FC Magdeburg"
+    },
+    {
+      "slug": "1-fc-nurnberg",
+      "nomesBase": [
+        "1. FC Nürnberg"
+      ],
+      "cidade": "Nuremberg",
+      "estadio": "Max-Morlock-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/EasyCredit-Stadion%20Panorama%202012-04-11.jpg?width=800",
+      "lat": 49.4262,
+      "lng": 11.1256,
+      "_wikidata": "Q15786",
+      "_wikidataLabel": "1. FC Nürnberg"
+    },
+    {
+      "slug": "arminia-bielefeld",
+      "nomesBase": [
+        "Arminia Bielefeld"
+      ],
+      "cidade": "Bielefeld",
+      "estadio": "Bielefelder Alm",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Germany%20bielefeld%20sch%C3%BCco%20arena%20stadium.jpg?width=800",
+      "lat": 52.0314,
+      "lng": 8.5169,
+      "_wikidata": "Q105844",
+      "_wikidataLabel": "Arminia Bielefeld"
+    },
+    {
+      "slug": "dynamo-dresden",
+      "nomesBase": [
+        "Dynamo Dresden"
+      ],
+      "cidade": "Dresden",
+      "estadio": "Rudolf-Harbig-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Womens%27%20World%20Cup%20Dresden%202011%20USA%20vs%20North%20Korea%20Stadium%203.jpg?width=800",
+      "lat": 51.0403,
+      "lng": 13.7478,
+      "_wikidata": "Q141931",
+      "_wikidataLabel": "Dynamo Dresden"
+    },
+    {
+      "slug": "eintracht-braunschweig",
+      "nomesBase": [
+        "Braunschweig"
+      ],
+      "cidade": "Braunschweig",
+      "estadio": "Eintracht-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20an%20der%20Hamburger%20Stra%C3%9Fe.jpg?width=800",
+      "lat": 52.29,
+      "lng": 10.5214,
+      "_wikidata": "Q154053",
+      "_wikidataLabel": "Eintracht Braunschweig"
+    },
+    {
+      "slug": "fc-energie-cottbus",
+      "nomesBase": [
+        "Energie Cottbus"
+      ],
+      "cidade": "Cottbus",
+      "estadio": "LEAG Energie Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cottbus%20Stadion%20der%20Freundschaft.jpg?width=800",
+      "lat": 51.7514,
+      "lng": 14.3456,
+      "_wikidata": "Q107818",
+      "_wikidataLabel": "FC Energie Cottbus"
+    },
+    {
+      "slug": "fc-st-pauli",
+      "nomesBase": [
+        "FC St. Pauli"
+      ],
+      "cidade": "Hamburgo",
+      "estadio": "Millerntor-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Germany%20Hamburg%20millerntorstadion.jpg?width=800",
+      "lat": 53.5544,
+      "lng": 9.9678,
+      "_wikidata": "Q6463",
+      "_wikidataLabel": "FC St. Pauli"
+    },
+    {
+      "slug": "hannover-96",
+      "nomesBase": [
+        "Hannover 96"
+      ],
+      "cidade": "Hannover",
+      "estadio": "Niedersachsenstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hanover%20stadium.jpg?width=800",
+      "lat": 52.36,
+      "lng": 9.7311,
+      "_wikidata": "Q33748",
+      "_wikidataLabel": "Hannover 96"
+    },
+    {
+      "slug": "hertha-bsc",
+      "nomesBase": [
+        "Hertha BSC"
+      ],
+      "cidade": "Berlim",
+      "estadio": "Berlin Olympic Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Olympiastadion%20Berlin%202015.jpg?width=800",
+      "lat": 52.5147,
+      "lng": 13.2394,
+      "_wikidata": "Q102720",
+      "_wikidataLabel": "Hertha BSC"
+    },
+    {
+      "slug": "holstein-kiel",
+      "nomesBase": [
+        "Holstein Kiel"
+      ],
+      "cidade": "Kiel",
+      "estadio": "Holstein-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Holstein-Stadion%20Luftbild%202019.jpg?width=800",
+      "lat": 54.3492,
+      "lng": 10.1236,
+      "_wikidata": "Q157828",
+      "_wikidataLabel": "Holstein Kiel"
+    },
+    {
+      "slug": "karlsruher-sc",
+      "nomesBase": [
+        "Karlsruher SC"
+      ],
+      "cidade": "Karlsruhe",
+      "estadio": "Wildparkstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wildparkstadion.jpg?width=800",
+      "lat": 49.02,
+      "lng": 8.4131,
+      "_wikidata": "Q105853",
+      "_wikidataLabel": "Karlsruher SC"
+    },
+    {
+      "slug": "spvgg-greuther-furth",
+      "nomesBase": [
+        "Fürth"
+      ],
+      "cidade": "Fürth",
+      "estadio": "Trolli Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Playmobil-Stadion%20Nordtrib%C3%BCne.jpg?width=800",
+      "lat": 49.4869,
+      "lng": 10.9992,
+      "_wikidata": "Q153539",
+      "_wikidataLabel": "SpVgg Greuther Fürth"
+    },
+    {
+      "slug": "sv-darmstadt-98",
+      "nomesBase": [
+        "SV Darmstadt 98"
+      ],
+      "cidade": "Darmstadt",
+      "estadio": "Stadion am Böllenfalltor",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/B%C3%B6llenfalltor%20Blick%20von%20S%C3%BCdkurve.jpg?width=800",
+      "lat": 49.8578,
+      "lng": 8.6722,
+      "_wikidata": "Q479351",
+      "_wikidataLabel": "SV Darmstadt 98"
+    },
+    {
+      "slug": "vfl-bochum",
+      "nomesBase": [
+        "VfL Bochum 1848"
+      ],
+      "cidade": "Bochum",
+      "estadio": "Ruhrstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vonovia%20Ruhrstadion%2012a.jpg?width=800",
+      "lat": 51.4899,
+      "lng": 7.2365,
+      "_wikidata": "Q105861",
+      "_wikidataLabel": "VfL Bochum"
+    },
+    {
+      "slug": "vfl-osnabruck",
+      "nomesBase": [
+        "VfL Osnabrück"
+      ],
+      "cidade": "Osnabrück",
+      "estadio": "Stadion an der Bremer Brücke",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bremer-bruecke.jpg?width=800",
+      "lat": 52.2808,
+      "lng": 8.0711,
+      "_wikidata": "Q160530",
+      "_wikidataLabel": "VfL Osnabrück"
+    },
+    {
+      "slug": "vfl-wolfsburg",
+      "nomesBase": [
+        "VfL Wolfsburg"
+      ],
+      "cidade": "Wolfsburg",
+      "estadio": "Volkswagen Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Volkswagen-Arena%20G%C3%A4steblock.JPG?width=800",
+      "lat": 52.4319,
+      "lng": 10.8039,
+      "_wikidata": "Q101859",
+      "_wikidataLabel": "VfL Wolfsburg"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "ligaId": "super-league-suica",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Basileia",
+      "lat": 47.5606,
+      "lng": 7.5906,
+      "_wikidata": "Q78"
+    },
+    {
+      "nome": "Berna",
+      "lat": 46.948,
+      "lng": 7.4474,
+      "_wikidata": "Q70"
+    },
+    {
+      "nome": "Genebra",
+      "lat": 46.2,
+      "lng": 6.15,
+      "_wikidata": "Q71"
+    },
+    {
+      "nome": "Lausana",
+      "lat": 46.5333,
+      "lng": 6.6333,
+      "_wikidata": "Q807",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Lucerna",
+      "lat": 47.0523,
+      "lng": 8.3059,
+      "_wikidata": "Q4191"
+    },
+    {
+      "nome": "Lugano",
+      "lat": 46.0103,
+      "lng": 8.9625,
+      "_wikidata": "Q7024"
+    },
+    {
+      "nome": "Sion",
+      "lat": 46.2304,
+      "lng": 7.3661,
+      "_wikidata": "Q68136"
+    },
+    {
+      "nome": "St. Gallen",
+      "lat": 47.4233,
+      "lng": 9.3772,
+      "_wikidata": "Q25607"
+    },
+    {
+      "nome": "Thun",
+      "lat": 46.759,
+      "lng": 7.63,
+      "_wikidata": "Q68978"
+    },
+    {
+      "nome": "Vaduz",
+      "lat": 47.1406,
+      "lng": 9.5222,
+      "_wikidata": "Q1844"
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3744,
+      "lng": 8.5411,
+      "_wikidata": "Q72"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "bsc-young-boys",
+      "nomesBase": [
+        "BSC Young Boys"
+      ],
+      "cidade": "Berna",
+      "estadio": "Stadion Wankdorf",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadedesuiss2.jpg?width=800",
+      "lat": 46.9628,
+      "lng": 7.465,
+      "_wikidata": "Q190526",
+      "_wikidataLabel": "BSC Young Boys"
+    },
+    {
+      "slug": "fc-basel",
+      "nomesBase": [
+        "FC Basel 1893"
+      ],
+      "cidade": "Basileia",
+      "estadio": "St. Jakob-Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Jakob%20Park%20Panorama%20Switzerland%20vs%20Slovenia.jpg?width=800",
+      "lat": 47.5414,
+      "lng": 7.62,
+      "_wikidata": "Q189671",
+      "_wikidataLabel": "FC Basel"
+    },
+    {
+      "slug": "fc-lausanne-sport",
+      "nomesBase": [
+        "Lausanne-Sport"
+      ],
+      "cidade": "Lausana",
+      "estadio": "Stade de la Tuilière",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20de%20la%20Tuili%C3%A8re%201.jpg?width=800",
+      "lat": 46.5439,
+      "lng": 6.6228,
+      "_wikidata": "Q309456",
+      "_wikidataLabel": "FC Lausanne-Sport"
+    },
+    {
+      "slug": "fc-lugano",
+      "nomesBase": [
+        "FC Lugano"
+      ],
+      "cidade": "Lugano",
+      "estadio": "AIL Arena",
+      "lat": 46.0231,
+      "lng": 8.9601,
+      "_wikidata": "Q633521",
+      "_wikidataLabel": "FC Lugano"
+    },
+    {
+      "slug": "fc-luzern",
+      "nomesBase": [
+        "FC Luzern"
+      ],
+      "cidade": "Lucerna",
+      "estadio": "thermoplan arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Swissporarena%20Luzern.tiff?width=800",
+      "lat": 47.0333,
+      "lng": 8.3052,
+      "_wikidata": "Q223262",
+      "_wikidataLabel": "FC Luzern"
+    },
+    {
+      "slug": "fc-sion",
+      "nomesBase": [
+        "FC Sion"
+      ],
+      "cidade": "Sion",
+      "estadio": "Stade de Tourbillon",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sion%20Stade%20de%20Tourbillon%204.jpg?width=800",
+      "lat": 46.2333,
+      "lng": 7.3764,
+      "_wikidata": "Q321061",
+      "_wikidataLabel": "FC Sion"
+    },
+    {
+      "slug": "fc-st-gallen",
+      "nomesBase": [
+        "FC St. Gallen"
+      ],
+      "cidade": "St. Gallen",
+      "estadio": "kybunpark",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/AFG%20ARENA%20St.%20Gallen%20-%20Erstes%20Spiel%20CH%20-%20LIE%2003.jpg?width=800",
+      "lat": 47.4083,
+      "lng": 9.3064,
+      "_wikidata": "Q659212",
+      "_wikidataLabel": "FC St. Gallen"
+    },
+    {
+      "slug": "fc-thun",
+      "nomesBase": [
+        "FC Thun"
+      ],
+      "cidade": "Thun",
+      "estadio": "Visana Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Arenathun.jpg?width=800",
+      "lat": 46.7448,
+      "lng": 7.6061,
+      "_wikidata": "Q464775",
+      "_wikidataLabel": "FC Thun"
+    },
+    {
+      "slug": "fc-vaduz",
+      "nomesBase": [
+        "FC Vaduz"
+      ],
+      "cidade": "Vaduz",
+      "estadio": "Rheinpark Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Haupttrib%C3%BCne%20mit%20Gebirge.JPG?width=800",
+      "lat": 47.1403,
+      "lng": 9.5103,
+      "_wikidata": "Q216773",
+      "_wikidataLabel": "FC Vaduz"
+    },
+    {
+      "slug": "fc-zurich",
+      "nomesBase": [
+        "FC Zürich"
+      ],
+      "cidade": "Zurique",
+      "estadio": "Letzigrund",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Letzigrund%202024%202.jpg?width=800",
+      "lat": 47.3828,
+      "lng": 8.5038,
+      "_wikidata": "Q206692",
+      "_wikidataLabel": "FC Zürich"
+    },
+    {
+      "slug": "grasshopper-club-zurich",
+      "nomesBase": [
+        "GC Zürich"
+      ],
+      "cidade": "Zurique",
+      "estadio": "Letzigrund",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Letzigrund%202024%202.jpg?width=800",
+      "lat": 47.3828,
+      "lng": 8.5038,
+      "_wikidata": "Q201360",
+      "_wikidataLabel": "Grasshopper Club Zürich"
+    },
+    {
+      "slug": "servette",
+      "nomesBase": [
+        "Servette FC"
+      ],
+      "cidade": "Genebra",
+      "estadio": "Stade de Genève",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Stade%20de%20Gen%C3%A8ve%20during%20a%20UEFA%20Europa%20Conference%20League%20match%20between%20Servette%20and%20Viktoria%20Pilsen.%20%282023%29.jpg?width=800",
+      "lat": 46.1778,
+      "lng": 6.1275,
+      "_wikidata": "Q219235",
+      "_wikidataLabel": "Servette FC"
+    }
+  ]
+}

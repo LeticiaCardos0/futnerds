@@ -1,0 +1,60 @@
+{
+  "ligaId": "serie-b",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "Arezzo": {
+      "clubeWikidata": "Q297430"
+    },
+    "Avellino": {
+      "clubeWikidata": "Q298217"
+    },
+    "Benevento": {
+      "_nota": "Benevento casa com 2 entidades sem população.",
+      "cidadeWikidata": "Q13437",
+      "cidade": "Benevento"
+    },
+    "Carrarese Calcio": {
+      "clubeWikidata": "Q650365",
+      "estadioWikidata": "Q3967924"
+    },
+    "Catanzaro": {
+      "clubeWikidata": "Q501372"
+    },
+    "Cremonese": {
+      "clubeWikidata": "Q759482"
+    },
+    "Entella": {
+      "_nota": "Virtus Entella, de Chiavari.",
+      "clubeWikidata": "Q2276413"
+    },
+    "L. R. Vicenza": {
+      "_nota": "Q8643 é o Vicenza Calcio, extinto em 2018; este é o LR Vicenza.",
+      "clubeWikidata": "Q56542463"
+    },
+    "Mantova": {
+      "_nota": "O nome em inglês (Mantua) não resolvia.",
+      "cidade": "Mântua",
+      "cidadeWikidata": "Q6247"
+    },
+    "Padova": {
+      "clubeWikidata": "Q8428",
+      "cidade": "Pádua"
+    },
+    "Pisa": {
+      "clubeWikidata": "Q289613"
+    },
+    "Sampdoria": {
+      "clubeWikidata": "Q1457",
+      "cidade": "Gênova",
+      "cidadeWikidata": "Q1449"
+    },
+    "SS Juve Stabia": {
+      "_nota": "De Castellammare di Stabia.",
+      "clubeWikidata": "Q6748"
+    }
+  }
+}

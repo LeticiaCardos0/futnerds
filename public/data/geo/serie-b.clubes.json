@@ -1,0 +1,399 @@
+{
+  "ligaId": "serie-b",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Arezzo",
+      "lat": 43.4631,
+      "lng": 11.8781,
+      "_wikidata": "Q13378",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Ascoli Piceno",
+      "lat": 42.8547,
+      "lng": 13.5753,
+      "_wikidata": "Q6624",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Avellino",
+      "lat": 40.9153,
+      "lng": 14.7897,
+      "_wikidata": "Q13433",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Benevento",
+      "lat": 41.1333,
+      "lng": 14.7833,
+      "_wikidata": "Q13437"
+    },
+    {
+      "nome": "Bolzano",
+      "lat": 46.4981,
+      "lng": 11.3548,
+      "_wikidata": "Q6526",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Carrara",
+      "lat": 44.0833,
+      "lng": 10.1,
+      "_wikidata": "Q13372",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Castellammare di Stabia",
+      "lat": 40.6947,
+      "lng": 14.4803,
+      "_wikidata": "Q6737"
+    },
+    {
+      "nome": "Catanzaro",
+      "lat": 38.91,
+      "lng": 16.5875,
+      "_wikidata": "Q3883"
+    },
+    {
+      "nome": "Cesena",
+      "lat": 44.1333,
+      "lng": 12.2333,
+      "_wikidata": "Q6662",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Chiavari",
+      "lat": 44.3164,
+      "lng": 9.3237,
+      "_wikidata": "Q266941",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Cremona",
+      "lat": 45.1333,
+      "lng": 10.0247,
+      "_wikidata": "Q6231"
+    },
+    {
+      "nome": "Empoli",
+      "lat": 43.7167,
+      "lng": 10.95,
+      "_wikidata": "Q6697",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Gênova",
+      "lat": 44.4072,
+      "lng": 8.9339,
+      "_wikidata": "Q1449"
+    },
+    {
+      "nome": "Mântua",
+      "lat": 45.1564,
+      "lng": 10.7911,
+      "_wikidata": "Q6247"
+    },
+    {
+      "nome": "Módena",
+      "lat": 44.6458,
+      "lng": 10.9257,
+      "_wikidata": "Q279"
+    },
+    {
+      "nome": "Pádua",
+      "lat": 45.4078,
+      "lng": 11.8733,
+      "_wikidata": "Q617"
+    },
+    {
+      "nome": "Palermo",
+      "lat": 38.1157,
+      "lng": 13.3613,
+      "_wikidata": "Q2656",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Pisa",
+      "lat": 43.7167,
+      "lng": 10.4,
+      "_wikidata": "Q13375"
+    },
+    {
+      "nome": "Verona",
+      "lat": 45.4386,
+      "lng": 10.9928,
+      "_wikidata": "Q2028",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Vicenza",
+      "lat": 45.55,
+      "lng": 11.55,
+      "_wikidata": "Q6537",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ascoli-calcio-1898",
+      "nomesBase": [
+        "Ascoli"
+      ],
+      "cidade": "Ascoli Piceno",
+      "estadio": "Stadio Cino e Lillo Del Duca",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Del%20dica.jpeg?width=800",
+      "lat": 42.8611,
+      "lng": 13.5942,
+      "_wikidata": "Q6630",
+      "_wikidataLabel": "Ascoli Calcio 1898 FC"
+    },
+    {
+      "slug": "benevento-calcio",
+      "nomesBase": [
+        "Benevento"
+      ],
+      "cidade": "Benevento",
+      "estadio": "Stadio Ciro Vigorito",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Santa%20Colomba.jpg?width=800",
+      "lat": 41.1164,
+      "lng": 14.7811,
+      "_wikidata": "Q652516",
+      "_wikidataLabel": "Benevento Calcio"
+    },
+    {
+      "slug": "calcio-padova",
+      "nomesBase": [
+        "Padova"
+      ],
+      "cidade": "Pádua",
+      "estadio": "Stadio Euganeo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/PadovaStadioEuganeo.jpg?width=800",
+      "lat": 45.4322,
+      "lng": 11.8583,
+      "_wikidata": "Q8428",
+      "_wikidataLabel": "Calcio Padova"
+    },
+    {
+      "slug": "carrarese-calcio",
+      "nomesBase": [
+        "Carrarese Calcio"
+      ],
+      "cidade": "Carrara",
+      "estadio": "Stadio dei Marmi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/CarraraStadioMarmi.JPG?width=800",
+      "lat": 44.0653,
+      "lng": 10.0768,
+      "_wikidata": "Q650365",
+      "_wikidataLabel": "Carrarese Calcio"
+    },
+    {
+      "slug": "cesena",
+      "nomesBase": [
+        "Cesena"
+      ],
+      "cidade": "Cesena",
+      "estadio": "Stadio Dino Manuzzi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Orogel%20Stadium.jpg?width=800",
+      "lat": 44.1406,
+      "lng": 12.2619,
+      "_wikidata": "Q16848949",
+      "_wikidataLabel": "Cesena FC"
+    },
+    {
+      "slug": "empoli",
+      "nomesBase": [
+        "Empoli"
+      ],
+      "cidade": "Empoli",
+      "estadio": "Stadio Carlo Castellani",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20carlo%20castellani%20empoli.jpg?width=800",
+      "lat": 43.7264,
+      "lng": 10.955,
+      "_wikidata": "Q6703",
+      "_wikidataLabel": "Empoli FC"
+    },
+    {
+      "slug": "f-c-sudtirol",
+      "nomesBase": [
+        "Südtirol"
+      ],
+      "cidade": "Bolzano",
+      "estadio": "Stadio Druso",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tribuna%20Zanvettor%20nuova%20-%20Stadio%20Druso%202%20%28cropped%29.jpg?width=800",
+      "lat": 46.4923,
+      "lng": 11.3454,
+      "_wikidata": "Q1387710",
+      "_wikidataLabel": "F.C. Südtirol"
+    },
+    {
+      "slug": "hellas-verona",
+      "nomesBase": [
+        "Hellas Verona"
+      ],
+      "cidade": "Verona",
+      "estadio": "Stadio Marcantonio Bentegodi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Italy%20-%20Verona%20-%20Stadio%20Marcantonio%20Bentegodi.jpg?width=800",
+      "lat": 45.4354,
+      "lng": 10.9686,
+      "_wikidata": "Q8639",
+      "_wikidataLabel": "Hellas Verona FC"
+    },
+    {
+      "slug": "lr-vicenza",
+      "nomesBase": [
+        "L. R. Vicenza"
+      ],
+      "cidade": "Vicenza",
+      "estadio": "Stadio Romeo Menti",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Romeo%20Menti%202022%20panorama.jpg?width=800",
+      "lat": 45.5442,
+      "lng": 11.5556,
+      "_wikidata": "Q56542463",
+      "_wikidataLabel": "LR Vicenza"
+    },
+    {
+      "slug": "mantova-1911",
+      "nomesBase": [
+        "Mantova"
+      ],
+      "cidade": "Mântua",
+      "estadio": "Stadio Danilo Martelli",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Danilo%20Martelli%20Mantova%202025%2001.jpg?width=800",
+      "lat": 45.1461,
+      "lng": 10.7942,
+      "_wikidata": "Q430993",
+      "_wikidataLabel": "Mantova 1911"
+    },
+    {
+      "slug": "modena",
+      "nomesBase": [
+        "Modena"
+      ],
+      "cidade": "Módena",
+      "estadio": "Stadio Alberto Braglia",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Panoramica%20stadio%20Braglia%20Modena%202025.jpg?width=800",
+      "lat": 44.6536,
+      "lng": 10.9233,
+      "_wikidata": "Q8408",
+      "_wikidataLabel": "Modena F.C."
+    },
+    {
+      "slug": "palermo",
+      "nomesBase": [
+        "Palermo"
+      ],
+      "cidade": "Palermo",
+      "estadio": "Stadio Renzo Barbera",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Palermo%20FC%20v%20US%20Cremonese%2C%2026%20December%202023%2001.jpg?width=800",
+      "lat": 38.1528,
+      "lng": 13.3423,
+      "_wikidata": "Q2674",
+      "_wikidataLabel": "Palermo F.C."
+    },
+    {
+      "slug": "pisa-sc",
+      "nomesBase": [
+        "Pisa"
+      ],
+      "cidade": "Pisa",
+      "estadio": "Arena Garibaldi – Stadio Romeo Anconetani",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Italy%20-%20Pisa%20-%20Stadium.jpg?width=800",
+      "lat": 43.7253,
+      "lng": 10.4,
+      "_wikidata": "Q289613",
+      "_wikidataLabel": "Pisa SC"
+    },
+    {
+      "slug": "s-s-arezzo",
+      "nomesBase": [
+        "Arezzo"
+      ],
+      "cidade": "Arezzo",
+      "estadio": "Stadio Città di Arezzo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Arezzo.jpg?width=800",
+      "lat": 43.4511,
+      "lng": 11.8944,
+      "_wikidata": "Q297430",
+      "_wikidataLabel": "S.S. Arezzo"
+    },
+    {
+      "slug": "s-s-juve-stabia",
+      "nomesBase": [
+        "SS Juve Stabia"
+      ],
+      "cidade": "Castellammare di Stabia",
+      "estadio": "Stadio Romeo Menti",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Romeo%20Menti%20Stabia.jpg?width=800",
+      "lat": 40.7067,
+      "lng": 14.4944,
+      "_wikidata": "Q6748",
+      "_wikidataLabel": "S.S. Juve Stabia"
+    },
+    {
+      "slug": "u-c-sampdoria",
+      "nomesBase": [
+        "Sampdoria"
+      ],
+      "cidade": "Gênova",
+      "estadio": "Stadio Luigi Ferraris",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Luigi%20Ferraris%20villa%20Piantelli.jpg?width=800",
+      "lat": 44.4164,
+      "lng": 8.9524,
+      "_wikidata": "Q1457",
+      "_wikidataLabel": "U.C. Sampdoria"
+    },
+    {
+      "slug": "u-s-avellino-1912",
+      "nomesBase": [
+        "Avellino"
+      ],
+      "cidade": "Avellino",
+      "estadio": "Stadio Partenio-Adriano Lombardi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/StadioPartenio.JPG?width=800",
+      "lat": 40.9269,
+      "lng": 14.7925,
+      "_wikidata": "Q298217",
+      "_wikidataLabel": "U.S. Avellino 1912"
+    },
+    {
+      "slug": "unione-sportiva-catanzaro",
+      "nomesBase": [
+        "Catanzaro"
+      ],
+      "cidade": "Catanzaro",
+      "estadio": "Stadio Nicola Ceravolo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionceravolo.jpg?width=800",
+      "lat": 38.9197,
+      "lng": 16.5878,
+      "_wikidata": "Q501372",
+      "_wikidataLabel": "Unione Sportiva Catanzaro"
+    },
+    {
+      "slug": "us-cremonese",
+      "nomesBase": [
+        "Cremonese"
+      ],
+      "cidade": "Cremona",
+      "estadio": "Stadio Giovanni Zini",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Panorama%20Stadio%20Zini%20Cremona%209%20feb%202025%2001.jpg?width=800",
+      "lat": 45.1403,
+      "lng": 10.0347,
+      "_wikidata": "Q759482",
+      "_wikidataLabel": "US Cremonese"
+    },
+    {
+      "slug": "virtus-entella",
+      "nomesBase": [
+        "Entella"
+      ],
+      "cidade": "Chiavari",
+      "estadio": "Stadio Comunale (Chiavari)",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Chiavari.jpg?width=800",
+      "lat": 44.3156,
+      "lng": 9.3373,
+      "_wikidata": "Q2276413",
+      "_wikidataLabel": "Virtus Entella"
+    }
+  ]
+}

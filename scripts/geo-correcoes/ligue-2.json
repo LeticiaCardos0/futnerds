@@ -1,0 +1,70 @@
+{
+  "ligaId": "ligue-2",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "AS Nancy Lorraine": {
+      "clubeWikidata": "Q19523"
+    },
+    "AS Saint-Étienne": {
+      "_nota": "P159 devolve o CT (Centre de l'Étrat).",
+      "clubeWikidata": "Q19521",
+      "cidade": "Saint-Étienne"
+    },
+    "En Avant Guingamp": {
+      "cidade": "Guingamp",
+      "cidadeWikidata": "Q193808"
+    },
+    "FC Metz": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q221525"
+    },
+    "FC Nantes": {
+      "_nota": "Sem P159 no Wikidata.",
+      "cidade": "Nantes"
+    },
+    "FC Sochaux-Montbéliard": {
+      "cidade": "Montbéliard",
+      "cidadeWikidata": "Q154715"
+    },
+    "Grenoble Foot 38": {
+      "_nota": "P159 devolve o próprio estádio.",
+      "clubeWikidata": "Q209509",
+      "cidade": "Grenoble"
+    },
+    "Laval MFC": {
+      "_nota": "Stade Lavallois.",
+      "clubeWikidata": "Q760736"
+    },
+    "Montpellier": {
+      "_nota": "P159 devolve o CT (Domaine de Grammont).",
+      "clubeWikidata": "Q19513",
+      "cidade": "Montpellier"
+    },
+    "Red Star FC": {
+      "_nota": "O Stade Bauer fica em Saint-Ouen, colada em Paris.",
+      "clubeWikidata": "Q522283",
+      "cidade": "Saint-Ouen-sur-Seine"
+    },
+    "Rodez AF": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q292231"
+    },
+    "Stade de Reims": {
+      "_nota": "Sem P159 no Wikidata.",
+      "clubeWikidata": "Q208228",
+      "cidade": "Reims"
+    },
+    "US Boulogne": {
+      "cidade": "Boulogne-sur-Mer",
+      "cidadeWikidata": "Q81997"
+    },
+    "USL Dunkerque": {
+      "cidade": "Dunquerque",
+      "cidadeWikidata": "Q45797"
+    }
+  }
+}

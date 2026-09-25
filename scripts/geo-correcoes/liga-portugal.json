@@ -1,0 +1,44 @@
+{
+  "ligaId": "liga-portugal",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Os rótulos de cidade já vêm em português, menos Lisbon.",
+    "Santa Clara (Açores) e Marítimo (Madeira) ficam fora do enquadramento inicial;",
+    "o limite do mapa vai até as ilhas, e clicar no clube leva a câmera até lá."
+  ],
+  "clubes": {
+    "Casa Pia AC": {
+      "clubeWikidata": "Q1046440",
+      "cidade": "Lisboa",
+      "cidadeWikidata": "Q597",
+      "estadioWikidata": "Q116113161",
+      "estadio": "Estádio Pina Manique"
+    },
+    "FC Alverca": {
+      "clubeWikidata": "Q1386850",
+      "cidade": "Alverca do Ribatejo",
+      "estadioWikidata": "Q136001729"
+    },
+    "Marítimo da Madeira": {
+      "_nota": "A base usa o nome longo.",
+      "clubeWikidata": "Q216503",
+      "cidade": "Funchal"
+    },
+    "Santa Clara": {
+      "clubeWikidata": "Q740637",
+      "cidade": "Ponta Delgada",
+      "cidadeWikidata": "Q208149"
+    },
+    "SL Benfica": {
+      "cidade": "Lisboa",
+      "cidadeWikidata": "Q597"
+    },
+    "Sporting CP": {
+      "cidade": "Lisboa",
+      "cidadeWikidata": "Q597"
+    }
+  }
+}

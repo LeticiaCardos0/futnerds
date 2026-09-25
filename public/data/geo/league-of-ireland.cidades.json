@@ -1,0 +1,104 @@
+{
+  "ligaId": "league-of-ireland",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Cork",
+      "lat": 51.8986,
+      "lng": -8.4958,
+      "rank": 1
+    },
+    {
+      "nome": "Limerick",
+      "lat": 52.6647,
+      "lng": -8.623,
+      "rank": 1
+    },
+    {
+      "nome": "Tralee",
+      "lat": 52.2667,
+      "lng": -9.7167,
+      "rank": 1
+    },
+    {
+      "nome": "Kilkenny",
+      "lat": 52.6546,
+      "lng": -7.2523,
+      "rank": 1
+    },
+    {
+      "nome": "Killarney",
+      "lat": 52.0504,
+      "lng": -9.5167,
+      "rank": 1
+    },
+    {
+      "nome": "Shannon",
+      "lat": 52.7038,
+      "lng": -8.8641,
+      "rank": 1
+    },
+    {
+      "nome": "Monaghan",
+      "lat": 54.25,
+      "lng": -6.9667,
+      "rank": 1
+    },
+    {
+      "nome": "Roscommon",
+      "lat": 53.6333,
+      "lng": -8.1833,
+      "rank": 1
+    },
+    {
+      "nome": "Donegal",
+      "lat": 54.65,
+      "lng": -8.1167,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Glasgow",
+      "lat": 55.8764,
+      "lng": -4.2527,
+      "rank": 1
+    },
+    {
+      "nome": "Belfast",
+      "lat": 54.6,
+      "lng": -5.96,
+      "rank": 1
+    },
+    {
+      "nome": "Greenock",
+      "lat": 55.9333,
+      "lng": -4.75,
+      "rank": 1
+    },
+    {
+      "nome": "Ayr",
+      "lat": 55.4504,
+      "lng": -4.6167,
+      "rank": 1
+    },
+    {
+      "nome": "Douglas",
+      "lat": 54.1504,
+      "lng": -4.48,
+      "rank": 1
+    },
+    {
+      "nome": "Omagh",
+      "lat": 54.6,
+      "lng": -7.3,
+      "rank": 1
+    },
+    {
+      "nome": "Lisburn",
+      "lat": 54.5204,
+      "lng": -6.67,
+      "rank": 1
+    }
+  ]
+}

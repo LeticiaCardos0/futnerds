@@ -1,0 +1,237 @@
+{
+  "ligaId": "k-league",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Anyang",
+      "lat": 37.3925,
+      "lng": 126.9269,
+      "_wikidata": "Q42120"
+    },
+    {
+      "nome": "Bucheon",
+      "lat": 37.4989,
+      "lng": 126.7831,
+      "_wikidata": "Q42099"
+    },
+    {
+      "nome": "Daejeon",
+      "lat": 36.35,
+      "lng": 127.385,
+      "_wikidata": "Q20921",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Gangneung",
+      "lat": 37.7556,
+      "lng": 128.8961,
+      "_wikidata": "Q42056"
+    },
+    {
+      "nome": "Gimcheon",
+      "lat": 36.1192,
+      "lng": 128.1153,
+      "_wikidata": "Q42078"
+    },
+    {
+      "nome": "Gwangju",
+      "lat": 35.1667,
+      "lng": 126.9167,
+      "_wikidata": "Q41283",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Incheon",
+      "lat": 37.4639,
+      "lng": 126.6486,
+      "_wikidata": "Q20934"
+    },
+    {
+      "nome": "Jeju",
+      "lat": 33.5097,
+      "lng": 126.5219,
+      "_wikidata": "Q42142"
+    },
+    {
+      "nome": "Jeonju",
+      "lat": 35.8239,
+      "lng": 127.1475,
+      "_wikidata": "Q42140"
+    },
+    {
+      "nome": "Pohang",
+      "lat": 36.0322,
+      "lng": 129.365,
+      "_wikidata": "Q42157"
+    },
+    {
+      "nome": "Seul",
+      "lat": 37.56,
+      "lng": 126.99,
+      "_wikidata": "Q8684"
+    },
+    {
+      "nome": "Ulsan",
+      "lat": 35.55,
+      "lng": 129.3167,
+      "_wikidata": "Q41278"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "bucheon-fc-1995",
+      "nomesBase": [
+        "Bucheon FC 1995"
+      ],
+      "cidade": "Bucheon",
+      "estadio": "Bucheon Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bucheonstadium3.JPG?width=800",
+      "lat": 37.5026,
+      "lng": 126.799,
+      "_wikidata": "Q4982682",
+      "_wikidataLabel": "Bucheon FC 1995"
+    },
+    {
+      "slug": "daejeon-hana-citizen",
+      "nomesBase": [
+        "Daejeon Hana"
+      ],
+      "cidade": "Daejeon",
+      "estadio": "Daejeon World Cup Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Daejeon%20World%20Cup%20Stadium.JPG?width=800",
+      "lat": 36.3652,
+      "lng": 127.3251,
+      "_wikidata": "Q484584",
+      "_wikidataLabel": "Daejeon Hana Citizen FC"
+    },
+    {
+      "slug": "fc-anyang",
+      "nomesBase": [
+        "FC Anyang"
+      ],
+      "cidade": "Anyang",
+      "estadio": "Anyang Sports Complex",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Anyang%20Stadium.jpg?width=800",
+      "lat": 37.4054,
+      "lng": 126.9464,
+      "_wikidata": "Q1833814",
+      "_wikidataLabel": "FC Anyang"
+    },
+    {
+      "slug": "fc-pohang-steelers",
+      "nomesBase": [
+        "Pohang Steelers"
+      ],
+      "cidade": "Pohang",
+      "estadio": "Pohang Steel Yard",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Pohang080413%201.jpg?width=800",
+      "lat": 35.9977,
+      "lng": 129.3844,
+      "_wikidata": "Q169985",
+      "_wikidataLabel": "FC Pohang Steelers"
+    },
+    {
+      "slug": "fc-seoul",
+      "nomesBase": [
+        "FC Seoul"
+      ],
+      "cidade": "Seul",
+      "estadio": "Seoul World Cup Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/%EC%84%9C%EC%9A%B8%EC%9B%94%EB%93%9C%EC%BB%B5%EA%B2%BD%EA%B8%B0%EC%9E%A5.jpg?width=800",
+      "lat": 37.5682,
+      "lng": 126.8972,
+      "_wikidata": "Q482406",
+      "_wikidataLabel": "FC Seoul"
+    },
+    {
+      "slug": "gangwon",
+      "nomesBase": [
+        "Gangwon FC"
+      ],
+      "cidade": "Gangneung",
+      "estadio": "Gangneung Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gangneung%20Stadium2.jpg?width=800",
+      "lat": 37.7736,
+      "lng": 128.8975,
+      "_wikidata": "Q484569",
+      "_wikidataLabel": "Gangwon FC"
+    },
+    {
+      "slug": "gimcheon-sangmu",
+      "nomesBase": [
+        "Gimcheon Sangmu"
+      ],
+      "cidade": "Gimcheon",
+      "estadio": "Gimcheon Stadium",
+      "lat": 36.1397,
+      "lng": 128.0865,
+      "_wikidata": "Q104099625",
+      "_wikidataLabel": "Gimcheon Sangmu FC"
+    },
+    {
+      "slug": "gwangju",
+      "nomesBase": [
+        "Gwangju FC"
+      ],
+      "cidade": "Gwangju",
+      "estadio": "Gwangju World Cup Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gwangju%20World%20Cup%20Stadium.jpg?width=800",
+      "lat": 35.1337,
+      "lng": 126.8749,
+      "_wikidata": "Q168364",
+      "_wikidataLabel": "Gwangju FC"
+    },
+    {
+      "slug": "incheon-united",
+      "nomesBase": [
+        "Incheon United"
+      ],
+      "cidade": "Incheon",
+      "estadio": "Incheon Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Incheon%20Soccer%20Stadium%202.JPG?width=800",
+      "lat": 37.4661,
+      "lng": 126.643,
+      "_wikidata": "Q482562",
+      "_wikidataLabel": "Incheon United FC"
+    },
+    {
+      "slug": "jeju-sk",
+      "nomesBase": [
+        "Jeju United"
+      ],
+      "cidade": "Jeju",
+      "estadio": "Jeju World Cup Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeju%20World%20Cup%20Stadium%2C%20Jeju%20Island.jpg?width=800",
+      "lat": 33.2462,
+      "lng": 126.5094,
+      "_wikidata": "Q482617",
+      "_wikidataLabel": "Jeju SK FC"
+    },
+    {
+      "slug": "jeonbuk-hyundai-motors",
+      "nomesBase": [
+        "Jeonbuk Hyundai"
+      ],
+      "cidade": "Jeonju",
+      "estadio": "Jeonju World Cup Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeonju%20World%20Cup%20Stadium%202016.jpg?width=800",
+      "lat": 35.8681,
+      "lng": 127.0645,
+      "_wikidata": "Q483152",
+      "_wikidataLabel": "Jeonbuk Hyundai Motors FC"
+    },
+    {
+      "slug": "ulsan-hd",
+      "nomesBase": [
+        "Ulsan HD FC"
+      ],
+      "cidade": "Ulsan",
+      "estadio": "Ulsan Munsu Football Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Munsu%2020121110%20204310%205.jpg?width=800",
+      "lat": 35.5353,
+      "lng": 129.2594,
+      "_wikidata": "Q129673",
+      "_wikidataLabel": "Ulsan HD FC"
+    }
+  ]
+}

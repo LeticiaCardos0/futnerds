@@ -1,0 +1,54 @@
+{
+  "ligaId": "championship",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Como na Premier League: \"London\" vira \"Londres\" (cidadeWikidata Q84), e",
+    "estádio só leva `estadio` quando o Wikidata traz o nome antigo."
+  ],
+  "clubes": {
+    "Bolton": {
+      "_nota": "P159 devolve Horwich, onde fica o estádio; o rótulo fica Bolton.",
+      "cidade": "Bolton"
+    },
+    "Charlton Ath": {
+      "_nota": "A base abrevia Charlton Athletic.",
+      "clubeWikidata": "Q19462",
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Millwall": {
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "QPR": {
+      "_nota": "A base abrevia Queens Park Rangers.",
+      "clubeWikidata": "Q18723",
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Sheffield Utd": {
+      "_nota": "A base abrevia Sheffield United.",
+      "clubeWikidata": "Q19607",
+      "cidade": "Sheffield"
+    },
+    "Stoke City": {
+      "_nota": "O Wikidata traz Britannia Stadium, nome até 2016.",
+      "estadio": "bet365 Stadium",
+      "cidade": "Stoke-on-Trent"
+    },
+    "Swansea City": {
+      "_nota": "O Wikidata traz Liberty Stadium, nome até 2021.",
+      "estadio": "Swansea.com Stadium",
+      "cidade": "Swansea"
+    },
+    "West Ham": {
+      "_nota": "P159 devolve o distrito (London Borough of Newham).",
+      "clubeWikidata": "Q18747",
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    }
+  }
+}

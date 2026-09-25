@@ -1,0 +1,28 @@
+{
+  "ligaId": "liga-colombia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Medellín",
+      "lat": 6.2502,
+      "lng": -75.5676,
+      "_wikidata": "Q48278",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "atletico-nacional",
+      "nomesBase": [
+        "Atl. Nacional"
+      ],
+      "cidade": "Medellín",
+      "estadio": "Estadio Atanasio Girardot",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Atanasio%20Girardot-Atl%C3%A9tico%20Nacional-Fortaleza.jpg?width=800",
+      "lat": 6.2568,
+      "lng": -75.5902,
+      "_wikidata": "Q332605",
+      "_wikidataLabel": "Atlético Nacional"
+    }
+  ]
+}

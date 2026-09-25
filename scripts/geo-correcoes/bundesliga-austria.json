@@ -1,0 +1,29 @@
+{
+  "ligaId": "bundesliga-austria",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "RB Salzburg": {
+      "clubeWikidata": "Q994811"
+    },
+    "SC Austria": {
+      "_nota": "SC Austria Lustenau.",
+      "clubeWikidata": "Q696507"
+    },
+    "SCR Altach": {
+      "clubeWikidata": "Q670438"
+    },
+    "SK Rapid": {
+      "_nota": "SK Rapid Wien.",
+      "clubeWikidata": "Q131215"
+    },
+    "SV Oberbank Ried": {
+      "_nota": "Sem P159 no Wikidata.",
+      "clubeWikidata": "Q457460",
+      "cidade": "Ried im Innkreis"
+    }
+  }
+}

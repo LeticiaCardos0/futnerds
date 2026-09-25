@@ -1,0 +1,112 @@
+{
+  "ligaId": "serie-a",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Padrão desta liga: o EA FC não tem licença de Inter, Milan, Lazio e Atalanta,",
+    "e a base usa os nomes genéricos do jogo (Lombardia FC, Milano FC, Latium,",
+    "Bergamo Calcio). Esses só resolvem com clubeWikidata.",
+    "Os rótulos de cidade vão em português, com cidadeWikidata para o centro."
+  ],
+  "clubes": {
+    "AS Roma": {
+      "_nota": "Colide com o time feminino. Divide o Olímpico com a Lazio.",
+      "clubeWikidata": "Q2739",
+      "cidade": "Roma",
+      "cidadeWikidata": "Q220"
+    },
+    "Bergamo Calcio": {
+      "_nota": "Nome genérico do EA FC para a Atalanta.",
+      "clubeWikidata": "Q1886",
+      "estadio": "Gewiss Stadium",
+      "cidade": "Bérgamo",
+      "cidadeWikidata": "Q628"
+    },
+    "Bologna": {
+      "_nota": "'Bologna' casa com 2 entidades sem população.",
+      "clubeWikidata": "Q1893",
+      "cidade": "Bolonha",
+      "cidadeWikidata": "Q1891"
+    },
+    "Cagliari": {
+      "_nota": "P159 aponta para o CT do clube (CRAI Sport Center).",
+      "clubeWikidata": "Q1900",
+      "cidade": "Cagliari",
+      "cidadeWikidata": "Q1897"
+    },
+    "Como": { "cidade": "Como" },
+    "Fiorentina": {
+      "cidade": "Florença",
+      "cidadeWikidata": "Q2044"
+    },
+    "Frosinone": {
+      "clubeWikidata": "Q845043",
+      "cidade": "Frosinone",
+      "cidadeWikidata": "Q13413",
+      "estadio": "Stadio Benito Stirpe"
+    },
+    "Genoa": {
+      "cidade": "Gênova",
+      "cidadeWikidata": "Q1449"
+    },
+    "Juventus": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q1422",
+      "estadio": "Allianz Stadium",
+      "cidade": "Turim",
+      "cidadeWikidata": "Q495"
+    },
+    "Latium": {
+      "_nota": "Nome genérico do EA FC para a Lazio. Divide o Olímpico com a Roma.",
+      "clubeWikidata": "Q2609",
+      "cidade": "Roma",
+      "cidadeWikidata": "Q220"
+    },
+    "Lecce": { "cidade": "Lecce" },
+    "Lombardia FC": {
+      "_nota": "Nome genérico do EA FC para a Inter. Divide o San Siro com o Milan.",
+      "clubeWikidata": "Q631",
+      "estadio": "Stadio San Siro",
+      "cidade": "Milão",
+      "cidadeWikidata": "Q490"
+    },
+    "Milano FC": {
+      "_nota": "Nome genérico do EA FC para o Milan. Divide o San Siro com a Inter.",
+      "clubeWikidata": "Q1543",
+      "estadio": "Stadio San Siro",
+      "cidade": "Milão",
+      "cidadeWikidata": "Q490"
+    },
+    "Monza": {
+      "_nota": "O Brianteo se chama U-Power Stadium desde 2021.",
+      "cidade": "Monza",
+      "estadio": "U-Power Stadium"
+    },
+    "Parma": { "cidade": "Parma" },
+    "Sassuolo": {
+      "_nota": "O clube manda os jogos no Mapei Stadium, em Reggio Emilia (mesmo caso do Hoffenheim/Sinsheim).",
+      "clubeWikidata": "Q8603",
+      "estadio": "Mapei Stadium",
+      "cidade": "Reggio Emilia",
+      "cidadeWikidata": "Q13360"
+    },
+    "SSC Napoli": {
+      "cidade": "Nápoles",
+      "cidadeWikidata": "Q2634"
+    },
+    "Torino": {
+      "cidade": "Turim",
+      "cidadeWikidata": "Q495"
+    },
+    "Udinese": {
+      "cidade": "Údine",
+      "cidadeWikidata": "Q2790"
+    },
+    "Venezia": {
+      "cidade": "Veneza",
+      "cidadeWikidata": "Q641"
+    }
+  }
+}

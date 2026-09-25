@@ -1,0 +1,27 @@
+{
+  "ligaId": "liga-hungria",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Budapeste",
+      "lat": 47.4983,
+      "lng": 19.0408,
+      "_wikidata": "Q1781"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ferencvarosi-tc",
+      "nomesBase": [
+        "Ferencvárosi TC"
+      ],
+      "cidade": "Budapeste",
+      "estadio": "Groupama Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionul%20Albert%20Florian%20din%20Budapesta1.jpg?width=800",
+      "lat": 47.4753,
+      "lng": 19.0961,
+      "_wikidata": "Q208396",
+      "_wikidataLabel": "Ferencvárosi TC"
+    }
+  ]
+}

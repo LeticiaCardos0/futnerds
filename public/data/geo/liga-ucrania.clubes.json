@@ -1,0 +1,46 @@
+{
+  "ligaId": "liga-ucrania",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Donetsk",
+      "lat": 48.0158,
+      "lng": 37.8028,
+      "_wikidata": "Q43070"
+    },
+    {
+      "nome": "Kiev",
+      "lat": 50.45,
+      "lng": 30.5236,
+      "_wikidata": "Q1899",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "fc-dynamo-kyiv",
+      "nomesBase": [
+        "Dynamo Kyiv"
+      ],
+      "cidade": "Kiev",
+      "estadio": "Olimpiyskiy National Sports Complex",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyiv%20NSC%20Olimpiyskyi%205.jpg?width=800",
+      "lat": 50.4333,
+      "lng": 30.5217,
+      "_wikidata": "Q179075",
+      "_wikidataLabel": "FC Dynamo Kyiv"
+    },
+    {
+      "slug": "fc-shakhtar-donetsk",
+      "nomesBase": [
+        "Shakhtar Donetsk"
+      ],
+      "cidade": "Donetsk",
+      "estadio": "—",
+      "lat": 48.0158,
+      "lng": 37.8028,
+      "_wikidata": "Q172969",
+      "_wikidataLabel": "FC Shakhtar Donetsk"
+    }
+  ]
+}

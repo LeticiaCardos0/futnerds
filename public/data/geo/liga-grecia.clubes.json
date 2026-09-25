@@ -1,0 +1,77 @@
+{
+  "ligaId": "liga-grecia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Atenas",
+      "lat": 37.9842,
+      "lng": 23.7281,
+      "_wikidata": "Q1524"
+    },
+    {
+      "nome": "Pireu",
+      "lat": 37.943,
+      "lng": 23.6469,
+      "_wikidata": "Q58976"
+    },
+    {
+      "nome": "Salônica",
+      "lat": 40.6403,
+      "lng": 22.9356,
+      "_wikidata": "Q17151"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aek-athens",
+      "nomesBase": [
+        "AEK Athens"
+      ],
+      "cidade": "Atenas",
+      "estadio": "Agia Sophia Stadium",
+      "lat": 38.0371,
+      "lng": 23.7415,
+      "_wikidata": "Q201584",
+      "_wikidataLabel": "AEK Athens F.C."
+    },
+    {
+      "slug": "olympiacos",
+      "nomesBase": [
+        "Olympiacos FC"
+      ],
+      "cidade": "Pireu",
+      "estadio": "Karaiskakis Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Karaiskakis%20Stadium%20Piraeus%20Olympiacos-Arsenal.jpg?width=800",
+      "lat": 37.9462,
+      "lng": 23.6645,
+      "_wikidata": "Q19628",
+      "_wikidataLabel": "Olympiacos F.C."
+    },
+    {
+      "slug": "panathinaikos",
+      "nomesBase": [
+        "Panathinaikos"
+      ],
+      "cidade": "Atenas",
+      "estadio": "Apostolos Nikolaidis Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Leoforos1.JPG?width=800",
+      "lat": 37.9872,
+      "lng": 23.7542,
+      "_wikidata": "Q4122219",
+      "_wikidataLabel": "Panathinaikos F.C."
+    },
+    {
+      "slug": "paok",
+      "nomesBase": [
+        "PAOK FC"
+      ],
+      "cidade": "Salônica",
+      "estadio": "Toumba Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Paok-spartak%20%282%29.jpg?width=800",
+      "lat": 40.6138,
+      "lng": 22.9724,
+      "_wikidata": "Q204888",
+      "_wikidataLabel": "PAOK FC"
+    }
+  ]
+}

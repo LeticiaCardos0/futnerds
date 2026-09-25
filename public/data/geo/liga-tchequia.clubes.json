@@ -1,0 +1,59 @@
+{
+  "ligaId": "liga-tchequia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Plzeň",
+      "lat": 49.7414,
+      "lng": 13.3825,
+      "_wikidata": "Q43453"
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0875,
+      "lng": 14.4214,
+      "_wikidata": "Q1085"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ac-sparta-prague",
+      "nomesBase": [
+        "Sparta Praha"
+      ],
+      "cidade": "Praga",
+      "estadio": "Letná Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Praha%20Sparta.jpg?width=800",
+      "lat": 50.0997,
+      "lng": 14.4161,
+      "_wikidata": "Q193481",
+      "_wikidataLabel": "AC Sparta Prague"
+    },
+    {
+      "slug": "fc-viktoria-plzen",
+      "nomesBase": [
+        "Viktoria Plzeň"
+      ],
+      "cidade": "Plzeň",
+      "estadio": "Doosan Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Foto-%20Martin%20Sk%C3%A1la.jpg?width=800",
+      "lat": 49.75,
+      "lng": 13.3856,
+      "_wikidata": "Q206838",
+      "_wikidataLabel": "FC Viktoria Plzeň"
+    },
+    {
+      "slug": "sk-slavia-prague",
+      "nomesBase": [
+        "Slavia Praha"
+      ],
+      "cidade": "Praga",
+      "estadio": "Fortuna Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Synot%20Tip%20Arena%20-%20Viktoria%20Plzen%20-%20FC%20Barcelona%200-4.jpg?width=800",
+      "lat": 50.0675,
+      "lng": 14.4715,
+      "_wikidata": "Q194393",
+      "_wikidataLabel": "SK Slavia Prague"
+    }
+  ]
+}

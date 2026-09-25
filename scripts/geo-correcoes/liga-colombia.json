@@ -1,0 +1,15 @@
+{
+  "ligaId": "liga-colombia",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Liga incompleta: a base só tem o Atlético Nacional."
+  ],
+  "clubes": {
+    "Atl. Nacional": {
+      "clubeWikidata": "Q332605"
+    }
+  }
+}

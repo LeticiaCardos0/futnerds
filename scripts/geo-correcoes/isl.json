@@ -1,0 +1,48 @@
+{
+  "ligaId": "isl",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "FC Goa": {
+      "_nota": "P159 devolve o estado de Goa; o Fatorda fica em Margão.",
+      "cidade": "Margão"
+    },
+    "Hyderabad FC": {
+      "clubeWikidata": "Q66816187",
+      "estadioWikidata": "Q5512339",
+      "cidade": "Hyderabad"
+    },
+    "Inter Kashi": {
+      "clubeWikidata": "Q120664287",
+      "_nota": "Clube de Varanasi (Kashi) sem casa fixa: mandou jogos em estádios de outros estados.",
+      "semEstadio": true,
+      "cidade": "Varanasi"
+    },
+    "Kerala Blasters": {
+      "cidade": "Kochi",
+      "cidadeWikidata": "Q1800"
+    },
+    "Mohun Bagan SG": {
+      "_nota": "Dois estádios no Wikidata; o clube manda os jogos no Salt Lake.",
+      "estadioWikidata": "Q787124",
+      "cidade": "Calcutá",
+      "cidadeWikidata": "Q1348"
+    },
+    "Mumbai City FC": {
+      "_nota": "Dois estádios no Wikidata; o clube joga na Mumbai Football Arena.",
+      "estadioWikidata": "Q28154049",
+      "cidade": "Mumbai",
+      "cidadeWikidata": "Q1156"
+    },
+    "Punjab FC": {
+      "_nota": "Clube de Mohali que manda os jogos no Jawaharlal Nehru, em Nova Délhi (a 240 km).",
+      "cidade": "Délhi",
+      "cidadeWikidata": "Q1353"
+    }
+  }
+}

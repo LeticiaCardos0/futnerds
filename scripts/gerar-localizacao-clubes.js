@@ -17,28 +17,8 @@ const SPARQL = 'https://query.wikidata.org/sparql';
 // A Wikimedia exige User-Agent descritivo; generico leva 429 na hora.
 const UA = 'FutNerds-LocalizacaoClubes/1.0 (projeto academico)';
 
-// Espelha src/app/shared/mapa-liga/config-liga.ts. Duplicado de proposito:
-// este script e Node puro e nao compila TypeScript.
-const LIGAS = {
-  'premier-league': {
-    ligaNomeBase: 'Premier League',
-    pais: 'wd:Q145', // Reino Unido
-    limite: { w: -5.8, s: 49.85, e: 1.85, n: 55.85 },
-  },
-  'la-liga': {
-    ligaNomeBase: 'LALIGA EA SPORTS',
-    pais: 'wd:Q29', // Espanha
-    // Espanha continental. Nesta temporada nenhum clube da base fica em ilha,
-    // entao as Canarias ficam fora do limite de proposito — inclui-las
-    // empurraria o enquadramento 1.000 km para sudoeste.
-    limite: { w: -9.8, s: 35.7, e: 3.7, n: 44.1 },
-  },
-  bundesliga: {
-    ligaNomeBase: 'Bundesliga',
-    pais: 'wd:Q183', // Alemanha
-    limite: { w: 5.6, s: 47.1, e: 15.3, n: 55.1 },
-  },
-};
+// Definicoes das ligas (nome na base, pais, limite): scripts/ligas-geo.js.
+const { LIGAS, paisesDe } = require('./ligas-geo');
 
 /**
  * Abreviacoes que a base usa e o Wikidata nao. Servem SO para diagnosticar:
@@ -70,20 +50,27 @@ async function sparql(query, tentativa) {
   return (await r.json()).results.bindings;
 }
 
-/** Clubes do pais, com CADA declaracao de estadio (rank + data de termino). */
-function queryClubes(pais) {
+/**
+ * Clubes do pais, com CADA declaracao de estadio (rank + data de termino).
+ *
+ * Rotulo de estadio aceita "en" OU "mul": o Wikidata vem migrando rotulos
+ * para o idioma "mul" (multilingue), e estadio que so tem "mul" sumia da
+ * consulta — foi o caso do Brick Community Stadium, do Wigan.
+ */
+function queryClubes(paises) {
   return [
     'SELECT ?club ?clubLabel ?venue ?venueLabel ?coord ?rank ?end ?cityLabel ?venueImg',
     '       (GROUP_CONCAT(DISTINCT ?alt; separator="|") AS ?alts)',
     'WHERE {',
-    '  ?club wdt:P31/wdt:P279* wd:Q476028 ; wdt:P17 ' + pais + ' ; rdfs:label ?clubLabel .',
+    '  VALUES ?pais { ' + paises.join(' ') + ' }',
+    '  ?club wdt:P31/wdt:P279* wd:Q476028 ; wdt:P17 ?pais ; rdfs:label ?clubLabel .',
     '  FILTER(lang(?clubLabel) = "en")',
     '  ?club p:P115 ?st .',
     '  ?st ps:P115 ?venue ; wikibase:rank ?rank .',
     '  FILTER(?rank != wikibase:DeprecatedRank)',
     '  OPTIONAL { ?st pq:P582 ?end }',
     '  ?venue wdt:P625 ?coord ; rdfs:label ?venueLabel .',
-    '  FILTER(lang(?venueLabel) = "en")',
+    '  FILTER(lang(?venueLabel) IN ("en", "mul"))',
     '  OPTIONAL { ?venue wdt:P18 ?venueImg }',
     '  OPTIONAL { ?club wdt:P159 ?city . ?city rdfs:label ?cityLabel . FILTER(lang(?cityLabel) = "en") }',
     '  OPTIONAL { ?club skos:altLabel ?alt . FILTER(lang(?alt) = "en") }',
@@ -97,14 +84,14 @@ function queryEntidades(qids) {
   return [
     'SELECT ?e ?eLabel ?coord ?venue ?venueLabel ?vcoord ?rank ?end ?cityLabel ?eImg ?venueImg WHERE {',
     '  VALUES ?e { ' + qids.map((q) => 'wd:' + q).join(' ') + ' }',
-    '  ?e rdfs:label ?eLabel . FILTER(lang(?eLabel) = "en")',
+    '  ?e rdfs:label ?eLabel . FILTER(lang(?eLabel) IN ("en", "mul"))',
     '  OPTIONAL { ?e wdt:P625 ?coord }',
     '  OPTIONAL { ?e wdt:P18 ?eImg }',
     '  OPTIONAL {',
     '    ?e p:P115 ?st . ?st ps:P115 ?venue ; wikibase:rank ?rank .',
     '    FILTER(?rank != wikibase:DeprecatedRank)',
     '    OPTIONAL { ?st pq:P582 ?end }',
-    '    ?venue wdt:P625 ?vcoord ; rdfs:label ?venueLabel . FILTER(lang(?venueLabel) = "en")',
+    '    ?venue wdt:P625 ?vcoord ; rdfs:label ?venueLabel . FILTER(lang(?venueLabel) IN ("en", "mul"))',
     '    OPTIONAL { ?venue wdt:P18 ?venueImg }',
     '  }',
     '  OPTIONAL { ?e wdt:P159 ?c . ?c rdfs:label ?cityLabel . FILTER(lang(?cityLabel) = "en") }',
@@ -121,14 +108,18 @@ function queryEntidades(qids) {
  * corrente sao apelido: "Hull" e altLabel de "Kingston upon Hull".
  * A populacao (P1082) entra para desempatar homonimos.
  */
-function queryCidades(nomes, pais) {
+function queryCidades(nomes, paises) {
   const vals = nomes.flatMap((n) => ['"' + n + '"@en', '"' + n + '"@pt']);
   return [
     'SELECT ?nome ?city ?coord ?pop WHERE {',
     '  VALUES ?nome { ' + vals.join(' ') + ' }',
+    // Comunas francesas e varios municipios (Poznan, Nimega) nao sao
+    // "assentamento humano" no Wikidata, so municipio ou cidade.
+    '  VALUES ?tipo { wd:Q486972 wd:Q15284 wd:Q515 }',
+    '  VALUES ?pais { ' + paises.join(' ') + ' }',
     '  ?city rdfs:label|skos:altLabel ?nome ;',
-    '        wdt:P31/wdt:P279* wd:Q486972 ;',
-    '        wdt:P17 ' + pais + ' ;',
+    '        wdt:P31/wdt:P279* ?tipo ;',
+    '        wdt:P17 ?pais ;',
     '        wdt:P625 ?coord .',
     '  OPTIONAL { ?city wdt:P1082 ?pop }',
     '}',
@@ -236,7 +227,7 @@ function escolherEstadio(declaracoes) {
 
   // --- Wikidata: todos os clubes do pais ---------------------------------
   console.log('Consultando o Wikidata...');
-  const linhas = await sparql(queryClubes(cfg.pais));
+  const linhas = await sparql(queryClubes(paisesDe(cfg)));
 
   // agrupa declaracoes por clube
   const porQid = new Map();
@@ -362,7 +353,13 @@ function escolherEstadio(declaracoes) {
     let estadioLabel;
     let coord;
     let imagem = null;
-    if (corr.estadioWikidata) {
+    if (corr.semEstadio) {
+      // Clube sem estadio conhecido (nem no Wikidata, nem numa fonte que de
+      // para confirmar). O pino vai para o centro da cidade, resolvido mais
+      // abaixo, e o painel mostra "—" em vez de um estadio inventado.
+      estadioLabel = '—';
+      coord = null;
+    } else if (corr.estadioWikidata) {
       const ev = entidadesPin.get(corr.estadioWikidata);
       if (!ev || !ev.coord) { revisar.push({ nome: time.nome, motivo: 'estadioWikidata ' + corr.estadioWikidata + ' sem coordenada' }); continue; }
       estadioLabel = ev.label;
@@ -377,7 +374,7 @@ function escolherEstadio(declaracoes) {
     }
 
     if (corr.lat != null && corr.lng != null) coord = { lat: corr.lat, lng: corr.lng };
-    if (!coord || !dentro(coord, cfg.limite)) {
+    if (!corr.semEstadio && (!coord || !dentro(coord, cfg.limite))) {
       revisar.push({ nome: time.nome, motivo: 'coordenada fora do limite da liga: ' + (coord ? coord.lat + ',' + coord.lng : 'ausente') });
       continue;
     }
@@ -391,10 +388,10 @@ function escolherEstadio(declaracoes) {
       label: ent.label,
       estadio: corr.estadio || estadioLabel,
       imagemEstadio: corr.imagemEstadio || urlImagem(imagem, 800),
-      lat: +coord.lat.toFixed(4),
-      lng: +coord.lng.toFixed(4),
+      lat: coord ? +coord.lat.toFixed(4) : null,
+      lng: coord ? +coord.lng.toFixed(4) : null,
       cidade,
-      comoCasou,
+      comoCasou: corr.semEstadio ? comoCasou + ', sem estadio' : comoCasou,
     });
   }
 
@@ -427,7 +424,7 @@ function escolherEstadio(declaracoes) {
 
   const aResolver = nomesCidade.filter((n) => !cidadesResolvidas.has(n));
   if (aResolver.length) {
-    const rows = await sparql(queryCidades(aResolver, cfg.pais));
+    const rows = await sparql(queryCidades(aResolver, paisesDe(cfg)));
     const cands = new Map();
     for (const b of rows) {
       const c = parseCoord(b.coord.value);
@@ -462,7 +459,7 @@ function escolherEstadio(declaracoes) {
 
   // Sanidade: o centro precisa estar perto de pelo menos um estadio da cidade.
   for (const [nome, centro] of [...cidadesResolvidas]) {
-    const estadios = achados.filter((a) => a.cidade === nome);
+    const estadios = achados.filter((a) => a.cidade === nome && a.lat != null);
     if (!estadios.length) continue;
     const maisProximo = Math.min(...estadios.map((e) => distanciaKm(centro, e)));
     if (maisProximo > MAX_KM_CIDADE_ESTADIO) {
@@ -476,12 +473,45 @@ function escolherEstadio(declaracoes) {
     }
   }
 
+  // Rotulo em portugues do Brasil (ligas com nomesPtBr). Cidade nomeada numa
+  // correcao manual fica como esta: foi escolhida por alguem.
+  if (cfg.nomesPtBr && cidadesResolvidas.size) {
+    const manuais = new Set(Object.values(correcoes).map((c) => c.cidade).filter(Boolean));
+    const alvo = [...cidadesResolvidas.values()].filter((c) => !manuais.has(c.nome) && c._wikidata);
+    if (alvo.length) {
+      const rows = await sparql([
+        'SELECT ?c ?ptbr ?pt WHERE {',
+        '  VALUES ?c { ' + alvo.map((c) => 'wd:' + c._wikidata).join(' ') + ' }',
+        '  OPTIONAL { ?c rdfs:label ?ptbr . FILTER(lang(?ptbr) = "pt-br") }',
+        '  OPTIONAL { ?c rdfs:label ?pt . FILTER(lang(?pt) = "pt") }',
+        '}',
+      ].join('\n'));
+      const rotulo = new Map();
+      for (const b of rows) {
+        const nome = (b.ptbr || b.pt || {}).value;
+        if (nome) rotulo.set(b.c.value.split('/').pop(), nome);
+      }
+      for (const c of alvo) {
+        const novo = rotulo.get(c._wikidata);
+        if (!novo || novo === c.nome) continue;
+        cidadesResolvidas.delete(c.nome);
+        cidadesResolvidas.set(novo, { ...c, nome: novo });
+        for (const a of achados) if (a.cidade === c.nome) a.cidade = novo;
+      }
+    }
+  }
+
   // clube cuja cidade nao resolveu nao entra no JSON
   const finais = [];
   for (const a of achados) {
     if (!cidadesResolvidas.has(a.cidade)) {
       revisar.push({ nome: a.base.nome, motivo: 'cidade "' + a.cidade + '" sem centro resolvido' });
       continue;
+    }
+    if (a.lat == null) {
+      const centro = cidadesResolvidas.get(a.cidade);
+      a.lat = centro.lat;
+      a.lng = centro.lng;
     }
     finais.push(a);
   }
@@ -529,6 +559,11 @@ function escolherEstadio(declaracoes) {
     console.log('  ' + semFoto.join(', '));
   }
 
+  const semEstadio = finais.filter((f) => f.comoCasou.endsWith('sem estadio')).map((f) => f.base.nome);
+  if (semEstadio.length) {
+    console.log(String.fromCharCode(10) + 'SEM ESTADIO (' + semEstadio.length + ') - pino no centro da cidade, painel mostra "—":');
+    console.log('  ' + semEstadio.join(', '));
+  }
   const porPin = finais.filter((f) => f.comoCasou.startsWith('pin'));
   const porSufixo = finais.filter((f) => f.comoCasou === 'sem sufixo');
   if (porPin.length) console.log('\ncasados por pin manual (' + porPin.length + '): ' + porPin.map((f) => f.base.nome).join(', '));

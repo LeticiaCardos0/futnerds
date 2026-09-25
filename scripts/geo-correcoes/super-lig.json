@@ -1,0 +1,86 @@
+{
+  "ligaId": "super-lig",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Amed Sportif Faaliyetler": {
+      "_nota": "Amed SFK, de Diyarbakır.",
+      "clubeWikidata": "Q1231804",
+      "cidade": "Diyarbakır",
+      "estadioWikidata": "Q20988336"
+    },
+    "Başakşehir": {
+      "clubeWikidata": "Q857938",
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406",
+      "_nota": "Dois estádios no Wikidata; o clube joga no Fatih Terim.",
+      "estadioWikidata": "Q17182993"
+    },
+    "Beşiktaş": {
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406"
+    },
+    "Çorum Futbol Kulübü": {
+      "clubeWikidata": "Q19613395",
+      "cidade": "Çorum",
+      "cidadeWikidata": "Q206900"
+    },
+    "Erzurumspor Futbol Kulübü": {
+      "clubeWikidata": "Q1366316"
+    },
+    "Eyüpspor": {
+      "clubeWikidata": "Q118919",
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406",
+      "_nota": "O estádio de Eyüp não atende à Süper Lig, e o clube já mandou jogos em mais de um estádio de Istambul.",
+      "semEstadio": true
+    },
+    "Fenerbahçe": {
+      "_nota": "P159 devolve Kadıköy, o distrito.",
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406"
+    },
+    "Galatasaray": {
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406"
+    },
+    "Gaziantep": {
+      "clubeWikidata": "Q824850",
+      "cidade": "Gaziantep",
+      "cidadeWikidata": "Q93338"
+    },
+    "Gençlerbirliği": {
+      "_nota": "Colide com o clube poliesportivo e com o time B.",
+      "clubeWikidata": "Q641373",
+      "cidade": "Ancara",
+      "cidadeWikidata": "Q3640"
+    },
+    "Göztepe": {
+      "clubeWikidata": "Q1423118",
+      "cidade": "Izmir",
+      "cidadeWikidata": "Q35997"
+    },
+    "Kasımpaşa": {
+      "clubeWikidata": "Q138230",
+      "cidade": "Istambul",
+      "cidadeWikidata": "Q406"
+    },
+    "Konyaspor": {
+      "cidade": "Konya",
+      "cidadeWikidata": "Q81551"
+    },
+    "Samsunspor": {
+      "cidade": "Samsun",
+      "cidadeWikidata": "Q160450"
+    },
+    "Trabzonspor": {
+      "cidade": "Trabzon",
+      "cidadeWikidata": "Q45301"
+    }
+  }
+}

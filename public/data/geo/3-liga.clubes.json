@@ -1,0 +1,388 @@
+{
+  "ligaId": "3-liga",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Aachen",
+      "lat": 50.7762,
+      "lng": 6.0838,
+      "_wikidata": "Q1017"
+    },
+    {
+      "nome": "Aspach",
+      "lat": 48.9667,
+      "lng": 9.3975,
+      "_wikidata": "Q81726"
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.9422,
+      "lng": 6.9578,
+      "_wikidata": "Q365"
+    },
+    {
+      "nome": "Duisburgo",
+      "lat": 51.4322,
+      "lng": 6.7611,
+      "_wikidata": "Q2100"
+    },
+    {
+      "nome": "Düsseldorf",
+      "lat": 51.2256,
+      "lng": 6.7767,
+      "_wikidata": "Q1718"
+    },
+    {
+      "nome": "Essen",
+      "lat": 51.4508,
+      "lng": 7.0131,
+      "_wikidata": "Q2066",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Garbsen",
+      "lat": 52.4183,
+      "lng": 9.5981,
+      "_wikidata": "Q4001",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Hoffenheim",
+      "lat": 49.2722,
+      "lng": 8.8444,
+      "_wikidata": "Q707011"
+    },
+    {
+      "nome": "Ingolstadt",
+      "lat": 48.7631,
+      "lng": 11.425,
+      "_wikidata": "Q3004",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.4878,
+      "lng": 8.4661,
+      "_wikidata": "Q2119"
+    },
+    {
+      "nome": "Meppen",
+      "lat": 52.6906,
+      "lng": 7.291,
+      "_wikidata": "Q15977",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Münster",
+      "lat": 51.9625,
+      "lng": 7.6256,
+      "_wikidata": "Q2742",
+      "_homonimos": 13
+    },
+    {
+      "nome": "Regensburg",
+      "lat": 49.0167,
+      "lng": 12.0833,
+      "_wikidata": "Q2978"
+    },
+    {
+      "nome": "Rostock",
+      "lat": 54.0833,
+      "lng": 12.1333,
+      "_wikidata": "Q2861",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2333,
+      "lng": 7,
+      "_wikidata": "Q1724"
+    },
+    {
+      "nome": "Stuttgart",
+      "lat": 48.7775,
+      "lng": 9.18,
+      "_wikidata": "Q1022"
+    },
+    {
+      "nome": "Verl",
+      "lat": 51.8831,
+      "lng": 8.5167,
+      "_wikidata": "Q225375"
+    },
+    {
+      "nome": "Wiesbaden",
+      "lat": 50.0825,
+      "lng": 8.24,
+      "_wikidata": "Q1721"
+    },
+    {
+      "nome": "Würzburg",
+      "lat": 49.7944,
+      "lng": 9.9294,
+      "_wikidata": "Q2999"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "1-fc-saarbrucken",
+      "nomesBase": [
+        "Saarbrücken"
+      ],
+      "cidade": "Saarbrücken",
+      "estadio": "Ludwigsparkstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludwigsparkstadion%20Saarbr%C3%BCcken%20001.jpg?width=800",
+      "lat": 49.2475,
+      "lng": 6.9842,
+      "_wikidata": "Q157463",
+      "_wikidataLabel": "1. FC Saarbrücken"
+    },
+    {
+      "slug": "alemannia-aachen",
+      "nomesBase": [
+        "Aleman. Aachen"
+      ],
+      "cidade": "Aachen",
+      "estadio": "New Tivoli",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tivoli%20Aachen%20Front.jpg?width=800",
+      "lat": 50.7933,
+      "lng": 6.0972,
+      "_wikidata": "Q153535",
+      "_wikidataLabel": "Alemannia Aachen"
+    },
+    {
+      "slug": "f-c-hansa-rostock",
+      "nomesBase": [
+        "FC Hansa Rostock"
+      ],
+      "cidade": "Rostock",
+      "estadio": "Ostseestadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ostseestadion.JPG?width=800",
+      "lat": 54.0849,
+      "lng": 12.0952,
+      "_wikidata": "Q142005",
+      "_wikidataLabel": "F.C. Hansa Rostock"
+    },
+    {
+      "slug": "fc-ingolstadt-04",
+      "nomesBase": [
+        "FC Ingolstadt 04"
+      ],
+      "cidade": "Ingolstadt",
+      "estadio": "Audi-Sportpark",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2020-11-21%20Audi%20Sportpark%20Ingolstadt%20by%20Sandro%20Halank%E2%80%937.jpg?width=800",
+      "lat": 48.7456,
+      "lng": 11.485,
+      "_wikidata": "Q170117",
+      "_wikidataLabel": "FC Ingolstadt 04"
+    },
+    {
+      "slug": "fc-viktoria-koln",
+      "nomesBase": [
+        "Viktoria Köln"
+      ],
+      "cidade": "Colônia",
+      "estadio": "Sportpark Höhenberg",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sportpark%20H%C3%B6henberg%20cropped.jpg?width=800",
+      "lat": 50.9452,
+      "lng": 7.0304,
+      "_wikidata": "Q695008",
+      "_wikidataLabel": "FC Viktoria Köln"
+    },
+    {
+      "slug": "fortuna-dusseldorf",
+      "nomesBase": [
+        "Düsseldorf"
+      ],
+      "cidade": "Düsseldorf",
+      "estadio": "Merkur Spiel-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/LTU%20arena%20panorama.jpg?width=800",
+      "lat": 51.2615,
+      "lng": 6.7331,
+      "_wikidata": "Q151747",
+      "_wikidataLabel": "Fortuna Düsseldorf"
+    },
+    {
+      "slug": "msv-duisburg",
+      "nomesBase": [
+        "MSV Duisburg"
+      ],
+      "cidade": "Duisburgo",
+      "estadio": "Schauinsland-Reisen-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Germany%20duisburg%20wedau-stadion.jpg?width=800",
+      "lat": 51.409,
+      "lng": 6.7786,
+      "_wikidata": "Q154293",
+      "_wikidataLabel": "MSV Duisburg"
+    },
+    {
+      "slug": "rot-weiss-essen",
+      "nomesBase": [
+        "Rot-Weiss Essen"
+      ],
+      "cidade": "Essen",
+      "estadio": "Stadion Essen",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20essen.jpg?width=800",
+      "lat": 51.4867,
+      "lng": 6.9764,
+      "_wikidata": "Q155218",
+      "_wikidataLabel": "Rot-Weiss Essen"
+    },
+    {
+      "slug": "sc-fortuna-koln",
+      "nomesBase": [
+        "SC Fortuna Köln"
+      ],
+      "cidade": "Colônia",
+      "estadio": "Südstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Suedstadion.jpg?width=800",
+      "lat": 50.9175,
+      "lng": 6.9436,
+      "_wikidata": "Q310608",
+      "_wikidataLabel": "SC Fortuna Köln"
+    },
+    {
+      "slug": "sc-preu-en-munster",
+      "nomesBase": [
+        "Preußen Münster"
+      ],
+      "cidade": "Münster",
+      "estadio": "Preußenstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Germany%20m%C3%BCnster%20stadium%20preussenstadion.jpg?width=800",
+      "lat": 51.9297,
+      "lng": 7.6246,
+      "_wikidata": "Q316865",
+      "_wikidataLabel": "SC Preußen Münster"
+    },
+    {
+      "slug": "sc-verl",
+      "nomesBase": [
+        "SC Verl"
+      ],
+      "cidade": "Verl",
+      "estadio": "Sportclub Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Verl%20-%20Fussballstadion%20-%20Stadion%20an%20der%20Poststra%C3%9Fe.jpg?width=800",
+      "lat": 51.8833,
+      "lng": 8.5144,
+      "_wikidata": "Q666010",
+      "_wikidataLabel": "SC Verl"
+    },
+    {
+      "slug": "sg-sonnenhof-gro-aspach",
+      "nomesBase": [
+        "SG Sonnenhof Großaspach"
+      ],
+      "cidade": "Aspach",
+      "estadio": "WIRmachenDRUCK Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Comtech%20arena%202012-05-11.jpg?width=800",
+      "lat": 48.9805,
+      "lng": 9.393,
+      "_wikidata": "Q692755",
+      "_wikidataLabel": "SG Sonnenhof Großaspach"
+    },
+    {
+      "slug": "ssv-jahn-regensburg",
+      "nomesBase": [
+        "Jahn Regensburg"
+      ],
+      "cidade": "Regensburg",
+      "estadio": "Arena Regensburg",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Westtrib%C3%BCne%202.JPG?width=800",
+      "lat": 48.9909,
+      "lng": 12.1069,
+      "_wikidata": "Q265570",
+      "_wikidataLabel": "SSV Jahn Regensburg"
+    },
+    {
+      "slug": "sv-meppen",
+      "nomesBase": [
+        "SV Meppen"
+      ],
+      "cidade": "Meppen",
+      "estadio": "Hänsch-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Emslandstadion%20nach%20dem%20Aufstiegsspiel%20Meppen%20gegen%20Waldhof%20Mannheim.jpg?width=800",
+      "lat": 52.7081,
+      "lng": 7.2981,
+      "_wikidata": "Q819400",
+      "_wikidataLabel": "SV Meppen"
+    },
+    {
+      "slug": "sv-waldhof-mannheim",
+      "nomesBase": [
+        "SV Waldhof"
+      ],
+      "cidade": "Mannheim",
+      "estadio": "Carl-Benz-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl-Benz-Stadion.jpg?width=800",
+      "lat": 49.4794,
+      "lng": 8.5025,
+      "_wikidata": "Q170134",
+      "_wikidataLabel": "SV Waldhof Mannheim"
+    },
+    {
+      "slug": "sv-wehen-wiesbaden",
+      "nomesBase": [
+        "Wehen Wiesbaden"
+      ],
+      "cidade": "Wiesbaden",
+      "estadio": "BRITA-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/BritaArenaSVWehenWiesbadenTorGustavStresemannRing.JPG?width=800",
+      "lat": 50.0711,
+      "lng": 8.2567,
+      "_wikidata": "Q310621",
+      "_wikidataLabel": "SV Wehen Wiesbaden"
+    },
+    {
+      "slug": "tsg-1899-hoffenheim-ii",
+      "nomesBase": [
+        "TSG Hoffenheim II"
+      ],
+      "cidade": "Hoffenheim",
+      "estadio": "Dietmar-Hopp-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoffenheim-hoppstadion.jpg?width=800",
+      "lat": 49.2783,
+      "lng": 8.8421,
+      "_wikidata": "Q16637410",
+      "_wikidataLabel": "TSG 1899 Hoffenheim II"
+    },
+    {
+      "slug": "tsv-havelse",
+      "nomesBase": [
+        "TSV Havelse"
+      ],
+      "cidade": "Garbsen",
+      "estadio": "Wilhelm-Langrehr-Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Havelsestadion.jpg?width=800",
+      "lat": 52.4083,
+      "lng": 9.6022,
+      "_wikidata": "Q537301",
+      "_wikidataLabel": "TSV Havelse"
+    },
+    {
+      "slug": "vfb-stuttgart-ii",
+      "nomesBase": [
+        "VfB Stuttgart II"
+      ],
+      "cidade": "Stuttgart",
+      "estadio": "Gazi-Stadion auf der Waldau",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Waldaustadion%20Degerloch.jpg?width=800",
+      "lat": 48.7539,
+      "lng": 9.1884,
+      "_wikidata": "Q107421",
+      "_wikidataLabel": "VfB Stuttgart II"
+    },
+    {
+      "slug": "wurzburger-kickers",
+      "nomesBase": [
+        "FC Würzburger Kickers"
+      ],
+      "cidade": "Würzburg",
+      "estadio": "flyeralarm Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Flyeralarm-Arena%20DFB-Pokal.jpg?width=800",
+      "lat": 49.7672,
+      "lng": 9.9329,
+      "_wikidata": "Q535785",
+      "_wikidataLabel": "Würzburger Kickers"
+    }
+  ]
+}

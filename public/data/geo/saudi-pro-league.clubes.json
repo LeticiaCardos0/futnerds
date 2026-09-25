@@ -1,0 +1,309 @@
+{
+  "ligaId": "saudi-pro-league",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Abha",
+      "lat": 18.2167,
+      "lng": 42.5,
+      "_wikidata": "Q190948"
+    },
+    {
+      "nome": "Al Majma'ah",
+      "lat": 25.9039,
+      "lng": 45.3456,
+      "_wikidata": "Q27359"
+    },
+    {
+      "nome": "Ar Rass",
+      "lat": 25.8667,
+      "lng": 43.5,
+      "_wikidata": "Q1878991"
+    },
+    {
+      "nome": "Burayda",
+      "lat": 26.3333,
+      "lng": 43.9667,
+      "_wikidata": "Q259253"
+    },
+    {
+      "nome": "Dammam",
+      "lat": 26.4333,
+      "lng": 50.1,
+      "_wikidata": "Q160320"
+    },
+    {
+      "nome": "Diriyah",
+      "lat": 24.7333,
+      "lng": 46.5756,
+      "_wikidata": "Q277505"
+    },
+    {
+      "nome": "Harmah",
+      "lat": 25.9167,
+      "lng": 45.3333,
+      "_wikidata": "Q3543429"
+    },
+    {
+      "nome": "Hofuf",
+      "lat": 25.3608,
+      "lng": 49.5997,
+      "_wikidata": "Q27136"
+    },
+    {
+      "nome": "Jidá",
+      "lat": 21.5292,
+      "lng": 39.1611,
+      "_wikidata": "Q374365"
+    },
+    {
+      "nome": "Khobar",
+      "lat": 26.3,
+      "lng": 50.2167,
+      "_wikidata": "Q311266"
+    },
+    {
+      "nome": "Riad",
+      "lat": 24.65,
+      "lng": 46.71,
+      "_wikidata": "Q3692"
+    },
+    {
+      "nome": "Tabuk",
+      "lat": 28.3972,
+      "lng": 36.5789,
+      "_wikidata": "Q244232"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "abha",
+      "nomesBase": [
+        "Abha Club"
+      ],
+      "cidade": "Abha",
+      "estadio": "Prince Mohammed bin Abdul Aziz Stadium",
+      "lat": 18.223,
+      "lng": 42.4901,
+      "_wikidata": "Q2620016",
+      "_wikidataLabel": "Abha"
+    },
+    {
+      "slug": "al-ahli",
+      "nomesBase": [
+        "Al Ahli"
+      ],
+      "cidade": "Jidá",
+      "estadio": "King Abdullah Sports City",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Jawhara%20Stadium.jpg?width=800",
+      "lat": 21.7626,
+      "lng": 39.1651,
+      "_wikidata": "Q44441",
+      "_wikidataLabel": "Al Ahli FC"
+    },
+    {
+      "slug": "al-diriyah-club",
+      "nomesBase": [
+        "Al Diriyah"
+      ],
+      "cidade": "Diriyah",
+      "estadio": "—",
+      "lat": 24.7333,
+      "lng": 46.5756,
+      "_wikidata": "Q7069287",
+      "_wikidataLabel": "Al-Diriyah Club"
+    },
+    {
+      "slug": "al-ettifaq",
+      "nomesBase": [
+        "Al Ettifaq"
+      ],
+      "cidade": "Dammam",
+      "estadio": "Al-Ettifaq Club Stadium",
+      "lat": 26.3506,
+      "lng": 50.1811,
+      "_wikidata": "Q72844",
+      "_wikidataLabel": "Al-Ettifaq FC"
+    },
+    {
+      "slug": "al-faisaly",
+      "nomesBase": [
+        "Al Faisaly"
+      ],
+      "cidade": "Harmah",
+      "estadio": "Prince Salman Bin Abdulaziz Sport City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Salman%20Bin%20Abdulaziz%20Sport%20City%20Stadium%202010.jpg?width=800",
+      "lat": 25.8869,
+      "lng": 45.368,
+      "_wikidata": "Q2829334",
+      "_wikidataLabel": "Al-Faisaly FC"
+    },
+    {
+      "slug": "al-fateh-sc",
+      "nomesBase": [
+        "Al Fateh"
+      ],
+      "cidade": "Hofuf",
+      "estadio": "Prince Abdullah bin Jalawi Sports City",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Abdullah%20bin%20Jalawi%20Stadium%2015%20April%202011.JPG?width=800",
+      "lat": 25.3058,
+      "lng": 49.6128,
+      "_wikidata": "Q2701659",
+      "_wikidataLabel": "Al Fateh SC"
+    },
+    {
+      "slug": "al-feiha",
+      "nomesBase": [
+        "Al Fayha"
+      ],
+      "cidade": "Al Majma'ah",
+      "estadio": "Prince Salman Bin Abdulaziz Sport City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Salman%20Bin%20Abdulaziz%20Sport%20City%20Stadium%202010.jpg?width=800",
+      "lat": 25.8869,
+      "lng": 45.368,
+      "_wikidata": "Q20081435",
+      "_wikidataLabel": "Al-Feiha FC"
+    },
+    {
+      "slug": "al-hazem-sc",
+      "nomesBase": [
+        "Al Hazem"
+      ],
+      "cidade": "Ar Rass",
+      "estadio": "Al-Hazem Club Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Al-Hazm%20Club%20Stadium.JPG?width=800",
+      "lat": 25.8603,
+      "lng": 43.5022,
+      "_wikidata": "Q2499905",
+      "_wikidataLabel": "Al Hazem SC"
+    },
+    {
+      "slug": "al-hilal-sfc",
+      "nomesBase": [
+        "Al Hilal"
+      ],
+      "cidade": "Riad",
+      "estadio": "Kingdom Arena",
+      "lat": 24.7782,
+      "lng": 46.6053,
+      "_wikidata": "Q73965",
+      "_wikidataLabel": "Al Hilal SFC"
+    },
+    {
+      "slug": "al-ittihad",
+      "nomesBase": [
+        "Al Ittihad"
+      ],
+      "cidade": "Jidá",
+      "estadio": "King Abdullah Sports City",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Jawhara%20Stadium.jpg?width=800",
+      "lat": 21.7626,
+      "lng": 39.1651,
+      "_wikidata": "Q309480",
+      "_wikidataLabel": "Al Ittihad FC"
+    },
+    {
+      "slug": "al-khaleej",
+      "nomesBase": [
+        "Al Khaleej"
+      ],
+      "cidade": "Dammam",
+      "estadio": "Prince Mohamed bin Fahd Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohammed%20Bin%20Fahd%20Stadium%2C%20Dammam%2C%20Saudi%20Arabia.jpg?width=800",
+      "lat": 26.4272,
+      "lng": 50.1141,
+      "_wikidata": "Q2027718",
+      "_wikidataLabel": "Al-Khaleej FC"
+    },
+    {
+      "slug": "al-kholood",
+      "nomesBase": [
+        "Al Kholood"
+      ],
+      "cidade": "Ar Rass",
+      "estadio": "Al-Hazem Club Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Al-Hazm%20Club%20Stadium.JPG?width=800",
+      "lat": 25.8603,
+      "lng": 43.5022,
+      "_wikidata": "Q12247459",
+      "_wikidataLabel": "Al-Kholood"
+    },
+    {
+      "slug": "al-nassr",
+      "nomesBase": [
+        "Al Nassr"
+      ],
+      "cidade": "Riad",
+      "estadio": "Al-Awwal Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Entire%20King%20Saud%20University%20Stadium.jpg?width=800",
+      "lat": 24.7293,
+      "lng": 46.6237,
+      "_wikidata": "Q482764",
+      "_wikidataLabel": "Al-Nassr"
+    },
+    {
+      "slug": "al-qadsiah",
+      "nomesBase": [
+        "Al Qadsiah"
+      ],
+      "cidade": "Khobar",
+      "estadio": "Prince Saud bin Jalawi Stadium",
+      "lat": 26.3699,
+      "lng": 50.2052,
+      "_wikidata": "Q286191",
+      "_wikidataLabel": "Al Qadsiah FC"
+    },
+    {
+      "slug": "al-riyadh-sc",
+      "nomesBase": [
+        "Al Riyadh"
+      ],
+      "cidade": "Riad",
+      "estadio": "Prince Turki bin Abdul Aziz Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Turki%20bin%20Abdulaziz%20Stadium%20-%201.jpg?width=800",
+      "lat": 24.6474,
+      "lng": 46.5504,
+      "_wikidata": "Q2655899",
+      "_wikidataLabel": "Al-Riyadh SC"
+    },
+    {
+      "slug": "al-shabab-football-club",
+      "nomesBase": [
+        "Al Shabab"
+      ],
+      "cidade": "Riad",
+      "estadio": "King Fahd Sports City",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/KingFahdInternationalStadium.jpg?width=800",
+      "lat": 24.7882,
+      "lng": 46.8392,
+      "_wikidata": "Q2636005",
+      "_wikidataLabel": "Al-Shabab Football Club"
+    },
+    {
+      "slug": "al-taawon",
+      "nomesBase": [
+        "Al Taawoun"
+      ],
+      "cidade": "Burayda",
+      "estadio": "King Abdullah Sport City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Abdullah%20Sport%20City%20Stadium%20A.jpg?width=800",
+      "lat": 26.3789,
+      "lng": 43.9478,
+      "_wikidata": "Q2613971",
+      "_wikidataLabel": "Al-Taawon FC"
+    },
+    {
+      "slug": "neom-sc",
+      "nomesBase": [
+        "Neom"
+      ],
+      "cidade": "Tabuk",
+      "estadio": "King Khalid Sport City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/1%20King%20Khalid%20stadium.jpg?width=800",
+      "lat": 28.4797,
+      "lng": 36.4887,
+      "_wikidata": "Q12247491",
+      "_wikidataLabel": "Neom SC"
+    }
+  ]
+}

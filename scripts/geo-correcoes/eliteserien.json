@@ -1,0 +1,44 @@
+{
+  "ligaId": "eliteserien",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "HamKam Fotball": {
+      "_nota": "Hamarkameratene.",
+      "clubeWikidata": "Q1130961"
+    },
+    "KFUM-Kameratene": {
+      "clubeWikidata": "Q3432730",
+      "cidade": "Oslo"
+    },
+    "Kristiansund BK": {
+      "clubeWikidata": "Q496190",
+      "estadioWikidata": "Q17778488"
+    },
+    "Rosenborg BK": {
+      "_nota": "Colide com o feminino.",
+      "clubeWikidata": "Q186785",
+      "cidade": "Trondheim"
+    },
+    "Sandefjord": {
+      "clubeWikidata": "Q861524"
+    },
+    "SK Brann": {
+      "_nota": "P159 devolve Nymark, o bairro do estádio.",
+      "cidade": "Bergen"
+    },
+    "Tromsø IL": {
+      "_nota": "P159 devolve Alfheim, o bairro do estádio.",
+      "cidade": "Tromsø"
+    },
+    "Vålerenga Fotball": {
+      "_nota": "P159 devolve Valle-Hovin, o bairro.",
+      "cidade": "Oslo"
+    }
+  }
+}

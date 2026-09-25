@@ -1,0 +1,428 @@
+{
+  "ligaId": "isl",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Amaravati",
+      "lat": 16.5337,
+      "lng": 80.5243,
+      "rank": 1
+    },
+    {
+      "nome": "Ahmedabad",
+      "lat": 23.032,
+      "lng": 72.5781,
+      "rank": 1
+    },
+    {
+      "nome": "Pune",
+      "lat": 18.532,
+      "lng": 73.8481,
+      "rank": 1
+    },
+    {
+      "nome": "Surat",
+      "lat": 21.2019,
+      "lng": 72.8381,
+      "rank": 1
+    },
+    {
+      "nome": "Kanpur",
+      "lat": 26.4619,
+      "lng": 80.318,
+      "rank": 1
+    },
+    {
+      "nome": "Jaipur",
+      "lat": 26.9231,
+      "lng": 75.808,
+      "rank": 1
+    },
+    {
+      "nome": "Lucknow",
+      "lat": 26.857,
+      "lng": 80.9131,
+      "rank": 1
+    },
+    {
+      "nome": "Nagpur",
+      "lat": 21.1719,
+      "lng": 79.088,
+      "rank": 1
+    },
+    {
+      "nome": "Patna",
+      "lat": 25.6269,
+      "lng": 85.1281,
+      "rank": 1
+    },
+    {
+      "nome": "Indore",
+      "lat": 22.717,
+      "lng": 75.8631,
+      "rank": 1
+    },
+    {
+      "nome": "Vadodara",
+      "lat": 22.312,
+      "lng": 73.1781,
+      "rank": 1
+    },
+    {
+      "nome": "Bhopal",
+      "lat": 23.2519,
+      "lng": 77.408,
+      "rank": 1
+    },
+    {
+      "nome": "Coimbatore",
+      "lat": 11.0019,
+      "lng": 76.9481,
+      "rank": 1
+    },
+    {
+      "nome": "Ludhiana",
+      "lat": 30.9297,
+      "lng": 75.8703,
+      "rank": 1
+    },
+    {
+      "nome": "Agra",
+      "lat": 27.1724,
+      "lng": 78.0131,
+      "rank": 1
+    },
+    {
+      "nome": "Kalyan",
+      "lat": 19.2502,
+      "lng": 73.1602,
+      "rank": 2
+    },
+    {
+      "nome": "Vishakhapatnam",
+      "lat": 17.732,
+      "lng": 83.303,
+      "rank": 2
+    },
+    {
+      "nome": "Nasik",
+      "lat": 20.0024,
+      "lng": 73.778,
+      "rank": 2
+    },
+    {
+      "nome": "Meerut",
+      "lat": 29.0024,
+      "lng": 77.6981,
+      "rank": 2
+    },
+    {
+      "nome": "Asansol",
+      "lat": 23.6853,
+      "lng": 86.9814,
+      "rank": 2
+    },
+    {
+      "nome": "Jamshedpur",
+      "lat": 22.7895,
+      "lng": 86.1956,
+      "rank": 2
+    },
+    {
+      "nome": "Madurai",
+      "lat": 9.922,
+      "lng": 78.1181,
+      "rank": 2
+    },
+    {
+      "nome": "Jabalpur",
+      "lat": 23.177,
+      "lng": 79.9531,
+      "rank": 2
+    },
+    {
+      "nome": "Rajkot",
+      "lat": 22.312,
+      "lng": 70.7981,
+      "rank": 2
+    },
+    {
+      "nome": "Dhanbad",
+      "lat": 23.8023,
+      "lng": 86.418,
+      "rank": 2
+    },
+    {
+      "nome": "Amritsar",
+      "lat": 31.6419,
+      "lng": 74.868,
+      "rank": 2
+    },
+    {
+      "nome": "Warangal",
+      "lat": 18.01,
+      "lng": 79.58,
+      "rank": 2
+    },
+    {
+      "nome": "Allahabad",
+      "lat": 25.4569,
+      "lng": 81.8381,
+      "rank": 2
+    },
+    {
+      "nome": "Srinagar",
+      "lat": 34.1019,
+      "lng": 74.8131,
+      "rank": 2
+    },
+    {
+      "nome": "Aurangabad",
+      "lat": 19.8976,
+      "lng": 75.3184,
+      "rank": 2
+    },
+    {
+      "nome": "Bhilai",
+      "lat": 21.2186,
+      "lng": 81.4314,
+      "rank": 2
+    },
+    {
+      "nome": "Sholapur",
+      "lat": 17.6724,
+      "lng": 75.8981,
+      "rank": 2
+    },
+    {
+      "nome": "Ranchi",
+      "lat": 23.372,
+      "lng": 85.3281,
+      "rank": 2
+    },
+    {
+      "nome": "Jodhpur",
+      "lat": 26.2937,
+      "lng": 73.0148,
+      "rank": 2
+    },
+    {
+      "nome": "Chandigarh",
+      "lat": 30.7219,
+      "lng": 76.7781,
+      "rank": 2
+    },
+    {
+      "nome": "Gwalior",
+      "lat": 26.2319,
+      "lng": 78.1781,
+      "rank": 2
+    },
+    {
+      "nome": "Thiruvananthapuram",
+      "lat": 8.5019,
+      "lng": 76.9481,
+      "rank": 2
+    },
+    {
+      "nome": "Kozhikode",
+      "lat": 11.2524,
+      "lng": 75.768,
+      "rank": 2
+    },
+    {
+      "nome": "Tiruchirappalli",
+      "lat": 10.8119,
+      "lng": 78.688,
+      "rank": 2
+    },
+    {
+      "nome": "Hubballi",
+      "lat": 15.3619,
+      "lng": 75.1231,
+      "rank": 2
+    },
+    {
+      "nome": "Mysuru",
+      "lat": 12.3119,
+      "lng": 76.6581,
+      "rank": 2
+    },
+    {
+      "nome": "Salem",
+      "lat": 11.6719,
+      "lng": 78.1781,
+      "rank": 2
+    },
+    {
+      "nome": "Jullundur",
+      "lat": 31.3369,
+      "lng": 75.5671,
+      "rank": 2
+    },
+    {
+      "nome": "Kota",
+      "lat": 25.1819,
+      "lng": 75.8331,
+      "rank": 2
+    },
+    {
+      "nome": "Jhansi",
+      "lat": 25.453,
+      "lng": 78.5575,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Daca",
+      "lat": 23.725,
+      "lng": 90.4066,
+      "rank": 1
+    },
+    {
+      "nome": "Karachi",
+      "lat": 24.8719,
+      "lng": 66.9881,
+      "rank": 1
+    },
+    {
+      "nome": "Bancoque",
+      "lat": 13.7519,
+      "lng": 100.5147,
+      "rank": 1
+    },
+    {
+      "nome": "Lahore",
+      "lat": 31.5619,
+      "lng": 74.3481,
+      "rank": 1
+    },
+    {
+      "nome": "Singapura",
+      "lat": 1.295,
+      "lng": 103.8539,
+      "rank": 1
+    },
+    {
+      "nome": "Chattogram",
+      "lat": 22.3319,
+      "lng": 91.798,
+      "rank": 1
+    },
+    {
+      "nome": "Chengdu",
+      "lat": 30.6719,
+      "lng": 104.0681,
+      "rank": 1
+    },
+    {
+      "nome": "Yangon",
+      "lat": 16.7853,
+      "lng": 96.1647,
+      "rank": 1
+    },
+    {
+      "nome": "Cabul",
+      "lat": 34.5186,
+      "lng": 69.1813,
+      "rank": 2
+    },
+    {
+      "nome": "Kunming",
+      "lat": 25.0719,
+      "lng": 102.678,
+      "rank": 2
+    },
+    {
+      "nome": "Faisalabad",
+      "lat": 31.4119,
+      "lng": 73.1081,
+      "rank": 2
+    },
+    {
+      "nome": "Lanzhou",
+      "lat": 36.058,
+      "lng": 103.7901,
+      "rank": 2
+    },
+    {
+      "nome": "George Town",
+      "lat": 5.4136,
+      "lng": 100.3294,
+      "rank": 2
+    },
+    {
+      "nome": "Tashkent",
+      "lat": 41.3136,
+      "lng": 69.293,
+      "rank": 2
+    },
+    {
+      "nome": "Medan",
+      "lat": 3.5819,
+      "lng": 98.6481,
+      "rank": 2
+    },
+    {
+      "nome": "Saidu",
+      "lat": 34.75,
+      "lng": 72.35,
+      "rank": 2
+    },
+    {
+      "nome": "Rawalpindi",
+      "lat": 33.6019,
+      "lng": 73.0381,
+      "rank": 2
+    },
+    {
+      "nome": "Khulna",
+      "lat": 22.8419,
+      "lng": 89.5581,
+      "rank": 2
+    },
+    {
+      "nome": "Multan",
+      "lat": 30.2019,
+      "lng": 71.4531,
+      "rank": 2
+    },
+    {
+      "nome": "Gujranwala",
+      "lat": 32.1624,
+      "lng": 74.1831,
+      "rank": 2
+    },
+    {
+      "nome": "Kuala Lumpur",
+      "lat": 3.1686,
+      "lng": 101.698,
+      "rank": 2
+    },
+    {
+      "nome": "Peshawar",
+      "lat": 34.007,
+      "lng": 71.5331,
+      "rank": 2
+    },
+    {
+      "nome": "Mandalay",
+      "lat": 21.9719,
+      "lng": 96.0831,
+      "rank": 2
+    },
+    {
+      "nome": "Abbottabad",
+      "lat": 34.1495,
+      "lng": 73.1995,
+      "rank": 2
+    },
+    {
+      "nome": "Leshan",
+      "lat": 29.569,
+      "lng": 103.7314,
+      "rank": 2
+    }
+  ]
+}

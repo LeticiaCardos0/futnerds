@@ -1,0 +1,27 @@
+{
+  "ligaId": "brasileirao",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Salvador",
+      "lat": -12.9831,
+      "lng": -38.4928,
+      "_wikidata": "Q36947"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "esporte-clube-bahia",
+      "nomesBase": [
+        "Bahia"
+      ],
+      "cidade": "Salvador",
+      "estadio": "Arena Fonte Nova",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Salvador%20aerea%20arenafontenova.jpg?width=800",
+      "lat": -12.9788,
+      "lng": -38.5043,
+      "_wikidata": "Q198032",
+      "_wikidataLabel": "Esporte Clube Bahia"
+    }
+  ]
+}

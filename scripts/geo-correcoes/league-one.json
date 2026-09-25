@@ -1,0 +1,80 @@
+{
+  "ligaId": "league-one",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Como na Premier League: \"London\" vira \"Londres\" (cidadeWikidata Q84), e",
+    "estádio só leva `estadio` quando o Wikidata traz o nome antigo."
+  ],
+  "clubes": {
+    "AFC Wimbledon": {
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Bradford City": {
+      "_nota": "Sem P159 no Wikidata.",
+      "clubeWikidata": "Q48879",
+      "cidade": "Bradford"
+    },
+    "Bromley FC": {
+      "_nota": "P159 devolve o distrito (London Borough of Bromley).",
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Cambridge Utd": {
+      "_nota": "A base abrevia Cambridge United.",
+      "clubeWikidata": "Q18509",
+      "cidade": "Cambridge"
+    },
+    "Doncaster": {
+      "_nota": "O Wikidata traz Keepmoat Stadium, nome até 2022.",
+      "estadio": "Eco-Power Stadium",
+      "cidade": "Doncaster"
+    },
+    "Huddersfield": {
+      "_nota": "O Wikidata traz Kirklees Stadium (nome oficial); o comercial é Accu Stadium desde 2024.",
+      "estadio": "Accu Stadium",
+      "cidade": "Huddersfield"
+    },
+    "Leicester City": {
+      "estadio": "King Power Stadium",
+      "cidade": "Leicester"
+    },
+    "Leyton Orient": {
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Mansfield Town": {
+      "_nota": "Field Mill tem nome comercial One Call Stadium.",
+      "estadio": "One Call Stadium",
+      "cidade": "Mansfield"
+    },
+    "Peterborough": {
+      "estadio": "Weston Homes Stadium",
+      "cidade": "Peterborough"
+    },
+    "Reading": {
+      "_nota": "O Wikidata traz Madejski Stadium, nome até 2021.",
+      "estadio": "Select Car Leasing Stadium",
+      "cidade": "Reading"
+    },
+    "Sheffield Wed": {
+      "_nota": "A base abrevia Sheffield Wednesday.",
+      "clubeWikidata": "Q19498",
+      "cidade": "Sheffield"
+    },
+    "Stevenage": {
+      "estadio": "Lamex Stadium",
+      "cidade": "Stevenage"
+    },
+    "Wigan Athletic": {
+      "_nota": "No Wikidata a declaração do estádio tem data de término.",
+      "clubeWikidata": "Q18750",
+      "estadioWikidata": "Q494388",
+      "estadio": "Brick Community Stadium",
+      "cidade": "Wigan"
+    }
+  }
+}

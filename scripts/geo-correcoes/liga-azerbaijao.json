@@ -1,0 +1,18 @@
+{
+  "ligaId": "liga-azerbaijao",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Liga incompleta: a base só tem o Qarabağ."
+  ],
+  "clubes": {
+    "Qarabağ FK": {
+      "_nota": "Clube de Aghdam, deslocado para Baku desde 1993. P159 ainda aponta para Aghdam. Estádio: o Tofiq Bahramov, onde manda os jogos europeus.",
+      "estadioWikidata": "Q1138958",
+      "cidade": "Baku",
+      "cidadeWikidata": "Q9248"
+    }
+  }
+}

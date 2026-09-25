@@ -1,0 +1,319 @@
+{
+  "ligaId": "super-lig",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Alanya",
+      "lat": 36.5436,
+      "lng": 31.9997,
+      "_wikidata": "Q171810",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Ancara",
+      "lat": 39.9358,
+      "lng": 32.8387,
+      "_wikidata": "Q3640"
+    },
+    {
+      "nome": "Çorum",
+      "lat": 40.5489,
+      "lng": 34.9533,
+      "_wikidata": "Q206900"
+    },
+    {
+      "nome": "Diyarbakır",
+      "lat": 37.9108,
+      "lng": 40.2367,
+      "_wikidata": "Q83387"
+    },
+    {
+      "nome": "Erzurum",
+      "lat": 39.9097,
+      "lng": 41.2756,
+      "_wikidata": "Q122803",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Gaziantep",
+      "lat": 37.0628,
+      "lng": 37.3792,
+      "_wikidata": "Q93338"
+    },
+    {
+      "nome": "Istambul",
+      "lat": 41.01,
+      "lng": 28.9603,
+      "_wikidata": "Q406"
+    },
+    {
+      "nome": "Izmir",
+      "lat": 38.4127,
+      "lng": 27.1384,
+      "_wikidata": "Q35997"
+    },
+    {
+      "nome": "İzmit",
+      "lat": 40.7719,
+      "lng": 29.9498,
+      "_wikidata": "Q129649"
+    },
+    {
+      "nome": "Konya",
+      "lat": 37.8725,
+      "lng": 32.4919,
+      "_wikidata": "Q81551"
+    },
+    {
+      "nome": "Rize",
+      "lat": 41.0248,
+      "lng": 40.5199,
+      "_wikidata": "Q201101"
+    },
+    {
+      "nome": "Samsun",
+      "lat": 41.2867,
+      "lng": 36.33,
+      "_wikidata": "Q160450"
+    },
+    {
+      "nome": "Trabzon",
+      "lat": 41.005,
+      "lng": 39.7225,
+      "_wikidata": "Q45301"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "alanyaspor",
+      "nomesBase": [
+        "Alanyaspor"
+      ],
+      "cidade": "Alanya",
+      "estadio": "Alanya Oba Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bah%C3%A7e%C5%9Fehir%20Okullar%C4%B1%20Stadyumu%20%E2%80%93%20D%C4%B1%C5%9F%20manzara.png?width=800",
+      "lat": 36.5626,
+      "lng": 32.0791,
+      "_wikidata": "Q1636019",
+      "_wikidataLabel": "Alanyaspor"
+    },
+    {
+      "slug": "amed-s-f-k",
+      "nomesBase": [
+        "Amed Sportif Faaliyetler"
+      ],
+      "cidade": "Diyarbakır",
+      "estadio": "Diyarbakır Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Diyarbekirspor-Eskisehirspor1.jpg?width=800",
+      "lat": 37.942,
+      "lng": 40.12,
+      "_wikidata": "Q1231804",
+      "_wikidataLabel": "Amed S.F.K."
+    },
+    {
+      "slug": "besiktas-j-k",
+      "nomesBase": [
+        "Beşiktaş"
+      ],
+      "cidade": "Istambul",
+      "estadio": "Beşiktaş Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/T%C3%BCpra%C5%9F%20Stadyumu%2020231011%202.jpg?width=800",
+      "lat": 41.0392,
+      "lng": 28.9942,
+      "_wikidata": "Q172567",
+      "_wikidataLabel": "Beşiktaş J.K."
+    },
+    {
+      "slug": "caykur-rizespor",
+      "nomesBase": [
+        "Çaykur Rizespor"
+      ],
+      "cidade": "Rize",
+      "estadio": "Yeni Rize Şehir Stadı",
+      "lat": 41.042,
+      "lng": 40.5732,
+      "_wikidata": "Q272712",
+      "_wikidataLabel": "Çaykur Rizespor"
+    },
+    {
+      "slug": "corum-fk",
+      "nomesBase": [
+        "Çorum Futbol Kulübü"
+      ],
+      "cidade": "Çorum",
+      "estadio": "Çorum City Stadium",
+      "lat": 40.5345,
+      "lng": 34.9228,
+      "_wikidata": "Q19613395",
+      "_wikidataLabel": "Çorum FK"
+    },
+    {
+      "slug": "erzurumspor",
+      "nomesBase": [
+        "Erzurumspor Futbol Kulübü"
+      ],
+      "cidade": "Erzurum",
+      "estadio": "Kazım Karabekir Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Recep%20Tayyip%20Erdo%C4%9Fan%20and%20George%20Papandreou%2C%20Erzurum%20January%202011%2012.jpg?width=800",
+      "lat": 39.911,
+      "lng": 41.238,
+      "_wikidata": "Q1366316",
+      "_wikidataLabel": "Erzurumspor"
+    },
+    {
+      "slug": "eyupspor",
+      "nomesBase": [
+        "Eyüpspor"
+      ],
+      "cidade": "Istambul",
+      "estadio": "—",
+      "lat": 41.01,
+      "lng": 28.9603,
+      "_wikidata": "Q118919",
+      "_wikidataLabel": "Eyüpspor"
+    },
+    {
+      "slug": "fenerbahce-istanbul",
+      "nomesBase": [
+        "Fenerbahçe"
+      ],
+      "cidade": "Istambul",
+      "estadio": "Şükrü Saracoğlu Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sukrusaracoglu.jpg?width=800",
+      "lat": 40.9875,
+      "lng": 29.0367,
+      "_wikidata": "Q6601875",
+      "_wikidataLabel": "Fenerbahçe Istanbul"
+    },
+    {
+      "slug": "galatasaray-s-k",
+      "nomesBase": [
+        "Galatasaray"
+      ],
+      "cidade": "Istambul",
+      "estadio": "Rams Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Galatasaray%20Arena%20North-West%20Corner.jpg?width=800",
+      "lat": 41.1034,
+      "lng": 28.991,
+      "_wikidata": "Q495299",
+      "_wikidataLabel": "Galatasaray S.K."
+    },
+    {
+      "slug": "gaziantep-f-k",
+      "nomesBase": [
+        "Gaziantep"
+      ],
+      "cidade": "Gaziantep",
+      "estadio": "Gaziantep Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kalyon%20Arena%20%28Gaziantep%29.jpg?width=800",
+      "lat": 37.1239,
+      "lng": 37.3825,
+      "_wikidata": "Q824850",
+      "_wikidataLabel": "Gaziantep F.K."
+    },
+    {
+      "slug": "genclerbirligi-s-k",
+      "nomesBase": [
+        "Gençlerbirliği"
+      ],
+      "cidade": "Ancara",
+      "estadio": "Eryaman Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ankara%20Eryaman%20Stadyumu2.jpg?width=800",
+      "lat": 39.98,
+      "lng": 32.6139,
+      "_wikidata": "Q641373",
+      "_wikidataLabel": "Gençlerbirliği S.K."
+    },
+    {
+      "slug": "goztepe-s-k",
+      "nomesBase": [
+        "Göztepe"
+      ],
+      "cidade": "Izmir",
+      "estadio": "İzmir Atatürk Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Izmir%20Atat%C3%BCrk%20Stadium%20%28cropped%29.jpg?width=800",
+      "lat": 38.435,
+      "lng": 27.1781,
+      "_wikidata": "Q1423118",
+      "_wikidataLabel": "Göztepe S.K."
+    },
+    {
+      "slug": "istanbul-basaksehir-f-k",
+      "nomesBase": [
+        "Başakşehir"
+      ],
+      "cidade": "Istambul",
+      "estadio": "Başakşehir Fatih Terim Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Greece%20vs%20Turkey%20%280-3%29%2C%2017%20November%202015%2C%202.jpg?width=800",
+      "lat": 41.1228,
+      "lng": 28.8087,
+      "_wikidata": "Q857938",
+      "_wikidataLabel": "İstanbul Başakşehir F.K."
+    },
+    {
+      "slug": "kas-mpasa-s-k",
+      "nomesBase": [
+        "Kasımpaşa"
+      ],
+      "cidade": "Istambul",
+      "estadio": "Recep Tayyip Erdoğan Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Kasimpasa.JPG?width=800",
+      "lat": 41.0328,
+      "lng": 28.9722,
+      "_wikidata": "Q138230",
+      "_wikidataLabel": "Kasımpaşa S.K."
+    },
+    {
+      "slug": "kocaelispor",
+      "nomesBase": [
+        "Kocaelispor"
+      ],
+      "cidade": "İzmit",
+      "estadio": "Kocaeli Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Y%C4%B1ld%C4%B1z%20Entegre%20Kocaeli%20Stadyumu%20%282025%29.jpg?width=800",
+      "lat": 40.7747,
+      "lng": 30.0175,
+      "_wikidata": "Q513237",
+      "_wikidataLabel": "Kocaelispor"
+    },
+    {
+      "slug": "konyaspor",
+      "nomesBase": [
+        "Konyaspor"
+      ],
+      "cidade": "Konya",
+      "estadio": "Konya Büyükşehir Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/TORKU%20ARENA%20-%20panoramio.jpg?width=800",
+      "lat": 37.9462,
+      "lng": 32.4881,
+      "_wikidata": "Q513840",
+      "_wikidataLabel": "Konyaspor"
+    },
+    {
+      "slug": "samsunspor",
+      "nomesBase": [
+        "Samsunspor"
+      ],
+      "cidade": "Samsun",
+      "estadio": "Samsun 19 Mayıs Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Samsun%2019%20May%C4%B1s%20Stadyumu%20%28Ekim%202019%29%20%28cropped%29.jpg?width=800",
+      "lat": 41.2278,
+      "lng": 36.4575,
+      "_wikidata": "Q430107",
+      "_wikidataLabel": "Samsunspor FC"
+    },
+    {
+      "slug": "trabzonspor",
+      "nomesBase": [
+        "Trabzonspor"
+      ],
+      "cidade": "Trabzon",
+      "estadio": "Papara Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Akyaz%C4%B1%20Stad%C4%B1%20side.jpg?width=800",
+      "lat": 40.9987,
+      "lng": 39.6463,
+      "_wikidata": "Q192641",
+      "_wikidataLabel": "Trabzonspor"
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "ligaId": "league-two",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Accrington",
+      "lat": 53.7534,
+      "lng": -2.3638,
+      "_wikidata": "Q1622949"
+    },
+    {
+      "nome": "Birkenhead",
+      "lat": 53.3833,
+      "lng": -3.0167,
+      "_wikidata": "Q746718"
+    },
+    {
+      "nome": "Bristol",
+      "lat": 51.4536,
+      "lng": -2.5975,
+      "_wikidata": "Q23154"
+    },
+    {
+      "nome": "Cheltenham",
+      "lat": 51.8965,
+      "lng": -2.0784,
+      "_wikidata": "Q206988",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Chesterfield",
+      "lat": 53.2358,
+      "lng": -1.4275,
+      "_wikidata": "Q823600",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Colchester",
+      "lat": 51.8886,
+      "lng": 0.9036,
+      "_wikidata": "Q184163",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Crawley",
+      "lat": 51.1157,
+      "lng": -0.1937,
+      "_wikidata": "Q844908",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Crewe",
+      "lat": 53.099,
+      "lng": -2.44,
+      "_wikidata": "Q648810",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Exeter",
+      "lat": 50.7256,
+      "lng": -3.5269,
+      "_wikidata": "Q134672"
+    },
+    {
+      "nome": "Fleetwood",
+      "lat": 53.925,
+      "lng": -3.015,
+      "_wikidata": "Q1012507"
+    },
+    {
+      "nome": "Gillingham",
+      "lat": 51.3792,
+      "lng": 0.5498,
+      "_wikidata": "Q610238",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Grimsby",
+      "lat": 53.5675,
+      "lng": -0.08,
+      "_wikidata": "Q179406"
+    },
+    {
+      "nome": "Londres",
+      "lat": 51.5072,
+      "lng": -0.1275,
+      "_wikidata": "Q84"
+    },
+    {
+      "nome": "Newport",
+      "lat": 51.5886,
+      "lng": -2.9978,
+      "_wikidata": "Q101254",
+      "_homonimos": 9
+    },
+    {
+      "nome": "Northampton",
+      "lat": 52.2333,
+      "lng": -0.9,
+      "_wikidata": "Q192240"
+    },
+    {
+      "nome": "Oldham",
+      "lat": 53.5447,
+      "lng": -2.1183,
+      "_wikidata": "Q202628"
+    },
+    {
+      "nome": "Rochdale",
+      "lat": 53.6136,
+      "lng": -2.161,
+      "_wikidata": "Q474605"
+    },
+    {
+      "nome": "Rotherham",
+      "lat": 53.43,
+      "lng": -1.3572,
+      "_wikidata": "Q217039"
+    },
+    {
+      "nome": "Salford",
+      "lat": 53.4828,
+      "lng": -2.2931,
+      "_wikidata": "Q47952",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Shrewsbury",
+      "lat": 52.7081,
+      "lng": -2.7544,
+      "_wikidata": "Q201970"
+    },
+    {
+      "nome": "Stoke-on-Trent",
+      "lat": 53,
+      "lng": -2.1833,
+      "_wikidata": "Q134902"
+    },
+    {
+      "nome": "Swindon",
+      "lat": 51.5583,
+      "lng": -1.7811,
+      "_wikidata": "Q200942",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Walsall",
+      "lat": 52.58,
+      "lng": -1.98,
+      "_wikidata": "Q504530"
+    },
+    {
+      "nome": "York",
+      "lat": 53.95,
+      "lng": -1.0833,
+      "_wikidata": "Q42462",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "accrington-stanley",
+      "nomesBase": [
+        "Accrington"
+      ],
+      "cidade": "Accrington",
+      "estadio": "Wham Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Crown%20Ground%20Main%20stand-geograph-1761366.jpg?width=800",
+      "lat": 53.7654,
+      "lng": -2.3709,
+      "_wikidata": "Q48843",
+      "_wikidataLabel": "Accrington Stanley F.C."
+    },
+    {
+      "slug": "barnet",
+      "nomesBase": [
+        "Barnet"
+      ],
+      "cidade": "Londres",
+      "estadio": "The Hive Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Thehivestadium.jpg?width=800",
+      "lat": 51.6026,
+      "lng": -0.2918,
+      "_wikidata": "Q9408",
+      "_wikidataLabel": "Barnet F.C."
+    },
+    {
+      "slug": "bristol-rovers",
+      "nomesBase": [
+        "Bristol Rovers"
+      ],
+      "cidade": "Bristol",
+      "estadio": "Memorial Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Uplands%20StandBRFC.JPG?width=800",
+      "lat": 51.4862,
+      "lng": -2.5831,
+      "_wikidata": "Q48925",
+      "_wikidataLabel": "Bristol Rovers F.C."
+    },
+    {
+      "slug": "cheltenham-town",
+      "nomesBase": [
+        "Cheltenham Town"
+      ],
+      "cidade": "Cheltenham",
+      "estadio": "Whaddon Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheltenhamtown.jpg?width=800",
+      "lat": 51.9062,
+      "lng": -2.0602,
+      "_wikidata": "Q48932",
+      "_wikidataLabel": "Cheltenham Town F.C."
+    },
+    {
+      "slug": "chesterfield",
+      "nomesBase": [
+        "Chesterfield"
+      ],
+      "cidade": "Chesterfield",
+      "estadio": "SMH Group Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/B2net%20Stadium%201%20-%20geograph-1998863.jpg?width=800",
+      "lat": 53.2534,
+      "lng": -1.4272,
+      "_wikidata": "Q48935",
+      "_wikidataLabel": "Chesterfield F.C."
+    },
+    {
+      "slug": "colchester-united",
+      "nomesBase": [
+        "Colchester"
+      ],
+      "cidade": "Colchester",
+      "estadio": "JobServe Community Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Western%20Homes%20Community%20Stadium%20-%20geograph.org.uk%20-%204568006.jpg?width=800",
+      "lat": 51.9234,
+      "lng": 0.8977,
+      "_wikidata": "Q19578",
+      "_wikidataLabel": "Colchester United F.C."
+    },
+    {
+      "slug": "crawley-town",
+      "nomesBase": [
+        "Crawley Town"
+      ],
+      "cidade": "Crawley",
+      "estadio": "The Peoples Pension Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Crawley%20-%20Entrance%20to%20Broadfield%20Stadium.JPG?width=800",
+      "lat": 51.0997,
+      "lng": -0.1948,
+      "_wikidata": "Q19584",
+      "_wikidataLabel": "Crawley Town F.C."
+    },
+    {
+      "slug": "crewe-alexandra",
+      "nomesBase": [
+        "Crewe Alexandra"
+      ],
+      "cidade": "Crewe",
+      "estadio": "Mornflake Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gresty%20Road%2C%20Crewe.jpg?width=800",
+      "lat": 53.0874,
+      "lng": -2.4357,
+      "_wikidata": "Q19587",
+      "_wikidataLabel": "Crewe Alexandra F.C."
+    },
+    {
+      "slug": "exeter-city",
+      "nomesBase": [
+        "Exeter City"
+      ],
+      "cidade": "Exeter",
+      "estadio": "St James Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/SJP20131005.jpg?width=800",
+      "lat": 50.7307,
+      "lng": -3.5212,
+      "_wikidata": "Q48939",
+      "_wikidataLabel": "Exeter City F.C."
+    },
+    {
+      "slug": "fleetwood-town",
+      "nomesBase": [
+        "Fleetwood Town"
+      ],
+      "cidade": "Fleetwood",
+      "estadio": "Highbury Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/FTFC01.jpg?width=800",
+      "lat": 53.9165,
+      "lng": -3.0247,
+      "_wikidata": "Q48941",
+      "_wikidataLabel": "Fleetwood Town F.C."
+    },
+    {
+      "slug": "gillingham",
+      "nomesBase": [
+        "Gillingham"
+      ],
+      "cidade": "Gillingham",
+      "estadio": "Priestfield Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Priestfield%20Stadium%20Medway%20Stand.jpg?width=800",
+      "lat": 51.3842,
+      "lng": 0.5608,
+      "_wikidata": "Q48943",
+      "_wikidataLabel": "Gillingham F.C."
+    },
+    {
+      "slug": "grimsby-town",
+      "nomesBase": [
+        "Grimsby Town"
+      ],
+      "cidade": "Grimsby",
+      "estadio": "Blundell Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Blundell%20Park%20-%20geograph.org.uk%20-%20125740.jpg?width=800",
+      "lat": 53.5702,
+      "lng": -0.0465,
+      "_wikidata": "Q18515",
+      "_wikidataLabel": "Grimsby Town F.C."
+    },
+    {
+      "slug": "newport-county",
+      "nomesBase": [
+        "Newport County"
+      ],
+      "cidade": "Newport",
+      "estadio": "Rodney Parade",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rodney%20Parade%20Newport%202020.jpg?width=800",
+      "lat": 51.5883,
+      "lng": -2.9878,
+      "_wikidata": "Q18523",
+      "_wikidataLabel": "Newport County A.F.C."
+    },
+    {
+      "slug": "northampton-town",
+      "nomesBase": [
+        "Northampton"
+      ],
+      "cidade": "Northampton",
+      "estadio": "Sixfields Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sixfieldsstadium.JPG?width=800",
+      "lat": 52.2352,
+      "lng": -0.9335,
+      "_wikidata": "Q48945",
+      "_wikidataLabel": "Northampton Town F.C."
+    },
+    {
+      "slug": "oldham-athletic",
+      "nomesBase": [
+        "Oldham Athletic"
+      ],
+      "cidade": "Oldham",
+      "estadio": "Boundary Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Boundary%20Park.jpg?width=800",
+      "lat": 53.5553,
+      "lng": -2.1286,
+      "_wikidata": "Q19601",
+      "_wikidataLabel": "Oldham Athletic A.F.C."
+    },
+    {
+      "slug": "port-vale",
+      "nomesBase": [
+        "Port Vale"
+      ],
+      "cidade": "Stoke-on-Trent",
+      "estadio": "Vale Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vale%20Park.jpg?width=800",
+      "lat": 53.0497,
+      "lng": -2.1925,
+      "_wikidata": "Q48948",
+      "_wikidataLabel": "Port Vale F.C."
+    },
+    {
+      "slug": "rochdale",
+      "nomesBase": [
+        "Rochdale"
+      ],
+      "cidade": "Rochdale",
+      "estadio": "Crown Oil Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Spotland2.png?width=800",
+      "lat": 53.6208,
+      "lng": -2.18,
+      "_wikidata": "Q48949",
+      "_wikidataLabel": "Rochdale A.F.C."
+    },
+    {
+      "slug": "rotherham-united",
+      "nomesBase": [
+        "Rotherham Utd"
+      ],
+      "cidade": "Rotherham",
+      "estadio": "New York Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/New%20York%20Stadium%20%2823883331196%29%20%282%29.jpg?width=800",
+      "lat": 53.4279,
+      "lng": -1.362,
+      "_wikidata": "Q48950",
+      "_wikidataLabel": "Rotherham United F.C."
+    },
+    {
+      "slug": "salford-city",
+      "nomesBase": [
+        "Salford City"
+      ],
+      "cidade": "Salford",
+      "estadio": "Moor Lane",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Moor%20Lane.jpg?width=800",
+      "lat": 53.5136,
+      "lng": -2.2768,
+      "_wikidata": "Q18460",
+      "_wikidataLabel": "Salford City F.C."
+    },
+    {
+      "slug": "shrewsbury-town",
+      "nomesBase": [
+        "Shrewsbury"
+      ],
+      "cidade": "Shrewsbury",
+      "estadio": "Croud Meadow",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/STFC%20-%20New%20Meadow%20%28Aerial%29.jpg?width=800",
+      "lat": 52.6886,
+      "lng": -2.7493,
+      "_wikidata": "Q19626",
+      "_wikidataLabel": "Shrewsbury Town F.C."
+    },
+    {
+      "slug": "swindon-town",
+      "nomesBase": [
+        "Swindon Town"
+      ],
+      "cidade": "Swindon",
+      "estadio": "County Ground",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kingswoodstand.JPG?width=800",
+      "lat": 51.5644,
+      "lng": -1.7706,
+      "_wikidata": "Q19634",
+      "_wikidataLabel": "Swindon Town F.C."
+    },
+    {
+      "slug": "tranmere-rovers",
+      "nomesBase": [
+        "Tranmere Rovers"
+      ],
+      "cidade": "Birkenhead",
+      "estadio": "Prenton Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kop%20and%20mainstand.jpg?width=800",
+      "lat": 53.3737,
+      "lng": -3.0325,
+      "_wikidata": "Q19637",
+      "_wikidataLabel": "Tranmere Rovers F.C."
+    },
+    {
+      "slug": "walsall",
+      "nomesBase": [
+        "Walsall"
+      ],
+      "cidade": "Walsall",
+      "estadio": "Poundland Bescot Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/WalsallF2Go.jpg?width=800",
+      "lat": 52.5654,
+      "lng": -1.9907,
+      "_wikidata": "Q19644",
+      "_wikidataLabel": "Walsall F.C."
+    },
+    {
+      "slug": "york-city",
+      "nomesBase": [
+        "York City"
+      ],
+      "cidade": "York",
+      "estadio": "York Community Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/LNER%20Community%20Stadium.jpg?width=800",
+      "lat": 53.9843,
+      "lng": -1.0529,
+      "_wikidata": "Q48954",
+      "_wikidataLabel": "York City F.C."
+    }
+  ]
+}

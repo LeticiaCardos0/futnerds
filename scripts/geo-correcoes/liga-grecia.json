@@ -1,0 +1,24 @@
+{
+  "ligaId": "liga-grecia",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Liga incompleta: a base só tem os quatro clubes licenciados no EA FC."
+  ],
+  "clubes": {
+    "AEK Athens": {
+      "_nota": "P159 devolve Nea Filadelfeia, o subúrbio do estádio; o rótulo fica Atenas.",
+      "cidade": "Atenas",
+      "cidadeWikidata": "Q1524"
+    },
+    "Panathinaikos": {
+      "clubeWikidata": "Q4122219",
+      "cidade": "Atenas",
+      "cidadeWikidata": "Q1524",
+      "_nota": "Dois estádios no Wikidata; o clube joga no Apostolos Nikolaidis (Leoforos).",
+      "estadioWikidata": "Q620473"
+    }
+  }
+}

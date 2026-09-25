@@ -1,0 +1,39 @@
+{
+  "ligaId": "superliga-dinamarca",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Na base esta liga (\"Metropolitan Division\") está cadastrada como dos Estados Unidos; os clubes são dinamarqueses."
+  ],
+  "clubes": {
+    "AGF": {
+      "_nota": "Aarhus Gymnastikforening.",
+      "clubeWikidata": "Q301431"
+    },
+    "Brøndby IF": {
+      "_nota": "P159 devolve o município; o estádio fica em Brøndbyvester.",
+      "cidade": "Brøndby",
+      "cidadeWikidata": "Q3359606"
+    },
+    "F.C. København": {
+      "clubeWikidata": "Q188430",
+      "cidade": "Copenhague",
+      "cidadeWikidata": "Q1748"
+    },
+    "FC Nordsjælland": {
+      "_nota": "P159 devolve o município; o Right to Dream Park fica em Farum.",
+      "cidade": "Farum",
+      "cidadeWikidata": "Q3554742"
+    },
+    "Lyngby BK": {
+      "clubeWikidata": "Q635654",
+      "_nota": "P159 devolve o município.",
+      "cidade": "Kongens Lyngby"
+    },
+    "Odense BK": {
+      "clubeWikidata": "Q211912"
+    }
+  }
+}

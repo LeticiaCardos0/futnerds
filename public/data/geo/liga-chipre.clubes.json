@@ -1,0 +1,41 @@
+{
+  "ligaId": "liga-chipre",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Nicósia",
+      "lat": 35.1725,
+      "lng": 33.365,
+      "_wikidata": "Q3856",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ac-omonia",
+      "nomesBase": [
+        "Omonia FC"
+      ],
+      "cidade": "Nicósia",
+      "estadio": "GSP Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/GSP%20Stadium%20in%20Nicosia%20%28Omonoia%20-%20Manchester%20City%29.jpg?width=800",
+      "lat": 35.1145,
+      "lng": 33.3629,
+      "_wikidata": "Q240783",
+      "_wikidataLabel": "AC Omonia"
+    },
+    {
+      "slug": "apoel",
+      "nomesBase": [
+        "APOEL FC"
+      ],
+      "cidade": "Nicósia",
+      "estadio": "GSP Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/GSP%20Stadium%20in%20Nicosia%20%28Omonoia%20-%20Manchester%20City%29.jpg?width=800",
+      "lat": 35.1145,
+      "lng": 33.3629,
+      "_wikidata": "Q131378",
+      "_wikidataLabel": "APOEL F.C."
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "ligaId": "super-lig",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Bursa",
+      "lat": 40.2019,
+      "lng": 29.0681,
+      "rank": 1
+    },
+    {
+      "nome": "Adana",
+      "lat": 36.9969,
+      "lng": 35.3181,
+      "rank": 1
+    },
+    {
+      "nome": "Tarsus",
+      "lat": 36.9204,
+      "lng": 34.88,
+      "rank": 1
+    },
+    {
+      "nome": "Antalya",
+      "lat": 36.8919,
+      "lng": 30.698,
+      "rank": 1
+    },
+    {
+      "nome": "Icel",
+      "lat": 36.8,
+      "lng": 34.62,
+      "rank": 1
+    },
+    {
+      "nome": "Kayseri",
+      "lat": 38.735,
+      "lng": 35.49,
+      "rank": 1
+    },
+    {
+      "nome": "Eskişehir",
+      "lat": 39.795,
+      "lng": 30.53,
+      "rank": 1
+    },
+    {
+      "nome": "Malatya",
+      "lat": 38.3704,
+      "lng": 38.3,
+      "rank": 1
+    },
+    {
+      "nome": "Şanlıurfa",
+      "lat": 37.17,
+      "lng": 38.795,
+      "rank": 1
+    },
+    {
+      "nome": "Kahramanmaraş",
+      "lat": 37.61,
+      "lng": 36.945,
+      "rank": 1
+    },
+    {
+      "nome": "Denizli",
+      "lat": 37.7704,
+      "lng": 29.08,
+      "rank": 1
+    },
+    {
+      "nome": "Van",
+      "lat": 38.4954,
+      "lng": 43.4,
+      "rank": 1
+    },
+    {
+      "nome": "Batman",
+      "lat": 37.8904,
+      "lng": 41.14,
+      "rank": 1
+    },
+    {
+      "nome": "İskenderun",
+      "lat": 36.5804,
+      "lng": 36.17,
+      "rank": 1
+    },
+    {
+      "nome": "Sakarya",
+      "lat": 40.7667,
+      "lng": 30.4,
+      "rank": 1
+    },
+    {
+      "nome": "Elâzığ",
+      "lat": 38.68,
+      "lng": 39.23,
+      "rank": 2
+    },
+    {
+      "nome": "Sivas",
+      "lat": 39.7454,
+      "lng": 37.035,
+      "rank": 2
+    },
+    {
+      "nome": "Balıkesir",
+      "lat": 39.6504,
+      "lng": 27.89,
+      "rank": 2
+    },
+    {
+      "nome": "Manisa",
+      "lat": 38.6304,
+      "lng": 27.44,
+      "rank": 2
+    },
+    {
+      "nome": "Adıyaman",
+      "lat": 37.7704,
+      "lng": 38.2799,
+      "rank": 2
+    },
+    {
+      "nome": "Kırıkkale",
+      "lat": 39.8504,
+      "lng": 33.53,
+      "rank": 2
+    },
+    {
+      "nome": "Aydın",
+      "lat": 37.85,
+      "lng": 27.85,
+      "rank": 2
+    },
+    {
+      "nome": "Kütahya",
+      "lat": 39.42,
+      "lng": 29.93,
+      "rank": 2
+    },
+    {
+      "nome": "Isparta",
+      "lat": 37.77,
+      "lng": 30.53,
+      "rank": 2
+    },
+    {
+      "nome": "Afyon",
+      "lat": 38.7504,
+      "lng": 30.55,
+      "rank": 2
+    },
+    {
+      "nome": "Zonguldak",
+      "lat": 41.4304,
+      "lng": 31.78,
+      "rank": 2
+    },
+    {
+      "nome": "Ordu",
+      "lat": 41.0004,
+      "lng": 37.8699,
+      "rank": 2
+    },
+    {
+      "nome": "Antakya",
+      "lat": 36.2333,
+      "lng": 36.1167,
+      "rank": 2
+    },
+    {
+      "nome": "Uşak",
+      "lat": 38.6804,
+      "lng": 29.42,
+      "rank": 2
+    },
+    {
+      "nome": "Nusaybin",
+      "lat": 37.075,
+      "lng": 41.2184,
+      "rank": 2
+    },
+    {
+      "nome": "Tokat",
+      "lat": 40.306,
+      "lng": 36.563,
+      "rank": 2
+    },
+    {
+      "nome": "Erzincan",
+      "lat": 39.7527,
+      "lng": 39.4928,
+      "rank": 2
+    },
+    {
+      "nome": "Karabük",
+      "lat": 41.2,
+      "lng": 32.6,
+      "rank": 2
+    },
+    {
+      "nome": "Edirne",
+      "lat": 41.6704,
+      "lng": 26.57,
+      "rank": 2
+    },
+    {
+      "nome": "Tekirdağ",
+      "lat": 40.9909,
+      "lng": 27.51,
+      "rank": 2
+    },
+    {
+      "nome": "Karaman",
+      "lat": 37.1815,
+      "lng": 33.215,
+      "rank": 2
+    },
+    {
+      "nome": "Siirt",
+      "lat": 37.944,
+      "lng": 41.933,
+      "rank": 2
+    },
+    {
+      "nome": "Giresun",
+      "lat": 40.913,
+      "lng": 38.39,
+      "rank": 2
+    },
+    {
+      "nome": "Bafra",
+      "lat": 41.5682,
+      "lng": 35.9069,
+      "rank": 2
+    },
+    {
+      "nome": "Bolu",
+      "lat": 40.7363,
+      "lng": 31.6061,
+      "rank": 2
+    },
+    {
+      "nome": "Kırşehir",
+      "lat": 39.142,
+      "lng": 34.171,
+      "rank": 2
+    },
+    {
+      "nome": "Samandagi",
+      "lat": 36.1171,
+      "lng": 35.9333,
+      "rank": 2
+    },
+    {
+      "nome": "Polatlı",
+      "lat": 39.5842,
+      "lng": 32.1472,
+      "rank": 2
+    },
+    {
+      "nome": "Ereğli",
+      "lat": 37.5063,
+      "lng": 34.0517,
+      "rank": 2
+    },
+    {
+      "nome": "Niğde",
+      "lat": 37.976,
+      "lng": 34.694,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Atenas",
+      "lat": 37.9853,
+      "lng": 23.7314,
+      "rank": 1
+    },
+    {
+      "nome": "Aleppo",
+      "lat": 36.2319,
+      "lng": 37.1681,
+      "rank": 1
+    },
+    {
+      "nome": "Tabriz",
+      "lat": 38.0882,
+      "lng": 46.2993,
+      "rank": 1
+    },
+    {
+      "nome": "Mosul",
+      "lat": 36.3469,
+      "lng": 43.1431,
+      "rank": 1
+    },
+    {
+      "nome": "Sófia",
+      "lat": 42.6853,
+      "lng": 23.3147,
+      "rank": 1
+    },
+    {
+      "nome": "Erevan",
+      "lat": 40.1831,
+      "lng": 44.5116,
+      "rank": 1
+    },
+    {
+      "nome": "Tiblíssi",
+      "lat": 41.727,
+      "lng": 44.7888,
+      "rank": 1
+    },
+    {
+      "nome": "Homs",
+      "lat": 34.7319,
+      "lng": 36.7181,
+      "rank": 1
+    },
+    {
+      "nome": "Duhok",
+      "lat": 36.8667,
+      "lng": 43,
+      "rank": 2
+    },
+    {
+      "nome": "Irbil",
+      "lat": 36.181,
+      "lng": 44.0067,
+      "rank": 2
+    },
+    {
+      "nome": "Kermanshah",
+      "lat": 34.382,
+      "lng": 47.0581,
+      "rank": 2
+    },
+    {
+      "nome": "Thessaloniki",
+      "lat": 40.6981,
+      "lng": 22.8831,
+      "rank": 2
+    },
+    {
+      "nome": "As Sulaymaniyah",
+      "lat": 35.5613,
+      "lng": 45.4309,
+      "rank": 2
+    },
+    {
+      "nome": "Kirkuk",
+      "lat": 35.4722,
+      "lng": 44.3923,
+      "rank": 2
+    },
+    {
+      "nome": "Urmia",
+      "lat": 37.53,
+      "lng": 45,
+      "rank": 2
+    },
+    {
+      "nome": "Makhachkala",
+      "lat": 42.98,
+      "lng": 47.5,
+      "rank": 2
+    },
+    {
+      "nome": "Latakia",
+      "lat": 35.54,
+      "lng": 35.78,
+      "rank": 2
+    },
+    {
+      "nome": "Ṭarābulus",
+      "lat": 34.422,
+      "lng": 35.868,
+      "rank": 2
+    },
+    {
+      "nome": "Hamadan",
+      "lat": 34.796,
+      "lng": 48.515,
+      "rank": 2
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 2
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 2
+    },
+    {
+      "nome": "Hamah",
+      "lat": 35.1503,
+      "lng": 36.73,
+      "rank": 2
+    },
+    {
+      "nome": "Ardabil",
+      "lat": 38.25,
+      "lng": 48.3,
+      "rank": 2
+    },
+    {
+      "nome": "Vladikavkaz",
+      "lat": 43.0504,
+      "lng": 44.67,
+      "rank": 2
+    },
+    {
+      "nome": "Zanjan",
+      "lat": 36.67,
+      "lng": 48.5,
+      "rank": 2
+    }
+  ]
+}

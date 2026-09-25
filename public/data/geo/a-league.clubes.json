@@ -1,0 +1,237 @@
+{
+  "ligaId": "a-league",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Adelaide",
+      "lat": -34.9275,
+      "lng": 138.6,
+      "_wikidata": "Q5112",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Auckland",
+      "lat": -36.8492,
+      "lng": 174.7653,
+      "_wikidata": "Q37100"
+    },
+    {
+      "nome": "Brisbane",
+      "lat": -27.4678,
+      "lng": 153.0278,
+      "_wikidata": "Q34932"
+    },
+    {
+      "nome": "Campbelltown",
+      "lat": -34.0733,
+      "lng": 150.8261,
+      "_wikidata": "Q954186",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Gosford",
+      "lat": -33.4233,
+      "lng": 151.3414,
+      "_wikidata": "Q605113"
+    },
+    {
+      "nome": "Melbourne",
+      "lat": -37.8142,
+      "lng": 144.9631,
+      "_wikidata": "Q3141",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Newcastle",
+      "lat": -32.9167,
+      "lng": 151.75,
+      "_wikidata": "Q57278",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Parramatta",
+      "lat": -33.8147,
+      "lng": 151.0017,
+      "_wikidata": "Q21319"
+    },
+    {
+      "nome": "Perth",
+      "lat": -31.9558,
+      "lng": 115.8597,
+      "_wikidata": "Q3183",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Sydney",
+      "lat": -33.8678,
+      "lng": 151.21,
+      "_wikidata": "Q3130",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Wellington",
+      "lat": -41.2889,
+      "lng": 174.7772,
+      "_wikidata": "Q23661",
+      "_homonimos": 3
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "adelaide-united-football-club",
+      "nomesBase": [
+        "Adelaide United"
+      ],
+      "cidade": "Adelaide",
+      "estadio": "Hindmarsh Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Adelaide%20United%20FC%20vs.%20Sydney%20FC%20at%20Hindmarsh%20Stadium%20-%20April%202023.JPG?width=800",
+      "lat": -34.9075,
+      "lng": 138.5689,
+      "_wikidata": "Q354059",
+      "_wikidataLabel": "Adelaide United Football Club"
+    },
+    {
+      "slug": "auckland",
+      "nomesBase": [
+        "Auckland FC"
+      ],
+      "cidade": "Auckland",
+      "estadio": "Mount Smart Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/EricssonStadium00.jpg?width=800",
+      "lat": -36.9183,
+      "lng": 174.8125,
+      "_wikidata": "Q123717355",
+      "_wikidataLabel": "Auckland FC"
+    },
+    {
+      "slug": "brisbane-roar",
+      "nomesBase": [
+        "Brisbane Roar"
+      ],
+      "cidade": "Brisbane",
+      "estadio": "Lang Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Suncorp%20Stadium%2022%20April%202012.jpg?width=800",
+      "lat": -27.4647,
+      "lng": 153.0094,
+      "_wikidata": "Q839997",
+      "_wikidataLabel": "Brisbane Roar FC"
+    },
+    {
+      "slug": "central-coast-mariners",
+      "nomesBase": [
+        "Central Coast"
+      ],
+      "cidade": "Gosford",
+      "estadio": "Central Coast Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bluetongue%20CC%20Stadium.jpg?width=800",
+      "lat": -33.4283,
+      "lng": 151.3381,
+      "_wikidata": "Q762294",
+      "_wikidataLabel": "Central Coast Mariners FC"
+    },
+    {
+      "slug": "macarthur",
+      "nomesBase": [
+        "Macarthur FC"
+      ],
+      "cidade": "Campbelltown",
+      "estadio": "Campbelltown Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Campbelltown%20Sports%20Stadium.jpg?width=800",
+      "lat": -34.0503,
+      "lng": 150.8336,
+      "_wikidata": "Q59773416",
+      "_wikidataLabel": "Macarthur FC"
+    },
+    {
+      "slug": "melbourne-city",
+      "nomesBase": [
+        "Melbourne City"
+      ],
+      "cidade": "Melbourne",
+      "estadio": "Melbourne Rectangular Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2015%20A-League%20Grand%20Final%20AAMI%20Park%20panorama.jpg?width=800",
+      "lat": -37.8253,
+      "lng": 144.9839,
+      "_wikidata": "Q748725",
+      "_wikidataLabel": "Melbourne City FC"
+    },
+    {
+      "slug": "melbourne-victory",
+      "nomesBase": [
+        "Melb. Victory"
+      ],
+      "cidade": "Melbourne",
+      "estadio": "Melbourne Rectangular Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2015%20A-League%20Grand%20Final%20AAMI%20Park%20panorama.jpg?width=800",
+      "lat": -37.8253,
+      "lng": 144.9839,
+      "_wikidata": "Q316789",
+      "_wikidataLabel": "Melbourne Victory FC"
+    },
+    {
+      "slug": "newcastle-jets",
+      "nomesBase": [
+        "Newcastle Jets"
+      ],
+      "cidade": "Newcastle",
+      "estadio": "McDonald Jones Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ausgrid%20Stadium.jpg?width=800",
+      "lat": -32.9189,
+      "lng": 151.7267,
+      "_wikidata": "Q15634868",
+      "_wikidataLabel": "Newcastle Jets FC"
+    },
+    {
+      "slug": "perth-glory",
+      "nomesBase": [
+        "Perth Glory"
+      ],
+      "cidade": "Perth",
+      "estadio": "Perth Rectangular Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Perth%20Oval%20Panorama%20January%202017.jpg?width=800",
+      "lat": -31.9458,
+      "lng": 115.8699,
+      "_wikidata": "Q852033",
+      "_wikidataLabel": "Perth Glory FC"
+    },
+    {
+      "slug": "sydney",
+      "nomesBase": [
+        "Sydney FC"
+      ],
+      "cidade": "Sydney",
+      "estadio": "Allianz Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/SydneyFootballStadium%20Aug2022%20Pre-open.jpg?width=800",
+      "lat": -33.8892,
+      "lng": 151.2253,
+      "_wikidata": "Q330143",
+      "_wikidataLabel": "Sydney FC"
+    },
+    {
+      "slug": "wellington-phoenix",
+      "nomesBase": [
+        "Well. Phoenix"
+      ],
+      "cidade": "Wellington",
+      "estadio": "Wellington Regional Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wellington%20Westpac%20Stadium%20in%202010.jpg?width=800",
+      "lat": -41.2731,
+      "lng": 174.7858,
+      "_wikidata": "Q815890",
+      "_wikidataLabel": "Wellington Phoenix FC"
+    },
+    {
+      "slug": "western-sydney-wanderers",
+      "nomesBase": [
+        "WS Wanderers"
+      ],
+      "cidade": "Parramatta",
+      "estadio": "Sydney Showground Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sydney%20Showground%20Stadium%20panorama%2C%20March%202018.jpg?width=800",
+      "lat": -33.8431,
+      "lng": 151.0678,
+      "_wikidata": "Q999035",
+      "_wikidataLabel": "Western Sydney Wanderers FC"
+    }
+  ]
+}

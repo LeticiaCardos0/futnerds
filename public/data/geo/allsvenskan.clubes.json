@@ -1,0 +1,283 @@
+{
+  "ligaId": "allsvenskan",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Borås",
+      "lat": 57.7167,
+      "lng": 12.9333,
+      "_wikidata": "Q894327",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Degerfors",
+      "lat": 59.2333,
+      "lng": 14.4333,
+      "_wikidata": "Q509469",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Estocolmo",
+      "lat": 59.3294,
+      "lng": 18.0686,
+      "_wikidata": "Q1754"
+    },
+    {
+      "nome": "Gotemburgo",
+      "lat": 57.7075,
+      "lng": 11.9675,
+      "_wikidata": "Q25287"
+    },
+    {
+      "nome": "Halmstad",
+      "lat": 56.6667,
+      "lng": 12.85,
+      "_wikidata": "Q504692",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kalmar",
+      "lat": 56.6643,
+      "lng": 16.3656,
+      "_wikidata": "Q26345"
+    },
+    {
+      "nome": "Malmö",
+      "lat": 55.565,
+      "lng": 13.0186,
+      "_wikidata": "Q503361",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sölvesborg",
+      "lat": 56.05,
+      "lng": 14.5833,
+      "_wikidata": "Q515409",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Uppsala",
+      "lat": 59.8667,
+      "lng": 17.6333,
+      "_wikidata": "Q59091",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Västerås",
+      "lat": 59.6167,
+      "lng": 16.5333,
+      "_wikidata": "Q34550",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aik-fotboll",
+      "nomesBase": [
+        "AIK"
+      ],
+      "cidade": "Estocolmo",
+      "estadio": "Strawberry Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Friends%20Arena%20%287751335978%29.jpg?width=800",
+      "lat": 59.3725,
+      "lng": 18,
+      "_wikidata": "Q221602",
+      "_wikidataLabel": "AIK Fotboll"
+    },
+    {
+      "slug": "bk-hacken",
+      "nomesBase": [
+        "BK Häcken"
+      ],
+      "cidade": "Gotemburgo",
+      "estadio": "Rambergsvallen",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rambergsvallen%202012-08-31%20c.jpg?width=800",
+      "lat": 57.7189,
+      "lng": 11.9308,
+      "_wikidata": "Q639723",
+      "_wikidataLabel": "BK Häcken"
+    },
+    {
+      "slug": "degerfors-if",
+      "nomesBase": [
+        "Degerfors IF"
+      ],
+      "cidade": "Degerfors",
+      "estadio": "Stora Valla",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stora%20Valla%20sommaren%202005.JPG?width=800",
+      "lat": 59.2383,
+      "lng": 14.4431,
+      "_wikidata": "Q1140767",
+      "_wikidataLabel": "Degerfors IF"
+    },
+    {
+      "slug": "djurgardens-if-fotboll",
+      "nomesBase": [
+        "Djurgårdens IF"
+      ],
+      "cidade": "Estocolmo",
+      "estadio": "3Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tele2%20Arena%20September%202014%2014%20%28cropped%202%29.jpg?width=800",
+      "lat": 59.2914,
+      "lng": 18.0853,
+      "_wikidata": "Q622430",
+      "_wikidataLabel": "Djurgårdens IF Fotboll"
+    },
+    {
+      "slug": "gais",
+      "nomesBase": [
+        "GAIS"
+      ],
+      "cidade": "Gotemburgo",
+      "estadio": "Gamla Ullevi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20photo%20of%20Gamla%20Ullevi%20Gothenburg%202013-10-27.jpg?width=800",
+      "lat": 57.7061,
+      "lng": 11.9806,
+      "_wikidata": "Q391789",
+      "_wikidataLabel": "GAIS"
+    },
+    {
+      "slug": "halmstads-bk",
+      "nomesBase": [
+        "Halmstads BK"
+      ],
+      "cidade": "Halmstad",
+      "estadio": "Örjans Vall",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%96rjans%20Vall%20Halmstads%20BK%202023.jpg?width=800",
+      "lat": 56.6842,
+      "lng": 12.8664,
+      "_wikidata": "Q113517208",
+      "_wikidataLabel": "Halmstads BK"
+    },
+    {
+      "slug": "hammarby-fotboll",
+      "nomesBase": [
+        "Hammarby IF"
+      ],
+      "cidade": "Estocolmo",
+      "estadio": "3Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tele2%20Arena%20September%202014%2014%20%28cropped%202%29.jpg?width=800",
+      "lat": 59.2914,
+      "lng": 18.0853,
+      "_wikidata": "Q460724",
+      "_wikidataLabel": "Hammarby Fotboll"
+    },
+    {
+      "slug": "if-brommapojkarna",
+      "nomesBase": [
+        "Brommapojkarna"
+      ],
+      "cidade": "Estocolmo",
+      "estadio": "Grimsta IP",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Grimsta%20IP%2C%20BP%27s%20klubbhus.jpg?width=800",
+      "lat": 59.3622,
+      "lng": 17.8517,
+      "_wikidata": "Q754339",
+      "_wikidataLabel": "IF Brommapojkarna"
+    },
+    {
+      "slug": "if-elfsborg",
+      "nomesBase": [
+        "IF Elfsborg"
+      ],
+      "cidade": "Borås",
+      "estadio": "Borås Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Boras%20arena%2017april%202005.jpg?width=800",
+      "lat": 57.7346,
+      "lng": 12.9343,
+      "_wikidata": "Q211753",
+      "_wikidataLabel": "IF Elfsborg"
+    },
+    {
+      "slug": "ifk-goteborg",
+      "nomesBase": [
+        "IFK Göteborg"
+      ],
+      "cidade": "Gotemburgo",
+      "estadio": "Gamla Ullevi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20photo%20of%20Gamla%20Ullevi%20Gothenburg%202013-10-27.jpg?width=800",
+      "lat": 57.7061,
+      "lng": 11.9806,
+      "_wikidata": "Q201567",
+      "_wikidataLabel": "IFK Göteborg"
+    },
+    {
+      "slug": "ik-sirius-fk",
+      "nomesBase": [
+        "IK Sirius"
+      ],
+      "cidade": "Uppsala",
+      "estadio": "Studenternas IP",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Studenternas%20IP%20%282019-07-27%29.jpg?width=800",
+      "lat": 59.85,
+      "lng": 17.6444,
+      "_wikidata": "Q1471336",
+      "_wikidataLabel": "IK Sirius FK"
+    },
+    {
+      "slug": "kalmar-ff",
+      "nomesBase": [
+        "Kalmar FF"
+      ],
+      "cidade": "Kalmar",
+      "estadio": "Guldfågeln Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Goldenbird%20arena1.png?width=800",
+      "lat": 56.6907,
+      "lng": 16.3152,
+      "_wikidata": "Q644157",
+      "_wikidataLabel": "Kalmar FF"
+    },
+    {
+      "slug": "malmo-ff",
+      "nomesBase": [
+        "Malmö FF"
+      ],
+      "cidade": "Malmö",
+      "estadio": "Eleda Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sweden%20malm%C3%B6%20eleda%20stadion%20nya%20stadion.jpg?width=800",
+      "lat": 55.5836,
+      "lng": 12.9878,
+      "_wikidata": "Q204881",
+      "_wikidataLabel": "Malmö FF"
+    },
+    {
+      "slug": "mjallby-aif",
+      "nomesBase": [
+        "Mjällby AIF"
+      ],
+      "cidade": "Sölvesborg",
+      "estadio": "Strandvallen",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Strandvallen%20entre.JPG?width=800",
+      "lat": 56.0125,
+      "lng": 14.7167,
+      "_wikidata": "Q749138",
+      "_wikidataLabel": "Mjällby AIF"
+    },
+    {
+      "slug": "orgryte-is-fotboll",
+      "nomesBase": [
+        "Örgryte IS"
+      ],
+      "cidade": "Gotemburgo",
+      "estadio": "Gamla Ullevi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20photo%20of%20Gamla%20Ullevi%20Gothenburg%202013-10-27.jpg?width=800",
+      "lat": 57.7061,
+      "lng": 11.9806,
+      "_wikidata": "Q11903335",
+      "_wikidataLabel": "Örgryte IS Fotboll"
+    },
+    {
+      "slug": "vasteras-sk-fotboll",
+      "nomesBase": [
+        "Västerås SK"
+      ],
+      "cidade": "Västerås",
+      "estadio": "Hitachi Energy Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hitachi%20Energy%20Arena%20norra.jpg?width=800",
+      "lat": 59.6275,
+      "lng": 16.5306,
+      "_wikidata": "Q1680249",
+      "_wikidataLabel": "Västerås SK Fotboll"
+    }
+  ]
+}

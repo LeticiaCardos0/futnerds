@@ -1,0 +1,428 @@
+{
+  "ligaId": "superliga-china",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Guangzhou",
+      "lat": 23.1469,
+      "lng": 113.3231,
+      "rank": 1
+    },
+    {
+      "nome": "Shenzhen",
+      "lat": 22.5543,
+      "lng": 114.1202,
+      "rank": 1
+    },
+    {
+      "nome": "Dongguan",
+      "lat": 23.0508,
+      "lng": 113.7428,
+      "rank": 1
+    },
+    {
+      "nome": "Xian",
+      "lat": 34.277,
+      "lng": 108.8931,
+      "rank": 1
+    },
+    {
+      "nome": "Hechi",
+      "lat": 24.6953,
+      "lng": 108.083,
+      "rank": 1
+    },
+    {
+      "nome": "Nanjing",
+      "lat": 32.052,
+      "lng": 118.778,
+      "rank": 1
+    },
+    {
+      "nome": "Guiyang",
+      "lat": 26.582,
+      "lng": 106.7181,
+      "rank": 1
+    },
+    {
+      "nome": "Harbin",
+      "lat": 45.7519,
+      "lng": 126.648,
+      "rank": 1
+    },
+    {
+      "nome": "Ürümqi",
+      "lat": 43.807,
+      "lng": 87.5731,
+      "rank": 1
+    },
+    {
+      "nome": "Zhangzhou",
+      "lat": 24.5204,
+      "lng": 117.67,
+      "rank": 1
+    },
+    {
+      "nome": "Changchun",
+      "lat": 43.867,
+      "lng": 125.338,
+      "rank": 1
+    },
+    {
+      "nome": "Zibo",
+      "lat": 36.8019,
+      "lng": 118.048,
+      "rank": 1
+    },
+    {
+      "nome": "Kunming",
+      "lat": 25.0719,
+      "lng": 102.678,
+      "rank": 1
+    },
+    {
+      "nome": "Taiyuan",
+      "lat": 37.877,
+      "lng": 112.5431,
+      "rank": 1
+    },
+    {
+      "nome": "Fuzhou",
+      "lat": 26.0819,
+      "lng": 119.2981,
+      "rank": 1
+    },
+    {
+      "nome": "Changsha",
+      "lat": 28.2019,
+      "lng": 112.968,
+      "rank": 2
+    },
+    {
+      "nome": "Xiangtan",
+      "lat": 27.8504,
+      "lng": 112.9,
+      "rank": 2
+    },
+    {
+      "nome": "Lanzhou",
+      "lat": 36.058,
+      "lng": 103.7901,
+      "rank": 2
+    },
+    {
+      "nome": "Xiamen",
+      "lat": 24.4519,
+      "lng": 118.0781,
+      "rank": 2
+    },
+    {
+      "nome": "Jinxi",
+      "lat": 40.7523,
+      "lng": 120.828,
+      "rank": 2
+    },
+    {
+      "nome": "Shijiazhuang",
+      "lat": 38.052,
+      "lng": 114.478,
+      "rank": 2
+    },
+    {
+      "nome": "Jilin",
+      "lat": 43.8519,
+      "lng": 126.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Wenzhou",
+      "lat": 28.0219,
+      "lng": 120.6481,
+      "rank": 2
+    },
+    {
+      "nome": "Nanchang",
+      "lat": 28.6819,
+      "lng": 115.8781,
+      "rank": 2
+    },
+    {
+      "nome": "Nanchong",
+      "lat": 30.7824,
+      "lng": 106.1281,
+      "rank": 2
+    },
+    {
+      "nome": "Nanning",
+      "lat": 22.8219,
+      "lng": 108.3181,
+      "rank": 2
+    },
+    {
+      "nome": "Zaozhuang",
+      "lat": 34.8819,
+      "lng": 117.5681,
+      "rank": 2
+    },
+    {
+      "nome": "Yantai",
+      "lat": 37.5324,
+      "lng": 121.3981,
+      "rank": 2
+    },
+    {
+      "nome": "Xuzhou",
+      "lat": 34.282,
+      "lng": 117.1781,
+      "rank": 2
+    },
+    {
+      "nome": "Linyi",
+      "lat": 35.0819,
+      "lng": 118.328,
+      "rank": 2
+    },
+    {
+      "nome": "Haikou",
+      "lat": 20.05,
+      "lng": 110.32,
+      "rank": 2
+    },
+    {
+      "nome": "Baotou",
+      "lat": 40.6542,
+      "lng": 109.8201,
+      "rank": 2
+    },
+    {
+      "nome": "Hefei",
+      "lat": 31.852,
+      "lng": 117.2781,
+      "rank": 2
+    },
+    {
+      "nome": "Suzhou",
+      "lat": 33.6381,
+      "lng": 116.9769,
+      "rank": 2
+    },
+    {
+      "nome": "Nanyang",
+      "lat": 33.0023,
+      "lng": 112.5281,
+      "rank": 2
+    },
+    {
+      "nome": "Ningbo",
+      "lat": 29.8819,
+      "lng": 121.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Tangshan",
+      "lat": 39.6263,
+      "lng": 118.1924,
+      "rank": 2
+    },
+    {
+      "nome": "Datong",
+      "lat": 40.082,
+      "lng": 113.2981,
+      "rank": 2
+    },
+    {
+      "nome": "Shuyang",
+      "lat": 34.1299,
+      "lng": 118.7734,
+      "rank": 2
+    },
+    {
+      "nome": "Shangqiu",
+      "lat": 34.4524,
+      "lng": 115.6481,
+      "rank": 2
+    },
+    {
+      "nome": "Wuxi",
+      "lat": 31.5819,
+      "lng": 120.298,
+      "rank": 2
+    },
+    {
+      "nome": "Hohhot",
+      "lat": 40.8219,
+      "lng": 111.6581,
+      "rank": 2
+    },
+    {
+      "nome": "Luoyang",
+      "lat": 34.6819,
+      "lng": 112.4681,
+      "rank": 2
+    },
+    {
+      "nome": "Jianmen",
+      "lat": 30.652,
+      "lng": 113.1581,
+      "rank": 2
+    },
+    {
+      "nome": "Daqing",
+      "lat": 46.5819,
+      "lng": 124.9981,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Tóquio",
+      "lat": 35.687,
+      "lng": 139.7495,
+      "rank": 1
+    },
+    {
+      "nome": "Mumbai",
+      "lat": 19.0189,
+      "lng": 72.855,
+      "rank": 1
+    },
+    {
+      "nome": "Delhi",
+      "lat": 28.6719,
+      "lng": 77.2281,
+      "rank": 1
+    },
+    {
+      "nome": "Kolkata",
+      "lat": 22.4969,
+      "lng": 88.3227,
+      "rank": 1
+    },
+    {
+      "nome": "Daca",
+      "lat": 23.725,
+      "lng": 90.4066,
+      "rank": 1
+    },
+    {
+      "nome": "Karachi",
+      "lat": 24.8719,
+      "lng": 66.9881,
+      "rank": 1
+    },
+    {
+      "nome": "Ōsaka",
+      "lat": 34.752,
+      "lng": 135.4582,
+      "rank": 1
+    },
+    {
+      "nome": "Manila",
+      "lat": 14.6061,
+      "lng": 120.9803,
+      "rank": 1
+    },
+    {
+      "nome": "Seul",
+      "lat": 37.5683,
+      "lng": 126.9978,
+      "rank": 2
+    },
+    {
+      "nome": "Chennai",
+      "lat": 13.0919,
+      "lng": 80.2781,
+      "rank": 2
+    },
+    {
+      "nome": "Taipé",
+      "lat": 25.0358,
+      "lng": 121.5683,
+      "rank": 2
+    },
+    {
+      "nome": "Bengaluru",
+      "lat": 12.9719,
+      "lng": 77.5581,
+      "rank": 2
+    },
+    {
+      "nome": "Bancoque",
+      "lat": 13.7519,
+      "lng": 100.5147,
+      "rank": 2
+    },
+    {
+      "nome": "Lahore",
+      "lat": 31.5619,
+      "lng": 74.3481,
+      "rank": 2
+    },
+    {
+      "nome": "Hyderabad",
+      "lat": 17.4019,
+      "lng": 78.478,
+      "rank": 2
+    },
+    {
+      "nome": "Amaravati",
+      "lat": 16.5337,
+      "lng": 80.5243,
+      "rank": 2
+    },
+    {
+      "nome": "Ahmedabad",
+      "lat": 23.032,
+      "lng": 72.5781,
+      "rank": 2
+    },
+    {
+      "nome": "Ho Chi Minh City",
+      "lat": 10.782,
+      "lng": 106.6931,
+      "rank": 2
+    },
+    {
+      "nome": "Pune",
+      "lat": 18.532,
+      "lng": 73.8481,
+      "rank": 2
+    },
+    {
+      "nome": "Chattogram",
+      "lat": 22.3319,
+      "lng": 91.798,
+      "rank": 2
+    },
+    {
+      "nome": "Hanói",
+      "lat": 21.0353,
+      "lng": 105.8481,
+      "rank": 2
+    },
+    {
+      "nome": "Yangon",
+      "lat": 16.7853,
+      "lng": 96.1647,
+      "rank": 2
+    },
+    {
+      "nome": "Surat",
+      "lat": 21.2019,
+      "lng": 72.8381,
+      "rank": 2
+    },
+    {
+      "nome": "Busan",
+      "lat": 35.097,
+      "lng": 129.0081,
+      "rank": 2
+    },
+    {
+      "nome": "Pyongyang",
+      "lat": 39.0214,
+      "lng": 125.7527,
+      "rank": 2
+    }
+  ]
+}

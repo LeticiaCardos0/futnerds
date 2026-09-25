@@ -1,0 +1,46 @@
+{
+  "ligaId": "liga-croacia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Split",
+      "lat": 43.51,
+      "lng": 16.44,
+      "_wikidata": "Q1663"
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8131,
+      "lng": 15.9772,
+      "_wikidata": "Q1435"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "gnk-dinamo-zagreb",
+      "nomesBase": [
+        "Dinamo Zagreb"
+      ],
+      "cidade": "Zagreb",
+      "estadio": "Stadion Maksimir",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Maksimirski%20stadion%20Zagreb.jpg?width=800",
+      "lat": 45.8189,
+      "lng": 16.0181,
+      "_wikidata": "Q172803",
+      "_wikidataLabel": "GNK Dinamo Zagreb"
+    },
+    {
+      "slug": "hnk-hajduk-split",
+      "nomesBase": [
+        "Hajduk Split"
+      ],
+      "cidade": "Split",
+      "estadio": "Stadion Poljud",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Poljud%20Stadium%20with%20the%20Kozjak%20Mountains%20in%20the%20distance.jpg?width=800",
+      "lat": 43.5194,
+      "lng": 16.4317,
+      "_wikidata": "Q181216",
+      "_wikidataLabel": "HNK Hajduk Split"
+    }
+  ]
+}

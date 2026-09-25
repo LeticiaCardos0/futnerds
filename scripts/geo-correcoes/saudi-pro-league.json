@@ -1,0 +1,89 @@
+{
+  "ligaId": "saudi-pro-league",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Os nomes dos clubes na base são transliterações sem hífen (Al Hazem, Al Fateh).",
+    "Riad e Jidá em português, como a imprensa brasileira escreve."
+  ],
+  "clubes": {
+    "Abha Club": {
+      "_nota": "Colide com o feminino.",
+      "clubeWikidata": "Q2620016",
+      "cidade": "Abha"
+    },
+    "Al Ahli": {
+      "cidade": "Jidá",
+      "cidadeWikidata": "Q374365"
+    },
+    "Al Diriyah": {
+      "clubeWikidata": "Q7069287",
+      "cidade": "Diriyah",
+      "cidadeWikidata": "Q277505",
+      "_nota": "O Wikidata não tem o estádio atual, e não achei fonte que confirme onde o clube manda os jogos.",
+      "semEstadio": true
+    },
+    "Al Fateh": {
+      "clubeWikidata": "Q2701659",
+      "_nota": "P159 devolve o oásis (Al-Ahsa Oasis); o estádio fica em Hofuf.",
+      "cidade": "Hofuf",
+      "cidadeWikidata": "Q27136"
+    },
+    "Al Fayha": {
+      "_nota": "No Wikidata é Al-Feiha FC. Divide o estádio de Al Majma'ah com o Al Faisaly.",
+      "clubeWikidata": "Q20081435",
+      "estadioWikidata": "Q7244241",
+      "cidade": "Al Majma'ah"
+    },
+    "Al Hazem": {
+      "clubeWikidata": "Q2499905"
+    },
+    "Al Hilal": {
+      "_nota": "Joga na Kingdom Arena desde 2023.",
+      "estadioWikidata": "Q123412407",
+      "estadio": "Kingdom Arena",
+      "cidade": "Riad",
+      "cidadeWikidata": "Q3692"
+    },
+    "Al Ittihad": {
+      "cidade": "Jidá",
+      "cidadeWikidata": "Q374365"
+    },
+    "Al Khaleej": {
+      "clubeWikidata": "Q2027718",
+      "_nota": "Clube de Saihat; manda os jogos no Prince Mohamed bin Fahd, em Dammam.",
+      "estadioWikidata": "Q2650633",
+      "cidade": "Dammam"
+    },
+    "Al Kholood": {
+      "clubeWikidata": "Q12247459",
+      "_nota": "Divide o estádio de Ar Rass com o Al Hazem.",
+      "estadioWikidata": "Q4704017",
+      "cidade": "Ar Rass"
+    },
+    "Al Nassr": {
+      "_nota": "O KSU Stadium se chama Al-Awwal Park desde 2020.",
+      "estadio": "Al-Awwal Park",
+      "cidade": "Riad",
+      "cidadeWikidata": "Q3692"
+    },
+    "Al Riyadh": {
+      "_nota": "Colide com o Al-Riyadh iraquiano e com o feminino.",
+      "clubeWikidata": "Q2655899",
+      "cidade": "Riad",
+      "cidadeWikidata": "Q3692"
+    },
+    "Al Shabab": {
+      "cidade": "Riad",
+      "cidadeWikidata": "Q3692"
+    },
+    "Neom": {
+      "clubeWikidata": "Q12247491",
+      "_nota": "O NEOM Stadium ainda está em obras; o clube joga em Tabuk.",
+      "estadioWikidata": "Q85683772",
+      "cidade": "Tabuk"
+    }
+  }
+}

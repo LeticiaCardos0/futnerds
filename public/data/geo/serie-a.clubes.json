@@ -1,0 +1,372 @@
+{
+  "ligaId": "serie-a",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Bérgamo",
+      "lat": 45.695,
+      "lng": 9.67,
+      "_wikidata": "Q628"
+    },
+    {
+      "nome": "Bolonha",
+      "lat": 44.4939,
+      "lng": 11.3428,
+      "_wikidata": "Q1891"
+    },
+    {
+      "nome": "Cagliari",
+      "lat": 39.2167,
+      "lng": 9.1167,
+      "_wikidata": "Q1897"
+    },
+    {
+      "nome": "Como",
+      "lat": 45.8103,
+      "lng": 9.0861,
+      "_wikidata": "Q1308",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Florença",
+      "lat": 43.7714,
+      "lng": 11.2542,
+      "_wikidata": "Q2044"
+    },
+    {
+      "nome": "Frosinone",
+      "lat": 41.6333,
+      "lng": 13.35,
+      "_wikidata": "Q13413"
+    },
+    {
+      "nome": "Gênova",
+      "lat": 44.4072,
+      "lng": 8.9339,
+      "_wikidata": "Q1449"
+    },
+    {
+      "nome": "Lecce",
+      "lat": 40.352,
+      "lng": 18.1691,
+      "_wikidata": "Q13386"
+    },
+    {
+      "nome": "Milão",
+      "lat": 45.4669,
+      "lng": 9.19,
+      "_wikidata": "Q490"
+    },
+    {
+      "nome": "Monza",
+      "lat": 45.5836,
+      "lng": 9.2736,
+      "_wikidata": "Q6252",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Nápoles",
+      "lat": 40.8358,
+      "lng": 14.2486,
+      "_wikidata": "Q2634"
+    },
+    {
+      "nome": "Parma",
+      "lat": 44.8015,
+      "lng": 10.328,
+      "_wikidata": "Q2683"
+    },
+    {
+      "nome": "Reggio Emilia",
+      "lat": 44.7,
+      "lng": 10.6333,
+      "_wikidata": "Q13360"
+    },
+    {
+      "nome": "Roma",
+      "lat": 41.8931,
+      "lng": 12.4828,
+      "_wikidata": "Q220"
+    },
+    {
+      "nome": "Turim",
+      "lat": 45.0792,
+      "lng": 7.6761,
+      "_wikidata": "Q495"
+    },
+    {
+      "nome": "Údine",
+      "lat": 46.0667,
+      "lng": 13.2333,
+      "_wikidata": "Q2790"
+    },
+    {
+      "nome": "Veneza",
+      "lat": 45.4397,
+      "lng": 12.3319,
+      "_wikidata": "Q641"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ac-milan",
+      "nomesBase": [
+        "Milano FC"
+      ],
+      "cidade": "Milão",
+      "estadio": "Stadio San Siro",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Meazza%202021%203.jpg?width=800",
+      "lat": 45.4781,
+      "lng": 9.1239,
+      "_wikidata": "Q1543",
+      "_wikidataLabel": "AC Milan"
+    },
+    {
+      "slug": "ac-monza",
+      "nomesBase": [
+        "Monza"
+      ],
+      "cidade": "Monza",
+      "estadio": "U-Power Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Brianteo%202024%20%28cropped%29.jpg?width=800",
+      "lat": 45.5828,
+      "lng": 9.3081,
+      "_wikidata": "Q289482",
+      "_wikidataLabel": "AC Monza"
+    },
+    {
+      "slug": "acf-fiorentina",
+      "nomesBase": [
+        "Fiorentina"
+      ],
+      "cidade": "Florença",
+      "estadio": "Stadio Artemio Franchi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Firenze%2C%20stadio%20artemio%20franchi%2C%20campo%20da%20gioco%2C%2010%2C0.jpg?width=800",
+      "lat": 43.7808,
+      "lng": 11.2823,
+      "_wikidata": "Q2052",
+      "_wikidataLabel": "ACF Fiorentina"
+    },
+    {
+      "slug": "as-roma",
+      "nomesBase": [
+        "AS Roma"
+      ],
+      "cidade": "Roma",
+      "estadio": "Stadio Olimpico",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Olimpico%202024.jpg?width=800",
+      "lat": 41.9339,
+      "lng": 12.4547,
+      "_wikidata": "Q2739",
+      "_wikidataLabel": "AS Roma"
+    },
+    {
+      "slug": "atalanta-bc",
+      "nomesBase": [
+        "Bergamo Calcio"
+      ],
+      "cidade": "Bérgamo",
+      "estadio": "Gewiss Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20outside%20of%20the%20Gewiss%20Stadium%20in%202020.jpg?width=800",
+      "lat": 45.7089,
+      "lng": 9.6808,
+      "_wikidata": "Q1886",
+      "_wikidataLabel": "Atalanta BC"
+    },
+    {
+      "slug": "bologna-f-c-1909",
+      "nomesBase": [
+        "Bologna"
+      ],
+      "cidade": "Bolonha",
+      "estadio": "Stadio Renato Dall'Ara",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Dall%27Ara%2001-02-2020.jpg?width=800",
+      "lat": 44.4922,
+      "lng": 11.3098,
+      "_wikidata": "Q1893",
+      "_wikidataLabel": "Bologna F.C. 1909"
+    },
+    {
+      "slug": "cagliari-calcio",
+      "nomesBase": [
+        "Cagliari"
+      ],
+      "cidade": "Cagliari",
+      "estadio": "Unipol Domus",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Unipol%20Domus%20from%20Distinti%202026.jpg?width=800",
+      "lat": 39.1997,
+      "lng": 9.1374,
+      "_wikidata": "Q1900",
+      "_wikidataLabel": "Cagliari Calcio"
+    },
+    {
+      "slug": "como-1907",
+      "nomesBase": [
+        "Como"
+      ],
+      "cidade": "Como",
+      "estadio": "Stadio Giuseppe Sinigaglia",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Sinigaglia%20Como%2016-07-2025.jpg?width=800",
+      "lat": 45.8139,
+      "lng": 9.0722,
+      "_wikidata": "Q1120838",
+      "_wikidataLabel": "Como 1907"
+    },
+    {
+      "slug": "frosinone-calcio",
+      "nomesBase": [
+        "Frosinone"
+      ],
+      "cidade": "Frosinone",
+      "estadio": "Stadio Benito Stirpe",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Benito%20Stirpe%20panoramica%20Frosinone%20Foggia.JPG?width=800",
+      "lat": 41.6343,
+      "lng": 13.3219,
+      "_wikidata": "Q845043",
+      "_wikidataLabel": "Frosinone Calcio"
+    },
+    {
+      "slug": "genoa-cfc",
+      "nomesBase": [
+        "Genoa"
+      ],
+      "cidade": "Gênova",
+      "estadio": "Stadio Luigi Ferraris",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Autumn%20Nations%20Series%20%2722-%20Italia%20vs%20Sudafrica-954%20%2852519137176%29.jpg?width=800",
+      "lat": 44.4164,
+      "lng": 8.9524,
+      "_wikidata": "Q2074",
+      "_wikidataLabel": "Genoa CFC"
+    },
+    {
+      "slug": "inter-milan",
+      "nomesBase": [
+        "Lombardia FC"
+      ],
+      "cidade": "Milão",
+      "estadio": "Stadio San Siro",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Meazza%202021%203.jpg?width=800",
+      "lat": 45.4781,
+      "lng": 9.1239,
+      "_wikidata": "Q631",
+      "_wikidataLabel": "Inter Milan"
+    },
+    {
+      "slug": "juventus",
+      "nomesBase": [
+        "Juventus"
+      ],
+      "cidade": "Turim",
+      "estadio": "Allianz Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Juventus%20v%20Real%20Madrid%2C%20Champions%20League%2C%20Stadium%2C%20Turin%2C%202013.jpg?width=800",
+      "lat": 45.1096,
+      "lng": 7.6412,
+      "_wikidata": "Q1422",
+      "_wikidataLabel": "Juventus FC"
+    },
+    {
+      "slug": "parma-calcio-1913",
+      "nomesBase": [
+        "Parma"
+      ],
+      "cidade": "Parma",
+      "estadio": "Stadio Ennio Tardini",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Ennio%20Tardini%202026.jpg?width=800",
+      "lat": 44.7949,
+      "lng": 10.3384,
+      "_wikidata": "Q2693",
+      "_wikidataLabel": "Parma Calcio 1913"
+    },
+    {
+      "slug": "ss-lazio",
+      "nomesBase": [
+        "Latium"
+      ],
+      "cidade": "Roma",
+      "estadio": "Stadio Olimpico",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Olimpico%202024.jpg?width=800",
+      "lat": 41.9339,
+      "lng": 12.4547,
+      "_wikidata": "Q2609",
+      "_wikidataLabel": "SS Lazio"
+    },
+    {
+      "slug": "ssc-napoli",
+      "nomesBase": [
+        "SSC Napoli"
+      ],
+      "cidade": "Nápoles",
+      "estadio": "Stadio Diego Armando Maradona",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Maradona%20Serie%20A.jpg?width=800",
+      "lat": 40.828,
+      "lng": 14.193,
+      "_wikidata": "Q2641",
+      "_wikidataLabel": "SSC Napoli"
+    },
+    {
+      "slug": "torino",
+      "nomesBase": [
+        "Torino"
+      ],
+      "cidade": "Turim",
+      "estadio": "Stadio Olimpico Grande Torino",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Olimpico%20di%20Torino.jpg?width=800",
+      "lat": 45.0417,
+      "lng": 7.65,
+      "_wikidata": "Q2768",
+      "_wikidataLabel": "Torino FC"
+    },
+    {
+      "slug": "udinese-calcio",
+      "nomesBase": [
+        "Udinese"
+      ],
+      "cidade": "Údine",
+      "estadio": "Stadio Friuli",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/DaciArena.jpg?width=800",
+      "lat": 46.0816,
+      "lng": 13.2001,
+      "_wikidata": "Q2798",
+      "_wikidataLabel": "Udinese Calcio"
+    },
+    {
+      "slug": "us-lecce",
+      "nomesBase": [
+        "Lecce"
+      ],
+      "cidade": "Lecce",
+      "estadio": "Stadio Via del Mare",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Via%20del%20Mare%20-%20Lecce.jpg?width=800",
+      "lat": 40.3653,
+      "lng": 18.2089,
+      "_wikidata": "Q13391",
+      "_wikidataLabel": "US Lecce"
+    },
+    {
+      "slug": "us-sassuolo-calcio",
+      "nomesBase": [
+        "Sassuolo"
+      ],
+      "cidade": "Reggio Emilia",
+      "estadio": "Mapei Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Das%20Mapei%20Stadium%20von%20Reggio%20nell%60Emilia%20%282026%29.jpg?width=800",
+      "lat": 44.7147,
+      "lng": 10.6497,
+      "_wikidata": "Q8603",
+      "_wikidataLabel": "US Sassuolo Calcio"
+    },
+    {
+      "slug": "venezia",
+      "nomesBase": [
+        "Venezia"
+      ],
+      "cidade": "Veneza",
+      "estadio": "Stadio Pierluigi Penzo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadio%20Pierluigi%20Penzo.jpg?width=800",
+      "lat": 45.4278,
+      "lng": 12.3637,
+      "_wikidata": "Q501245",
+      "_wikidataLabel": "Venezia F.C."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "ligaId": "pro-league",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "A base abrevia vários nomes (R. Union St.-G., STVV, Sp. Charleroi).",
+    "Rótulos de cidade como já aparecem nos outros mapas: Bruxelas, Antuérpia, Gante, Bruges."
+  ],
+  "clubes": {
+    "Cercle Brugge": {
+      "_nota": "Divide o Jan Breydel com o Club Brugge.",
+      "cidade": "Bruges"
+    },
+    "Club Brugge": { "cidade": "Bruges" },
+    "KAA Gent": {
+      "estadio": "Planet Group Arena",
+      "cidade": "Gante",
+      "cidadeWikidata": "Q1296"
+    },
+    "Lommel SK": {
+      "clubeWikidata": "Q1668203",
+      "cidade": "Lommel",
+      "estadioWikidata": "Q3153676"
+    },
+    "R. Union St.-G.": {
+      "_nota": "Royale Union Saint-Gilloise; o Joseph Marien fica em Forest, na região de Bruxelas.",
+      "clubeWikidata": "Q196160",
+      "estadioWikidata": "Q3495665",
+      "estadio": "Stade Joseph Marien",
+      "cidade": "Bruxelas",
+      "cidadeWikidata": "Q239"
+    },
+    "RAAL La Louvière": {
+      "clubeWikidata": "Q536651",
+      "cidade": "La Louvière",
+      "estadioWikidata": "Q3496100"
+    },
+    "Royal Antwerp FC": {
+      "_nota": "O P115 do Wikidata aponta para o Stadion Broodstraat; o clube joga no Bosuil.",
+      "estadioWikidata": "Q285074",
+      "estadio": "Bosuilstadion",
+      "cidade": "Antuérpia",
+      "cidadeWikidata": "Q12892"
+    },
+    "RSC Anderlecht": {
+      "_nota": "Anderlecht é uma comuna da região de Bruxelas.",
+      "cidade": "Bruxelas",
+      "cidadeWikidata": "Q239"
+    },
+    "Sp. Charleroi": {
+      "_nota": "Royal Charleroi S.C.",
+      "clubeWikidata": "Q19585",
+      "cidade": "Charleroi"
+    },
+    "STVV": {
+      "_nota": "Sint-Truidense V.V.",
+      "clubeWikidata": "Q138248",
+      "cidade": "Sint-Truiden"
+    },
+    "Waasland-Beveren": {
+      "_nota": "No Wikidata o clube voltou a se chamar Sportkring Beveren.",
+      "clubeWikidata": "Q509170",
+      "cidade": "Beveren",
+      "estadioWikidata": "Q2135912",
+      "cidadeWikidata": "Q270644"
+    }
+  }
+}

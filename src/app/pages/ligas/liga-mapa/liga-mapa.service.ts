@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, forkJoin, map } from 'rxjs';
+import { Observable, catchError, forkJoin, map, of } from 'rxjs';
 import { API_URL } from '../../../shared/api.util';
 import { CidadeSemTime, ConfigPaisLiga } from '../../../shared/mapa-liga/config-liga';
 
@@ -42,6 +42,12 @@ interface ArquivoLocalizacao {
   ligaId: string;
   cidades: CidadeMapa[];
   clubes: ClubeLocalizacao[];
+}
+
+/** O JSON de config.cidadesUrl (scripts/gerar-cidades-referencia.js). */
+interface ArquivoCidades {
+  cidadesSemTime: CidadeSemTime[];
+  cidadesVizinhas: CidadeSemTime[];
 }
 
 /** Clube da base já cruzado com a localização — é o que o mapa consome. */
@@ -157,8 +163,20 @@ export class LigaMapaService {
       catchErrorVazio(config.clubesUrl),
     );
 
-    return forkJoin({ resp: times$, local: local$ }).pipe(
-      map(({ resp, local }) => this.cruzar(config, resp.times ?? [], local)),
+    // Cidades de referência: da config, ou do JSON gerado quando a config
+    // aponta um (as ligas com config gerada). Falha vira lista vazia — o mapa
+    // sobe com os clubes, só sem os nomes em serifa.
+    const referencia$: Observable<ArquivoCidades> = config.cidadesUrl
+      ? this.http.get<ArquivoCidades>(config.cidadesUrl).pipe(
+          catchError(() => {
+            console.warn(`FutNerds · não foi possível carregar ${config.cidadesUrl}. O mapa sobe sem as cidades de referência.`);
+            return of({ cidadesSemTime: [], cidadesVizinhas: [] });
+          }),
+        )
+      : of({ cidadesSemTime: config.cidadesSemTime, cidadesVizinhas: config.cidadesVizinhas });
+
+    return forkJoin({ resp: times$, local: local$, ref: referencia$ }).pipe(
+      map(({ resp, local, ref }) => this.cruzar(config, resp.times ?? [], local, ref)),
     );
   }
 
@@ -174,6 +192,7 @@ export class LigaMapaService {
     config: ConfigPaisLiga,
     daBase: TimeDaApi[],
     local: ArquivoLocalizacao,
+    ref: ArquivoCidades,
   ): DadosMapaLiga {
     // índice: cada apelido de nomesBase aponta para a entrada
     const porNome = new Map<string, ClubeLocalizacao>();
@@ -252,8 +271,8 @@ export class LigaMapaService {
     // — se Cardiff, Swansea ou Wrexham subir, o nome não aparece duas vezes.
     const nomesComClube = new Set([...comClube].map(normalizar));
     const pontosComClube = cidades;
-    const vizinhas = config.cidadesVizinhas.map((c) => ({ ...c, vizinha: true }));
-    const cidadesSemTime = [...config.cidadesSemTime, ...vizinhas].filter((c) => {
+    const vizinhas = (ref.cidadesVizinhas ?? []).map((c) => ({ ...c, vizinha: true }));
+    const cidadesSemTime = [...(ref.cidadesSemTime ?? []), ...vizinhas].filter((c) => {
       if (nomesComClube.has(normalizar(c.nome))) return false;
       return !pontosComClube.some((p) => distanciaKm(p, c) < KM_MESMA_CIDADE);
     });

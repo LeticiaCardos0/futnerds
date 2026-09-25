@@ -1,0 +1,63 @@
+{
+  "ligaId": "3-liga",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Aleman. Aachen": {
+      "_nota": "Alemannia Aachen.",
+      "clubeWikidata": "Q153535"
+    },
+    "Düsseldorf": {
+      "_nota": "A base abrevia Fortuna Düsseldorf.",
+      "clubeWikidata": "Q151747"
+    },
+    "FC Hansa Rostock": {
+      "clubeWikidata": "Q142005"
+    },
+    "FC Würzburger Kickers": {
+      "cidade": "Würzburg",
+      "cidadeWikidata": "Q2999"
+    },
+    "Jahn Regensburg": {
+      "clubeWikidata": "Q265570",
+      "cidade": "Regensburg",
+      "cidadeWikidata": "Q2978"
+    },
+    "Preußen Münster": {
+      "clubeWikidata": "Q316865"
+    },
+    "Saarbrücken": {
+      "_nota": "1. FC Saarbrücken.",
+      "clubeWikidata": "Q157463"
+    },
+    "SG Sonnenhof Großaspach": {
+      "_nota": "O P159 casava com uma Aspach de 400 habitantes na Turíngia (236 km); o clube é de Aspach, perto de Stuttgart, que o Wikidata classifica só como município.",
+      "cidade": "Aspach",
+      "cidadeWikidata": "Q81726"
+    },
+    "SV Waldhof": {
+      "_nota": "SV Waldhof Mannheim.",
+      "clubeWikidata": "Q170134"
+    },
+    "TSG Hoffenheim II": {
+      "_nota": "Sem entrada própria no casamento: pegava o time principal (Sinsheim). O II joga no Dietmar-Hopp-Stadion.",
+      "estadioWikidata": "Q470396",
+      "cidade": "Hoffenheim",
+      "clubeWikidata": "Q16637410"
+    },
+    "VfB Stuttgart II": {
+      "_nota": "Dois estádios no Wikidata; o time manda os jogos da 3. Liga no Gazi-Stadion auf der Waldau (o Robert-Schlienz não atende às exigências da liga).",
+      "estadioWikidata": "Q317837",
+      "cidade": "Stuttgart"
+    },
+    "Wehen Wiesbaden": {
+      "clubeWikidata": "Q310621",
+      "cidade": "Wiesbaden"
+    }
+  }
+}

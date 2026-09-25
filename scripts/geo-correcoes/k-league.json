@@ -1,0 +1,27 @@
+{
+  "ligaId": "k-league",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "Daejeon Hana": {
+      "_nota": "Daejeon Hana Citizen.",
+      "clubeWikidata": "Q484584"
+    },
+    "Gangwon FC": {
+      "_nota": "O clube divide a temporada entre Chuncheon e Gangneung; fica Gangneung, a casa histórica.",
+      "estadioWikidata": "Q5521164",
+      "cidade": "Gangneung"
+    },
+    "Gimcheon Sangmu": {
+      "_nota": "Q484536 é o antigo Sangju Sangmu; este é o clube de Gimcheon.",
+      "clubeWikidata": "Q104099625"
+    },
+    "Jeonbuk Hyundai": {
+      "_nota": "Jeonbuk Hyundai Motors.",
+      "clubeWikidata": "Q483152"
+    }
+  }
+}

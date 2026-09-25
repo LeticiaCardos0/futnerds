@@ -1,0 +1,230 @@
+{
+  "ligaId": "bundesliga-austria",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Altach",
+      "lat": 47.35,
+      "lng": 9.65,
+      "_wikidata": "Q433697",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Graz",
+      "lat": 47.0708,
+      "lng": 15.4386,
+      "_wikidata": "Q13298"
+    },
+    {
+      "nome": "Hartberg",
+      "lat": 47.2806,
+      "lng": 15.97,
+      "_wikidata": "Q368598",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Linz",
+      "lat": 48.3058,
+      "lng": 14.2864,
+      "_wikidata": "Q41329",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Lustenau",
+      "lat": 47.4271,
+      "lng": 9.6711,
+      "_wikidata": "Q488315",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Ried im Innkreis",
+      "lat": 48.2084,
+      "lng": 13.4853,
+      "_wikidata": "Q21880159"
+    },
+    {
+      "nome": "Salzburgo",
+      "lat": 47.8,
+      "lng": 13.045,
+      "_wikidata": "Q34713"
+    },
+    {
+      "nome": "Viena",
+      "lat": 48.2083,
+      "lng": 16.3725,
+      "_wikidata": "Q1741"
+    },
+    {
+      "nome": "Wattens",
+      "lat": 47.2914,
+      "lng": 11.5925,
+      "_wikidata": "Q660935",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Wolfsberg",
+      "lat": 46.8419,
+      "lng": 14.8408,
+      "_wikidata": "Q487527",
+      "_homonimos": 6
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "fc-red-bull-salzburg",
+      "nomesBase": [
+        "RB Salzburg"
+      ],
+      "cidade": "Salzburgo",
+      "estadio": "Red Bull Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/EM-Stadion%20Wals-Siezenheim%20zur%20Euro.jpg?width=800",
+      "lat": 47.8162,
+      "lng": 12.9982,
+      "_wikidata": "Q994811",
+      "_wikidataLabel": "FC Red Bull Salzburg"
+    },
+    {
+      "slug": "fk-austria-wien",
+      "nomesBase": [
+        "FK Austria Wien"
+      ],
+      "cidade": "Viena",
+      "estadio": "Generali Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/20180713%20Generali%20Arena%20174704319.jpg?width=800",
+      "lat": 48.1623,
+      "lng": 16.3867,
+      "_wikidata": "Q131209",
+      "_wikidataLabel": "FK Austria Wien"
+    },
+    {
+      "slug": "grazer-ak",
+      "nomesBase": [
+        "Grazer AK"
+      ],
+      "cidade": "Graz",
+      "estadio": "Merkur Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Merkur%20Arena%2C%20Graz.jpg?width=800",
+      "lat": 47.0461,
+      "lng": 15.4544,
+      "_wikidata": "Q659780",
+      "_wikidataLabel": "Grazer AK"
+    },
+    {
+      "slug": "lask-linz",
+      "nomesBase": [
+        "LASK"
+      ],
+      "cidade": "Linz",
+      "estadio": "Linzer Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gugl.jpg?width=800",
+      "lat": 48.2933,
+      "lng": 14.2764,
+      "_wikidata": "Q392310",
+      "_wikidataLabel": "LASK Linz"
+    },
+    {
+      "slug": "sc-austria-lustenau",
+      "nomesBase": [
+        "SC Austria"
+      ],
+      "cidade": "Lustenau",
+      "estadio": "Reichshofstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Reichshofstadion3.JPG?width=800",
+      "lat": 47.4211,
+      "lng": 9.6528,
+      "_wikidata": "Q696507",
+      "_wikidataLabel": "SC Austria Lustenau"
+    },
+    {
+      "slug": "sc-rheindorf-altach",
+      "nomesBase": [
+        "SCR Altach"
+      ],
+      "cidade": "Altach",
+      "estadio": "Stadion Schnabelholz",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/CashpointArenaAltach.JPG?width=800",
+      "lat": 47.3536,
+      "lng": 9.6372,
+      "_wikidata": "Q670438",
+      "_wikidataLabel": "SC Rheindorf Altach"
+    },
+    {
+      "slug": "sk-rapid-wien",
+      "nomesBase": [
+        "SK Rapid"
+      ],
+      "cidade": "Viena",
+      "estadio": "Allianz Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna%20allianz%20stadion.jpg?width=800",
+      "lat": 48.1981,
+      "lng": 16.2653,
+      "_wikidata": "Q131215",
+      "_wikidataLabel": "SK Rapid Wien"
+    },
+    {
+      "slug": "sk-sturm-graz",
+      "nomesBase": [
+        "SK Sturm Graz"
+      ],
+      "cidade": "Graz",
+      "estadio": "Merkur Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Merkur%20Arena%2C%20Graz.jpg?width=800",
+      "lat": 47.0461,
+      "lng": 15.4544,
+      "_wikidata": "Q124007617",
+      "_wikidataLabel": "SK Sturm Graz"
+    },
+    {
+      "slug": "sv-ried",
+      "nomesBase": [
+        "SV Oberbank Ried"
+      ],
+      "cidade": "Ried im Innkreis",
+      "estadio": "BWT X Upper Austrian Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/SVR%20FCB%20Auswaertsfansektor.JPG?width=800",
+      "lat": 48.2078,
+      "lng": 13.4783,
+      "_wikidata": "Q457460",
+      "_wikidataLabel": "SV Ried"
+    },
+    {
+      "slug": "tsv-hartberg",
+      "nomesBase": [
+        "TSV Hartberg"
+      ],
+      "cidade": "Hartberg",
+      "estadio": "Stadion Hartberg",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Hartberg%20Haupttrib%C3%BCne.jpg?width=800",
+      "lat": 47.281,
+      "lng": 15.9772,
+      "_wikidata": "Q699746",
+      "_wikidataLabel": "TSV Hartberg"
+    },
+    {
+      "slug": "wolfsberger-ac",
+      "nomesBase": [
+        "Wolfsberger AC"
+      ],
+      "cidade": "Wolfsberg",
+      "estadio": "Lavanttal-Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Lavanttal%20Arena.jpg?width=800",
+      "lat": 46.8253,
+      "lng": 14.8514,
+      "_wikidata": "Q694484",
+      "_wikidataLabel": "Wolfsberger AC"
+    },
+    {
+      "slug": "wsg-tirol",
+      "nomesBase": [
+        "WSG Tirol"
+      ],
+      "cidade": "Wattens",
+      "estadio": "Tivoli Stadion Tirol",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/2014-05-30%20Austria%20-%20Iceland%20football%20match%2C%20pre-game%209987.jpg?width=800",
+      "lat": 47.256,
+      "lng": 11.4108,
+      "_wikidata": "Q686659",
+      "_wikidataLabel": "WSG Tirol"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "ligaId": "liga-bulgaria",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Razgrad",
+      "lat": 43.5409,
+      "lng": 26.5288,
+      "_wikidata": "Q189650",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "pfc-ludogorets-1945",
+      "nomesBase": [
+        "PFC Ludogorets"
+      ],
+      "cidade": "Razgrad",
+      "estadio": "Huvepharma Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludogorets%20arena%20in%20Razgrad%2C%20Bulgaria.png?width=800",
+      "lat": 43.5336,
+      "lng": 26.5275,
+      "_wikidata": "Q1339086",
+      "_wikidataLabel": "PFC Ludogorets 1945"
+    }
+  ]
+}

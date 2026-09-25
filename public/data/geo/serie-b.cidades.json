@@ -1,0 +1,428 @@
+{
+  "ligaId": "serie-b",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Roma",
+      "lat": 41.8979,
+      "lng": 12.4813,
+      "rank": 1
+    },
+    {
+      "nome": "Milão",
+      "lat": 45.4719,
+      "lng": 9.2031,
+      "rank": 1
+    },
+    {
+      "nome": "Nápoles",
+      "lat": 40.842,
+      "lng": 14.2431,
+      "rank": 1
+    },
+    {
+      "nome": "Turim",
+      "lat": 45.0723,
+      "lng": 7.668,
+      "rank": 1
+    },
+    {
+      "nome": "Florença",
+      "lat": 43.78,
+      "lng": 11.25,
+      "rank": 1
+    },
+    {
+      "nome": "Salerno",
+      "lat": 40.6804,
+      "lng": 14.7699,
+      "rank": 1
+    },
+    {
+      "nome": "Catânia",
+      "lat": 37.5,
+      "lng": 15.08,
+      "rank": 1
+    },
+    {
+      "nome": "Bari",
+      "lat": 41.1142,
+      "lng": 16.8728,
+      "rank": 1
+    },
+    {
+      "nome": "Bolonha",
+      "lat": 44.5004,
+      "lng": 11.34,
+      "rank": 1
+    },
+    {
+      "nome": "Pescara",
+      "lat": 42.4554,
+      "lng": 14.2187,
+      "rank": 1
+    },
+    {
+      "nome": "Cagliari",
+      "lat": 39.2224,
+      "lng": 9.104,
+      "rank": 1
+    },
+    {
+      "nome": "Veneza",
+      "lat": 45.4387,
+      "lng": 12.335,
+      "rank": 1
+    },
+    {
+      "nome": "Messina",
+      "lat": 38.2005,
+      "lng": 15.55,
+      "rank": 1
+    },
+    {
+      "nome": "Caserta",
+      "lat": 41.06,
+      "lng": 14.3374,
+      "rank": 1
+    },
+    {
+      "nome": "Como",
+      "lat": 45.81,
+      "lng": 9.08,
+      "rank": 1
+    },
+    {
+      "nome": "Trieste",
+      "lat": 45.6504,
+      "lng": 13.8,
+      "rank": 2
+    },
+    {
+      "nome": "Tarento",
+      "lat": 40.5084,
+      "lng": 17.23,
+      "rank": 2
+    },
+    {
+      "nome": "Bérgamo",
+      "lat": 45.7004,
+      "lng": 9.67,
+      "rank": 2
+    },
+    {
+      "nome": "Reggio di Calabria",
+      "lat": 38.115,
+      "lng": 15.6414,
+      "rank": 2
+    },
+    {
+      "nome": "Treviso",
+      "lat": 45.67,
+      "lng": 12.24,
+      "rank": 2
+    },
+    {
+      "nome": "Parma",
+      "lat": 44.8104,
+      "lng": 10.32,
+      "rank": 2
+    },
+    {
+      "nome": "Lecce",
+      "lat": 40.3604,
+      "lng": 18.15,
+      "rank": 2
+    },
+    {
+      "nome": "Livorno",
+      "lat": 43.5511,
+      "lng": 10.3023,
+      "rank": 2
+    },
+    {
+      "nome": "Foggia",
+      "lat": 41.4605,
+      "lng": 15.56,
+      "rank": 2
+    },
+    {
+      "nome": "Perúgia",
+      "lat": 43.1104,
+      "lng": 12.39,
+      "rank": 2
+    },
+    {
+      "nome": "Ravena",
+      "lat": 44.4204,
+      "lng": 12.22,
+      "rank": 2
+    },
+    {
+      "nome": "Ferrara",
+      "lat": 44.8504,
+      "lng": 11.6099,
+      "rank": 2
+    },
+    {
+      "nome": "Siracusa",
+      "lat": 37.0704,
+      "lng": 15.29,
+      "rank": 2
+    },
+    {
+      "nome": "Sassari",
+      "lat": 40.73,
+      "lng": 8.57,
+      "rank": 2
+    },
+    {
+      "nome": "Udine",
+      "lat": 46.07,
+      "lng": 13.24,
+      "rank": 2
+    },
+    {
+      "nome": "Barletta",
+      "lat": 41.32,
+      "lng": 16.27,
+      "rank": 2
+    },
+    {
+      "nome": "Trento",
+      "lat": 46.0804,
+      "lng": 11.12,
+      "rank": 2
+    },
+    {
+      "nome": "Brindisi",
+      "lat": 40.6403,
+      "lng": 17.93,
+      "rank": 2
+    },
+    {
+      "nome": "Novara",
+      "lat": 45.45,
+      "lng": 8.62,
+      "rank": 2
+    },
+    {
+      "nome": "Ancona",
+      "lat": 43.6004,
+      "lng": 13.4999,
+      "rank": 2
+    },
+    {
+      "nome": "Marsala",
+      "lat": 37.8054,
+      "lng": 12.4387,
+      "rank": 2
+    },
+    {
+      "nome": "Asti",
+      "lat": 44.93,
+      "lng": 8.21,
+      "rank": 2
+    },
+    {
+      "nome": "Potenza",
+      "lat": 40.642,
+      "lng": 15.799,
+      "rank": 2
+    },
+    {
+      "nome": "Ragusa",
+      "lat": 36.93,
+      "lng": 14.73,
+      "rank": 2
+    },
+    {
+      "nome": "Áquila",
+      "lat": 42.3504,
+      "lng": 13.39,
+      "rank": 2
+    },
+    {
+      "nome": "Civitavecchia",
+      "lat": 42.1004,
+      "lng": 11.8,
+      "rank": 2
+    },
+    {
+      "nome": "Crotone",
+      "lat": 39.0833,
+      "lng": 17.1233,
+      "rank": 2
+    },
+    {
+      "nome": "Siena",
+      "lat": 43.317,
+      "lng": 11.35,
+      "rank": 2
+    },
+    {
+      "nome": "Campobasso",
+      "lat": 41.563,
+      "lng": 14.656,
+      "rank": 2
+    },
+    {
+      "nome": "Olbia",
+      "lat": 40.9143,
+      "lng": 9.5151,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 1
+    },
+    {
+      "nome": "Túnis",
+      "lat": 36.8028,
+      "lng": 10.1797,
+      "rank": 1
+    },
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 1
+    },
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1
+    },
+    {
+      "nome": "Lyon",
+      "lat": 45.772,
+      "lng": 4.8281,
+      "rank": 1
+    },
+    {
+      "nome": "Marselha",
+      "lat": 43.2919,
+      "lng": 5.3731,
+      "rank": 1
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 1
+    },
+    {
+      "nome": "Genebra",
+      "lat": 46.21,
+      "lng": 6.14,
+      "rank": 2
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3819,
+      "lng": 8.5481,
+      "rank": 2
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 2
+    },
+    {
+      "nome": "Nice",
+      "lat": 43.717,
+      "lng": 7.2631,
+      "rank": 2
+    },
+    {
+      "nome": "Tirana",
+      "lat": 41.3275,
+      "lng": 19.8189,
+      "rank": 2
+    },
+    {
+      "nome": "Basileia",
+      "lat": 47.5804,
+      "lng": 7.59,
+      "rank": 2
+    },
+    {
+      "nome": "Saarbrücken",
+      "lat": 49.2504,
+      "lng": 6.97,
+      "rank": 2
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 2
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 2
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 2
+    },
+    {
+      "nome": "Constantina",
+      "lat": 36.36,
+      "lng": 6.5999,
+      "rank": 2
+    },
+    {
+      "nome": "Annaba",
+      "lat": 36.92,
+      "lng": 7.76,
+      "rank": 2
+    },
+    {
+      "nome": "Skopje",
+      "lat": 42,
+      "lng": 21.4335,
+      "rank": 2
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 2
+    },
+    {
+      "nome": "Sfax",
+      "lat": 34.75,
+      "lng": 10.72,
+      "rank": 2
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
+      "rank": 2
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 2
+    }
+  ]
+}

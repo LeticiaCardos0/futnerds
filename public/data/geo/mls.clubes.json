@@ -1,0 +1,584 @@
+{
+  "ligaId": "mls",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Atlanta",
+      "lat": 33.7544,
+      "lng": -84.3897,
+      "_wikidata": "Q23556",
+      "_homonimos": 19
+    },
+    {
+      "nome": "Austin",
+      "lat": 30.3,
+      "lng": -97.7333,
+      "_wikidata": "Q16559",
+      "_homonimos": 18
+    },
+    {
+      "nome": "Boston",
+      "lat": 42.3603,
+      "lng": -71.0578,
+      "_wikidata": "Q100"
+    },
+    {
+      "nome": "Charlotte",
+      "lat": 35.2269,
+      "lng": -80.8433,
+      "_wikidata": "Q16565",
+      "_homonimos": 11
+    },
+    {
+      "nome": "Chicago",
+      "lat": 41.8819,
+      "lng": -87.6278,
+      "_wikidata": "Q1297",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Cincinnati",
+      "lat": 39.1,
+      "lng": -84.5125,
+      "_wikidata": "Q43196",
+      "_homonimos": 6
+    },
+    {
+      "nome": "Columbus",
+      "lat": 39.9622,
+      "lng": -83.0006,
+      "_wikidata": "Q16567",
+      "_homonimos": 25
+    },
+    {
+      "nome": "Dallas",
+      "lat": 32.7792,
+      "lng": -96.8089,
+      "_wikidata": "Q16557"
+    },
+    {
+      "nome": "Denver",
+      "lat": 39.7392,
+      "lng": -104.9847,
+      "_wikidata": "Q16554"
+    },
+    {
+      "nome": "Filadélfia",
+      "lat": 39.9528,
+      "lng": -75.1636,
+      "_wikidata": "Q1345"
+    },
+    {
+      "nome": "Houston",
+      "lat": 29.7628,
+      "lng": -95.3831,
+      "_wikidata": "Q16555",
+      "_homonimos": 18
+    },
+    {
+      "nome": "Kansas City",
+      "lat": 39.05,
+      "lng": -94.5833,
+      "_wikidata": "Q41819",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Los Angeles",
+      "lat": 34.0522,
+      "lng": -118.2437,
+      "_wikidata": "Q65"
+    },
+    {
+      "nome": "Miami",
+      "lat": 25.7742,
+      "lng": -80.1936,
+      "_wikidata": "Q8652",
+      "_homonimos": 8
+    },
+    {
+      "nome": "Minneapolis",
+      "lat": 44.9819,
+      "lng": -93.2692,
+      "_wikidata": "Q36091",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Montreal",
+      "lat": 45.5033,
+      "lng": -73.5868,
+      "_wikidata": "Q340",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Nashville",
+      "lat": 36.1622,
+      "lng": -86.7744,
+      "_wikidata": "Q23197",
+      "_homonimos": 22
+    },
+    {
+      "nome": "Nova York",
+      "lat": 40.7128,
+      "lng": -74.0061,
+      "_wikidata": "Q60"
+    },
+    {
+      "nome": "Orlando",
+      "lat": 28.5336,
+      "lng": -81.3867,
+      "_wikidata": "Q49233",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Portland",
+      "lat": 45.515,
+      "lng": -122.6792,
+      "_wikidata": "Q6106",
+      "_homonimos": 31
+    },
+    {
+      "nome": "Salt Lake City",
+      "lat": 40.75,
+      "lng": -111.8833,
+      "_wikidata": "Q23337"
+    },
+    {
+      "nome": "San Diego",
+      "lat": 32.715,
+      "lng": -117.1625,
+      "_wikidata": "Q16552",
+      "_homonimos": 2
+    },
+    {
+      "nome": "San Jose",
+      "lat": 37.3042,
+      "lng": -121.8728,
+      "_wikidata": "Q16553"
+    },
+    {
+      "nome": "Seattle",
+      "lat": 47.605,
+      "lng": -122.33,
+      "_wikidata": "Q5083"
+    },
+    {
+      "nome": "St. Louis",
+      "lat": 38.6264,
+      "lng": -90.1994,
+      "_wikidata": "Q38022",
+      "_homonimos": 6
+    },
+    {
+      "nome": "Toronto",
+      "lat": 43.6703,
+      "lng": -79.3867,
+      "_wikidata": "Q172",
+      "_homonimos": 9
+    },
+    {
+      "nome": "Vancouver",
+      "lat": 49.2608,
+      "lng": -123.1139,
+      "_wikidata": "Q24639",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Washington",
+      "lat": 38.895,
+      "lng": -77.0367,
+      "_wikidata": "Q61"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "atlanta-united",
+      "nomesBase": [
+        "Atlanta United"
+      ],
+      "cidade": "Atlanta",
+      "estadio": "Mercedes-Benz Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Mercedes%20Benz%20Stadium%20time%20lapse%20capture%202017-08-13.jpg?width=800",
+      "lat": 33.7553,
+      "lng": -84.4008,
+      "_wikidata": "Q16836317",
+      "_wikidataLabel": "Atlanta United FC"
+    },
+    {
+      "slug": "austin",
+      "nomesBase": [
+        "Austin FC"
+      ],
+      "cidade": "Austin",
+      "estadio": "Q2 Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Austin%20FC%20Stadium%20vs.%20Columbus%20Crew.jpg?width=800",
+      "lat": 30.3882,
+      "lng": -97.7198,
+      "_wikidata": "Q60643348",
+      "_wikidataLabel": "Austin FC"
+    },
+    {
+      "slug": "cf-montreal",
+      "nomesBase": [
+        "CF Montréal"
+      ],
+      "cidade": "Montreal",
+      "estadio": "Saputo Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Saputo%20Stadium%20Interior.jpg?width=800",
+      "lat": 45.5631,
+      "lng": -73.5525,
+      "_wikidata": "Q167615",
+      "_wikidataLabel": "CF Montréal"
+    },
+    {
+      "slug": "charlotte",
+      "nomesBase": [
+        "Charlotte FC"
+      ],
+      "cidade": "Charlotte",
+      "estadio": "Bank of America Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/BofAStadium2015.JPG?width=800",
+      "lat": 35.2258,
+      "lng": -80.8528,
+      "_wikidata": "Q78944434",
+      "_wikidataLabel": "Charlotte FC"
+    },
+    {
+      "slug": "chicago-fire",
+      "nomesBase": [
+        "Chicago Fire FC"
+      ],
+      "cidade": "Chicago",
+      "estadio": "Soldier Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Soldier%20Field%20during%20Chicago%20Bears%20home%20game%20against%20the%20San%20Francisco%2049ers%20on%20October%2029%2C%202006.jpg?width=800",
+      "lat": 41.8625,
+      "lng": -87.6167,
+      "_wikidata": "Q308683",
+      "_wikidataLabel": "Chicago Fire FC"
+    },
+    {
+      "slug": "colorado-rapids",
+      "nomesBase": [
+        "Colorado Rapids"
+      ],
+      "cidade": "Denver",
+      "estadio": "Dick's Sporting Goods Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Dick%27s%20Park.jpg?width=800",
+      "lat": 39.8056,
+      "lng": -104.8919,
+      "_wikidata": "Q642408",
+      "_wikidataLabel": "Colorado Rapids"
+    },
+    {
+      "slug": "columbus-crew",
+      "nomesBase": [
+        "Columbus Crew"
+      ],
+      "cidade": "Columbus",
+      "estadio": "ScottsMiracle-Gro Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Lower.com%20Field%20Southwestern%20Gate%20July%203%202021.jpg?width=800",
+      "lat": 39.9685,
+      "lng": -83.0171,
+      "_wikidata": "Q457163",
+      "_wikidataLabel": "Columbus Crew"
+    },
+    {
+      "slug": "d-c-united",
+      "nomesBase": [
+        "D.C. United"
+      ],
+      "cidade": "Washington",
+      "estadio": "Audi Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Audi%20Field%20June%2025th.jpg?width=800",
+      "lat": 38.8685,
+      "lng": -77.0129,
+      "_wikidata": "Q238593",
+      "_wikidataLabel": "D.C. United"
+    },
+    {
+      "slug": "fc-cincinnati",
+      "nomesBase": [
+        "FC Cincinnati"
+      ],
+      "cidade": "Cincinnati",
+      "estadio": "TQL Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/FC%20Cincinnati%20vs.%20D.C.%20United%20at%20TQL%20Stadium%20%2820210801140432%29.jpg?width=800",
+      "lat": 39.1114,
+      "lng": -84.5222,
+      "_wikidata": "Q20855983",
+      "_wikidataLabel": "FC Cincinnati"
+    },
+    {
+      "slug": "fc-dallas",
+      "nomesBase": [
+        "FC Dallas"
+      ],
+      "cidade": "Dallas",
+      "estadio": "Toyota Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Toyota%20Stadium.jpeg?width=800",
+      "lat": 33.1545,
+      "lng": -96.8352,
+      "_wikidata": "Q642291",
+      "_wikidataLabel": "FC Dallas"
+    },
+    {
+      "slug": "houston-dynamo",
+      "nomesBase": [
+        "Houston Dynamo"
+      ],
+      "cidade": "Houston",
+      "estadio": "Shell Energy Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Shell%20Energy%20Stadium%20Geometric%20Entrance.jpg?width=800",
+      "lat": 29.7522,
+      "lng": -95.3524,
+      "_wikidata": "Q328313",
+      "_wikidataLabel": "Houston Dynamo FC"
+    },
+    {
+      "slug": "inter-miami-cf",
+      "nomesBase": [
+        "Inter Miami CF"
+      ],
+      "cidade": "Miami",
+      "estadio": "Chase Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/DRV%20PNK%20Stadium%20%2851704895544%29%20%28cropped%29.jpg?width=800",
+      "lat": 26.1931,
+      "lng": -80.1611,
+      "_wikidata": "Q16844931",
+      "_wikidataLabel": "Inter Miami CF"
+    },
+    {
+      "slug": "la-galaxy",
+      "nomesBase": [
+        "LA Galaxy"
+      ],
+      "cidade": "Los Angeles",
+      "estadio": "Dignity Health Sports Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/LA%20Galaxy%20vs%20Houston%20Dynamo-%20Western%20Conference%20Finals%20panorama.jpg?width=800",
+      "lat": 33.8644,
+      "lng": -118.2611,
+      "_wikidata": "Q204357",
+      "_wikidataLabel": "LA Galaxy"
+    },
+    {
+      "slug": "los-angeles",
+      "nomesBase": [
+        "LAFC"
+      ],
+      "cidade": "Los Angeles",
+      "estadio": "BMO Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/LAFC%20East%20Side%20Stadium%20interior.jpg?width=800",
+      "lat": 34.013,
+      "lng": -118.285,
+      "_wikidata": "Q18380286",
+      "_wikidataLabel": "Los Angeles FC"
+    },
+    {
+      "slug": "minnesota-united",
+      "nomesBase": [
+        "Minnesota United"
+      ],
+      "cidade": "Minneapolis",
+      "estadio": "Allianz Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Allianz%20Field%20-%20MNUFC%20Minnesota%20United%20st.%20Paul%20Minnesota%20MLS%20%2840636734693%29.jpg?width=800",
+      "lat": 44.9528,
+      "lng": -93.1651,
+      "_wikidata": "Q19828435",
+      "_wikidataLabel": "Minnesota United FC"
+    },
+    {
+      "slug": "nashville-sc",
+      "nomesBase": [
+        "Nashville SC"
+      ],
+      "cidade": "Nashville",
+      "estadio": "Geodis Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/GEODIS%20Park.jpg?width=800",
+      "lat": 36.131,
+      "lng": -86.7677,
+      "_wikidata": "Q47518754",
+      "_wikidataLabel": "Nashville SC"
+    },
+    {
+      "slug": "new-england-revolution",
+      "nomesBase": [
+        "New England"
+      ],
+      "cidade": "Boston",
+      "estadio": "Gillette Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gillette%20Stadium02.jpg?width=800",
+      "lat": 42.0909,
+      "lng": -71.2643,
+      "_wikidata": "Q309095",
+      "_wikidataLabel": "New England Revolution"
+    },
+    {
+      "slug": "new-york-city",
+      "nomesBase": [
+        "New York City FC"
+      ],
+      "cidade": "Nova York",
+      "estadio": "Yankee Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Yankee%20Stadium%20upper%20deck%202010.jpg?width=800",
+      "lat": 40.8296,
+      "lng": -73.9264,
+      "_wikidata": "Q13361030",
+      "_wikidataLabel": "New York City FC"
+    },
+    {
+      "slug": "orlando-city-sc",
+      "nomesBase": [
+        "Orlando City"
+      ],
+      "cidade": "Orlando",
+      "estadio": "Inter&Co Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Orlando%20City%20Stadium%20%2804-21-18%29%201.jpg?width=800",
+      "lat": 28.5411,
+      "lng": -81.389,
+      "_wikidata": "Q15214308",
+      "_wikidataLabel": "Orlando City SC"
+    },
+    {
+      "slug": "philadelphia-union",
+      "nomesBase": [
+        "Philadelphia"
+      ],
+      "cidade": "Filadélfia",
+      "estadio": "Subaru Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/PPL%20Park%20Interior%20from%20the%20River%20End%202010.10.02%20%28cropped%29.jpg?width=800",
+      "lat": 39.8322,
+      "lng": -75.3789,
+      "_wikidata": "Q689874",
+      "_wikidataLabel": "Philadelphia Union"
+    },
+    {
+      "slug": "portland-timbers",
+      "nomesBase": [
+        "Portland Timbers"
+      ],
+      "cidade": "Portland",
+      "estadio": "Providence Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Providence%20Park.jpg?width=800",
+      "lat": 45.5214,
+      "lng": -122.6917,
+      "_wikidata": "Q1031200",
+      "_wikidataLabel": "Portland Timbers"
+    },
+    {
+      "slug": "real-salt-lake",
+      "nomesBase": [
+        "Real Salt Lake"
+      ],
+      "cidade": "Salt Lake City",
+      "estadio": "America First Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rio%20Tinto%20Stadium%20panorama.jpg?width=800",
+      "lat": 40.5829,
+      "lng": -111.893,
+      "_wikidata": "Q391353",
+      "_wikidataLabel": "Real Salt Lake"
+    },
+    {
+      "slug": "red-bull-new-york",
+      "nomesBase": [
+        "Red Bulls"
+      ],
+      "cidade": "Nova York",
+      "estadio": "Sports Illustrated Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Bull%20Arena%20Harrison%20behind%20goal.jpg?width=800",
+      "lat": 40.7367,
+      "lng": -74.1503,
+      "_wikidata": "Q204220",
+      "_wikidataLabel": "Red Bull New York"
+    },
+    {
+      "slug": "san-diego",
+      "nomesBase": [
+        "San Diego FC"
+      ],
+      "cidade": "San Diego",
+      "estadio": "Snapdragon Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/An%20aerial%20view%20of%20Snapdragon%20Stadium%20%282022-08-26%29.jpg?width=800",
+      "lat": 32.7844,
+      "lng": -117.1228,
+      "_wikidata": "Q118945347",
+      "_wikidataLabel": "San Diego FC"
+    },
+    {
+      "slug": "san-jose-earthquakes",
+      "nomesBase": [
+        "SJ Earthquakes"
+      ],
+      "cidade": "San Jose",
+      "estadio": "PayPal Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Avaya%20Stadium%2C%201-7-15.jpg?width=800",
+      "lat": 37.3514,
+      "lng": -121.925,
+      "_wikidata": "Q575370",
+      "_wikidataLabel": "San Jose Earthquakes"
+    },
+    {
+      "slug": "seattle-sounders",
+      "nomesBase": [
+        "Sounders FC"
+      ],
+      "cidade": "Seattle",
+      "estadio": "Lumen Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Qwest%20Field%20North.jpg?width=800",
+      "lat": 47.5953,
+      "lng": -122.3317,
+      "_wikidata": "Q632511",
+      "_wikidataLabel": "Seattle Sounders FC"
+    },
+    {
+      "slug": "sporting-kansas-city",
+      "nomesBase": [
+        "Sporting KC"
+      ],
+      "cidade": "Kansas City",
+      "estadio": "Sporting Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Children%27s%20Mercy%20Park%20Aerial.jpg?width=800",
+      "lat": 39.1218,
+      "lng": -94.8237,
+      "_wikidata": "Q329812",
+      "_wikidataLabel": "Sporting Kansas City"
+    },
+    {
+      "slug": "st-louis-city-sc",
+      "nomesBase": [
+        "St. Louis CITY SC"
+      ],
+      "cidade": "St. Louis",
+      "estadio": "Energizer Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Louis%20City%20SC%20vs.%20FC%20Cincinnati%20at%20CityPark%20%2820230416094709-02%29.jpg?width=800",
+      "lat": 38.6311,
+      "lng": -90.2109,
+      "_wikidata": "Q66642491",
+      "_wikidataLabel": "St. Louis City SC"
+    },
+    {
+      "slug": "toronto",
+      "nomesBase": [
+        "Toronto FC"
+      ],
+      "cidade": "Toronto",
+      "estadio": "BMO Field",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/BMO%20Field%20in%202016.png?width=800",
+      "lat": 43.6328,
+      "lng": -79.4186,
+      "_wikidata": "Q327238",
+      "_wikidataLabel": "Toronto FC"
+    },
+    {
+      "slug": "vancouver-whitecaps",
+      "nomesBase": [
+        "Whitecaps FC"
+      ],
+      "cidade": "Vancouver",
+      "estadio": "BC Place",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/BC%20Place%20%28Vancouver%29.jpg?width=800",
+      "lat": 49.2767,
+      "lng": -123.1119,
+      "_wikidata": "Q196107",
+      "_wikidataLabel": "Vancouver Whitecaps FC"
+    }
+  ]
+}

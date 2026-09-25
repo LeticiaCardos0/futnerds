@@ -1,0 +1,428 @@
+{
+  "ligaId": "liga-mx",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Torreón",
+      "lat": 25.572,
+      "lng": -103.4219,
+      "rank": 1
+    },
+    {
+      "nome": "Mérida",
+      "lat": 20.9686,
+      "lng": -89.6186,
+      "rank": 1
+    },
+    {
+      "nome": "Mexicali",
+      "lat": 32.6519,
+      "lng": -115.482,
+      "rank": 1
+    },
+    {
+      "nome": "Tampico",
+      "lat": 22.3,
+      "lng": -97.87,
+      "rank": 1
+    },
+    {
+      "nome": "Cuernavaca",
+      "lat": 18.9211,
+      "lng": -99.24,
+      "rank": 1
+    },
+    {
+      "nome": "Culiacán",
+      "lat": 24.8319,
+      "lng": -107.3819,
+      "rank": 1
+    },
+    {
+      "nome": "Chihuahua",
+      "lat": 28.6469,
+      "lng": -106.0869,
+      "rank": 1
+    },
+    {
+      "nome": "Saltillo",
+      "lat": 25.4219,
+      "lng": -101.0069,
+      "rank": 1
+    },
+    {
+      "nome": "Acapulco",
+      "lat": 16.85,
+      "lng": -99.916,
+      "rank": 1
+    },
+    {
+      "nome": "Morelia",
+      "lat": 19.7334,
+      "lng": -101.1895,
+      "rank": 1
+    },
+    {
+      "nome": "Hermosillo",
+      "lat": 29.0989,
+      "lng": -110.9541,
+      "rank": 1
+    },
+    {
+      "nome": "Veracruz",
+      "lat": 19.1773,
+      "lng": -96.16,
+      "rank": 1
+    },
+    {
+      "nome": "Cancún",
+      "lat": 21.17,
+      "lng": -86.83,
+      "rank": 1
+    },
+    {
+      "nome": "Heroica Matamoros",
+      "lat": 25.88,
+      "lng": -97.5,
+      "rank": 1
+    },
+    {
+      "nome": "Oaxaca de Juárez",
+      "lat": 17.0827,
+      "lng": -96.67,
+      "rank": 1
+    },
+    {
+      "nome": "Tlaxcala",
+      "lat": 19.32,
+      "lng": -98.23,
+      "rank": 2
+    },
+    {
+      "nome": "Mazatán",
+      "lat": 29.0171,
+      "lng": -110.1333,
+      "rank": 2
+    },
+    {
+      "nome": "Reynosa",
+      "lat": 26.08,
+      "lng": -98.3,
+      "rank": 2
+    },
+    {
+      "nome": "Tuxtla Gutiérrez",
+      "lat": 16.75,
+      "lng": -93.15,
+      "rank": 2
+    },
+    {
+      "nome": "Victoria de Durango",
+      "lat": 24.0311,
+      "lng": -104.67,
+      "rank": 2
+    },
+    {
+      "nome": "Xalapa",
+      "lat": 19.53,
+      "lng": -96.92,
+      "rank": 2
+    },
+    {
+      "nome": "Villahermosa",
+      "lat": 18,
+      "lng": -92.9,
+      "rank": 2
+    },
+    {
+      "nome": "Celaya",
+      "lat": 20.53,
+      "lng": -100.8,
+      "rank": 2
+    },
+    {
+      "nome": "Mazatlán",
+      "lat": 23.2211,
+      "lng": -106.42,
+      "rank": 2
+    },
+    {
+      "nome": "Orizaba",
+      "lat": 18.85,
+      "lng": -97.13,
+      "rank": 2
+    },
+    {
+      "nome": "Irapuato",
+      "lat": 20.67,
+      "lng": -101.5,
+      "rank": 2
+    },
+    {
+      "nome": "Tepic",
+      "lat": 21.5054,
+      "lng": -104.88,
+      "rank": 2
+    },
+    {
+      "nome": "Ciudad Obregón",
+      "lat": 27.4666,
+      "lng": -109.925,
+      "rank": 2
+    },
+    {
+      "nome": "Coatzacoalcos",
+      "lat": 18.1204,
+      "lng": -94.42,
+      "rank": 2
+    },
+    {
+      "nome": "Ciudad Victoria",
+      "lat": 23.72,
+      "lng": -99.13,
+      "rank": 2
+    },
+    {
+      "nome": "Uruapan",
+      "lat": 19.4204,
+      "lng": -102.07,
+      "rank": 2
+    },
+    {
+      "nome": "Ensenada",
+      "lat": 31.87,
+      "lng": -116.62,
+      "rank": 2
+    },
+    {
+      "nome": "Poza Rica",
+      "lat": 20.5504,
+      "lng": -97.47,
+      "rank": 2
+    },
+    {
+      "nome": "Zumpango",
+      "lat": 19.8104,
+      "lng": -99.11,
+      "rank": 2
+    },
+    {
+      "nome": "Los Mochis",
+      "lat": 25.79,
+      "lng": -109,
+      "rank": 2
+    },
+    {
+      "nome": "Tehuacán",
+      "lat": 18.4504,
+      "lng": -97.38,
+      "rank": 2
+    },
+    {
+      "nome": "Monclova",
+      "lat": 26.9,
+      "lng": -101.42,
+      "rank": 2
+    },
+    {
+      "nome": "Zacatecas",
+      "lat": 22.7704,
+      "lng": -102.58,
+      "rank": 2
+    },
+    {
+      "nome": "Colima",
+      "lat": 19.23,
+      "lng": -103.72,
+      "rank": 2
+    },
+    {
+      "nome": "Tapachula",
+      "lat": 14.9,
+      "lng": -92.27,
+      "rank": 2
+    },
+    {
+      "nome": "Córdoba",
+      "lat": 18.9204,
+      "lng": -96.92,
+      "rank": 2
+    },
+    {
+      "nome": "Zamora",
+      "lat": 19.9804,
+      "lng": -102.28,
+      "rank": 2
+    },
+    {
+      "nome": "Campeche",
+      "lat": 19.83,
+      "lng": -90.5,
+      "rank": 2
+    },
+    {
+      "nome": "Minatitlán",
+      "lat": 17.9805,
+      "lng": -94.53,
+      "rank": 2
+    },
+    {
+      "nome": "Salamanca",
+      "lat": 20.5704,
+      "lng": -101.2,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Los Angeles",
+      "lat": 33.9919,
+      "lng": -118.1819,
+      "rank": 1
+    },
+    {
+      "nome": "Miami",
+      "lat": 25.7896,
+      "lng": -80.2261,
+      "rank": 1
+    },
+    {
+      "nome": "Dallas",
+      "lat": 32.822,
+      "lng": -96.842,
+      "rank": 1
+    },
+    {
+      "nome": "Atlanta",
+      "lat": 33.832,
+      "lng": -84.4019,
+      "rank": 1
+    },
+    {
+      "nome": "Houston",
+      "lat": 29.8219,
+      "lng": -95.3419,
+      "rank": 1
+    },
+    {
+      "nome": "Phoenix",
+      "lat": 33.5419,
+      "lng": -112.0719,
+      "rank": 1
+    },
+    {
+      "nome": "Irvine",
+      "lat": 33.6804,
+      "lng": -117.8299,
+      "rank": 1
+    },
+    {
+      "nome": "San Diego",
+      "lat": 32.822,
+      "lng": -117.1819,
+      "rank": 1
+    },
+    {
+      "nome": "Tampa",
+      "lat": 27.9489,
+      "lng": -82.4606,
+      "rank": 2
+    },
+    {
+      "nome": "Havana",
+      "lat": 23.1339,
+      "lng": -82.3661,
+      "rank": 2
+    },
+    {
+      "nome": "Fort Lauderdale",
+      "lat": 26.1361,
+      "lng": -80.1418,
+      "rank": 2
+    },
+    {
+      "nome": "Las Vegas",
+      "lat": 36.2119,
+      "lng": -115.222,
+      "rank": 2
+    },
+    {
+      "nome": "San Bernardino",
+      "lat": 34.1223,
+      "lng": -117.302,
+      "rank": 2
+    },
+    {
+      "nome": "São José",
+      "lat": 37.3019,
+      "lng": -121.8519,
+      "rank": 2
+    },
+    {
+      "nome": "San Antonio",
+      "lat": 29.4893,
+      "lng": -98.5093,
+      "rank": 2
+    },
+    {
+      "nome": "Fort Worth",
+      "lat": 32.74,
+      "lng": -97.34,
+      "rank": 2
+    },
+    {
+      "nome": "San Salvador",
+      "lat": 13.7119,
+      "lng": -89.205,
+      "rank": 2
+    },
+    {
+      "nome": "Orlando",
+      "lat": 28.5119,
+      "lng": -81.382,
+      "rank": 2
+    },
+    {
+      "nome": "San José",
+      "lat": 9.937,
+      "lng": -84.086,
+      "rank": 2
+    },
+    {
+      "nome": "West Palm Beach",
+      "lat": 26.745,
+      "lng": -80.1236,
+      "rank": 2
+    },
+    {
+      "nome": "Austin",
+      "lat": 30.2689,
+      "lng": -97.7447,
+      "rank": 2
+    },
+    {
+      "nome": "Birmingham",
+      "lat": 33.53,
+      "lng": -86.825,
+      "rank": 2
+    },
+    {
+      "nome": "Memphis",
+      "lat": 35.1219,
+      "lng": -90.0019,
+      "rank": 2
+    },
+    {
+      "nome": "Cidade da Guatemala",
+      "lat": 14.6231,
+      "lng": -90.5289,
+      "rank": 2
+    },
+    {
+      "nome": "Charlotte",
+      "lat": 35.2069,
+      "lng": -80.832,
+      "rank": 2
+    }
+  ]
+}

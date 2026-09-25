@@ -1,0 +1,27 @@
+{
+  "ligaId": "liga-emirados",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Al Ain",
+      "lat": 24.2075,
+      "lng": 55.7447,
+      "_wikidata": "Q234600"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "al-ain",
+      "nomesBase": [
+        "Al Ain FC"
+      ],
+      "cidade": "Al Ain",
+      "estadio": "Hazza bin Zayed Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/IRN-JPN%2020190128%2001.jpg?width=800",
+      "lat": 24.2456,
+      "lng": 55.7166,
+      "_wikidata": "Q812720",
+      "_wikidataLabel": "Al Ain FC"
+    }
+  ]
+}

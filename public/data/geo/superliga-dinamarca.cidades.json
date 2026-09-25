@@ -1,0 +1,128 @@
+{
+  "ligaId": "superliga-dinamarca",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Aalborg",
+      "lat": 57.0337,
+      "lng": 9.9166,
+      "rank": 1
+    },
+    {
+      "nome": "Esbjerg",
+      "lat": 55.467,
+      "lng": 8.45,
+      "rank": 1
+    },
+    {
+      "nome": "Vejle",
+      "lat": 55.709,
+      "lng": 9.535,
+      "rank": 1
+    },
+    {
+      "nome": "Roskilde",
+      "lat": 55.65,
+      "lng": 12.0833,
+      "rank": 1
+    },
+    {
+      "nome": "Svendborg",
+      "lat": 55.0704,
+      "lng": 10.6167,
+      "rank": 1
+    },
+    {
+      "nome": "Frederikshavn",
+      "lat": 57.4337,
+      "lng": 10.5333,
+      "rank": 1
+    },
+    {
+      "nome": "Sorø",
+      "lat": 55.433,
+      "lng": 11.5667,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Gotemburgo",
+      "lat": 57.75,
+      "lng": 12,
+      "rank": 1
+    },
+    {
+      "nome": "Kiel",
+      "lat": 54.3304,
+      "lng": 10.13,
+      "rank": 1
+    },
+    {
+      "nome": "Malmö",
+      "lat": 55.5833,
+      "lng": 13.0333,
+      "rank": 1
+    },
+    {
+      "nome": "Lübeck",
+      "lat": 53.8704,
+      "lng": 10.67,
+      "rank": 1
+    },
+    {
+      "nome": "Rostock",
+      "lat": 54.0704,
+      "lng": 12.15,
+      "rank": 1
+    },
+    {
+      "nome": "Flensburg",
+      "lat": 54.7837,
+      "lng": 9.4333,
+      "rank": 1
+    },
+    {
+      "nome": "Helsingborg",
+      "lat": 56.0505,
+      "lng": 12.7,
+      "rank": 1
+    },
+    {
+      "nome": "Borås",
+      "lat": 57.7304,
+      "lng": 12.92,
+      "rank": 1
+    },
+    {
+      "nome": "Kristiansand",
+      "lat": 58.1666,
+      "lng": 8,
+      "rank": 2
+    },
+    {
+      "nome": "Stralsund",
+      "lat": 54.3004,
+      "lng": 13.1,
+      "rank": 2
+    },
+    {
+      "nome": "Halmstad",
+      "lat": 56.6718,
+      "lng": 12.8556,
+      "rank": 2
+    },
+    {
+      "nome": "Trollhättan",
+      "lat": 58.2671,
+      "lng": 12.3,
+      "rank": 2
+    },
+    {
+      "nome": "Arendal",
+      "lat": 58.4648,
+      "lng": 8.766,
+      "rank": 2
+    }
+  ]
+}

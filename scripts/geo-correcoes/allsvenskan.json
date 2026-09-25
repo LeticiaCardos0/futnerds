@@ -1,0 +1,51 @@
+{
+  "ligaId": "allsvenskan",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "AIK": {
+      "_nota": "AIK Fotboll; o estádio (Strawberry Arena) fica em Solna.",
+      "clubeWikidata": "Q221602"
+    },
+    "BK Häcken": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q639723"
+    },
+    "Brommapojkarna": {
+      "clubeWikidata": "Q754339"
+    },
+    "Djurgårdens IF": {
+      "clubeWikidata": "Q622430"
+    },
+    "Halmstads BK": {
+      "_nota": "Sem P159 no Wikidata.",
+      "cidade": "Halmstad"
+    },
+    "Hammarby IF": {
+      "_nota": "P159 devolve Johanneshov, o bairro da arena.",
+      "cidade": "Estocolmo",
+      "cidadeWikidata": "Q1754"
+    },
+    "IK Sirius": {
+      "_nota": "IK Sirius FK, a seção de futebol.",
+      "clubeWikidata": "Q1471336"
+    },
+    "Mjällby AIF": {
+      "_nota": "P159 devolve o município; o Strandvallen fica em Hällevik, Sölvesborg.",
+      "cidade": "Sölvesborg"
+    },
+    "Örgryte IS": {
+      "_nota": "Divide a Gamla Ullevi (a de 2009) com GAIS e IFK Göteborg.",
+      "clubeWikidata": "Q11903335",
+      "estadioWikidata": "Q165944",
+      "cidade": "Gotemburgo",
+      "cidadeWikidata": "Q25287"
+    },
+    "Västerås SK": {
+      "clubeWikidata": "Q1680249"
+    }
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "ligaId": "eliteserien",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Ålesund",
+      "lat": 62.4778,
+      "lng": 6.1903,
+      "_wikidata": "Q62266",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Bergen",
+      "lat": 60.3925,
+      "lng": 5.3233,
+      "_wikidata": "Q10428388",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Bodø",
+      "lat": 67.2831,
+      "lng": 14.3831,
+      "_wikidata": "Q221119",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Fredrikstad",
+      "lat": 59.2167,
+      "lng": 10.95,
+      "_wikidata": "Q107135",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Hamar",
+      "lat": 60.7945,
+      "lng": 11.0783,
+      "_wikidata": "Q104400",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kristiansand",
+      "lat": 58.1467,
+      "lng": 7.9956,
+      "_wikidata": "Q2415",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kristiansund",
+      "lat": 63.1115,
+      "lng": 7.732,
+      "_wikidata": "Q109483",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Lillestrøm",
+      "lat": 59.95,
+      "lng": 11.2,
+      "_wikidata": "Q60806432",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Molde",
+      "lat": 62.7333,
+      "lng": 7.1833,
+      "_wikidata": "Q104095",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Oslo",
+      "lat": 59.9118,
+      "lng": 10.7337,
+      "_wikidata": "Q5245991",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sandefjord",
+      "lat": 59.1288,
+      "lng": 10.2197,
+      "_wikidata": "Q109005",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sarpsborg",
+      "lat": 59.2906,
+      "lng": 11.2028,
+      "_wikidata": "Q108025",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Stavanger",
+      "lat": 58.97,
+      "lng": 5.7314,
+      "_wikidata": "Q25416",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Tromsø",
+      "lat": 69.6496,
+      "lng": 18.957,
+      "_wikidata": "Q26087",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Trondheim",
+      "lat": 63.4281,
+      "lng": 10.3969,
+      "_wikidata": "Q1324436",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aalesunds-fk",
+      "nomesBase": [
+        "Aalesunds FK"
+      ],
+      "cidade": "Ålesund",
+      "estadio": "Color Line Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Color%20Line%20stadion.jpg?width=800",
+      "lat": 62.4694,
+      "lng": 6.1875,
+      "_wikidata": "Q214992",
+      "_wikidataLabel": "Aalesunds FK"
+    },
+    {
+      "slug": "fk-bod-glimt",
+      "nomesBase": [
+        "FK Bodø/Glimt"
+      ],
+      "cidade": "Bodø",
+      "estadio": "Aspmyra Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aspmyra%20stadion.jpg?width=800",
+      "lat": 67.2775,
+      "lng": 14.3842,
+      "_wikidata": "Q478167",
+      "_wikidataLabel": "FK Bodø/Glimt"
+    },
+    {
+      "slug": "fredrikstad-fk",
+      "nomesBase": [
+        "Fredrikstad FK"
+      ],
+      "cidade": "Fredrikstad",
+      "estadio": "Fredrikstad Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Fredrikstad%20stadion.jpg?width=800",
+      "lat": 59.213,
+      "lng": 10.9273,
+      "_wikidata": "Q216131",
+      "_wikidataLabel": "Fredrikstad FK"
+    },
+    {
+      "slug": "hamarkameratene",
+      "nomesBase": [
+        "HamKam Fotball"
+      ],
+      "cidade": "Hamar",
+      "estadio": "Briskeby Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Briskeby%20gressbane9.JPG?width=800",
+      "lat": 60.7956,
+      "lng": 11.0922,
+      "_wikidata": "Q1130961",
+      "_wikidataLabel": "Hamarkameratene"
+    },
+    {
+      "slug": "ik-start",
+      "nomesBase": [
+        "IK Start"
+      ],
+      "cidade": "Kristiansand",
+      "estadio": "Sparebanken Norge Arena Kristiansand",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sparebanken%20Norge%20Arena%20Kristiansand%20%2C%20building.jpg?width=800",
+      "lat": 58.1536,
+      "lng": 8.0286,
+      "_wikidata": "Q737947",
+      "_wikidataLabel": "IK Start"
+    },
+    {
+      "slug": "kfum-kameratene-oslo",
+      "nomesBase": [
+        "KFUM-Kameratene"
+      ],
+      "cidade": "Oslo",
+      "estadio": "KFUM Arena",
+      "lat": 59.89,
+      "lng": 10.7808,
+      "_wikidata": "Q3432730",
+      "_wikidataLabel": "KFUM-Kameratene Oslo"
+    },
+    {
+      "slug": "kristiansund-bk",
+      "nomesBase": [
+        "Kristiansund BK"
+      ],
+      "cidade": "Kristiansund",
+      "estadio": "Kristiansund Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kristiansund%20stadion.jpg?width=800",
+      "lat": 63.125,
+      "lng": 7.7192,
+      "_wikidata": "Q496190",
+      "_wikidataLabel": "Kristiansund BK"
+    },
+    {
+      "slug": "lillestr-m-sk",
+      "nomesBase": [
+        "Lillestrøm SK"
+      ],
+      "cidade": "Lillestrøm",
+      "estadio": "Åråsen Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%85r%C3%A5sen.jpg?width=800",
+      "lat": 59.9628,
+      "lng": 11.0635,
+      "_wikidata": "Q214374",
+      "_wikidataLabel": "Lillestrøm SK"
+    },
+    {
+      "slug": "molde-fk",
+      "nomesBase": [
+        "Molde FK"
+      ],
+      "cidade": "Molde",
+      "estadio": "Aker Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Moldestadion.jpg?width=800",
+      "lat": 62.7334,
+      "lng": 7.1481,
+      "_wikidata": "Q208552",
+      "_wikidataLabel": "Molde FK"
+    },
+    {
+      "slug": "rosenborg-bk",
+      "nomesBase": [
+        "Rosenborg BK"
+      ],
+      "cidade": "Trondheim",
+      "estadio": "Lerkendal Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Lerkendal%20stadion%2C%202021%20%282%29.jpg?width=800",
+      "lat": 63.4125,
+      "lng": 10.405,
+      "_wikidata": "Q186785",
+      "_wikidataLabel": "Rosenborg BK"
+    },
+    {
+      "slug": "sandefjord-fotball",
+      "nomesBase": [
+        "Sandefjord"
+      ],
+      "cidade": "Sandefjord",
+      "estadio": "Jotun Arena",
+      "lat": 59.1373,
+      "lng": 10.1797,
+      "_wikidata": "Q861524",
+      "_wikidataLabel": "Sandefjord Fotball"
+    },
+    {
+      "slug": "sarpsborg-08-ff",
+      "nomesBase": [
+        "Sarpsborg 08"
+      ],
+      "cidade": "Sarpsborg",
+      "estadio": "Sarpsborg Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/MFF-Sarpsborg%2008%20Europa%20League%202018-2019.jpg?width=800",
+      "lat": 59.2862,
+      "lng": 11.0976,
+      "_wikidata": "Q1151909",
+      "_wikidataLabel": "Sarpsborg 08 FF"
+    },
+    {
+      "slug": "sk-brann",
+      "nomesBase": [
+        "SK Brann"
+      ],
+      "cidade": "Bergen",
+      "estadio": "Brann Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Brann%20stadion%20fra%20Ulriken.jpg?width=800",
+      "lat": 60.3664,
+      "lng": 5.3569,
+      "_wikidata": "Q205685",
+      "_wikidataLabel": "SK Brann"
+    },
+    {
+      "slug": "troms-il",
+      "nomesBase": [
+        "Tromsø IL"
+      ],
+      "cidade": "Tromsø",
+      "estadio": "Romssa Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Alfheim%20stadion%20facade.JPG?width=800",
+      "lat": 69.6489,
+      "lng": 18.935,
+      "_wikidata": "Q212490",
+      "_wikidataLabel": "Tromsø IL"
+    },
+    {
+      "slug": "valerenga-fotball",
+      "nomesBase": [
+        "Vålerenga Fotball"
+      ],
+      "cidade": "Oslo",
+      "estadio": "Intility Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Intility%20Arena%20%28bilde05%29%20%288.%20september%202018%29.jpg?width=800",
+      "lat": 59.9178,
+      "lng": 10.8067,
+      "_wikidata": "Q212819",
+      "_wikidataLabel": "Vålerenga Fotball"
+    },
+    {
+      "slug": "viking-fk",
+      "nomesBase": [
+        "Viking FK"
+      ],
+      "cidade": "Stavanger",
+      "estadio": "Lyse Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Btd%20viking%20stadion%20lr.jpg?width=800",
+      "lat": 58.9146,
+      "lng": 5.7304,
+      "_wikidata": "Q211177",
+      "_wikidataLabel": "Viking FK"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "ligaId": "scottish-premiership",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Aberdeen",
+      "lat": 57.15,
+      "lng": -2.1,
+      "_wikidata": "Q36405"
+    },
+    {
+      "nome": "Dundee",
+      "lat": 56.4606,
+      "lng": -2.97,
+      "_wikidata": "Q123709"
+    },
+    {
+      "nome": "Edimburgo",
+      "lat": 55.9533,
+      "lng": -3.1892,
+      "_wikidata": "Q23436"
+    },
+    {
+      "nome": "Falkirk",
+      "lat": 55.9994,
+      "lng": -3.7847,
+      "_wikidata": "Q623687"
+    },
+    {
+      "nome": "Glasgow",
+      "lat": 55.8611,
+      "lng": -4.25,
+      "_wikidata": "Q4093"
+    },
+    {
+      "nome": "Kilmarnock",
+      "lat": 55.6117,
+      "lng": -4.4944,
+      "_wikidata": "Q576562"
+    },
+    {
+      "nome": "Motherwell",
+      "lat": 55.7892,
+      "lng": -3.9956,
+      "_wikidata": "Q737547"
+    },
+    {
+      "nome": "Paisley",
+      "lat": 55.8456,
+      "lng": -4.4239,
+      "_wikidata": "Q211870"
+    },
+    {
+      "nome": "Perth",
+      "lat": 56.3958,
+      "lng": -3.4333,
+      "_wikidata": "Q203000"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aberdeen",
+      "nomesBase": [
+        "Aberdeen"
+      ],
+      "cidade": "Aberdeen",
+      "estadio": "Pittodrie Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Drone%20-%20Aberdeen%20FC.jpg?width=800",
+      "lat": 57.1592,
+      "lng": -2.0889,
+      "_wikidata": "Q187326",
+      "_wikidataLabel": "Aberdeen F.C."
+    },
+    {
+      "slug": "celtic",
+      "nomesBase": [
+        "Celtic"
+      ],
+      "cidade": "Glasgow",
+      "estadio": "Celtic Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Celtic%20park%202.jpg?width=800",
+      "lat": 55.8497,
+      "lng": -4.2056,
+      "_wikidata": "Q19593",
+      "_wikidataLabel": "Celtic F.C."
+    },
+    {
+      "slug": "dundee",
+      "nomesBase": [
+        "Dundee FC"
+      ],
+      "cidade": "Dundee",
+      "estadio": "Dens Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Dundee%20v%20St.%20Johnstone.jpg?width=800",
+      "lat": 56.4753,
+      "lng": -2.9732,
+      "_wikidata": "Q335483",
+      "_wikidataLabel": "Dundee F.C."
+    },
+    {
+      "slug": "dundee-united",
+      "nomesBase": [
+        "Dundee United"
+      ],
+      "cidade": "Dundee",
+      "estadio": "Tannadice Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/East%20Stand%20Tannadice.jpg?width=800",
+      "lat": 56.4747,
+      "lng": -2.969,
+      "_wikidata": "Q192873",
+      "_wikidataLabel": "Dundee United F.C."
+    },
+    {
+      "slug": "falkirk",
+      "nomesBase": [
+        "Falkirk"
+      ],
+      "cidade": "Falkirk",
+      "estadio": "Falkirk Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Falkirk%20Stadium%20-%20geograph.org.uk%20-%20397119.jpg?width=800",
+      "lat": 56.0051,
+      "lng": -3.7543,
+      "_wikidata": "Q219241",
+      "_wikidataLabel": "Falkirk F.C."
+    },
+    {
+      "slug": "heart-of-midlothian",
+      "nomesBase": [
+        "Hearts"
+      ],
+      "cidade": "Edimburgo",
+      "estadio": "Tynecastle Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tynecastle%20before%20Sky%20Sports%20Cup%20Final.jpg?width=800",
+      "lat": 55.9391,
+      "lng": -3.2324,
+      "_wikidata": "Q202093",
+      "_wikidataLabel": "Heart of Midlothian F.C."
+    },
+    {
+      "slug": "hibernian",
+      "nomesBase": [
+        "Hibernian"
+      ],
+      "cidade": "Edimburgo",
+      "estadio": "Easter Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Easter%20Road%20-%20Edinburgh%20Derby.jpg?width=800",
+      "lat": 55.9617,
+      "lng": -3.1656,
+      "_wikidata": "Q192597",
+      "_wikidataLabel": "Hibernian F.C."
+    },
+    {
+      "slug": "kilmarnock",
+      "nomesBase": [
+        "Kilmarnock"
+      ],
+      "cidade": "Kilmarnock",
+      "estadio": "Rugby Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rugby%20Park%2C%20Kilmarnock.jpg?width=800",
+      "lat": 55.6042,
+      "lng": -4.5081,
+      "_wikidata": "Q210961",
+      "_wikidataLabel": "Kilmarnock F.C."
+    },
+    {
+      "slug": "motherwell",
+      "nomesBase": [
+        "Motherwell"
+      ],
+      "cidade": "Motherwell",
+      "estadio": "Fir Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Firpark.jpg?width=800",
+      "lat": 55.7799,
+      "lng": -3.9801,
+      "_wikidata": "Q216523",
+      "_wikidataLabel": "Motherwell F.C."
+    },
+    {
+      "slug": "rangers",
+      "nomesBase": [
+        "Rangers"
+      ],
+      "cidade": "Glasgow",
+      "estadio": "Ibrox Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ibrox%20Inside.jpg?width=800",
+      "lat": 55.8531,
+      "lng": -4.3092,
+      "_wikidata": "Q19597",
+      "_wikidataLabel": "Rangers F.C."
+    },
+    {
+      "slug": "st-johnstone",
+      "nomesBase": [
+        "St. Johnstone"
+      ],
+      "cidade": "Perth",
+      "estadio": "McDiarmid Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/McDiarmid%20Park.jpg?width=800",
+      "lat": 56.4097,
+      "lng": -3.4769,
+      "_wikidata": "Q268776",
+      "_wikidataLabel": "St Johnstone F.C."
+    },
+    {
+      "slug": "st-mirren",
+      "nomesBase": [
+        "St. Mirren"
+      ],
+      "cidade": "Paisley",
+      "estadio": "St. Mirren Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Greenhill%20Road%20-%20geograph.org.uk%20-%201160158.jpg?width=800",
+      "lat": 55.8506,
+      "lng": -4.4439,
+      "_wikidata": "Q319136",
+      "_wikidataLabel": "St. Mirren F.C."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ligaId": "scottish-premiership",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Edinburgh vira Edimburgo, como nas cidades vizinhas da Premier League."
+  ],
+  "clubes": {
+    "Celtic": {
+      "_nota": "Casa com 3 clubes (inclui o feminino).",
+      "clubeWikidata": "Q19593",
+      "cidade": "Glasgow"
+    },
+    "Hearts": {
+      "cidade": "Edimburgo",
+      "cidadeWikidata": "Q23436"
+    },
+    "Hibernian": {
+      "cidade": "Edimburgo",
+      "cidadeWikidata": "Q23436"
+    },
+    "Rangers": {
+      "_nota": "Casa também com o Rangers sul-africano.",
+      "clubeWikidata": "Q19597",
+      "cidade": "Glasgow"
+    }
+  }
+}

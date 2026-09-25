@@ -1,0 +1,52 @@
+{
+  "ligaId": "superliga-romenia",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Na base esta liga (\"SUPERLIGA\") está cadastrada como da Dinamarca; os clubes são romenos."
+  ],
+  "clubes": {
+    "CFR 1907 Cluj": {
+      "clubeWikidata": "Q205998",
+      "cidade": "Cluj-Napoca"
+    },
+    "Farul Constanța": {
+      "_nota": "No Wikidata ainda como Viitorul: o Viitorul absorveu o Farul em 2021 e adotou o nome.",
+      "clubeWikidata": "Q533094",
+      "cidade": "Constanța"
+    },
+    "FC Corvinul 1921 Hunedoara": {
+      "clubeWikidata": "Q1135735"
+    },
+    "FC Dinamo 1948": {
+      "_nota": "Dinamo Bucareste.",
+      "clubeWikidata": "Q204237",
+      "cidade": "Bucareste",
+      "cidadeWikidata": "Q19660"
+    },
+    "FC Petrolul": {
+      "_nota": "Petrolul Ploiești.",
+      "clubeWikidata": "Q1322550"
+    },
+    "FC Rapid 1923": {
+      "_nota": "Dois estádios no Wikidata; o Rapid joga no Giulești.",
+      "estadioWikidata": "Q97889239",
+      "cidade": "Bucareste",
+      "cidadeWikidata": "Q19660"
+    },
+    "FC Univ. Cluj": {
+      "clubeWikidata": "Q753462",
+      "cidade": "Cluj-Napoca"
+    },
+    "FCSB": {
+      "cidade": "Bucareste",
+      "cidadeWikidata": "Q19660"
+    },
+    "Univ. Craiova": {
+      "_nota": "CS Universitatea Craiova (há também o FC U Craiova 1948).",
+      "clubeWikidata": "Q16838020"
+    }
+  }
+}

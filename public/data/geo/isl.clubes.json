@@ -1,0 +1,217 @@
+{
+  "ligaId": "isl",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Bengalúru",
+      "lat": 12.9791,
+      "lng": 77.5913,
+      "_wikidata": "Q1355"
+    },
+    {
+      "nome": "Bhubaneswar",
+      "lat": 20.295,
+      "lng": 85.825,
+      "_wikidata": "Q171771"
+    },
+    {
+      "nome": "Calcutá",
+      "lat": 22.5675,
+      "lng": 88.37,
+      "_wikidata": "Q1348"
+    },
+    {
+      "nome": "Chennai",
+      "lat": 13.0825,
+      "lng": 80.275,
+      "_wikidata": "Q1352"
+    },
+    {
+      "nome": "Délhi",
+      "lat": 28.6667,
+      "lng": 77.2167,
+      "_wikidata": "Q1353"
+    },
+    {
+      "nome": "Guwahati",
+      "lat": 26.1806,
+      "lng": 91.7502,
+      "_wikidata": "Q199605"
+    },
+    {
+      "nome": "Hyderabad",
+      "lat": 17.3617,
+      "lng": 78.4747,
+      "_wikidata": "Q1361"
+    },
+    {
+      "nome": "Kochi",
+      "lat": 9.9667,
+      "lng": 76.2833,
+      "_wikidata": "Q1800"
+    },
+    {
+      "nome": "Margão",
+      "lat": 15.2719,
+      "lng": 73.9583,
+      "_wikidata": "Q515117"
+    },
+    {
+      "nome": "Mumbai",
+      "lat": 19.0758,
+      "lng": 72.8775,
+      "_wikidata": "Q1156"
+    },
+    {
+      "nome": "Varanasi",
+      "lat": 25.3189,
+      "lng": 83.0128,
+      "_wikidata": "Q79980",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "bengaluru",
+      "nomesBase": [
+        "Bengaluru FC"
+      ],
+      "cidade": "Bengalúru",
+      "estadio": "Sree Kanteerava Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kanteerava%20Outdoor%2011.JPG?width=800",
+      "lat": 12.9696,
+      "lng": 77.5935,
+      "_wikidata": "Q16243716",
+      "_wikidataLabel": "Bengaluru FC"
+    },
+    {
+      "slug": "chennaiyin",
+      "nomesBase": [
+        "Chennaiyin FC"
+      ],
+      "cidade": "Chennai",
+      "estadio": "Jawaharlal Nehru Stadium Chennai",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nehru%20Stadium%20Chennai.jpg?width=800",
+      "lat": 13.0856,
+      "lng": 80.2717,
+      "_wikidata": "Q17594408",
+      "_wikidataLabel": "Chennaiyin FC"
+    },
+    {
+      "slug": "fc-goa",
+      "nomesBase": [
+        "FC Goa"
+      ],
+      "cidade": "Margão",
+      "estadio": "Fatorda Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Fatorda%20stadium%20exterior%201.jpg?width=800",
+      "lat": 15.2897,
+      "lng": 73.9625,
+      "_wikidata": "Q16839398",
+      "_wikidataLabel": "FC Goa"
+    },
+    {
+      "slug": "hyderabad",
+      "nomesBase": [
+        "Hyderabad FC"
+      ],
+      "cidade": "Hyderabad",
+      "estadio": "G. M. C. Balayogi Athletic Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gachibowli%20Outdoor%2035.JPG?width=800",
+      "lat": 17.4462,
+      "lng": 78.3442,
+      "_wikidata": "Q66816187",
+      "_wikidataLabel": "Hyderabad FC"
+    },
+    {
+      "slug": "inter-kashi",
+      "nomesBase": [
+        "Inter Kashi"
+      ],
+      "cidade": "Varanasi",
+      "estadio": "—",
+      "lat": 25.3189,
+      "lng": 83.0128,
+      "_wikidata": "Q120664287",
+      "_wikidataLabel": "Inter Kashi"
+    },
+    {
+      "slug": "kerala-blasters",
+      "nomesBase": [
+        "Kerala Blasters"
+      ],
+      "cidade": "Kochi",
+      "estadio": "Jawaharlal Nehru International Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kaloor.jpg?width=800",
+      "lat": 9.9972,
+      "lng": 76.3011,
+      "_wikidata": "Q16842784",
+      "_wikidataLabel": "Kerala Blasters FC"
+    },
+    {
+      "slug": "mohun-bagan-super-giant",
+      "nomesBase": [
+        "Mohun Bagan SG"
+      ],
+      "cidade": "Calcutá",
+      "estadio": "Salt Lake Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Salt%20Lake%20Stadium%2C%20Vivekananda%20Yuba%20Bharati%20Krirangan%20%28VYBK%29-%20Kolkata%20-%20IRCTC%202017%20%2829%29.jpg?width=800",
+      "lat": 22.5689,
+      "lng": 88.4092,
+      "_wikidata": "Q60762002",
+      "_wikidataLabel": "Mohun Bagan Super Giant"
+    },
+    {
+      "slug": "mumbai-city",
+      "nomesBase": [
+        "Mumbai City FC"
+      ],
+      "cidade": "Mumbai",
+      "estadio": "Mumbai Football Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wug0reym7cv91.jpg?width=800",
+      "lat": 19.1294,
+      "lng": 72.8362,
+      "_wikidata": "Q16845355",
+      "_wikidataLabel": "Mumbai City FC"
+    },
+    {
+      "slug": "northeast-united",
+      "nomesBase": [
+        "NorthEast United"
+      ],
+      "cidade": "Guwahati",
+      "estadio": "Sarusajai Stadium (Guwahati)",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Main%20Stand%20of%20the%20Indira%20Gandhi%20Athletic%20Stadium%2C%20Guwahati.jpg?width=800",
+      "lat": 26.1157,
+      "lng": 91.7603,
+      "_wikidata": "Q16840338",
+      "_wikidataLabel": "NorthEast United FC"
+    },
+    {
+      "slug": "odisha",
+      "nomesBase": [
+        "Odisha FC"
+      ],
+      "cidade": "Bhubaneswar",
+      "estadio": "Kalinga Sports Complex, Bhubaneswar",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Kalinga%20Stadium.jpg?width=800",
+      "lat": 20.2909,
+      "lng": 85.825,
+      "_wikidata": "Q16838244",
+      "_wikidataLabel": "Odisha FC"
+    },
+    {
+      "slug": "punjab",
+      "nomesBase": [
+        "Punjab FC"
+      ],
+      "cidade": "Délhi",
+      "estadio": "Jawaharlal Nehru Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Jawaharlal%20Nehru%20Stadium1.jpg?width=800",
+      "lat": 28.5829,
+      "lng": 77.2344,
+      "_wikidata": "Q24185095",
+      "_wikidataLabel": "Punjab FC"
+    }
+  ]
+}

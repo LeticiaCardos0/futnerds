@@ -1,0 +1,230 @@
+{
+  "ligaId": "ekstraklasa",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Gdansk",
+      "lat": 54.36,
+      "lng": 18.64,
+      "rank": 1
+    },
+    {
+      "nome": "Bydgoszcz",
+      "lat": 53.1204,
+      "lng": 18.01,
+      "rank": 1
+    },
+    {
+      "nome": "Gdynia",
+      "lat": 54.5204,
+      "lng": 18.53,
+      "rank": 1
+    },
+    {
+      "nome": "Rzeszów",
+      "lat": 50.0705,
+      "lng": 22,
+      "rank": 1
+    },
+    {
+      "nome": "Olsztyn",
+      "lat": 53.8,
+      "lng": 20.48,
+      "rank": 1
+    },
+    {
+      "nome": "Opole",
+      "lat": 50.685,
+      "lng": 17.9313,
+      "rank": 1
+    },
+    {
+      "nome": "Elbląg",
+      "lat": 54.19,
+      "lng": 19.4027,
+      "rank": 1
+    },
+    {
+      "nome": "Zielona Góra",
+      "lat": 51.9504,
+      "lng": 15.5,
+      "rank": 1
+    },
+    {
+      "nome": "Koszalin",
+      "lat": 54.2,
+      "lng": 16.1833,
+      "rank": 1
+    },
+    {
+      "nome": "Grudziądz",
+      "lat": 53.4804,
+      "lng": 18.75,
+      "rank": 1
+    },
+    {
+      "nome": "Inowrocław",
+      "lat": 52.7799,
+      "lng": 18.25,
+      "rank": 1
+    },
+    {
+      "nome": "Ełk",
+      "lat": 53.8337,
+      "lng": 22.35,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1
+    },
+    {
+      "nome": "Viena",
+      "lat": 48.202,
+      "lng": 16.3647,
+      "rank": 1
+    },
+    {
+      "nome": "Praga",
+      "lat": 50.0853,
+      "lng": 14.464,
+      "rank": 1
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6805,
+      "lng": 12.5615,
+      "rank": 1
+    },
+    {
+      "nome": "Lviv",
+      "lat": 49.835,
+      "lng": 24.03,
+      "rank": 1
+    },
+    {
+      "nome": "Dresden",
+      "lat": 51.05,
+      "lng": 13.75,
+      "rank": 1
+    },
+    {
+      "nome": "Leipzig",
+      "lat": 51.3354,
+      "lng": 12.41,
+      "rank": 1
+    },
+    {
+      "nome": "Vilnius",
+      "lat": 54.6834,
+      "lng": 25.3166,
+      "rank": 1
+    },
+    {
+      "nome": "Ostrava",
+      "lat": 49.8304,
+      "lng": 18.25,
+      "rank": 2
+    },
+    {
+      "nome": "Caliningrado",
+      "lat": 54.7,
+      "lng": 20.4973,
+      "rank": 2
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 2
+    },
+    {
+      "nome": "Brno",
+      "lat": 49.2004,
+      "lng": 16.61,
+      "rank": 2
+    },
+    {
+      "nome": "Kaunas",
+      "lat": 54.9504,
+      "lng": 23.88,
+      "rank": 2
+    },
+    {
+      "nome": "Linz",
+      "lat": 48.3192,
+      "lng": 14.2888,
+      "rank": 2
+    },
+    {
+      "nome": "Hrodna",
+      "lat": 53.6779,
+      "lng": 23.8341,
+      "rank": 2
+    },
+    {
+      "nome": "Chemnitz",
+      "lat": 50.83,
+      "lng": 12.92,
+      "rank": 2
+    },
+    {
+      "nome": "Brest",
+      "lat": 52.1,
+      "lng": 23.7,
+      "rank": 2
+    },
+    {
+      "nome": "Chernivtsi",
+      "lat": 48.3053,
+      "lng": 25.9216,
+      "rank": 2
+    },
+    {
+      "nome": "Malmö",
+      "lat": 55.5833,
+      "lng": 13.0333,
+      "rank": 2
+    },
+    {
+      "nome": "Rivne",
+      "lat": 50.6166,
+      "lng": 26.2528,
+      "rank": 2
+    },
+    {
+      "nome": "Miskolc",
+      "lat": 48.1004,
+      "lng": 20.78,
+      "rank": 2
+    },
+    {
+      "nome": "Ternopil",
+      "lat": 49.536,
+      "lng": 25.5821,
+      "rank": 2
+    },
+    {
+      "nome": "Ivano-Frankivsk",
+      "lat": 48.9348,
+      "lng": 24.7094,
+      "rank": 2
+    },
+    {
+      "nome": "Košice",
+      "lat": 48.7304,
+      "lng": 21.25,
+      "rank": 2
+    },
+    {
+      "nome": "Debrecen",
+      "lat": 47.5305,
+      "lng": 21.63,
+      "rank": 2
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "ligaId": "superliga-china",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "A base usa os nomes do EA FC (Beijing FC, SZ Peng City), que diferem dos patrocinados do Wikidata."
+  ],
+  "clubes": {
+    "Beijing FC": {
+      "_nota": "Beijing Guoan.",
+      "clubeWikidata": "Q814738",
+      "cidade": "Pequim",
+      "cidadeWikidata": "Q956"
+    },
+    "Chengdu FC": {
+      "_nota": "P159 devolve o país inteiro.",
+      "clubeWikidata": "Q19840468",
+      "cidade": "Chengdu"
+    },
+    "Chongqing FC": {
+      "_nota": "Clube novo (Chongqing Tongliang Long), sem estádio fixo confirmável.",
+      "clubeWikidata": "Q123253436",
+      "semEstadio": true,
+      "cidade": "Chongqing"
+    },
+    "Dalian Yingbo": {
+      "clubeWikidata": "Q118904181"
+    },
+    "Henan FC": {
+      "clubeWikidata": "Q507444"
+    },
+    "Liaoning FC": {
+      "_nota": "Liaoning Tieren.",
+      "clubeWikidata": "Q22662512",
+      "estadioWikidata": "Q17038391",
+      "cidade": "Shenyang"
+    },
+    "Qingdao Hainiu": {
+      "_nota": "P159 devolve o país inteiro.",
+      "cidade": "Qingdao"
+    },
+    "Qingdao W. Coast": {
+      "_nota": "Qingdao West Coast, antes Qingdao Qingchundao (Youth Island).",
+      "clubeWikidata": "Q97276157",
+      "estadioWikidata": "Q122999977",
+      "cidade": "Qingdao"
+    },
+    "Shandong Taishan": {
+      "clubeWikidata": "Q1046367"
+    },
+    "Shanghai Port FC": {
+      "clubeWikidata": "Q564216",
+      "cidade": "Xangai",
+      "cidadeWikidata": "Q8686"
+    },
+    "Shanghai Shenhua": {
+      "clubeWikidata": "Q725367",
+      "cidade": "Xangai",
+      "cidadeWikidata": "Q8686"
+    },
+    "SZ Peng City": {
+      "_nota": "Shenzhen Peng City.",
+      "clubeWikidata": "Q7507434"
+    },
+    "Tianjin JMT FC": {
+      "_nota": "Tianjin Jinmen Tiger.",
+      "clubeWikidata": "Q537552"
+    },
+    "Wuhan Three Towns": {
+      "clubeWikidata": "Q65062245",
+      "estadioWikidata": "Q1194029",
+      "cidade": "Wuhan"
+    },
+    "Yunnan Yukun": {
+      "clubeWikidata": "Q123376316"
+    },
+    "Zhejiang Pro": {
+      "_nota": "Zhejiang Professional.",
+      "clubeWikidata": "Q79380"
+    }
+  }
+}

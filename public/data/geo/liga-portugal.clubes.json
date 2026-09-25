@@ -1,0 +1,316 @@
+{
+  "ligaId": "liga-portugal",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Alverca do Ribatejo",
+      "lat": 38.9042,
+      "lng": -9.0394,
+      "_wikidata": "Q135208333"
+    },
+    {
+      "nome": "Amadora",
+      "lat": 38.7602,
+      "lng": -9.2358,
+      "_wikidata": "Q16489411"
+    },
+    {
+      "nome": "Arouca",
+      "lat": 40.9289,
+      "lng": -8.2435,
+      "_wikidata": "Q134723105"
+    },
+    {
+      "nome": "Barcelos",
+      "lat": 41.5388,
+      "lng": -8.6151,
+      "_wikidata": "Q31910871"
+    },
+    {
+      "nome": "Braga",
+      "lat": 41.5503,
+      "lng": -8.42,
+      "_wikidata": "Q3344946"
+    },
+    {
+      "nome": "Estoril",
+      "lat": 38.7074,
+      "lng": -9.3978,
+      "_wikidata": "Q136687315"
+    },
+    {
+      "nome": "Funchal",
+      "lat": 32.651,
+      "lng": -16.9085,
+      "_wikidata": "Q134983322"
+    },
+    {
+      "nome": "Guimarães",
+      "lat": 41.4444,
+      "lng": -8.2961,
+      "_wikidata": "Q49283743"
+    },
+    {
+      "nome": "Lisboa",
+      "lat": 38.708,
+      "lng": -9.139,
+      "_wikidata": "Q597"
+    },
+    {
+      "nome": "Moreira de Cónegos",
+      "lat": 41.3833,
+      "lng": -8.3333,
+      "_wikidata": "Q1947515"
+    },
+    {
+      "nome": "Ponta Delgada",
+      "lat": 37.74,
+      "lng": -25.67,
+      "_wikidata": "Q208149"
+    },
+    {
+      "nome": "Porto",
+      "lat": 41.15,
+      "lng": -8.6108,
+      "_wikidata": "Q36433",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Vila do Conde",
+      "lat": 41.3548,
+      "lng": -8.7434,
+      "_wikidata": "Q49292311"
+    },
+    {
+      "nome": "Vila Nova de Famalicão",
+      "lat": 41.4122,
+      "lng": -8.4851,
+      "_wikidata": "Q19833164"
+    },
+    {
+      "nome": "Viseu",
+      "lat": 40.6611,
+      "lng": -7.9097,
+      "_wikidata": "Q49278409"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "academico-de-viseu",
+      "nomesBase": [
+        "Académico de Viseu FC"
+      ],
+      "cidade": "Viseu",
+      "estadio": "Estádio do Fontelo",
+      "lat": 40.6594,
+      "lng": -7.9008,
+      "_wikidata": "Q2410944",
+      "_wikidataLabel": "Académico de Viseu FC"
+    },
+    {
+      "slug": "c-d-santa-clara",
+      "nomesBase": [
+        "Santa Clara"
+      ],
+      "cidade": "Ponta Delgada",
+      "estadio": "Estádio de São Miguel",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20de%20S%C3%A3o%20Miguel%20%2862276%29.jpg?width=800",
+      "lat": 37.7637,
+      "lng": -25.6226,
+      "_wikidata": "Q740637",
+      "_wikidataLabel": "C.D. Santa Clara"
+    },
+    {
+      "slug": "c-f-estrela-da-amadora",
+      "nomesBase": [
+        "Estrela Amadora"
+      ],
+      "cidade": "Amadora",
+      "estadio": "Estádio José Gomes",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20Jos%C3%A9%20Gomes%20%28Reboleira%29.jpg?width=800",
+      "lat": 38.752,
+      "lng": -9.228,
+      "_wikidata": "Q838134",
+      "_wikidataLabel": "C.F. Estrela da Amadora"
+    },
+    {
+      "slug": "c-s-maritimo",
+      "nomesBase": [
+        "Marítimo da Madeira"
+      ],
+      "cidade": "Funchal",
+      "estadio": "Estádio do Marítimo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1diodosBarreirosCentral.jpg?width=800",
+      "lat": 32.6456,
+      "lng": -16.9283,
+      "_wikidata": "Q216503",
+      "_wikidataLabel": "C.S. Marítimo"
+    },
+    {
+      "slug": "casa-pia-a-c",
+      "nomesBase": [
+        "Casa Pia AC"
+      ],
+      "cidade": "Lisboa",
+      "estadio": "Estádio Pina Manique",
+      "lat": 38.7375,
+      "lng": -9.2038,
+      "_wikidata": "Q1046440",
+      "_wikidataLabel": "Casa Pia A.C."
+    },
+    {
+      "slug": "f-c-alverca",
+      "nomesBase": [
+        "FC Alverca"
+      ],
+      "cidade": "Alverca do Ribatejo",
+      "estadio": "Complexo Desportivo do FC Alverca",
+      "lat": 38.8988,
+      "lng": -9.0368,
+      "_wikidata": "Q1386850",
+      "_wikidataLabel": "F.C. Alverca"
+    },
+    {
+      "slug": "f-c-arouca",
+      "nomesBase": [
+        "Arouca"
+      ],
+      "cidade": "Arouca",
+      "estadio": "Estádio Municipal de Arouca",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20Municipal%20de%20Arouca.jpg?width=800",
+      "lat": 40.9283,
+      "lng": -8.2486,
+      "_wikidata": "Q1386869",
+      "_wikidataLabel": "F.C. Arouca"
+    },
+    {
+      "slug": "fc-famalicao",
+      "nomesBase": [
+        "FC Famalicão"
+      ],
+      "cidade": "Vila Nova de Famalicão",
+      "estadio": "Estádio Municipal 22 de Junho",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Blick%20von%20der%20Gegentrib%C3%BCne%20-%20Est%C3%A1dio%20Municipal%2022%20de%20Junho.jpg?width=800",
+      "lat": 41.4013,
+      "lng": -8.5224,
+      "_wikidata": "Q1387105",
+      "_wikidataLabel": "FC Famalicão"
+    },
+    {
+      "slug": "fc-porto",
+      "nomesBase": [
+        "FC Porto"
+      ],
+      "cidade": "Porto",
+      "estadio": "Estádio do Dragão",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20do%20Drag%C3%A3o%20%288468978586%29.jpg?width=800",
+      "lat": 41.1618,
+      "lng": -8.5839,
+      "_wikidata": "Q128446",
+      "_wikidataLabel": "FC Porto"
+    },
+    {
+      "slug": "g-d-estoril-praia",
+      "nomesBase": [
+        "Estoril Praia"
+      ],
+      "cidade": "Estoril",
+      "estadio": "Estádio António Coimbra da Mota",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/20011019%20CD%20Estoril%20Praia%20%282%29.JPG?width=800",
+      "lat": 38.716,
+      "lng": -9.406,
+      "_wikidata": "Q634829",
+      "_wikidataLabel": "G.D. Estoril Praia"
+    },
+    {
+      "slug": "gil-vicente",
+      "nomesBase": [
+        "Gil Vicente"
+      ],
+      "cidade": "Barcelos",
+      "estadio": "Estádio Cidade de Barcelos",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20Cidade%20de%20Barcelos.jpg?width=800",
+      "lat": 41.5511,
+      "lng": -8.6228,
+      "_wikidata": "Q926438",
+      "_wikidataLabel": "Gil Vicente F.C."
+    },
+    {
+      "slug": "moreirense",
+      "nomesBase": [
+        "Moreirense FC"
+      ],
+      "cidade": "Moreira de Cónegos",
+      "estadio": "Parque de Jogos Comendador Joaquim de Almeida Freitas",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Blick%20auf%20die%20Haupttrib%C3%BCne%20-%20Est%C3%A1dio%20Comendador%20Joaquim%20de%20Almeida%20Freitas.jpg?width=800",
+      "lat": 41.3781,
+      "lng": -8.3548,
+      "_wikidata": "Q1346314",
+      "_wikidataLabel": "Moreirense F.C."
+    },
+    {
+      "slug": "rio-ave",
+      "nomesBase": [
+        "Rio Ave FC"
+      ],
+      "cidade": "Vila do Conde",
+      "estadio": "Estádio do Rio Ave FC",
+      "lat": 41.3628,
+      "lng": -8.7402,
+      "_wikidata": "Q622432",
+      "_wikidataLabel": "Rio Ave F.C."
+    },
+    {
+      "slug": "s-c-braga",
+      "nomesBase": [
+        "SC Braga"
+      ],
+      "cidade": "Braga",
+      "estadio": "Estádio Municipal de Braga",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Braga.JPG?width=800",
+      "lat": 41.5624,
+      "lng": -8.4308,
+      "_wikidata": "Q75684",
+      "_wikidataLabel": "S.C. Braga"
+    },
+    {
+      "slug": "s-l-benfica",
+      "nomesBase": [
+        "SL Benfica"
+      ],
+      "cidade": "Lisboa",
+      "estadio": "Estádio da Luz",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/LuzLissabon.jpg?width=800",
+      "lat": 38.7528,
+      "lng": -9.1847,
+      "_wikidata": "Q131499",
+      "_wikidataLabel": "S.L. Benfica"
+    },
+    {
+      "slug": "sporting-cp",
+      "nomesBase": [
+        "Sporting CP"
+      ],
+      "cidade": "Lisboa",
+      "estadio": "Estádio José Alvalade",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20Jos%C3%A9%20Alvalade%20antes%20do%20jogo%20Sporting%20-%20Arouca.jpg?width=800",
+      "lat": 38.7612,
+      "lng": -9.1608,
+      "_wikidata": "Q75729",
+      "_wikidataLabel": "Sporting CP"
+    },
+    {
+      "slug": "vitoria-s-c",
+      "nomesBase": [
+        "Vitória SC"
+      ],
+      "cidade": "Guimarães",
+      "estadio": "Estádio D. Afonso Henriques",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Est%C3%A1dio%20do%20Vit%C3%B3ria%20de%20Guimar%C3%A3es%20visto%20da%20torre%20central%20do%20Castelo%20de%20Guimar%C3%A3es%2003.JPG?width=800",
+      "lat": 41.4458,
+      "lng": -8.301,
+      "_wikidata": "Q223450",
+      "_wikidataLabel": "Vitória S.C."
+    }
+  ]
+}

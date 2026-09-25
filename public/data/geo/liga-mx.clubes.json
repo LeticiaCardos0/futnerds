@@ -1,0 +1,326 @@
+{
+  "ligaId": "liga-mx",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Aguascalientes",
+      "lat": 21.8808,
+      "lng": -102.2961,
+      "_wikidata": "Q200805"
+    },
+    {
+      "nome": "Cidade do México",
+      "lat": 19.3538,
+      "lng": -99.1359,
+      "_wikidata": "Q1489"
+    },
+    {
+      "nome": "Ciudad Juárez",
+      "lat": 31.6685,
+      "lng": -106.42,
+      "_wikidata": "Q26590",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Guadalajara",
+      "lat": 20.6833,
+      "lng": -103.3333,
+      "_wikidata": "Q12348369",
+      "_homonimos": 4
+    },
+    {
+      "nome": "León",
+      "lat": 21.1219,
+      "lng": -101.6833,
+      "_wikidata": "Q189128"
+    },
+    {
+      "nome": "Monterrey",
+      "lat": 25.6269,
+      "lng": -100.2839,
+      "_wikidata": "Q6905368",
+      "_homonimos": 8
+    },
+    {
+      "nome": "Pachuca",
+      "lat": 20.1225,
+      "lng": -98.7361,
+      "_wikidata": "Q160750"
+    },
+    {
+      "nome": "Puebla",
+      "lat": 19.0413,
+      "lng": -98.2062,
+      "_wikidata": "Q7258412",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Querétaro",
+      "lat": 20.5881,
+      "lng": -100.3881,
+      "_wikidata": "Q173121"
+    },
+    {
+      "nome": "San Luis Potosí",
+      "lat": 22.1497,
+      "lng": -100.975,
+      "_wikidata": "Q204271",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Tijuana",
+      "lat": 32.5364,
+      "lng": -117.0372,
+      "_wikidata": "Q124739",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Toluca",
+      "lat": 19.3,
+      "lng": -99.65,
+      "_wikidata": "Q2308567",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Torreón",
+      "lat": 25.1667,
+      "lng": -103.2667,
+      "_wikidata": "Q3238418",
+      "_homonimos": 4
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "atlante",
+      "nomesBase": [
+        "Atlante FC"
+      ],
+      "cidade": "Cidade do México",
+      "estadio": "Ciudad de los Deportes Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20a%C3%A9rea%20del%20Estadio%20de%20la%20Ciudad%20de%20los%20Deportes%2002.jpg?width=800",
+      "lat": 19.3834,
+      "lng": -99.1782,
+      "_wikidata": "Q849949",
+      "_wikidataLabel": "Atlante F.C."
+    },
+    {
+      "slug": "atlas",
+      "nomesBase": [
+        "Atlas FC"
+      ],
+      "cidade": "Guadalajara",
+      "estadio": "Jalisco Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Jalisco%2006022022.jpg?width=800",
+      "lat": 20.705,
+      "lng": -103.3281,
+      "_wikidata": "Q1023532",
+      "_wikidataLabel": "Atlas F.C."
+    },
+    {
+      "slug": "atletico-de-san-luis",
+      "nomesBase": [
+        "Atltico de SL"
+      ],
+      "cidade": "San Luis Potosí",
+      "estadio": "Estadio Libertad Financiera",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Alfonso%20Lastras.jpg?width=800",
+      "lat": 22.1387,
+      "lng": -100.9509,
+      "_wikidata": "Q13408349",
+      "_wikidataLabel": "Atletico de San Luis"
+    },
+    {
+      "slug": "c-d-guadalajara",
+      "nomesBase": [
+        "Club Guadalajara"
+      ],
+      "cidade": "Guadalajara",
+      "estadio": "Estadio Akron",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Omnilife%20Chivas.jpg?width=800",
+      "lat": 20.6817,
+      "lng": -103.4628,
+      "_wikidata": "Q503321",
+      "_wikidataLabel": "C.D. Guadalajara"
+    },
+    {
+      "slug": "cf-pachuca",
+      "nomesBase": [
+        "Club Pachuca"
+      ],
+      "cidade": "Pachuca",
+      "estadio": "Gorda hilda",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Hidalgo%2022-05-2022.jpg?width=800",
+      "lat": 20.1051,
+      "lng": -98.7561,
+      "_wikidata": "Q736937",
+      "_wikidataLabel": "CF Pachuca"
+    },
+    {
+      "slug": "club-america",
+      "nomesBase": [
+        "Club América"
+      ],
+      "cidade": "Cidade do México",
+      "estadio": "Estadio Azteca",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20a%C3%A9rea%20del%20Estadio%20Azteca%20-%202026%20-%2002.jpg?width=800",
+      "lat": 19.3031,
+      "lng": -99.1506,
+      "_wikidata": "Q459090",
+      "_wikidataLabel": "Club América"
+    },
+    {
+      "slug": "club-de-futbol-monterrey",
+      "nomesBase": [
+        "Monterrey"
+      ],
+      "cidade": "Monterrey",
+      "estadio": "Estadio Monterrey",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Mexico%20Guadalupe%20Monterrey%20Estadio%20BBVA%20Bancomer%20fifa%20world%20cup%202026%206.JPG?width=800",
+      "lat": 25.6702,
+      "lng": -100.2437,
+      "_wikidata": "Q768253",
+      "_wikidataLabel": "Club de Fútbol Monterrey"
+    },
+    {
+      "slug": "club-leon",
+      "nomesBase": [
+        "Club Len"
+      ],
+      "cidade": "León",
+      "estadio": "León Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/EstadioLeon.jpg?width=800",
+      "lat": 21.1155,
+      "lng": -101.6577,
+      "_wikidata": "Q633223",
+      "_wikidataLabel": "Club León"
+    },
+    {
+      "slug": "club-necaxa",
+      "nomesBase": [
+        "Club Necaxa"
+      ],
+      "cidade": "Aguascalientes",
+      "estadio": "Victoria Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Victoria%20%28Aguascalientes%29.jpg?width=800",
+      "lat": 21.8807,
+      "lng": -102.2755,
+      "_wikidata": "Q1280895",
+      "_wikidataLabel": "Club Necaxa"
+    },
+    {
+      "slug": "club-tijuana",
+      "nomesBase": [
+        "Club Tijuana"
+      ],
+      "cidade": "Tijuana",
+      "estadio": "Caliente Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/CalienteStadium.JPG?width=800",
+      "lat": 32.5061,
+      "lng": -116.9931,
+      "_wikidata": "Q1103168",
+      "_wikidataLabel": "Club Tijuana"
+    },
+    {
+      "slug": "cruz-azul",
+      "nomesBase": [
+        "CF Cruz Azul"
+      ],
+      "cidade": "Cidade do México",
+      "estadio": "Estadio Azteca",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20a%C3%A9rea%20del%20Estadio%20Azteca%20-%202026%20-%2002.jpg?width=800",
+      "lat": 19.3031,
+      "lng": -99.1506,
+      "_wikidata": "Q845859",
+      "_wikidataLabel": "Cruz Azul"
+    },
+    {
+      "slug": "fc-juarez",
+      "nomesBase": [
+        "FC Jurez"
+      ],
+      "cidade": "Ciudad Juárez",
+      "estadio": "Estadio Olímpico Benito Juárez",
+      "lat": 31.7531,
+      "lng": -106.4678,
+      "_wikidata": "Q20051399",
+      "_wikidataLabel": "FC Juárez"
+    },
+    {
+      "slug": "puebla",
+      "nomesBase": [
+        "Club Puebla"
+      ],
+      "cidade": "Puebla",
+      "estadio": "Estadio Cuauhtémoc",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Cuauht%C3%A9moc%2C%20Puebla.jpg?width=800",
+      "lat": 19.0781,
+      "lng": -98.1644,
+      "_wikidata": "Q646596",
+      "_wikidataLabel": "Puebla F.C."
+    },
+    {
+      "slug": "pumas-unam",
+      "nomesBase": [
+        "Pumas"
+      ],
+      "cidade": "Cidade do México",
+      "estadio": "Universitary Olympic Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Ol%C3%ADmpico%20Universitario%20-%202026%20-%2004.jpg?width=800",
+      "lat": 19.3319,
+      "lng": -99.1921,
+      "_wikidata": "Q1143000",
+      "_wikidataLabel": "Pumas UNAM"
+    },
+    {
+      "slug": "queretaro",
+      "nomesBase": [
+        "Quertaro FC"
+      ],
+      "cidade": "Querétaro",
+      "estadio": "Corregidora Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20la%20Corregidora.JPG?width=800",
+      "lat": 20.5778,
+      "lng": -100.3664,
+      "_wikidata": "Q606210",
+      "_wikidataLabel": "Querétaro F.C."
+    },
+    {
+      "slug": "santos-laguna",
+      "nomesBase": [
+        "Santos Laguna"
+      ],
+      "cidade": "Torreón",
+      "estadio": "Territorio Santos Modelo",
+      "lat": 25.6304,
+      "lng": -103.38,
+      "_wikidata": "Q745246",
+      "_wikidataLabel": "Santos Laguna"
+    },
+    {
+      "slug": "tigres-uanl",
+      "nomesBase": [
+        "Club Tigres"
+      ],
+      "cidade": "Monterrey",
+      "estadio": "Estadio Universitario",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Mexico%20monterrey%20San%20Nicol%C3%A1s%20de%20los%20Garza%20Estadio%20Universitario%201.JPG?width=800",
+      "lat": 25.7228,
+      "lng": -100.3121,
+      "_wikidata": "Q849823",
+      "_wikidataLabel": "Tigres UANL"
+    },
+    {
+      "slug": "toluca",
+      "nomesBase": [
+        "Toluca FC"
+      ],
+      "cidade": "Toluca",
+      "estadio": "Nemesio Diez Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/B4GameTolChivas.JPG?width=800",
+      "lat": 19.2873,
+      "lng": -99.6668,
+      "_wikidata": "Q670186",
+      "_wikidataLabel": "Toluca FC"
+    }
+  ]
+}

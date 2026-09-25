@@ -1,0 +1,332 @@
+{
+  "ligaId": "superliga-romenia",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Iași",
+      "lat": 47.1683,
+      "lng": 27.5749,
+      "rank": 1
+    },
+    {
+      "nome": "Timișoara",
+      "lat": 45.7588,
+      "lng": 21.2234,
+      "rank": 1
+    },
+    {
+      "nome": "Brașov",
+      "lat": 45.6475,
+      "lng": 25.6072,
+      "rank": 1
+    },
+    {
+      "nome": "Oradea",
+      "lat": 47.05,
+      "lng": 21.92,
+      "rank": 1
+    },
+    {
+      "nome": "Bacău",
+      "lat": 46.5784,
+      "lng": 26.9196,
+      "rank": 1
+    },
+    {
+      "nome": "Sibiu",
+      "lat": 45.7971,
+      "lng": 24.1371,
+      "rank": 1
+    },
+    {
+      "nome": "Târgu Mureș",
+      "lat": 46.5582,
+      "lng": 24.5578,
+      "rank": 1
+    },
+    {
+      "nome": "Baia Mare",
+      "lat": 47.6595,
+      "lng": 23.5791,
+      "rank": 1
+    },
+    {
+      "nome": "Buzău",
+      "lat": 45.1565,
+      "lng": 26.8065,
+      "rank": 1
+    },
+    {
+      "nome": "Satu Mare",
+      "lat": 47.792,
+      "lng": 22.885,
+      "rank": 1
+    },
+    {
+      "nome": "Râmnicu Vâlcea",
+      "lat": 45.11,
+      "lng": 24.383,
+      "rank": 1
+    },
+    {
+      "nome": "Drobeta-Turnu Severin",
+      "lat": 44.6459,
+      "lng": 22.6659,
+      "rank": 1
+    },
+    {
+      "nome": "Suceava",
+      "lat": 47.6377,
+      "lng": 26.2593,
+      "rank": 1
+    },
+    {
+      "nome": "Focșani",
+      "lat": 45.6966,
+      "lng": 27.1865,
+      "rank": 1
+    },
+    {
+      "nome": "Piatra Neamț",
+      "lat": 46.94,
+      "lng": 26.383,
+      "rank": 1
+    },
+    {
+      "nome": "Târgu Jiu",
+      "lat": 45.045,
+      "lng": 23.274,
+      "rank": 2
+    },
+    {
+      "nome": "Tulcea",
+      "lat": 45.1993,
+      "lng": 28.7967,
+      "rank": 2
+    },
+    {
+      "nome": "Târgoviște",
+      "lat": 44.938,
+      "lng": 25.459,
+      "rank": 2
+    },
+    {
+      "nome": "Reșița",
+      "lat": 45.297,
+      "lng": 21.8865,
+      "rank": 2
+    },
+    {
+      "nome": "Bistrița",
+      "lat": 47.138,
+      "lng": 24.513,
+      "rank": 2
+    },
+    {
+      "nome": "Slatina",
+      "lat": 44.435,
+      "lng": 24.371,
+      "rank": 2
+    },
+    {
+      "nome": "Călărași",
+      "lat": 44.2063,
+      "lng": 27.3259,
+      "rank": 2
+    },
+    {
+      "nome": "Vaslui",
+      "lat": 46.6333,
+      "lng": 27.7333,
+      "rank": 2
+    },
+    {
+      "nome": "Giurgiu",
+      "lat": 43.93,
+      "lng": 25.84,
+      "rank": 2
+    },
+    {
+      "nome": "Alba Iulia",
+      "lat": 46.077,
+      "lng": 23.58,
+      "rank": 2
+    },
+    {
+      "nome": "Zalău",
+      "lat": 47.175,
+      "lng": 23.063,
+      "rank": 2
+    },
+    {
+      "nome": "Slobozia",
+      "lat": 44.57,
+      "lng": 27.382,
+      "rank": 2
+    },
+    {
+      "nome": "Alexandria (Romênia)",
+      "lat": 43.9016,
+      "lng": 25.2867,
+      "rank": 2
+    },
+    {
+      "nome": "Miercurea Ciuc",
+      "lat": 46.361,
+      "lng": 25.524,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1
+    },
+    {
+      "nome": "Sófia",
+      "lat": 42.6853,
+      "lng": 23.3147,
+      "rank": 1
+    },
+    {
+      "nome": "Belgrado",
+      "lat": 44.8206,
+      "lng": 20.466,
+      "rank": 1
+    },
+    {
+      "nome": "Odessa",
+      "lat": 46.492,
+      "lng": 30.7081,
+      "rank": 1
+    },
+    {
+      "nome": "Sarajevo",
+      "lat": 43.85,
+      "lng": 18.383,
+      "rank": 1
+    },
+    {
+      "nome": "Chişinău",
+      "lat": 47.005,
+      "lng": 28.8577,
+      "rank": 1
+    },
+    {
+      "nome": "Micolaíve",
+      "lat": 46.9677,
+      "lng": 31.9843,
+      "rank": 1
+    },
+    {
+      "nome": "Pristina",
+      "lat": 42.6667,
+      "lng": 21.166,
+      "rank": 1
+    },
+    {
+      "nome": "Khmelnytskyi",
+      "lat": 49.4249,
+      "lng": 27.0015,
+      "rank": 2
+    },
+    {
+      "nome": "Vinnytsia",
+      "lat": 49.2254,
+      "lng": 28.4816,
+      "rank": 2
+    },
+    {
+      "nome": "Varna",
+      "lat": 43.2156,
+      "lng": 27.8953,
+      "rank": 2
+    },
+    {
+      "nome": "Chernivtsi",
+      "lat": 48.3053,
+      "lng": 25.9216,
+      "rank": 2
+    },
+    {
+      "nome": "Chercássi",
+      "lat": 49.4347,
+      "lng": 32.0709,
+      "rank": 2
+    },
+    {
+      "nome": "Niš",
+      "lat": 43.3304,
+      "lng": 21.9,
+      "rank": 2
+    },
+    {
+      "nome": "Miskolc",
+      "lat": 48.1004,
+      "lng": 20.78,
+      "rank": 2
+    },
+    {
+      "nome": "Ivano-Frankivsk",
+      "lat": 48.9348,
+      "lng": 24.7094,
+      "rank": 2
+    },
+    {
+      "nome": "Košice",
+      "lat": 48.7304,
+      "lng": 21.25,
+      "rank": 2
+    },
+    {
+      "nome": "Debrecen",
+      "lat": 47.5305,
+      "lng": 21.63,
+      "rank": 2
+    },
+    {
+      "nome": "Novi Sad",
+      "lat": 45.2504,
+      "lng": 19.8499,
+      "rank": 2
+    },
+    {
+      "nome": "Burgas",
+      "lat": 42.5146,
+      "lng": 27.4746,
+      "rank": 2
+    },
+    {
+      "nome": "Szeged",
+      "lat": 46.2504,
+      "lng": 20.15,
+      "rank": 2
+    },
+    {
+      "nome": "Pécs",
+      "lat": 46.0804,
+      "lng": 18.22,
+      "rank": 2
+    },
+    {
+      "nome": "Ruse",
+      "lat": 43.8537,
+      "lng": 25.9733,
+      "rank": 2
+    },
+    {
+      "nome": "Nyíregyháza",
+      "lat": 47.9653,
+      "lng": 21.7187,
+      "rank": 2
+    },
+    {
+      "nome": "Kragujevac",
+      "lat": 44.02,
+      "lng": 20.92,
+      "rank": 2
+    }
+  ]
+}

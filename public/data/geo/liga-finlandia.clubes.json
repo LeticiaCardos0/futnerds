@@ -1,0 +1,28 @@
+{
+  "ligaId": "liga-finlandia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Helsinque",
+      "lat": 60.1708,
+      "lng": 24.9375,
+      "_wikidata": "Q1757",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "helsingin-jalkapalloklubi",
+      "nomesBase": [
+        "HJK Helsinki"
+      ],
+      "cidade": "Helsinque",
+      "estadio": "Bolt Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Finnair%20Stadium%20Helsinki.JPG?width=800",
+      "lat": 60.1875,
+      "lng": 24.9225,
+      "_wikidata": "Q208584",
+      "_wikidataLabel": "Helsingin Jalkapalloklubi"
+    }
+  ]
+}

@@ -1,0 +1,428 @@
+{
+  "ligaId": "liga-argentina",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Salta",
+      "lat": -24.7834,
+      "lng": -65.4166,
+      "rank": 1
+    },
+    {
+      "nome": "San Juan",
+      "lat": -31.55,
+      "lng": -68.52,
+      "rank": 1
+    },
+    {
+      "nome": "San Luis",
+      "lat": -33.3,
+      "lng": -66.35,
+      "rank": 1
+    },
+    {
+      "nome": "Resistência",
+      "lat": -27.46,
+      "lng": -58.99,
+      "rank": 1
+    },
+    {
+      "nome": "Corrientes",
+      "lat": -27.49,
+      "lng": -58.81,
+      "rank": 1
+    },
+    {
+      "nome": "San Salvador de Jujuy",
+      "lat": -24.1833,
+      "lng": -65.3,
+      "rank": 1
+    },
+    {
+      "nome": "Bahía Blanca",
+      "lat": -38.74,
+      "lng": -62.265,
+      "rank": 1
+    },
+    {
+      "nome": "Neuquén",
+      "lat": -38.95,
+      "lng": -68.06,
+      "rank": 1
+    },
+    {
+      "nome": "Formosa",
+      "lat": -26.1728,
+      "lng": -58.1828,
+      "rank": 1
+    },
+    {
+      "nome": "San Fernando del Valle de Catamarca",
+      "lat": -28.47,
+      "lng": -65.78,
+      "rank": 1
+    },
+    {
+      "nome": "Rioja",
+      "lat": -29.4099,
+      "lng": -66.85,
+      "rank": 1
+    },
+    {
+      "nome": "Concordia",
+      "lat": -31.3896,
+      "lng": -58.03,
+      "rank": 1
+    },
+    {
+      "nome": "Comodoro Rivadavia",
+      "lat": -45.87,
+      "lng": -67.5,
+      "rank": 1
+    },
+    {
+      "nome": "San Nicolás de los Arroyos",
+      "lat": -33.33,
+      "lng": -60.24,
+      "rank": 1
+    },
+    {
+      "nome": "San Martín",
+      "lat": -33.07,
+      "lng": -68.49,
+      "rank": 1
+    },
+    {
+      "nome": "Santa Rosa",
+      "lat": -36.62,
+      "lng": -64.3,
+      "rank": 2
+    },
+    {
+      "nome": "San Rafael",
+      "lat": -34.6,
+      "lng": -68.3333,
+      "rank": 2
+    },
+    {
+      "nome": "Tandil",
+      "lat": -37.32,
+      "lng": -59.15,
+      "rank": 2
+    },
+    {
+      "nome": "Bariloche",
+      "lat": -41.15,
+      "lng": -71.3,
+      "rank": 2
+    },
+    {
+      "nome": "Trelew",
+      "lat": -43.25,
+      "lng": -65.33,
+      "rank": 2
+    },
+    {
+      "nome": "Villa María",
+      "lat": -32.41,
+      "lng": -63.26,
+      "rank": 2
+    },
+    {
+      "nome": "Reconquista",
+      "lat": -29.1395,
+      "lng": -59.65,
+      "rank": 2
+    },
+    {
+      "nome": "Zárate",
+      "lat": -34.0896,
+      "lng": -59.04,
+      "rank": 2
+    },
+    {
+      "nome": "Rafaela",
+      "lat": -31.25,
+      "lng": -61.5,
+      "rank": 2
+    },
+    {
+      "nome": "Pergamino",
+      "lat": -33.8996,
+      "lng": -60.57,
+      "rank": 2
+    },
+    {
+      "nome": "Olavarría",
+      "lat": -36.9,
+      "lng": -60.33,
+      "rank": 2
+    },
+    {
+      "nome": "Yacuiba",
+      "lat": -22.03,
+      "lng": -63.7,
+      "rank": 2
+    },
+    {
+      "nome": "Presidencia Roque Sáenz Peña",
+      "lat": -26.79,
+      "lng": -60.45,
+      "rank": 2
+    },
+    {
+      "nome": "Luján",
+      "lat": -34.5796,
+      "lng": -59.11,
+      "rank": 2
+    },
+    {
+      "nome": "Necochea",
+      "lat": -38.56,
+      "lng": -58.75,
+      "rank": 2
+    },
+    {
+      "nome": "Gualeguaychú",
+      "lat": -33.02,
+      "lng": -58.52,
+      "rank": 2
+    },
+    {
+      "nome": "San Ramón de la Nueva Orán",
+      "lat": -23.14,
+      "lng": -64.32,
+      "rank": 2
+    },
+    {
+      "nome": "General Roca",
+      "lat": -39.02,
+      "lng": -67.61,
+      "rank": 2
+    },
+    {
+      "nome": "Venado Tuerto",
+      "lat": -33.7496,
+      "lng": -61.97,
+      "rank": 2
+    },
+    {
+      "nome": "Goya",
+      "lat": -29.14,
+      "lng": -59.27,
+      "rank": 2
+    },
+    {
+      "nome": "Villa Carlos Paz",
+      "lat": -31.42,
+      "lng": -64.5,
+      "rank": 2
+    },
+    {
+      "nome": "Concepción del Uruguay",
+      "lat": -32.48,
+      "lng": -58.24,
+      "rank": 2
+    },
+    {
+      "nome": "Puerto Madryn",
+      "lat": -42.77,
+      "lng": -65.04,
+      "rank": 2
+    },
+    {
+      "nome": "Tartagal",
+      "lat": -22.55,
+      "lng": -63.81,
+      "rank": 2
+    },
+    {
+      "nome": "Viedma",
+      "lat": -40.8,
+      "lng": -63,
+      "rank": 2
+    },
+    {
+      "nome": "San Francisco",
+      "lat": -31.43,
+      "lng": -62.09,
+      "rank": 2
+    },
+    {
+      "nome": "San Pedro de Jujuy",
+      "lat": -24.2196,
+      "lng": -64.87,
+      "rank": 2
+    },
+    {
+      "nome": "Punta Alta",
+      "lat": -38.88,
+      "lng": -62.08,
+      "rank": 2
+    },
+    {
+      "nome": "General Pico",
+      "lat": -35.6596,
+      "lng": -63.77,
+      "rank": 2
+    },
+    {
+      "nome": "Chivilcoy",
+      "lat": -34.9,
+      "lng": -60.04,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Santiago",
+      "lat": -33.4481,
+      "lng": -70.669,
+      "rank": 1
+    },
+    {
+      "nome": "Porto Alegre",
+      "lat": -30.0481,
+      "lng": -51.202,
+      "rank": 1
+    },
+    {
+      "nome": "Curitiba",
+      "lat": -25.4181,
+      "lng": -49.3219,
+      "rank": 1
+    },
+    {
+      "nome": "Santa Cruz de la Sierra",
+      "lat": -17.752,
+      "lng": -63.2279,
+      "rank": 1
+    },
+    {
+      "nome": "Assunção",
+      "lat": -25.2945,
+      "lng": -57.6435,
+      "rank": 1
+    },
+    {
+      "nome": "Montevidéu",
+      "lat": -34.8561,
+      "lng": -56.173,
+      "rank": 1
+    },
+    {
+      "nome": "Cochabamba",
+      "lat": -17.41,
+      "lng": -66.17,
+      "rank": 1
+    },
+    {
+      "nome": "Concepción",
+      "lat": -36.83,
+      "lng": -73.05,
+      "rank": 1
+    },
+    {
+      "nome": "Novo Hamburgo",
+      "lat": -29.7096,
+      "lng": -51.14,
+      "rank": 2
+    },
+    {
+      "nome": "Valparaíso",
+      "lat": -33.0458,
+      "lng": -71.623,
+      "rank": 2
+    },
+    {
+      "nome": "Campo Grande",
+      "lat": -20.4481,
+      "lng": -54.6186,
+      "rank": 2
+    },
+    {
+      "nome": "Londrina",
+      "lat": -23.3,
+      "lng": -51.18,
+      "rank": 2
+    },
+    {
+      "nome": "Foz do Iguaçu",
+      "lat": -25.5235,
+      "lng": -54.53,
+      "rank": 2
+    },
+    {
+      "nome": "Caxias do Sul",
+      "lat": -29.18,
+      "lng": -51.17,
+      "rank": 2
+    },
+    {
+      "nome": "São José do Rio Preto",
+      "lat": -20.7996,
+      "lng": -49.39,
+      "rank": 2
+    },
+    {
+      "nome": "Encarnación",
+      "lat": -27.3472,
+      "lng": -55.8739,
+      "rank": 2
+    },
+    {
+      "nome": "Bauru",
+      "lat": -22.33,
+      "lng": -49.08,
+      "rank": 2
+    },
+    {
+      "nome": "Maringá",
+      "lat": -23.4095,
+      "lng": -51.93,
+      "rank": 2
+    },
+    {
+      "nome": "Pelotas",
+      "lat": -31.75,
+      "lng": -52.33,
+      "rank": 2
+    },
+    {
+      "nome": "Antofagasta",
+      "lat": -23.65,
+      "lng": -70.4,
+      "rank": 2
+    },
+    {
+      "nome": "Blumenau",
+      "lat": -26.92,
+      "lng": -49.09,
+      "rank": 2
+    },
+    {
+      "nome": "Ponta Grossa",
+      "lat": -25.09,
+      "lng": -50.16,
+      "rank": 2
+    },
+    {
+      "nome": "Talcahuano",
+      "lat": -36.7167,
+      "lng": -73.1167,
+      "rank": 2
+    },
+    {
+      "nome": "Tacna",
+      "lat": -18,
+      "lng": -70.25,
+      "rank": 2
+    },
+    {
+      "nome": "Temuco",
+      "lat": -38.73,
+      "lng": -72.58,
+      "rank": 2
+    }
+  ]
+}

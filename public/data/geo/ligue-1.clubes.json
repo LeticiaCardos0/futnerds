@@ -1,0 +1,342 @@
+{
+  "ligaId": "ligue-1",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Angers",
+      "lat": 47.4728,
+      "lng": -0.5556,
+      "_wikidata": "Q38380"
+    },
+    {
+      "nome": "Auxerre",
+      "lat": 47.7975,
+      "lng": 3.5669,
+      "_wikidata": "Q167600"
+    },
+    {
+      "nome": "Brest",
+      "lat": 48.3906,
+      "lng": -4.4861,
+      "_wikidata": "Q12193"
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.5733,
+      "lng": 7.7522,
+      "_wikidata": "Q6602"
+    },
+    {
+      "nome": "Le Havre",
+      "lat": 49.4942,
+      "lng": 0.1081,
+      "_wikidata": "Q42810"
+    },
+    {
+      "nome": "Le Mans",
+      "lat": 48.0042,
+      "lng": 0.1969,
+      "_wikidata": "Q1476"
+    },
+    {
+      "nome": "Lens",
+      "lat": 50.4314,
+      "lng": 2.8325,
+      "_wikidata": "Q165271"
+    },
+    {
+      "nome": "Lille",
+      "lat": 50.6319,
+      "lng": 3.0575,
+      "_wikidata": "Q648"
+    },
+    {
+      "nome": "Lorient",
+      "lat": 47.7458,
+      "lng": -3.3664,
+      "_wikidata": "Q71724"
+    },
+    {
+      "nome": "Lyon",
+      "lat": 45.7675,
+      "lng": 4.835,
+      "_wikidata": "Q456"
+    },
+    {
+      "nome": "Marselha",
+      "lat": 43.2967,
+      "lng": 5.3764,
+      "_wikidata": "Q23482"
+    },
+    {
+      "nome": "Mônaco",
+      "lat": 43.7311,
+      "lng": 7.42,
+      "_wikidata": "Q235"
+    },
+    {
+      "nome": "Nice",
+      "lat": 43.7019,
+      "lng": 7.2683,
+      "_wikidata": "Q33959"
+    },
+    {
+      "nome": "Paris",
+      "lat": 48.8567,
+      "lng": 2.3522,
+      "_wikidata": "Q90"
+    },
+    {
+      "nome": "Rennes",
+      "lat": 48.1142,
+      "lng": -1.6808,
+      "_wikidata": "Q647"
+    },
+    {
+      "nome": "Toulouse",
+      "lat": 43.6044,
+      "lng": 1.4433,
+      "_wikidata": "Q7880"
+    },
+    {
+      "nome": "Troyes",
+      "lat": 48.2989,
+      "lng": 4.0781,
+      "_wikidata": "Q5489"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aj-auxerre",
+      "nomesBase": [
+        "AJ Auxerre"
+      ],
+      "cidade": "Auxerre",
+      "estadio": "Stade de l'Abbé-Deschamps",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Auxerre%20-%20Stade%20Abb%C3%A9-Deschamps%20%2831%29.JPG?width=800",
+      "lat": 47.7867,
+      "lng": 3.5887,
+      "_wikidata": "Q182876",
+      "_wikidataLabel": "AJ Auxerre"
+    },
+    {
+      "slug": "angers-sco",
+      "nomesBase": [
+        "Angers SCO"
+      ],
+      "cidade": "Angers",
+      "estadio": "Stade Raymond Kopa",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Jean%20Bouin%20Angers%202.JPG?width=800",
+      "lat": 47.459,
+      "lng": -0.5316,
+      "_wikidata": "Q845137",
+      "_wikidataLabel": "Angers SCO"
+    },
+    {
+      "slug": "as-monaco",
+      "nomesBase": [
+        "AS Monaco"
+      ],
+      "cidade": "Mônaco",
+      "estadio": "Stade Louis II",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Monaco%20Stade%20Louis-II%201.jpg?width=800",
+      "lat": 43.7278,
+      "lng": 7.4156,
+      "_wikidata": "Q180305",
+      "_wikidataLabel": "AS Monaco FC"
+    },
+    {
+      "slug": "es-troyes-ac",
+      "nomesBase": [
+        "ESTAC Troyes"
+      ],
+      "cidade": "Troyes",
+      "estadio": "Stade de l'Aube",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20de%20l%27Aube.jpg?width=800",
+      "lat": 48.3062,
+      "lng": 4.0982,
+      "_wikidata": "Q501693",
+      "_wikidataLabel": "ES Troyes AC"
+    },
+    {
+      "slug": "f-c-lorient",
+      "nomesBase": [
+        "FC Lorient"
+      ],
+      "cidade": "Lorient",
+      "estadio": "Stade du Moustoir",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20du%20Moustoir.jpg?width=800",
+      "lat": 47.7487,
+      "lng": -3.3693,
+      "_wikidata": "Q48911",
+      "_wikidataLabel": "F.C. Lorient"
+    },
+    {
+      "slug": "le-havre-ac",
+      "nomesBase": [
+        "Havre AC"
+      ],
+      "cidade": "Le Havre",
+      "estadio": "Stade Océane",
+      "lat": 49.4988,
+      "lng": 0.1697,
+      "_wikidata": "Q328658",
+      "_wikidataLabel": "Le Havre AC"
+    },
+    {
+      "slug": "le-mans",
+      "nomesBase": [
+        "Le Mans FC"
+      ],
+      "cidade": "Le Mans",
+      "estadio": "stade Marie-Marvingt",
+      "lat": 47.9596,
+      "lng": 0.2213,
+      "_wikidata": "Q210864",
+      "_wikidataLabel": "Le Mans F.C."
+    },
+    {
+      "slug": "lille-osc",
+      "nomesBase": [
+        "LOSC Lille"
+      ],
+      "cidade": "Lille",
+      "estadio": "Stade Pierre-Mauroy",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Finale%20Coupe%20Davis%202017%20Pouille%20Goffin.jpg?width=800",
+      "lat": 50.612,
+      "lng": 3.1306,
+      "_wikidata": "Q19516",
+      "_wikidataLabel": "Lille OSC"
+    },
+    {
+      "slug": "ogc-nice",
+      "nomesBase": [
+        "OGC Nice"
+      ],
+      "cidade": "Nice",
+      "estadio": "Allianz Riviera",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Allianzcoupdenvoi.jpg?width=800",
+      "lat": 43.7051,
+      "lng": 7.1926,
+      "_wikidata": "Q185163",
+      "_wikidataLabel": "OGC Nice"
+    },
+    {
+      "slug": "olympique-de-marseille",
+      "nomesBase": [
+        "OM"
+      ],
+      "cidade": "Marselha",
+      "estadio": "Stade Vélodrome",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20V%C3%A9lodrome%20closeup.jpg?width=800",
+      "lat": 43.2692,
+      "lng": 5.3949,
+      "_wikidata": "Q132885",
+      "_wikidataLabel": "Olympique de Marseille"
+    },
+    {
+      "slug": "olympique-lyonnais",
+      "nomesBase": [
+        "OL"
+      ],
+      "cidade": "Lyon",
+      "estadio": "Groupama Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Lumi%C3%A8re.jpg?width=800",
+      "lat": 45.7652,
+      "lng": 4.9821,
+      "_wikidata": "Q704",
+      "_wikidataLabel": "Olympique Lyonnais"
+    },
+    {
+      "slug": "paris",
+      "nomesBase": [
+        "Paris FC"
+      ],
+      "cidade": "Paris",
+      "estadio": "Stade Jean-Bouin",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Stade%20Jean-Bouin%20%28cropped%29.jpg?width=800",
+      "lat": 48.8432,
+      "lng": 2.2529,
+      "_wikidata": "Q1051013",
+      "_wikidataLabel": "Paris FC"
+    },
+    {
+      "slug": "paris-saint-germain",
+      "nomesBase": [
+        "Paris SG"
+      ],
+      "cidade": "Paris",
+      "estadio": "Parc des Princes",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Paris%20Parc%20des%20Princes%201.jpg?width=800",
+      "lat": 48.8415,
+      "lng": 2.253,
+      "_wikidata": "Q483020",
+      "_wikidataLabel": "Paris Saint-Germain FC"
+    },
+    {
+      "slug": "r-c-lens",
+      "nomesBase": [
+        "RC Lens"
+      ],
+      "cidade": "Lens",
+      "estadio": "Stade Bollaert-Delelis",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Bollaert%20Delelis.JPG?width=800",
+      "lat": 50.4329,
+      "lng": 2.8149,
+      "_wikidata": "Q191843",
+      "_wikidataLabel": "R.C. Lens"
+    },
+    {
+      "slug": "rc-strasbourg-alsace",
+      "nomesBase": [
+        "Strasbourg"
+      ],
+      "cidade": "Estrasburgo",
+      "estadio": "Stade de la Meinau",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Meinau%20en%20National.jpg?width=800",
+      "lat": 48.5594,
+      "lng": 7.7574,
+      "_wikidata": "Q126334",
+      "_wikidataLabel": "RC Strasbourg Alsace"
+    },
+    {
+      "slug": "stade-brestois-29",
+      "nomesBase": [
+        "Stade Brestois 29"
+      ],
+      "cidade": "Brest",
+      "estadio": "Stade Francis-Le Blé",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tribune-Foucauld-2009.jpg?width=800",
+      "lat": 48.4029,
+      "lng": -4.4615,
+      "_wikidata": "Q218372",
+      "_wikidataLabel": "Stade Brestois 29"
+    },
+    {
+      "slug": "stade-rennais",
+      "nomesBase": [
+        "Stade Rennais FC"
+      ],
+      "cidade": "Rennes",
+      "estadio": "Roazhon Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Staderennais-routelorient.JPG?width=800",
+      "lat": 48.1074,
+      "lng": -1.7128,
+      "_wikidata": "Q19509",
+      "_wikidataLabel": "Stade Rennais F.C."
+    },
+    {
+      "slug": "toulouse",
+      "nomesBase": [
+        "Toulouse FC"
+      ],
+      "cidade": "Toulouse",
+      "estadio": "Stadium Municipal",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/StadiumToulouse3.JPG?width=800",
+      "lat": 43.5833,
+      "lng": 1.4341,
+      "_wikidata": "Q19518",
+      "_wikidataLabel": "Toulouse FC"
+    }
+  ]
+}

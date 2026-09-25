@@ -1,0 +1,354 @@
+{
+  "ligaId": "ligue-2",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Annecy",
+      "lat": 45.8992,
+      "lng": 6.1294,
+      "_wikidata": "Q50189",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Boulogne-sur-Mer",
+      "lat": 50.7256,
+      "lng": 1.6139,
+      "_wikidata": "Q81997"
+    },
+    {
+      "nome": "Clermont-Ferrand",
+      "lat": 45.7797,
+      "lng": 3.0869,
+      "_wikidata": "Q42168"
+    },
+    {
+      "nome": "Dijon",
+      "lat": 47.3231,
+      "lng": 5.0419,
+      "_wikidata": "Q7003"
+    },
+    {
+      "nome": "Dunquerque",
+      "lat": 51.0378,
+      "lng": 2.3764,
+      "_wikidata": "Q45797"
+    },
+    {
+      "nome": "Grenoble",
+      "lat": 45.1869,
+      "lng": 5.7264,
+      "_wikidata": "Q1289"
+    },
+    {
+      "nome": "Guingamp",
+      "lat": 48.5625,
+      "lng": -3.1511,
+      "_wikidata": "Q193808"
+    },
+    {
+      "nome": "Laval",
+      "lat": 48.0728,
+      "lng": -0.77,
+      "_wikidata": "Q184154",
+      "_homonimos": 9
+    },
+    {
+      "nome": "Metz",
+      "lat": 49.1197,
+      "lng": 6.1769,
+      "_wikidata": "Q22690",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Montbéliard",
+      "lat": 47.5097,
+      "lng": 6.7983,
+      "_wikidata": "Q154715"
+    },
+    {
+      "nome": "Montpellier",
+      "lat": 43.6109,
+      "lng": 3.8772,
+      "_wikidata": "Q6441"
+    },
+    {
+      "nome": "Nancy",
+      "lat": 48.6928,
+      "lng": 6.1836,
+      "_wikidata": "Q40898"
+    },
+    {
+      "nome": "Nantes",
+      "lat": 47.2172,
+      "lng": -1.5539,
+      "_wikidata": "Q12191"
+    },
+    {
+      "nome": "Pau",
+      "lat": 43.3008,
+      "lng": -0.37,
+      "_wikidata": "Q132671"
+    },
+    {
+      "nome": "Reims",
+      "lat": 49.2653,
+      "lng": 4.0286,
+      "_wikidata": "Q41876",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Rodez",
+      "lat": 44.35,
+      "lng": 2.5742,
+      "_wikidata": "Q188780"
+    },
+    {
+      "nome": "Saint-Étienne",
+      "lat": 45.4339,
+      "lng": 4.3897,
+      "_wikidata": "Q42716",
+      "_homonimos": 9
+    },
+    {
+      "nome": "Saint-Ouen-sur-Seine",
+      "lat": 48.9069,
+      "lng": 2.3331,
+      "_wikidata": "Q208889"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "a-s-nancy-lorraine",
+      "nomesBase": [
+        "AS Nancy Lorraine"
+      ],
+      "cidade": "Nancy",
+      "estadio": "Stade Marcel Picot",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Mpicotnancy.jpg?width=800",
+      "lat": 48.696,
+      "lng": 6.2122,
+      "_wikidata": "Q19523",
+      "_wikidataLabel": "A.S. Nancy-Lorraine"
+    },
+    {
+      "slug": "as-saint-etienne",
+      "nomesBase": [
+        "AS Saint-Étienne"
+      ],
+      "cidade": "Saint-Étienne",
+      "estadio": "Stade Geoffroy-Guichard",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/AS%20Saint-%C3%89tienne%20v%20Olympique%20Lyonnais%2C%2010%20November%202013.jpg?width=800",
+      "lat": 45.4607,
+      "lng": 4.3902,
+      "_wikidata": "Q19521",
+      "_wikidataLabel": "AS Saint-Étienne"
+    },
+    {
+      "slug": "clermont-foot-63",
+      "nomesBase": [
+        "Clermont Foot 63"
+      ],
+      "cidade": "Clermont-Ferrand",
+      "estadio": "Stade Gabriel Montpied",
+      "lat": 45.8158,
+      "lng": 3.1216,
+      "_wikidata": "Q870182",
+      "_wikidataLabel": "Clermont Foot 63"
+    },
+    {
+      "slug": "dijon-fco",
+      "nomesBase": [
+        "Dijon Football Côte d’Or"
+      ],
+      "cidade": "Dijon",
+      "estadio": "Stade Gaston Gérard",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Dijon%20FCO%203.JPG?width=800",
+      "lat": 47.3262,
+      "lng": 5.0676,
+      "_wikidata": "Q503317",
+      "_wikidataLabel": "Dijon FCO"
+    },
+    {
+      "slug": "en-avant-guingamp",
+      "nomesBase": [
+        "En Avant Guingamp"
+      ],
+      "cidade": "Guingamp",
+      "estadio": "Fred-Aubert Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Brittany%20vs%20Congo%202008.JPG?width=800",
+      "lat": 48.5093,
+      "lng": -2.7448,
+      "_wikidata": "Q930072",
+      "_wikidataLabel": "En avant Guingamp"
+    },
+    {
+      "slug": "f-c-annecy",
+      "nomesBase": [
+        "FC Annecy"
+      ],
+      "cidade": "Annecy",
+      "estadio": "Parc des Sports, Annecy",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc%20des%20Sports%20d%27Annecy%20Manpower%201.jpg?width=800",
+      "lat": 45.9172,
+      "lng": 6.1197,
+      "_wikidata": "Q1140695",
+      "_wikidataLabel": "F.C. Annecy"
+    },
+    {
+      "slug": "fc-metz",
+      "nomesBase": [
+        "FC Metz"
+      ],
+      "cidade": "Metz",
+      "estadio": "Stade Saint-Symphorien",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tribune%20Ouest%20Saint%20Symphorien.jpg?width=800",
+      "lat": 49.1099,
+      "lng": 6.1595,
+      "_wikidata": "Q221525",
+      "_wikidataLabel": "FC Metz"
+    },
+    {
+      "slug": "fc-nantes",
+      "nomesBase": [
+        "FC Nantes"
+      ],
+      "cidade": "Nantes",
+      "estadio": "Stade de la Beaujoire",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20de%20la%20Beaujoire.jpg?width=800",
+      "lat": 47.2561,
+      "lng": -1.5247,
+      "_wikidata": "Q192071",
+      "_wikidataLabel": "FC Nantes"
+    },
+    {
+      "slug": "fc-sochaux-montbeliard",
+      "nomesBase": [
+        "FC Sochaux-Montbéliard"
+      ],
+      "cidade": "Montbéliard",
+      "estadio": "Stade Auguste Bonal",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Sochaux%20Bonale%202.jpg?width=800",
+      "lat": 47.5124,
+      "lng": 6.8112,
+      "_wikidata": "Q19512",
+      "_wikidataLabel": "FC Sochaux-Montbéliard"
+    },
+    {
+      "slug": "grenoble-foot-38",
+      "nomesBase": [
+        "Grenoble Foot 38"
+      ],
+      "cidade": "Grenoble",
+      "estadio": "Stade des Alpes",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Grenoble-Clermont.jpg?width=800",
+      "lat": 45.1875,
+      "lng": 5.7402,
+      "_wikidata": "Q209509",
+      "_wikidataLabel": "Grenoble Foot 38"
+    },
+    {
+      "slug": "montpellier-herault-sport-club",
+      "nomesBase": [
+        "Montpellier"
+      ],
+      "cidade": "Montpellier",
+      "estadio": "Stade de la Mosson",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Australie-Fidji.4.JPG?width=800",
+      "lat": 43.6206,
+      "lng": 3.8128,
+      "_wikidata": "Q19513",
+      "_wikidataLabel": "Montpellier Hérault Sport Club"
+    },
+    {
+      "slug": "pau-football-club",
+      "nomesBase": [
+        "Pau FC"
+      ],
+      "cidade": "Pau",
+      "estadio": "Nouste Camp",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nouste%20Camp%20180921.jpg?width=800",
+      "lat": 43.3077,
+      "lng": -0.3252,
+      "_wikidata": "Q288419",
+      "_wikidataLabel": "Pau Football Club"
+    },
+    {
+      "slug": "red-star",
+      "nomesBase": [
+        "Red Star FC"
+      ],
+      "cidade": "Saint-Ouen-sur-Seine",
+      "estadio": "Stade de Paris",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Redstar-bordeauxb.JPG?width=800",
+      "lat": 48.9061,
+      "lng": 2.3411,
+      "_wikidata": "Q522283",
+      "_wikidataLabel": "Red Star F.C."
+    },
+    {
+      "slug": "rodez-af",
+      "nomesBase": [
+        "Rodez AF"
+      ],
+      "cidade": "Rodez",
+      "estadio": "Stade Paul-Lignon",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rodez%20AF%20v%20FC%20Nantes%20B%2C%2031%20March%202007.jpg?width=800",
+      "lat": 44.3516,
+      "lng": 2.5638,
+      "_wikidata": "Q292231",
+      "_wikidataLabel": "Rodez AF"
+    },
+    {
+      "slug": "stade-de-reims",
+      "nomesBase": [
+        "Stade de Reims"
+      ],
+      "cidade": "Reims",
+      "estadio": "Stade Auguste Delaune",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Auguste-Delaune%202%20Trib%C3%BCnen.JPG?width=800",
+      "lat": 49.2472,
+      "lng": 4.0248,
+      "_wikidata": "Q208228",
+      "_wikidataLabel": "Stade de Reims"
+    },
+    {
+      "slug": "stade-lavallois",
+      "nomesBase": [
+        "Laval MFC"
+      ],
+      "cidade": "Laval",
+      "estadio": "Stade Francis Le Basser",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/STADE%20FRANCIS%20LE%20BASSER.jpg?width=800",
+      "lat": 48.0839,
+      "lng": -0.7535,
+      "_wikidata": "Q760736",
+      "_wikidataLabel": "Stade Lavallois"
+    },
+    {
+      "slug": "us-boulogne",
+      "nomesBase": [
+        "US Boulogne"
+      ],
+      "cidade": "Boulogne-sur-Mer",
+      "estadio": "Stade de la Libération",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Boulogne-sur-Mer%20Stade%20de%20la%20Liberation%20%285%29.jpg?width=800",
+      "lat": 50.7244,
+      "lng": 1.6191,
+      "_wikidata": "Q309400",
+      "_wikidataLabel": "US Boulogne"
+    },
+    {
+      "slug": "usl-dunkerque",
+      "nomesBase": [
+        "USL Dunkerque"
+      ],
+      "cidade": "Dunquerque",
+      "estadio": "Stade Marcel Tribut",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Tribut.JPG?width=800",
+      "lat": 51.0356,
+      "lng": 2.3903,
+      "_wikidata": "Q1815297",
+      "_wikidataLabel": "USL Dunkerque"
+    }
+  ]
+}

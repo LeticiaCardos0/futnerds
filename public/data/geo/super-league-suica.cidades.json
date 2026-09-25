@@ -1,0 +1,194 @@
+{
+  "ligaId": "super-league-suica",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Bienna",
+      "lat": 47.1666,
+      "lng": 7.25,
+      "rank": 1
+    },
+    {
+      "nome": "Coira",
+      "lat": 46.85,
+      "lng": 9.5,
+      "rank": 1
+    },
+    {
+      "nome": "Schaffhausen",
+      "lat": 47.706,
+      "lng": 8.633,
+      "rank": 1
+    },
+    {
+      "nome": "Friburgo",
+      "lat": 46.8,
+      "lng": 7.15,
+      "rank": 1
+    },
+    {
+      "nome": "Neuchâtel",
+      "lat": 46.999,
+      "lng": 6.923,
+      "rank": 1
+    },
+    {
+      "nome": "Frauenfeld",
+      "lat": 47.568,
+      "lng": 9.108,
+      "rank": 1
+    },
+    {
+      "nome": "Bellinzona",
+      "lat": 46.197,
+      "lng": 9.02,
+      "rank": 1
+    },
+    {
+      "nome": "Aarau",
+      "lat": 47.39,
+      "lng": 8.034,
+      "rank": 1
+    },
+    {
+      "nome": "Soleura",
+      "lat": 47.212,
+      "lng": 7.537,
+      "rank": 1
+    },
+    {
+      "nome": "Schwyz",
+      "lat": 47.02,
+      "lng": 8.648,
+      "rank": 1
+    },
+    {
+      "nome": "Delémont",
+      "lat": 47.37,
+      "lng": 7.345,
+      "rank": 1
+    },
+    {
+      "nome": "Altdorf",
+      "lat": 46.879,
+      "lng": 8.638,
+      "rank": 1
+    },
+    {
+      "nome": "Glarona",
+      "lat": 47.05,
+      "lng": 9.0667,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Milão",
+      "lat": 45.4719,
+      "lng": 9.2031,
+      "rank": 1
+    },
+    {
+      "nome": "Lyon",
+      "lat": 45.772,
+      "lng": 4.8281,
+      "rank": 1
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 1
+    },
+    {
+      "nome": "Augsburgo",
+      "lat": 48.35,
+      "lng": 10.9,
+      "rank": 1
+    },
+    {
+      "nome": "Verona",
+      "lat": 45.4404,
+      "lng": 10.99,
+      "rank": 1
+    },
+    {
+      "nome": "Freiburg im Breisgau",
+      "lat": 48.0004,
+      "lng": 7.8699,
+      "rank": 1
+    },
+    {
+      "nome": "Como",
+      "lat": 45.81,
+      "lng": 9.08,
+      "rank": 1
+    },
+    {
+      "nome": "Mulhouse",
+      "lat": 47.7504,
+      "lng": 7.35,
+      "rank": 1
+    },
+    {
+      "nome": "Bérgamo",
+      "lat": 45.7004,
+      "lng": 9.67,
+      "rank": 2
+    },
+    {
+      "nome": "Dijon",
+      "lat": 47.3304,
+      "lng": 5.03,
+      "rank": 2
+    },
+    {
+      "nome": "Innsbruck",
+      "lat": 47.2804,
+      "lng": 11.41,
+      "rank": 2
+    },
+    {
+      "nome": "Besançon",
+      "lat": 47.23,
+      "lng": 6.03,
+      "rank": 2
+    },
+    {
+      "nome": "Trento",
+      "lat": 46.0804,
+      "lng": 11.12,
+      "rank": 2
+    },
+    {
+      "nome": "Annecy",
+      "lat": 45.9,
+      "lng": 6.1167,
+      "rank": 2
+    },
+    {
+      "nome": "Novara",
+      "lat": 45.45,
+      "lng": 8.62,
+      "rank": 2
+    },
+    {
+      "nome": "Bolzano",
+      "lat": 46.5004,
+      "lng": 11.36,
+      "rank": 2
+    },
+    {
+      "nome": "Aosta",
+      "lat": 45.737,
+      "lng": 7.315,
+      "rank": 2
+    },
+    {
+      "nome": "Bregenz",
+      "lat": 47.5167,
+      "lng": 9.7667,
+      "rank": 2
+    }
+  ]
+}

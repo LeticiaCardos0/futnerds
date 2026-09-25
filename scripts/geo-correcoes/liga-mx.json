@@ -1,0 +1,98 @@
+{
+  "ligaId": "liga-mx",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Os nomes na base perderam os acentos na importação (\"Club Len\", \"FC Jurez\", \"Quertaro FC\"):",
+    "as chaves abaixo repetem o nome como está na base.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Atlante FC": {
+      "cidade": "Cidade do México",
+      "cidadeWikidata": "Q1489"
+    },
+    "Atlas FC": {
+      "clubeWikidata": "Q1023532",
+      "cidade": "Guadalajara"
+    },
+    "Atltico de SL": {
+      "_nota": "Atlético de San Luis.",
+      "clubeWikidata": "Q13408349"
+    },
+    "CF Cruz Azul": {
+      "clubeWikidata": "Q845859",
+      "cidade": "Cidade do México",
+      "cidadeWikidata": "Q1489"
+    },
+    "Club América": {
+      "_nota": "Colide com o time Premier (sub-23).",
+      "clubeWikidata": "Q459090",
+      "cidade": "Cidade do México",
+      "cidadeWikidata": "Q1489"
+    },
+    "Club Guadalajara": {
+      "_nota": "C.D. Guadalajara (Chivas).",
+      "clubeWikidata": "Q503321",
+      "cidade": "Guadalajara"
+    },
+    "Club Len": {
+      "_nota": "Club León.",
+      "clubeWikidata": "Q633223",
+      "cidade": "León",
+      "cidadeWikidata": "Q189128"
+    },
+    "Club Necaxa": {
+      "_nota": "Colide com o time Premier (sub-23).",
+      "clubeWikidata": "Q1280895"
+    },
+    "Club Pachuca": {
+      "clubeWikidata": "Q736937",
+      "cidade": "Pachuca",
+      "cidadeWikidata": "Q160750"
+    },
+    "Club Puebla": {
+      "_nota": "P159 devolve o nome oficial (Heroica Puebla de Zaragoza).",
+      "cidade": "Puebla"
+    },
+    "Club Tigres": {
+      "_nota": "Tigres UANL.",
+      "clubeWikidata": "Q849823",
+      "cidade": "Monterrey"
+    },
+    "Club Tijuana": {
+      "_nota": "Colide com o feminino.",
+      "clubeWikidata": "Q1103168"
+    },
+    "FC Jurez": {
+      "_nota": "FC Juárez.",
+      "clubeWikidata": "Q20051399"
+    },
+    "Monterrey": {
+      "clubeWikidata": "Q768253"
+    },
+    "Pumas": {
+      "cidade": "Cidade do México",
+      "cidadeWikidata": "Q1489"
+    },
+    "Quertaro FC": {
+      "_nota": "Querétaro F.C.",
+      "clubeWikidata": "Q606210",
+      "cidade": "Querétaro",
+      "cidadeWikidata": "Q173121"
+    },
+    "Santos Laguna": {
+      "_nota": "Dois estádios no Wikidata (o Corona antigo e o novo); fica o Territorio Santos Modelo.",
+      "estadio": "Territorio Santos Modelo",
+      "estadioWikidata": "Q7703799",
+      "cidade": "Torreón"
+    },
+    "Toluca FC": {
+      "_nota": "P159 devolve Toluca de Lerdo.",
+      "cidade": "Toluca"
+    }
+  }
+}

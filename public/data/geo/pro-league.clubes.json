@@ -1,0 +1,346 @@
+{
+  "ligaId": "pro-league",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Antuérpia",
+      "lat": 51.2211,
+      "lng": 4.3997,
+      "_wikidata": "Q12892"
+    },
+    {
+      "nome": "Beveren",
+      "lat": 51.2,
+      "lng": 4.25,
+      "_wikidata": "Q270644"
+    },
+    {
+      "nome": "Bruges",
+      "lat": 51.2089,
+      "lng": 3.2242,
+      "_wikidata": "Q12994"
+    },
+    {
+      "nome": "Bruxelas",
+      "lat": 50.8467,
+      "lng": 4.3517,
+      "_wikidata": "Q239"
+    },
+    {
+      "nome": "Charleroi",
+      "lat": 50.4167,
+      "lng": 4.4442,
+      "_wikidata": "Q81046"
+    },
+    {
+      "nome": "Gante",
+      "lat": 51.0536,
+      "lng": 3.7253,
+      "_wikidata": "Q1296"
+    },
+    {
+      "nome": "Genk",
+      "lat": 50.9653,
+      "lng": 5.5006,
+      "_wikidata": "Q21769011"
+    },
+    {
+      "nome": "Kortrijk",
+      "lat": 50.8275,
+      "lng": 3.2658,
+      "_wikidata": "Q12995",
+      "_homonimos": 3
+    },
+    {
+      "nome": "La Louvière",
+      "lat": 50.4778,
+      "lng": 4.1881,
+      "_wikidata": "Q211572",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Leuven",
+      "lat": 50.8775,
+      "lng": 4.7044,
+      "_wikidata": "Q118958",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Liège",
+      "lat": 50.6397,
+      "lng": 5.5706,
+      "_wikidata": "Q3992",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Lommel",
+      "lat": 51.2333,
+      "lng": 5.3167,
+      "_wikidata": "Q194366",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Mechelen",
+      "lat": 51.0281,
+      "lng": 4.4803,
+      "_wikidata": "Q162022",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sint-Truiden",
+      "lat": 50.8167,
+      "lng": 5.1833,
+      "_wikidata": "Q37792",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Waregem",
+      "lat": 50.8811,
+      "lng": 3.4001,
+      "_wikidata": "Q204547",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Westerlo",
+      "lat": 51.0878,
+      "lng": 4.9157,
+      "_wikidata": "Q26235476"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "cercle-brugge-k-s-v",
+      "nomesBase": [
+        "Cercle Brugge"
+      ],
+      "cidade": "Bruges",
+      "estadio": "Jan Breydel Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Panoramio%20-%20V%26A%20Dudush%20-%20Jan%20Breydel%20Stadion.jpg?width=800",
+      "lat": 51.1933,
+      "lng": 3.1813,
+      "_wikidata": "Q364698",
+      "_wikidataLabel": "Cercle Brugge K.S.V."
+    },
+    {
+      "slug": "club-brugge-k-v",
+      "nomesBase": [
+        "Club Brugge"
+      ],
+      "cidade": "Bruges",
+      "estadio": "Jan Breydel Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Panoramio%20-%20V%26A%20Dudush%20-%20Jan%20Breydel%20Stadion.jpg?width=800",
+      "lat": 51.1933,
+      "lng": 3.1813,
+      "_wikidata": "Q190916",
+      "_wikidataLabel": "Club Brugge K.V."
+    },
+    {
+      "slug": "k-r-c-genk",
+      "nomesBase": [
+        "KRC Genk"
+      ],
+      "cidade": "Genk",
+      "estadio": "Cegeka Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cristal%20Arena%202013-02-21%20opposite%20stand.jpg?width=800",
+      "lat": 51.005,
+      "lng": 5.5333,
+      "_wikidata": "Q216032",
+      "_wikidataLabel": "K.R.C. Genk"
+    },
+    {
+      "slug": "k-v-c-westerlo",
+      "nomesBase": [
+        "KVC Westerlo"
+      ],
+      "cidade": "Westerlo",
+      "estadio": "Het Kuipje",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/%27t%20Kuipje%20KVC%20Westerlo.jpg?width=800",
+      "lat": 51.0947,
+      "lng": 4.9283,
+      "_wikidata": "Q849544",
+      "_wikidataLabel": "K.V.C. Westerlo"
+    },
+    {
+      "slug": "k-v-kortrijk",
+      "nomesBase": [
+        "KV Kortrijk"
+      ],
+      "cidade": "Kortrijk",
+      "estadio": "Guldensporen Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Guldensporenstadion.jpg?width=800",
+      "lat": 50.8303,
+      "lng": 3.2489,
+      "_wikidata": "Q618620",
+      "_wikidataLabel": "K.V. Kortrijk"
+    },
+    {
+      "slug": "kaa-gent",
+      "nomesBase": [
+        "KAA Gent"
+      ],
+      "cidade": "Gante",
+      "estadio": "Planet Group Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gentbruggeottenstadion%2016072009.jpg?width=800",
+      "lat": 51.0314,
+      "lng": 3.7661,
+      "_wikidata": "Q18232",
+      "_wikidataLabel": "KAA Gent"
+    },
+    {
+      "slug": "kv-mechelen",
+      "nomesBase": [
+        "KV Mechelen"
+      ],
+      "cidade": "Mechelen",
+      "estadio": "AFAS Stadion KV Mechelen",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Achter%20De%20Kazerne%20Oud.jpg?width=800",
+      "lat": 51.0372,
+      "lng": 4.4864,
+      "_wikidata": "Q113000",
+      "_wikidataLabel": "KV Mechelen"
+    },
+    {
+      "slug": "lommel-sk",
+      "nomesBase": [
+        "Lommel SK"
+      ],
+      "cidade": "Lommel",
+      "estadio": "Soevereinstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Soevereinstadion.jpg?width=800",
+      "lat": 51.2394,
+      "lng": 5.3072,
+      "_wikidata": "Q1668203",
+      "_wikidataLabel": "Lommel SK"
+    },
+    {
+      "slug": "oud-heverlee-leuven",
+      "nomesBase": [
+        "OH Leuven"
+      ],
+      "cidade": "Leuven",
+      "estadio": "Den Dreef",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Den%20Dreef.jpg?width=800",
+      "lat": 50.8683,
+      "lng": 4.6942,
+      "_wikidata": "Q916199",
+      "_wikidataLabel": "Oud-Heverlee Leuven"
+    },
+    {
+      "slug": "r-s-c-anderlecht",
+      "nomesBase": [
+        "RSC Anderlecht"
+      ],
+      "cidade": "Bruxelas",
+      "estadio": "Lotto Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Constant%20Vanden%20Stockstadion%2C%20Anderlecht.jpg?width=800",
+      "lat": 50.8342,
+      "lng": 4.2983,
+      "_wikidata": "Q187528",
+      "_wikidataLabel": "R.S.C. Anderlecht"
+    },
+    {
+      "slug": "raal-la-louviere",
+      "nomesBase": [
+        "RAAL La Louvière"
+      ],
+      "cidade": "La Louvière",
+      "estadio": "Stade du Tivoli",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20communal%20de%20Tivoli.jpg?width=800",
+      "lat": 50.4783,
+      "lng": 4.201,
+      "_wikidata": "Q536651",
+      "_wikidataLabel": "RAAL La Louvière"
+    },
+    {
+      "slug": "royal-antwerp",
+      "nomesBase": [
+        "Royal Antwerp FC"
+      ],
+      "cidade": "Antuérpia",
+      "estadio": "Bosuilstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/20110720%20bosuil.jpg?width=800",
+      "lat": 51.2322,
+      "lng": 4.4717,
+      "_wikidata": "Q732002",
+      "_wikidataLabel": "Royal Antwerp F.C."
+    },
+    {
+      "slug": "royal-charleroi-s-c",
+      "nomesBase": [
+        "Sp. Charleroi"
+      ],
+      "cidade": "Charleroi",
+      "estadio": "Stade du Pays de Charleroi",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Charleroi%20Stade%20du%20Pays%20de%20Charleroi%201.jpg?width=800",
+      "lat": 50.4146,
+      "lng": 4.4538,
+      "_wikidata": "Q19585",
+      "_wikidataLabel": "Royal Charleroi S.C."
+    },
+    {
+      "slug": "royale-union-saint-gilloise",
+      "nomesBase": [
+        "R. Union St.-G."
+      ],
+      "cidade": "Bruxelas",
+      "estadio": "Stade Joseph Marien",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stade%20Joseph%20Marien.JPG?width=800",
+      "lat": 50.8178,
+      "lng": 4.3292,
+      "_wikidata": "Q196160",
+      "_wikidataLabel": "Royale Union Saint-Gilloise"
+    },
+    {
+      "slug": "s-v-zulte-waregem",
+      "nomesBase": [
+        "Zulte Waregem"
+      ],
+      "cidade": "Waregem",
+      "estadio": "Regenboogstadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Regenboogstadion2.JPG?width=800",
+      "lat": 50.8831,
+      "lng": 3.4289,
+      "_wikidata": "Q376635",
+      "_wikidataLabel": "S.V. Zulte Waregem"
+    },
+    {
+      "slug": "sint-truidense-v-v",
+      "nomesBase": [
+        "STVV"
+      ],
+      "cidade": "Sint-Truiden",
+      "estadio": "Stayen",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stvv%20stadion%20Sint-truiden.jpg?width=800",
+      "lat": 50.8136,
+      "lng": 5.1653,
+      "_wikidata": "Q138248",
+      "_wikidataLabel": "Sint-Truidense V.V."
+    },
+    {
+      "slug": "sportkring-beveren",
+      "nomesBase": [
+        "Waasland-Beveren"
+      ],
+      "cidade": "Beveren",
+      "estadio": "Freethiel Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Beveren.jpg?width=800",
+      "lat": 51.2141,
+      "lng": 4.2439,
+      "_wikidata": "Q509170",
+      "_wikidataLabel": "Sportkring Beveren"
+    },
+    {
+      "slug": "standard-liege",
+      "nomesBase": [
+        "Standard Liège"
+      ],
+      "cidade": "Liège",
+      "estadio": "Stade Maurice Dufrasne",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Standard%20liege%20kaerjeng02.jpg?width=800",
+      "lat": 50.6099,
+      "lng": 5.5433,
+      "_wikidata": "Q190561",
+      "_wikidataLabel": "Standard Liège"
+    }
+  ]
+}

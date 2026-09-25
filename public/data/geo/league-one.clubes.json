@@ -1,0 +1,460 @@
+{
+  "ligaId": "league-one",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Barnsley",
+      "lat": 53.5536,
+      "lng": -1.4789,
+      "_wikidata": "Q54212",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Blackpool",
+      "lat": 53.8167,
+      "lng": -3.05,
+      "_wikidata": "Q170377",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Bradford",
+      "lat": 53.481,
+      "lng": -2.195,
+      "_wikidata": "Q4954547",
+      "_homonimos": 6
+    },
+    {
+      "nome": "Burton upon Trent",
+      "lat": 52.8019,
+      "lng": -1.6367,
+      "_wikidata": "Q1000597"
+    },
+    {
+      "nome": "Cambridge",
+      "lat": 52.2081,
+      "lng": 0.1225,
+      "_wikidata": "Q350",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Doncaster",
+      "lat": 53.5228,
+      "lng": -1.1325,
+      "_wikidata": "Q58900"
+    },
+    {
+      "nome": "High Wycombe",
+      "lat": 51.6217,
+      "lng": -0.7517,
+      "_wikidata": "Q64116"
+    },
+    {
+      "nome": "Huddersfield",
+      "lat": 53.645,
+      "lng": -1.7797,
+      "_wikidata": "Q201812"
+    },
+    {
+      "nome": "Leicester",
+      "lat": 52.6361,
+      "lng": -1.1331,
+      "_wikidata": "Q83065"
+    },
+    {
+      "nome": "Londres",
+      "lat": 51.5072,
+      "lng": -0.1275,
+      "_wikidata": "Q84"
+    },
+    {
+      "nome": "Luton",
+      "lat": 51.8783,
+      "lng": -0.4147,
+      "_wikidata": "Q203889",
+      "_homonimos": 4
+    },
+    {
+      "nome": "Mansfield",
+      "lat": 53.1435,
+      "lng": -1.1963,
+      "_wikidata": "Q841979",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Milton Keynes",
+      "lat": 52.0333,
+      "lng": -0.7667,
+      "_wikidata": "Q204234",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Nottingham",
+      "lat": 52.955,
+      "lng": -1.1492,
+      "_wikidata": "Q41262"
+    },
+    {
+      "nome": "Oxford",
+      "lat": 51.7519,
+      "lng": -1.2578,
+      "_wikidata": "Q34217"
+    },
+    {
+      "nome": "Peterborough",
+      "lat": 52.5725,
+      "lng": -0.2431,
+      "_wikidata": "Q172438"
+    },
+    {
+      "nome": "Plymouth",
+      "lat": 50.3714,
+      "lng": -4.1422,
+      "_wikidata": "Q43382"
+    },
+    {
+      "nome": "Reading",
+      "lat": 51.4542,
+      "lng": -0.9731,
+      "_wikidata": "Q161491"
+    },
+    {
+      "nome": "Sheffield",
+      "lat": 53.3808,
+      "lng": -1.4703,
+      "_wikidata": "Q42448",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Stevenage",
+      "lat": 51.9017,
+      "lng": -0.2019,
+      "_wikidata": "Q19795"
+    },
+    {
+      "nome": "Stockport",
+      "lat": 53.4083,
+      "lng": -2.1494,
+      "_wikidata": "Q18655"
+    },
+    {
+      "nome": "Wigan",
+      "lat": 53.5447,
+      "lng": -2.6317,
+      "_wikidata": "Q208143"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "afc-wimbledon",
+      "nomesBase": [
+        "AFC Wimbledon"
+      ],
+      "cidade": "Londres",
+      "estadio": "Plough Lane",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Plough%20Lane%2C%2018%20May%202021.jpg?width=800",
+      "lat": 51.4314,
+      "lng": -0.1867,
+      "_wikidata": "Q48851",
+      "_wikidataLabel": "AFC Wimbledon"
+    },
+    {
+      "slug": "barnsley",
+      "nomesBase": [
+        "Barnsley"
+      ],
+      "cidade": "Barnsley",
+      "estadio": "Oakwell",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/East%20Stand%2C%20Oakwell%20-%20geograph.org.uk%20-%201494052.jpg?width=800",
+      "lat": 53.5522,
+      "lng": -1.4675,
+      "_wikidata": "Q19442",
+      "_wikidataLabel": "Barnsley F.C."
+    },
+    {
+      "slug": "blackpool",
+      "nomesBase": [
+        "Blackpool"
+      ],
+      "cidade": "Blackpool",
+      "estadio": "Bloomfield Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Bloomfield%20Road%20PL%20Kickoff-geograph-2039284.jpg?width=800",
+      "lat": 53.8047,
+      "lng": -3.0481,
+      "_wikidata": "Q19449",
+      "_wikidataLabel": "Blackpool F.C."
+    },
+    {
+      "slug": "bradford-city",
+      "nomesBase": [
+        "Bradford City"
+      ],
+      "cidade": "Bradford",
+      "estadio": "Valley Parade",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Valley%20Parade%2C%20Bradford.jpg?width=800",
+      "lat": 53.8042,
+      "lng": -1.759,
+      "_wikidata": "Q48879",
+      "_wikidataLabel": "Bradford City A.F.C."
+    },
+    {
+      "slug": "bromley",
+      "nomesBase": [
+        "Bromley FC"
+      ],
+      "cidade": "Londres",
+      "estadio": "Hayes Lane",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hayes%20Lane%20Stadium%20%28geograph%203359000%29.jpg?width=800",
+      "lat": 51.3901,
+      "lng": 0.0211,
+      "_wikidata": "Q1584552",
+      "_wikidataLabel": "Bromley F.C."
+    },
+    {
+      "slug": "burton-albion",
+      "nomesBase": [
+        "Burton Albion"
+      ],
+      "cidade": "Burton upon Trent",
+      "estadio": "Pirelli Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Burton%20Albion%20FC%2C%20Pirelli%20Stadium%2C%20Burton%20upon%20Trent%2C%20Staffordshire%20-%20geograph.org.uk%20-%20190956.jpg?width=800",
+      "lat": 52.8219,
+      "lng": -1.627,
+      "_wikidata": "Q48929",
+      "_wikidataLabel": "Burton Albion F.C."
+    },
+    {
+      "slug": "cambridge-united",
+      "nomesBase": [
+        "Cambridge Utd"
+      ],
+      "cidade": "Cambridge",
+      "estadio": "Abbey Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Abbey%20South%20Stand.JPG?width=800",
+      "lat": 52.2114,
+      "lng": 0.153,
+      "_wikidata": "Q18509",
+      "_wikidataLabel": "Cambridge United F.C."
+    },
+    {
+      "slug": "doncaster-rovers",
+      "nomesBase": [
+        "Doncaster"
+      ],
+      "cidade": "Doncaster",
+      "estadio": "Eco-Power Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Keepmoat%20Stadium%20Doncaster.jpg?width=800",
+      "lat": 53.5097,
+      "lng": -1.1139,
+      "_wikidata": "Q19589",
+      "_wikidataLabel": "Doncaster Rovers F.C."
+    },
+    {
+      "slug": "huddersfield-town",
+      "nomesBase": [
+        "Huddersfield"
+      ],
+      "cidade": "Huddersfield",
+      "estadio": "Accu Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Hudderslfield%200%20Chelsea%203%20%2830144863978%29.jpg?width=800",
+      "lat": 53.6542,
+      "lng": -1.7683,
+      "_wikidata": "Q19473",
+      "_wikidataLabel": "Huddersfield Town A.F.C."
+    },
+    {
+      "slug": "leicester-city",
+      "nomesBase": [
+        "Leicester City"
+      ],
+      "cidade": "Leicester",
+      "estadio": "King Power Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/King%20Power%20Stadium%20wide%20view.jpg?width=800",
+      "lat": 52.6203,
+      "lng": -1.1422,
+      "_wikidata": "Q19481",
+      "_wikidataLabel": "Leicester City F.C."
+    },
+    {
+      "slug": "leyton-orient",
+      "nomesBase": [
+        "Leyton Orient"
+      ],
+      "cidade": "Londres",
+      "estadio": "Brisbane Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Brisbane%20Road.jpg?width=800",
+      "lat": 51.5601,
+      "lng": -0.0126,
+      "_wikidata": "Q19595",
+      "_wikidataLabel": "Leyton Orient F.C."
+    },
+    {
+      "slug": "luton-town",
+      "nomesBase": [
+        "Luton Town"
+      ],
+      "cidade": "Luton",
+      "estadio": "Kenilworth Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kenilworth%20Road%2C%20Kenilworth%20End.jpg?width=800",
+      "lat": 51.8842,
+      "lng": -0.4317,
+      "_wikidata": "Q18520",
+      "_wikidataLabel": "Luton Town F.C."
+    },
+    {
+      "slug": "mansfield-town",
+      "nomesBase": [
+        "Mansfield Town"
+      ],
+      "cidade": "Mansfield",
+      "estadio": "One Call Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Field%20Mill%20away%20stand%20-%20geograph-1248314.jpg?width=800",
+      "lat": 53.1381,
+      "lng": -1.2006,
+      "_wikidata": "Q18522",
+      "_wikidataLabel": "Mansfield Town F.C."
+    },
+    {
+      "slug": "milton-keynes-dons",
+      "nomesBase": [
+        "MK Dons"
+      ],
+      "cidade": "Milton Keynes",
+      "estadio": "Stadium MK",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/StadiumMKEnglandU21.jpg?width=800",
+      "lat": 52.0094,
+      "lng": -0.7333,
+      "_wikidata": "Q248188",
+      "_wikidataLabel": "Milton Keynes Dons F.C."
+    },
+    {
+      "slug": "notts-county",
+      "nomesBase": [
+        "Notts County"
+      ],
+      "cidade": "Nottingham",
+      "estadio": "Meadow Lane",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nottingham%20county%20fc%20notts%20stadium.jpg?width=800",
+      "lat": 52.9425,
+      "lng": -1.1372,
+      "_wikidata": "Q19598",
+      "_wikidataLabel": "Notts County F.C."
+    },
+    {
+      "slug": "oxford-united",
+      "nomesBase": [
+        "Oxford United"
+      ],
+      "cidade": "Oxford",
+      "estadio": "Kassam Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Kassam%20Stadium%2C%20Oxford.jpg?width=800",
+      "lat": 51.7164,
+      "lng": -1.2081,
+      "_wikidata": "Q48946",
+      "_wikidataLabel": "Oxford United F.C."
+    },
+    {
+      "slug": "peterborough-united",
+      "nomesBase": [
+        "Peterborough"
+      ],
+      "cidade": "Peterborough",
+      "estadio": "Weston Homes Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Peterborough%20United%27s%20South%20Family%20Stand%20beginning%20to%20fill%20up%20-%20geograph.org.uk%20-%20154824.jpg?width=800",
+      "lat": 52.5647,
+      "lng": -0.2404,
+      "_wikidata": "Q19495",
+      "_wikidataLabel": "Peterborough United F.C."
+    },
+    {
+      "slug": "plymouth-argyle",
+      "nomesBase": [
+        "Plymouth Argyle"
+      ],
+      "cidade": "Plymouth",
+      "estadio": "Home Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Home%20Park%20%2820968%29.jpg?width=800",
+      "lat": 50.3881,
+      "lng": -4.1508,
+      "_wikidata": "Q48947",
+      "_wikidataLabel": "Plymouth Argyle F.C."
+    },
+    {
+      "slug": "reading",
+      "nomesBase": [
+        "Reading"
+      ],
+      "cidade": "Reading",
+      "estadio": "Select Car Leasing Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Select%20Car%20Leasing.jpg?width=800",
+      "lat": 51.4222,
+      "lng": -0.9828,
+      "_wikidata": "Q18729",
+      "_wikidataLabel": "Reading F.C."
+    },
+    {
+      "slug": "sheffield-wednesday",
+      "nomesBase": [
+        "Sheffield Wed"
+      ],
+      "cidade": "Sheffield",
+      "estadio": "Hillsborough Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheffield%20wednesday%20hillsborough%20stadium.jpg?width=800",
+      "lat": 53.4114,
+      "lng": -1.5006,
+      "_wikidata": "Q19498",
+      "_wikidataLabel": "Sheffield Wednesday F.C."
+    },
+    {
+      "slug": "stevenage",
+      "nomesBase": [
+        "Stevenage"
+      ],
+      "cidade": "Stevenage",
+      "estadio": "Lamex Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stevenagenight.jpg?width=800",
+      "lat": 51.8898,
+      "lng": -0.1936,
+      "_wikidata": "Q9426",
+      "_wikidataLabel": "Stevenage F.C."
+    },
+    {
+      "slug": "stockport-county",
+      "nomesBase": [
+        "Stockport"
+      ],
+      "cidade": "Stockport",
+      "estadio": "Edgeley Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgeley%20Park%202011.jpg?width=800",
+      "lat": 53.3997,
+      "lng": -2.1664,
+      "_wikidata": "Q18526",
+      "_wikidataLabel": "Stockport County F.C."
+    },
+    {
+      "slug": "wigan-athletic",
+      "nomesBase": [
+        "Wigan Athletic"
+      ],
+      "cidade": "Wigan",
+      "estadio": "Brick Community Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Wigan%20athletics%20dw%20stadium.jpg?width=800",
+      "lat": 53.5478,
+      "lng": -2.6539,
+      "_wikidata": "Q18750",
+      "_wikidataLabel": "Wigan Athletic F.C."
+    },
+    {
+      "slug": "wycombe-wanderers",
+      "nomesBase": [
+        "Wycombe"
+      ],
+      "cidade": "High Wycombe",
+      "estadio": "Adams Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Adams%20Park%20from%20a%20northerly%20direction.JPG?width=800",
+      "lat": 51.6306,
+      "lng": -0.8003,
+      "_wikidata": "Q48953",
+      "_wikidataLabel": "Wycombe Wanderers F.C."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "ligaId": "league-two",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Como na Premier League: \"London\" vira \"Londres\" (cidadeWikidata Q84), e",
+    "estádio só leva `estadio` quando o Wikidata traz o nome antigo."
+  ],
+  "clubes": {
+    "Accrington": {
+      "_nota": "Crown Ground tem nome comercial Wham Stadium.",
+      "estadio": "Wham Stadium",
+      "cidade": "Accrington"
+    },
+    "Barnet": {
+      "_nota": "The Hive fica em Edgware, no distrito de Barnet.",
+      "cidade": "Londres",
+      "cidadeWikidata": "Q84"
+    },
+    "Chesterfield": {
+      "estadio": "SMH Group Stadium",
+      "cidade": "Chesterfield"
+    },
+    "Colchester": {
+      "estadio": "JobServe Community Stadium",
+      "cidade": "Colchester"
+    },
+    "Crewe Alexandra": {
+      "estadio": "Mornflake Stadium",
+      "cidade": "Crewe"
+    },
+    "Grimsby Town": {
+      "_nota": "Blundell Park fica em Cleethorpes, colado em Grimsby; o rótulo fica Grimsby.",
+      "cidade": "Grimsby"
+    },
+    "Rochdale": {
+      "estadio": "Crown Oil Arena",
+      "cidade": "Rochdale"
+    },
+    "Rotherham Utd": {
+      "_nota": "A base abrevia Rotherham United.",
+      "clubeWikidata": "Q48950",
+      "cidade": "Rotherham"
+    },
+    "Shrewsbury": {
+      "estadio": "Croud Meadow",
+      "cidade": "Shrewsbury"
+    },
+    "Walsall": {
+      "estadio": "Poundland Bescot Stadium",
+      "cidade": "Walsall"
+    },
+    "York City": {
+      "_nota": "P159 devolve Huntington, onde fica o estádio; o rótulo fica York.",
+      "cidade": "York"
+    }
+  }
+}

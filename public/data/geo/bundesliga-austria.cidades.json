@@ -1,0 +1,176 @@
+{
+  "ligaId": "bundesliga-austria",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Klagenfurt",
+      "lat": 46.6203,
+      "lng": 14.31,
+      "rank": 1
+    },
+    {
+      "nome": "Wiener Neustadt",
+      "lat": 47.816,
+      "lng": 16.25,
+      "rank": 1
+    },
+    {
+      "nome": "Eisenstadt",
+      "lat": 47.8333,
+      "lng": 16.5333,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Stuttgart",
+      "lat": 48.78,
+      "lng": 9.2,
+      "rank": 1
+    },
+    {
+      "nome": "Mannheim",
+      "lat": 49.5004,
+      "lng": 8.47,
+      "rank": 1
+    },
+    {
+      "nome": "Budapeste",
+      "lat": 47.502,
+      "lng": 19.0814,
+      "rank": 1
+    },
+    {
+      "nome": "Munique",
+      "lat": 48.1319,
+      "lng": 11.573,
+      "rank": 1
+    },
+    {
+      "nome": "Zurique",
+      "lat": 47.3819,
+      "lng": 8.5481,
+      "rank": 1
+    },
+    {
+      "nome": "Basileia",
+      "lat": 47.5804,
+      "lng": 7.59,
+      "rank": 1
+    },
+    {
+      "nome": "Nuremberg",
+      "lat": 49.45,
+      "lng": 11.08,
+      "rank": 1
+    },
+    {
+      "nome": "Zagreb",
+      "lat": 45.8,
+      "lng": 16,
+      "rank": 1
+    },
+    {
+      "nome": "Estrasburgo",
+      "lat": 48.58,
+      "lng": 7.75,
+      "rank": 2
+    },
+    {
+      "nome": "Bratislava",
+      "lat": 48.15,
+      "lng": 17.117,
+      "rank": 2
+    },
+    {
+      "nome": "Brno",
+      "lat": 49.2004,
+      "lng": 16.61,
+      "rank": 2
+    },
+    {
+      "nome": "Karlsruhe",
+      "lat": 49,
+      "lng": 8.4,
+      "rank": 2
+    },
+    {
+      "nome": "Augsburgo",
+      "lat": 48.35,
+      "lng": 10.9,
+      "rank": 2
+    },
+    {
+      "nome": "Liubliana",
+      "lat": 46.0553,
+      "lng": 14.515,
+      "rank": 2
+    },
+    {
+      "nome": "Freiburg im Breisgau",
+      "lat": 48.0004,
+      "lng": 7.8699,
+      "rank": 2
+    },
+    {
+      "nome": "Como",
+      "lat": 45.81,
+      "lng": 9.08,
+      "rank": 2
+    },
+    {
+      "nome": "Lucerna",
+      "lat": 47.0504,
+      "lng": 8.28,
+      "rank": 2
+    },
+    {
+      "nome": "Bérgamo",
+      "lat": 45.7004,
+      "lng": 9.67,
+      "rank": 2
+    },
+    {
+      "nome": "Pécs",
+      "lat": 46.0804,
+      "lng": 18.22,
+      "rank": 2
+    },
+    {
+      "nome": "Ulm",
+      "lat": 48.4004,
+      "lng": 10,
+      "rank": 2
+    },
+    {
+      "nome": "Ratisbona",
+      "lat": 49.0204,
+      "lng": 12.12,
+      "rank": 2
+    },
+    {
+      "nome": "Ingolstadt",
+      "lat": 48.7704,
+      "lng": 11.45,
+      "rank": 2
+    },
+    {
+      "nome": "Székesfehérvár",
+      "lat": 47.1947,
+      "lng": 18.4081,
+      "rank": 2
+    },
+    {
+      "nome": "Győr",
+      "lat": 47.7004,
+      "lng": 17.63,
+      "rank": 2
+    },
+    {
+      "nome": "Zlín",
+      "lat": 49.2304,
+      "lng": 17.65,
+      "rank": 2
+    }
+  ]
+}

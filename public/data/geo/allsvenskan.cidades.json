@@ -1,0 +1,308 @@
+{
+  "ligaId": "allsvenskan",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Örebro",
+      "lat": 59.2803,
+      "lng": 15.22,
+      "rank": 1
+    },
+    {
+      "nome": "Linköping",
+      "lat": 58.41,
+      "lng": 15.6299,
+      "rank": 1
+    },
+    {
+      "nome": "Helsingborg",
+      "lat": 56.0505,
+      "lng": 12.7,
+      "rank": 1
+    },
+    {
+      "nome": "Jönköping",
+      "lat": 57.7713,
+      "lng": 14.165,
+      "rank": 1
+    },
+    {
+      "nome": "Norrköping",
+      "lat": 58.5954,
+      "lng": 16.1787,
+      "rank": 1
+    },
+    {
+      "nome": "Umeå",
+      "lat": 63.83,
+      "lng": 20.24,
+      "rank": 1
+    },
+    {
+      "nome": "Karlstad",
+      "lat": 59.3671,
+      "lng": 13.4999,
+      "rank": 1
+    },
+    {
+      "nome": "Sundsvall",
+      "lat": 62.4001,
+      "lng": 17.3167,
+      "rank": 1
+    },
+    {
+      "nome": "Gävle",
+      "lat": 60.667,
+      "lng": 17.1666,
+      "rank": 1
+    },
+    {
+      "nome": "Växjö",
+      "lat": 56.8837,
+      "lng": 14.8167,
+      "rank": 1
+    },
+    {
+      "nome": "Luleå",
+      "lat": 65.5966,
+      "lng": 22.1584,
+      "rank": 1
+    },
+    {
+      "nome": "Östersund",
+      "lat": 63.1833,
+      "lng": 14.65,
+      "rank": 1
+    },
+    {
+      "nome": "Trollhättan",
+      "lat": 58.2671,
+      "lng": 12.3,
+      "rank": 1
+    },
+    {
+      "nome": "Borlänge",
+      "lat": 60.4833,
+      "lng": 15.4167,
+      "rank": 1
+    },
+    {
+      "nome": "Falun",
+      "lat": 60.613,
+      "lng": 15.647,
+      "rank": 1
+    },
+    {
+      "nome": "Karlskrona",
+      "lat": 56.203,
+      "lng": 15.296,
+      "rank": 2
+    },
+    {
+      "nome": "Kristianstad",
+      "lat": 56.0337,
+      "lng": 14.1333,
+      "rank": 2
+    },
+    {
+      "nome": "Skellefteå",
+      "lat": 64.7721,
+      "lng": 20.95,
+      "rank": 2
+    },
+    {
+      "nome": "Örnsköldsvik",
+      "lat": 63.318,
+      "lng": 18.7167,
+      "rank": 2
+    },
+    {
+      "nome": "Nyköping",
+      "lat": 58.764,
+      "lng": 17.015,
+      "rank": 2
+    },
+    {
+      "nome": "Visby",
+      "lat": 57.6337,
+      "lng": 18.3,
+      "rank": 2
+    },
+    {
+      "nome": "Kiruna",
+      "lat": 67.85,
+      "lng": 20.2166,
+      "rank": 2
+    },
+    {
+      "nome": "Härnösand",
+      "lat": 62.634,
+      "lng": 17.934,
+      "rank": 2
+    },
+    {
+      "nome": "Mariestad",
+      "lat": 58.705,
+      "lng": 13.828,
+      "rank": 2
+    },
+    {
+      "nome": "Bollnäs",
+      "lat": 61.352,
+      "lng": 16.3666,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Berlim",
+      "lat": 52.5238,
+      "lng": 13.3996,
+      "rank": 1
+    },
+    {
+      "nome": "Hamburgo",
+      "lat": 53.552,
+      "lng": 9.9981,
+      "rank": 1
+    },
+    {
+      "nome": "Varsóvia",
+      "lat": 52.2519,
+      "lng": 20.9981,
+      "rank": 1
+    },
+    {
+      "nome": "Helsinque",
+      "lat": 60.1775,
+      "lng": 24.9322,
+      "rank": 1
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6805,
+      "lng": 12.5615,
+      "rank": 1
+    },
+    {
+      "nome": "Oslo",
+      "lat": 59.9186,
+      "lng": 10.748,
+      "rank": 1
+    },
+    {
+      "nome": "Riga",
+      "lat": 56.95,
+      "lng": 24.1,
+      "rank": 1
+    },
+    {
+      "nome": "Gdansk",
+      "lat": 54.36,
+      "lng": 18.64,
+      "rank": 1
+    },
+    {
+      "nome": "Bremen",
+      "lat": 53.08,
+      "lng": 8.8,
+      "rank": 2
+    },
+    {
+      "nome": "Hanôver",
+      "lat": 52.367,
+      "lng": 9.7167,
+      "rank": 2
+    },
+    {
+      "nome": "Poznań",
+      "lat": 52.4058,
+      "lng": 16.8999,
+      "rank": 2
+    },
+    {
+      "nome": "Vilnius",
+      "lat": 54.6834,
+      "lng": 25.3166,
+      "rank": 2
+    },
+    {
+      "nome": "Caliningrado",
+      "lat": 54.7,
+      "lng": 20.4973,
+      "rank": 2
+    },
+    {
+      "nome": "Estetino",
+      "lat": 53.4204,
+      "lng": 14.53,
+      "rank": 2
+    },
+    {
+      "nome": "Tallinn",
+      "lat": 59.4339,
+      "lng": 24.728,
+      "rank": 2
+    },
+    {
+      "nome": "Kaunas",
+      "lat": 54.9504,
+      "lng": 23.88,
+      "rank": 2
+    },
+    {
+      "nome": "Bydgoszcz",
+      "lat": 53.1204,
+      "lng": 18.01,
+      "rank": 2
+    },
+    {
+      "nome": "Bielefeld",
+      "lat": 52.03,
+      "lng": 8.53,
+      "rank": 2
+    },
+    {
+      "nome": "Hrodna",
+      "lat": 53.6779,
+      "lng": 23.8341,
+      "rank": 2
+    },
+    {
+      "nome": "Gdynia",
+      "lat": 54.5204,
+      "lng": 18.53,
+      "rank": 2
+    },
+    {
+      "nome": "Brest",
+      "lat": 52.1,
+      "lng": 23.7,
+      "rank": 2
+    },
+    {
+      "nome": "Białystok",
+      "lat": 53.1504,
+      "lng": 23.17,
+      "rank": 2
+    },
+    {
+      "nome": "Kiel",
+      "lat": 54.3304,
+      "lng": 10.13,
+      "rank": 2
+    },
+    {
+      "nome": "Tampere",
+      "lat": 61.5,
+      "lng": 23.75,
+      "rank": 2
+    },
+    {
+      "nome": "Brunsvique",
+      "lat": 52.25,
+      "lng": 10.5,
+      "rank": 2
+    }
+  ]
+}

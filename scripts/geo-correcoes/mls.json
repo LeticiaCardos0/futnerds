@@ -1,0 +1,71 @@
+{
+  "ligaId": "mls",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "Rótulo pela cidade conhecida quando o estádio fica num município vizinho",
+    "(Commerce City, Chester, Harrison, Frisco), como em Bolton/Horwich na EFL.",
+    "",
+    "Rótulos de cidade: o \"pt\" do Wikidata traz grafias que a imprensa brasileira não usa (Trebizonda, Estetino); ficam as de uso corrente."
+  ],
+  "clubes": {
+    "Colorado Rapids": {
+      "_nota": "O estádio fica em Commerce City.",
+      "cidade": "Denver",
+      "cidadeWikidata": "Q16554"
+    },
+    "D.C. United": {
+      "cidade": "Washington",
+      "cidadeWikidata": "Q61"
+    },
+    "FC Dallas": {
+      "_nota": "O Toyota Stadium fica em Frisco; o P159 casava com uma Frisco a 2.000 km.",
+      "cidade": "Dallas",
+      "cidadeWikidata": "Q16557"
+    },
+    "LA Galaxy": {
+      "cidade": "Los Angeles",
+      "cidadeWikidata": "Q65"
+    },
+    "LAFC": {
+      "cidade": "Los Angeles",
+      "cidadeWikidata": "Q65"
+    },
+    "Nashville SC": {
+      "_nota": "Colide com o Nashville SC da USL.",
+      "clubeWikidata": "Q47518754"
+    },
+    "New England": {
+      "_nota": "New England Revolution; o Gillette Stadium fica em Foxborough.",
+      "clubeWikidata": "Q309095",
+      "cidade": "Boston",
+      "cidadeWikidata": "Q100"
+    },
+    "New York City FC": {
+      "cidade": "Nova York",
+      "cidadeWikidata": "Q60"
+    },
+    "Philadelphia": {
+      "_nota": "Philadelphia Union; o Subaru Park fica em Chester.",
+      "cidade": "Filadélfia",
+      "cidadeWikidata": "Q1345"
+    },
+    "Portland Timbers": {
+      "_nota": "Casa com 4 clubes (os Timbers das ligas antigas).",
+      "clubeWikidata": "Q1031200"
+    },
+    "Red Bulls": {
+      "_nota": "New York Red Bulls; a arena fica em Harrison (NJ).",
+      "cidade": "Nova York",
+      "cidadeWikidata": "Q60"
+    },
+    "SJ Earthquakes": {
+      "_nota": "Dois estádios no Wikidata; o clube joga no PayPal Park.",
+      "estadioWikidata": "Q3046470",
+      "cidade": "San Jose",
+      "cidadeWikidata": "Q16553"
+    }
+  }
+}

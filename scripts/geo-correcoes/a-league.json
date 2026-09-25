@@ -1,0 +1,47 @@
+{
+  "ligaId": "a-league",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos."
+  ],
+  "clubes": {
+    "Brisbane Roar": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q839997"
+    },
+    "Central Coast": {
+      "_nota": "Central Coast Mariners.",
+      "clubeWikidata": "Q762294"
+    },
+    "Melb. Victory": {
+      "_nota": "Melbourne Victory.",
+      "clubeWikidata": "Q316789",
+      "cidade": "Melbourne"
+    },
+    "Melbourne City": {
+      "_nota": "Colide com o time feminino.",
+      "clubeWikidata": "Q748725",
+      "cidade": "Melbourne"
+    },
+    "Newcastle Jets": {
+      "_nota": "O Wikidata traz o Wanderers Oval; o clube joga no McDonald Jones Stadium.",
+      "estadioWikidata": "Q1188325",
+      "estadio": "McDonald Jones Stadium"
+    },
+    "Sydney FC": {
+      "_nota": "O Wikidata só tem o estádio antigo (demolido em 2019); o novo é o Allianz Stadium.",
+      "clubeWikidata": "Q330143",
+      "estadioWikidata": "Q65091153",
+      "estadio": "Allianz Stadium"
+    },
+    "Well. Phoenix": {
+      "_nota": "Wellington Phoenix, da Nova Zelândia.",
+      "clubeWikidata": "Q815890"
+    },
+    "WS Wanderers": {
+      "_nota": "Western Sydney Wanderers.",
+      "clubeWikidata": "Q999035"
+    }
+  }
+}

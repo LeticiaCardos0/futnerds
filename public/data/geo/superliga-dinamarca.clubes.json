@@ -1,0 +1,239 @@
+{
+  "ligaId": "superliga-dinamarca",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Aarhus",
+      "lat": 56.1564,
+      "lng": 10.2097,
+      "_wikidata": "Q25319"
+    },
+    {
+      "nome": "Brøndby",
+      "lat": 55.6242,
+      "lng": 12.4186,
+      "_wikidata": "Q3359606"
+    },
+    {
+      "nome": "Copenhague",
+      "lat": 55.6761,
+      "lng": 12.5689,
+      "_wikidata": "Q1748"
+    },
+    {
+      "nome": "Farum",
+      "lat": 55.8083,
+      "lng": 12.3581,
+      "_wikidata": "Q3554742"
+    },
+    {
+      "nome": "Haderslev",
+      "lat": 55.25,
+      "lng": 9.5,
+      "_wikidata": "Q29868"
+    },
+    {
+      "nome": "Herning",
+      "lat": 56.1333,
+      "lng": 8.9833,
+      "_wikidata": "Q506877",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Horsens",
+      "lat": 55.86,
+      "lng": 9.84,
+      "_wikidata": "Q512064",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Kongens Lyngby",
+      "lat": 55.77,
+      "lng": 12.5,
+      "_wikidata": "Q2239"
+    },
+    {
+      "nome": "Odense",
+      "lat": 55.396,
+      "lng": 10.3885,
+      "_wikidata": "Q21146",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Randers",
+      "lat": 56.4569,
+      "lng": 10.0392,
+      "_wikidata": "Q27168"
+    },
+    {
+      "nome": "Silkeborg",
+      "lat": 56.1667,
+      "lng": 9.55,
+      "_wikidata": "Q21180"
+    },
+    {
+      "nome": "Viborg",
+      "lat": 56.45,
+      "lng": 9.4,
+      "_wikidata": "Q21176"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "aarhus-gymnastikforening",
+      "nomesBase": [
+        "AGF"
+      ],
+      "cidade": "Aarhus",
+      "estadio": "Ceres Park & Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Atletion.jpg?width=800",
+      "lat": 56.1319,
+      "lng": 10.1964,
+      "_wikidata": "Q301431",
+      "_wikidataLabel": "Aarhus Gymnastikforening"
+    },
+    {
+      "slug": "ac-horsens",
+      "nomesBase": [
+        "AC Horsens"
+      ],
+      "cidade": "Horsens",
+      "estadio": "CASA Arena Horsens",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ac%20horsens.jpg?width=800",
+      "lat": 55.8716,
+      "lng": 9.8576,
+      "_wikidata": "Q289286",
+      "_wikidataLabel": "AC Horsens"
+    },
+    {
+      "slug": "br-ndby-if",
+      "nomesBase": [
+        "Brøndby IF"
+      ],
+      "cidade": "Brøndby",
+      "estadio": "Brøndby Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Br%C3%B8ndby%20stadium%20panorama.jpg?width=800",
+      "lat": 55.6489,
+      "lng": 12.4184,
+      "_wikidata": "Q211906",
+      "_wikidataLabel": "Brøndby IF"
+    },
+    {
+      "slug": "f-c-copenhagen",
+      "nomesBase": [
+        "F.C. København"
+      ],
+      "cidade": "Copenhague",
+      "estadio": "Parken Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Denmark%20copenhagen%20parken%20stadium.jpg?width=800",
+      "lat": 55.7025,
+      "lng": 12.5722,
+      "_wikidata": "Q188430",
+      "_wikidataLabel": "F.C. Copenhagen"
+    },
+    {
+      "slug": "fc-midtjylland",
+      "nomesBase": [
+        "FC Midtjylland"
+      ],
+      "cidade": "Herning",
+      "estadio": "MCH Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/MCH%20Arena%20Herning.JPG?width=800",
+      "lat": 56.1167,
+      "lng": 8.9517,
+      "_wikidata": "Q618520",
+      "_wikidataLabel": "FC Midtjylland"
+    },
+    {
+      "slug": "fc-nordsj-lland",
+      "nomesBase": [
+        "FC Nordsjælland"
+      ],
+      "cidade": "Farum",
+      "estadio": "Right to Dream Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Farum%20Farum%20Park%201.jpg?width=800",
+      "lat": 55.8158,
+      "lng": 12.3533,
+      "_wikidata": "Q210025",
+      "_wikidataLabel": "FC Nordsjælland"
+    },
+    {
+      "slug": "lyngby-boldklub",
+      "nomesBase": [
+        "Lyngby BK"
+      ],
+      "cidade": "Kongens Lyngby",
+      "estadio": "Lyngby Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Lyngby%20bk%20-%20fc%20fyn.jpg?width=800",
+      "lat": 55.7811,
+      "lng": 12.5058,
+      "_wikidata": "Q635654",
+      "_wikidataLabel": "Lyngby Boldklub"
+    },
+    {
+      "slug": "odense-boldklub",
+      "nomesBase": [
+        "Odense BK"
+      ],
+      "cidade": "Odense",
+      "estadio": "Odense Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Odense%20Stadion.JPG?width=800",
+      "lat": 55.3978,
+      "lng": 10.3501,
+      "_wikidata": "Q211912",
+      "_wikidataLabel": "Odense Boldklub"
+    },
+    {
+      "slug": "randers",
+      "nomesBase": [
+        "Randers FC"
+      ],
+      "cidade": "Randers",
+      "estadio": "AutoC Park Randers",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/AutoC%20Park%20Randers%2020120422.jpg?width=800",
+      "lat": 56.4658,
+      "lng": 10.0103,
+      "_wikidata": "Q729560",
+      "_wikidataLabel": "Randers FC"
+    },
+    {
+      "slug": "s-nderjyske-fodbold",
+      "nomesBase": [
+        "Sønderjyske"
+      ],
+      "cidade": "Haderslev",
+      "estadio": "Sydbank Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20S%C3%B8nderjyskE%202011.jpg?width=800",
+      "lat": 55.2614,
+      "lng": 9.4878,
+      "_wikidata": "Q3511548",
+      "_wikidataLabel": "Sønderjyske Fodbold"
+    },
+    {
+      "slug": "silkeborg-if",
+      "nomesBase": [
+        "Silkeborg IF"
+      ],
+      "cidade": "Silkeborg",
+      "estadio": "JYSK Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Silkeborg%20Stadion%2C%20Silkeborg%20IF%20-%20FC%20K%C3%B8benhavn%2C%2014.%20April%202022.jpg?width=800",
+      "lat": 56.1842,
+      "lng": 9.5751,
+      "_wikidata": "Q723489",
+      "_wikidataLabel": "Silkeborg IF"
+    },
+    {
+      "slug": "viborg-ff",
+      "nomesBase": [
+        "Viborg FF"
+      ],
+      "cidade": "Viborg",
+      "estadio": "Evergi Viborg Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Energi%20Viborg%20Arena%2020250808-2.jpg?width=800",
+      "lat": 56.4559,
+      "lng": 9.4021,
+      "_wikidata": "Q837956",
+      "_wikidataLabel": "Viborg FF"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "ligaId": "eredivisie",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Alkmaar",
+      "lat": 52.6289,
+      "lng": 4.744,
+      "_wikidata": "Q972",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Amsterdã",
+      "lat": 52.3667,
+      "lng": 4.8833,
+      "_wikidata": "Q727",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Deventer",
+      "lat": 52.25,
+      "lng": 6.1667,
+      "_wikidata": "Q10001",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Eindhoven",
+      "lat": 51.4344,
+      "lng": 5.4842,
+      "_wikidata": "Q9832"
+    },
+    {
+      "nome": "Enschede",
+      "lat": 52.2225,
+      "lng": 6.8925,
+      "_wikidata": "Q10002"
+    },
+    {
+      "nome": "Groningen",
+      "lat": 53.2189,
+      "lng": 6.5675,
+      "_wikidata": "Q749"
+    },
+    {
+      "nome": "Haia",
+      "lat": 52.08,
+      "lng": 4.31,
+      "_wikidata": "Q36600"
+    },
+    {
+      "nome": "Heerenveen",
+      "lat": 52.9658,
+      "lng": 6.0503,
+      "_wikidata": "Q574558",
+      "_homonimos": 2
+    },
+    {
+      "nome": "IJmuiden",
+      "lat": 52.4586,
+      "lng": 4.6194,
+      "_wikidata": "Q282461"
+    },
+    {
+      "nome": "Leeuwarden",
+      "lat": 53.2,
+      "lng": 5.7833,
+      "_wikidata": "Q2311189",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Nijmegen",
+      "lat": 51.8475,
+      "lng": 5.8625,
+      "_wikidata": "Q47887"
+    },
+    {
+      "nome": "Roterdã",
+      "lat": 51.92,
+      "lng": 4.48,
+      "_wikidata": "Q34370",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sittard",
+      "lat": 51,
+      "lng": 5.8667,
+      "_wikidata": "Q73022"
+    },
+    {
+      "nome": "Tilburg",
+      "lat": 51.5575,
+      "lng": 5.0906,
+      "_wikidata": "Q26430"
+    },
+    {
+      "nome": "Utrecht",
+      "lat": 52.0908,
+      "lng": 5.1217,
+      "_wikidata": "Q803",
+      "_homonimos": 3
+    },
+    {
+      "nome": "Zwolle",
+      "lat": 52.5167,
+      "lng": 6.1,
+      "_wikidata": "Q793",
+      "_homonimos": 3
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ado-den-haag",
+      "nomesBase": [
+        "ADO Den Haag"
+      ],
+      "cidade": "Haia",
+      "estadio": "WerkTalent Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/ADO%20Den%20Haag%20Stadion%2C%20Forepark.jpg?width=800",
+      "lat": 52.0628,
+      "lng": 4.3831,
+      "_wikidata": "Q24904",
+      "_wikidataLabel": "ADO Den Haag"
+    },
+    {
+      "slug": "afc-ajax",
+      "nomesBase": [
+        "Ajax"
+      ],
+      "cidade": "Amsterdã",
+      "estadio": "Johan Cruyff Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Arena%2C%20Ajax%20stadion%2C%20Amsterdam.JPG?width=800",
+      "lat": 52.3142,
+      "lng": 4.9419,
+      "_wikidata": "Q81888",
+      "_wikidataLabel": "AFC Ajax"
+    },
+    {
+      "slug": "az-alkmaar",
+      "nomesBase": [
+        "AZ"
+      ],
+      "cidade": "Alkmaar",
+      "estadio": "AFAS Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vooraanzicht%20AFAS%20Stadion%20april2022.jpg?width=800",
+      "lat": 52.6125,
+      "lng": 4.7417,
+      "_wikidata": "Q191264",
+      "_wikidataLabel": "AZ Alkmaar"
+    },
+    {
+      "slug": "excelsior-rotterdam",
+      "nomesBase": [
+        "Excelsior"
+      ],
+      "cidade": "Roterdã",
+      "estadio": "Stadion Woudestein",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Rotterdam%20stadion%20woudestein.jpg?width=800",
+      "lat": 51.9169,
+      "lng": 4.5206,
+      "_wikidata": "Q370712",
+      "_wikidataLabel": "Excelsior Rotterdam"
+    },
+    {
+      "slug": "fc-groningen",
+      "nomesBase": [
+        "FC Groningen"
+      ],
+      "cidade": "Groningen",
+      "estadio": "Euroborg",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Euroborg.jpg?width=800",
+      "lat": 53.2061,
+      "lng": 6.5914,
+      "_wikidata": "Q24711",
+      "_wikidataLabel": "FC Groningen"
+    },
+    {
+      "slug": "fc-twente",
+      "nomesBase": [
+        "FC Twente"
+      ],
+      "cidade": "Enschede",
+      "estadio": "De Grolsch Veste",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Grolsch%20Veste%20wedstrijd.JPG?width=800",
+      "lat": 52.2367,
+      "lng": 6.8375,
+      "_wikidata": "Q19603",
+      "_wikidataLabel": "FC Twente"
+    },
+    {
+      "slug": "fc-utrecht",
+      "nomesBase": [
+        "FC Utrecht"
+      ],
+      "cidade": "Utrecht",
+      "estadio": "Stadion Galgenwaard",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20FC%20Utrecht%20-%20Bunnikside.jpg?width=800",
+      "lat": 52.0783,
+      "lng": 5.1458,
+      "_wikidata": "Q24680",
+      "_wikidataLabel": "FC Utrecht"
+    },
+    {
+      "slug": "feyenoord-rotterdam",
+      "nomesBase": [
+        "Feyenoord"
+      ],
+      "cidade": "Roterdã",
+      "estadio": "De Kuip",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/StadionFeyenoord.jpg?width=800",
+      "lat": 51.8939,
+      "lng": 4.5233,
+      "_wikidata": "Q134241",
+      "_wikidataLabel": "Feyenoord Rotterdam"
+    },
+    {
+      "slug": "fortuna-sittard",
+      "nomesBase": [
+        "Fortuna Sittard"
+      ],
+      "cidade": "Sittard",
+      "estadio": "Fortuna Sittard Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadion%20Sittard%20Rapsstroh%20pressen.JPG?width=800",
+      "lat": 50.9919,
+      "lng": 5.8436,
+      "_wikidata": "Q854167",
+      "_wikidataLabel": "Fortuna Sittard"
+    },
+    {
+      "slug": "go-ahead-eagles",
+      "nomesBase": [
+        "Go Ahead Eagles"
+      ],
+      "cidade": "Deventer",
+      "estadio": "De Adelaarshorst",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Adelaarshorst-uitvak.jpg?width=800",
+      "lat": 52.2603,
+      "lng": 6.1725,
+      "_wikidata": "Q749589",
+      "_wikidataLabel": "Go Ahead Eagles"
+    },
+    {
+      "slug": "n-e-c",
+      "nomesBase": [
+        "N.E.C. Nijmegen"
+      ],
+      "cidade": "Nijmegen",
+      "estadio": "Stadion de Goffert",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Goffertstadion%20tijdens%20een%20wedstrijd.jpg?width=800",
+      "lat": 51.8225,
+      "lng": 5.8367,
+      "_wikidata": "Q318348",
+      "_wikidataLabel": "N.E.C."
+    },
+    {
+      "slug": "pec-zwolle",
+      "nomesBase": [
+        "PEC Zwolle"
+      ],
+      "cidade": "Zwolle",
+      "estadio": "MAC³PARK stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Zwolle%20IJsseldeltastadion.jpg?width=800",
+      "lat": 52.5173,
+      "lng": 6.1219,
+      "_wikidata": "Q269151",
+      "_wikidataLabel": "PEC Zwolle"
+    },
+    {
+      "slug": "psv-eindhoven",
+      "nomesBase": [
+        "PSV"
+      ],
+      "cidade": "Eindhoven",
+      "estadio": "Philips Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Philips%20Stadion.jpg?width=800",
+      "lat": 51.4417,
+      "lng": 5.4674,
+      "_wikidata": "Q11938",
+      "_wikidataLabel": "PSV Eindhoven"
+    },
+    {
+      "slug": "sc-cambuur",
+      "nomesBase": [
+        "SC Cambuur"
+      ],
+      "cidade": "Leeuwarden",
+      "estadio": "Cambuur Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cambuurstadion.jpg?width=800",
+      "lat": 53.2053,
+      "lng": 5.8147,
+      "_wikidata": "Q875120",
+      "_wikidataLabel": "SC Cambuur"
+    },
+    {
+      "slug": "sc-heerenveen",
+      "nomesBase": [
+        "sc Heerenveen"
+      ],
+      "cidade": "Heerenveen",
+      "estadio": "Abe Lenstra Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Abe%20Lenstra%20Stadion%2008c.JPG?width=800",
+      "lat": 52.9586,
+      "lng": 5.9361,
+      "_wikidata": "Q200321",
+      "_wikidataLabel": "SC Heerenveen"
+    },
+    {
+      "slug": "sc-telstar",
+      "nomesBase": [
+        "SC Telstar"
+      ],
+      "cidade": "IJmuiden",
+      "estadio": "BUKO Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tata%20Steel%20Stadium%20Zwarts%20%26%20Jansma%20architects.jpg?width=800",
+      "lat": 52.455,
+      "lng": 4.635,
+      "_wikidata": "Q1071713",
+      "_wikidataLabel": "SC Telstar"
+    },
+    {
+      "slug": "sparta-rotterdam",
+      "nomesBase": [
+        "Sparta Rotterdam"
+      ],
+      "cidade": "Roterdã",
+      "estadio": "Sparta Stadion Het Kasteel",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/SpartaKasteel.jpg?width=800",
+      "lat": 51.9194,
+      "lng": 4.4333,
+      "_wikidata": "Q209895",
+      "_wikidataLabel": "Sparta Rotterdam"
+    },
+    {
+      "slug": "willem-ii",
+      "nomesBase": [
+        "Willem II"
+      ],
+      "cidade": "Tilburg",
+      "estadio": "Koning Willem II Stadion",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Willem%20II%20stadion.jpg?width=800",
+      "lat": 51.5428,
+      "lng": 5.0669,
+      "_wikidata": "Q332664",
+      "_wikidataLabel": "Willem II"
+    }
+  ]
+}

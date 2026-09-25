@@ -1,0 +1,134 @@
+{
+  "ligaId": "liga-argentina",
+  "_como_usar": [
+    "Correções manuais que sobrevivem a novas execuções de scripts/gerar-localizacao-clubes.js.",
+    "A chave é o nome EXATO do clube na base (coluna clube.nome).",
+    "Ver scripts/geo-correcoes/premier-league.json para a lista de campos.",
+    "",
+    "A base abrevia muitos nomes (Ind. Rivadavia, Dep. Riestra, Argentinos Jrs.).",
+    "Vários clubes são \"clube poliesportivo\" no Wikidata, não \"clube de futebol\": o",
+    "casamento automático não os acha, daí os clubeWikidata.",
+    "Clubes da capital levam o rótulo Buenos Aires; os da Grande Buenos Aires ficam",
+    "com o partido (Avellaneda, Lanús, Banfield...)."
+  ],
+  "clubes": {
+    "Argentinos Jrs.": {
+      "clubeWikidata": "Q220621",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Asociación Atlética Estudiantes": {
+      "_nota": "Estudiantes de Río Cuarto.",
+      "clubeWikidata": "Q8206935",
+      "cidade": "Río Cuarto"
+    },
+    "Banfield": {
+      "clubeWikidata": "Q692646"
+    },
+    "Barracas Central": {
+      "_nota": "No Wikidata o rótulo em inglês está errado (\"Real Madrid\").",
+      "clubeWikidata": "Q2469894",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486",
+      "estadioWikidata": "Q16564609"
+    },
+    "Belgrano": {
+      "_nota": "O casamento pegava o Belgrano de Rosário; este é o de Córdoba.",
+      "clubeWikidata": "Q59962",
+      "cidade": "Córdoba"
+    },
+    "Boca Juniors": {
+      "clubeWikidata": "Q170703",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Central Córdoba": {
+      "_nota": "Central Córdoba de Santiago del Estero.",
+      "clubeWikidata": "Q5060684",
+      "cidade": "Santiago del Estero"
+    },
+    "Club Atlético Gimnasia y Esgrima": {
+      "_nota": "Gimnasia y Esgrima de Mendoza.",
+      "clubeWikidata": "Q2707037",
+      "cidade": "Mendoza"
+    },
+    "Defensa": {
+      "_nota": "Defensa y Justicia.",
+      "clubeWikidata": "Q1024338"
+    },
+    "Dep. Riestra": {
+      "clubeWikidata": "Q4382304",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Estudiantes": {
+      "_nota": "Estudiantes de La Plata.",
+      "clubeWikidata": "Q214940",
+      "cidade": "La Plata"
+    },
+    "Gimnasia": {
+      "_nota": "Gimnasia y Esgrima La Plata.",
+      "clubeWikidata": "Q18640",
+      "cidade": "La Plata"
+    },
+    "Huracán": {
+      "clubeWikidata": "Q327172",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Ind. Rivadavia": {
+      "clubeWikidata": "Q2454482",
+      "cidade": "Mendoza"
+    },
+    "Instituto": {
+      "clubeWikidata": "Q1421829",
+      "cidade": "Córdoba"
+    },
+    "Lanús": {
+      "clubeWikidata": "Q324589"
+    },
+    "Newell's": {
+      "clubeWikidata": "Q221882",
+      "cidade": "Rosário"
+    },
+    "Platense": {
+      "_nota": "Estádio em Vicente López.",
+      "clubeWikidata": "Q151907",
+      "cidade": "Vicente López"
+    },
+    "River Plate": {
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Rosario Central": { "cidade": "Rosário" },
+    "San Lorenzo": {
+      "clubeWikidata": "Q218282",
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    },
+    "Sarmiento": {
+      "_nota": "O casamento pegava um clube de Bahía Blanca; este é o Sarmiento de Junín.",
+      "clubeWikidata": "Q519966",
+      "cidade": "Junín"
+    },
+    "Talleres": {
+      "_nota": "Dois estádios no Wikidata; o Talleres joga no Kempes (La Boutique é o antigo).",
+      "clubeWikidata": "Q1022939",
+      "cidade": "Córdoba",
+      "estadioWikidata": "Q1062157"
+    },
+    "Tigre": {
+      "clubeWikidata": "Q80886",
+      "cidade": "Tigre"
+    },
+    "Unión": {
+      "_nota": "Unión de Santa Fe.",
+      "clubeWikidata": "Q80899",
+      "cidade": "Santa Fe"
+    },
+    "Vélez Sarsfield": {
+      "cidade": "Buenos Aires",
+      "cidadeWikidata": "Q1486"
+    }
+  }
+}

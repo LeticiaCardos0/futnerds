@@ -1,0 +1,428 @@
+{
+  "ligaId": "mls",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "Detroit",
+      "lat": 42.3319,
+      "lng": -83.082,
+      "rank": 1
+    },
+    {
+      "nome": "Phoenix",
+      "lat": 33.5419,
+      "lng": -112.0719,
+      "rank": 1
+    },
+    {
+      "nome": "São Francisco",
+      "lat": 37.7692,
+      "lng": -122.4172,
+      "rank": 1
+    },
+    {
+      "nome": "Irvine",
+      "lat": 33.6804,
+      "lng": -117.8299,
+      "rank": 1
+    },
+    {
+      "nome": "Tampa",
+      "lat": 27.9489,
+      "lng": -82.4606,
+      "rank": 1
+    },
+    {
+      "nome": "Baltimore",
+      "lat": 39.3019,
+      "lng": -76.6219,
+      "rank": 1
+    },
+    {
+      "nome": "Fort Lauderdale",
+      "lat": 26.1361,
+      "lng": -80.1418,
+      "rank": 1
+    },
+    {
+      "nome": "Cleveland",
+      "lat": 41.4719,
+      "lng": -81.6969,
+      "rank": 1
+    },
+    {
+      "nome": "Pittsburgh",
+      "lat": 40.4319,
+      "lng": -80.0019,
+      "rank": 1
+    },
+    {
+      "nome": "Las Vegas",
+      "lat": 36.2119,
+      "lng": -115.222,
+      "rank": 1
+    },
+    {
+      "nome": "San Bernardino",
+      "lat": 34.1223,
+      "lng": -117.302,
+      "rank": 1
+    },
+    {
+      "nome": "Sacramento",
+      "lat": 38.577,
+      "lng": -121.472,
+      "rank": 1
+    },
+    {
+      "nome": "Virginia Beach",
+      "lat": 36.8552,
+      "lng": -75.9803,
+      "rank": 1
+    },
+    {
+      "nome": "San Antonio",
+      "lat": 29.4893,
+      "lng": -98.5093,
+      "rank": 1
+    },
+    {
+      "nome": "Fort Worth",
+      "lat": 32.74,
+      "lng": -97.34,
+      "rank": 1
+    },
+    {
+      "nome": "Indianápolis",
+      "lat": 39.7519,
+      "lng": -86.172,
+      "rank": 2
+    },
+    {
+      "nome": "Milwaukee",
+      "lat": 43.0546,
+      "lng": -87.9219,
+      "rank": 2
+    },
+    {
+      "nome": "Providence",
+      "lat": 41.823,
+      "lng": -71.4169,
+      "rank": 2
+    },
+    {
+      "nome": "West Palm Beach",
+      "lat": 26.745,
+      "lng": -80.1236,
+      "rank": 2
+    },
+    {
+      "nome": "Raleigh",
+      "lat": 35.8188,
+      "lng": -78.6447,
+      "rank": 2
+    },
+    {
+      "nome": "Ottawa",
+      "lat": 45.4186,
+      "lng": -75.702,
+      "rank": 2
+    },
+    {
+      "nome": "Birmingham",
+      "lat": 33.53,
+      "lng": -86.825,
+      "rank": 2
+    },
+    {
+      "nome": "Calgary",
+      "lat": 51.0849,
+      "lng": -114.0819,
+      "rank": 2
+    },
+    {
+      "nome": "Memphis",
+      "lat": 35.1219,
+      "lng": -90.0019,
+      "rank": 2
+    },
+    {
+      "nome": "Edmonton",
+      "lat": 53.552,
+      "lng": -113.5019,
+      "rank": 2
+    },
+    {
+      "nome": "Norfolk",
+      "lat": 36.85,
+      "lng": -76.28,
+      "rank": 2
+    },
+    {
+      "nome": "Bridgeport",
+      "lat": 41.1819,
+      "lng": -73.2019,
+      "rank": 2
+    },
+    {
+      "nome": "Buffalo",
+      "lat": 42.8819,
+      "lng": -78.8819,
+      "rank": 2
+    },
+    {
+      "nome": "Jacksonville",
+      "lat": 30.332,
+      "lng": -81.6719,
+      "rank": 2
+    },
+    {
+      "nome": "Louisville",
+      "lat": 38.227,
+      "lng": -85.7506,
+      "rank": 2
+    },
+    {
+      "nome": "Tulsa",
+      "lat": 36.12,
+      "lng": -95.93,
+      "rank": 2
+    },
+    {
+      "nome": "Hartford",
+      "lat": 41.772,
+      "lng": -72.6819,
+      "rank": 2
+    },
+    {
+      "nome": "Richmond",
+      "lat": 37.552,
+      "lng": -77.4519,
+      "rank": 2
+    },
+    {
+      "nome": "Albuquerque",
+      "lat": 35.105,
+      "lng": -106.6413,
+      "rank": 2
+    },
+    {
+      "nome": "Omaha",
+      "lat": 41.24,
+      "lng": -96.01,
+      "rank": 2
+    },
+    {
+      "nome": "Albany",
+      "lat": 42.67,
+      "lng": -73.8199,
+      "rank": 2
+    },
+    {
+      "nome": "New Haven",
+      "lat": 41.3304,
+      "lng": -72.9,
+      "rank": 2
+    },
+    {
+      "nome": "Tucson",
+      "lat": 32.2069,
+      "lng": -110.8919,
+      "rank": 2
+    },
+    {
+      "nome": "São Petersburgo",
+      "lat": 27.7705,
+      "lng": -82.6794,
+      "rank": 2
+    },
+    {
+      "nome": "Oklahoma City",
+      "lat": 35.472,
+      "lng": -97.5206,
+      "rank": 2
+    },
+    {
+      "nome": "Nova Orleães",
+      "lat": 29.9969,
+      "lng": -90.0419,
+      "rank": 2
+    },
+    {
+      "nome": "Dayton",
+      "lat": 39.7523,
+      "lng": -84.2019,
+      "rank": 2
+    },
+    {
+      "nome": "Rochester",
+      "lat": 43.1724,
+      "lng": -77.6219,
+      "rank": 2
+    },
+    {
+      "nome": "Stamford",
+      "lat": 41.0533,
+      "lng": -73.5392,
+      "rank": 2
+    },
+    {
+      "nome": "Lowell",
+      "lat": 42.6337,
+      "lng": -71.3167,
+      "rank": 2
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Cidade do México",
+      "lat": 19.4444,
+      "lng": -99.1329,
+      "rank": 1
+    },
+    {
+      "nome": "Guadalajara",
+      "lat": 20.672,
+      "lng": -103.332,
+      "rank": 1
+    },
+    {
+      "nome": "Monterrey",
+      "lat": 25.6719,
+      "lng": -100.3319,
+      "rank": 1
+    },
+    {
+      "nome": "San Juan",
+      "lat": 18.44,
+      "lng": -66.13,
+      "rank": 1
+    },
+    {
+      "nome": "Puebla de Zaragoza",
+      "lat": 19.0519,
+      "lng": -98.202,
+      "rank": 1
+    },
+    {
+      "nome": "Havana",
+      "lat": 23.1339,
+      "lng": -82.3661,
+      "rank": 1
+    },
+    {
+      "nome": "São Domingos",
+      "lat": 18.472,
+      "lng": -69.902,
+      "rank": 1
+    },
+    {
+      "nome": "Porto Príncipe",
+      "lat": 18.543,
+      "lng": -72.338,
+      "rank": 1
+    },
+    {
+      "nome": "Tijuana",
+      "lat": 32.502,
+      "lng": -117.0819,
+      "rank": 2
+    },
+    {
+      "nome": "Santiago de los Caballeros",
+      "lat": 19.5,
+      "lng": -70.67,
+      "rank": 2
+    },
+    {
+      "nome": "Toluca",
+      "lat": 19.3323,
+      "lng": -99.6719,
+      "rank": 2
+    },
+    {
+      "nome": "León de Los Aldama",
+      "lat": 21.1519,
+      "lng": -101.702,
+      "rank": 2
+    },
+    {
+      "nome": "Ciudad Juárez",
+      "lat": 31.6923,
+      "lng": -106.492,
+      "rank": 2
+    },
+    {
+      "nome": "Torreón",
+      "lat": 25.572,
+      "lng": -103.4219,
+      "rank": 2
+    },
+    {
+      "nome": "San Luis Potosí",
+      "lat": 22.1719,
+      "lng": -101.0019,
+      "rank": 2
+    },
+    {
+      "nome": "Mérida",
+      "lat": 20.9686,
+      "lng": -89.6186,
+      "rank": 2
+    },
+    {
+      "nome": "Querétaro (cidade)",
+      "lat": 20.632,
+      "lng": -100.3819,
+      "rank": 2
+    },
+    {
+      "nome": "Mexicali",
+      "lat": 32.6519,
+      "lng": -115.482,
+      "rank": 2
+    },
+    {
+      "nome": "Aguascalientes",
+      "lat": 21.8814,
+      "lng": -102.2924,
+      "rank": 2
+    },
+    {
+      "nome": "Tampico",
+      "lat": 22.3,
+      "lng": -97.87,
+      "rank": 2
+    },
+    {
+      "nome": "Cuernavaca",
+      "lat": 18.9211,
+      "lng": -99.24,
+      "rank": 2
+    },
+    {
+      "nome": "Culiacán",
+      "lat": 24.8319,
+      "lng": -107.3819,
+      "rank": 2
+    },
+    {
+      "nome": "Chihuahua",
+      "lat": 28.6469,
+      "lng": -106.0869,
+      "rank": 2
+    },
+    {
+      "nome": "Saltillo",
+      "lat": 25.4219,
+      "lng": -101.0069,
+      "rank": 2
+    },
+    {
+      "nome": "Morelia",
+      "lat": 19.7334,
+      "lng": -101.1895,
+      "rank": 2
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "ligaId": "superliga-romenia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Arad",
+      "lat": 46.1667,
+      "lng": 21.3167,
+      "_wikidata": "Q16898082",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Botoșani",
+      "lat": 47.7486,
+      "lng": 26.6694,
+      "_wikidata": "Q16898131",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Bucareste",
+      "lat": 44.4134,
+      "lng": 26.0978,
+      "_wikidata": "Q19660"
+    },
+    {
+      "nome": "Cluj-Napoca",
+      "lat": 46.78,
+      "lng": 23.5594,
+      "_wikidata": "Q16898189",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Constanța",
+      "lat": 44.1767,
+      "lng": 28.6508,
+      "_wikidata": "Q79808",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Craiova",
+      "lat": 44.3333,
+      "lng": 23.8167,
+      "_wikidata": "Q168057",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Galați",
+      "lat": 45.4233,
+      "lng": 28.0425,
+      "_wikidata": "Q16898261",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Hunedoara",
+      "lat": 45.75,
+      "lng": 22.9,
+      "_wikidata": "Q16898315"
+    },
+    {
+      "nome": "Miercurea Ciuc",
+      "lat": 46.3594,
+      "lng": 25.8039,
+      "_wikidata": "Q193420",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Pitești",
+      "lat": 44.85,
+      "lng": 24.8667,
+      "_wikidata": "Q16898096",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Ploiești",
+      "lat": 44.94,
+      "lng": 26.03,
+      "_wikidata": "Q49280734",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sfântu Gheorghe",
+      "lat": 45.8653,
+      "lng": 25.7878,
+      "_wikidata": "Q202362",
+      "_homonimos": 7
+    },
+    {
+      "nome": "Voluntari",
+      "lat": 44.4925,
+      "lng": 26.1914,
+      "_wikidata": "Q16898376",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "cfr-cluj",
+      "nomesBase": [
+        "CFR 1907 Cluj"
+      ],
+      "cidade": "Cluj-Napoca",
+      "estadio": "Stadionul Dr. Constantin Rădulescu",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cluj-Napoca%20Stadionul%20Dr.%20Constantin%20R%C4%83dulescu%201.jpg?width=800",
+      "lat": 46.7797,
+      "lng": 23.5772,
+      "_wikidata": "Q205998",
+      "_wikidataLabel": "CFR Cluj"
+    },
+    {
+      "slug": "cs-universitatea-craiova",
+      "nomesBase": [
+        "Univ. Craiova"
+      ],
+      "cidade": "Craiova",
+      "estadio": "Stadionul Ion Oblemenco",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/OblemencoNewStadium.jpg?width=800",
+      "lat": 44.3139,
+      "lng": 23.7842,
+      "_wikidata": "Q16838020",
+      "_wikidataLabel": "CS Universitatea Craiova"
+    },
+    {
+      "slug": "fc-arges",
+      "nomesBase": [
+        "FC Argeș"
+      ],
+      "cidade": "Pitești",
+      "estadio": "Stadionul Nicolae Dobrin",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolae%20Dobrin%20stadium.jpg?width=800",
+      "lat": 44.8467,
+      "lng": 24.8664,
+      "_wikidata": "Q841245",
+      "_wikidataLabel": "FC Argeș"
+    },
+    {
+      "slug": "fc-botosani",
+      "nomesBase": [
+        "FC Botoșani"
+      ],
+      "cidade": "Botoșani",
+      "estadio": "Stadionul Municipal",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/MunicipalBotosani.jpg?width=800",
+      "lat": 47.7483,
+      "lng": 26.6519,
+      "_wikidata": "Q1262822",
+      "_wikidataLabel": "FC Botoșani"
+    },
+    {
+      "slug": "fc-corvinul-hunedoara",
+      "nomesBase": [
+        "FC Corvinul 1921 Hunedoara"
+      ],
+      "cidade": "Hunedoara",
+      "estadio": "Stadionul Michael Klein",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/MK02.jpg?width=800",
+      "lat": 45.7614,
+      "lng": 22.9131,
+      "_wikidata": "Q1135735",
+      "_wikidataLabel": "FC Corvinul Hunedoara"
+    },
+    {
+      "slug": "fc-dinamo-bucharest",
+      "nomesBase": [
+        "FC Dinamo 1948"
+      ],
+      "cidade": "Bucareste",
+      "estadio": "Stadionul Dinamo",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionul%20Dinamo%20front.JPG?width=800",
+      "lat": 44.4551,
+      "lng": 26.1024,
+      "_wikidata": "Q204237",
+      "_wikidataLabel": "FC Dinamo Bucharest"
+    },
+    {
+      "slug": "fc-petrolul-ploiesti",
+      "nomesBase": [
+        "FC Petrolul"
+      ],
+      "cidade": "Ploiești",
+      "estadio": "Stadionul Ilie Oană",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ploie%C8%99ti%20Stadionul%20Ilie%20Oan%C4%83%202.jpg?width=800",
+      "lat": 44.9403,
+      "lng": 26.0333,
+      "_wikidata": "Q1322550",
+      "_wikidataLabel": "FC Petrolul Ploiești"
+    },
+    {
+      "slug": "fc-rapid-bucuresti",
+      "nomesBase": [
+        "FC Rapid 1923"
+      ],
+      "cidade": "Bucareste",
+      "estadio": "Stadionul Rapid-Giulești",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Romania%20bucharest%20Rapid-Giule%C8%99ti%20Stadium.jpg?width=800",
+      "lat": 44.4559,
+      "lng": 26.0568,
+      "_wikidata": "Q245162",
+      "_wikidataLabel": "FC Rapid București"
+    },
+    {
+      "slug": "fc-universitatea-cluj",
+      "nomesBase": [
+        "FC Univ. Cluj"
+      ],
+      "cidade": "Cluj-Napoca",
+      "estadio": "Cluj Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cluj-Napoca%20%2842741215562%29.jpg?width=800",
+      "lat": 46.7683,
+      "lng": 23.5722,
+      "_wikidata": "Q753462",
+      "_wikidataLabel": "FC Universitatea Cluj"
+    },
+    {
+      "slug": "fc-uta-arad",
+      "nomesBase": [
+        "UTA Arad"
+      ],
+      "cidade": "Arad",
+      "estadio": "Stadionul Francisc von Neumann",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionuta.jpg?width=800",
+      "lat": 46.1925,
+      "lng": 21.3114,
+      "_wikidata": "Q680770",
+      "_wikidataLabel": "FC UTA Arad"
+    },
+    {
+      "slug": "fc-viitorul-constanta",
+      "nomesBase": [
+        "Farul Constanța"
+      ],
+      "cidade": "Constanța",
+      "estadio": "Central Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ovidiu%202017%20%284%29.jpg?width=800",
+      "lat": 44.2639,
+      "lng": 28.5558,
+      "_wikidata": "Q533094",
+      "_wikidataLabel": "FC Viitorul Constanța"
+    },
+    {
+      "slug": "fc-voluntari",
+      "nomesBase": [
+        "FC Voluntari"
+      ],
+      "cidade": "Voluntari",
+      "estadio": "Anghel Iordănescu Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Anghel%20Iordanescu%20Stadium.jpg?width=800",
+      "lat": 44.4992,
+      "lng": 26.1456,
+      "_wikidata": "Q18129096",
+      "_wikidataLabel": "FC Voluntari"
+    },
+    {
+      "slug": "fcsb",
+      "nomesBase": [
+        "FCSB"
+      ],
+      "cidade": "Bucareste",
+      "estadio": "National Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Arena-bukareszt.jpg?width=800",
+      "lat": 44.4372,
+      "lng": 26.1525,
+      "_wikidata": "Q179658",
+      "_wikidataLabel": "FCSB"
+    },
+    {
+      "slug": "fk-csikszereda",
+      "nomesBase": [
+        "FK Csíkszereda"
+      ],
+      "cidade": "Miercurea Ciuc",
+      "estadio": "Stadionul Municipal",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionul%20Municipal%20%28Miercurea%20Ciuc%29.jpg?width=800",
+      "lat": 46.3669,
+      "lng": 25.8029,
+      "_wikidata": "Q23051672",
+      "_wikidataLabel": "FK Csíkszereda"
+    },
+    {
+      "slug": "sc-otelul-galati",
+      "nomesBase": [
+        "SC Oțelul Galați"
+      ],
+      "cidade": "Galați",
+      "estadio": "Stadionul Oțelul",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Tribuna1.jpg?width=800",
+      "lat": 45.4302,
+      "lng": 28.0224,
+      "_wikidata": "Q220863",
+      "_wikidataLabel": "SC Oțelul Galați"
+    },
+    {
+      "slug": "sepsi-osk-sfantu-gheorghe",
+      "nomesBase": [
+        "Sepsi OSK"
+      ],
+      "cidade": "Sfântu Gheorghe",
+      "estadio": "Stadionul Municipal",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Stadionul%20Municipal%20Sfantul%20Gheorghe.jpg?width=800",
+      "lat": 45.8629,
+      "lng": 25.7761,
+      "_wikidata": "Q20429561",
+      "_wikidataLabel": "Sepsi OSK Sfântu Gheorghe"
+    }
+  ]
+}

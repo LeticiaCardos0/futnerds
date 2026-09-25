@@ -1,0 +1,452 @@
+{
+  "ligaId": "championship",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Birmingham",
+      "lat": 52.48,
+      "lng": -1.9025,
+      "_wikidata": "Q2256"
+    },
+    {
+      "nome": "Blackburn",
+      "lat": 53.7449,
+      "lng": -2.4769,
+      "_wikidata": "Q188313"
+    },
+    {
+      "nome": "Bolton",
+      "lat": 53.5783,
+      "lng": -2.43,
+      "_wikidata": "Q184579",
+      "_homonimos": 5
+    },
+    {
+      "nome": "Bristol",
+      "lat": 51.4536,
+      "lng": -2.5975,
+      "_wikidata": "Q23154"
+    },
+    {
+      "nome": "Burnley",
+      "lat": 53.7889,
+      "lng": -2.2481,
+      "_wikidata": "Q209096"
+    },
+    {
+      "nome": "Cardiff",
+      "lat": 51.4817,
+      "lng": -3.1792,
+      "_wikidata": "Q10690"
+    },
+    {
+      "nome": "Derby",
+      "lat": 52.9217,
+      "lng": -1.4767,
+      "_wikidata": "Q43475"
+    },
+    {
+      "nome": "Lincoln",
+      "lat": 53.25,
+      "lng": -0.55,
+      "_wikidata": "Q180057"
+    },
+    {
+      "nome": "Londres",
+      "lat": 51.5072,
+      "lng": -0.1275,
+      "_wikidata": "Q84"
+    },
+    {
+      "nome": "Middlesbrough",
+      "lat": 54.5739,
+      "lng": -1.2333,
+      "_wikidata": "Q171866"
+    },
+    {
+      "nome": "Norwich",
+      "lat": 52.6286,
+      "lng": 1.2928,
+      "_wikidata": "Q130191"
+    },
+    {
+      "nome": "Portsmouth",
+      "lat": 50.8058,
+      "lng": -1.0872,
+      "_wikidata": "Q72259",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Preston",
+      "lat": 53.7594,
+      "lng": -2.6981,
+      "_wikidata": "Q184090",
+      "_homonimos": 17
+    },
+    {
+      "nome": "Sheffield",
+      "lat": 53.3808,
+      "lng": -1.4703,
+      "_wikidata": "Q42448",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Southampton",
+      "lat": 50.9067,
+      "lng": -1.4044,
+      "_wikidata": "Q79848"
+    },
+    {
+      "nome": "Stoke-on-Trent",
+      "lat": 53,
+      "lng": -2.1833,
+      "_wikidata": "Q134902"
+    },
+    {
+      "nome": "Swansea",
+      "lat": 51.6167,
+      "lng": -3.95,
+      "_wikidata": "Q23051"
+    },
+    {
+      "nome": "Watford",
+      "lat": 51.6553,
+      "lng": -0.3958,
+      "_wikidata": "Q2598",
+      "_homonimos": 3
+    },
+    {
+      "nome": "West Bromwich",
+      "lat": 52.5167,
+      "lng": -1.9833,
+      "_wikidata": "Q212826"
+    },
+    {
+      "nome": "Wolverhampton",
+      "lat": 52.5842,
+      "lng": -2.1253,
+      "_wikidata": "Q126269"
+    },
+    {
+      "nome": "Wrexham",
+      "lat": 53.0507,
+      "lng": -3.0094,
+      "_wikidata": "Q843868",
+      "_homonimos": 2
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "birmingham-city",
+      "nomesBase": [
+        "Birmingham City"
+      ],
+      "cidade": "Birmingham",
+      "estadio": "St Andrew's",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/TiltonRoadEnd01.JPG?width=800",
+      "lat": 52.4757,
+      "lng": -1.8682,
+      "_wikidata": "Q19444",
+      "_wikidataLabel": "Birmingham City F.C."
+    },
+    {
+      "slug": "blackburn-rovers",
+      "nomesBase": [
+        "Blackburn Rovers"
+      ],
+      "cidade": "Blackburn",
+      "estadio": "Ewood Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ewood%20Park%202011.jpg?width=800",
+      "lat": 53.7286,
+      "lng": -2.4892,
+      "_wikidata": "Q19446",
+      "_wikidataLabel": "Blackburn Rovers F.C."
+    },
+    {
+      "slug": "bolton-wanderers",
+      "nomesBase": [
+        "Bolton"
+      ],
+      "cidade": "Bolton",
+      "estadio": "Toughsheet Community Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Reebokstadium%20inside.jpg?width=800",
+      "lat": 53.5806,
+      "lng": -2.5356,
+      "_wikidata": "Q19451",
+      "_wikidataLabel": "Bolton Wanderers F.C."
+    },
+    {
+      "slug": "bristol-city",
+      "nomesBase": [
+        "Bristol City"
+      ],
+      "cidade": "Bristol",
+      "estadio": "Ashton Gate Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ashton%20Gate%20Stadium%20%28daytime%29.jpg?width=800",
+      "lat": 51.44,
+      "lng": -2.6203,
+      "_wikidata": "Q19456",
+      "_wikidataLabel": "Bristol City F.C."
+    },
+    {
+      "slug": "burnley",
+      "nomesBase": [
+        "Burnley"
+      ],
+      "cidade": "Burnley",
+      "estadio": "Turf Moor",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Turf%20Moor%20panorama.jpg?width=800",
+      "lat": 53.7891,
+      "lng": -2.2302,
+      "_wikidata": "Q19458",
+      "_wikidataLabel": "Burnley F.C."
+    },
+    {
+      "slug": "cardiff-city",
+      "nomesBase": [
+        "Cardiff City"
+      ],
+      "cidade": "Cardiff",
+      "estadio": "Cardiff City Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Cardiff%20City%20Stadium%20Pitch.jpg?width=800",
+      "lat": 51.4728,
+      "lng": -3.2031,
+      "_wikidata": "Q18662",
+      "_wikidataLabel": "Cardiff City F.C."
+    },
+    {
+      "slug": "charlton-athletic",
+      "nomesBase": [
+        "Charlton Ath"
+      ],
+      "cidade": "Londres",
+      "estadio": "The Valley",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Valley%20North%20and%20West%20Stands.jpg?width=800",
+      "lat": 51.4875,
+      "lng": 0.0356,
+      "_wikidata": "Q19462",
+      "_wikidataLabel": "Charlton Athletic F.C."
+    },
+    {
+      "slug": "derby-county",
+      "nomesBase": [
+        "Derby County"
+      ],
+      "cidade": "Derby",
+      "estadio": "Pride Park Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Derby%20pride%20park%20stadium%20derby%20county.jpg?width=800",
+      "lat": 52.915,
+      "lng": -1.4472,
+      "_wikidata": "Q19470",
+      "_wikidataLabel": "Derby County F.C."
+    },
+    {
+      "slug": "lincoln-city",
+      "nomesBase": [
+        "Lincoln City"
+      ],
+      "cidade": "Lincoln",
+      "estadio": "Sincil Bank",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Lincoln%20v%20Boston%20002.jpg?width=800",
+      "lat": 53.2183,
+      "lng": -0.5408,
+      "_wikidata": "Q18519",
+      "_wikidataLabel": "Lincoln City F.C."
+    },
+    {
+      "slug": "middlesbrough",
+      "nomesBase": [
+        "Middlesbrough"
+      ],
+      "cidade": "Middlesbrough",
+      "estadio": "Riverside Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Middlesbrough%20riverside%20stadium.jpg?width=800",
+      "lat": 54.5783,
+      "lng": -1.2169,
+      "_wikidata": "Q18661",
+      "_wikidataLabel": "Middlesbrough F.C."
+    },
+    {
+      "slug": "millwall",
+      "nomesBase": [
+        "Millwall"
+      ],
+      "cidade": "Londres",
+      "estadio": "The Den",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20New%20Den%20-%20geograph.org.uk%20-%201143517.jpg?width=800",
+      "lat": 51.4858,
+      "lng": -0.0508,
+      "_wikidata": "Q19487",
+      "_wikidataLabel": "Millwall F.C."
+    },
+    {
+      "slug": "norwich-city",
+      "nomesBase": [
+        "Norwich"
+      ],
+      "cidade": "Norwich",
+      "estadio": "Carrow Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/NCFC%20Geoffrey%20Watling%20City%20Stand%20Apr07.JPG?width=800",
+      "lat": 52.6222,
+      "lng": 1.3092,
+      "_wikidata": "Q18721",
+      "_wikidataLabel": "Norwich City F.C."
+    },
+    {
+      "slug": "portsmouth",
+      "nomesBase": [
+        "Portsmouth"
+      ],
+      "cidade": "Portsmouth",
+      "estadio": "Fratton Park",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Fratton%20Park%20entrance.jpg?width=800",
+      "lat": 50.7964,
+      "lng": -1.0639,
+      "_wikidata": "Q19604",
+      "_wikidataLabel": "Portsmouth F.C."
+    },
+    {
+      "slug": "preston-north-end",
+      "nomesBase": [
+        "Preston"
+      ],
+      "cidade": "Preston",
+      "estadio": "Deepdale",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Deepdalecomplete.jpg?width=800",
+      "lat": 53.7722,
+      "lng": -2.6881,
+      "_wikidata": "Q19612",
+      "_wikidataLabel": "Preston North End F.C."
+    },
+    {
+      "slug": "queens-park-rangers",
+      "nomesBase": [
+        "QPR"
+      ],
+      "cidade": "Londres",
+      "estadio": "Kiyan Prince Foundation Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Loftus%20Road%2036.jpg?width=800",
+      "lat": 51.5092,
+      "lng": -0.2322,
+      "_wikidata": "Q18723",
+      "_wikidataLabel": "Queens Park Rangers F.C."
+    },
+    {
+      "slug": "sheffield-united",
+      "nomesBase": [
+        "Sheffield Utd"
+      ],
+      "cidade": "Sheffield",
+      "estadio": "Bramall Lane",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Sheffield%20united%20bramall%20lane%20stadium.jpg?width=800",
+      "lat": 53.3703,
+      "lng": -1.4708,
+      "_wikidata": "Q19607",
+      "_wikidataLabel": "Sheffield United F.C."
+    },
+    {
+      "slug": "southampton",
+      "nomesBase": [
+        "Southampton"
+      ],
+      "cidade": "Southampton",
+      "estadio": "St Mary's Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Mary%27s%20Stadium%20-%20geograph.org.uk%20-%205049881.jpg?width=800",
+      "lat": 50.9058,
+      "lng": -1.3911,
+      "_wikidata": "Q18732",
+      "_wikidataLabel": "Southampton F.C."
+    },
+    {
+      "slug": "stoke-city",
+      "nomesBase": [
+        "Stoke City"
+      ],
+      "cidade": "Stoke-on-Trent",
+      "estadio": "bet365 Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Bet%20365%20Stadium.jpg?width=800",
+      "lat": 52.9883,
+      "lng": -2.1756,
+      "_wikidata": "Q18736",
+      "_wikidataLabel": "Stoke City F.C."
+    },
+    {
+      "slug": "swansea-city",
+      "nomesBase": [
+        "Swansea City"
+      ],
+      "cidade": "Swansea",
+      "estadio": "Swansea.com Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/New%20Morfa%20Stadium%20-%20geograph.org.uk%20-%2032243.jpg?width=800",
+      "lat": 51.6422,
+      "lng": -3.9351,
+      "_wikidata": "Q18659",
+      "_wikidataLabel": "Swansea City A.F.C."
+    },
+    {
+      "slug": "watford",
+      "nomesBase": [
+        "Watford"
+      ],
+      "cidade": "Watford",
+      "estadio": "Vicarage Road",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vicarage%20Road%202015.jpg?width=800",
+      "lat": 51.6499,
+      "lng": -0.4016,
+      "_wikidata": "Q2714",
+      "_wikidataLabel": "Watford F.C."
+    },
+    {
+      "slug": "west-bromwich-albion",
+      "nomesBase": [
+        "West Brom"
+      ],
+      "cidade": "West Bromwich",
+      "estadio": "The Hawthorns",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/West%20brom%20stadium.JPG?width=800",
+      "lat": 52.5092,
+      "lng": -1.9639,
+      "_wikidata": "Q18744",
+      "_wikidataLabel": "West Bromwich Albion F.C."
+    },
+    {
+      "slug": "west-ham-united",
+      "nomesBase": [
+        "West Ham"
+      ],
+      "cidade": "Londres",
+      "estadio": "London Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/London%20Olympic%20Stadium%20West%20Ham.jpg?width=800",
+      "lat": 51.5386,
+      "lng": -0.0164,
+      "_wikidata": "Q18747",
+      "_wikidataLabel": "West Ham United F.C."
+    },
+    {
+      "slug": "wolverhampton-wanderers",
+      "nomesBase": [
+        "Wolves"
+      ],
+      "cidade": "Wolverhampton",
+      "estadio": "Molineux Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Molineux%20Ground%2C%20Wolverhampton.jpg?width=800",
+      "lat": 52.5903,
+      "lng": -2.1303,
+      "_wikidata": "Q19500",
+      "_wikidataLabel": "Wolverhampton Wanderers F.C."
+    },
+    {
+      "slug": "wrexham",
+      "nomesBase": [
+        "Wrexham"
+      ],
+      "cidade": "Wrexham",
+      "estadio": "Racecourse Ground",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Racecourse%20Ground%2C%20Wrexham%20%2849329447362%29.jpg?width=800",
+      "lat": 53.0519,
+      "lng": -3.0036,
+      "_wikidata": "Q18529",
+      "_wikidataLabel": "Wrexham A.F.C."
+    }
+  ]
+}

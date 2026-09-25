@@ -1,0 +1,431 @@
+{
+  "ligaId": "laliga-2",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Albacete",
+      "lat": 38.9959,
+      "lng": -1.8557,
+      "_wikidata": "Q24008386"
+    },
+    {
+      "nome": "Almería",
+      "lat": 36.8389,
+      "lng": -2.4641,
+      "_wikidata": "Q112795541"
+    },
+    {
+      "nome": "Andorra la Vella",
+      "lat": 42.5072,
+      "lng": 1.5222,
+      "_wikidata": "Q1863"
+    },
+    {
+      "nome": "Burgos",
+      "lat": 42.3411,
+      "lng": -3.7042,
+      "_wikidata": "Q43167665"
+    },
+    {
+      "nome": "Cádiz",
+      "lat": 36.5267,
+      "lng": -6.2891,
+      "_wikidata": "Q31915930"
+    },
+    {
+      "nome": "Castellón",
+      "lat": 39.986,
+      "lng": -0.0374,
+      "_wikidata": "Q15092"
+    },
+    {
+      "nome": "Ceuta",
+      "lat": 35.8867,
+      "lng": -5.3,
+      "_wikidata": "Q5823"
+    },
+    {
+      "nome": "Córdoba",
+      "lat": 37.8916,
+      "lng": -4.7728,
+      "_wikidata": "Q101948176"
+    },
+    {
+      "nome": "Eibar",
+      "lat": 43.1843,
+      "lng": -2.4733,
+      "_wikidata": "Q496567",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Elda",
+      "lat": 38.4788,
+      "lng": -0.7961,
+      "_wikidata": "Q24008518"
+    },
+    {
+      "nome": "Gijón",
+      "lat": 43.545,
+      "lng": -5.6621,
+      "_wikidata": "Q80349557"
+    },
+    {
+      "nome": "Girona",
+      "lat": 41.9831,
+      "lng": 2.8249,
+      "_wikidata": "Q24001084"
+    },
+    {
+      "nome": "Granada",
+      "lat": 37.1764,
+      "lng": -3.6,
+      "_wikidata": "Q31916723",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Las Palmas",
+      "lat": 28.1272,
+      "lng": -15.4314,
+      "_wikidata": "Q11974"
+    },
+    {
+      "nome": "Leganés",
+      "lat": 40.3282,
+      "lng": -3.7654,
+      "_wikidata": "Q77433",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Oviedo",
+      "lat": 43.3634,
+      "lng": -5.8423,
+      "_wikidata": "Q21414421"
+    },
+    {
+      "nome": "Palma",
+      "lat": 39.5667,
+      "lng": 2.6497,
+      "_wikidata": "Q8826",
+      "_homonimos": 2
+    },
+    {
+      "nome": "Sabadell",
+      "lat": 41.5483,
+      "lng": 2.1075,
+      "_wikidata": "Q12258",
+      "_homonimos": 2
+    },
+    {
+      "nome": "San Sebastián",
+      "lat": 43.2918,
+      "lng": -1.9885,
+      "_wikidata": "Q24013530"
+    },
+    {
+      "nome": "Santa Cruz de Tenerife",
+      "lat": 28.4629,
+      "lng": -16.2472,
+      "_wikidata": "Q24014650"
+    },
+    {
+      "nome": "Valladolid",
+      "lat": 41.6523,
+      "lng": -4.7233,
+      "_wikidata": "Q31925679"
+    },
+    {
+      "nome": "Vigo",
+      "lat": 42.2358,
+      "lng": -8.7267,
+      "_wikidata": "Q8745"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "ad-ceuta",
+      "nomesBase": [
+        "AD Ceuta FC"
+      ],
+      "cidade": "Ceuta",
+      "estadio": "Estadio Alfonso Murube",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/6092c97fa861df960efb2efd%20Estadio-Murube-1.jpg?width=800",
+      "lat": 35.8854,
+      "lng": -5.3279,
+      "_wikidata": "Q5773365",
+      "_wikidataLabel": "AD Ceuta FC"
+    },
+    {
+      "slug": "albacete-balompie",
+      "nomesBase": [
+        "Albacete BP"
+      ],
+      "cidade": "Albacete",
+      "estadio": "Estadio Carlos Belmonte",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Carlos%20Belmonte.jpg?width=800",
+      "lat": 38.9811,
+      "lng": -1.8521,
+      "_wikidata": "Q576285",
+      "_wikidataLabel": "Albacete Balompié"
+    },
+    {
+      "slug": "burgos-cf",
+      "nomesBase": [
+        "Burgos CF"
+      ],
+      "cidade": "Burgos",
+      "estadio": "Estadio El Plantío",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Burgos-Oviedo.jpg?width=800",
+      "lat": 42.3442,
+      "lng": -3.6806,
+      "_wikidata": "Q852079",
+      "_wikidataLabel": "Burgos CF"
+    },
+    {
+      "slug": "c-d-tenerife",
+      "nomesBase": [
+        "CD Tenerife"
+      ],
+      "cidade": "Santa Cruz de Tenerife",
+      "estadio": "Estadio Heliodoro Rodríguez López",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/RodriguezLopez2008.jpg?width=800",
+      "lat": 28.4631,
+      "lng": -16.2606,
+      "_wikidata": "Q216661",
+      "_wikidataLabel": "C.D. Tenerife"
+    },
+    {
+      "slug": "cadiz-club-de-futbol",
+      "nomesBase": [
+        "Cádiz CF"
+      ],
+      "cidade": "Cádiz",
+      "estadio": "Estadio Nuevo Mirandilla",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/EstadioCarranza1.jpg?width=800",
+      "lat": 36.5028,
+      "lng": -6.2731,
+      "_wikidata": "Q460448",
+      "_wikidataLabel": "Cádiz Club de Fútbol"
+    },
+    {
+      "slug": "cd-castellon",
+      "nomesBase": [
+        "CD Castellón"
+      ],
+      "cidade": "Castellón",
+      "estadio": "Nou Estadi Castalia",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/CS-NUM.JPG?width=800",
+      "lat": 39.9961,
+      "lng": -0.0388,
+      "_wikidata": "Q743557",
+      "_wikidataLabel": "CD Castellón"
+    },
+    {
+      "slug": "cd-eldense",
+      "nomesBase": [
+        "CD Eldense"
+      ],
+      "cidade": "Elda",
+      "estadio": "Estadio Municipal Nuevo Pepico Amat",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuevo%20Pepico%20Amat%20Elda.JPG?width=800",
+      "lat": 38.4674,
+      "lng": -0.796,
+      "_wikidata": "Q600232",
+      "_wikidataLabel": "CD Eldense"
+    },
+    {
+      "slug": "cd-leganes",
+      "nomesBase": [
+        "CD Leganés"
+      ],
+      "cidade": "Leganés",
+      "estadio": "Estadio Municipal de Butarque",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Butarque%202009.png?width=800",
+      "lat": 40.3404,
+      "lng": -3.7607,
+      "_wikidata": "Q856119",
+      "_wikidataLabel": "CD Leganés"
+    },
+    {
+      "slug": "centre-d-esports-sabadell-futbol-club",
+      "nomesBase": [
+        "CE Sabadell FC"
+      ],
+      "cidade": "Sabadell",
+      "estadio": "Estadi de la Nova Creu Alta",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadinovacreualta%202.jpg?width=800",
+      "lat": 41.5547,
+      "lng": 2.0919,
+      "_wikidata": "Q12260",
+      "_wikidataLabel": "Centre d'Esports Sabadell Futbol Club"
+    },
+    {
+      "slug": "cordoba-cf",
+      "nomesBase": [
+        "Córdoba CF"
+      ],
+      "cidade": "Córdoba",
+      "estadio": "Estadio Nuevo Arcángel",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/ArcangelCordoba2Lega3.jpg?width=800",
+      "lat": 37.8723,
+      "lng": -4.7646,
+      "_wikidata": "Q10499",
+      "_wikidataLabel": "Córdoba CF"
+    },
+    {
+      "slug": "fc-andorra",
+      "nomesBase": [
+        "FC Andorra"
+      ],
+      "cidade": "Andorra la Vella",
+      "estadio": "Estadi Nacional",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadi%20Nacional%20d%E2%80%98Andorra.jpg?width=800",
+      "lat": 42.5046,
+      "lng": 1.5175,
+      "_wikidata": "Q1386854",
+      "_wikidataLabel": "FC Andorra"
+    },
+    {
+      "slug": "girona",
+      "nomesBase": [
+        "Girona FC"
+      ],
+      "cidade": "Girona",
+      "estadio": "Montilivi Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Montilivi280611.jpg?width=800",
+      "lat": 41.9614,
+      "lng": 2.8286,
+      "_wikidata": "Q11945",
+      "_wikidataLabel": "Girona FC"
+    },
+    {
+      "slug": "granada-cf",
+      "nomesBase": [
+        "Granada CF"
+      ],
+      "cidade": "Granada",
+      "estadio": "Estadio Nuevo Los Cármenes",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuevo%20Los%20C%C3%A1rmenes%2020-05-11.png?width=800",
+      "lat": 37.153,
+      "lng": -3.5957,
+      "_wikidata": "Q8812",
+      "_wikidataLabel": "Granada CF"
+    },
+    {
+      "slug": "rc-celta-fortuna",
+      "nomesBase": [
+        "Celta Fortuna"
+      ],
+      "cidade": "Vigo",
+      "estadio": "Campo Municipal de Barreiro",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Gran%20Pe%C3%B1a%20-%20R%C3%A1pido%20de%20Bouzas%2C%20no%20Estadio%20Municipal%20de%20Barreiro%2001.jpg?width=800",
+      "lat": 42.2286,
+      "lng": -8.6808,
+      "_wikidata": "Q2311865",
+      "_wikidataLabel": "RC Celta Fortuna"
+    },
+    {
+      "slug": "rcd-mallorca",
+      "nomesBase": [
+        "RCD Mallorca"
+      ],
+      "cidade": "Palma",
+      "estadio": "Estadi Mallorca Son Moix",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Spain%20mallorca%20palma%20stadium%20Estadi%20de%20Son%20Moix.jpg?width=800",
+      "lat": 39.59,
+      "lng": 2.63,
+      "_wikidata": "Q8835",
+      "_wikidataLabel": "RCD Mallorca"
+    },
+    {
+      "slug": "real-oviedo",
+      "nomesBase": [
+        "R. Oviedo"
+      ],
+      "cidade": "Oviedo",
+      "estadio": "Carlos Tartiere Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Carlos%20Tartiere%2001.jpg?width=800",
+      "lat": 43.3608,
+      "lng": -5.8702,
+      "_wikidata": "Q271574",
+      "_wikidataLabel": "Real Oviedo"
+    },
+    {
+      "slug": "real-sociedad-b",
+      "nomesBase": [
+        "Real Sociedad B"
+      ],
+      "cidade": "San Sebastián",
+      "estadio": "Zubieta Facilities",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Ketari-20071109093740.jpg?width=800",
+      "lat": 43.2589,
+      "lng": -2.0238,
+      "_wikidata": "Q1067750",
+      "_wikidataLabel": "Real Sociedad B"
+    },
+    {
+      "slug": "real-valladolid",
+      "nomesBase": [
+        "R. Valladolid CF"
+      ],
+      "cidade": "Valladolid",
+      "estadio": "Estadio Nuevo José Zorrilla",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Jos%C3%A9%20Zorrilla%20de%20Valladolid%20%28noviembre%20de%202019%29.jpg?width=800",
+      "lat": 41.6444,
+      "lng": -4.7611,
+      "_wikidata": "Q10319",
+      "_wikidataLabel": "Real Valladolid"
+    },
+    {
+      "slug": "sd-eibar",
+      "nomesBase": [
+        "SD Eibar"
+      ],
+      "cidade": "Eibar",
+      "estadio": "Ipurúa Municipal Stadium",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Vista%20parcial%20de%20Ipurua.JPG?width=800",
+      "lat": 43.1817,
+      "lng": -2.4758,
+      "_wikidata": "Q770740",
+      "_wikidataLabel": "SD Eibar"
+    },
+    {
+      "slug": "sporting-de-gijon",
+      "nomesBase": [
+        "R. Sporting"
+      ],
+      "cidade": "Gijón",
+      "estadio": "El Molinón-Enrique Castro Quini",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Interior%20de%20El%20Molin%C3%B3n.JPG?width=800",
+      "lat": 43.5361,
+      "lng": -5.6372,
+      "_wikidata": "Q12278",
+      "_wikidataLabel": "Sporting de Gijón"
+    },
+    {
+      "slug": "ud-las-palmas",
+      "nomesBase": [
+        "UD Las Palmas"
+      ],
+      "cidade": "Las Palmas",
+      "estadio": "Estadio de Gran Canaria",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20de%20Gran%20Canaria%207-1-2017.jpg?width=800",
+      "lat": 28.1,
+      "lng": -15.4567,
+      "_wikidata": "Q11979",
+      "_wikidataLabel": "UD Las Palmas"
+    },
+    {
+      "slug": "union-deportiva-almeria",
+      "nomesBase": [
+        "UD Almería"
+      ],
+      "cidade": "Almería",
+      "estadio": "Estadio de los Juegos Mediterraneos",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/PowerHorseStadium.jpg?width=800",
+      "lat": 36.84,
+      "lng": -2.4353,
+      "_wikidata": "Q10407",
+      "_wikidataLabel": "Unión Deportiva Almería"
+    }
+  ]
+}

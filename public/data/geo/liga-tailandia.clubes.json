@@ -1,0 +1,27 @@
+{
+  "ligaId": "liga-tailandia",
+  "_gerado": "scripts/gerar-localizacao-clubes.js em 2026-09-25",
+  "cidades": [
+    {
+      "nome": "Buriram",
+      "lat": 14.9942,
+      "lng": 103.1022,
+      "_wikidata": "Q1026460"
+    }
+  ],
+  "clubes": [
+    {
+      "slug": "buriram-united",
+      "nomesBase": [
+        "Buriram United"
+      ],
+      "cidade": "Buriram",
+      "estadio": "Chang Arena",
+      "imagemEstadio": "https://commons.wikimedia.org/wiki/Special:FilePath/Isan%2C%20Mueang%20Buri%20Ram%20District%2C%20Buri%20Ram%2031000%2C%20Thailand%20-%20panoramio%20%286%29.jpg?width=800",
+      "lat": 14.9667,
+      "lng": 103.0961,
+      "_wikidata": "Q252065",
+      "_wikidataLabel": "Buriram United F.C."
+    }
+  ]
+}

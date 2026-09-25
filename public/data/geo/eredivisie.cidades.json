@@ -1,0 +1,164 @@
+{
+  "ligaId": "eredivisie",
+  "_gerado": "scripts/gerar-cidades-referencia.js em 2026-09-25",
+  "cidadesSemTime": [
+    {
+      "nome": "'s-Hertogenbosch",
+      "lat": 51.6833,
+      "lng": 5.3167,
+      "rank": 1
+    },
+    {
+      "nome": "Maastricht",
+      "lat": 50.853,
+      "lng": 5.677,
+      "rank": 1
+    },
+    {
+      "nome": "Assen",
+      "lat": 53,
+      "lng": 6.55,
+      "rank": 1
+    },
+    {
+      "nome": "Midelburgo",
+      "lat": 51.502,
+      "lng": 3.61,
+      "rank": 1
+    }
+  ],
+  "cidadesVizinhas": [
+    {
+      "nome": "Cidade de Bruxelas",
+      "lat": 50.8353,
+      "lng": 4.3314,
+      "rank": 1
+    },
+    {
+      "nome": "Essen",
+      "lat": 51.45,
+      "lng": 7.0166,
+      "rank": 1
+    },
+    {
+      "nome": "Düsseldorf",
+      "lat": 51.2204,
+      "lng": 6.78,
+      "rank": 1
+    },
+    {
+      "nome": "Lille",
+      "lat": 50.6519,
+      "lng": 3.0781,
+      "rank": 1
+    },
+    {
+      "nome": "Colônia",
+      "lat": 50.932,
+      "lng": 6.9481,
+      "rank": 1
+    },
+    {
+      "nome": "Antuérpia",
+      "lat": 51.2223,
+      "lng": 4.4131,
+      "rank": 1
+    },
+    {
+      "nome": "Wuppertal",
+      "lat": 51.25,
+      "lng": 7.17,
+      "rank": 1
+    },
+    {
+      "nome": "Liège",
+      "lat": 50.63,
+      "lng": 5.58,
+      "rank": 1
+    },
+    {
+      "nome": "Bonn",
+      "lat": 50.7205,
+      "lng": 7.08,
+      "rank": 2
+    },
+    {
+      "nome": "Dortmund",
+      "lat": 51.53,
+      "lng": 7.45,
+      "rank": 2
+    },
+    {
+      "nome": "Gante",
+      "lat": 51.03,
+      "lng": 3.7,
+      "rank": 2
+    },
+    {
+      "nome": "Charleroi",
+      "lat": 50.4204,
+      "lng": 4.45,
+      "rank": 2
+    },
+    {
+      "nome": "Coblença",
+      "lat": 50.3505,
+      "lng": 7.6,
+      "rank": 2
+    },
+    {
+      "nome": "Münster",
+      "lat": 51.9704,
+      "lng": 7.62,
+      "rank": 2
+    },
+    {
+      "nome": "Osnabrück",
+      "lat": 52.2804,
+      "lng": 8.05,
+      "rank": 2
+    },
+    {
+      "nome": "Oldenburg",
+      "lat": 53.13,
+      "lng": 8.22,
+      "rank": 2
+    },
+    {
+      "nome": "Bruges",
+      "lat": 51.2204,
+      "lng": 3.23,
+      "rank": 2
+    },
+    {
+      "nome": "Namur",
+      "lat": 50.4704,
+      "lng": 4.87,
+      "rank": 2
+    },
+    {
+      "nome": "Mons",
+      "lat": 50.446,
+      "lng": 3.939,
+      "rank": 2
+    },
+    {
+      "nome": "Hasselt",
+      "lat": 50.964,
+      "lng": 5.484,
+      "rank": 2
+    },
+    {
+      "nome": "Arras",
+      "lat": 50.2833,
+      "lng": 2.7833,
+      "rank": 2
+    },
+    {
+      "nome": "Emden",
+      "lat": 53.3667,
+      "lng": 7.2167,
+      "rank": 2
+    }
+  ]
+}
