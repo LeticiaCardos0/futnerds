@@ -54,12 +54,6 @@
 .nacoes-titulo span{ display:block; color: var(--nacoes-verde); }
 .nacoes-texto{ margin:0 0 30px; font-size:15px; line-height:1.55; color: var(--nacoes-texto-2); max-width: 270px; }
 
-.nacoes-dica-mouse{
-  margin: auto 0 8px; display:flex; align-items:center; gap:14px;
-  font-size:12.5px; line-height:1.45; color: var(--nacoes-texto-2); max-width: 220px;
-}
-.nacoes-dica-mouse i{ font-size:22px; color: var(--nacoes-verde); }
-
 /* --- Globo --- */
 .area-globo{
   position:relative; min-width:0;
@@ -140,138 +134,10 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
 
 .painel-fechar{ display:none; }
 
-.painel-cabecalho{
-  position:relative; display:flex; align-items:center; gap:13px;
-  margin: -18px -18px 14px; padding: 20px 18px 22px;
-  border-radius: 17px 17px 0 0; overflow:hidden;
-  animation: entrarSuave 0.35s ease;
-}
-.painel-cabecalho--foto{
-  background-image:
-    linear-gradient(90deg, var(--nacoes-superficie) 30%, color-mix(in srgb, var(--nacoes-superficie) 55%, transparent) 62%, transparent 100%),
-    linear-gradient(0deg, var(--nacoes-superficie) 0%, transparent 45%),
-    var(--painel-foto);
-  background-size: cover; background-position: center right;
-}
-.painel-bandeira{
-  width:60px; height:42px; flex:none; object-fit:cover; border-radius:7px;
-  border: 1.5px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
-  box-shadow: 0 6px 18px -8px rgba(0,0,0,0.6);
-}
-.painel-titulo{ position:relative; min-width:0; }
-.painel-nome{
-  margin:0; font-family: var(--nacoes-titulo); font-weight:800; text-transform:uppercase;
-  font-size: 29px; line-height:1; letter-spacing:0.01em;
-}
-.painel-continente{ margin:4px 0 0; font-size:13px; color: var(--nacoes-texto-2); }
-
-.painel-stats{
-  display:grid; grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--nacoes-borda); border-radius:13px;
-  background: color-mix(in srgb, var(--color-fg) 2%, transparent);
-  margin-bottom: 18px;
-  animation: entrarSuave 0.4s ease 0.05s backwards;
-}
-.painel-stat{
-  display:flex; flex-direction:column; align-items:center; gap:5px;
-  padding: 13px 8px; min-width:0;
-}
-.painel-stat + .painel-stat{ border-left: 1px solid var(--nacoes-borda); }
-.painel-stat strong{ font-size:21px; font-weight:700; line-height:1; }
-.painel-stat-rotulo{
-  display:flex; align-items:center; gap:5px;
-  font-size:11px; color: var(--nacoes-texto-3); white-space:nowrap;
-}
-.painel-stat-rotulo i{ font-size:10px; color: var(--nacoes-verde); }
-
-.painel-secao{
-  margin: 0 0 10px; font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
-  color: var(--nacoes-texto);
-}
-
-.painel-ligas{ display:flex; flex-direction:column; gap:8px; margin-bottom: 18px; }
-/* Caixa tracejada em vez de texto solto: sem ligas, o painel parecia cortado
-   no meio em vez de intencionalmente vazio. */
-.painel-vazio{
-  font-size:12.5px; color: var(--nacoes-texto-3); text-align:center; margin:0;
-  padding:15px 12px; border:1px dashed var(--nacoes-borda); border-radius:11px;
-}
-
-/* Mini-cabeçalho de cada seleção quando o ponto do globo reúne mais de uma
-   (ex.: Reino Unido = Inglaterra + Escócia), acima do respectivo .painel-ligas. */
-.painel-subnacao{ display:flex; align-items:center; gap:10px; margin: 0 0 10px; }
-.painel-subnacao-bandeira{ width:22px; height:16px; object-fit:cover; border-radius:3px; flex:none; }
-.painel-subnacao-nome{ font-size:14px; font-weight:700; }
-
-.liga-card{
-  width:100%; display:flex; align-items:center; gap:12px;
-  padding: 11px 13px; text-align:left; cursor:pointer;
-  background: color-mix(in srgb, var(--color-fg) 3%, transparent);
-  border: 1px solid var(--nacoes-borda); border-radius: 12px;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-  animation: entrarSuave 0.4s ease backwards;
-}
-.liga-card:hover{
-  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
-  transform: translateY(-1px);
-}
-.liga-icone{
-  width:30px; height:30px; flex:none;
-  display:flex; align-items:center; justify-content:center;
-}
-.liga-icone img{ width:100%; height:100%; object-fit:contain; }
-.liga-icone--vazio::before{ content:'\1F3C6'; font-size:22px; }
-.liga-nome{ flex:1; min-width:0; font-size:14.5px; font-weight:600; }
-.liga-clubes{ font-size:12.5px; color: var(--nacoes-texto-3); white-space:nowrap; }
-.liga-seta{ font-size:12px; color: var(--nacoes-texto-2); transition: transform 0.2s ease, color 0.2s ease; }
-.liga-card:hover .liga-seta{ color: var(--nacoes-verde); transform: translateX(3px); }
+/* cabeçalho, números e ligas do painel: ver nacoes-painel.css */
 
 
 /* ---------------------------- Países em destaque ---------------------------- */
-.nacoes-destaques{ border-top: 1px solid var(--nacoes-borda); padding-top: 22px; }
-.nacoes-destaques-topo{ display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
-.nacoes-destaques-topo h2{
-  margin:0; display:flex; align-items:center; gap:12px;
-  font-size:16px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-}
-.nacoes-destaques-topo h2 i{ color: var(--nacoes-verde); font-size:18px; }
-.nacoes-destaques-setas{ display:flex; gap:8px; }
-.seta-botao{
-  width:32px; height:32px; border-radius:8px; cursor:pointer;
-  display:flex; align-items:center; justify-content:center; font-size:11px;
-  background: transparent; border: 1px solid var(--nacoes-borda);
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-.seta-botao:hover{ border-color: var(--nacoes-verde); color: var(--nacoes-verde); }
-
-.nacoes-destaques-lista{
-  display:flex; gap:10px; overflow-x:auto; scroll-snap-type: x mandatory;
-  scrollbar-width:none; padding: 2px;
-}
-.nacoes-destaques-lista::-webkit-scrollbar{ display:none; }
-.destaque-card{
-  position:relative; flex: 0 0 138px; scroll-snap-align:start;
-  display:flex; flex-direction:column; align-items:flex-start; gap:4px;
-  padding: 13px 15px; text-align:left; cursor:pointer;
-  background: color-mix(in srgb, var(--color-fg) 2.5%, transparent);
-  border: 1px solid var(--nacoes-borda); border-radius: 12px;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-}
-.destaque-card:hover{ border-color: color-mix(in srgb, var(--color-accent) 50%, transparent); transform: translateY(-2px); }
-.destaque-card--ativo{
-  flex-basis: 158px;
-  border: 2px solid var(--nacoes-verde);
-  background: color-mix(in srgb, var(--color-accent) 7%, transparent);
-  box-shadow: 0 0 26px -10px rgba(60,176,26,0.6);
-}
-.destaque-bandeira{ width:34px; height:24px; object-fit:cover; border-radius:4px; margin-bottom:8px; }
-.destaque-card--ativo .destaque-bandeira{ outline: 2px solid var(--nacoes-verde); outline-offset: 3px; }
-.destaque-nome{ font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; }
-.destaque-clubes{ display:flex; align-items:center; gap:6px; font-size:11.5px; color: var(--nacoes-texto-2); }
-.destaque-clubes i{ font-size:10px; color: var(--nacoes-verde); }
-.destaque-seta{ position:absolute; right:10px; top:44%; font-size:10px; color: var(--nacoes-texto-2); }
-
 /* ---------------------------- Faixa final ---------------------------- */
 .nacoes-faixa{
   display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
@@ -322,7 +188,7 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
     /* Sem cartão de fundo: o texto fica direto sobre o globo. A legibilidade
        passa a vir da sombra em .palco .nacoes-intro * abaixo, já que o
        terreno por trás pode ser claro (deserto, gelo). */
-    left:0; width:fit-content; min-width:300px; max-width:min(460px, 34vw);
+    left:0; bottom:0; width:fit-content; min-width:300px; max-width:min(460px, 34vw);
     padding:18px 24px 20px;
     /* texto não é alvo de clique: deixa o arraste do globo passar por baixo */
     pointer-events:none;
@@ -330,6 +196,8 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   /* sombra difusa e escura, não um contorno: some sobre o fundo preto e só
      aparece quando o texto cai em cima de terreno claro */
   .palco .nacoes-intro > *{ text-shadow: 0 2px 14px rgba(0,0,0,0.85); }
+  /* o texto deixa o arraste passar para o globo, mas busca e lista precisam de clique */
+  .palco .nacoes-navegador{ pointer-events:auto; text-shadow:none; }
 
   .palco .painel{
     right:0; bottom:0; width:340px; max-height:none;
@@ -349,7 +217,6 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
 @media (max-width: 1280px){
   .palco{ grid-template-columns: minmax(0, 1fr) minmax(290px, 340px); }
   .nacoes-intro{ grid-column: 1 / -1; padding-top:0; }
-  .nacoes-dica-mouse{ display:none; }
   .palco{ height:auto; }
   .area-globo, .painel{ height: clamp(540px, 68vh, 660px); }
 }
@@ -369,7 +236,6 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
     content:''; position:absolute; top:12px; left:50%; transform:translateX(-50%);
     width:38px; height:4px; border-radius:99px; background: var(--nacoes-borda); z-index:2;
   }
-  .painel-cabecalho{ margin-top:-34px; padding-top:38px; }
   .painel-fechar{
     display:flex; position:absolute; top:16px; right:16px; z-index:3;
     width:30px; height:30px; border-radius:50%; align-items:center; justify-content:center;
@@ -378,5 +244,4 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
   body.sheet-aberto .painel{ transform: translateY(0); }
   body.sheet-aberto .bottom-sheet-overlay{ display:block; opacity:1; pointer-events:auto; }
   .globo-dica{ display:none; }
-  .painel-nome{ font-size:32px; }
 }

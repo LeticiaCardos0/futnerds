@@ -606,9 +606,15 @@ function carregarTextura(caminho: string): any {
 // isso com folga em densidade 1. Em densidade 2 viram ~1600 px físicos, e aí a
 // 4K aparece. Enviar a 4K para a GPU custava ~1,8 s de thread principal numa
 // Intel HD 630 — era o congelamento ao entrar em Nações.
+//
+// A textura de dia (a que dá o detalhe do terreno) entra sempre em 2K e depois
+// é trocada pela 4K — ver melhorarTexturaDia(), que a envia em faixas, uma por
+// frame, justamente para não repetir aquele congelamento.
 const sufixoTextura = window.devicePixelRatio > 1.5 ? '' : '-2k';
-const texturaDia = carregarTextura(`nacoes/terra-dia${sufixoTextura}.jpg`);
+let texturaDia = carregarTextura('nacoes/terra-dia-2k.jpg');
 const texturaNoite = carregarTextura(`nacoes/terra-noite${sufixoTextura}.jpg`);
+// Relevo (altitude em tons de cinza): vira sombreado de montanhas no shader.
+const texturaRelevo = carregarTextura('nacoes/terra-relevo.png');
 const mascaraTerra = criarMascaraTerra();
 
 const geometriaOceano = new THREE.SphereGeometry(RAIO_GLOBO, 128, 128);
@@ -617,22 +623,45 @@ const materialOceano = new THREE.ShaderMaterial({
     mapaDia: { value: texturaDia },
     mapaNoite: { value: texturaNoite },
     mascara: { value: mascaraTerra },
+    relevo: { value: texturaRelevo },
   },
   vertexShader: `
     varying vec2 vUv;
     varying vec3 vNormalVisao;
+    varying vec3 vPosicaoVisao;
     void main() {
       vUv = uv;
       vNormalVisao = normalize(normalMatrix * normal);
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      vec4 posicao = modelViewMatrix * vec4(position, 1.0);
+      vPosicaoVisao = posicao.xyz;
+      gl_Position = projectionMatrix * posicao;
     }
   `,
   fragmentShader: `
     uniform sampler2D mapaDia;
     uniform sampler2D mapaNoite;
     uniform sampler2D mascara;
+    uniform sampler2D relevo;
     varying vec2 vUv;
     varying vec3 vNormalVisao;
+    varying vec3 vPosicaoVisao;
+
+    // Bump mapping por derivadas de tela (o mesmo método do bumpMap do three):
+    // inclina a normal conforme a altitude varia, sem precisar de tangentes.
+    vec3 normalComRelevo(vec3 n, float escala) {
+      vec2 dUVx = dFdx(vUv);
+      vec2 dUVy = dFdy(vUv);
+      float h = texture2D(relevo, vUv).r;
+      float dHx = (texture2D(relevo, vUv + dUVx).r - h) * escala;
+      float dHy = (texture2D(relevo, vUv + dUVy).r - h) * escala;
+      vec3 sigmaX = dFdx(vPosicaoVisao);
+      vec3 sigmaY = dFdy(vPosicaoVisao);
+      vec3 r1 = cross(sigmaY, n);
+      vec3 r2 = cross(n, sigmaX);
+      float det = dot(sigmaX, r1);
+      vec3 gradiente = sign(det) * (dHx * r1 + dHy * r2);
+      return normalize(abs(det) * n - gradiente);
+    }
 
     // Puxa a cor para longe do cinza (fator > 1) ou para perto dele (< 1),
     // mantendo o brilho — é o que dá "cor viva" sem simplesmente clarear tudo.
@@ -667,6 +696,13 @@ const materialOceano = new THREE.ShaderMaterial({
       float difusa = 0.62 + 0.55 * max(dot(n, normalize(vec3(-0.35, 0.35, 1.0))), 0.0);
       cor *= difusa;
 
+      // Relevo: luz rasante vinda de noroeste realça serras e cordilheiras
+      // (Andes, Alpes, Himalaia) só na terra — o oceano continua liso.
+      vec3 nRelevo = normalComRelevo(n, 0.05);
+      vec3 luzRasante = normalize(vec3(-0.75, 0.6, 0.35));
+      float sombra = dot(nRelevo, luzRasante) - dot(n, luzRasante);
+      cor *= 1.0 + clamp(sombra * 3.2, -0.45, 0.45) * terra;
+
       float noite = texture2D(mapaNoite, vUv).r;
       cor += vec3(0.10, 0.95, 0.50) * pow(noite, 2.2) * 0.30 * terra;
 
@@ -679,6 +715,57 @@ const materialOceano = new THREE.ShaderMaterial({
 });
 const esferaOceano = new THREE.Mesh(geometriaOceano, materialOceano);
 scene.add(esferaOceano);
+
+/**
+ * Troca a textura de dia 2K pela 4K sem travar a tela. A imagem é decodificada
+ * fora da thread principal (createImageBitmap) e enviada à GPU em faixas de
+ * 256 linhas, uma por frame, num destino já alocado (texStorage). Só quando a
+ * última faixa chega o shader passa a usar a 4K.
+ */
+let bitmap4k: ImageBitmap | null = null;
+let texturaDia4k: any = null;
+async function melhorarTexturaDia(): Promise<void> {
+  try {
+    const blob = await (await fetch('nacoes/terra-dia.jpg')).blob();
+    if (!globoAtivo) return;
+    const bitmap = await createImageBitmap(blob, { imageOrientation: 'flipY', premultiplyAlpha: 'none', colorSpaceConversion: 'none' });
+    if (!globoAtivo) {
+      bitmap.close();
+      return;
+    }
+    bitmap4k = bitmap;
+
+    const destino = new THREE.DataTexture(null, bitmap.width, bitmap.height, THREE.RGBAFormat, THREE.UnsignedByteType);
+    destino.source.dataReady = false; // só aloca; o conteúdo vem das faixas
+    destino.magFilter = THREE.LinearFilter;
+    destino.minFilter = THREE.LinearMipmapLinearFilter;
+    destino.generateMipmaps = true;
+    destino.anisotropy = anisotropia;
+    destino.needsUpdate = true;
+    renderer.initTexture(destino);
+    texturaDia4k = destino;
+
+    const FAIXA = 256;
+    for (let y = 0; y < bitmap.height; y += FAIXA) {
+      await new Promise(requestAnimationFrame);
+      if (!globoAtivo) return;
+      const faixa = await createImageBitmap(bitmap, 0, y, bitmap.width, Math.min(FAIXA, bitmap.height - y));
+      // copyTextureToTexture regera os mipmaps a cada cópia no nível 0
+      renderer.copyTextureToTexture(new THREE.Texture(faixa), destino, null, new THREE.Vector2(0, y));
+      faixa.close();
+    }
+    if (!globoAtivo) return;
+
+    const anterior = texturaDia;
+    materialOceano.uniforms['mapaDia'].value = destino;
+    texturaDia = destino;
+    anterior.dispose();
+    (anterior.image as ImageBitmap | null)?.close?.();
+    console.log('FutNerds · Textura 4K do globo aplicada.');
+  } catch (erro) {
+    console.warn('FutNerds · Textura 4K do globo indisponível; seguindo com a 2K.', erro);
+  }
+}
 
 // --- Grid discreto (linhas de latitude/longitude) --------------------------
 const grupoGrid = new THREE.Group();
@@ -884,6 +971,8 @@ interface Marcador {
   subnacaoNomeApi?: string;
 }
 
+// Catálogo de coordenadas dos pinos. Só aparece no globo quem tem liga no
+// banco (ver ativarMarcadoresComLiga) — país listado aqui sem liga fica oculto.
 const PAISES_COM_MARCADOR: Marcador[] = [
   { iso2: 'br', lat: -14.235, lon: -51.925, ehBrasil: true },
   { iso2: 'ar', lat: -38.416, lon: -63.616 },
@@ -919,6 +1008,13 @@ const PAISES_COM_MARCADOR: Marcador[] = [
   { iso2: 'cz', lat: 49.8, lon: 15.5 },
   { iso2: 'ua', lat: 49.0, lon: 31.4 },
   { iso2: 'hr', lat: 45.1, lon: 15.2 },
+  { iso2: 'hu', lat: 47.16, lon: 19.5 },
+  { iso2: 'ae', lat: 23.6, lon: 54.0 },
+  { iso2: 'fi', lat: 62.8, lon: 26.0 },
+  { iso2: 'cy', lat: 35.05, lon: 33.2 },
+  { iso2: 'bg', lat: 42.7, lon: 25.3 },
+  { iso2: 'az', lat: 40.3, lon: 47.7 },
+  { iso2: 'th', lat: 15.5, lon: 101.0 },
 ];
 
 interface MarcadorRuntime {
@@ -935,61 +1031,104 @@ interface MarcadorRuntime {
   /** Altura atual do pino acima do chão, animada no hover. */
   altura: number;
   subnacaoNomeApi?: string; // ver Marcador.subnacaoNomeApi
+  /** Só pinos de país (ou subnação) com liga no banco ficam visíveis. */
+  temLiga: boolean;
+  codigoBandeira: string;
 }
 
 const marcadoresRuntime: MarcadorRuntime[] = [];
 const grupoMarcadores = new THREE.Group();
 
-/** Textura radial simples (canvas) usada como sprite de glow do marcador. */
-// Alfinete desenhado num canvas e usado como textura de sprite. Sprite sempre
-// encara a câmera, então o pino nunca aparece encurtado — que é o que acontece
-// com um pino 3D de verdade quando se olha o globo de cima, bem em cima dele.
+// Marcador = bandeira redonda com anel vermelho, sobre uma haste fina que
+// termina num ponto na coordenada do país. Desenhado num canvas e usado como
+// textura de sprite: sprite sempre encara a câmera, então a bandeira nunca
+// aparece encurtada quando se olha o globo bem de cima.
 const ALFINETE_LARGURA = 128;
 const ALFINETE_ALTURA = 168;
 const ALFINETE_CENTRO_Y = 54;
 const ALFINETE_RAIO = 38;
 const ALFINETE_PONTA_Y = 158;
+/** O canvas é desenhado em 2x para a bandeira não ficar borrada no zoom. */
+const ALFINETE_RESOLUCAO = 2;
+
+const COR_ANEL = '#ff3b3b';
+
+function desenharAlfinete(ctx: CanvasRenderingContext2D, bandeira: CanvasImageSource | null, larguraImg = 0, alturaImg = 0): void {
+  const k = ALFINETE_RESOLUCAO;
+  const cx = (ALFINETE_LARGURA / 2) * k;
+  const cy = ALFINETE_CENTRO_Y * k;
+  const raioAnel = ALFINETE_RAIO * k;
+  const espessuraAnel = 7 * k;
+  const raioBandeira = raioAnel - espessuraAnel / 2;
+  ctx.clearRect(0, 0, ALFINETE_LARGURA * k, ALFINETE_ALTURA * k);
+
+  // haste e ponto da ponta (é o ponto que fica exatamente na coordenada)
+  ctx.strokeStyle = COR_ANEL;
+  ctx.lineWidth = 4 * k;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(cx, cy + raioAnel);
+  ctx.lineTo(cx, (ALFINETE_PONTA_Y - 8) * k);
+  ctx.stroke();
+  ctx.fillStyle = COR_ANEL;
+  ctx.beginPath();
+  ctx.arc(cx, (ALFINETE_PONTA_Y - 5) * k, 5 * k, 0, Math.PI * 2);
+  ctx.fill();
+
+  // bandeira recortada em círculo (cobre o círculo como object-fit: cover);
+  // enquanto a imagem não chega, um miolo escuro com ponto vermelho
+  ctx.save();
+  ctx.beginPath();
+  ctx.arc(cx, cy, raioBandeira, 0, Math.PI * 2);
+  ctx.clip();
+  if (bandeira && larguraImg && alturaImg) {
+    const escala = Math.max((raioBandeira * 2) / larguraImg, (raioBandeira * 2) / alturaImg);
+    const w = larguraImg * escala;
+    const h = alturaImg * escala;
+    ctx.drawImage(bandeira, cx - w / 2, cy - h / 2, w, h);
+  } else {
+    ctx.fillStyle = '#0d1512';
+    ctx.fillRect(cx - raioBandeira, cy - raioBandeira, raioBandeira * 2, raioBandeira * 2);
+    ctx.fillStyle = COR_ANEL;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 10 * k, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+
+  ctx.strokeStyle = COR_ANEL;
+  ctx.lineWidth = espessuraAnel;
+  ctx.beginPath();
+  ctx.arc(cx, cy, raioAnel, 0, Math.PI * 2);
+  ctx.stroke();
+}
 
 function criarTexturaAlfinete(): any {
   const canvas = document.createElement('canvas');
-  canvas.width = ALFINETE_LARGURA;
-  canvas.height = ALFINETE_ALTURA;
+  canvas.width = ALFINETE_LARGURA * ALFINETE_RESOLUCAO;
+  canvas.height = ALFINETE_ALTURA * ALFINETE_RESOLUCAO;
   const ctx = canvas.getContext('2d')!;
-  const cx = ALFINETE_LARGURA / 2;
+  desenharAlfinete(ctx, null);
 
-  // Tangentes da ponta até a cabeça: com a ponta a uma distância d do centro,
-  // o raio que toca o ponto de tangência faz acos(R/d) com a linha centro-ponta.
-  // Desenhar assim (em vez de chutar um triângulo) evita o bico "quebrado"
-  // onde a reta encontra o círculo.
-  const distancia = ALFINETE_PONTA_Y - ALFINETE_CENTRO_Y;
-  const abertura = Math.acos(ALFINETE_RAIO / distancia);
-  const anguloParaPonta = Math.PI / 2; // ponta fica abaixo do centro no canvas
+  const textura = new THREE.CanvasTexture(canvas);
+  textura.colorSpace = THREE.SRGBColorSpace; // as cores da bandeira precisam sair como são
+  textura.anisotropy = anisotropia;
 
-  ctx.beginPath();
-  ctx.arc(
-    cx,
-    ALFINETE_CENTRO_Y,
-    ALFINETE_RAIO,
-    anguloParaPonta + abertura,
-    anguloParaPonta - abertura + Math.PI * 2,
-  );
-  ctx.lineTo(cx, ALFINETE_PONTA_Y);
-  ctx.closePath();
-  ctx.strokeStyle = '#ffffff'; // branco: a cor real vem do material do sprite
-  ctx.lineWidth = 9;
-  ctx.lineJoin = 'round';
-  ctx.stroke();
-
-  // furo da cabeça marcado por um ponto sólido, não por preenchimento — o
-  // vazado é o que deixa o terreno aparecer por dentro do pino.
-  ctx.beginPath();
-  ctx.arc(cx, ALFINETE_CENTRO_Y, 13, 0, Math.PI * 2);
-  ctx.fillStyle = '#ffffff';
-  ctx.fill();
-
-  return new THREE.CanvasTexture(canvas);
+  // a bandeira só é baixada quando o pino é ativado (país com liga no banco)
+  textura.userData['carregarBandeira'] = (codigo: string) => {
+    // flagcdn manda Access-Control-Allow-Origin: *, então o canvas não fica
+    // "contaminado" e pode virar textura WebGL
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      if (!globoAtivo) return;
+      desenharAlfinete(ctx, img, img.naturalWidth, img.naturalHeight);
+      textura.needsUpdate = true;
+    };
+    img.src = `https://flagcdn.com/w160/${codigo}.png`;
+  };
+  return textura;
 }
-const texturaAlfinete = criarTexturaAlfinete();
 
 /**
  * Fração da altura do sprite que sobra abaixo da ponta do pino. Serve de
@@ -998,7 +1137,10 @@ const texturaAlfinete = criarTexturaAlfinete();
  */
 const ALFINETE_ANCORA_Y = (ALFINETE_ALTURA - ALFINETE_PONTA_Y) / ALFINETE_ALTURA;
 
-const COR_ALFINETE = 0x4fd11f;
+/** Tamanho do pino no mundo 3D; a bandeira pede mais área que o antigo alfinete vazado. */
+const escalaAlfinete = (ehBrasil: boolean) => (ehBrasil ? 0.36 : 0.29);
+
+const COR_ALFINETE = 0xff3b3b; // base e halo de seleção, no mesmo vermelho do anel
 
 function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const paisAssociado = paisesRuntime.find((p) => p.data.iso2 === def.iso2) || null;
@@ -1009,15 +1151,14 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const grupo = new THREE.Group();
   grupo.position.copy(posicaoSuperficie);
 
-  const escala = def.ehBrasil ? 0.2 : 0.15;
+  const escala = escalaAlfinete(!!def.ehBrasil);
 
   // O pino. depthTest desligado para ele nunca sair fatiado pela curvatura do
   // globo perto da borda; quem esconde o lado oculto é o corte por ângulo em
   // atualizarMarcadores().
   const alfinete = new THREE.Sprite(
     new THREE.SpriteMaterial({
-      map: texturaAlfinete,
-      color: COR_ALFINETE,
+      map: criarTexturaAlfinete(),
       transparent: true,
       depthTest: false,
       depthWrite: false,
@@ -1046,7 +1187,7 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
   const anelSelecao = new THREE.Mesh(
     new THREE.RingGeometry(escala * 0.22, escala * 0.3, 32),
     new THREE.MeshBasicMaterial({
-      color: 0x8be86a,
+      color: 0xff7a7a,
       transparent: true,
       opacity: 0,
       side: THREE.DoubleSide,
@@ -1071,7 +1212,27 @@ function construirMarcador(def: Marcador, indice: number): MarcadorRuntime {
     selecionado: false,
     altura: 0,
     subnacaoNomeApi: def.subnacaoNomeApi,
+    temLiga: false,
+    codigoBandeira: def.subnacaoNomeApi
+      ? SUBNACAO_POR_NOME_API[def.subnacaoNomeApi]?.bandeira ?? codigoBandeira(def.iso2)
+      : codigoBandeira(def.iso2),
   };
+}
+
+/**
+ * Depois que os dados do banco chegam: liga só os pinos de países (ou
+ * subnações, como Inglaterra e Escócia) que têm liga cadastrada, e baixa a
+ * bandeira deles. Os demais continuam ocultos e fora do raycast.
+ */
+function ativarMarcadoresComLiga(): void {
+  marcadoresRuntime.forEach((m) => {
+    const pais = DADOS_MOCK[m.iso2];
+    const ligas = m.subnacaoNomeApi
+      ? pais?.subnacoes?.find((s) => s.nomeApi === m.subnacaoNomeApi)?.ligas ?? (pais?.nomeApi === m.subnacaoNomeApi ? pais.ligas : [])
+      : pais?.ligas ?? [];
+    m.temLiga = ligas.length > 0;
+    if (m.temLiga) m.alfinete.material.map.userData['carregarBandeira']?.(m.codigoBandeira);
+  });
 }
 
 PAISES_COM_MARCADOR.forEach((def, i) => marcadoresRuntime.push(construirMarcador(def, i)));
@@ -1603,32 +1764,36 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
   const jogadores = sub ? sub.jogadores : mock ? mock.jogadores : null;
   const foto = FOTOS_PAIS[iso2];
 
-  // Número em cima, ícone junto do rótulo embaixo. O ícone em caixa própria ao
-  // lado do número ocupava quase metade da célula e forçava o rótulo a quebrar
-  // assim que o painel estreitava.
-  const estatistica = (icone: string, valor: string, rotulo: string) => `
-    <div class="painel-stat">
-      <strong>${valor}</strong>
-      <span class="painel-stat-rotulo"><i class="${icone}"></i>${rotulo}</span>
-    </div>`;
+  // Números numa linha só ("56 clubes • 1,1 mil jogadores • 3 ligas"); o valor
+  // sobe contando a partir do zero (ver animarContagens). Sem dado: travessão.
+  const estatistica = (valor: number | null, rotulo: string) => `
+    <span class="painel-stat">
+      <strong ${valor !== null ? `data-conta="${valor}"` : ''}>${valor !== null ? formatarQuantidade(valor) : '—'}</strong>
+      <span>${rotulo}</span>
+    </span>`;
+  const separador = '<i class="painel-stat-sep" aria-hidden="true"></i>';
 
   painelEl.innerHTML = `
     <button class="painel-fechar" id="painel-fechar" aria-label="Fechar">✕</button>
 
-    <header class="painel-cabecalho${foto ? ' painel-cabecalho--foto' : ''}"
-      ${foto ? `style="--painel-foto: url('nacoes/fotos/${iso2}.jpg')"` : ''}>
-      <img class="painel-bandeira" src="https://flagcdn.com/w160/${bandeira}.png" alt="${nome}" onerror="this.style.visibility='hidden'" />
+    <header class="painel-cabecalho">
+      <!-- foto do país; sem foto, a bandeira ampliada e desfocada faz o papel -->
+      <div class="painel-fundo${foto ? '' : ' painel-fundo--bandeira'}" aria-hidden="true"
+        style="--painel-foto: url('${foto ? `nacoes/fotos/${iso2}.jpg` : `https://flagcdn.com/w320/${bandeira}.png`}')"></div>
       <div class="painel-titulo">
+        <p class="painel-continente">
+          <img class="painel-bandeira" src="https://flagcdn.com/w80/${bandeira}.png" alt="" onerror="this.style.visibility='hidden'" />
+          ${continente ?? ''}
+        </p>
         <h2 class="painel-nome">${nome}</h2>
-        ${continente ? `<p class="painel-continente">${continente}</p>` : ''}
       </div>
     </header>
 
-    <div class="painel-stats">
-      ${estatistica('pi pi-shield', String(clubes), plural(clubes, 'Clube', 'Clubes'))}
-      ${estatistica('pi pi-user', jogadores !== null ? formatarQuantidade(jogadores) : '—', 'Jogadores')}
-      ${estatistica('pi pi-trophy', String(ligas.length), plural(ligas.length, 'Liga', 'Ligas'))}
-    </div>
+    <p class="painel-stats">
+      ${estatistica(clubes, plural(clubes, 'clube', 'clubes'))}${separador}
+      ${estatistica(jogadores, plural(jogadores ?? 0, 'jogador', 'jogadores'))}${separador}
+      ${estatistica(ligas.length, plural(ligas.length, 'liga', 'ligas'))}
+    </p>
 
     ${
       !sub && mock?.subnacoes
@@ -1644,6 +1809,11 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
   `;
 
   document.getElementById('painel-fechar')?.addEventListener('click', fecharPainel);
+  animarContagens(painelEl);
+  // países (da API) cujos clubes aparecem aqui: a seleção do pino, as seleções
+  // do polígono (Inglaterra + Escócia) ou o país inteiro
+  const nomesApi = sub ? [sub.nomeApi] : mock?.subnacoes ? mock.subnacoes.map((s) => s.nomeApi) : mock ? [mock.nomeApi] : [];
+  preencherEscudos(painelEl, nomesApi);
   painelEl.querySelectorAll('.liga-card').forEach((card) => {
     card.addEventListener('click', () => {
       const nomeLiga = card.getAttribute('data-liga') || '';
@@ -1684,11 +1854,72 @@ function renderizarBlocoLigas(ligas: Liga[], bandeiraSubnacao?: string, nomeSubn
           <span class="liga-nome">${obterNomeExibicaoLiga(liga.nome)}</span>
           <span class="liga-clubes">${liga.clubes} ${plural(liga.clubes, 'clube', 'clubes')}</span>
           <i class="pi pi-chevron-right liga-seta"></i>
+          <span class="liga-escudos" data-liga-escudos="${liga.nome}" data-liga-clubes="${liga.clubes}"></span>
         </button>`
           )
           .join('')
       : '<p class="painel-vazio">Nenhuma liga cadastrada ainda para este país.</p>';
   return `${cabecalho}<div class="painel-ligas">${corpo}</div>`;
+}
+
+/** Sobe cada [data-conta] de 0 até o valor (easeOutCubic), já no formato final ("1,1 mil"). */
+function animarContagens(raiz: HTMLElement): void {
+  const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  raiz.querySelectorAll<HTMLElement>('[data-conta]').forEach((el) => {
+    const alvo = Number(el.dataset['conta']);
+    if (semMovimento || !alvo) return;
+    const DURACAO = 900;
+    const inicio = performance.now();
+    const passo = (agora: number) => {
+      if (!el.isConnected) return; // painel trocou de país no meio da contagem
+      const t = Math.min(1, (agora - inicio) / DURACAO);
+      el.textContent = formatarQuantidade(Math.round(alvo * (1 - Math.pow(1 - t, 3))));
+      if (t < 1) requestAnimationFrame(passo);
+    };
+    el.textContent = '0';
+    requestAnimationFrame(passo);
+  });
+}
+
+// --- Escudos dos clubes dentro de cada liga do painel -------------------------
+interface TimeEscudo { nome: string; escudoUrl: string | null; ligaNome: string; }
+const ESCUDOS_POR_LIGA = 5;
+const cacheTimesPorPais = new Map<string, Promise<TimeEscudo[]>>();
+
+/** Clubes de um país da API (já vêm do melhor para o pior overall). Cacheado por sessão. */
+function buscarTimesDoPais(nomeApi: string): Promise<TimeEscudo[]> {
+  let pedido = cacheTimesPorPais.get(nomeApi);
+  if (!pedido) {
+    pedido = fetch(`${API_URL}/times?page=0&size=200&pais=${encodeURIComponent(nomeApi)}`)
+      .then((r) => (r.ok ? r.json() : { times: [] }))
+      .then((dados) => (dados.times ?? []) as TimeEscudo[])
+      .catch(() => {
+        cacheTimesPorPais.delete(nomeApi); // tenta de novo na próxima vez
+        return [];
+      });
+    cacheTimesPorPais.set(nomeApi, pedido);
+  }
+  return pedido;
+}
+
+async function preencherEscudos(raiz: HTMLElement, nomesApi: string[]): Promise<void> {
+  if (!nomesApi.length) return;
+  const times = (await Promise.all(nomesApi.map(buscarTimesDoPais))).flat();
+  if (!globoAtivo) return;
+  raiz.querySelectorAll<HTMLElement>('[data-liga-escudos]').forEach((alvo) => {
+    if (!alvo.isConnected) return; // outro país já foi aberto
+    const liga = alvo.dataset['ligaEscudos'];
+    const daLiga = times.filter((t) => t.ligaNome === liga && t.escudoUrl);
+    const mostrados = daLiga.slice(0, ESCUDOS_POR_LIGA);
+    const resto = Number(alvo.dataset['ligaClubes'] ?? daLiga.length) - mostrados.length;
+    alvo.innerHTML =
+      mostrados
+        .map(
+          (t, i) =>
+            `<img class="liga-escudo" style="--i:${i}" src="${t.escudoUrl}" alt="${t.nome}" title="${t.nome}" loading="lazy" onerror="this.remove()" />`,
+        )
+        .join('') + (resto > 0 && mostrados.length ? `<span class="liga-escudos-mais" style="--i:${mostrados.length}">+${resto}</span>` : '');
+  });
 }
 
 function fecharPainel(): void {
@@ -1699,9 +1930,14 @@ function fecharPainel(): void {
 
 bottomSheetOverlay?.addEventListener('click', fecharPainel);
 
-// --- Países em destaque (carrossel abaixo do globo) -------------------------
+// --- Países em destaque (lista na coluna da esquerda) -------------------------
 const listaDestaquesEl = document.getElementById('destaques-lista') as HTMLElement | null;
-const QUANTIDADE_DESTAQUES = 12;
+const QUANTIDADE_DESTAQUES = 10;
+
+function irParaPais(pais: CountryRuntime): void {
+  selecionarPais(pais);
+  voarParaPais(pais);
+}
 
 function montarDestaques(): void {
   if (!listaDestaquesEl) return;
@@ -1712,22 +1948,19 @@ function montarDestaques(): void {
 
   listaDestaquesEl.innerHTML = destaques
     .map(
-      (pais) => `
-    <button class="destaque-card" data-iso2="${pais.iso2}">
+      (pais, i) => `
+    <button class="destaque-card" data-iso2="${pais.iso2}" style="--i:${i}">
       <img class="destaque-bandeira" src="https://flagcdn.com/w80/${codigoBandeira(pais.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
       <span class="destaque-nome">${pais.nome}</span>
-      <span class="destaque-clubes"><i class="pi pi-shield"></i>${pais.clubes} ${plural(pais.clubes, 'clube', 'clubes')}</span>
-      <i class="pi pi-chevron-right destaque-seta"></i>
     </button>`
     )
     .join('');
 
   listaDestaquesEl.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
+    card.setAttribute('aria-label', `${card.querySelector('.destaque-nome')?.textContent}: ver no globo`);
     card.addEventListener('click', () => {
       const pais = paisesRuntime.find((p) => p.data.iso2 === card.dataset['iso2']);
-      if (!pais) return;
-      selecionarPais(pais);
-      voarParaPais(pais);
+      if (pais) irParaPais(pais);
     });
   });
   if (paisSelecionado) atualizarDestaqueAtivo(paisSelecionado.data.iso2);
@@ -1735,15 +1968,112 @@ function montarDestaques(): void {
 
 function atualizarDestaqueAtivo(iso2: string): void {
   listaDestaquesEl?.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
-    card.classList.toggle('destaque-card--ativo', card.dataset['iso2'] === iso2);
+    const ativo = card.dataset['iso2'] === iso2;
+    card.classList.toggle('destaque-card--ativo', ativo);
+    // mantém o país ativo à vista quando a lista rola
+    if (ativo) card.scrollIntoView({ block: 'nearest', inline: 'nearest' });
   });
 }
 
-document.getElementById('destaques-anterior')?.addEventListener('click', () => {
-  listaDestaquesEl?.scrollBy({ left: -listaDestaquesEl.clientWidth * 0.8, behavior: 'smooth' });
+// --- Busca de país: sugestões enquanto digita; escolher gira o globo até ele ---
+const buscaInput = document.getElementById('busca-pais') as HTMLInputElement | null;
+const buscaResultados = document.getElementById('busca-resultados') as HTMLUListElement | null;
+let resultadosBusca: CountryRuntime[] = [];
+let indiceBusca = -1;
+
+const semAcento = (texto: string) => texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+
+/** Nome em português ou em inglês; primeiro quem começa com o termo, depois quem tem mais clubes. */
+function buscarPaises(termo: string): CountryRuntime[] {
+  const q = semAcento(termo);
+  if (!q) return [];
+  const vistos = new Set<string>();
+  return paisesRuntime
+    .map((pais) => {
+      const nome = semAcento(nomeExibicaoPais(pais));
+      const ingles = semAcento(pais.data.name ?? '');
+      const pos = nome.startsWith(q) ? 0 : ingles.startsWith(q) ? 1 : nome.includes(q) ? 2 : ingles.includes(q) ? 3 : -1;
+      return { pais, pos, clubes: DADOS_MOCK[pais.data.iso2]?.clubes ?? 0 };
+    })
+    .filter((r) => r.pos >= 0 && !vistos.has(r.pais.data.iso2) && !!vistos.add(r.pais.data.iso2))
+    .sort((a, b) => a.pos - b.pos || b.clubes - a.clubes)
+    .slice(0, 7)
+    .map((r) => r.pais);
+}
+
+function fecharBusca(): void {
+  if (!buscaResultados || !buscaInput) return;
+  buscaResultados.hidden = true;
+  buscaInput.setAttribute('aria-expanded', 'false');
+  buscaInput.removeAttribute('aria-activedescendant');
+}
+
+function mostrarBusca(): void {
+  if (!buscaResultados || !buscaInput) return;
+  const termo = buscaInput.value.trim();
+  if (!termo) {
+    fecharBusca();
+    return;
+  }
+  buscaResultados.innerHTML = resultadosBusca.length
+    ? resultadosBusca
+        .map((pais, i) => {
+          const clubes = DADOS_MOCK[pais.data.iso2]?.clubes ?? 0;
+          return `
+      <li id="busca-opcao-${i}" role="option" class="busca-item${i === indiceBusca ? ' busca-item--ativo' : ''}"
+        aria-selected="${i === indiceBusca}" data-indice="${i}">
+        <img src="https://flagcdn.com/w40/${codigoBandeira(pais.data.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
+        <span class="busca-nome">${nomeExibicaoPais(pais)}</span>
+        <span class="busca-info">${clubes ? `${clubes} ${plural(clubes, 'clube', 'clubes')}` : 'sem ligas'}</span>
+      </li>`;
+        })
+        .join('')
+    : '<li class="busca-vazio">Nenhum país encontrado.</li>';
+  buscaResultados.hidden = false;
+  buscaInput.setAttribute('aria-expanded', 'true');
+  if (indiceBusca >= 0) buscaInput.setAttribute('aria-activedescendant', `busca-opcao-${indiceBusca}`);
+  else buscaInput.removeAttribute('aria-activedescendant');
+}
+
+function escolherDaBusca(pais: CountryRuntime | undefined): void {
+  if (!pais || !buscaInput) return;
+  irParaPais(pais);
+  buscaInput.value = '';
+  resultadosBusca = [];
+  fecharBusca();
+  buscaInput.blur(); // no celular fecha o teclado e deixa o painel à vista
+}
+
+buscaInput?.addEventListener('input', () => {
+  resultadosBusca = buscarPaises(buscaInput.value);
+  indiceBusca = resultadosBusca.length ? 0 : -1;
+  mostrarBusca();
 });
-document.getElementById('destaques-proximo')?.addEventListener('click', () => {
-  listaDestaquesEl?.scrollBy({ left: listaDestaquesEl.clientWidth * 0.8, behavior: 'smooth' });
+buscaInput?.addEventListener('focus', () => {
+  if (buscaInput.value.trim()) mostrarBusca();
+});
+buscaInput?.addEventListener('blur', () => setTimeout(fecharBusca, 120));
+buscaInput?.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    if (!resultadosBusca.length) return;
+    e.preventDefault();
+    const passo = e.key === 'ArrowDown' ? 1 : -1;
+    indiceBusca = (indiceBusca + passo + resultadosBusca.length) % resultadosBusca.length;
+    mostrarBusca();
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    escolherDaBusca(resultadosBusca[Math.max(0, indiceBusca)]);
+  } else if (e.key === 'Escape') {
+    buscaInput.value = '';
+    fecharBusca();
+  }
+});
+// mousedown (e não click): escolhe antes do blur do campo fechar a lista
+buscaResultados?.addEventListener('mousedown', (e) => {
+  const item = (e.target as HTMLElement).closest<HTMLElement>('.busca-item');
+  if (!item) return;
+  e.preventDefault();
+  escolherDaBusca(resultadosBusca[Number(item.dataset['indice'])]);
 });
 
 // ----------------------------------------------------------------------------
@@ -1812,14 +2142,13 @@ function atualizarMarcadores(): void {
     m.altura += (alturaAlvo - m.altura) * 0.15;
     m.alfinete.position.copy(m.direcaoNormal).multiplyScalar(m.altura);
 
-    const escala = m.ehBrasil ? 0.2 : 0.15;
+    const escala = escalaAlfinete(m.ehBrasil);
     const ampliacao = destacado ? 1.18 : 1;
     m.alfinete.scale.set(
       escala * ampliacao,
       escala * ampliacao * (ALFINETE_ALTURA / ALFINETE_LARGURA),
       1,
     );
-    m.alfinete.material.color.setHex(destacado ? 0xb6ffd2 : COR_ALFINETE);
 
     // fator de profundidade: 1 = de frente para a câmera, ~0 = na borda do globo
     const fatorFrente = THREE.MathUtils.clamp(m.direcaoNormal.dot(direcaoCamera), -1, 1);
@@ -1827,11 +2156,12 @@ function atualizarMarcadores(): void {
       ? THREE.MathUtils.smoothstep(fatorFrente, 0.0, 0.22)
       : Math.max(0, Math.min(1, fatorFrente / 0.22));
 
-    m.alfinete.material.opacity = (destacado ? 1 : 0.62 + pulso * 0.2) * intensidadeProfundidade;
+    // a bandeira precisa de cor cheia para ser reconhecível: a pulsação é bem sutil
+    m.alfinete.material.opacity = (destacado ? 1 : 0.84 + pulso * 0.12) * intensidadeProfundidade;
     m.base.material.opacity = 0.9 * intensidadeProfundidade;
     // com depthTest desligado no pino, o corte por ângulo é o único guarda
     // contra ele aparecer por cima do lado oculto do planeta
-    m.grupo.visible = fatorFrente > 0.01;
+    m.grupo.visible = m.temLiga && fatorFrente > 0.01;
 
     // halo da base (fade in/out conforme o país selecionado muda)
     const opacidadeHaloAlvo = m.selecionado ? 0.85 * intensidadeProfundidade : 0;
@@ -1870,7 +2200,10 @@ observadorTamanho.observe(canvasContainer);
 // --- Estado inicial: carrega dados reais, então seleciona o Brasil ---------
 carregarDadosReais().finally(() => {
   if (!globoAtivo) return; // usuário saiu da página antes da resposta chegar
+  ativarMarcadoresComLiga();
   montarDestaques();
+  // a 4K entra depois da primeira pintura, com a página já respondendo
+  setTimeout(() => void melhorarTexturaDia(), 1200);
   const paisBrasilInicial = paisesRuntime.find((p) => p.data.iso2 === 'br');
   if (paisBrasilInicial) {
     selecionarPais(paisBrasilInicial);
@@ -1900,12 +2233,15 @@ function destruirGlobo(): void {
 
   // libera as texturas/canvas gerados em memória
   texturaDia.dispose();
+  texturaDia4k?.dispose();
+  bitmap4k?.close();
   texturaNoite.dispose();
+  texturaRelevo.dispose();
   mascaraTerra.dispose();
-  texturaAlfinete.dispose();
+  marcadoresRuntime.forEach((m) => m.alfinete.material.map?.dispose()); // uma textura de bandeira por marcador
   // O dispose da textura não fecha o ImageBitmap, que segura a imagem
   // decodificada (~32 MB cada) até ser fechado ou coletado.
-  for (const textura of [texturaDia, texturaNoite]) (textura.image as ImageBitmap | null)?.close?.();
+  for (const textura of [texturaDia, texturaNoite, texturaRelevo]) (textura.image as ImageBitmap | null)?.close?.();
 
   // remove o <canvas> do WebGL do DOM (o próprio Angular remove o restante
   // da árvore do componente, mas o canvas do renderer não é filho do Angular

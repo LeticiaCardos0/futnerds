@@ -1,0 +1,134 @@
+/* ============================================================================
+   FUTNERDS · TELA "NAÇÕES" — PAINEL DO PAÍS (estilo pôster)
+   ----------------------------------------------------------------------------
+   Foto do país como fundo do cabeçalho, nome grande por cima, números numa
+   linha só (com contagem) e escudos dos clubes dentro de cada liga.
+   O contêiner .painel (posição, bottom sheet no celular) segue em nacoes.css;
+   este arquivo carrega depois dele, então as variantes responsivas daqui
+   ficam no fim DESTE arquivo.
+   ============================================================================ */
+
+/* --- Cabeçalho: foto de fundo + nome --- */
+.painel-cabecalho{
+  position:relative; isolation:isolate; overflow:hidden;
+  display:flex; align-items:flex-end; min-height:150px;
+  margin: -18px -18px 0; padding: 20px 18px 16px;
+  border-radius: 17px 17px 0 0;
+}
+/* camada da foto: aproxima devagar ao abrir (efeito Ken Burns) */
+.painel-fundo{
+  position:absolute; inset:0; z-index:-2;
+  background: var(--painel-foto) center right / cover no-repeat;
+  animation: painel-aproxima 14s ease-out both;
+}
+/* sem foto: a própria bandeira, ampliada e desfocada, vira o fundo */
+.painel-fundo--bandeira{
+  background-position:center; filter: blur(2px) saturate(1.15) brightness(0.8); opacity:0.5;
+  -webkit-mask-image: linear-gradient(90deg, transparent 15%, #000 70%);
+  mask-image: linear-gradient(90deg, transparent 15%, #000 70%);
+}
+/* degradês como no painel anterior: escurece à esquerda (texto) e funde embaixo */
+.painel-cabecalho::after{
+  content:''; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(90deg, var(--nacoes-superficie) 0%, color-mix(in srgb, var(--nacoes-superficie) 55%, transparent) 45%, transparent 85%),
+    linear-gradient(0deg, var(--nacoes-superficie) 0%, color-mix(in srgb, var(--nacoes-superficie) 40%, transparent) 40%, transparent 75%);
+}
+@keyframes painel-aproxima{ from{ transform: scale(1.12); } to{ transform: scale(1); } }
+
+.painel-titulo{ position:relative; min-width:0; animation: entrarSuave 0.45s ease 0.05s backwards; }
+.painel-continente{
+  display:flex; align-items:center; gap:8px; margin:0 0 6px;
+  font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  color: color-mix(in srgb, var(--nacoes-texto) 78%, transparent);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+}
+.painel-bandeira{
+  width:20px; height:20px; flex:none; object-fit:cover; border-radius:50%;
+  box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85), 0 2px 8px rgba(0,0,0,0.5);
+}
+.painel-nome{
+  margin:0; font-family: var(--nacoes-titulo); font-weight:800; text-transform:uppercase;
+  font-size: 38px; line-height:0.95; letter-spacing:0.01em; color:#fff;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.7);
+  overflow-wrap:anywhere;
+}
+
+/* --- Números numa linha só --- */
+.painel-stats{
+  display:flex; align-items:baseline; justify-content:space-between; gap:8px;
+  margin: 0 0 18px; padding: 12px 0 14px;
+  border-bottom: 1px solid var(--nacoes-borda);
+  animation: entrarSuave 0.45s ease 0.12s backwards;
+}
+.painel-stat{ display:flex; align-items:baseline; gap:5px; white-space:nowrap; }
+.painel-stat strong{ font-size:17px; font-weight:700; line-height:1; color: var(--nacoes-texto); font-variant-numeric: tabular-nums; }
+.painel-stat span{ font-size:9.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color: var(--nacoes-texto-3); }
+.painel-stat-sep{ width:4px; height:4px; border-radius:50%; background: var(--nacoes-verde); opacity:0.7; align-self:center; }
+
+.painel-secao{
+  margin: 0 0 10px; font-size:11.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+  color: var(--nacoes-texto);
+}
+.painel-ligas{ display:flex; flex-direction:column; gap:8px; margin-bottom: 18px; }
+/* Caixa tracejada em vez de texto solto: sem ligas, o painel parecia cortado
+   no meio em vez de intencionalmente vazio. */
+.painel-vazio{
+  font-size:12.5px; color: var(--nacoes-texto-3); text-align:center; margin:0;
+  padding:15px 12px; border:1px dashed var(--nacoes-borda); border-radius:11px;
+}
+/* Mini-cabeçalho de cada seleção quando o ponto do globo reúne mais de uma
+   (ex.: Reino Unido = Inglaterra + Escócia), acima do respectivo .painel-ligas. */
+.painel-subnacao{ display:flex; align-items:center; gap:10px; margin: 0 0 10px; }
+.painel-subnacao-bandeira{ width:20px; height:20px; object-fit:cover; border-radius:50%; flex:none; }
+.painel-subnacao-nome{ font-size:14px; font-weight:700; }
+
+/* --- Card de liga: logo, nome, clubes e a fileira de escudos embaixo --- */
+.liga-card{
+  width:100%; display:grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items:center; gap:6px 12px;
+  padding: 11px 13px; text-align:left; cursor:pointer;
+  background: color-mix(in srgb, var(--color-fg) 3%, transparent);
+  border: 1px solid var(--nacoes-borda); border-radius: 12px;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  animation: entrarSuave 0.4s ease 0.18s backwards;
+}
+.liga-card:hover{
+  border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  transform: translateY(-1px);
+}
+.liga-icone{ width:30px; height:30px; display:flex; align-items:center; justify-content:center; }
+.liga-icone img{ width:100%; height:100%; object-fit:contain; }
+.liga-icone--vazio::before{ content:'\1F3C6'; font-size:22px; }
+.liga-nome{ font-size:14.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.liga-clubes{ font-size:12.5px; color: var(--nacoes-texto-3); white-space:nowrap; }
+.liga-seta{ font-size:12px; color: var(--nacoes-texto-2); transition: transform 0.2s ease, color 0.2s ease; }
+.liga-card:hover .liga-seta{ color: var(--nacoes-verde); transform: translateX(3px); }
+
+/* escudos empilhados, alinhados com o nome da liga (pula a coluna do logo) */
+.liga-escudos{ grid-column: 2 / -1; display:flex; align-items:center; padding-left:8px; }
+.liga-escudos:empty{ display:none; }
+.liga-escudo{
+  width:26px; height:26px; margin-left:-8px; padding:3px; flex:none; object-fit:contain;
+  border-radius:50%; background: var(--nacoes-superficie-2);
+  box-shadow: 0 0 0 2px var(--nacoes-superficie);
+  animation: painel-escudo 0.4s cubic-bezier(.2,.7,.2,1) backwards;
+  animation-delay: calc(var(--i, 0) * 60ms);
+  transition: transform 0.2s ease;
+}
+.liga-card:hover .liga-escudo{ transform: translateY(-2px); }
+.liga-escudos-mais{
+  margin-left:8px; font-size:11px; font-weight:700; color: var(--nacoes-verde);
+  animation: painel-escudo 0.4s ease backwards; animation-delay: calc(var(--i, 0) * 60ms);
+}
+@keyframes painel-escudo{ from{ opacity:0; transform: translateX(-8px) scale(0.8); } }
+
+@media (prefers-reduced-motion: reduce){
+  .painel-fundo, .painel-titulo, .painel-stats, .liga-card, .liga-escudo, .liga-escudos-mais{ animation:none; }
+}
+
+/* celular: o painel vira bottom sheet (ver nacoes.css) */
+@media (max-width: 820px){
+  .painel-cabecalho{ margin-top:-34px; padding-top:44px; }
+  .painel-nome{ font-size:34px; }
+}

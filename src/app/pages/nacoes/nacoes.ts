@@ -27,7 +27,8 @@ import { inicializarGlobo } from './nacoes-engine';
   standalone: true,
   imports: [],
   templateUrl: './nacoes.html',
-  styleUrl: './nacoes.css',
+  // navegador e painel em arquivos à parte por causa do budget anyComponentStyle (avaliado por arquivo)
+  styleUrls: ['./nacoes.css', './nacoes-navegador.css', './nacoes-painel.css'],
   encapsulation: ViewEncapsulation.None,
 })
 

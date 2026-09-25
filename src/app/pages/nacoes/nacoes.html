@@ -19,10 +19,21 @@
         Descubra ligas, clubes e jogadores de todos os países. Explore o futebol sem fronteiras.
       </p>
 
-      <p class="nacoes-dica-mouse">
-        <i class="fa-solid fa-computer-mouse" aria-hidden="true"></i>
-        Passe o mouse sobre um país para ver mais informações
-      </p>
+      <!-- Navegador: busca + países em destaque (o motor preenche a lista e as sugestões) -->
+      <div class="nacoes-navegador">
+        <div class="nacoes-busca">
+          <i class="pi pi-search" aria-hidden="true"></i>
+          <input id="busca-pais" type="search" placeholder="Buscar país..." autocomplete="off" spellcheck="false"
+            role="combobox" aria-label="Buscar país no globo" aria-autocomplete="list"
+            aria-expanded="false" aria-controls="busca-resultados" />
+          <ul id="busca-resultados" class="nacoes-busca-resultados" role="listbox" aria-label="Países encontrados" hidden></ul>
+        </div>
+
+        <div class="nacoes-destaques">
+          <h2><i class="pi pi-star" aria-hidden="true"></i> Países em destaque</h2>
+          <div id="destaques-lista" class="nacoes-destaques-lista"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Globo 3D -->
@@ -45,18 +56,6 @@
     <aside id="painel" class="painel"></aside>
 
   </div>
-
-  <!-- Países em destaque (preenchido pelo motor, ordenado por clubes) -->
-  <section class="nacoes-destaques">
-    <div class="nacoes-destaques-topo">
-      <h2><i class="pi pi-star" aria-hidden="true"></i> Países em destaque</h2>
-      <div class="nacoes-destaques-setas">
-        <button id="destaques-anterior" class="seta-botao" aria-label="Países anteriores"><i class="pi pi-chevron-left"></i></button>
-        <button id="destaques-proximo" class="seta-botao" aria-label="Próximos países"><i class="pi pi-chevron-right"></i></button>
-      </div>
-    </div>
-    <div id="destaques-lista" class="nacoes-destaques-lista"></div>
-  </section>
 
   <div class="nacoes-faixa">
     <p class="nacoes-faixa-marca">
