@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: '.dark' // Segue a classe controlada pelo ThemeService, não mais o SO
+          darkModeSelector: '.dark' // o site é só escuro: a classe fica fixa no <html> (index.html)
         }
       }
     })

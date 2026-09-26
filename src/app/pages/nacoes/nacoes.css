@@ -3,8 +3,7 @@
    ----------------------------------------------------------------------------
    Variáveis --nacoes-* escopadas em .pagina-nacoes (encapsulation None: o
    motor preenche tooltip, painel e carrossel via innerHTML). Fora do globo
-   elas seguem os tokens de tema (--color-*); o globo e o card flutuante ficam
-   sempre escuros, independente do tema.
+   elas seguem os tokens do site (--color-*).
    ============================================================================ */
 
 .pagina-nacoes{
@@ -60,8 +59,6 @@
   /* o canvas do Three.js tem fundo transparente: o brilho verde fica por trás do planeta */
   background: radial-gradient(circle at 50% 48%, rgba(60,176,26,0.07), transparent 58%);
 }
-/* no tema claro o "espaço" atrás do globo continua escuro */
-html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
 
 #globo-canvas{ position:absolute; inset:0; cursor: grab; }
 #globo-canvas.arrastando{ cursor: grabbing; }
@@ -137,7 +134,6 @@ html:not(.dark) .area-globo{ background-color:#04070b; border-radius:24px; }
 /* cabeçalho, números e ligas do painel: ver nacoes-painel.css */
 
 
-/* ---------------------------- Países em destaque ---------------------------- */
 /* ---------------------------- Faixa final ---------------------------- */
 .nacoes-faixa{
   display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;

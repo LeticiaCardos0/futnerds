@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { TemaService } from '../../../tema/tema';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +7,4 @@ import { TemaService } from '../../../tema/tema';
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
-export class Footer {
-    protected readonly temaService = inject(TemaService);
-}
+export class Footer {}

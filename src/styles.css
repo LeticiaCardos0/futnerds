@@ -9,7 +9,7 @@
 
 
 @theme {
-  /* ===== DARK THEME (padrão) ===== */
+  /* ===== Tema escuro (o único do site) ===== */
   --color-bg: #030609;
   --color-surface: #0a0b0f;
   --color-surface-2: #161920;
@@ -57,46 +57,6 @@
 }
 
 @layer base {
-  :root {
-    --color-bg: #f8f9fa;
-    --color-surface: #ffffff;
-    --color-surface-2: #e9ecef;
-    --color-surface-3: #dee2e6;
-    --color-border-c: rgba(0, 0, 0, 0.08);
-
-    --color-fg: #111827;
-    --color-fg-muted: #4b5563;
-    --color-fg-subtle: #6b7280;
-
-    --color-accent: #3CB01A;
-    --color-accent-strong: #2A7F12;
-    --color-accent-fg: #ffffff;
-
-    --color-danger: #dc2626;
-    --color-warning: #d97706;
-    --color-info: #2563eb;
-  }
-
-  .dark {
-    --color-bg: #030609;
-    --color-surface: #0a0b0f;
-    --color-surface-2: #161920;
-    --color-surface-3: #1e2130;
-    --color-border-c: rgba(255, 255, 255, 0.1);
-
-    --color-fg: #f9fafb;
-    --color-fg-muted: #d1d5db;
-    --color-fg-subtle: #9ca3af;
-
-    --color-accent: #3CB01A;
-    --color-accent-strong: #3CB01A;
-    --color-accent-fg: #030609;
-
-    --color-danger: #f87171;
-    --color-warning: #fbbf24;
-    --color-info: #60a5fa;
-  }
-
   * {
     transition: background-color 0.2s ease, border-color 0.2s ease;
   }

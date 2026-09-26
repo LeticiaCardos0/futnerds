@@ -1,0 +1,114 @@
+/* ============================================================================
+   FUTNERDS · TELA "NAÇÕES" — FILTROS DE LIGA E PAÍS
+   ----------------------------------------------------------------------------
+   Campo com busca + lista agrupada (montados por nacoes-filtro.ts). Arquivo à
+   parte pelo budget anyComponentStyle. Carrega depois de nacoes.css, então as
+   variantes responsivas daqui vencem as regras base de lá.
+   ============================================================================ */
+
+.nacoes-navegador{ max-width: 344px; }
+.nacoes-filtros{ display:grid; grid-template-columns: minmax(0, 1fr); gap:10px; }
+
+/* --- Campo --- */
+.nacoes-filtro{
+  position:relative; display:flex; align-items:center; height:46px; cursor:pointer;
+  border-radius:12px; border:1px solid var(--nacoes-borda);
+  background: color-mix(in srgb, var(--nacoes-superficie) 82%, transparent);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.nacoes-filtro:hover{ border-color: color-mix(in srgb, var(--color-accent) 45%, transparent); }
+.nacoes-filtro--aberto, .nacoes-filtro:focus-within{
+  border-color: var(--nacoes-verde);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+/* com a lista aberta o campo sobe junto dela, por cima do vizinho */
+.nacoes-filtro--aberto{ z-index:31; }
+
+.filtro-icone{
+  flex:none; width:42px; height:100%; display:flex; align-items:center; justify-content:center;
+  font-size:14px; color: var(--nacoes-texto-3);
+}
+.nacoes-filtro--aberto .filtro-icone > i{ color: var(--nacoes-verde); }
+
+.filtro-campo{
+  flex:1; min-width:0; height:100%; padding:0; border:0; outline:none; background:transparent; cursor:pointer;
+  color: var(--nacoes-texto); font: 500 14px 'Inter', system-ui, sans-serif;
+  text-overflow: ellipsis;
+}
+.filtro-campo:focus{ cursor:text; }
+.filtro-campo::placeholder{ color: var(--nacoes-texto-3); }
+.nacoes-filtro--preenchido .filtro-campo{ font-weight:600; }
+/* aberto com algo escolhido: o nome atual fica de placeholder, mais visível */
+.nacoes-filtro--preenchido.nacoes-filtro--aberto .filtro-campo::placeholder{ color: var(--nacoes-texto-2); }
+
+.filtro-limpar{
+  flex:none; width:28px; height:28px; padding:0; display:flex; align-items:center; justify-content:center;
+  border:0; border-radius:50%; background:transparent; cursor:pointer;
+  font-size:11px; color: var(--nacoes-texto-3) !important;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.filtro-limpar[hidden]{ display:none; }
+.filtro-limpar:hover{ background: color-mix(in srgb, var(--color-fg) 8%, transparent); color: var(--nacoes-texto) !important; }
+.filtro-limpar:focus-visible{ outline: 2px solid var(--nacoes-verde); outline-offset: 1px; }
+
+.filtro-seta{
+  flex:none; padding: 0 14px 0 8px; font-size:12px; color: var(--nacoes-texto-3); pointer-events:none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.nacoes-filtro--aberto .filtro-seta{ transform: rotate(180deg); color: var(--nacoes-verde); }
+
+/* --- Ícones: logo da liga inteiro; bandeira redonda --- */
+.filtro-icone img, .filtro-item-icone img{ width:22px; height:22px; flex:none; object-fit:contain; }
+.nacoes-filtro--pais img, .filtro-img-bandeira{
+  object-fit:cover !important; border-radius:50%; box-shadow: 0 0 0 1.5px rgba(255,255,255,0.14);
+}
+
+/* --- Lista --- */
+.filtro-lista{
+  position:absolute; left:-1px; right:-1px; top: calc(100% + 6px); z-index:30;
+  margin:0; padding:0 6px 6px; list-style:none; max-height: 340px; overflow-y:auto; cursor:default;
+  border-radius:12px; border:1px solid var(--nacoes-borda-verde);
+  background: var(--nacoes-superficie);
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,0.75);
+  scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--color-fg) 22%, transparent) transparent;
+  animation: filtro-abre 0.16s ease both;
+}
+.filtro-lista[hidden]{ display:none; }
+.nacoes-filtro--acima .filtro-lista{ top:auto; bottom: calc(100% + 6px); }
+@keyframes filtro-abre{ from{ opacity:0; transform: translateY(-4px); } }
+.nacoes-filtro--acima .filtro-lista{ animation-name: filtro-abre-acima; }
+@keyframes filtro-abre-acima{ from{ opacity:0; transform: translateY(4px); } }
+
+/* título do grupo (Top 5, Europa...) preso no topo enquanto a lista rola */
+.filtro-grupo{
+  position:sticky; top:0; z-index:1;
+  padding: 12px 10px 6px; background: var(--nacoes-superficie);
+  font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  color: var(--nacoes-texto-2);
+}
+.filtro-grupo:not(:first-child){ margin-top:4px; border-top:1px solid var(--nacoes-borda); }
+
+.filtro-item{
+  display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:8px;
+  cursor:pointer; font-size:13.5px; text-shadow:none;
+}
+.filtro-item-icone{ flex:none; width:22px; height:22px; display:flex; }
+.filtro-item-nome{ flex:1; min-width:0; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.filtro-item-info{ font-size:12px; color: var(--nacoes-texto-3); white-space:nowrap; }
+.filtro-item--ativo, .filtro-item:hover{ background: color-mix(in srgb, var(--color-accent) 14%, transparent); }
+.filtro-item--ativo .filtro-item-info{ color: var(--nacoes-verde); }
+.filtro-item--selecionado{ box-shadow: inset 2px 0 0 var(--nacoes-verde); }
+.filtro-item--selecionado .filtro-item-nome{ color: var(--nacoes-verde); }
+.filtro-vazio{ padding:14px 10px 8px; font-size:13px; color: var(--nacoes-texto-3); }
+
+@media (prefers-reduced-motion: reduce){ .filtro-lista{ animation:none; } }
+
+/* telas médias: a coluna vira faixa acima do globo, com os dois lado a lado */
+@media (max-width: 1280px){
+  .nacoes-navegador{ max-width: 600px; }
+  .nacoes-filtros{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .nacoes-filtros{ grid-template-columns: minmax(0, 1fr); }
+}

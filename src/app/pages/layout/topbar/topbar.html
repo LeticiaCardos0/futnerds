@@ -42,16 +42,6 @@
 
       <div class="hidden md:flex items-center gap-2">
 
-        <button type="button" (click)="temaService.toggleTema()"
-          class="w-9 h-9 flex items-center justify-center rounded-lg text-fg-muted hover:text-fg hover:bg-surface-2 transition cursor-pointer"
-          [attr.aria-label]="temaService.tema() === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'">
-          @if (temaService.tema() === 'dark') {
-            <i class="fa-solid fa-sun"></i>
-          } @else {
-            <i class="fa-solid fa-moon"></i>
-          }
-        </button>
-
         <button routerLink="/login"
           class="px-4 py-2 text-sm text-fg-muted hover:text-fg hover:bg-surface-2 rounded-lg transition cursor-pointer">
           Entrar

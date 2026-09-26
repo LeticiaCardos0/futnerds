@@ -19,19 +19,28 @@
         Descubra ligas, clubes e jogadores de todos os países. Explore o futebol sem fronteiras.
       </p>
 
-      <!-- Navegador: busca + países em destaque (o motor preenche a lista e as sugestões) -->
+      <!-- Navegador: filtros de liga e país (o motor preenche as listas) -->
       <div class="nacoes-navegador">
-        <div class="nacoes-busca">
-          <i class="pi pi-search" aria-hidden="true"></i>
-          <input id="busca-pais" type="search" placeholder="Buscar país..." autocomplete="off" spellcheck="false"
-            role="combobox" aria-label="Buscar país no globo" aria-autocomplete="list"
-            aria-expanded="false" aria-controls="busca-resultados" />
-          <ul id="busca-resultados" class="nacoes-busca-resultados" role="listbox" aria-label="Países encontrados" hidden></ul>
-        </div>
+        <div class="nacoes-filtros">
+          <div id="filtro-liga" class="nacoes-filtro nacoes-filtro--liga">
+            <span class="filtro-icone" aria-hidden="true"><i class="pi pi-trophy"></i></span>
+            <input class="filtro-campo" type="text" placeholder="Ligas" autocomplete="off" spellcheck="false"
+              role="combobox" aria-label="Filtrar por liga" aria-autocomplete="list"
+              aria-expanded="false" aria-controls="filtro-liga-lista" />
+            <button type="button" class="filtro-limpar" aria-label="Limpar liga" hidden><i class="pi pi-times"></i></button>
+            <i class="pi pi-chevron-down filtro-seta" aria-hidden="true"></i>
+            <ul id="filtro-liga-lista" class="filtro-lista" role="listbox" aria-label="Ligas" hidden></ul>
+          </div>
 
-        <div class="nacoes-destaques">
-          <h2><i class="pi pi-star" aria-hidden="true"></i> Países em destaque</h2>
-          <div id="destaques-lista" class="nacoes-destaques-lista"></div>
+          <div id="filtro-pais" class="nacoes-filtro nacoes-filtro--pais">
+            <span class="filtro-icone" aria-hidden="true"><i class="pi pi-globe"></i></span>
+            <input class="filtro-campo" type="text" placeholder="País/região" autocomplete="off" spellcheck="false"
+              role="combobox" aria-label="Filtrar por país ou região" aria-autocomplete="list"
+              aria-expanded="false" aria-controls="filtro-pais-lista" />
+            <button type="button" class="filtro-limpar" aria-label="Limpar país" hidden><i class="pi pi-times"></i></button>
+            <i class="pi pi-chevron-down filtro-seta" aria-hidden="true"></i>
+            <ul id="filtro-pais-lista" class="filtro-lista" role="listbox" aria-label="Países e regiões" hidden></ul>
+          </div>
         </div>
       </div>
     </section>

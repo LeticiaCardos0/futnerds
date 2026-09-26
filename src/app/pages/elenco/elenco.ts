@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TimeSelecionado, CHAVE_TIME_SELECIONADO } from '../selecionar-time/selecionar-time';
@@ -9,7 +9,6 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ButtonModule } from 'primeng/button';
-import { TemaService } from '../../tema/tema';
 
 interface SlotFormacao {
   posicao: string; // deve bater com JogadorElenco.posicao
@@ -99,7 +98,6 @@ const FORMACOES: Record<string, SlotFormacao[]> = {
 })
 export class ElencoComponent implements OnInit {
 
-  protected readonly temaService = inject(TemaService);
   traduzirPosicao = traduzirPosicao;
 
   timeSelecionado: TimeSelecionado | null = null;

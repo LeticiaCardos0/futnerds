@@ -40,6 +40,7 @@ const MAPA_ESPECIAL_LIGA: { [nomeLiga: string]: string } = {
 export const LIGAS_SEM_LOGO = new Set<string>([
   'Arkema PL',
   'Barclays WSL',
+  'Bundesliga 2',
   'Calcio A Femminile',
   'Ceska Liga Žen',
   'GPFBL',
@@ -53,6 +54,7 @@ export const LIGAS_SEM_LOGO = new Set<string>([
   'Liga Portugal Feminino',
   'Magyar Liga',
   'Metropolitan Division',
+  'MLS',
   'NWSL',
   'Nederland Vrouwen Liga',
   'Norge Kvinner Liga',

@@ -6,10 +6,11 @@ import { Line2 } from 'three/examples/jsm/lines/Line2.js';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
 import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import { GeoCountry, GEO_COUNTRIES } from './nacoes-geo-data';
-import { obterCaminhoLogoLiga, obterNomeCanonicoLiga } from '../../shared/ligas.util';
+import { obterCaminhoLogoLiga, obterNomeCanonicoLiga, temLogoLiga } from '../../shared/ligas.util';
 import { API_URL } from '../../shared/api.util';
 import { FOTOS_PAIS } from './nacoes-fotos';
 import { rotaMapaDaLiga } from '../../shared/ligas-mapa.util';
+import { Filtro, OpcaoFiltro, criarFiltro } from './nacoes-filtro';
 import { FRONTEIRAS_INTERNAS, ISO2_POR_NOME_API, SUBNACAO_POR_ANEL, SUBNACAO_POR_NOME_API, continentePais, nomePaisPt } from './nacoes-paises';
 
 /**
@@ -1712,6 +1713,7 @@ function atualizarTooltip(): void {
 canvasContainer.addEventListener('click', () => {
   if (!paisSobreMouse) return;
   selecionarPais(paisSobreMouse, subnacaoSobreMouse);
+  sincronizarFiltros(paisSobreMouse, subnacaoSobreMouse);
 });
 
 function selecionarPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
@@ -1720,7 +1722,6 @@ function selecionarPais(pais: CountryRuntime, subnacaoNomeApi: string | null = n
   atualizarRealceContornos();
   atualizarContornoDestaque();
   atualizarMarcadorSelecionado(pais.data.iso2, subnacaoNomeApi);
-  atualizarDestaqueAtivo(pais.data.iso2);
   preencherPainel(pais, subnacaoNomeApi);
   painelEl.classList.add('painel-ativo');
   document.body.classList.add('sheet-aberto');
@@ -1737,9 +1738,9 @@ function atualizarMarcadorSelecionado(iso2Selecionado: string, subnacaoNomeApi: 
   });
 }
 
-/** Gira a câmera até o país (pelo caminho mais curto). */
-function voarParaPais(pais: CountryRuntime): void {
-  const centro = centroPais(pais);
+/** Gira a câmera até o país, ou até o pino da seleção (pelo caminho mais curto). */
+function voarParaPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
+  const centro = centroPais(pais, subnacaoNomeApi);
   const angulo = anguloCameraParaLatLon(centro.lat, centro.lon);
   const diferenca = angulo.theta - thetaAlvo;
   thetaAlvo += Math.atan2(Math.sin(diferenca), Math.cos(diferenca));
@@ -1809,6 +1810,7 @@ function preencherPainel(pais: CountryRuntime, subnacaoNomeApi: string | null = 
   `;
 
   document.getElementById('painel-fechar')?.addEventListener('click', fecharPainel);
+  destacarLigaFiltrada();
   animarContagens(painelEl);
   // países (da API) cujos clubes aparecem aqui: a seleção do pino, as seleções
   // do polígono (Inglaterra + Escócia) ou o país inteiro
@@ -1930,151 +1932,155 @@ function fecharPainel(): void {
 
 bottomSheetOverlay?.addEventListener('click', fecharPainel);
 
-// --- Países em destaque (lista na coluna da esquerda) -------------------------
-const listaDestaquesEl = document.getElementById('destaques-lista') as HTMLElement | null;
-const QUANTIDADE_DESTAQUES = 10;
-
-function irParaPais(pais: CountryRuntime): void {
-  selecionarPais(pais);
-  voarParaPais(pais);
+/** Seleciona o país (ou a seleção, no "gb"), gira o globo até ele e atualiza os filtros. */
+function irParaPais(pais: CountryRuntime, subnacaoNomeApi: string | null = null): void {
+  selecionarPais(pais, subnacaoNomeApi);
+  voarParaPais(pais, subnacaoNomeApi);
+  sincronizarFiltros(pais, subnacaoNomeApi);
 }
 
-function montarDestaques(): void {
-  if (!listaDestaquesEl) return;
-  // Brasil sempre primeiro; os demais pelos que têm mais clubes no banco
-  const destaques = Object.values(DADOS_MOCK)
-    .sort((a, b) => (a.iso2 === 'br' ? -1 : b.iso2 === 'br' ? 1 : b.clubes - a.clubes))
-    .slice(0, QUANTIDADE_DESTAQUES);
-
-  listaDestaquesEl.innerHTML = destaques
-    .map(
-      (pais, i) => `
-    <button class="destaque-card" data-iso2="${pais.iso2}" style="--i:${i}">
-      <img class="destaque-bandeira" src="https://flagcdn.com/w80/${codigoBandeira(pais.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
-      <span class="destaque-nome">${pais.nome}</span>
-    </button>`
-    )
-    .join('');
-
-  listaDestaquesEl.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
-    card.setAttribute('aria-label', `${card.querySelector('.destaque-nome')?.textContent}: ver no globo`);
-    card.addEventListener('click', () => {
-      const pais = paisesRuntime.find((p) => p.data.iso2 === card.dataset['iso2']);
-      if (pais) irParaPais(pais);
-    });
-  });
-  if (paisSelecionado) atualizarDestaqueAtivo(paisSelecionado.data.iso2);
+// --- Filtros de liga e de país: escolher gira o globo e abre o painel ---------
+// O de país acompanha o globo (clicar num país o preenche); o de liga destaca
+// o card da liga no painel e sai sozinho quando o país muda para outro.
+interface LigaDoFiltro {
+  nome: string;
+  iso2: string;
+  /** Seleção dona da liga quando o polígono reúne mais de uma (ex.: Escócia no "gb"). */
+  subnacao: string | null;
 }
 
-function atualizarDestaqueAtivo(iso2: string): void {
-  listaDestaquesEl?.querySelectorAll<HTMLElement>('.destaque-card').forEach((card) => {
-    const ativo = card.dataset['iso2'] === iso2;
-    card.classList.toggle('destaque-card--ativo', ativo);
-    // mantém o país ativo à vista quando a lista rola
-    if (ativo) card.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-  });
-}
+const ORDEM_CONTINENTES = ['Europa', 'América do Sul', 'América do Norte', 'América Central', 'Caribe', 'Ásia', 'África', 'Oceania'];
+const GRUPO_TOP5 = 'Top 5';
+let filtroLiga: Filtro | null = null;
+let filtroPais: Filtro | null = null;
+let ligasDoFiltro = new Map<string, LigaDoFiltro>();
+let ligaFiltrada: LigaDoFiltro | null = null;
 
-// --- Busca de país: sugestões enquanto digita; escolher gira o globo até ele ---
-const buscaInput = document.getElementById('busca-pais') as HTMLInputElement | null;
-const buscaResultados = document.getElementById('busca-resultados') as HTMLUListElement | null;
-let resultadosBusca: CountryRuntime[] = [];
-let indiceBusca = -1;
+const urlBandeira = (codigo: string) => `https://flagcdn.com/w40/${codigo}.png`;
+const ordemContinente = (continente: string) => {
+  const i = ORDEM_CONTINENTES.indexOf(continente);
+  return i < 0 ? ORDEM_CONTINENTES.length : i;
+};
+const infoClubes = (clubes: number) => (clubes ? `${clubes} ${plural(clubes, 'clube', 'clubes')}` : 'sem ligas');
+const idPais = (iso2: string, subnacao: string | null) => `${iso2}|${subnacao ?? ''}`;
 
-const semAcento = (texto: string) => texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-
-/** Nome em português ou em inglês; primeiro quem começa com o termo, depois quem tem mais clubes. */
-function buscarPaises(termo: string): CountryRuntime[] {
-  const q = semAcento(termo);
-  if (!q) return [];
+/** Uma opção por país do globo; o "gb" vira uma por seleção (Inglaterra, Escócia...). */
+function opcoesPaises(): OpcaoFiltro[] {
   const vistos = new Set<string>();
-  return paisesRuntime
-    .map((pais) => {
-      const nome = semAcento(nomeExibicaoPais(pais));
-      const ingles = semAcento(pais.data.name ?? '');
-      const pos = nome.startsWith(q) ? 0 : ingles.startsWith(q) ? 1 : nome.includes(q) ? 2 : ingles.includes(q) ? 3 : -1;
-      return { pais, pos, clubes: DADOS_MOCK[pais.data.iso2]?.clubes ?? 0 };
-    })
-    .filter((r) => r.pos >= 0 && !vistos.has(r.pais.data.iso2) && !!vistos.add(r.pais.data.iso2))
-    .sort((a, b) => a.pos - b.pos || b.clubes - a.clubes)
-    .slice(0, 7)
-    .map((r) => r.pais);
+  const opcoes: (OpcaoFiltro & { ordem: number })[] = [];
+  paisesRuntime.forEach((pais) => {
+    const iso2 = pais.data.iso2;
+    if (vistos.has(iso2)) return;
+    vistos.add(iso2);
+    const continente = continentePais(iso2);
+    if (continente === 'Antártida') return;
+    const mock = DADOS_MOCK[iso2];
+    const base = { grupo: continente || 'Outros', ordem: ordemContinente(continente) };
+    if (mock?.subnacoes) {
+      mock.subnacoes.forEach((sub) =>
+        opcoes.push({ ...base, id: idPais(iso2, sub.nomeApi), rotulo: sub.nome, info: infoClubes(sub.clubes), icone: urlBandeira(sub.bandeira), termos: sub.nomeApi })
+      );
+    } else {
+      opcoes.push({
+        ...base,
+        id: idPais(iso2, null),
+        rotulo: nomeExibicaoPais(pais),
+        info: infoClubes(mock?.clubes ?? 0),
+        icone: urlBandeira(codigoBandeira(iso2)),
+        termos: pais.data.name,
+      });
+    }
+  });
+  return opcoes.sort((a, b) => a.ordem - b.ordem || a.rotulo.localeCompare(b.rotulo, 'pt-BR'));
 }
 
-function fecharBusca(): void {
-  if (!buscaResultados || !buscaInput) return;
-  buscaResultados.hidden = true;
-  buscaInput.setAttribute('aria-expanded', 'false');
-  buscaInput.removeAttribute('aria-activedescendant');
+/**
+ * Ligas agrupadas: as do país escolhido (se houver), o Top 5 e o resto por
+ * continente, cada liga uma vez só. Dentro do grupo, pela fama.
+ */
+function opcoesLigas(iso2Prioritario: string | null, subnacaoPrioritaria: string | null): OpcaoFiltro[] {
+  ligasDoFiltro = new Map();
+  const opcoes: (OpcaoFiltro & { ordem: number; fama: number })[] = [];
+  Object.values(DADOS_MOCK).forEach((mock) => {
+    const donos = mock.subnacoes
+      ? mock.subnacoes.map((s) => ({ ligas: s.ligas, subnacao: s.nomeApi as string | null, nome: s.nome, bandeira: s.bandeira }))
+      : [{ ligas: mock.ligas, subnacao: null, nome: mock.nome, bandeira: codigoBandeira(mock.iso2) }];
+    donos.forEach((dono) =>
+      dono.ligas.forEach((liga) => {
+        const fama = ORDEM_FAMA_LIGA[obterNomeCanonicoLiga(liga.nome).replace(/ - .+$/, '')] ?? 999;
+        const doPais = mock.iso2 === iso2Prioritario && (!subnacaoPrioritaria || !dono.subnacao || dono.subnacao === subnacaoPrioritaria);
+        // Top 5 pelo nome canônico inteiro: a Bundesliga austríaca ('Bundesliga - Austria') fica de fora
+        const top5 = (ORDEM_FAMA_LIGA[obterNomeCanonicoLiga(liga.nome)] ?? 999) <= 5;
+        const grupo = doPais ? dono.nome : top5 ? GRUPO_TOP5 : mock.continente || 'Outros';
+        const id = `${mock.iso2}|${dono.subnacao ?? ''}|${liga.nome}`;
+        ligasDoFiltro.set(id, { nome: liga.nome, iso2: mock.iso2, subnacao: dono.subnacao });
+        opcoes.push({
+          id,
+          grupo,
+          ordem: doPais ? -2 : grupo === GRUPO_TOP5 ? -1 : ordemContinente(mock.continente),
+          fama,
+          rotulo: obterNomeExibicaoLiga(liga.nome),
+          info: dono.nome,
+          icone: temLogoLiga(liga.nome) ? obterCaminhoLogoLiga(liga.nome) : urlBandeira(dono.bandeira),
+          iconeBandeira: !temLogoLiga(liga.nome),
+          iconeReserva: urlBandeira(dono.bandeira),
+          termos: liga.nome,
+        });
+      })
+    );
+  });
+  return opcoes.sort((a, b) => a.ordem - b.ordem || a.fama - b.fama || a.rotulo.localeCompare(b.rotulo, 'pt-BR'));
 }
 
-function mostrarBusca(): void {
-  if (!buscaResultados || !buscaInput) return;
-  const termo = buscaInput.value.trim();
-  if (!termo) {
-    fecharBusca();
-    return;
+/** Os filtros acompanham o país que o globo mostra (clique ou filtro). */
+function sincronizarFiltros(pais: CountryRuntime, subnacao: string | null): void {
+  const iso2 = pais.data.iso2;
+  if (ligaFiltrada && (ligaFiltrada.iso2 !== iso2 || (subnacao && ligaFiltrada.subnacao && ligaFiltrada.subnacao !== subnacao))) {
+    ligaFiltrada = null;
+    filtroLiga?.definirValor(null);
   }
-  buscaResultados.innerHTML = resultadosBusca.length
-    ? resultadosBusca
-        .map((pais, i) => {
-          const clubes = DADOS_MOCK[pais.data.iso2]?.clubes ?? 0;
-          return `
-      <li id="busca-opcao-${i}" role="option" class="busca-item${i === indiceBusca ? ' busca-item--ativo' : ''}"
-        aria-selected="${i === indiceBusca}" data-indice="${i}">
-        <img src="https://flagcdn.com/w40/${codigoBandeira(pais.data.iso2)}.png" alt="" onerror="this.style.visibility='hidden'" />
-        <span class="busca-nome">${nomeExibicaoPais(pais)}</span>
-        <span class="busca-info">${clubes ? `${clubes} ${plural(clubes, 'clube', 'clubes')}` : 'sem ligas'}</span>
-      </li>`;
-        })
-        .join('')
-    : '<li class="busca-vazio">Nenhum país encontrado.</li>';
-  buscaResultados.hidden = false;
-  buscaInput.setAttribute('aria-expanded', 'true');
-  if (indiceBusca >= 0) buscaInput.setAttribute('aria-activedescendant', `busca-opcao-${indiceBusca}`);
-  else buscaInput.removeAttribute('aria-activedescendant');
+  // clique no "gb" fora de uma seleção específica cai na primeira dele (Inglaterra)
+  const id = filtroPais?.temOpcao(idPais(iso2, subnacao))
+    ? idPais(iso2, subnacao)
+    : opcoesPaises().find((o) => o.id.startsWith(`${iso2}|`))?.id ?? null;
+  filtroPais?.definirValor(id);
+  filtroLiga?.definirOpcoes(opcoesLigas(iso2, subnacao));
 }
 
-function escolherDaBusca(pais: CountryRuntime | undefined): void {
-  if (!pais || !buscaInput) return;
-  irParaPais(pais);
-  buscaInput.value = '';
-  resultadosBusca = [];
-  fecharBusca();
-  buscaInput.blur(); // no celular fecha o teclado e deixa o painel à vista
+/** Realça no painel o card da liga escolhida no filtro. */
+function destacarLigaFiltrada(): void {
+  painelEl.querySelectorAll<HTMLElement>('.liga-card').forEach((card) => {
+    const ativo = !!ligaFiltrada && card.dataset['liga'] === ligaFiltrada.nome;
+    card.classList.toggle('liga-card--filtrada', ativo);
+    if (ativo) card.scrollIntoView({ block: 'nearest' });
+  });
 }
 
-buscaInput?.addEventListener('input', () => {
-  resultadosBusca = buscarPaises(buscaInput.value);
-  indiceBusca = resultadosBusca.length ? 0 : -1;
-  mostrarBusca();
-});
-buscaInput?.addEventListener('focus', () => {
-  if (buscaInput.value.trim()) mostrarBusca();
-});
-buscaInput?.addEventListener('blur', () => setTimeout(fecharBusca, 120));
-buscaInput?.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-    if (!resultadosBusca.length) return;
-    e.preventDefault();
-    const passo = e.key === 'ArrowDown' ? 1 : -1;
-    indiceBusca = (indiceBusca + passo + resultadosBusca.length) % resultadosBusca.length;
-    mostrarBusca();
-  } else if (e.key === 'Enter') {
-    e.preventDefault();
-    escolherDaBusca(resultadosBusca[Math.max(0, indiceBusca)]);
-  } else if (e.key === 'Escape') {
-    buscaInput.value = '';
-    fecharBusca();
+function montarFiltros(): void {
+  const raizLiga = document.getElementById('filtro-liga');
+  const raizPais = document.getElementById('filtro-pais');
+  if (raizPais) {
+    filtroPais = criarFiltro(raizPais, (opcao) => {
+      if (!opcao) {
+        filtroLiga?.definirOpcoes(opcoesLigas(null, null));
+        return;
+      }
+      const [iso2, subnacao] = opcao.id.split('|');
+      const pais = paisesRuntime.find((p) => p.data.iso2 === iso2);
+      if (pais) irParaPais(pais, subnacao || null);
+    });
+    filtroPais.definirOpcoes(opcoesPaises());
   }
-});
-// mousedown (e não click): escolhe antes do blur do campo fechar a lista
-buscaResultados?.addEventListener('mousedown', (e) => {
-  const item = (e.target as HTMLElement).closest<HTMLElement>('.busca-item');
-  if (!item) return;
-  e.preventDefault();
-  escolherDaBusca(resultadosBusca[Number(item.dataset['indice'])]);
-});
+  if (raizLiga) {
+    filtroLiga = criarFiltro(raizLiga, (opcao) => {
+      ligaFiltrada = opcao ? ligasDoFiltro.get(opcao.id) ?? null : null;
+      if (!ligaFiltrada) return destacarLigaFiltrada();
+      const pais = paisesRuntime.find((p) => p.data.iso2 === ligaFiltrada!.iso2);
+      if (pais) irParaPais(pais, ligaFiltrada.subnacao);
+    });
+    filtroLiga.definirOpcoes(opcoesLigas(null, null));
+  }
+}
 
 // ----------------------------------------------------------------------------
 // 8. LOOP DE RENDERIZAÇÃO
@@ -2201,7 +2207,7 @@ observadorTamanho.observe(canvasContainer);
 carregarDadosReais().finally(() => {
   if (!globoAtivo) return; // usuário saiu da página antes da resposta chegar
   ativarMarcadoresComLiga();
-  montarDestaques();
+  montarFiltros();
   // a 4K entra depois da primeira pintura, com a página já respondendo
   setTimeout(() => void melhorarTexturaDia(), 1200);
   const paisBrasilInicial = paisesRuntime.find((p) => p.data.iso2 === 'br');

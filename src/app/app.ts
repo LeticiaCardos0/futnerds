@@ -4,7 +4,6 @@ import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router
 import { filter, map } from 'rxjs/operators';
 import { Topbar } from "./pages/layout/topbar/topbar";
 import { Footer } from "./pages/layout/footer/footer";
-import { TemaService } from './tema/tema';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +13,6 @@ import { TemaService } from './tema/tema';
 })
 export class App {
   protected readonly title = signal('projeto-futnerds-ng');
-
-  // Injetado aqui para aplicar a classe .dark/.light assim que o app inicializa
-  protected readonly temaService = inject(TemaService);
 
   private readonly router = inject(Router);
 
