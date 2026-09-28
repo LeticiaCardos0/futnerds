@@ -12,6 +12,19 @@ export interface JogadorTime {
   titular: boolean;       // define se entra no campo (titulares) ou na lista de reservas
   capitao?: boolean;
   posicoesAlternativas?: string; // string separada por vírgula, ex: "CM,CAM" — usado como fallback no encaixe da formação
+  potencial?: number | null;
+  idade?: number | null;
+  nacionalidade?: string | null;
+  paisCodigo?: string | null;
+  peDominante?: string | null;
+  salario?: number | null;
+  valor?: number | null;
+  estatisticasTotais?: number | null;
+  penaltis?: number | null;
+  precisaoFalta?: number | null;
+  curva?: number | null;
+  cruzamento?: number | null;
+  chutesDeLonge?: number | null;
 }
 
 export interface UniformeTime {
@@ -33,6 +46,7 @@ export interface TimeDetalhes {
   escudoUrl: string;
   ligaNome: string;
   paisNome: string;
+  paisCodigo?: string | null;
   cidade?: string;
   estadio?: string;
   capacidadeEstadio?: number;

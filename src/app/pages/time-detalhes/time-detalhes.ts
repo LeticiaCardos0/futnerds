@@ -1,56 +1,108 @@
-import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TimeDetalhes, JogadorTime } from '../times/times.model';
 import { TimeDetalhesService } from './time-detalhes.service';
-import { traduzirPosicao } from '../../shared/posicoes.util';
+import { urlImagemJogador } from '../../shared/api.util';
 
-type AbaTime = 'overview' | 'squad';
+/* Siglas exibidas nesta tela (as do design): o banco guarda as do FIFA. */
+const SIGLA_PT: Record<string, string> = {
+  GK: 'GL', CB: 'ZAG', LB: 'LE', RB: 'LD', LWB: 'LE', RWB: 'LD',
+  CDM: 'VOL', CM: 'MC', CAM: 'MEI', LM: 'ME', RM: 'MD',
+  LW: 'PE', RW: 'PD', ST: 'ATA', CF: 'ATA', LF: 'PE', RF: 'PD',
+};
 
-interface SlotFormacao {
-  posicao: string; // sigla real do banco: GK, CB, LB, RB, CDM, CM, CAM, LM, RM, LW, RW, ST
-  top: number;
-  left: number;
+const GOLEIRO = ['GL'];
+const DEFESA = ['ZAG', 'ZGE', 'ZGD', 'LD', 'LE'];
+const ATAQUE = ['ATA', 'PE', 'PD'];
+
+/** Cor da sigla por setor: goleiro, defesa, meio (padrão), ataque e reserva. */
+function corPosicao(sigla: string): string {
+  if (GOLEIRO.includes(sigla)) return 'oklch(0.72 0.16 45)';
+  if (DEFESA.includes(sigla)) return 'oklch(0.8 0.14 75)';
+  if (ATAQUE.includes(sigla)) return 'oklch(0.74 0.12 235)';
+  if (sigla === 'SUB') return '#8a988e';
+  return 'oklch(0.78 0.2 140)';
 }
 
-interface SlotComJogador extends SlotFormacao {
-  jogador: JogadorTime | null;
+/** Fundo/texto do selo de nota: >=80 verde escuro, >=75 verde claro, abaixo amarelo. */
+function corNota(v: number | null | undefined): { bg: string; fg: string } {
+  if (v == null) return { bg: '#151d17', fg: '#8a988e' };
+  if (v >= 80) return { bg: 'oklch(0.52 0.15 145)', fg: '#fff' };
+  if (v >= 75) return { bg: 'oklch(0.7 0.18 135)', fg: '#061006' };
+  return { bg: 'oklch(0.82 0.15 90)', fg: '#1a1400' };
 }
 
-const FORMACAO_4_3_3: SlotFormacao[] = [
-  { posicao: 'GK', top: 90, left: 50 },
-  { posicao: 'LB', top: 74, left: 14 },
-  { posicao: 'CB', top: 80, left: 36 },
-  { posicao: 'CB', top: 80, left: 64 },
-  { posicao: 'RB', top: 74, left: 86 },
-  { posicao: 'CDM', top: 58, left: 50 },
-  { posicao: 'CM', top: 44, left: 30 },
-  { posicao: 'CM', top: 44, left: 70 },
-  { posicao: 'LW', top: 20, left: 16 },
-  { posicao: 'ST', top: 10, left: 50 },
-  { posicao: 'RW', top: 20, left: 84 },
+interface VagaFormacao {
+  sigla: string;
+  x: number;
+  y: number;
+  aceitas: string[]; // posições FIFA aceitas, em ordem de preferência
+}
+
+/* 3-4-2-1, com as coordenadas do design (x/y em % do campo quadrado). */
+const FORMACAO: VagaFormacao[] = [
+  { sigla: 'ATA', x: 50, y: 12, aceitas: ['ST', 'CF', 'LF', 'RF'] },
+  { sigla: 'MEE', x: 30, y: 29, aceitas: ['CAM', 'LW', 'LF', 'CF', 'LM'] },
+  { sigla: 'MED', x: 70, y: 29, aceitas: ['CAM', 'RW', 'RF', 'CF', 'RM'] },
+  { sigla: 'ME', x: 13, y: 43, aceitas: ['LM', 'LW', 'LWB', 'LB'] },
+  { sigla: 'MCE', x: 34, y: 55, aceitas: ['CM', 'CDM', 'CAM'] },
+  { sigla: 'MCD', x: 66, y: 55, aceitas: ['CDM', 'CM'] },
+  { sigla: 'MD', x: 87, y: 43, aceitas: ['RM', 'RW', 'RWB', 'RB'] },
+  { sigla: 'ZGE', x: 22, y: 71, aceitas: ['CB', 'LB'] },
+  { sigla: 'ZAG', x: 50, y: 71, aceitas: ['CB'] },
+  { sigla: 'ZGD', x: 78, y: 71, aceitas: ['CB', 'RB'] },
+  { sigla: 'GL', x: 50, y: 88, aceitas: ['GK'] },
 ];
+
+/* Ordem de preenchimento: vagas mais "raras" primeiro, para não gastar um
+   zagueiro numa lateral antes de fechar a zaga. */
+const ORDEM_PREENCHIMENTO = ['GL', 'ZAG', 'ZGE', 'ZGD', 'ATA', 'MCD', 'MCE', 'ME', 'MD', 'MEE', 'MED'];
+
+/* Ordem das linhas da tabela: de trás para a frente, como no design. */
+const ORDEM_TABELA = ['GL', 'ZGD', 'ZAG', 'ZGE', 'MD', 'MCD', 'MCE', 'ME', 'MED', 'MEE', 'ATA'];
+
+export interface JogadorCampo {
+  vaga: VagaFormacao;
+  jogador: JogadorTime | null;
+  reservas: JogadorTime[];
+  capitao: boolean;
+}
+
+export interface LinhaElenco {
+  jogador: JogadorTime;
+  vaga: string; // sigla da vaga no XI ou 'SUB'
+  nacao: string;
+  siglas: { t: string; c: string }[];
+}
 
 @Component({
   selector: 'app-time-detalhes',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './time-detalhes.html',
   styleUrl: './time-detalhes.css',
 })
-export class TimeDetalhesComponent implements OnInit, AfterViewInit {
+export class TimeDetalhesComponent implements OnInit {
   time: TimeDetalhes | null = null;
   carregando = true;
   erroCarregamento = false;
 
-  abaAtiva: AbaTime = 'overview';
-  traduzirPosicao = traduzirPosicao;
+  campo: JogadorCampo[] = [];
+  linhasElenco: LinhaElenco[] = [];
+  notas: { label: string; valor: number | null }[] = [];
+  informacoes: { label: string; valor: string }[] = [];
+  batedores: { label: string; valor: string }[] = []; // capitão e cobradores, ao lado do campo
 
-  readonly tiposUniforme: { tipo: 'Home' | 'Away' | 'Third'; label: string }[] = [
-    { tipo: 'Home', label: 'Titular' },
-    { tipo: 'Away', label: 'Reserva' },
-    { tipo: 'Third', label: 'Terceiro' },
+  readonly uniformes: { tipo: string; label: string }[] = [
+    { tipo: 'Home', label: 'Uniforme 1' },
+    { tipo: 'Away', label: 'Uniforme 2' },
+    { tipo: 'Goalkeeper', label: 'Uniforme do Goleiro' },
+    { tipo: 'Third', label: 'Uniforme 3' },
   ];
+
+  readonly corPosicao = corPosicao;
+  readonly corNota = corNota;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -62,7 +114,6 @@ export class TimeDetalhesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (!id) {
-      console.error('[time-detalhes] nenhum id encontrado na rota');
       this.carregando = false;
       this.erroCarregamento = true;
       return;
@@ -71,9 +122,9 @@ export class TimeDetalhesComponent implements OnInit, AfterViewInit {
     this.timeService.buscarPorId(Number(id)).subscribe({
       next: (time) => {
         this.time = time;
+        this.montarTela(time);
         this.carregando = false;
         this.cdr.detectChanges();
-        this.iniciarAnimacoes();
       },
       error: (err) => {
         console.error('[time-detalhes] falha ao buscar time', err);
@@ -84,108 +135,232 @@ export class TimeDetalhesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    if (this.time) this.iniciarAnimacoes();
-  }
-
-  selecionarAba(aba: AbaTime): void {
-    this.abaAtiva = aba;
-    setTimeout(() => this.iniciarAnimacoes(), 30);
-  }
-
   voltar(): void {
     this.router.navigate(['/times']);
   }
 
-  /* ============================== Elenco / campo ============================== */
+  /** "Borussia Dortmund" -> ["Borussia ", "Dortmund"]: a última palavra vai em verde. */
+  /** Resumo quebrado em trechos, marcando os anos (1850–2099) para destacá-los em verde. */
+  get historiaTrechos(): { texto: string; ano: boolean }[] {
+    const resumo = this.time?.resumoHistorico ?? '';
+    return resumo
+      .split(/\b(1[89]\d\d|20\d\d)\b/)
+      .filter(Boolean)
+      .map((texto) => ({ texto, ano: /^(1[89]\d\d|20\d\d)$/.test(texto) }));
+  }
 
-  get slotsDaFormacao(): SlotComJogador[] {
-    const time = this.time;
-    if (!time || !time.elenco || time.elenco.length === 0) return [];
+  get nomePartes(): [string, string] {
+    const nome = (this.time?.nome ?? '').trim();
+    const i = nome.lastIndexOf(' ');
+    return i < 0 ? ['', nome] : [nome.slice(0, i + 1), nome.slice(i + 1)];
+  }
 
-    const titulares: JogadorTime[] = time.elenco.filter((j: JogadorTime) => j.titular);
+  uniformeUrl(tipo: string): string | null {
+    return this.time?.uniformes?.find((u) => u.tipo === tipo)?.imagemUrl ?? null;
+  }
 
-    const poolPorPosicao: Record<string, JogadorTime[]> = {};
-    titulares.forEach((j: JogadorTime) => {
-      if (!poolPorPosicao[j.posicao]) poolPorPosicao[j.posicao] = [];
-      poolPorPosicao[j.posicao].push(j);
-    });
+  esconderImagem(evento: Event): void {
+    (evento.target as HTMLElement).style.display = 'none';
+  }
 
+  /* ============================== Montagem ============================== */
+
+  private montarTela(time: TimeDetalhes): void {
+    const elenco = time.elenco ?? [];
+    this.campo = this.montarCampo(elenco);
+    this.linhasElenco = this.montarLinhas(elenco);
+
+    this.notas = [
+      { label: 'Classificação Geral', valor: arredondar(time.overallMedio) },
+      { label: 'Ataque', valor: arredondar(time.overallAtaque) },
+      { label: 'Meio-Campo', valor: arredondar(time.overallMeio) },
+      { label: 'Defesa', valor: arredondar(time.overallDefesa) },
+    ];
+
+    const titulares = this.campo.map((c) => c.jogador).filter((j): j is JogadorTime => !!j);
+    const capitao = this.campo.find((c) => c.capitao)?.jogador;
+    const idadesXI = titulares.map((j) => j.idade).filter((i): i is number => i != null);
+
+    this.informacoes = [
+      { label: 'Estádio', valor: time.estadio || '—' },
+      { label: 'Capacidade', valor: time.capacidadeEstadio ? time.capacidadeEstadio.toLocaleString('pt-BR') : '—' },
+      { label: 'Cidade', valor: time.cidade || '—' },
+      { label: 'Fundação', valor: time.fundacao ? String(time.fundacao) : '—' },
+      { label: 'Time Rival', valor: time.rivalNome || '—' },
+      { label: 'Prestígio internacional', valor: time.prestigioInternacional != null ? String(time.prestigioInternacional) : '—' },
+      { label: 'Prestígio local', valor: time.prestigioLocal != null ? String(time.prestigioLocal) : '—' },
+      { label: 'Orçamento de Transferências', valor: formatarEuro(time.orcamento) },
+      { label: 'Valor Do Clube', valor: formatarEuro(time.valorElenco) },
+      { label: 'Idade Média Inicial dos XI', valor: idadesXI.length ? (soma(idadesXI) / idadesXI.length).toFixed(2) : '—' },
+      { label: 'Idade Média da Equipe Inteira', valor: time.idadeMedia ? time.idadeMedia.toFixed(2) : '—' },
+    ];
+
+    this.batedores = [
+      { label: 'Capitão', valor: capitao?.nome || '—' },
+      { label: 'Falta de perto', valor: melhor(titulares, (j) => j.precisaoFalta) },
+      { label: 'Falta de longe', valor: melhor(titulares, (j) => somaOuNull(j.precisaoFalta, j.chutesDeLonge)) },
+      { label: 'Falta de perto esq.', valor: melhor(titulares, (j) => j.precisaoFalta, 'Left') },
+      { label: 'Falta de perto dir.', valor: melhor(titulares, (j) => j.precisaoFalta, 'Right') },
+      { label: 'Batedor de pênaltis', valor: melhor(titulares, (j) => j.penaltis) },
+      { label: 'Escanteio esquerdo', valor: melhor(titulares, (j) => somaOuNull(j.cruzamento, j.curva), 'Left') },
+      { label: 'Escanteio direito', valor: melhor(titulares, (j) => somaOuNull(j.cruzamento, j.curva), 'Right') },
+    ];
+  }
+
+  /** Encaixa o elenco no 3-4-2-1 e distribui os reservas pela vaga que mais combina com cada um. */
+  private montarCampo(elenco: JogadorTime[]): JogadorCampo[] {
+    const porOverall = [...elenco].sort((a, b) => (b.overall ?? 0) - (a.overall ?? 0));
     const usados = new Set<number>();
+    const escolhido = new Map<string, JogadorTime>();
+    const vagas = ORDEM_PREENCHIMENTO.map((s) => FORMACAO.find((v) => v.sigla === s)!);
 
-    return FORMACAO_4_3_3.map((slot: SlotFormacao): SlotComJogador => {
-      // 1a tentativa: posicao primaria exata, ainda nao usada
-      const pool = poolPorPosicao[slot.posicao] || [];
-      let jogador: JogadorTime | null = pool.find((j) => !usados.has(j.id)) ?? null;
-
-      // 2a tentativa: algum titular que tenha essa posicao como alternativa
-      if (!jogador) {
-        jogador =
-          titulares.find((j: JogadorTime) => {
-            if (usados.has(j.id)) return false;
-            const alternativas = (j as unknown as { posicoesAlternativas?: string })
-              .posicoesAlternativas;
-            if (!alternativas) return false;
-            return alternativas
-              .split(',')
-              .map((s) => s.trim())
-              .includes(slot.posicao);
-          }) ?? null;
+    /* Cada vaga fica com quem tem a maior nota ajustada: overall menos 4 pontos
+       por degrau na lista de preferência da vaga. Assim um ponta de 87 ainda
+       ganha de um meia de 75 na posição exata. */
+    const preencher = (pontuar: (j: JogadorTime, vaga: VagaFormacao) => number | null) => {
+      for (const vaga of vagas) {
+        if (escolhido.has(vaga.sigla)) continue;
+        let melhorJogador: JogadorTime | null = null;
+        let melhorNota = -Infinity;
+        for (const j of porOverall) {
+          if (usados.has(j.id)) continue;
+          const nota = pontuar(j, vaga);
+          if (nota != null && nota > melhorNota) {
+            melhorNota = nota;
+            melhorJogador = j;
+          }
+        }
+        if (melhorJogador) {
+          escolhido.set(vaga.sigla, melhorJogador);
+          usados.add(melhorJogador.id);
+        }
       }
+    };
 
-      if (jogador) usados.add(jogador.id);
-      return { ...slot, jogador };
+    // 1) posição principal
+    preencher((j, v) => {
+      const i = v.aceitas.indexOf(j.posicao);
+      return i < 0 ? null : (j.overall ?? 0) - 4 * i;
+    });
+    // 2) posições alternativas
+    preencher((j, v) => {
+      const i = alternativas(j).reduce((m, p) => {
+        const k = v.aceitas.indexOf(p);
+        return k >= 0 && k < m ? k : m;
+      }, Infinity);
+      return i === Infinity ? null : (j.overall ?? 0) - 4 * (i + v.aceitas.length);
+    });
+    // 3) qualquer um que sobrou (elenco curto)
+    preencher((j) => j.overall ?? 0);
+
+    // Reservas: cada um vai para a vaga cuja lista aceita a posição dele mais cedo.
+    const reservasPorVaga = new Map<string, JogadorTime[]>(FORMACAO.map((v) => [v.sigla, []]));
+    for (const j of porOverall) {
+      if (usados.has(j.id)) continue;
+      let destino: VagaFormacao | null = null;
+      let melhorIndice = Infinity;
+      for (const vaga of FORMACAO) {
+        const i = vaga.aceitas.indexOf(j.posicao);
+        const empate = i === melhorIndice && destino
+          && reservasPorVaga.get(vaga.sigla)!.length < reservasPorVaga.get(destino.sigla)!.length;
+        if (i >= 0 && (i < melhorIndice || empate)) {
+          destino = vaga;
+          melhorIndice = i;
+        }
+      }
+      if (destino) reservasPorVaga.get(destino.sigla)!.push(j);
+    }
+
+    const titulares = [...escolhido.values()];
+    const capitaoId = titulares.sort((a, b) => (b.overall ?? 0) - (a.overall ?? 0))[0]?.id;
+
+    return FORMACAO.map((vaga) => {
+      const jogador = escolhido.get(vaga.sigla) ?? null;
+      return {
+        vaga,
+        jogador,
+        reservas: reservasPorVaga.get(vaga.sigla)!,
+        capitao: !!jogador && jogador.id === capitaoId,
+      };
     });
   }
 
-  get banco(): JogadorTime[] {
-    const time = this.time;
-    if (!time || !time.elenco || time.elenco.length === 0) return [];
+  private montarLinhas(elenco: JogadorTime[]): LinhaElenco[] {
+    const vagaDoJogador = new Map<number, string>();
+    this.campo.forEach((c) => c.jogador && vagaDoJogador.set(c.jogador.id, c.vaga.sigla));
 
-    const idsEmCampo = new Set(
-      this.slotsDaFormacao
-        .map((s) => s.jogador?.id)
-        .filter((id): id is number => id !== undefined),
-    );
+    const linha = (j: JogadorTime): LinhaElenco => {
+      const siglas = [j.posicao, ...alternativas(j)]
+        .map((p) => SIGLA_PT[p] ?? p)
+        .filter((s, i, arr) => arr.indexOf(s) === i);
+      return {
+        jogador: j,
+        vaga: vagaDoJogador.get(j.id) ?? 'SUB',
+        nacao: codigoNacao(j.paisCodigo, j.nacionalidade),
+        siglas: siglas.map((t) => ({ t, c: corPosicao(t) })),
+      };
+    };
 
-    return time.elenco
-      .filter((j: JogadorTime) => !idsEmCampo.has(j.id))
-      .sort((a: JogadorTime, b: JogadorTime) => b.overall - a.overall);
+    const titulares = ORDEM_TABELA
+      .map((s) => this.campo.find((c) => c.vaga.sigla === s)?.jogador)
+      .filter((j): j is JogadorTime => !!j);
+    const reservas = elenco
+      .filter((j) => !vagaDoJogador.has(j.id))
+      .sort((a, b) => (b.overall ?? 0) - (a.overall ?? 0));
+
+    return [...titulares, ...reservas].map(linha);
   }
 
-  /* ============================== Uniformes ============================== */
+  formatarEuro = formatarEuro;
+  fotoJogador = urlImagemJogador;
+}
 
-  uniformePorTipo(tipo: 'Home' | 'Away' | 'Third') {
-    return this.time?.uniformes?.find((u) => u.tipo === tipo) ?? null;
+/* ============================== Utilitários ============================== */
+
+function alternativas(j: JogadorTime): string[] {
+  return (j.posicoesAlternativas ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+}
+
+function arredondar(v: number | null | undefined): number | null {
+  return v == null ? null : Math.round(v);
+}
+
+function soma(v: number[]): number {
+  return v.reduce((a, b) => a + b, 0);
+}
+
+function somaOuNull(a: number | null | undefined, b: number | null | undefined): number | null {
+  return a == null || b == null ? null : a + b;
+}
+
+/** Nome do titular com o maior valor no critério; prefere o pé indicado, se houver. */
+function melhor(
+  jogadores: JogadorTime[],
+  criterio: (j: JogadorTime) => number | null | undefined,
+  pe?: 'Left' | 'Right',
+): string {
+  const comValor = jogadores.filter((j) => criterio(j) != null);
+  const pool = pe ? comValor.filter((j) => j.peDominante === pe) : comValor;
+  const lista = pool.length ? pool : comValor;
+  if (!lista.length) return '—';
+  return lista.reduce((a, b) => ((criterio(b) ?? 0) > (criterio(a) ?? 0) ? b : a)).nome;
+}
+
+/** "gb-eng" -> "ENG", "fr" -> "FR"; sem código conhecido, usa o nome do país. */
+function codigoNacao(codigo: string | null | undefined, nome: string | null | undefined): string {
+  if (codigo && codigo !== 'un') return codigo.split('-').pop()!.toUpperCase();
+  return nome || '—';
+}
+
+/** 173000 -> "€173K", 68000000 -> "€68M", 1.9e9 -> "€1.9B". Nulo ou zero -> "—". */
+function formatarEuro(v: number | null | undefined): string {
+  if (!v) return '—';
+  const faixas: [number, string][] = [[1e9, 'B'], [1e6, 'M'], [1e3, 'K']];
+  for (const [base, sufixo] of faixas) {
+    if (v >= base) {
+      const n = v / base;
+      return `€${n >= 100 ? Math.round(n) : Number(n.toFixed(1))}${sufixo}`;
+    }
   }
-
-  get uniformeTemporada(): string | null {
-    return this.time?.uniformes?.[0]?.temporada ?? null;
-  }
-
-  get totalTitulos(): number {
-    return this.time?.titulos?.reduce((soma, t) => soma + (t.quantidade || 0), 0) ?? 0;
-  }
-
-  /* ============================== Animacoes (gauges + barras) ============================== */
-
-  private iniciarAnimacoes(): void {
-    setTimeout(() => {
-      document.querySelectorAll<SVGCircleElement>('[data-gauge-pct]').forEach((el) => {
-        const pct = parseFloat(el.dataset['gaugePct'] || '0');
-        const perimetro = 2 * Math.PI * 50;
-        const offset = perimetro - (perimetro * pct) / 100;
-        requestAnimationFrame(() => (el.style.strokeDashoffset = `${offset}`));
-      });
-
-      document.querySelectorAll<HTMLElement>('[data-barra-largura]').forEach((el) => {
-        const largura = el.dataset['barraLargura'] || '0';
-        requestAnimationFrame(() => (el.style.width = `${largura}%`));
-      });
-
-      document.querySelectorAll<HTMLElement>('.td-trofeu').forEach((el, i) => {
-        setTimeout(() => el.classList.add('td-trofeu--visivel'), i * 70);
-      });
-    }, 50);
-  }
+  return `€${v}`;
 }
