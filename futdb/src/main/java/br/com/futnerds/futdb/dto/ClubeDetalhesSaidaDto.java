@@ -36,6 +36,7 @@ public class ClubeDetalhesSaidaDto {
     private String escudoUrl;
     private String ligaNome;
     private String paisNome;
+    private String paisCodigo;
     private String cidade;
     private String estadio;
     private Integer capacidadeEstadio;
@@ -57,18 +58,19 @@ public class ClubeDetalhesSaidaDto {
     private List<JogadorTimeSaidaDto> elenco;
     private List<String> titulos;
 
-    public ClubeDetalhesSaidaDto(Clube clube, List<Jogador> elenco, List<Uniforme> uniformes) {
+    public ClubeDetalhesSaidaDto(Clube clube, List<Jogador> elenco, List<Uniforme> uniformes, String resumoHistorico) {
         this.id = clube.getId();
         this.nome = clube.getNome();
         this.escudoUrl = clube.getEscudoUrl();
         this.ligaNome = clube.getLiga() != null ? clube.getLiga().getNome() : null;
         this.paisNome = clube.getLiga() != null && clube.getLiga().getNacao() != null
                 ? clube.getLiga().getNacao().getNome() : null;
+        this.paisCodigo = this.paisNome != null ? ConversorPaisCodigo.obterCodigo(this.paisNome) : null;
         this.cidade = clube.getCidade();
         this.estadio = clube.getEstadio();
         this.capacidadeEstadio = clube.getCapacidadeEstadio();
         this.fundacao = clube.getFundacao();
-        this.resumoHistorico = null;
+        this.resumoHistorico = resumoHistorico;
         this.orcamento = null;
         this.rivalNome = null;
         this.prestigioInternacional = null;
@@ -150,6 +152,10 @@ public class ClubeDetalhesSaidaDto {
 
     public String getPaisNome() {
         return paisNome;
+    }
+
+    public String getPaisCodigo() {
+        return paisCodigo;
     }
 
     public String getCidade() {

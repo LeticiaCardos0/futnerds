@@ -8,6 +8,7 @@ import br.com.futnerds.futdb.model.Uniforme;
 import br.com.futnerds.futdb.repository.ClubeRepository;
 import br.com.futnerds.futdb.repository.JogadorRepository;
 import br.com.futnerds.futdb.repository.UniformeRepository;
+import br.com.futnerds.futdb.service.ResumoClubeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,11 +31,14 @@ public class ClubeController {
     private final ClubeRepository clubeRepository;
     private final JogadorRepository jogadorRepository;
     private final UniformeRepository uniformeRepository;
+    private final ResumoClubeService resumoClubeService;
 
-    public ClubeController(ClubeRepository clubeRepository, JogadorRepository jogadorRepository, UniformeRepository uniformeRepository) {
+    public ClubeController(ClubeRepository clubeRepository, JogadorRepository jogadorRepository,
+                           UniformeRepository uniformeRepository, ResumoClubeService resumoClubeService) {
         this.clubeRepository = clubeRepository;
         this.jogadorRepository = jogadorRepository;
         this.uniformeRepository = uniformeRepository;
+        this.resumoClubeService = resumoClubeService;
     }
 
     @GetMapping
@@ -76,7 +80,7 @@ public class ClubeController {
         Clube clube = clubeRepository.findById(id).orElseThrow();
         List<Jogador> elenco = jogadorRepository.findByClube_Id(id);
         List<Uniforme> uniformes = uniformeRepository.findByClube_Id(id);
-        return new ClubeDetalhesSaidaDto(clube, elenco, uniformes);
+        return new ClubeDetalhesSaidaDto(clube, elenco, uniformes, resumoClubeService.buscarPorNome(clube.getNome()));
     }
 
     @ExceptionHandler(NoSuchElementException.class)
