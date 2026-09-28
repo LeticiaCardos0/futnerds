@@ -41,6 +41,17 @@
             <i class="pi pi-chevron-down filtro-seta" aria-hidden="true"></i>
             <ul id="filtro-pais-lista" class="filtro-lista" role="listbox" aria-label="Países e regiões" hidden></ul>
           </div>
+
+          <!-- Times: não lista nada até o usuário digitar o nome do clube -->
+          <div id="filtro-time" class="nacoes-filtro nacoes-filtro--time">
+            <span class="filtro-icone" aria-hidden="true"><i class="pi pi-shield"></i></span>
+            <input class="filtro-campo" type="text" placeholder="Times" autocomplete="off" spellcheck="false"
+              role="combobox" aria-label="Buscar time pelo nome" aria-autocomplete="list"
+              aria-expanded="false" aria-controls="filtro-time-lista" />
+            <button type="button" class="filtro-limpar" aria-label="Limpar time" hidden><i class="pi pi-times"></i></button>
+            <i class="pi pi-search filtro-seta" aria-hidden="true"></i>
+            <ul id="filtro-time-lista" class="filtro-lista" role="listbox" aria-label="Times" hidden></ul>
+          </div>
         </div>
       </div>
     </section>

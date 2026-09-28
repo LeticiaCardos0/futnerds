@@ -1961,7 +1961,6 @@ const ordemContinente = (continente: string) => {
   const i = ORDEM_CONTINENTES.indexOf(continente);
   return i < 0 ? ORDEM_CONTINENTES.length : i;
 };
-const infoClubes = (clubes: number) => (clubes ? `${clubes} ${plural(clubes, 'clube', 'clubes')}` : 'sem ligas');
 const idPais = (iso2: string, subnacao: string | null) => `${iso2}|${subnacao ?? ''}`;
 
 /** Uma opção por país do globo; o "gb" vira uma por seleção (Inglaterra, Escócia...). */
@@ -1978,14 +1977,13 @@ function opcoesPaises(): OpcaoFiltro[] {
     const base = { grupo: continente || 'Outros', ordem: ordemContinente(continente) };
     if (mock?.subnacoes) {
       mock.subnacoes.forEach((sub) =>
-        opcoes.push({ ...base, id: idPais(iso2, sub.nomeApi), rotulo: sub.nome, info: infoClubes(sub.clubes), icone: urlBandeira(sub.bandeira), termos: sub.nomeApi })
+        opcoes.push({ ...base, id: idPais(iso2, sub.nomeApi), rotulo: sub.nome, icone: urlBandeira(sub.bandeira), termos: sub.nomeApi })
       );
     } else {
       opcoes.push({
         ...base,
         id: idPais(iso2, null),
         rotulo: nomeExibicaoPais(pais),
-        info: infoClubes(mock?.clubes ?? 0),
         icone: urlBandeira(codigoBandeira(iso2)),
         termos: pais.data.name,
       });
@@ -2021,15 +2019,63 @@ function opcoesLigas(iso2Prioritario: string | null, subnacaoPrioritaria: string
           fama,
           rotulo: obterNomeExibicaoLiga(liga.nome),
           info: dono.nome,
+          infoBandeira: urlBandeira(dono.bandeira),
           icone: temLogoLiga(liga.nome) ? obterCaminhoLogoLiga(liga.nome) : urlBandeira(dono.bandeira),
           iconeBandeira: !temLogoLiga(liga.nome),
           iconeReserva: urlBandeira(dono.bandeira),
-          termos: liga.nome,
+          // o país sai da lista como texto, mas digitar "Espanha" ainda acha La Liga
+          termos: `${liga.nome} ${dono.nome}`,
         });
       })
     );
   });
   return opcoes.sort((a, b) => a.ordem - b.ordem || a.fama - b.fama || a.rotulo.localeCompare(b.rotulo, 'pt-BR'));
+}
+
+/** Liga (nome da API) -> país/seleção dona dela, para o filtro de times saber onde levar o globo. */
+function donosDasLigas(): Map<string, LigaDoFiltro & { paisNome: string; bandeira: string }> {
+  const donos = new Map<string, LigaDoFiltro & { paisNome: string; bandeira: string }>();
+  Object.values(DADOS_MOCK).forEach((mock) => {
+    const selecoes = mock.subnacoes
+      ? mock.subnacoes.map((s) => ({ ligas: s.ligas, subnacao: s.nomeApi as string | null, nome: s.nome, bandeira: s.bandeira }))
+      : [{ ligas: mock.ligas, subnacao: null, nome: mock.nome, bandeira: codigoBandeira(mock.iso2) }];
+    selecoes.forEach((s) =>
+      s.ligas.forEach((liga) =>
+        donos.set(liga.nome, { nome: liga.nome, iso2: mock.iso2, subnacao: s.subnacao, paisNome: s.nome, bandeira: s.bandeira })
+      )
+    );
+  });
+  return donos;
+}
+
+interface TimeDoFiltro { id: number; nome: string; escudoUrl: string | null; ligaNome: string | null; }
+let timesDoFiltro = new Map<string, LigaDoFiltro | null>();
+
+/** Todos os clubes, em ordem alfabética; o filtro só mostra os que batem com o que foi digitado. */
+async function opcoesTimes(): Promise<OpcaoFiltro[]> {
+  const resposta = await fetch(`${API_URL}/times?page=0&size=2000`).then((r) => (r.ok ? r.json() : { times: [] }));
+  const times = (resposta.times ?? []) as TimeDoFiltro[];
+  const donos = donosDasLigas();
+  timesDoFiltro = new Map();
+  return times
+    .map((time): OpcaoFiltro => {
+      const dono = time.ligaNome ? donos.get(time.ligaNome) : undefined;
+      const id = String(time.id);
+      timesDoFiltro.set(id, dono ? { nome: dono.nome, iso2: dono.iso2, subnacao: dono.subnacao } : null);
+      const bandeira = dono ? urlBandeira(dono.bandeira) : undefined;
+      const liga = time.ligaNome ? obterNomeExibicaoLiga(time.ligaNome) : '';
+      return {
+        id,
+        grupo: 'Times',
+        rotulo: time.nome,
+        info: [liga, dono?.paisNome].filter(Boolean).join(' · '),
+        infoBandeira: bandeira,
+        icone: time.escudoUrl ?? bandeira ?? '',
+        iconeReserva: bandeira,
+        termos: time.ligaNome ?? '',
+      };
+    })
+    .sort((a, b) => a.rotulo.localeCompare(b.rotulo, 'pt-BR'));
 }
 
 /** Os filtros acompanham o país que o globo mostra (clique ou filtro). */
@@ -2056,6 +2102,20 @@ function destacarLigaFiltrada(): void {
   });
 }
 
+/** Seleciona a liga de `?liga=` como se tivesse sido escolhida no filtro. */
+function abrirLigaDaUrl(): boolean {
+  const nome = new URLSearchParams(window.location.search).get('liga')?.trim().toLowerCase();
+  if (!nome) return false;
+  const achada = [...ligasDoFiltro.entries()].find(([, liga]) => liga.nome.toLowerCase() === nome);
+  const pais = achada && paisesRuntime.find((p) => p.data.iso2 === achada[1].iso2);
+  if (!achada || !pais) return false;
+  ligaFiltrada = achada[1];
+  irParaPais(pais, ligaFiltrada.subnacao);
+  filtroLiga?.definirValor(achada[0]);
+  destacarLigaFiltrada();
+  return true;
+}
+
 function montarFiltros(): void {
   const raizLiga = document.getElementById('filtro-liga');
   const raizPais = document.getElementById('filtro-pais');
@@ -2079,6 +2139,26 @@ function montarFiltros(): void {
       if (pais) irParaPais(pais, ligaFiltrada.subnacao);
     });
     filtroLiga.definirOpcoes(opcoesLigas(null, null));
+  }
+  const raizTime = document.getElementById('filtro-time');
+  if (raizTime) {
+    const filtroTime = criarFiltro(
+      raizTime,
+      (opcao) => {
+        // o time leva ao país dele e deixa a liga do clube destacada no painel
+        const liga = opcao ? timesDoFiltro.get(opcao.id) ?? null : null;
+        if (!liga) return;
+        ligaFiltrada = liga;
+        const pais = paisesRuntime.find((p) => p.data.iso2 === liga.iso2);
+        if (pais) irParaPais(pais, liga.subnacao);
+        filtroLiga?.definirValor(`${liga.iso2}|${liga.subnacao ?? ''}|${liga.nome}`);
+        destacarLigaFiltrada();
+      },
+      { exigeBusca: { minimo: 2, dica: 'Digite o nome do clube' }, limite: 30 }
+    );
+    opcoesTimes()
+      .then((opcoes) => globoAtivo && filtroTime.definirOpcoes(opcoes))
+      .catch(() => undefined); // sem API o campo só não encontra nada
   }
 }
 
@@ -2210,6 +2290,8 @@ carregarDadosReais().finally(() => {
   montarFiltros();
   // a 4K entra depois da primeira pintura, com a página já respondendo
   setTimeout(() => void melhorarTexturaDia(), 1200);
+  // /nacoes?liga=<nome da liga> (migalhas do detalhe do time) abre já na liga; senão, no Brasil
+  if (abrirLigaDaUrl()) return;
   const paisBrasilInicial = paisesRuntime.find((p) => p.data.iso2 === 'br');
   if (paisBrasilInicial) {
     selecionarPais(paisBrasilInicial);

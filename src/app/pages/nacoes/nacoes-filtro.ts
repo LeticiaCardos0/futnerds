@@ -7,8 +7,10 @@ export interface OpcaoFiltro {
   id: string;
   grupo: string;
   rotulo: string;
-  /** Texto discreto à direita (ex.: país da liga, quantidade de clubes). */
+  /** Texto discreto à direita. Com `infoBandeira`, vira só a dica (title) da bandeira. */
   info?: string;
+  /** Bandeira pequena à direita no lugar do texto (ex.: país da liga). */
+  infoBandeira?: string;
   icone: string;
   /** O ícone é uma bandeira (fica redondo), não um logo. */
   iconeBandeira?: boolean;
@@ -33,7 +35,14 @@ const escapar = (texto: string) =>
 /** Abaixo disso a lista abre para cima, se houver mais espaço lá. */
 const ESPACO_MINIMO_ABAIXO = 280;
 
-export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro | null) => void): Filtro {
+export interface ConfigFiltro {
+  /** Lista vazia até o usuário digitar `minimo` letras; antes disso mostra `dica`. */
+  exigeBusca?: { minimo: number; dica: string };
+  /** Máximo de resultados mostrados (listas grandes, como a de clubes). */
+  limite?: number;
+}
+
+export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro | null) => void, config: ConfigFiltro = {}): Filtro {
   const campo = raiz.querySelector<HTMLInputElement>('.filtro-campo')!;
   const lista = raiz.querySelector<HTMLUListElement>('.filtro-lista')!;
   const iconeEl = raiz.querySelector<HTMLElement>('.filtro-icone')!;
@@ -62,8 +71,9 @@ export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro |
   /** Mantém a ordem dos grupos; dentro de cada um, quem começa com o termo vem antes. */
   function filtrar(termo: string): OpcaoFiltro[] {
     const q = semAcento(termo);
+    if (config.exigeBusca && q.length < config.exigeBusca.minimo) return [];
     if (!q) return opcoes;
-    return opcoes
+    const achadas = opcoes
       .map((opcao, ordem) => {
         const nome = semAcento(opcao.rotulo);
         const outros = semAcento(opcao.termos ?? '');
@@ -73,6 +83,13 @@ export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro |
       .filter((r) => r.pos >= 0)
       .sort((a, b) => (a.opcao.grupo === b.opcao.grupo ? a.pos - b.pos || a.ordem - b.ordem : a.ordem - b.ordem))
       .map((r) => r.opcao);
+    return config.limite ? achadas.slice(0, config.limite) : achadas;
+  }
+
+  /** Mensagem da lista vazia: a dica enquanto falta digitar, senão "Nada encontrado." */
+  function mensagemVazia(): string {
+    const dica = config.exigeBusca;
+    return dica && semAcento(campo.value).length < dica.minimo ? dica.dica : 'Nada encontrado.';
   }
 
   function renderizar(): void {
@@ -85,15 +102,22 @@ export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro |
             const classes = ['filtro-item'];
             if (i === indice) classes.push('filtro-item--ativo');
             if (opcao.id === selecionada?.id) classes.push('filtro-item--selecionado');
+            if (opcao.infoBandeira) classes.push('filtro-item--com-bandeira');
             return `${cabecalho}
         <li id="${lista.id}-op-${i}" role="option" class="${classes.join(' ')}" data-indice="${i}" aria-selected="${opcao.id === selecionada?.id}">
           <span class="filtro-item-icone">${imagem(opcao)}</span>
           <span class="filtro-item-nome">${escapar(opcao.rotulo)}</span>
-          ${opcao.info ? `<span class="filtro-item-info">${escapar(opcao.info)}</span>` : ''}
+          ${
+            opcao.infoBandeira
+              ? `<img class="filtro-item-bandeira" src="${escapar(opcao.infoBandeira)}" alt="${escapar(opcao.info ?? '')}" title="${escapar(opcao.info ?? '')}" loading="lazy" />`
+              : opcao.info
+                ? `<span class="filtro-item-info">${escapar(opcao.info)}</span>`
+                : ''
+          }
         </li>`;
           })
           .join('')
-      : '<li class="filtro-vazio" role="presentation">Nada encontrado.</li>';
+      : `<li class="filtro-vazio" role="presentation">${escapar(mensagemVazia())}</li>`;
     if (indice >= 0) campo.setAttribute('aria-activedescendant', `${lista.id}-op-${indice}`);
     else campo.removeAttribute('aria-activedescendant');
   }
@@ -112,8 +136,8 @@ export function criarFiltro(raiz: HTMLElement, aoEscolher: (opcao: OpcaoFiltro |
     // digitar e o nome escolhido passa a ser o placeholder
     if (limparCampo) {
       campo.value = '';
-      visiveis = opcoes;
-      indice = selecionada ? opcoes.findIndex((o) => o.id === selecionada!.id) : -1;
+      visiveis = config.exigeBusca ? [] : opcoes;
+      indice = selecionada ? visiveis.findIndex((o) => o.id === selecionada!.id) : -1;
       renderizar();
     }
     campo.placeholder = selecionada?.rotulo ?? placeholder;

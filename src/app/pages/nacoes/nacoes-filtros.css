@@ -7,7 +7,7 @@
    ============================================================================ */
 
 .nacoes-navegador{ max-width: 344px; }
-.nacoes-filtros{ display:grid; grid-template-columns: minmax(0, 1fr); gap:10px; }
+.nacoes-filtros{ display:grid; grid-template-columns: minmax(0, 1fr); gap:10px; max-width: 260px; }
 
 /* --- Campo --- */
 .nacoes-filtro{
@@ -57,6 +57,8 @@
   transition: transform 0.2s ease, color 0.2s ease;
 }
 .nacoes-filtro--aberto .filtro-seta{ transform: rotate(180deg); color: var(--nacoes-verde); }
+/* No de times o ícone é uma lupa: acende, mas não gira. */
+.nacoes-filtro--time.nacoes-filtro--aberto .filtro-seta{ transform:none; }
 
 /* --- Ícones: logo da liga inteiro; bandeira redonda --- */
 .filtro-icone img, .filtro-item-icone img{ width:22px; height:22px; flex:none; object-fit:contain; }
@@ -96,6 +98,12 @@
 .filtro-item-icone{ flex:none; width:22px; height:22px; display:flex; }
 .filtro-item-nome{ flex:1; min-width:0; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .filtro-item-info{ font-size:12px; color: var(--nacoes-texto-3); white-space:nowrap; }
+/* Bandeira do país logo depois do nome da liga (não encostada na direita). */
+.filtro-item--com-bandeira .filtro-item-nome{ flex:0 1 auto; }
+.filtro-item-bandeira{
+  flex:none; width:20px; height:14px; object-fit:cover; border-radius:2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.14);
+}
 .filtro-item--ativo, .filtro-item:hover{ background: color-mix(in srgb, var(--color-accent) 14%, transparent); }
 .filtro-item--ativo .filtro-item-info{ color: var(--nacoes-verde); }
 .filtro-item--selecionado{ box-shadow: inset 2px 0 0 var(--nacoes-verde); }
@@ -107,7 +115,7 @@
 /* telas médias: a coluna vira faixa acima do globo, com os dois lado a lado */
 @media (max-width: 1280px){
   .nacoes-navegador{ max-width: 600px; }
-  .nacoes-filtros{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nacoes-filtros{ grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 540px; }
 }
 @media (max-width: 520px){
   .nacoes-filtros{ grid-template-columns: minmax(0, 1fr); }
