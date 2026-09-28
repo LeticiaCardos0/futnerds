@@ -12,10 +12,19 @@
 
   <main *ngIf="!carregando && !erroCarregamento && time" class="td-main">
 
+    <!-- Cena do topo: estádio do clube ao fundo (quando houver foto), em degradê (holofotes só onde estão marcados) -->
+    <div class="td-cena" [class.td-cena--estadio]="fundo">
+    <div class="td-cena-fundo" *ngIf="fundo" aria-hidden="true">
+      <div class="td-cena-foto" [style.backgroundImage]="'url(&quot;' + fundo.foto + '&quot;)'"></div>
+      <div class="td-cena-degrade"></div>
+      <canvas #holofotes class="td-cena-holofotes" *ngIf="fundo.refletores"></canvas>
+    </div>
+
     <!-- Migalhas -->
     <div class="td-migalhas">
-      <a routerLink="/times">Times</a><span>/</span>
-      <span>{{ time.ligaNome || 'Liga' }}</span><span>/</span>
+      <a routerLink="/nacoes">Nações</a><span>/</span>
+      <a *ngIf="time.ligaNome; else semLiga" routerLink="/nacoes" [queryParams]="{ liga: time.ligaNome }">{{ time.ligaNome }}</a>
+      <ng-template #semLiga><span>Liga</span></ng-template><span>/</span>
       <span class="td-migalhas-atual">{{ time.nome }}</span>
     </div>
 
@@ -73,6 +82,14 @@
       </div>
     </section>
 
+    <!-- Crédito da foto do estádio (as licenças CC BY/BY-SA exigem autor e licença) -->
+    <ng-container *ngIf="fundo as f">
+      <p class="td-cena-credito" *ngIf="f.autor || f.licenca">
+        Foto do estádio: <a *ngIf="f.pagina; else semLink" [href]="f.pagina" target="_blank" rel="noopener">{{ f.autor || 'Wikimedia Commons' }}</a><ng-template #semLink>{{ f.autor }}</ng-template><span *ngIf="f.licenca"> · {{ f.licenca }}</span>
+      </p>
+    </ng-container>
+    </div>
+
     <!-- Bola parada | campo | elenco -->
     <section class="td-baixo">
       <div class="td-info td-batedores">
@@ -119,7 +136,10 @@
       <div class="td-tabela-rolagem">
         <div class="td-tabela">
           <div class="td-grade td-cabecalho">
-            <span>Nome</span><span>Idade</span><span>Geral</span><span>Pot.</span><span>Time &amp; Contrato</span><span>Salário</span><span>Valor</span><span>Estatísticas</span>
+            <button type="button" *ngFor="let c of colunasElenco" class="td-ordenar" [class.td-ordenar--ativo]="ordem?.chave === c.chave"
+                    [attr.aria-sort]="ariaOrdem(c.chave)" [title]="'Ordenar por ' + c.label" (click)="ordenar(c.chave)">
+              {{ c.label }}<span class="td-ordenar-seta" aria-hidden="true">{{ setaOrdem(c.chave) }}</span>
+            </button>
           </div>
           <a class="td-grade td-linha-elenco" *ngFor="let l of linhasElenco" [routerLink]="['/jogadores', l.jogador.id]">
             <div class="td-cel-nome">

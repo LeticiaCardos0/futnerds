@@ -10,6 +10,39 @@
   -webkit-font-smoothing: antialiased;
 }
 .td-pagina a { color: inherit; text-decoration: none; }
+.td-pagina { overflow-x: clip; } /* o fundo do estádio ocupa 100vw */
+
+/* --- Cena do topo: foto do estádio, estática, em degradê --- */
+.td-cena { position: relative; display: flex; flex-direction: column; gap: 28px; }
+.td-cena > :not(.td-cena-fundo) { position: relative; z-index: 1; }
+.td-cena-fundo {
+  position: absolute; z-index: 0; pointer-events: none; overflow: hidden;
+  top: -100px; bottom: -60px; left: 50%; width: 100vw; transform: translateX(-50%);
+}
+.td-cena-foto {
+  position: absolute; inset: 0; background-size: cover; background-position: center 55%;
+  filter: saturate(1.05) brightness(.85);
+}
+/* Degradê: escurece as laterais (painéis legíveis) e some no fundo da página. */
+.td-cena-degrade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 9, 10, .88) 0%, rgba(7, 9, 10, .35) 26%, rgba(7, 9, 10, .25) 50%, rgba(7, 9, 10, .35) 74%, rgba(7, 9, 10, .88) 100%),
+    linear-gradient(180deg, rgba(7, 9, 10, .55) 0%, rgba(7, 9, 10, .2) 30%, rgba(7, 9, 10, .55) 70%, #07090a 100%);
+}
+/* Holofotes (holofotes-estadio.ts): por cima do degradê, somando luz à foto. */
+.td-cena-holofotes {
+  position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+}
+.td-cena .td-cena-credito {
+  align-self: flex-end; margin: -16px 0 0; max-width: 60ch; font-size: 11px; color: #6f7d73; opacity: .75;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.td-cena-credito a { text-decoration: underline; text-decoration-color: #3a4a3f; }
+.td-cena-credito a:hover { color: #c9d2cb; }
+.td-cena--estadio .td-titulo { text-shadow: 0 4px 30px rgba(0, 0, 0, .6); }
 
 .td-estado { max-width: 1240px; margin: 0 auto; padding: 96px 24px; text-align: center; color: #8a988e; font-size: 14px; }
 .td-estado i { font-size: 24px; margin-bottom: 12px; }
@@ -85,18 +118,20 @@
 /* Linha: uniformes | campo | informações */
 /* Parte de baixo: bola parada | campo | elenco. O elenco não define a altura
    da linha (height:0 + min-height:100%): acompanha o campo e rola por dentro.
-   Abaixo de 1500px o elenco desce para a linha inteira; abaixo de 1000px, tudo
+   Abaixo de 1660px o elenco desce para a linha inteira; abaixo de 1000px, tudo
    empilha. */
 .td-baixo {
+  position: relative; z-index: 1; /* fica acima da ponta do fundo do estádio */
   display: grid; gap: 24px; align-items: stretch;
-  grid-template-columns: minmax(260px, 300px) minmax(480px, 740px) minmax(0, 1fr);
+  /* o elenco nunca fica mais estreito que a tabela (730px): quem cede é o campo */
+  grid-template-columns: minmax(260px, 300px) minmax(480px, 740px) minmax(730px, 1fr);
   grid-template-areas: "bola campo elenco";
 }
 .td-baixo .td-batedores { grid-area: bola; align-self: start; min-width: 0; padding-top: 18px; }
 .td-baixo .td-campo-wrap { grid-area: campo; }
 .td-baixo .td-elenco { grid-area: elenco; height: 0; min-height: 100%; }
 .td-batedores .td-card-titulo { margin-bottom: 6px; }
-@media (max-width: 1500px) {
+@media (max-width: 1660px) {
   .td-baixo { grid-template-columns: minmax(260px, 300px) minmax(0, 1fr); grid-template-areas: "bola campo" "elenco elenco"; }
   .td-baixo .td-elenco { height: auto; min-height: 0; max-height: 720px; }
 }
@@ -175,15 +210,35 @@
   min-width: 0; border: 1px solid #1a231d; border-radius: 16px; background: #0b0f0c;
   padding: 20px 20px 8px; display: flex; flex-direction: column; gap: 12px;
 }
-.td-tabela-rolagem { flex: 1; min-height: 0; overflow: auto; }
-.td-tabela { min-width: 700px; }
+/* Só rola na vertical: as colunas cabem na largura (e somem no celular, abaixo). */
+.td-tabela-rolagem { flex: 1; min-height: 0; overflow: hidden auto; }
+/* Barra fininha e escura, que só acende ao passar o mouse (padrão das outras telas). */
+.td-tabela-rolagem::-webkit-scrollbar { width: 6px; }
+.td-tabela-rolagem::-webkit-scrollbar-track { background: transparent; }
+.td-tabela-rolagem::-webkit-scrollbar-thumb { background: #1c261f; border-radius: 99px; }
+.td-tabela-rolagem:hover::-webkit-scrollbar-thumb { background: #2a372e; }
+.td-tabela-rolagem::-webkit-scrollbar-thumb:hover { background: #3a4a3f; }
+@supports not selector(::-webkit-scrollbar) {
+  .td-tabela-rolagem { scrollbar-width: thin; scrollbar-color: #2a372e transparent; }
+}
 .td-grade {
-  display: grid; grid-template-columns: minmax(170px, 1fr) 40px 46px 46px 116px 60px 60px 92px;
-  gap: 10px; align-items: center; padding: 10px 12px;
+  display: grid; grid-template-columns: minmax(160px, 1fr) 38px 44px 44px 112px 58px 58px 92px;
+  gap: 8px; align-items: center; padding: 10px 8px;
 }
 /* Cabeçalho fixo enquanto a lista rola. */
 .td-cabecalho { position: sticky; top: 0; z-index: 1; background: #0b0f0c; }
-.td-cabecalho { padding: 10px 12px; font: 600 11px Manrope, sans-serif; color: #6f7d73; text-transform: uppercase; letter-spacing: .6px; border-bottom: 1px solid #1a231d; }
+.td-cabecalho { padding: 10px 8px; font: 600 11px Manrope, sans-serif; color: #6f7d73; text-transform: uppercase; letter-spacing: .6px; border-bottom: 1px solid #1a231d; }
+/* Cabeçalho clicável: ordena a coluna. A seta aparece no hover e fica acesa na coluna ordenada. */
+.td-ordenar {
+  display: inline-flex; align-items: center; gap: 4px; min-width: 0; padding: 0; border: 0; background: none;
+  font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; text-align: left;
+  white-space: nowrap; cursor: pointer; transition: color .15s;
+}
+.td-ordenar:hover, .td-ordenar--ativo { color: #e8f0ea; }
+.td-ordenar:focus-visible { outline: 2px solid oklch(0.78 0.2 140); outline-offset: 2px; border-radius: 2px; }
+.td-ordenar-seta { font-size: 11px; opacity: 0; transition: opacity .15s; }
+.td-ordenar:hover .td-ordenar-seta, .td-ordenar:focus-visible .td-ordenar-seta { opacity: .6; }
+.td-ordenar--ativo .td-ordenar-seta { opacity: 1; color: oklch(0.78 0.2 140); }
 .td-linha-elenco { border-bottom: 1px solid #121814; font-size: 13px; }
 .td-linha-elenco:hover { background: #0f1611; }
 .td-cel-nome { display: flex; gap: 12px; align-items: center; min-width: 0; }
@@ -202,6 +257,17 @@
 .td-semi { font-weight: 600; }
 .td-estat { font: 600 12px 'JetBrains Mono', monospace; padding: 3px 7px; border-radius: 4px; background: #151d17; color: #c9d2cb; }
 .td-vazio { padding: 24px 12px; font-size: 13px; color: #7d8a80; text-align: center; }
+
+/* Telas estreitas: em vez de rolar para o lado, a tabela esconde as colunas
+   secundárias (Salário e Valor; no celular também Time & Contrato e Estatísticas). */
+@media (max-width: 820px) {
+  .td-grade { grid-template-columns: minmax(140px, 1fr) 38px 44px 44px 112px 92px; }
+  .td-grade > :nth-child(6), .td-grade > :nth-child(7) { display: none; }
+}
+@media (max-width: 620px) {
+  .td-grade { grid-template-columns: minmax(110px, 1fr) 38px 44px 44px; }
+  .td-grade > :nth-child(5), .td-grade > :nth-child(8) { display: none; }
+}
 
 @media (max-width: 640px) {
   .td-main { padding: 24px 16px 64px; }

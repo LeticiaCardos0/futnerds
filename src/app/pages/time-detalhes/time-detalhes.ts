@@ -1,9 +1,10 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TimeDetalhes, JogadorTime } from '../times/times.model';
 import { TimeDetalhesService } from './time-detalhes.service';
 import { urlImagemJogador } from '../../shared/api.util';
+import { ConfigHolofotes, ligarHolofotes } from './holofotes-estadio';
 
 /* Siglas exibidas nesta tela (as do design): o banco guarda as do FIFA. */
 const SIGLA_PT: Record<string, string> = {
@@ -31,6 +32,24 @@ function corNota(v: number | null | undefined): { bg: string; fg: string } {
   if (v >= 80) return { bg: 'oklch(0.52 0.15 145)', fg: '#fff' };
   if (v >= 75) return { bg: 'oklch(0.7 0.18 135)', fg: '#061006' };
   return { bg: 'oklch(0.82 0.15 90)', fg: '#1a1400' };
+}
+
+/* Fundo do topo: nome do clube no banco -> foto do estádio (Wikimedia Commons) e o
+   crédito que a licença pede. Só quem tem os refletores marcados na foto (hoje, o
+   Real Madrid) ganha os holofotes; os outros ficam com a foto parada e o degradê. */
+export interface FundoEstadio extends Partial<ConfigHolofotes> {
+  foto: string;
+  autor?: string;
+  licenca?: string;
+  pagina?: string;
+}
+
+let fundosEstadio: Promise<Record<string, FundoEstadio>> | null = null;
+function carregarFundosEstadio(): Promise<Record<string, FundoEstadio>> {
+  fundosEstadio ??= fetch('data/estadios.json')
+    .then((r) => (r.ok ? r.json() : {}))
+    .catch(() => ({}));
+  return fundosEstadio;
 }
 
 interface VagaFormacao {
@@ -76,6 +95,22 @@ export interface LinhaElenco {
   siglas: { t: string; c: string }[];
 }
 
+export type ChaveOrdem = 'nome' | 'idade' | 'geral' | 'potencial' | 'vaga' | 'salario' | 'valor' | 'estatisticas';
+
+/* Colunas do elenco, na ordem do cabeçalho, e o valor usado para ordenar cada uma.
+   crescente = o 1º clique ordena do menor para o maior. */
+const COLUNAS_ELENCO: { chave: ChaveOrdem; label: string; crescente?: boolean; valor: (l: LinhaElenco) => number | string | null | undefined }[] = [
+  { chave: 'nome', label: 'Nome', crescente: true, valor: (l) => l.jogador.nome },
+  { chave: 'idade', label: 'Idade', valor: (l) => l.jogador.idade },
+  { chave: 'geral', label: 'Geral', valor: (l) => l.jogador.overall },
+  { chave: 'potencial', label: 'Pot.', valor: (l) => l.jogador.potencial },
+  // titulares do goleiro ao atacante (ordem da tabela), reservas depois
+  { chave: 'vaga', label: 'Time & Contrato', crescente: true, valor: (l) => (l.vaga === 'SUB' ? 99 : ORDEM_TABELA.indexOf(l.vaga)) },
+  { chave: 'salario', label: 'Salário', valor: (l) => l.jogador.salario },
+  { chave: 'valor', label: 'Valor', valor: (l) => l.jogador.valor },
+  { chave: 'estatisticas', label: 'Estatísticas', valor: (l) => l.jogador.estatisticasTotais },
+];
+
 @Component({
   selector: 'app-time-detalhes',
   standalone: true,
@@ -83,13 +118,16 @@ export interface LinhaElenco {
   templateUrl: './time-detalhes.html',
   styleUrl: './time-detalhes.css',
 })
-export class TimeDetalhesComponent implements OnInit {
+export class TimeDetalhesComponent implements OnInit, OnDestroy {
   time: TimeDetalhes | null = null;
   carregando = true;
   erroCarregamento = false;
 
   campo: JogadorCampo[] = [];
   linhasElenco: LinhaElenco[] = [];
+  private linhasPadrao: LinhaElenco[] = []; // ordem da escalação, para voltar a ela
+  ordem: { chave: ChaveOrdem; dir: 'asc' | 'desc' } | null = null;
+  readonly colunasElenco = COLUNAS_ELENCO;
   notas: { label: string; valor: number | null }[] = [];
   informacoes: { label: string; valor: string }[] = [];
   batedores: { label: string; valor: string }[] = []; // capitão e cobradores, ao lado do campo
@@ -103,6 +141,23 @@ export class TimeDetalhesComponent implements OnInit {
 
   readonly corPosicao = corPosicao;
   readonly corNota = corNota;
+
+  private desligarHolofotes: (() => void) | null = null;
+
+  /** O canvas só existe depois que o time carrega e se o clube tem holofotes. */
+  @ViewChild('holofotes') set canvasHolofotes(ref: ElementRef<HTMLCanvasElement> | undefined) {
+    this.desligarHolofotes?.();
+    this.desligarHolofotes = null;
+    const cv = ref?.nativeElement;
+    const foto = cv?.parentElement?.querySelector<HTMLElement>('.td-cena-foto');
+    const cfg = this.fundo;
+    if (cv && foto && cfg?.proporcao && cfg.refletores && cfg.alvo) {
+      this.desligarHolofotes = ligarHolofotes(cv, foto, { proporcao: cfg.proporcao, refletores: cfg.refletores, alvo: cfg.alvo });
+    }
+  }
+
+  /** Foto do estádio do clube no fundo do topo (null: sem foto, fica o fundo liso). */
+  fundo: FundoEstadio | null = null;
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -125,6 +180,10 @@ export class TimeDetalhesComponent implements OnInit {
         this.montarTela(time);
         this.carregando = false;
         this.cdr.detectChanges();
+        carregarFundosEstadio().then((fundos) => {
+          this.fundo = fundos[time.nome] ?? null;
+          this.cdr.detectChanges();
+        });
       },
       error: (err) => {
         console.error('[time-detalhes] falha ao buscar time', err);
@@ -135,11 +194,14 @@ export class TimeDetalhesComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.desligarHolofotes?.();
+  }
+
   voltar(): void {
     this.router.navigate(['/times']);
   }
 
-  /** "Borussia Dortmund" -> ["Borussia ", "Dortmund"]: a última palavra vai em verde. */
   /** Resumo quebrado em trechos, marcando os anos (1850–2099) para destacá-los em verde. */
   get historiaTrechos(): { texto: string; ano: boolean }[] {
     const resumo = this.time?.resumoHistorico ?? '';
@@ -149,6 +211,7 @@ export class TimeDetalhesComponent implements OnInit {
       .map((texto) => ({ texto, ano: /^(1[89]\d\d|20\d\d)$/.test(texto) }));
   }
 
+  /** "Borussia Dortmund" -> ["Borussia ", "Dortmund"]: a última palavra vai em verde. */
   get nomePartes(): [string, string] {
     const nome = (this.time?.nome ?? '').trim();
     const i = nome.lastIndexOf(' ');
@@ -168,7 +231,9 @@ export class TimeDetalhesComponent implements OnInit {
   private montarTela(time: TimeDetalhes): void {
     const elenco = time.elenco ?? [];
     this.campo = this.montarCampo(elenco);
-    this.linhasElenco = this.montarLinhas(elenco);
+    this.linhasPadrao = this.montarLinhas(elenco);
+    this.linhasElenco = [...this.linhasPadrao];
+    this.ordem = null;
 
     this.notas = [
       { label: 'Classificação Geral', valor: arredondar(time.overallMedio) },
@@ -309,6 +374,44 @@ export class TimeDetalhesComponent implements OnInit {
       .sort((a, b) => (b.overall ?? 0) - (a.overall ?? 0));
 
     return [...titulares, ...reservas].map(linha);
+  }
+
+  /**
+   * Clique no cabeçalho: 1º ordena (números do maior para o menor; nome de A a Z e
+   * posição do goleiro ao atacante),
+   * 2º inverte, 3º volta à ordem da escalação. Quem não tem o dado fica sempre no fim.
+   */
+  ordenar(chave: ChaveOrdem): void {
+    const coluna = COLUNAS_ELENCO.find((c) => c.chave === chave)!;
+    const inicial: 'asc' | 'desc' = coluna.crescente ? 'asc' : 'desc';
+    if (this.ordem?.chave !== chave) this.ordem = { chave, dir: inicial };
+    else if (this.ordem.dir === inicial) this.ordem = { chave, dir: inicial === 'asc' ? 'desc' : 'asc' };
+    else this.ordem = null;
+
+    if (!this.ordem) {
+      this.linhasElenco = [...this.linhasPadrao];
+      return;
+    }
+    const { dir } = this.ordem;
+    const sinal = dir === 'asc' ? 1 : -1;
+    this.linhasElenco = [...this.linhasPadrao].sort((a, b) => {
+      const va = coluna.valor(a);
+      const vb = coluna.valor(b);
+      if (va == null || vb == null) return va == null ? (vb == null ? 0 : 1) : -1;
+      const r = typeof va === 'string' ? va.localeCompare(vb as string, 'pt-BR') : va - (vb as number);
+      return r * sinal;
+    });
+  }
+
+  /** Seta do cabeçalho: ↓/↑ na coluna ordenada, ↕ apagado nas outras. */
+  setaOrdem(chave: ChaveOrdem): string {
+    if (this.ordem?.chave !== chave) return '↕';
+    return this.ordem.dir === 'asc' ? '↑' : '↓';
+  }
+
+  ariaOrdem(chave: ChaveOrdem): 'ascending' | 'descending' | 'none' {
+    if (this.ordem?.chave !== chave) return 'none';
+    return this.ordem.dir === 'asc' ? 'ascending' : 'descending';
   }
 
   formatarEuro = formatarEuro;
